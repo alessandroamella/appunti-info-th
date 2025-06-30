@@ -119,11 +119,11 @@ Il \textbf{computation tree} di una macchina di Turing non deterministica $M$ su
 \begin{example}[Computazione di $N$ su input $01$]
 Usiamo l'esempio di NDTM di cui sopra e la stringa di input $W = 01$.
 La configurazione iniziale è $q_001$.
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width=0.8\textwidth]{pag1_computation_tree.jpeg}
-    \caption{Albero di Computazione della NDTM su input $01$}
-\end{figure}
+% \begin{figure}[h!]
+%     \centering
+%     \includegraphics[width=0.8\textwidth]{pag1_computation_tree.jpeg}
+%     \caption{Albero di Computazione della NDTM su input $01$}
+% \end{figure}
 Analizziamo il processo passo-passo:
 \begin{enumerate}
     \item Iniziamo da $q_001$.
@@ -140,7 +140,7 @@ Analizziamo il processo passo-passo:
         *   Configurazione $q_001$
         *   $q_0,0 \to (q_0,1,R)$: $1q_01$
         *   $q_0,1 \to (q_1,0,R)$: $10q_1\sqcup$ (Questo è il punto di divergenza tra il diagramma mostrato e l'input $01$ effettivo, in quanto dopo $10q_1\sqcup$ la testina è sul blank, non sul $0$ per attivare il non-determinismo).
-        *   \textbf{Per allineare l'esempio alla discussione del professore, dobbiamo immaginare un input diverso che porti a $\mathbf{q_1}0...$}: Il professore usa `10q10` nell'esempio sull'albero, non `10q1_blank_`. Questo implica che l'input doveva essere più lungo.
+        *   \textbf{Per allineare l'esempio alla discussione del professore, dobbiamo immaginare un input diverso che porti a $\mathbf{q_1}0...$}: Il professore usa \texttt{10q10} nell'esempio sull'albero, non \texttt{10q1\_blank\_}. Questo implica che l'input doveva essere più lungo.
         *   **Seguiamo l'esempio disegnato dal professore, che mostra la configurazione $10q_10$ come punto di non-determinismo**:
             *   Siamo in $10\mathbf{q_1}0$. Testina su $0$, stato $q_1$.
             *   $\delta(q_1, 0) = \{ (q_0, 0, L), (q_1, 0, R) \}$
@@ -156,6 +156,7 @@ Analizziamo il processo passo-passo:
         *   L'esempio nel disegno ha un ramo ulteriore: $10\mathbf{q_1}0 \to 10\mathbf{q_1}0$ (ciclo su $0/0,L$) $\to \dots$. Questo dimostra che possono esserci più rami e che un ramo può anche andare in loop.
 
 \end{enumerate}
+\end{example}
 
 \subsection{Condizione di Accettazione per NDTM}
 
@@ -178,17 +179,17 @@ Per dimostrare il teorema, è necessario mostrare come una DTM possa simulare un
 
 Supponiamo di avere una NDTM $N$ (che possiamo assumere mononastro, poiché sappiamo convertire multinastro in mononastro). Vogliamo costruire una DTM $M$ (multinastro per facilità, poi riconvertibile a mononastro) che simuli $N$.
 
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width=0.8\textwidth]{pag2_DTM_simulation.jpeg}
-    \caption{Simulazione BFS di NDTM su DTM}
-\end{figure}
+% \begin{figure}[h!]
+%     \centering
+%     \includegraphics[width=0.8\textwidth]{pag2_DTM_simulation.jpeg}
+%     \caption{Simulazione BFS di NDTM su DTM}
+% \end{figure}
 
 La macchina $M$ utilizzerà più nastri. Una configurazione tipica per la simulazione è l'uso di tre nastri:
 \begin{enumerate}
     \item \textbf{Nastro 1 (Input/Originale)}: Contiene l'input originale $W$ e non viene modificato.
     \item \textbf{Nastro 2 (Simulazione)}: Contiene la configurazione corrente di $N$ che $M$ sta simulando.
-    \item \textbf{Nastro 3 (Coda delle configurazioni)}: Contiene una coda di configurazioni di $N$ che devono ancora essere esplorate, separate da un simbolo speciale (es. `*`).
+    \item \textbf{Nastro 3 (Coda delle configurazioni)}: Contiene una coda di configurazioni di $N$ che devono ancora essere esplorate, separate da un simbolo speciale (es. \texttt{*}).
 \end{enumerate}
 
 \textbf{Algoritmo di Simulazione (BFS):}
@@ -238,11 +239,11 @@ Negli anni '30, quando Alan Turing e altri svilupparono i loro modelli di calcol
 
 Sulla base della Tesi di Church-Turing, possiamo definire le principali classi di problemi (o linguaggi) in base alla loro calcolabilità da parte di una Macchina di Turing.
 
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width=0.6\textwidth]{pag2_computability_classes.jpeg}
-    \caption{Classi di Computabilità: R e RE}
-\end{figure}
+% \begin{figure}[h!]
+%     \centering
+%     \includegraphics[width=0.6\textwidth]{pag2_computability_classes.jpeg}
+%     \caption{Classi di Computabilità: R e RE}
+% \end{figure}
 
 \subsection{Classe R (Linguaggi Ricorsivi / Problemi Decidibili)}
 \begin{definition}[Classe R]

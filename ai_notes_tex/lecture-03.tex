@@ -67,10 +67,10 @@ Un automa a stati finiti può essere immaginato come un computer molto semplice 
 \begin{example}[Riconoscimento di Numeri Dispari Binari]
 Consideriamo il linguaggio delle stringhe binarie che codificano numeri dispari. Un automa per questo linguaggio necessita solo di guardare l'ultimo bit. Possiamo usare due stati: $Q_0$ (l'ultimo simbolo visto era 0, o il numero parziale è pari) e $Q_1$ (l'ultimo simbolo visto era 1, o il numero parziale è dispari). Lo stato iniziale è $Q_0$. $Q_1$ sarà lo stato accettante.
 \begin{itemize}
-    \item Se siamo in $Q_0$ e leggiamo `0`, rimaniamo in $Q_0$.
-    \item Se siamo in $Q_0$ e leggiamo `1`, andiamo in $Q_1$.
-    \item Se siamo in $Q_1$ e leggiamo `0`, andiamo in $Q_0$.
-    \item Se siamo in $Q_1$ e leggiamo `1`, rimaniamo in $Q_1$.
+    \item Se siamo in $Q_0$ e leggiamo $0$, rimaniamo in $Q_0$.
+    \item Se siamo in $Q_0$ e leggiamo $1$, andiamo in $Q_1$.
+    \item Se siamo in $Q_1$ e leggiamo $0$, andiamo in $Q_0$.
+    \item Se siamo in $Q_1$ e leggiamo $1$, rimaniamo in $Q_1$.
 \end{itemize}
 \begin{center}
 \begin{tikzpicture}[shorten >=1pt,node distance=2cm,on grid,auto]
@@ -164,39 +164,39 @@ Un DFA $D$ \emph{decide} un linguaggio $L$ se per ogni stringa $w \in L$, $D$ ac
 Gli automi non-deterministici introducono il concetto di scelte multiple durante la computazione.
 
 \subsection{Introduzione al Non-Determinismo}
-Consideriamo il linguaggio delle stringhe binarie che terminano con `000`, espresso dalla espressione regolare $(0|1)^*000$.
+Consideriamo il linguaggio delle stringhe binarie che terminano con $000$, espresso dalla espressione regolare $(0|1)^*000$.
 
 \begin{example}[NFA per $(0|1)^*000$]
 Un tentativo intuitivo di DFA potrebbe essere:
 \begin{itemize}
     \item $Q_0$: Stato iniziale e per leggere $(0|1)^*$.
-    \item $Q_1$: Dopo aver letto il primo `0` dei `000` finali.
-    \item $Q_2$: Dopo aver letto il secondo `0` dei `000` finali.
-    \item $Q_3$: Stato finale, dopo aver letto il terzo `0` dei `000` finali.
+    \item $Q_1$: Dopo aver letto il primo $0$ dei $000$ finali.
+    \item $Q_2$: Dopo aver letto il secondo $0$ dei $000$ finali.
+    \item $Q_3$: Stato finale, dopo aver letto il terzo $0$ dei $000$ finali.
 \end{itemize}
 Le transizioni sarebbero:
 \begin{itemize}
     \item Da $Q_0$:
         \begin{itemize}
-            \item Se legge `0`: può rimanere in $Q_0$ (per $(0|1)^*$) \emph{oppure} andare in $Q_1$ (se è il primo `0` della sequenza finale). Questo è un punto di non-determinismo.
-            \item Se legge `1`: rimane in $Q_0$.
+            \item Se legge $0$: può rimanere in $Q_0$ (per $(0|1)^*$) \emph{oppure} andare in $Q_1$ (se è il primo $0$ della sequenza finale). Questo è un punto di non-determinismo.
+            \item Se legge $1$: rimane in $Q_0$.
         \end{itemize}
     \item Da $Q_1$:
         \begin{itemize}
-            \item Se legge `0`: va in $Q_2$.
-            \item Se legge `1`: torna in $Q_0$ (la sequenza `000` è interrotta).
+            \item Se legge $0$: va in $Q_2$.
+            \item Se legge $1$: torna in $Q_0$ (la sequenza $000$ è interrotta).
         \end{itemize}
     \item Da $Q_2$:
         \begin{itemize}
-            \item Se legge `0`: va in $Q_3$.
-            \item Se legge `1`: torna in $Q_0$.
+            \item Se legge $0$: va in $Q_3$.
+            \item Se legge $1$: torna in $Q_0$.
         \end{itemize}
     \item Da $Q_3$:
         \begin{itemize}
-            \item Se legge `0`: rimane in $Q_3$ (ma in realtà non è così semplice per $(0|1)^*000$ per via dei $000$ finali). Per la semplicità dell'esempio del professore, si può immaginare che da $Q_3$ si accettino solo stringhe che finiscono esattamente con $000$ e nessun altro carattere dopo. Se la stringa è `010001` dopo $Q_3$ dovrebbe andare in $Q_0$.
+            \item Se legge $0$: rimane in $Q_3$ (ma in realtà non è così semplice per $(0|1)^*000$ per via dei $000$ finali). Per la semplicità dell'esempio del professore, si può immaginare che da $Q_3$ si accettino solo stringhe che finiscono esattamente con $000$ e nessun altro carattere dopo. Se la stringa è $010001$ dopo $Q_3$ dovrebbe andare in $Q_0$.
         \end{itemize}
 \end{itemize}
-Il problema evidenziato dal professore è il \emph{non-determinismo} in $Q_0$ quando legge `0`: può andare in $Q_0$ o $Q_1$.
+Il problema evidenziato dal professore è il \emph{non-determinismo} in $Q_0$ quando legge $0$: può andare in $Q_0$ o $Q_1$.
 \end{example}
 
 \begin{definition}[Automa a Stati Finiti Non-Deterministico (NFA)]
@@ -235,9 +235,9 @@ Consideriamo l'NFA precedente e la stringa $w = 0100$.
     \item \textbf{Percorso Rifiutante:}
     \item $(Q_0, 0100)$
     \item $\xrightarrow{\text{leggi 0, transisci in } Q_1}$ $(Q_1, 100)$
-    \item Ora, da $Q_1$ leggendo `1`, si torna in $Q_0$.
+    \item Ora, da $Q_1$ leggendo $1$, si torna in $Q_0$.
     \item $\xrightarrow{\text{leggi 1, transisci in } Q_0}$ $(Q_0, 00)$
-    *A questo punto l'automa non è riuscito a finire la sequenza `000` nel modo sperato, e dovrebbe continuare a processare per vedere se trova altri `000`.*
+    *A questo punto l'automa non è riuscito a finire la sequenza $000$ nel modo sperato, e dovrebbe continuare a processare per vedere se trova altri $000$.*
     *Esempio più semplice: se da $Q_1$ non ci fosse una transizione per '1', la macchina si bloccherebbe.*
 \end{itemize}
 \end{example}

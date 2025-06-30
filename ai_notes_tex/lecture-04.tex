@@ -94,7 +94,7 @@ Per determinare se un linguaggio è decidibile (intuitivamente, se esiste un alg
 Gli NFA e i DFA hanno lo stesso potere computazionale. Ogni NFA può essere convertito in un DFA equivalente. Il tempo di esecuzione è lineare rispetto alla lunghezza dell'input.
 
 \begin{example}[Linguaggio $L = \{a^n b^n \mid n \ge 0\}$]
-    Questo linguaggio, che rappresenta stringhe con $n$ 'a' seguite da $n$ 'b' (es. `aabb`, `aaabbb`), \textbf{non può essere riconosciuto da un automa a stati finiti}.
+    Questo linguaggio, che rappresenta stringhe con $n$ 'a' seguite da $n$ 'b' (es. \texttt{aabb}, \texttt{aaabbb}), \textbf{non può essere riconosciuto da un automa a stati finiti}.
     \begin{itemize}
         \item \textbf{Intuito}: Un FA non ha memoria sufficiente per "contare" le 'a' e confrontarle con le 'b'. Ha un numero finito di stati, quindi non può memorizzare un numero arbitrario $n$.
     \end{itemize}
@@ -108,11 +108,11 @@ Gli automi a stati finiti (DFA/NFA) sono in grado di riconoscere tutti e soli i 
     Sia $\Sigma$ un alfabeto. Un linguaggio regolare su $\Sigma$ è un linguaggio le cui stringhe possono essere descritte da \textbf{espressioni regolari}.
     Le regole per costruire espressioni regolari sono:
     \begin{itemize}
-        \item Se $\alpha \in \Sigma$, allora $\alpha$ è un'espressione regolare (es. `0`, `1`).
-        \item Se $\alpha$ e $\beta$ sono espressioni regolari, allora anche la loro \textbf{concatenazione} $\alpha\beta$ è un'espressione regolare (es. `00`, `0111`).
-        \item Se $\alpha$ e $\beta$ sono espressioni regolari, allora anche la loro \textbf{disgiunzione} $\alpha \lor \beta$ (spesso scritta $\alpha + \beta$ o $\alpha | \beta$) è un'espressione regolare. Rappresenta le stringhe che sono generate da $\alpha$ oppure da $\beta$ (es. `0 | 11` accetta `0` o `11`).
-        \item Se $\alpha$ è un'espressione regolare, allora $\alpha^*$ (Kleene Star) è un'espressione regolare. Rappresenta una concatenazione di zero o più occorrenze di $\alpha$ (es. `(10)*` accetta $\epsilon$, `10`, `1010`, ...).
-        \item A volte si usa $\alpha^+$ (Kleene Plus) per indicare una concatenazione di una o più occorrenze di $\alpha$ (es. `(10)+` accetta `10`, `1010`, ... ma non $\epsilon$).
+        \item Se $\alpha \in \Sigma$, allora $\alpha$ è un'espressione regolare (es. $0$, $1$).
+        \item Se $\alpha$ e $\beta$ sono espressioni regolari, allora anche la loro \textbf{concatenazione} $\alpha\beta$ è un'espressione regolare (es. $00$, $0111$).
+        \item Se $\alpha$ e $\beta$ sono espressioni regolari, allora anche la loro \textbf{disgiunzione} $\alpha \lor \beta$ (spesso scritta $\alpha + \beta$ o $\alpha | \beta$) è un'espressione regolare. Rappresenta le stringhe che sono generate da $\alpha$ oppure da $\beta$ (es. $0 | 11$ accetta $0$ o $11$).
+        \item Se $\alpha$ è un'espressione regolare, allora $\alpha^*$ (Kleene Star) è un'espressione regolare. Rappresenta una concatenazione di zero o più occorrenze di $\alpha$ (es. $(10)*$ accetta $\epsilon$, $10$, $1010$, ...).
+        \item A volte si usa $\alpha^+$ (Kleene Plus) per indicare una concatenazione di una o più occorrenze di $\alpha$ (es. $(10)+$ accetta $10$, $1010$, ... ma non $\epsilon$).
     \end{itemize}
 \end{definition}
 
@@ -174,7 +174,7 @@ L'idea è "barrare" una 'a' dal lato sinistro e una 'b' dal lato destro ad ogni 
     \foreach \x/\y in {-2.5/B, -1.5/B, -0.5/A, 0.5/A, 1.5/B, 2.5/B} {
         \draw (\x,0.35) rectangle (\x+1,-0.35) node[pos=.5] {\y};
     }
-    \node[head] at (0,1.2) {$\delta$};
+    \node[head] (head) at (0,1.2) {$\delta$};
     \draw[->] (head) -- (0,0.35);
     \node[below=0.5cm of tape] (blank_sym) {$\texttt{B}$ (Blank)};
     \end{tikzpicture}

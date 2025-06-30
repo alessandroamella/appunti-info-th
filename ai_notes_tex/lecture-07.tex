@@ -69,10 +69,10 @@ significa che per eseguire la transizione, la MT deve leggere $\text{leggi}_1$ d
 \begin{itemize}
     \item \textbf{Simboli Variabili:} Spesso si usano simboli come $\alpha, \beta, \gamma$ per indicare caratteri generici dall'alfabeto del nastro ($\Gamma$).
     \begin{itemize}
-        \item Se lo \textbf{stesso simbolo variabile} (es. $\alpha$) compare nella lettura di \textbf{più nastri} nella stessa etichetta di transizione, significa che su quei nastri deve essere letto lo \textbf{stesso identico carattere}. Es. `nastro 1: (\alpha/\alpha, R), nastro 2: (\alpha/\alpha, R)` implica che se si legge '0' su nastro 1, si deve leggere '0' anche su nastro 2. Se si legge '1' su nastro 1, si deve leggere '1' anche su nastro 2. Se si legge '0' su nastro 1 e '1' su nastro 2, questa transizione non è valida.
-        \item Se \textbf{simboli variabili diversi} (es. $\alpha, \beta$) compaiono nella lettura di \textbf{più nastri} nella stessa etichetta di transizione, significa che i caratteri letti possono essere \textbf{diversi o uguali}. Es. `nastro 1: (\alpha/\alpha, R), nastro 2: (\beta/\beta, R)` implica che $\alpha$ può essere '0' e $\beta$ '1' (o viceversa, o uguali). Non viene imposto alcun confronto.
+        \item Se lo \textbf{stesso simbolo variabile} (es. $\alpha$) compare nella lettura di \textbf{più nastri} nella stessa etichetta di transizione, significa che su quei nastri deve essere letto lo \textbf{stesso identico carattere}. Es. \texttt{nastro 1: ($\alpha$/$\alpha$, R), nastro 2: ($\alpha$/$\alpha$, R)} implica che se si legge '0' su nastro 1, si deve leggere '0' anche su nastro 2. Se si legge '1' su nastro 1, si deve leggere '1' anche su nastro 2. Se si legge '0' su nastro 1 e '1' su nastro 2, questa transizione non è valida.
+        \item Se \textbf{simboli variabili diversi} (es. $\alpha, \beta$) compaiono nella lettura di \textbf{più nastri} nella stessa etichetta di transizione, significa che i caratteri letti possono essere \textbf{diversi o uguali}. Es. \texttt{nastro 1: ($\alpha$/$\alpha$, R), nastro 2: ($\beta$/$\beta$, R)} implica che $\alpha$ può essere '0' e $\beta$ '1' (o viceversa, o uguali). Non viene imposto alcun confronto.
     \end{itemize}
-    \item \textbf{Omissione di operazioni:} Se per un nastro non viene specificata alcuna operazione di scrittura o movimento, si intende che la testina rimane ferma (`S`) e il simbolo non viene modificato.
+    \item \textbf{Omissione di operazioni:} Se per un nastro non viene specificata alcuna operazione di scrittura o movimento, si intende che la testina rimane ferma (\texttt{S}) e il simbolo non viene modificato.
     \item \textbf{Simbolo di blank:} Il simbolo $\Box$ indica una cella vuota.
 \end{itemize}
 
@@ -81,11 +81,11 @@ Illustriamo il funzionamento delle MT multinastro attraverso esempi pratici di r
 
 \subsection{Linguaggio $L_1 = \{A\#B\#AB \mid A,B \in \{0,1\}^+\}$}
 \begin{definition}
-Il linguaggio $L_1$ è l'insieme di tutte le stringhe composte da tre parti $A$, $B$ e $AB$ (concatenazione di $A$ e $B$), separate da simboli `#`. Le stringhe $A$ e $B$ sono composte da caratteri '0' o '1' e devono avere lunghezza di almeno 1.
+Il linguaggio $L_1$ è l'insieme di tutte le stringhe composte da tre parti $A$, $B$ e $AB$ (concatenazione di $A$ e $B$), separate da simboli \texttt{\#}. Le stringhe $A$ e $B$ sono composte da caratteri '0' o '1' e devono avere lunghezza di almeno 1.
 \end{definition}
 \begin{example}
-Esempi di stringhe in $L_1$: $0\#1\#01$, $01\#0\#010$.
-Esempi di stringhe non in $L_1$: $0\#1\#10$ (AB sbagliato), $0\#\#0$ (B vuoto), $\#1\#1$ (A vuoto).
+Esempi di stringhe in $L_1$: $0\texttt{\#}1\texttt{\#}01$, $01\texttt{\#}0\texttt{\#}010$.
+Esempi di stringhe non in $L_1$: $0\texttt{\#}1\texttt{\#}10$ (AB sbagliato), $0\texttt{\#}\texttt{\#}0$ (B vuoto), $\texttt{\#}1\texttt{\#}1$ (A vuoto).
 \end{example}
 
 \subsubsection{Strategia}
@@ -101,15 +101,15 @@ Utilizziamo una MT con 2 nastri.
     \begin{itemize}
         \item \textbf{Condizione:} Leggi $\alpha \in \{0,1\}$ su Nastro 1, $\Box$ su Nastro 2.
         \item \textbf{Azione:} Scrivi $\alpha$ su Nastro 2. Sposta entrambe le testine a destra. Rimani in $q_0$.
-        \item \textbf{Uscita:} Quando Nastro 1 legge `#`.
-        \item \textbf{Transizione:} Da $q_0$ a $q_1$: Nastro 1: $(\#/\#, R)$, Nastro 2: $(\Box/\Box, S)$.
+        \item \textbf{Uscita:} Quando Nastro 1 legge \texttt{\#}.
+        \item \textbf{Transizione:} Da $q_0$ a $q_1$: Nastro 1: $(\texttt{\#}/\texttt{\#}, R)$, Nastro 2: $(\Box/\Box, S)$.
     \end{itemize}
     \item[$q_1$ (Copia B):] Legge i caratteri di $B$ dal Nastro 1 e li copia sul Nastro 2 (dopo la copia di $A$).
     \begin{itemize}
         \item \textbf{Condizione:} Leggi $\alpha \in \{0,1\}$ su Nastro 1, $\Box$ su Nastro 2.
         \item \textbf{Azione:} Scrivi $\alpha$ su Nastro 2. Sposta entrambe le testine a destra. Rimani in $q_1$.
-        \item \textbf{Uscita:} Quando Nastro 1 legge `#`.
-        \item \textbf{Transizione:} Da $q_1$ a $q_2$: Nastro 1: $(\#/\#, R)$, Nastro 2: $(\Box/\Box, S)$.
+        \item \textbf{Uscita:} Quando Nastro 1 legge \texttt{\#}.
+        \item \textbf{Transizione:} Da $q_1$ a $q_2$: Nastro 1: $(\texttt{\#}/\texttt{\#}, R)$, Nastro 2: $(\Box/\Box, S)$.
     \end{itemize}
     \item[$q_2$ (Riavvolgi Nastro 2):] Riporta la testina del Nastro 2 all'inizio della stringa $AB$ (cioè all'inizio del Nastro 2).
     \begin{itemize}
@@ -125,7 +125,7 @@ Utilizziamo una MT con 2 nastri.
         \item \textbf{Uscita:} Quando entrambe le testine leggono $\Box$.
         \item \textbf{Transizione:} Da $q_3$ a $q_{acc}$: Nastro 1: $(\Box/\Box, S)$, Nastro 2: $(\Box/\Box, S)$.
     \end{itemize}
-    \item[Rifiuto:] Se in qualsiasi stato la MT tenta una transizione non definita (es. simboli non corrispondenti durante il confronto, `#` al posto di un carattere, stringa non conforme al formato $A\#B\#AB$), la macchina si blocca e rifiuta.
+    \item[Rifiuto:] Se in qualsiasi stato la MT tenta una transizione non definita (es. simboli non corrispondenti durante il confronto, \texttt{\#} al posto di un carattere, stringa non conforme al formato $A\texttt{\#}B\texttt{\#}AB$), la macchina si blocca e rifiuta.
 \end{description}
 
 \subsection{Linguaggio $L_2 = \{A\#B\#C \mid A,B,C \in \{0,1\}^+, |A|>|B|>|C|, |C|=|A|-|B|\}$}
@@ -151,16 +151,16 @@ Utilizziamo 3 nastri.
     \begin{itemize}
         \item \textbf{Condizione:} Nastro 1: $\alpha \in \{0,1\}$, Nastro 2: $\Box$.
         \item \textbf{Azione:} Nastro 1: $(\alpha/\alpha, R)$, Nastro 2: $(\Box/X, R)$. Rimani in $q_0$.
-        \item \textbf{Uscita:} Quando Nastro 1 legge `#`.
-        \item \textbf{Transizione:} Da $q_0$ a $q_1$: Nastro 1: $(\#/\#, R)$, Nastro 2: $(X/X, L)$ (sposta indietro per iniziare la ``sottrazione'').
+        \item \textbf{Uscita:} Quando Nastro 1 legge \texttt{\#}.
+        \item \textbf{Transizione:} Da $q_0$ a $q_1$: Nastro 1: $(\texttt{\#}/\texttt{\#}, R)$, Nastro 2: $(X/X, L)$ (sposta indietro per iniziare la \textbf{sottrazione}).
     \end{itemize}
     \item[$q_1$ (Copia $|B|$ su Nastro 3 e calcola $|A|-|B|$):] Legge i caratteri di $B$ dal Nastro 1, marca 'X' sul Nastro 3 per ogni carattere letto, e cancella una 'X' dal Nastro 2 per ogni carattere letto (simulando $|A|-|B|$).
     \begin{itemize}
         \item \textbf{Condizione:} Nastro 1: $\alpha \in \{0,1\}$, Nastro 2: $X$, Nastro 3: $\Box$.
         \item \textbf{Azione:} Nastro 1: $(\alpha/\alpha, R)$, Nastro 2: $(X/\Box, L)$, Nastro 3: $(\Box/X, R)$. Rimani in $q_1$.
-        \item \textbf{Controllo $|A|>|B|$:} Se Nastro 2 diventa $\Box$ prima che Nastro 1 trovi `#`, significa che $|A| \le |B|$, quindi la condizione $|A|>|B|$ non è rispettata. La MT si blocca e rifiuta. Altrimenti, se Nastro 1 trova `#` e Nastro 2 ha ancora X, la condizione è rispettata.
-        \item \textbf{Uscita:} Quando Nastro 1 legge `#`.
-        \item \textbf{Transizione:} Da $q_1$ a $q_2$: Nastro 1: $(\#/\#, R)$, Nastro 2: $(X/X, S)$, Nastro 3: $(\Box/\Box, L)$. (Nastro 2 rimane fermo sulla X residua, Nastro 3 si riavvolge per il confronto con C).
+        \item \textbf{Controllo $|A|>|B|$:} Se Nastro 2 diventa $\Box$ prima che Nastro 1 trovi \texttt{\#}, significa che $|A| \le |B|$, quindi la condizione $|A|>|B|$ non è rispettata. La MT si blocca e rifiuta. Altrimenti, se Nastro 1 trova \texttt{\#} e Nastro 2 ha ancora X, la condizione è rispettata.
+        \item \textbf{Uscita:} Quando Nastro 1 legge \texttt{\#}.
+        \item \textbf{Transizione:} Da $q_1$ a $q_2$: Nastro 1: $(\texttt{\#}/\texttt{\#}, R)$, Nastro 2: $(X/X, S)$, Nastro 3: $(\Box/\Box, L)$. (Nastro 2 rimane fermo sulla X residua, Nastro 3 si riavvolge per il confronto con C).
     \end{itemize}
     \item[$q_2$ (Confronto $|C|$ con $|A|-|B|$ e $|B|>|C|$):] Legge i caratteri di $C$ dal Nastro 1, cancella una 'X' dal Nastro 2 (verificando $|C|=|A|-|B|$), e cancella una 'X' dal Nastro 3 (verificando $|B|>|C|$).
     \begin{itemize}
@@ -197,8 +197,8 @@ Dopo aver copiato la prima $W$, le testine di Nastro 2 e 3 vengono riavvolte. Su
     \begin{itemize}
         \item \textbf{Condizione:} Nastro 1: $\alpha \in \{0,1\}$, Nastro 2: $\Box$, Nastro 3: $\Box$.
         \item \textbf{Azione:} Nastro 1: $(\alpha/\alpha, R)$, Nastro 2: $(\Box/\alpha, R)$, Nastro 3: $(\Box/\alpha, R)$. Rimani in $q_0$.
-        \item \textbf{Uscita:} Quando Nastro 1 legge `#`.
-        \item \textbf{Transizione:} Da $q_0$ a $q_1$: Nastro 1: $(\#/\#, R)$, Nastro 2: $(\Box/\Box, L)$, Nastro 3: $(\Box/\Box, L)$. (Per $W=\epsilon$, la MT va direttamente a $q_1$ leggendo `#` sul Nastro 1 e $\Box$ su Nastro 2 e 3. Le testine 2 e 3 si muovono a sinistra sul $\Box$ e poi, nel successivo riavvolgimento, si riposizionano correttamente).
+        \item \textbf{Uscita:} Quando Nastro 1 legge \texttt{\#}.
+        \item \textbf{Transizione:} Da $q_0$ a $q_1$: Nastro 1: $(\#/\#, R)$, Nastro 2: $(\Box/\Box, L)$, Nastro 3: $(\Box/\Box, L)$. (Per $W=\epsilon$, la MT va direttamente a $q_1$ leggendo \texttt{\#} sul Nastro 1 e $\Box$ su Nastro 2 e 3. Le testine 2 e 3 si muovono a sinistra sul $\Box$ e poi, nel successivo riavvolgimento, si riposizionano correttamente).
     \end{itemize}
     \item[$q_1$ (Riavvolgi Nastro 2 e 3):] Riporta le testine di Nastro 2 e 3 all'inizio delle loro rispettive stringhe $W$.
     \begin{itemize}
@@ -211,7 +211,7 @@ Dopo aver copiato la prima $W$, le testine di Nastro 2 e 3 vengono riavvolte. Su
     \begin{itemize}
         \item \textbf{Condizione:} Nastro 1: $\alpha \in \{0,1\}$, Nastro 2: $\alpha \in \{0,1\}$.
         \item \textbf{Azione:} Nastro 1: $(\alpha/\alpha, R)$, Nastro 2: $(\alpha/\alpha, R)$. Rimani in $q_2$.
-        \item \textbf{Uscita:} Quando Nastro 1 legge `#` e Nastro 2 legge $\Box$.
+        \item \textbf{Uscita:} Quando Nastro 1 legge \texttt{\#} e Nastro 2 legge $\Box$.
         \item \textbf{Transizione:} Da $q_2$ a $q_3$: Nastro 1: $(\#/\#, R)$, Nastro 2: $(\Box/\Box, S)$.
     \end{itemize}
     \item[$q_3$ (Confronta $W_3$ con Nastro 3):] Confronta la terza $W$ sul Nastro 1 con la copia su Nastro 3.
@@ -247,7 +247,7 @@ La strategia consiste nel provare a far corrispondere la stringa $A$ (copiata su
     \begin{itemize}
         \item \textbf{Condizione:} Nastro 1: $\alpha \in \{a,b\}$, Nastro 2: $\Box$.
         \item \textbf{Azione:} Nastro 1: $(\alpha/\alpha, R)$, Nastro 2: $(\Box/\alpha, R)$. Rimani in $q_0$.
-        \item \textbf{Uscita:} Quando Nastro 1 legge `#`.
+        \item \textbf{Uscita:} Quando Nastro 1 legge \texttt{\#}.
         \item \textbf{Transizione:} Da $q_0$ a $q_1$: Nastro 1: $(\#/\#, R)$, Nastro 2: $(\Box/\Box, L)$.
     \end{itemize}
     \item[$q_1$ (Riavvolgi Nastro 2):] Riporta la testina del Nastro 2 all'inizio della stringa $A$.
@@ -275,7 +275,7 @@ La strategia consiste nel provare a far corrispondere la stringa $A$ (copiata su
         \item \textbf{Uscita (Mismatch):} Nastro 1: $\alpha \in \{a,b\}$, Nastro 2: $\beta \in \{a,b\}$, con $\alpha \ne \beta$.
         \item \textbf{Transizione:} Da $q_3$ a $q_6$: Nastro 1: $(\alpha/\alpha, L)$, Nastro 2: $(\beta/\beta, L)$. (La testina del nastro 1 torna indietro di 1, poi entrambe si riavvolgeranno al punto di inizio per il prossimo tentativo).
     \end{itemize}
-    \item[$q_4$ (Verifica fine di B):] Dopo aver trovato $A$ come sottostringa, si assicura che non ci siano simboli `#` o altro sul resto di $B$.
+    \item[$q_4$ (Verifica fine di B):] Dopo aver trovato $A$ come sottostringa, si assicura che non ci siano simboli \texttt{\#} o altro sul resto di $B$.
     \begin{itemize}
         \item \textbf{Condizione:} Nastro 1: $\alpha \in \{a,b\}$.
         \item \textbf{Azione:} Nastro 1: $(\alpha/\alpha, R)$. Rimani in $q_4$.
@@ -287,7 +287,7 @@ La strategia consiste nel provare a far corrispondere la stringa $A$ (copiata su
     \begin{itemize}
         \item \textbf{Condizione:} Nastro 1: $\gamma \in \{a,b,\#\}$, Nastro 2: $\gamma \in \{a,b,\Box\}$.
         \item \textbf{Azione:} Nastro 1: $(\gamma/\gamma, L)$, Nastro 2: $(\gamma/\gamma, L)$. Rimani in $q_6$. (Questo porta entrambe le testine indietro fino all'inizio di A e all'inizio di B).
-        \item \textbf{Uscita:} Nastro 1 legge `#`.
+        \item \textbf{Uscita:} Nastro 1 legge \texttt{\#}.
         \item \textbf{Transizione:} Da $q_6$ a $q_2$: Nastro 1: $(\#/\#, R)$, Nastro 2: $(\Box/\Box, R)$. (La testina del Nastro 1 si sposta a destra di un posto, la testina del Nastro 2 si posiziona all'inizio di A. Ora Nastro 1 è pronto per un nuovo tentativo di match in $B$ un carattere più avanti).
     \end{itemize}
 \end{description}

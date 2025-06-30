@@ -56,7 +56,7 @@ Le Macchine di Turing (MT) standard, pur essendo fondamentali per la teoria dell
 Riprendiamo l'esempio del linguaggio $WW^R = \{w w^R \mid w \in \{0,1\}^*\}$. Nella MT standard per questo linguaggio, eravamo costretti a creare rami di computazione separati a seconda del primo carattere letto (0 o 1), perché la macchina doveva "ricordarsi" quel carattere. L'idea è: non sarebbe più semplice se la macchina potesse memorizzare direttamente il simbolo letto?
 
 \begin{definition}[Macchina di Turing con Memoria nello Stato]
-Una Macchina di Turing con memoria nello stato è una MT che può memorizzare un simbolo dell'alfabeto del nastro all'interno del suo stato finito. Lo stato è quindi una coppia $(q_i, \text{simbolo_memorizzato})$, dove $q_i$ è lo stato del controllo finito e $\text{simbolo_memorizzato}$ è il contenuto della "memoria interna".
+Una Macchina di Turing con memoria nello stato è una MT che può memorizzare un simbolo dell'alfabeto del nastro all'interno del suo stato finito. Lo stato è quindi una coppia $(q_i, \text{simbolo\_memorizzato})$, dove $q_i$ è lo stato del controllo finito e $\text{simbolo\_memorizzato}$ è il contenuto della "memoria interna".
 \begin{itemize}
     \item La macchina può memorizzare uno o più simboli (un numero fissato al momento della progettazione).
     \item La memoria non cresce durante l'esecuzione; è pre-determinata dal design.
@@ -90,6 +90,7 @@ Vogliamo riconoscere stringhe binarie che iniziano con un simbolo e tutti gli al
         \end{itemize}
 \end{itemize}
 Questo approccio evita la necessità di duplicare gli stati per 0 e 1, rendendo la programmazione più compatta.
+\end{example}
 
 \subsubsection{Potere Computazionale delle MT con Memoria nello Stato}
 Le MT con memoria nello stato \emph{non} sono più potenti delle MT standard.
@@ -214,6 +215,7 @@ Simuliamo il riconoscimento di questo linguaggio con una MT multitraccia, usando
         \end{itemize}
 \end{itemize}
 Questa macchina è più semplice da progettare rispetto alla versione a nastro singolo perché non si perde il contenuto originale dell'input.
+\end{example}
 
 \subsubsection{Potere Computazionale delle MT Multitraccia}
 Le MT multitraccia \emph{non} sono più potenti delle MT standard.
@@ -238,7 +240,7 @@ Una Macchina di Turing multinastro ha \textbf{più nastri completamente indipend
 \end{itemize}
 \end{definition}
 
-\begin{example}[Linguaggio $L = \{w \mid w \in \{0,1,2\}^*, \text{count}(0)=\text{count}(1)=\text{count}(2)\}]$
+\begin{example}[Linguaggio $L = \{w \mid w \in \{0,1,2\}^*, \text{count}(0)=\text{count}(1)=\text{count}(2)\}$]
 Vogliamo decidere se il numero di '0', '1' e '2' in una stringa di input è uguale.
 Approccio con MT multinastro (4 nastri: 1 input, 3 di lavoro):
 \begin{enumerate}
@@ -299,6 +301,7 @@ Approccio con MT multinastro (4 nastri: 1 input, 3 di lavoro):
         \end{itemize}
 \end{itemize}
 Le MT multinastro sono molto convenienti perché permettono un controllo indipendente delle testine, rendendo algoritmi come questo (che altrimenti richiederebbero complessi vai-e-vieni sul nastro singolo) molto più intuitivi.
+\end{example}
 
 \begin{figure}[h!]
     \centering

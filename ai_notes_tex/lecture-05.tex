@@ -111,81 +111,18 @@ La strategia consiste nel confrontare il primo carattere di $w$ con l'ultimo car
     \path[->]
     (q0) edge node {$0/B, R$} (q1)
          edge node {$1/B, R$} (q4)
-         edge node {$B/B, R$} (q6) % Accetta la stringa vuota
+         edge [bend left] node {$B/B, R$} (q6)
     (q1) edge [loop above] node {$0/0, R$} ()
          edge [loop below] node {$1/1, R$} ()
          edge node {$B/B, L$} (q2)
     (q2) edge node {$0/B, L$} (q3)
-         edge node {$1/B, L$} (q5) % Error in diagram's Q2->Q5, should be 1->B,L
     (q3) edge [loop left] node {$0/0, L$} ()
          edge [loop above] node {$1/1, L$} ()
          edge node {$B/B, R$} (q0)
     (q4) edge [loop above] node {$0/0, R$} ()
          edge [loop below] node {$1/1, R$} ()
          edge node {$B/B, L$} (q5)
-    (q5) edge node {$0/B, L$} (q3) % Diagram Q5->Q3 is 1/B,L, and Q2->Q3 is 0/B,L. My Q5 is from Q4. Let's fix this for consistency with hand-drawn diagram.
-    % The diagram has a single Q5 and Q3 for going back.
-    % Q2 matches 0 and goes to Q3 (return)
-    % Q5 matches 1 and goes to Q3 (return)
-    % The diagram's Q5 is below Q4 (q4). So let's align.
-    % My states: Q0 (initial), Q1 (read 0, skip), Q2 (found blank after 0, check match), Q3 (matched 0, return to start).
-    % Q4 (read 1, skip), Q5 (found blank after 1, check match).
-    % The diagram has Q5 below Q4 and Q3 below Q2, and both Q2 and Q5 loop to Q3.
-    % Let's adjust based on the image:
-    % Q2 has edges 0/B,L to Q3 and 1/B,L to Q5.
-    % Q5 has edge 1/B,L to Q3.
-    % My Q2 is the one after reading 0. My Q5 is after reading 1.
-    % So in my logic:
-    % (q1) --B/B,L--> (q2) for 0-branch.
-    % (q4) --B/B,L--> (q5) for 1-branch.
-    % (q2) --0/B,L--> (q3)
-    % (q5) --1/B,L--> (q3)
-    % (q3) is the common state to return to Q0.
-    % So the diagram actually has Q2 as the state that reached blank, and Q5 as the state that reached blank.
-    % Then Q2 checks for 0, Q5 checks for 1. Let's re-map names to diagram.
-    % Diagram: q0 -> q1 (0), q0 -> q4 (1)
-    % q1 -> q1 (0,1), q1 -> q2 (B)
-    % q4 -> q4 (0,1), q4 -> q5 (B)
-    % q2 -> q3 (0), q2 -> q6 (1, reject if 0-branch sees 1) (This path is not an accept state)
-    % q5 -> q3 (1), q5 -> q6 (0, reject if 1-branch sees 0) (This path is not an accept state)
-    % q3 is the common return state for both branches.
-
-    % Let's use the provided image's states (q0 to q6):
-    % q0: initial state
-    % q1: after reading 0 (first char), skipping right
-    % q2: after q1, found Blank, moving L to match. Expects 0.
-    % q3: after q2 matched 0 or q5 matched 1, moving L to return.
-    % q4: after reading 1 (first char), skipping right
-    % q5: after q4, found Blank, moving L to match. Expects 1.
-    % q6: accepting state
-
-    % q0 (initial)
-    \path[->] (q0) edge node {$0/B, R$} (q1);
-    \path[->] (q0) edge node {$1/B, R$} (q4);
-    \path[->] (q0) edge node {$B/B, R$} (q6); % Accept empty string
-
-    % q1 (after 0, skip to end)
-    \path[->] (q1) edge [loop above] node {$0/0, R$} (q1);
-    \path[->] (q1) edge [loop below] node {$1/1, R$} (q1);
-    \path[->] (q1) edge node {$B/B, L$} (q2); % Reached end of string, go left
-
-    % q2 (match last char for 0)
-    \path[->] (q2) edge node {$0/B, L$} (q3); % Match 0, mark as B, go left
-    % If q2 finds 1, it's a mismatch (implicitly rejects)
-
-    % q3 (return to start)
-    \path[->] (q3) edge [loop above] node {$0/0, L$} (q3);
-    \path[->] (q3) edge [loop below] node {$1/1, L$} (q3);
-    \path[->] (q3) edge node {$B/B, R$} (q0); % Reached start of tape, go right to next char
-
-    % q4 (after 1, skip to end)
-    \path[->] (q4) edge [loop above] node {$0/0, R$} (q4);
-    \path[->] (q4) edge [loop below] node {$1/1, R$} (q4);
-    \path[->] (q4) edge node {$B/B, L$} (q5); % Reached end of string, go left
-
-    % q5 (match last char for 1)
-    \path[->] (q5) edge node {$1/B, L$} (q3); % Match 1, mark as B, go left
-    % If q5 finds 0, it's a mismatch (implicitly rejects)
+    (q5) edge node {$1/B, L$} (q3);
 \end{tikzpicture}
 
 \vspace{0.5cm}
@@ -333,24 +270,24 @@ Condizioni di rifiuto implicite: se non si trovano due 'b' per ogni 'a', o se l'
 
 \subsection{Esercizio 4: Linguaggio $L = \{w\#w \mid w \in \{a,b\}^+\}$}
 
-Vogliamo progettare una MT che decide il linguaggio di stringhe composte da una sequenza $w$, seguita da un separatore '#', e poi dalla stessa sequenza $w$. $w$ deve avere almeno un simbolo. Esempi: $a\#a$, $ab\#ab$, $baba\#baba$.
+Vogliamo progettare una MT che decide il linguaggio di stringhe composte da una sequenza $w$, seguita da un separatore '\#', e poi dalla stessa sequenza $w$. $w$ deve avere almeno un simbolo. Esempi: $a\#a$, $ab\#ab$, $baba\#baba$.
 
 \begin{example}[Strategia]
-La strategia si basa sul confronto carattere per carattere delle due metà della stringa, usando il '#' come punto di riferimento.
+La strategia si basa sul confronto carattere per carattere delle due metà della stringa, usando il '\#' come punto di riferimento.
 \begin{enumerate}
     \item Marcare il primo simbolo non marcato della prima $w$ (es. 'a' o 'b' con 'X').
-    \item Spostarsi a destra, saltando tutti i simboli intermedi, fino a trovare il '#'.
-    \item Superare il '#', e poi saltare i simboli già marcati ('X') nella seconda $w$.
+    \item Spostarsi a destra, saltando tutti i simboli intermedi, fino a trovare il '\#'.
+    \item Superare il '\#', e poi saltare i simboli già marcati ('X') nella seconda $w$.
     \item Trovare il simbolo corrispondente nella seconda $w$ (deve essere uguale a quello marcato nel passo 1), marcarlo (con 'X').
-    \item Spostarsi a sinistra, saltando tutti i simboli intermedi, fino a trovare il '#'.
-    \item Superare il '#', e poi saltare i simboli già marcati ('X') nella prima $w$.
+    \item Spostarsi a sinistra, saltando tutti i simboli intermedi, fino a trovare il '\#'.
+    \item Superare il '\#', e poi saltare i simboli già marcati ('X') nella prima $w$.
     \item Posizionarsi sul prossimo simbolo non marcato nella prima $w$ e ripetere il ciclo.
     \item Se tutti i simboli sono stati marcati correttamente, la stringa è accettata.
 \end{enumerate}
 \end{example}
 
 \noindent \textbf{Alfabeto del nastro $\Gamma = \{a, b, \#, X, B\}$.}
-\noindent \textbf{Stati:} $q_0$ (iniziale), $q_1$ (marcata 'a', cerca match), $q_2$ (dopo '#', salta 'X', cerca 'a'), $q_3$ (match trovato, torna indietro), $q_4$ (dopo '#', torna indietro a 'X'), $q_5$ (check finale 'X' prima di '#'), $q_6$ (marcata 'b', cerca match), $q_7$ (dopo '#', salta 'X', cerca 'b'), $q_8$ (dopo '#', check finale 'X' dopo '#'), $q_9$ (accettante).
+\noindent \textbf{Stati:} $q_0$ (iniziale), $q_1$ (marcata 'a', cerca match), $q_2$ (dopo '\#', salta 'X', cerca 'a'), $q_3$ (match trovato, torna indietro), $q_4$ (dopo '\#', torna indietro a 'X'), $q_5$ (check finale 'X' prima di '\#'), $q_6$ (marcata 'b', cerca match), $q_7$ (dopo '\#', salta 'X', cerca 'b'), $q_8$ (dopo '\#', check finale 'X' dopo '\#'), $q_9$ (accettante).
 
 \noindent \textbf{Transizioni:}
 \begin{itemize}
@@ -364,9 +301,9 @@ La strategia si basa sul confronto carattere per carattere delle due metà della
         \begin{itemize}
             \item $q_1 \xrightarrow{a / a, R} q_1$ (Salta 'a')
             \item $q_1 \xrightarrow{b / b, R} q_1$ (Salta 'b')
-            \item $q_1 \xrightarrow{\# / \#, R} q_2$ (Passa il separatore '#')
+            \item $q_1 \xrightarrow{\# / \#, R} q_2$ (Passa il separatore '\#')
         \end{itemize}
-    \item \textbf{Stato $q_2$ (Dopo '#', cerca 'a' in $w_2$):}
+    \item \textbf{Stato $q_2$ (Dopo '\#', cerca 'a' in $w_2$):}
         \begin{itemize}
             \item $q_2 \xrightarrow{X / X, R} q_2$ (Salta 'X' già marcate)
             \item $q_2 \xrightarrow{a / X, L} q_3$ (Trova 'a', marca con 'X', va a sinistra per tornare)
@@ -375,9 +312,9 @@ La strategia si basa sul confronto carattere per carattere delle due metà della
         \begin{itemize}
             \item $q_6 \xrightarrow{a / a, R} q_6$ (Salta 'a')
             \item $q_6 \xrightarrow{b / b, R} q_6$ (Salta 'b')
-            \item $q_6 \xrightarrow{\# / \#, R} q_7$ (Passa il separatore '#')
+            \item $q_6 \xrightarrow{\# / \#, R} q_7$ (Passa il separatore '\#')
         \end{itemize}
-    \item \textbf{Stato $q_7$ (Dopo '#', cerca 'b' in $w_2$):}
+    \item \textbf{Stato $q_7$ (Dopo '\#', cerca 'b' in $w_2$):}
         \begin{itemize}
             \item $q_7 \xrightarrow{X / X, R} q_7$ (Salta 'X' già marcate)
             \item $q_7 \xrightarrow{b / X, L} q_3$ (Trova 'b', marca con 'X', va a sinistra per tornare)
@@ -387,9 +324,9 @@ La strategia si basa sul confronto carattere per carattere delle due metà della
             \item $q_3 \xrightarrow{X / X, L} q_3$ (Salta 'X' già marcate)
             \item $q_3 \xrightarrow{a / a, L} q_3$ (Salta 'a')
             \item $q_3 \xrightarrow{b / b, L} q_3$ (Salta 'b')
-            \item $q_3 \xrightarrow{\# / \#, L} q_4$ (Passa il separatore '#')
+            \item $q_3 \xrightarrow{\# / \#, L} q_4$ (Passa il separatore '\#')
         \end{itemize}
-    \item \textbf{Stato $q_4$ (Dopo '#', torna all'inizio di $w_1$):}
+    \item \textbf{Stato $q_4$ (Dopo '\#', torna all'inizio di $w_1$):}
         \begin{itemize}
             \item $q_4 \xrightarrow{a / a, L} q_4$ (Salta 'a')
             \item $q_4 \xrightarrow{b / b, L} q_4$ (Salta 'b')
@@ -398,7 +335,7 @@ La strategia si basa sul confronto carattere per carattere delle due metà della
     \item \textbf{Stato $q_5$ (Controllo finale, parte $w_1$):}
         \begin{itemize}
             \item $q_5 \xrightarrow{X / X, R} q_5$ (Salta 'X' nella prima metà)
-            \item $q_5 \xrightarrow{\# / \#, R} q_8$ (Passa il separatore '#', ora controlla seconda metà)
+            \item $q_5 \xrightarrow{\# / \#, R} q_8$ (Passa il separatore '\#', ora controlla seconda metà)
         \end{itemize}
     \item \textbf{Stato $q_8$ (Controllo finale, parte $w_2$):}
         \begin{itemize}
