@@ -1,0 +1,300 @@
+\documentclass[a4paper]{article}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage[italian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[a4paper, total={6in, 8in}]{geometry}
+\usepackage{minted}
+\usepackage{mathpazo}
+\usepackage{fancyhdr}
+\usepackage{amsthm}
+\usepackage{tikz}
+\usetikzlibrary{automata,positioning,arrows.meta} % Added arrows.meta for better arrow styles
+
+% Definizione degli ambienti
+\newtheorem{theorem}{Teorema}[section]
+\newtheorem{definition}{Definizione}[section]
+\newtheorem{example}{Esempio}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{proposition}{Proposizione}[section]
+
+\hypersetup{
+    pdftitle={Lezione di Informatica Teorica},
+    pdfauthor={Appunti da Trascrizione AI},
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=cyan,
+    citecolor=green
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textit{Lezione di Informatica Teorica}}
+\fancyfoot[C]{\thepage}
+
+\title{Lezione di Informatica Teorica: Complessità Strutturale}
+\author{Appunti da Trascrizione Automatica}
+\date{\today}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+
+\section{Introduzione alla Complessità Strutturale}
+
+Finora, il corso si è occupato principalmente di decidibilità, ovvero di stabilire se un dato problema (linguaggio) è risolvibile o meno (se appartiene a $R$, $RE$, $coRE$, o nessuno dei due).
+L'ultima lezione ha introdotto problemi indecidibili, alcuni più "difficili" di altri (es. il complemento di $HALT$ è in $coRE$, ma $HALT$ non è in $R$). Tali problemi rientrano nel campo della teoria della ricorsione e della logica matematica.
+
+Da questo momento in poi, l'attenzione si sposterà all'interno della classe $R$ (problemi ricorsivi o decidibili).
+\begin{center}
+\begin{tikzpicture}[scale=0.8]
+    \draw (0,0) ellipse (3cm and 2cm);
+    \node at (2.5,1.5) {$R$};
+    \fill[pattern=north east lines, pattern color=blue!30] (0,0) ellipse (1.5cm and 1cm);
+    \node at (0,0) {\tiny (focus attuale)};
+\end{tikzpicture}
+\end{center}
+L'obiettivo è categorizzare i problemi decidibili in base alla loro \emph{complessità computazionale}, ovvero quanto tempo e/o spazio è richiesto per risolverli. Questo studio prende il nome di \textbf{Complessità Strutturale}.
+
+Storicamente, lo studio della decidibilità ha preceduto quello della complessità. Negli anni '30, con i lavori di Turing, l'interesse era capire cosa le macchine astratte (come le Macchine di Turing) potessero risolvere. Con l'avvento dei primi computer reali negli anni '40 (ENIAC, EDVAC), divenne evidente che alcuni problemi erano più veloci da risolvere di altri, spingendo la necessità di una teoria formale per quantificare questa differenza.
+I lavori seminali sulla complessità computazionale delle Macchine di Turing furono pubblicati nel 1965 da Hartmanis, Stearns e Lewis.
+
+\section{Nozioni di Complessità Temporale}
+
+Definiamo formalmente il tempo di esecuzione per le Macchine di Turing.
+
+\begin{definition}[Computation Time]
+Sia $M$ una Macchina di Turing e $w$ una stringa in input per $M$.
+\begin{itemize}
+    \item Se $M$ è \textbf{deterministica}: il \textbf{computation time} di $M$ su $w$ è il numero di passi che $M$ esegue prima di arrestarsi su $w$.
+    \item Se $M$ è \textbf{non-deterministica}: il \textbf{computation time} di $M$ su $w$ è la lunghezza del \emph{branch di computazione più lungo} (il cammino più lungo nell'albero di computazione di $M$ su $w$).
+\end{itemize}
+\end{definition}
+
+\begin{definition}[Time Function]
+Una funzione $t: \mathbb{N} \to \mathbb{N}$ è detta \textbf{time function} se è non-decrescente e strettamente positiva.
+\begin{itemize}
+    \item \textbf{Non-decrescente}: Se l'input è più grande, il tempo richiesto non diminuisce.
+    \item \textbf{Strettamente positiva}: Il tempo richiesto è sempre maggiore di zero.
+\end{itemize}
+\end{definition}
+
+\begin{definition}[Running Time di una Macchina di Turing]
+Sia $t(n)$ una time function. Una Macchina di Turing $M$ ha \textbf{running time} $t(n)$ se, per tutte le stringhe $w$ in input (a parte un numero finito di esse), il computation time di $M$ su $w$ non eccede $t(|w|)$ (dove $|w|$ è la lunghezza di $w$).
+\end{definition}
+In altre parole, il running time è una stima funzionale del tempo di esecuzione di una macchina, in funzione della dimensione dell'input. Questo concetto è simile alla complessità degli algoritmi che avete studiato.
+
+\subsection{Notazione Asintotica}
+Per esprimere i running time in modo indipendente dalle costanti e concentrarsi sul tasso di crescita, usiamo la notazione asintotica.
+
+\begin{definition}[Big O ($O$)]
+Date due funzioni $f, g: \mathbb{N} \to \mathbb{N}$, diciamo che $f(n) \in O(g(n))$ (o $f(n)$ è $O(g(n))$) se esistono costanti positive $c$ e $n_0$ tali che per ogni $n \ge n_0$, si ha $f(n) \le c \cdot g(n)$.
+\end{definition}
+\textbf{Intuizione:} $f(n)$ cresce al più velocemente quanto $g(n)$ (cioè $g(n)$ è un \emph{upper bound} asintotico per $f(n)$).
+
+\begin{center}
+\begin{tikzpicture}[scale=0.7]
+    \draw[->] (0,0) -- (6,0) node[below] {$n$};
+    \draw[->] (0,0) -- (0,5) node[left] {$f(n), c \cdot g(n)$};
+    
+    % Draw f(n)
+    \draw[smooth,samples=100,domain=0:6] plot(\x, {0.5*sin(deg(2*\x))+0.5*\x+1});
+    \node at (5.5, 3) [above right] {$f(n)$};
+    
+    % Draw c*g(n)
+    \draw[smooth,samples=100,domain=0:6, red] plot(\x, {0.8*\x+2});
+    \node at (5.5, 4) [above right] {$c \cdot g(n)$};
+    
+    % Mark n0
+    \draw[dashed] (3,0) node[below] {$n_0$} -- (3,3.5);
+    \draw[dotted,red] (3,3.5) -- (0,3.5);
+\end{tikzpicture}
+\end{center}
+
+\begin{definition}[Big Omega ($\Omega$)]
+Date due funzioni $f, g: \mathbb{N} \to \mathbb{N}$, diciamo che $f(n) \in \Omega(g(n))$ (o $f(n)$ è $\Omega(g(n))$) se esistono costanti positive $c$ e $n_0$ tali che per ogni $n \ge n_0$, si ha $f(n) \ge c \cdot g(n)$.
+\end{definition}
+\textbf{Intuizione:} $f(n)$ cresce almeno velocemente quanto $g(n)$ (cioè $g(n)$ è un \emph{lower bound} asintotico per $f(n)$).
+
+\begin{center}
+\begin{tikzpicture}[scale=0.7]
+    \draw[->] (0,0) -- (6,0) node[below] {$n$};
+    \draw[->] (0,0) -- (0,5) node[left] {$f(n), c \cdot g(n)$};
+    
+    % Draw f(n)
+    \draw[smooth,samples=100,domain=0:6] plot(\x, {0.8*\x+2});
+    \node at (5.5, 4) [above right] {$f(n)$};
+    
+    % Draw c*g(n)
+    \draw[smooth,samples=100,domain=0:6, red] plot(\x, {0.5*sin(deg(2*\x))+0.5*\x+1});
+    \node at (5.5, 3) [above right] {$c \cdot g(n)$};
+    
+    % Mark n0
+    \draw[dashed] (3,0) node[below] {$n_0$} -- (3,3.5);
+    \draw[dotted,red] (3,3.5) -- (0,3.5);
+\end{tikzpicture}
+\end{center}
+
+\begin{definition}[Big Theta ($\Theta$)]
+Date due funzioni $f, g: \mathbb{N} \to \mathbb{N}$, diciamo che $f(n) \in \Theta(g(n))$ (o $f(n)$ è $\Theta(g(n))$) se $f(n) \in O(g(n))$ e $f(n) \in \Omega(g(n))$.
+\end{definition}
+\textbf{Intuizione:} $f(n)$ e $g(n)$ hanno lo stesso tasso di crescita asintotico.
+
+\begin{theorem}[Linear Speedup (menzionato)]
+Per ogni Macchina di Turing $M$ che opera in tempo $t(n)$, e per ogni costante $c > 0$, esiste un'altra Macchina di Turing $M'$ che opera in tempo $t(n)/c$.
+Questo teorema implica che le costanti moltiplicative nel running time non sono significative quando si parla di classi di complessità, poiché si possono sempre "compattare" più simboli sul nastro per accelerare la computazione.
+\end{theorem}
+
+\subsection{Complessità Temporale dei Problemi}
+I concetti di Big O e Big Omega ci permettono di definire la complessità temporale dei problemi stessi, non solo degli algoritmi.
+
+\begin{definition}[Time Complexity Upper Bound di un Problema]
+Il \textbf{time complexity upper bound} di un problema $P$ è $O(f(n))$ se \emph{esiste almeno un algoritmo} che risolve $P$ con un running time $O(f(n))$.
+\end{definition}
+\begin{example}
+Il problema dell'ordinamento di array:
+\begin{itemize}
+    \item È $O(n^2)$? Sì, (es. Bubble Sort).
+    \item È $O(2^n)$? Sì, (es. Bubble Sort è anche $O(2^n)$, è un upper bound molto lasco ma valido).
+    \item È $O(n \log n)$? Sì, (es. Merge Sort).
+    \item È $O(n)$? No, si può dimostrare che non esiste un algoritmo di ordinamento basato su confronti che sia $O(n)$.
+\end{itemize}
+\end{example}
+
+\begin{definition}[Time Complexity Lower Bound di un Problema]
+Il \textbf{time complexity lower bound} di un problema $P$ è $\Omega(f(n))$ se \emph{tutti gli algoritmi} che risolvono $P$ hanno un running time $\Omega(f(n))$.
+\end{definition}
+\begin{example}
+Il problema dell'ordinamento di array:
+\begin{itemize}
+    \item È $\Omega(n)$? Sì, tutti gli algoritmi devono almeno leggere tutti gli elementi.
+    \item È $\Omega(n \log n)$? Sì, è dimostrato che questo è il lower bound per algoritmi basati su confronti.
+    \item È $\Omega(n^2)$? No, perché esistono algoritmi (es. Merge Sort) che sono $O(n \log n)$, quindi non tutti gli algoritmi sono $\Omega(n^2)$.
+\end{itemize}
+\end{example}
+
+\subsection{Problemi Trattabili vs. Intratttabili}
+Basandoci sulla complessità temporale, i problemi possono essere classificati in:
+\begin{itemize}
+    \item \textbf{Problemi Trattabili (o Facili)}: Sono problemi il cui time complexity upper bound è \emph{polinomiale}.
+    \item \textbf{Problemi Intratttabili (o Difficili)}: Sono problemi per i quali \emph{non esiste} (o non si è ancora dimostrato che esista) un algoritmo con running time polinomiale. Questi problemi generalmente richiedono tempo esponenziale.
+\end{itemize}
+\textbf{Nota:} Un algoritmo $O(n^{1000})$ è teoricamente polinomiale, ma impraticabile per grandi $n$. Tuttavia, algoritmi esponenziali (es. $O(2^n)$) diventano ingestibili molto più rapidamente con l'aumentare di $n$ rispetto a qualsiasi polinomio.
+
+\section{Classi di Complessità Temporale}
+
+Il prossimo passo è definire classi formali di problemi basate sulla loro complessità temporale, all'interno di $R$.
+
+\begin{definition}[Classe DTIME($t(n)$)]
+Sia $t(n)$ una time function. La classe di complessità \textbf{DTIME($t(n)$)} è l'insieme di tutti i linguaggi $L$ tali che esiste una Macchina di Turing \emph{deterministica} $M$ che decide $L$ con un running time $O(t(n))$.
+\end{definition}
+La 'D' in DTIME sta per "Deterministica".
+
+\begin{definition}[Classe P (Polynomial Time)]
+La classe \textbf{P} è l'unione di tutte le classi DTIME($n^c$) per ogni costante $c \ge 1$:
+\[ P = \bigcup_{c \ge 1} \text{DTIME}(n^c) \]
+\end{definition}
+\textbf{Nota Importante}: La classe P contiene \emph{esclusivamente problemi di decisione}. Problemi di calcolo (es. sommare due numeri) o di ottimizzazione (es. ordinare un array) non appartengono a P per definizione, sebbene gli algoritmi per risolverli possano avere complessità polinomiale.
+
+\subsection{Esempi di Problemi in P}
+
+\begin{example}[Reachability (Raggiungibilità)]
+\begin{itemize}
+    \item \textbf{Problema di Decisione}: Dato un grafo diretto $G=(V, E)$ e due nodi $s, t \in V$, esiste un percorso da $s$ a $t$ in $G$?
+    \item \textbf{Linguaggio}: $L_{\text{Reach}} = \{ (G, s, t) \mid G \text{ è un grafo diretto, } s, t \in V(G), \text{ e esiste un percorso da } s \text{ a } t \text{ in } G \}$.
+    \item \textbf{Algoritmo}: È possibile risolvere Reachability usando algoritmi come la Breadth-First Search (BFS) o la Depth-First Search (DFS).
+        \begin{itemize}
+            \item \textbf{Funzionamento intuitivo di BFS/DFS}: Si parte dal nodo $s$, si visitano tutti i nodi adiacenti, poi i nodi adiacenti dei nodi visitati, e così via, segnando i nodi già visitati per evitare cicli. Se $t$ viene raggiunto, la risposta è "sì".
+            \item \textbf{Complessità}: La BFS/DFS ha una complessità temporale di $O(V+E)$ (dove $V$ è il numero di vertici ed $E$ è il numero di archi), che è polinomiale nella dimensione del grafo (input).
+        \end{itemize}
+    \item \textbf{Conclusione}: Poiché esiste un algoritmo deterministico con complessità polinomiale, $L_{\text{Reach}} \in P$.
+\end{itemize}
+\end{example}
+
+\begin{example}[PRIMES]
+\begin{itemize}
+    \item \textbf{Problema di Decisione}: Dato un intero $n$ (rappresentato in binario), è $n$ un numero primo?
+    \item \textbf{Linguaggio}: $L_{\text{Primes}} = \{ \langle n \rangle \mid n \in \mathbb{N} \text{ e } n \text{ è primo} \}$, dove $\langle n \rangle$ è la rappresentazione binaria di $n$.
+    \item \textbf{Algoritmo Naïf (Test di Divisione)}: Per verificare se $n$ è primo, si può tentare di dividerlo per tutti gli interi da $2$ fino a $\sqrt{n}$.
+        \begin{itemize}
+            \item \textbf{Numero di Divisioni}: Circa $\sqrt{n}$.
+            \item \textbf{Costo di ogni Divisione}: Per numeri grandi, una divisione non è una operazione a costo costante, ma richiede tempo polinomiale nella lunghezza dei numeri coinvolti.
+            \item \textbf{Complessità Totale}: Il numero di divisioni è $\sqrt{n}$. Se l'input è la stringa binaria $\langle n \rangle$, la sua lunghezza è $L = |\langle n \rangle| \approx \log_2 n$. Quindi $n \approx 2^L$. Il numero di divisioni è $\sqrt{n} = \sqrt{2^L} = 2^{L/2}$.
+            \item \textbf{Conclusione sul Naïf}: Questo algoritmo è \emph{esponenziale} nella lunghezza dell'input ($L$), non polinomiale. \emph{Attenzione}: un errore comune è confondere il valore dell'input con la sua lunghezza. Contare fino a $n$ o iterare $n$ volte è esponenziale se $n$ è dato in binario.
+        \end{itemize}
+    \item \textbf{Risultato Moderno}: Nonostante l'algoritmo naïf sia esponenziale, il problema PRIMES è stato dimostrato essere in P nel 2002 (Algoritmo AKS, Agrawal, Kayal, Saxena). La sua complessità è $O(L^k)$ per un $k$ piccolo (es. $O(L^6)$ o $O(L^{12})$), rendendolo un problema polinomiale. Tuttavia, in pratica si preferiscono algoritmi randomizzati più veloci (es. Miller-Rabin).
+\end{itemize}
+\end{example}
+
+\section{Complessità Temporale Non-Deterministica}
+Alcuni problemi, pur sembrando difficili con algoritmi deterministici, beneficiano enormemente del non-determinismo.
+
+\begin{example}[SAT (Boolean Satisfiability)]
+\begin{itemize}
+    \item \textbf{Formule in Forma Normale Congiuntiva (CNF)}: Una formula CNF è una congiunzione di clausole, dove ogni clausola è una disgiunzione di letterali. Un letterale è una variabile booleana o la sua negazione (es. $(x_1 \lor x_2 \lor \neg x_3) \land (\neg x_2 \lor x_4) \land (\neg x_3 \lor x_5 \lor \neg x_6)$).
+    \item \textbf{Problema di Decisione}: Data una formula $\phi$ in CNF, è $\phi$ soddisfacibile (esiste un assegnamento di verità alle variabili che rende $\phi$ vera)?
+    \item \textbf{Linguaggio}: $L_{\text{SAT}} = \{ \phi \mid \phi \text{ è una formula CNF e } \phi \text{ è soddisfacibile} \}$.
+    \item \textbf{Verifica di un Assegnamento}: Se ci viene dato un assegnamento di verità, verificare se soddisfa la formula richiede tempo polinomiale (lineare nella lunghezza della formula).
+    \item \textbf{Algoritmo Naïf Deterministico}: Testare tutti i possibili assegnamenti di verità. Se ci sono $n$ variabili, ci sono $2^n$ assegnamenti. Ognuno richiede tempo polinomiale per la verifica.
+    \item \textbf{Complessità Naïf}: $O(2^n \cdot \text{poly}(|\phi|))$. Questo è esponenziale.
+\end{itemize}
+\end{example}
+
+\begin{example}[Independent Set (Insieme Indipendente)]
+\begin{itemize}
+    \item \textbf{Definizione}: Dato un grafo non diretto $G=(V, E)$, un \emph{independent set} è un sottoinsieme di vertici $S \subseteq V$ tale che nessun vertice in $S$ è collegato da un arco a un altro vertice in $S$.
+    \item \textbf{Problema di Decisione}: Dato un grafo $G$ e un intero $k$, esiste un independent set in $G$ di dimensione almeno $k$?
+    \item \textbf{Linguaggio}: $L_{\text{IS}} = \{ (G, k) \mid G \text{ è un grafo e esiste un independent set di taglia } \ge k \text{ in } G \}$.
+    \item \textbf{Verifica di un Insieme}: Dato un sottoinsieme di vertici $S$, verificare se è un independent set di taglia $\ge k$ richiede tempo polinomiale (es. $O(V^2)$ o $O(V+E)$).
+    \item \textbf{Algoritmo Naïf Deterministico}: Testare tutti i possibili sottoinsiemi di vertici di dimensione $\ge k$. Il numero di tali sottoinsiemi può essere $\binom{V}{k}$, che è esponenziale in $V$.
+    \item \textbf{Complessità Naïf}: Esponenziale.
+\end{itemize}
+\end{example}
+
+\subsection{Il Potere del Non-Determinismo}
+I problemi come SAT e Independent Set, pur essendo esponenziali per algoritmi deterministici naïf, diventano molto più "facili" se si introduce il non-determinismo.
+
+\textbf{Algoritmo Non-Deterministico per SAT}:
+\begin{enumerate}
+    \item \textbf{Fase di Guess (Indovina)}: Una Macchina di Turing non-deterministica "indovina" (o genera non-deterministicamente) un assegnamento di verità per le variabili della formula $\phi$. Questo può essere fatto in tempo \emph{lineare} ($O(n)$ dove $n$ è il numero di variabili). Concettualmente, la macchina crea un branch per ogni possibile scelta di valore (vero/falso) per ogni variabile.
+    \item \textbf{Fase di Check (Verifica)}: Successivamente, la macchina verifica in modo deterministico se l'assegnamento indovinato soddisfa effettivamente la formula $\phi$. Come visto, questa fase richiede tempo \emph{polinomiale} nella lunghezza di $\phi$.
+\end{enumerate}
+Il computation time per questo algoritmo non-deterministico è la somma del tempo di guess e del tempo di check, risultando in un tempo \emph{polinomiale}.
+
+\textbf{Algoritmo Non-Deterministico per Independent Set}:
+\begin{enumerate}
+    \item \textbf{Fase di Guess (Indovina)}: Una Macchina di Turing non-deterministica "indovina" un sottoinsieme di vertici $S \subseteq V$. Questo può essere fatto in tempo \emph{lineare} ($O(V)$).
+    \item \textbf{Fase di Check (Verifica)}: La macchina verifica in modo deterministico se il sottoinsieme $S$ indovinato è un independent set e se la sua dimensione è almeno $k$. Questo richiede tempo \emph{polinomiale} (es. $O(V^2)$).
+\end{enumerate}
+Anche in questo caso, il computation time è polinomiale.
+
+\begin{definition}[Classe NTIME($t(n)$)]
+Sia $t(n)$ una time function. La classe di complessità \textbf{NTIME($t(n)$)} è l'insieme di tutti i linguaggi $L$ tali che esiste una Macchina di Turing \emph{non-deterministica} $M$ che decide $L$ con un running time $O(t(n))$.
+\end{definition}
+La 'N' in NTIME sta per "Non-Deterministica".
+
+\begin{definition}[Classe NP (Nondeterministic Polynomial Time)]
+La classe \textbf{NP} è l'unione di tutte le classi NTIME($n^c$) per ogni costante $c \ge 1$:
+\[ NP = \bigcup_{c \ge 1} \text{NTIME}(n^c) \]
+\end{definition}
+\textbf{Nota Importante}: NP sta per \emph{Nondeterministic Polynomial} e non per "Non Polinomiale". La classe NP contiene tutti i problemi di decisione che possono essere risolti da una macchina di Turing non-deterministica in tempo polinomiale.
+Esempi di problemi in NP includono SAT, Independent Set, Knapsack, Hamiltonian Cycle, Traveling Salesperson Problem e molti altri problemi che sono centrali nell'informatica teorica e pratica.
+
+\begin{center}
+\begin{tabular}{|l|l|l|}
+\hline
+\textbf{Classe} & \textbf{Tipo di Macchina} & \textbf{Running Time} \\
+\hline
+DTIME($t(n)$) & Deterministica & $O(t(n))$ \\
+P & Deterministica & $O(n^c)$ per qualche $c \ge 1$ \\
+NTIME($t(n)$) & Non-deterministica & $O(t(n))$ \\
+NP & Non-deterministica & $O(n^c)$ per qualche $c \ge 1$ \\
+\hline
+\end{tabular}
+\end{center}
+
+La relazione tra P e NP è una delle questioni più importanti e irrisolte dell'informatica: $P \stackrel{?}{=} NP$.
+
+\end{document}

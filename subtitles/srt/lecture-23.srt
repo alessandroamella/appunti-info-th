@@ -1,0 +1,6219 @@
+1
+00:00:10,520 --> 00:00:13,590
+[Musica]
+
+2
+00:00:15,599 --> 00:00:19,160
+Ok, oggi andiamo un po' avanti.
+
+3
+00:00:19,160 --> 00:00:21,560
+Questo è vista tutta vista, non vista,
+
+4
+00:00:21,560 --> 00:00:24,560
+vista.
+
+5
+00:00:25,439 --> 00:00:27,640
+Teorema di Cook l'avete capito? Era
+
+6
+00:00:27,640 --> 00:00:31,000
+difficile, eh.
+
+7
+00:00:33,260 --> 00:00:35,680
+[Musica]
+
+8
+00:00:35,680 --> 00:00:39,079
+Si capiva, eh, era digeribile. Ok, spero
+
+9
+00:00:39,079 --> 00:00:40,920
+di averlo infatti rimodulato in un
+
+10
+00:00:40,920 --> 00:00:43,879
+formato che fosse comprensibile.
+
+11
+00:00:43,879 --> 00:00:47,559
+Ok, quindi oggi andiamo un po' avanti,
+
+12
+00:00:47,559 --> 00:00:51,800
+iniziamo a vedere cose nuove.
+
+13
+00:00:52,760 --> 00:00:55,840
+Ok. Definizione di classe NP. Cosa ci
+
+14
+00:00:55,840 --> 00:00:59,199
+sta in NP?
+
+15
+00:01:05,600 --> 00:01:08,360
+Se vede
+
+16
+00:01:08,360 --> 00:01:12,119
+che ci sta in NP.
+
+17
+00:01:18,080 --> 00:01:20,240
+I problemi
+
+18
+00:01:20,240 --> 00:01:25,960
+di
+di decisione problemi di decisione
+
+19
+00:01:33,200 --> 00:01:36,240
+polinomiale deterministico. Ok? Il check
+
+20
+00:01:36,240 --> 00:01:40,119
+è deterministico. Ok? Consideriamo,
+
+21
+00:01:40,119 --> 00:01:43,960
+quindi lo ricordate tutti, quindi cos'è?
+
+22
+00:01:43,960 --> 00:01:48,040
+NP. Ok, consideriamo questo problema.
+
+23
+00:01:48,399 --> 00:01:51,920
+data una formula f
+
+24
+00:01:51,920 --> 00:01:54,680
+è una
+
+25
+00:01:54,680 --> 00:01:57,680
+formula
+
+26
+00:01:58,200 --> 00:02:01,600
+in CNF
+
+27
+00:02:05,759 --> 00:02:09,600
+non soddisfacile.
+
+28
+00:02:15,040 --> 00:02:17,120
+Ok? Quindi il linguaggio ANSAT è il
+
+29
+00:02:17,120 --> 00:02:20,560
+linguaggio simile a SAP
+
+30
+00:02:20,560 --> 00:02:22,160
+che è l'insieme delle stringhe che
+
+31
+00:02:22,160 --> 00:02:24,560
+codificano formule buleane in CNF che
+
+32
+00:02:24,560 --> 00:02:27,480
+non siano soddisfacbili. Ok? Che
+
+33
+00:02:27,480 --> 00:02:29,040
+significa che una formula è non
+
+34
+00:02:29,040 --> 00:02:32,040
+soddisfacbile?
+
+35
+00:02:34,720 --> 00:02:36,319
+Che non esiste un segnamento di
+
+36
+00:02:36,319 --> 00:02:39,120
+variabili tale che la formula sia.
+
+37
+00:02:39,120 --> 00:02:41,599
+Esattamente. Ok. Questo problema sta in
+
+38
+00:02:41,599 --> 00:02:44,599
+NP.
+
+39
+00:02:54,000 --> 00:02:56,400
+Prendetemi un po' di tempo per pensare.
+
+40
+00:02:56,400 --> 00:03:02,360
+Sì,
+sì,
+perché SAT è decidibile
+
+41
+00:03:02,360 --> 00:03:05,519
+e quindi anche e ha un SAAT che è il
+
+42
+00:03:05,519 --> 00:03:07,720
+problema dovrebbe essere decidibile.
+Eh,
+
+43
+00:03:07,720 --> 00:03:09,560
+è indecidibile, ma la mia domanda non è
+
+44
+00:03:09,560 --> 00:03:12,080
+se Ansat è decidibile o meno. La mia
+
+45
+00:03:12,080 --> 00:03:16,799
+domanda è: ma Ansat sta in NP?
+
+46
+00:03:16,799 --> 00:03:18,400
+Per stare in NP ci deve stare una
+
+47
+00:03:18,400 --> 00:03:19,840
+macchina non deterministica che è in
+
+48
+00:03:19,840 --> 00:03:21,760
+grado di decidere il problema in tempo
+
+49
+00:03:21,760 --> 00:03:26,480
+polinomiale. Siamo in grado di farlo?
+
+50
+00:03:30,879 --> 00:03:33,720
+Ah! Ah!
+
+51
+00:03:33,720 --> 00:03:36,840
+Ok. E se invece noi che avete sentito il
+
+52
+00:03:36,840 --> 00:03:40,080
+commento del nostro collega è no, non è
+
+53
+00:03:40,080 --> 00:03:42,760
+NP perché per e per rispondere sì la
+
+54
+00:03:42,760 --> 00:03:45,159
+formula non è soddisfacile, allora noi
+
+55
+00:03:45,159 --> 00:03:48,519
+dovremmo essere sicuri che qualsiasi
+
+56
+00:03:48,519 --> 00:03:53,120
+assegnamento di verità che eh noi
+
+57
+00:03:53,120 --> 00:03:54,400
+possiamo dare alle variabili che
+
+58
+00:03:54,400 --> 00:03:56,000
+compaiono nella formula, qualsiasi
+
+59
+00:03:56,000 --> 00:03:58,400
+assegnamento di verità non la soddisfa e
+
+60
+00:03:58,400 --> 00:03:59,680
+quindi noi non è che lo possiamo
+
+61
+00:03:59,680 --> 00:04:03,360
+gessare. Ok? Ma questo è un ragionamento
+
+62
+00:04:03,360 --> 00:04:05,720
+che ci sta, eh, che dice "Ok, questo
+
+63
+00:04:05,720 --> 00:04:08,680
+approccio è è non
+
+64
+00:04:08,680 --> 00:04:12,200
+è non perseguibile". Ok. Che ne pare di
+
+65
+00:04:12,200 --> 00:04:14,480
+questa macchina?
+
+66
+00:04:14,480 --> 00:04:17,600
+Noi gessiamo
+
+67
+00:04:17,600 --> 00:04:21,120
+un assegnamento di verità,
+
+68
+00:04:21,120 --> 00:04:24,919
+ok? Per le variabili nella formula. Poi
+
+69
+00:04:24,919 --> 00:04:29,360
+verifichiamo che non soddisfa la formula
+
+70
+00:04:29,360 --> 00:04:30,880
+e rispondiamo sì. Questa cosa
+
+71
+00:04:30,880 --> 00:04:33,880
+funzionerebbe?
+
+72
+00:04:34,520 --> 00:04:37,479
+Facciamo un guess di un assegnamento di
+
+73
+00:04:37,479 --> 00:04:41,240
+verità per le variabili della formula.
+
+74
+00:04:41,240 --> 00:04:44,120
+Verifichiamo che l'assegnamento non
+
+75
+00:04:44,120 --> 00:04:46,840
+soddisfi la formula e poi rispondiamo
+
+76
+00:04:46,840 --> 00:04:51,160
+sì. Questo questa macchina decide Ansat
+
+77
+00:04:51,160 --> 00:04:59,759
+o no?
+No.
+No. Sì. No.
+No. Cosa decide?
+
+78
+00:05:01,320 --> 00:05:05,120
+se esiste affazione qualsiasi
+e decide
+
+79
+00:05:05,120 --> 00:05:09,960
+se questa macchina decide se dato esiste
+
+80
+00:05:09,960 --> 00:05:12,479
+una formula mette un assegnamento che
+
+81
+00:05:12,479 --> 00:05:15,960
+non la soddisfa. Ok?
+
+82
+00:05:15,960 --> 00:05:20,759
+Quindi se noi chiamiamo tautologi
+
+83
+00:05:21,160 --> 00:05:23,120
+l'insieme delle tautologie, no?
+
+84
+00:05:23,120 --> 00:05:28,720
+l'insieme delle formule F in CNF
+
+85
+00:05:28,720 --> 00:05:33,960
+che sono tautologie.
+
+86
+00:05:35,680 --> 00:05:37,360
+Vi ricordate
+
+87
+00:05:37,360 --> 00:05:41,400
+cos'è una formula tautologica?
+
+88
+00:05:41,720 --> 00:05:43,440
+Qualsiasi assegnamento di verità la
+
+89
+00:05:43,440 --> 00:05:46,600
+soddisfi. Ok? Quindi una macchina
+
+90
+00:05:46,600 --> 00:05:50,880
+che faccia un guess di un assegnamento
+
+91
+00:05:50,880 --> 00:05:53,240
+per la formula fifica che questo
+
+92
+00:05:53,240 --> 00:05:56,360
+assegnamento non soddisfa F, in realtà
+
+93
+00:05:56,360 --> 00:05:59,560
+sta decidendo il complemento di
+
+94
+00:05:59,560 --> 00:06:01,160
+Tautology.
+
+95
+00:06:01,160 --> 00:06:05,759
+Ok? Quindi è un problema
+
+96
+00:06:05,759 --> 00:06:07,800
+di rilievo o meno, dipende un po' da
+
+97
+00:06:07,800 --> 00:06:09,360
+quello che ci serve, però questa
+
+98
+00:06:09,360 --> 00:06:13,800
+macchina, ok? cheessa un assegnamento di
+
+99
+00:06:13,800 --> 00:06:18,599
+verità e verifica che la formula non è
+
+100
+00:06:18,599 --> 00:06:20,960
+soddisfatta, in realtà sta semplicemente
+
+101
+00:06:20,960 --> 00:06:22,840
+decidendo
+
+102
+00:06:22,840 --> 00:06:25,560
+il complemento del linguaggio delle
+
+103
+00:06:25,560 --> 00:06:28,360
+tautologie. Ok?
+
+104
+00:06:28,360 --> 00:06:30,479
+In effetti questo problema è un po'
+
+105
+00:06:30,479 --> 00:06:32,160
+particolare, come ci diceva il nostro
+
+106
+00:06:32,160 --> 00:06:34,160
+collega, noi non è che possiamo
+
+107
+00:06:34,160 --> 00:06:37,360
+rispondere sì se troviamo un
+
+108
+00:06:37,360 --> 00:06:41,120
+assegnamento di verità che
+
+109
+00:06:41,120 --> 00:06:43,440
+soddisf che non soddisfa la formula. Noi
+
+110
+00:06:43,440 --> 00:06:45,800
+possiamo rispondere sì, questa formula
+
+111
+00:06:45,800 --> 00:06:48,199
+file non è soddisfaci
+
+112
+00:06:48,199 --> 00:06:50,880
+tutti gli assegnamenti, l'intrizione è
+
+113
+00:06:50,880 --> 00:06:55,080
+questa, e se tutti gli assegnamenti
+
+114
+00:06:55,560 --> 00:06:57,039
+alle variabili buuleane che
+
+115
+00:06:57,039 --> 00:07:00,000
+costituiscono fai non soddisfino la
+
+116
+00:07:00,000 --> 00:07:02,560
+formula. Ok? Quindi in qualche modo noi
+
+117
+00:07:02,560 --> 00:07:07,840
+vorremmo che tutti i patione
+
+118
+00:07:07,840 --> 00:07:09,639
+di questa macchina non deterministica
+
+119
+00:07:09,639 --> 00:07:12,759
+siano rifiutanti per poter dire sì. Sì,
+
+120
+00:07:12,759 --> 00:07:15,160
+questa formula non è soddisfacile quando
+
+121
+00:07:15,160 --> 00:07:17,319
+sappiamo che in qualsiasi modo proviamo
+
+122
+00:07:17,319 --> 00:07:20,000
+a gessare non siamo mai in grado di
+
+123
+00:07:20,000 --> 00:07:22,759
+soddisfarlo. Ok? Allora, in effetti
+
+124
+00:07:22,759 --> 00:07:26,639
+questo problema che è un po' particolare
+
+125
+00:07:26,639 --> 00:07:33,680
+è un esempio di una classe diversa da NP
+
+126
+00:07:33,680 --> 00:07:40,080
+che introduciamo ora ed è la classe CNP.
+
+127
+00:07:43,680 --> 00:07:46,879
+Che cos'è la classe QNP?
+
+128
+00:07:46,879 --> 00:07:53,639
+Similmente a come avevamo definito CO R.
+
+129
+00:07:53,639 --> 00:07:56,360
+La classe CNP
+
+130
+00:07:56,360 --> 00:07:59,840
+è la classe dei linguaggi L i cui
+
+131
+00:07:59,840 --> 00:08:04,400
+complementi stanno in NP. Ok? Questa è
+
+132
+00:08:04,400 --> 00:08:08,759
+la definizione di CNP. ci stanno tutta
+
+133
+00:08:08,759 --> 00:08:11,400
+una serie di problemi interessanti,
+
+134
+00:08:11,400 --> 00:08:14,039
+però sostanzialmente questa classe è
+
+135
+00:08:14,039 --> 00:08:17,120
+definita come i complementi dei
+
+136
+00:08:17,120 --> 00:08:20,800
+linguaggi in NP. Ok?
+
+137
+00:08:20,800 --> 00:08:24,319
+Quindi, ad esempio, ansat
+
+138
+00:08:24,319 --> 00:08:29,560
+è un problema della classe CNP
+
+139
+00:08:29,560 --> 00:08:31,520
+perché il suo complemento, il
+
+140
+00:08:31,520 --> 00:08:34,800
+complemento di Ansat e SAT sta in NP.
+
+141
+00:08:34,800 --> 00:08:37,599
+Ok?
+
+142
+00:08:37,599 --> 00:08:39,479
+intuitivamente. Allora, una cosa
+
+143
+00:08:39,479 --> 00:08:43,039
+importante è che con NP
+
+144
+00:08:43,039 --> 00:08:48,920
+non è il complemento di NP, ok? Perché
+
+145
+00:08:48,920 --> 00:08:53,519
+cosa sarebbe il complemento di NP?
+
+146
+00:08:55,959 --> 00:08:59,519
+Supponiamo qua di avere
+R - NP,
+
+147
+00:08:59,519 --> 00:09:03,200
+come
+R - NP,
+sì. E tutto quello il
+
+148
+00:09:03,200 --> 00:09:05,279
+complemento di NP sarebbe tutto quello
+
+149
+00:09:05,279 --> 00:09:08,399
+che sta fuori NP
+
+150
+00:09:08,399 --> 00:09:12,800
+tra cui R, le cose R fuori R e tutto
+
+151
+00:09:12,800 --> 00:09:16,680
+quello che non sta in NP. Quindi con NP
+
+152
+00:09:16,680 --> 00:09:19,760
+non è il complemento di NP, esattamente
+
+153
+00:09:19,760 --> 00:09:21,760
+come
+
+154
+00:09:21,760 --> 00:09:24,720
+non era il complemento di R.
+
+155
+00:09:24,720 --> 00:09:28,200
+CNP è definito in maniera similate a
+
+156
+00:09:28,200 --> 00:09:32,560
+Creed è l'insieme dei linguaggi i cui
+
+157
+00:09:32,560 --> 00:09:35,440
+complementi stanno in NP. Quindi
+
+158
+00:09:35,440 --> 00:09:37,600
+unsatisfiability,
+
+159
+00:09:37,600 --> 00:09:40,440
+che è il contrario di satisfyability è
+
+160
+00:09:40,440 --> 00:09:45,519
+un problema che sta dentro con NP. Ok?
+
+161
+00:09:45,519 --> 00:09:48,360
+Adesso i linguaggi, l'intuizione che noi
+
+162
+00:09:48,360 --> 00:09:52,440
+possiamo avere per i linguaggi in NP è
+
+163
+00:09:52,440 --> 00:09:55,680
+sostanzialmente speculare di quello che
+
+164
+00:09:55,680 --> 00:10:00,800
+abbiamo per NP. Un linguaggio sta in
+
+165
+00:10:00,800 --> 00:10:03,800
+cpiste,
+
+166
+00:10:04,440 --> 00:10:10,040
+se le sue istanze no sono caratterizzate
+
+167
+00:10:10,040 --> 00:10:14,680
+da un certificato. Ok? Allora, in NP,
+
+168
+00:10:14,680 --> 00:10:17,600
+adesso vediamo un esempio. In NP abbiamo
+
+169
+00:10:17,600 --> 00:10:19,480
+i linguaggi
+
+170
+00:10:19,480 --> 00:10:21,880
+le cui istanze sì ammettono un
+
+171
+00:10:21,880 --> 00:10:24,839
+certificato per dire di sì.
+
+172
+00:10:24,839 --> 00:10:29,160
+In CNP ci stanno i linguaggi le cui
+
+173
+00:10:29,160 --> 00:10:33,160
+istanze no ammettono un certificato per
+
+174
+00:10:33,160 --> 00:10:35,440
+dire di no. Cioè, noi siamo in grado di
+
+175
+00:10:35,440 --> 00:10:39,200
+rispondere no gessando qualcosa.
+
+176
+00:10:39,200 --> 00:10:41,600
+Prendiamo unsatisfiability.
+
+177
+00:10:41,600 --> 00:10:46,519
+Data una formula buleana f in CNF
+
+178
+00:10:46,519 --> 00:10:49,320
+dobbiamo stabilire se sia soddisfacbile
+
+179
+00:10:49,320 --> 00:10:53,360
+o meno. Ok? Se sia non soddisfacile.
+
+180
+00:10:53,360 --> 00:10:55,639
+Questa è la definizione di Anzal. Come
+
+181
+00:10:55,639 --> 00:10:59,720
+facciamo per rispondere no? questa
+
+182
+00:10:59,720 --> 00:11:03,360
+formula non è, cioè questa formula non è
+
+183
+00:11:03,360 --> 00:11:05,839
+non soddisfacbile
+
+184
+00:11:05,839 --> 00:11:07,920
+che siamo un assegnamento che la
+
+185
+00:11:07,920 --> 00:11:11,120
+soddisfa, ok? Quindi questo è il senso.
+
+186
+00:11:11,120 --> 00:11:13,720
+In NP, poiché con NP è definita in
+
+187
+00:11:13,720 --> 00:11:16,279
+questo modo particolare, cioè in CNP ci
+
+188
+00:11:16,279 --> 00:11:18,680
+stanno i complementi dei linguaggi in
+
+189
+00:11:18,680 --> 00:11:21,079
+NP, noi possiamo rimodulare la
+
+190
+00:11:21,079 --> 00:11:23,040
+definizione intuitiva dei linguaggi in
+
+191
+00:11:23,040 --> 00:11:25,920
+CNP come quei linguaggi
+
+192
+00:11:25,920 --> 00:11:28,880
+per i quali abbiamo un certificato
+
+193
+00:11:28,880 --> 00:11:32,560
+conciso per rispondere di no. Quindi in
+
+194
+00:11:32,560 --> 00:11:34,760
+NP ci stanno quei linguaggi che
+
+195
+00:11:34,760 --> 00:11:37,200
+ammettono un certificato conciso per
+
+196
+00:11:37,200 --> 00:11:40,760
+rispondere di sì.
+
+197
+00:11:41,120 --> 00:11:45,240
+In CNP ci stanno quei linguaggi che
+
+198
+00:11:45,240 --> 00:11:47,519
+ammettono un certificato conciso per
+
+199
+00:11:47,519 --> 00:11:51,079
+rispondere di no. Adesso ad esempio
+
+200
+00:11:51,079 --> 00:11:52,639
+tautologi.
+
+201
+00:11:52,639 --> 00:11:54,720
+Il problema delle tautologia dato una
+
+202
+00:11:54,720 --> 00:11:58,200
+formula buleana in CNF.
+
+203
+00:11:58,200 --> 00:11:59,920
+Decidere
+
+204
+00:11:59,920 --> 00:12:04,360
+se sia un'auto meno. Dove sta? In NP o
+
+205
+00:12:04,360 --> 00:12:06,920
+in cof?
+
+206
+00:12:06,920 --> 00:12:10,079
+Prendetevi un attimo del tempo.
+
+207
+00:12:10,079 --> 00:12:11,800
+Sì,
+
+208
+00:12:11,800 --> 00:12:14,800
+perché
+
+209
+00:12:15,639 --> 00:12:19,480
+quindi tautologia sta in perché perché
+
+210
+00:12:19,480 --> 00:12:22,760
+sto complimento.
+
+211
+00:12:23,760 --> 00:12:26,839
+Sì,
+ci deve essere un falso.
+
+212
+00:12:26,839 --> 00:12:28,360
+Esattamente.
+
+213
+00:12:28,360 --> 00:12:30,639
+Sì, tautology. Il problema delle
+
+214
+00:12:30,639 --> 00:12:34,320
+tautologie sta in CNP perché per
+
+215
+00:12:34,320 --> 00:12:36,920
+riconoscere le sue istanze, no, cioè le
+
+216
+00:12:36,920 --> 00:12:40,680
+formule che non sono delle tautologie è
+
+217
+00:12:40,680 --> 00:12:43,519
+sufficiente per noi dessare
+
+218
+00:12:43,519 --> 00:12:45,680
+che cosa? Un assegnamento che non la
+
+219
+00:12:45,680 --> 00:12:50,079
+soddisfa. Ok? Quindi i linguaggi NP
+
+220
+00:12:50,079 --> 00:12:52,560
+possono essere risolti ghessando
+
+221
+00:12:52,560 --> 00:12:55,120
+qualcosa che ci permette di dire di sì.
+
+222
+00:12:55,120 --> 00:12:58,480
+I linguaggi in co sono quei linguaggi
+
+223
+00:12:58,480 --> 00:13:00,279
+per i quali noi possiamo ghessare
+
+224
+00:13:00,279 --> 00:13:02,880
+qualcosa per rispondere di no. Ok?
+
+225
+00:13:02,880 --> 00:13:05,920
+Questo è l'intuizione. Poi, formalmente
+
+226
+00:13:05,920 --> 00:13:09,120
+CNP è definito come l'insieme dei
+
+227
+00:13:09,120 --> 00:13:12,120
+complementi dei linguaggi NP. Tutto qua.
+
+228
+00:13:12,120 --> 00:13:14,360
+Ok? Però l'intuizione per poterci
+
+229
+00:13:14,360 --> 00:13:16,480
+lavorare è questa. Se io gesso per
+
+230
+00:13:16,480 --> 00:13:19,120
+rispondere sì, quel linguaggio sta in
+
+231
+00:13:19,120 --> 00:13:22,399
+NP. Se io gesso per rispondere di no,
+
+232
+00:13:22,399 --> 00:13:25,279
+quel linguaggio sta in QNP. Eh, questo è
+
+233
+00:13:25,279 --> 00:13:28,000
+l'ho.
+
+234
+00:13:28,000 --> 00:13:32,440
+Ok. Allora, quello che noi ci chiediamo
+
+235
+00:13:32,440 --> 00:13:35,959
+ora è vedere un po' la relazione che ci
+
+236
+00:13:35,959 --> 00:13:40,079
+sta fra con NP ed NP. Ricordate che
+
+237
+00:13:40,079 --> 00:13:43,240
+qualche un po' di lezioni fa facemmo
+
+238
+00:13:43,240 --> 00:13:46,040
+tutto uno studio sulle relazioni fra re
+
+239
+00:13:46,040 --> 00:13:50,120
+e co ok? riuscimmo a dire parecchio,
+
+240
+00:13:50,120 --> 00:13:56,160
+riuscimmo a dire che co è diverso da R.
+
+241
+00:13:56,160 --> 00:13:59,240
+riuscimmo a dire che l'intersezione di
+
+242
+00:13:59,240 --> 00:14:04,000
+co R è, seguiamole qua.
+
+243
+00:14:15,800 --> 00:14:18,199
+Allora, cosa riuscimmo a dire? Riuscimmo
+
+244
+00:14:18,199 --> 00:14:21,839
+a dire che co re ed sono due classi
+
+245
+00:14:21,839 --> 00:14:23,639
+distinte.
+
+246
+00:14:23,639 --> 00:14:25,560
+Siamo riusciti pure a dire che
+
+247
+00:14:25,560 --> 00:14:29,519
+l'intersezione di coe ed re è
+
+248
+00:14:29,519 --> 00:14:32,959
+esattamente r. Ok? Quello che adesso noi
+
+249
+00:14:32,959 --> 00:14:36,399
+ci chiediamo è che relazione ci sta fra
+
+250
+00:14:36,399 --> 00:14:37,959
+NP
+
+251
+00:14:37,959 --> 00:14:43,480
+co NP e P. Ok?
+
+252
+00:14:43,480 --> 00:14:45,079
+Quindi noi abbiamo quest'altra
+
+253
+00:14:45,079 --> 00:14:48,800
+situazione ora
+
+254
+00:14:49,240 --> 00:14:51,759
+con NP
+
+255
+00:14:51,759 --> 00:14:57,240
+NP eh un po' piccolino
+
+256
+00:14:58,440 --> 00:15:02,680
+un po' più grande da da
+
+257
+00:15:02,680 --> 00:15:05,480
+co NP
+
+258
+00:15:05,480 --> 00:15:07,959
+NP.
+
+259
+00:15:07,959 --> 00:15:10,839
+Vogliamo stabilire un po'
+
+260
+00:15:10,839 --> 00:15:14,560
+qual è la loro relazione e la relazione
+
+261
+00:15:14,560 --> 00:15:22,000
+con eventualmente P, cioè se P sta qui,
+
+262
+00:15:22,079 --> 00:15:25,880
+sta qui o no, se occupa tutto lo spazio,
+
+263
+00:15:25,880 --> 00:15:28,560
+se è un sottoinsieme, eccetera. Ok?
+
+264
+00:15:28,560 --> 00:15:32,399
+Allora, a differenza delle relazioni tra
+
+265
+00:15:32,399 --> 00:15:36,920
+R ed R, che le conosciamo, le relazioni
+
+266
+00:15:36,920 --> 00:15:40,680
+fra NP con NP e P
+
+267
+00:15:40,680 --> 00:15:45,600
+sono aperte, nessuno sa niente. Ok?
+
+268
+00:15:45,600 --> 00:15:47,480
+Noi sappiamo
+
+269
+00:15:47,480 --> 00:15:49,920
+questa cosa qua.
+
+270
+00:15:49,920 --> 00:15:52,319
+Noi non sappiamo, come primo elemento,
+
+271
+00:15:52,319 --> 00:15:57,560
+noi non sappiamo se NP e CNP siano due
+
+272
+00:15:57,560 --> 00:16:00,759
+classi distinte o meno. Cioè noi non
+
+273
+00:16:00,759 --> 00:16:04,959
+sappiamo questa cosa qui.
+
+274
+00:16:05,600 --> 00:16:09,880
+C NP è uguale o no ad NP.
+
+275
+00:16:09,880 --> 00:16:13,639
+Questo qui è un problema
+
+276
+00:16:13,639 --> 00:16:17,639
+aperto esattamente come P versus NP.
+
+277
+00:16:17,639 --> 00:16:22,000
+Esattamente come noi non sappiamo nulla
+
+278
+00:16:22,000 --> 00:16:26,000
+riguardo l'inclusione stretta fra P NP.
+
+279
+00:16:26,000 --> 00:16:29,839
+Noi non sappiamo nulla nella relazione
+
+280
+00:16:29,839 --> 00:16:34,319
+fra CNP ed NP. Cioè, noi non lo sappiamo
+
+281
+00:16:34,319 --> 00:16:38,480
+se queste eh se queste classiano
+
+282
+00:16:38,480 --> 00:16:41,639
+distinte o meno. Nessuno non è mai
+
+283
+00:16:41,639 --> 00:16:43,839
+riuscito a dimostrare
+
+284
+00:16:43,839 --> 00:16:46,000
+che queste due classiano uguali, ma
+
+285
+00:16:46,000 --> 00:16:47,880
+nessuno non è mai riuscito a dimostrare
+
+286
+00:16:47,880 --> 00:16:50,199
+che queste due classiano distinte.
+
+287
+00:16:50,199 --> 00:16:52,240
+Abbiamo dei risultati, adesso ne vedremo
+
+288
+00:16:52,240 --> 00:16:56,800
+uno, che legano un po' come siano
+
+289
+00:16:56,800 --> 00:17:00,399
+legate NP e CNP, però più di questo non
+
+290
+00:17:00,399 --> 00:17:03,600
+siamo in graviglia. Prego. Quindi con NP
+
+291
+00:17:03,600 --> 00:17:06,120
+non neanche se NFA
+
+292
+00:17:06,120 --> 00:17:09,520
+NP.
+Adesso diciamo. Sì.
+
+293
+00:17:09,520 --> 00:17:12,480
+Allora, un teorema, un risultato che noi
+
+294
+00:17:12,480 --> 00:17:15,839
+siamo stati in grado di eh cioè che la
+
+295
+00:17:15,839 --> 00:17:19,319
+comunità è riuscita a risolvere è il
+
+296
+00:17:19,319 --> 00:17:20,919
+seguente
+
+297
+00:17:20,919 --> 00:17:23,919
+teorema.
+
+298
+00:17:26,520 --> 00:17:30,559
+NP è uguale a CNP
+
+299
+00:17:30,559 --> 00:17:35,559
+se e solo se esiste
+
+300
+00:17:35,559 --> 00:17:39,559
+un linguaggio
+
+301
+00:17:43,360 --> 00:17:48,160
+L NP completo
+
+302
+00:17:49,600 --> 00:17:54,080
+tali che L appartenga a con NP.
+
+303
+00:17:54,080 --> 00:17:55,720
+Cioè questa è una cosa che siamo in
+
+304
+00:17:55,720 --> 00:17:58,480
+grado di dimostrare. Ok? Noi abbiamo
+
+305
+00:17:58,480 --> 00:18:00,960
+quindi che semmai
+
+306
+00:18:00,960 --> 00:18:05,480
+un linguaggio L NP completo si trova in
+
+307
+00:18:05,480 --> 00:18:10,640
+NP, allora avremo che NP è uguale a PNP.
+
+308
+00:18:10,640 --> 00:18:12,720
+Ok?
+
+309
+00:18:12,720 --> 00:18:15,000
+Allora, poi faremo dei commenti a
+
+310
+00:18:15,000 --> 00:18:16,360
+riguardo, però l'intuizione
+
+311
+00:18:16,360 --> 00:18:18,679
+sostanzialmente qual è?
+
+312
+00:18:18,679 --> 00:18:20,320
+e che
+
+313
+00:18:20,320 --> 00:18:23,440
+noi ci aspettiamo che queste due
+
+314
+00:18:23,440 --> 00:18:27,159
+classiano distinte perché nel momento in
+
+315
+00:18:27,159 --> 00:18:31,320
+cui uno dei problemi tosti di NP, che
+
+316
+00:18:31,320 --> 00:18:33,559
+sono i problemi NP completi che sono i
+
+317
+00:18:33,559 --> 00:18:35,480
+quali sono i problemi i quali sono in
+
+318
+00:18:35,480 --> 00:18:37,440
+grado di codificare tutti i problemi
+
+319
+00:18:37,440 --> 00:18:40,520
+dentro NP perché esistono riduzioni
+
+320
+00:18:40,520 --> 00:18:43,320
+da ogni problema linguaggio NP completo.
+
+321
+00:18:43,320 --> 00:18:45,559
+mai un problema NP completo si dovesse
+
+322
+00:18:45,559 --> 00:18:47,520
+trovare dentro con NP, allora queste due
+
+323
+00:18:47,520 --> 00:18:49,960
+classi sono uguali. Ok? Questo è
+
+324
+00:18:49,960 --> 00:18:51,640
+sostanzialmente che possi quello che
+
+325
+00:18:51,640 --> 00:18:54,840
+possiamo dire. La cosa interessante è
+
+326
+00:18:54,840 --> 00:18:58,360
+che nessuno è mai riuscito a dimostrare
+
+327
+00:18:58,360 --> 00:19:00,720
+l'esistenza di un linguaggio NP completo
+
+328
+00:19:00,720 --> 00:19:03,480
+che sia anche in quel quindi è una
+
+329
+00:19:03,480 --> 00:19:06,120
+questione aperta anche questa dagli anni
+
+330
+00:19:06,120 --> 00:19:09,400
+60 mi pare, e nessuno è mai riuscito a
+
+331
+00:19:09,400 --> 00:19:13,159
+mostrare né che i linguaggi NP completi
+
+332
+00:19:13,159 --> 00:19:15,240
+possono essere in QNP né che non lo
+
+333
+00:19:15,240 --> 00:19:17,120
+possano essere. semplicemente non lo
+
+334
+00:19:17,120 --> 00:19:20,000
+sappiamo e siccome nessuno c'è mai
+
+335
+00:19:20,000 --> 00:19:23,120
+riuscito, iniziamo a ipotizzare che
+
+336
+00:19:23,120 --> 00:19:25,159
+questo non sia il caso, cioè la nostra
+
+337
+00:19:25,159 --> 00:19:29,240
+ipotesi è che NP ed e CNP siano due
+
+338
+00:19:29,240 --> 00:19:32,039
+classi distinte perché nessuno è mai
+
+339
+00:19:32,039 --> 00:19:34,200
+riuscito a mostrare un linguaggio NP
+
+340
+00:19:34,200 --> 00:19:36,960
+completo che sia anche in qu NP. Questa
+
+341
+00:19:36,960 --> 00:19:39,880
+è l'intuizione. Ok? Però ora dimostriamo
+
+342
+00:19:39,880 --> 00:19:43,559
+questo questo risultato. Ok?
+
+343
+00:19:43,559 --> 00:19:47,240
+Quindi noi dobbiamo dimostrare che se N
+
+344
+00:19:47,240 --> 00:19:50,360
+np uguale al NP, se è solo se esiste un
+
+345
+00:19:50,360 --> 00:19:52,679
+linguaggio NP completo che appartenga
+
+346
+00:19:52,679 --> 00:19:55,840
+anche alla classe con NP.
+
+347
+00:19:55,840 --> 00:20:00,880
+Allora, primo verso della dimostrazione.
+
+348
+00:20:00,880 --> 00:20:04,679
+Dobbiamo mostrare che se NP è uguale a
+
+349
+00:20:04,679 --> 00:20:10,200
+quel NP, allora esiste
+
+350
+00:20:10,400 --> 00:20:14,000
+un linguaggio
+
+351
+00:20:15,200 --> 00:20:18,760
+NP completo
+
+352
+00:20:20,000 --> 00:20:23,679
+in CNP. Ok? Ma alle volte metto il
+
+353
+00:20:23,679 --> 00:20:25,240
+trattino, alle volte no. È la stessa
+
+354
+00:20:25,240 --> 00:20:27,919
+cosa.
+
+355
+00:20:27,919 --> 00:20:33,320
+Ok. Come si può fare? Secondo voi
+
+356
+00:20:33,840 --> 00:20:35,320
+proviamo a guardare il complemento di
+
+357
+00:20:35,320 --> 00:20:37,440
+sotto.
+Attenzione, attenzione, è molto
+
+358
+00:20:37,440 --> 00:20:40,840
+più facile. Eh, un attimo.
+
+359
+00:20:40,840 --> 00:20:44,640
+Sì, è
+giar, cioè se se è un problema se
+
+360
+00:20:44,640 --> 00:20:47,360
+un linguaggio NP completo lo c in NP.
+
+361
+00:20:47,360 --> 00:20:49,799
+Anche in NP.
+
+362
+00:20:49,799 --> 00:20:52,520
+Sì, esattamente. È una è una questione
+
+363
+00:20:52,520 --> 00:20:54,720
+di definizione. È proprio semplice. Ok,
+
+364
+00:20:54,720 --> 00:20:56,559
+questo verso della dimostrazione è
+
+365
+00:20:56,559 --> 00:20:59,679
+facile. Se L
+
+366
+00:20:59,679 --> 00:21:02,960
+è NP completo,
+
+367
+00:21:02,960 --> 00:21:08,120
+per definizione L è anche in NP.
+
+368
+00:21:08,120 --> 00:21:11,279
+Ma se NP è uguale a quel NP, allora L
+
+369
+00:21:11,279 --> 00:21:13,080
+deve stare anche in QP. Ok? Quindi
+
+370
+00:21:13,080 --> 00:21:14,840
+questo verso della dimostrazione è
+
+371
+00:21:14,840 --> 00:21:16,400
+semplicissimo.
+
+372
+00:21:16,400 --> 00:21:19,919
+Più complicato è l'altro
+
+373
+00:21:19,919 --> 00:21:23,440
+è questo qua.
+
+374
+00:21:24,400 --> 00:21:26,440
+Se esiste, dobbiamo mostrare che se
+
+375
+00:21:26,440 --> 00:21:27,960
+esiste
+
+376
+00:21:27,960 --> 00:21:31,440
+un linguaggio
+
+377
+00:21:32,679 --> 00:21:35,000
+L
+
+378
+00:21:35,000 --> 00:21:38,720
+NP completo
+
+379
+00:21:39,720 --> 00:21:46,760
+che sia in co NP, allora
+
+380
+00:21:46,760 --> 00:21:50,360
+NP è uguale a CNP.
+
+381
+00:21:50,360 --> 00:21:53,360
+Ok?
+
+382
+00:21:57,320 --> 00:21:59,039
+Per riuscire a dimostrare questa
+
+383
+00:21:59,039 --> 00:22:01,960
+uguaglianza, dobbiamo mostrare che se è
+
+384
+00:22:01,960 --> 00:22:03,400
+vera questa cosa che esiste un
+
+385
+00:22:03,400 --> 00:22:06,720
+linguaggio LP L NP completo che sia NC
+
+386
+00:22:06,720 --> 00:22:09,919
+con NP, allora questa cosa deve valere.
+
+387
+00:22:09,919 --> 00:22:11,600
+Il che significa dobbiamo mostrare che
+
+388
+00:22:11,600 --> 00:22:14,919
+NP è un sottinsieme di co NP e coNP è un
+
+389
+00:22:14,919 --> 00:22:16,720
+sottinsieme di NP. Ok? Quindi dobbiamo
+
+390
+00:22:16,720 --> 00:22:22,919
+fare due due cose. Ok? Allora, prima di
+
+391
+00:22:22,919 --> 00:22:28,200
+partire, noi andiamo a fare queste
+
+392
+00:22:28,200 --> 00:22:30,279
+considerazioni.
+
+393
+00:22:30,279 --> 00:22:32,600
+Primo punto,
+
+394
+00:22:32,600 --> 00:22:37,400
+se L è NP completo,
+
+395
+00:22:39,000 --> 00:22:44,200
+allora L appartiene ad NP,
+
+396
+00:22:47,360 --> 00:22:51,080
+da cui il suo complemento appartiene a
+
+397
+00:22:51,080 --> 00:22:53,520
+QNP. Queste sono semplicemente delle
+
+398
+00:22:53,520 --> 00:22:56,640
+osservazioni iniziali che ci serviranno
+
+399
+00:22:56,640 --> 00:22:59,640
+dopo.
+
+400
+00:22:59,679 --> 00:23:04,919
+D'altro canto, se L appartiene a co NP,
+
+401
+00:23:04,919 --> 00:23:07,679
+allora il suo complemento appartiene a
+
+402
+00:23:07,679 --> 00:23:09,360
+NP.
+
+403
+00:23:09,360 --> 00:23:12,080
+Quindi componiamo
+
+404
+00:23:12,080 --> 00:23:15,159
+questi risultati che abbiamo, quindi
+
+405
+00:23:15,159 --> 00:23:16,960
+abbiamo
+
+406
+00:23:16,960 --> 00:23:19,240
+questo qui
+
+407
+00:23:19,240 --> 00:23:22,799
+e questo qui
+
+408
+00:23:22,799 --> 00:23:28,320
+più questo qui e questo qui.
+
+409
+00:23:28,320 --> 00:23:31,080
+Ok? Quindi in che situazione ci
+
+410
+00:23:31,080 --> 00:23:34,039
+troviamo? ci troviamo nella situazione
+
+411
+00:23:34,039 --> 00:23:37,039
+che
+
+412
+00:23:38,880 --> 00:23:43,720
+qua c'è con NP, qua c'è NP,
+
+413
+00:23:45,080 --> 00:23:47,960
+quindi questo è con NP,
+
+414
+00:23:47,960 --> 00:23:49,919
+questo è NP.
+
+415
+00:23:49,919 --> 00:23:54,440
+E allora abbiamo che L
+
+416
+00:23:55,559 --> 00:23:59,760
+sta nell'intersezione fra NP e co NP,
+
+417
+00:23:59,760 --> 00:24:02,760
+come abbiamo dai pezzettini rossi, ma
+
+418
+00:24:02,760 --> 00:24:05,600
+abbiamo pure che L soprasegnato sta là
+
+419
+00:24:05,600 --> 00:24:08,000
+dentro. Quindi questa è la situazione in
+
+420
+00:24:08,000 --> 00:24:11,919
+cui ci troviamo. Ok?
+
+421
+00:24:14,559 --> 00:24:17,000
+Ok. Allora, quello che ora noi dobbiamo
+
+422
+00:24:17,000 --> 00:24:18,799
+dimostrare
+
+423
+00:24:18,799 --> 00:24:22,039
+è questa cosa qua. Dobbiamo dimostrare,
+
+424
+00:24:22,039 --> 00:24:23,640
+partiamo
+
+425
+00:24:23,640 --> 00:24:27,799
+da certo spazio, sì, da questo elemento
+
+426
+00:24:27,799 --> 00:24:31,000
+qua. Noi mostriamo che NP è un
+
+427
+00:24:31,000 --> 00:24:34,200
+sottinsieme di CNP se valgono le
+
+428
+00:24:34,200 --> 00:24:35,919
+assunzioni
+
+429
+00:24:35,919 --> 00:24:38,120
+iniziali, cioè che esiste un linguaggio
+
+430
+00:24:38,120 --> 00:24:41,000
+L che è NP completo e che sia anche in
+
+431
+00:24:41,000 --> 00:24:45,000
+NP. Ok?
+
+432
+00:24:46,640 --> 00:24:50,880
+Allora, partiamo così. Sia L'O
+
+433
+00:24:50,880 --> 00:24:54,600
+appartenente a NP un linguaggio
+
+434
+00:24:54,600 --> 00:24:58,760
+un linguaggio qualsiasi.
+
+435
+00:25:01,520 --> 00:25:04,520
+Mostriamo
+
+436
+00:25:05,600 --> 00:25:07,480
+che
+
+437
+00:25:07,480 --> 00:25:10,480
+L'ONP.
+
+438
+00:25:15,039 --> 00:25:19,840
+E ciò lo mostriamo
+
+439
+00:25:23,480 --> 00:25:27,679
+facendo vedere
+
+440
+00:25:30,120 --> 00:25:34,080
+che L'O soprasegnato appartiene a NP.
+
+441
+00:25:34,080 --> 00:25:36,600
+Ok? Quindi noi abbiamo un linguaggio L'O
+
+442
+00:25:36,600 --> 00:25:39,240
+qualsiasi che appartiene a NP.
+
+443
+00:25:39,240 --> 00:25:41,840
+Vogliamo mostrare che L'O appartene
+
+444
+00:25:41,840 --> 00:25:45,679
+anche a Qnp, da cui otterremo che NP è
+
+445
+00:25:45,679 --> 00:25:48,360
+un sottinsieme di Qnp. E come mostriamo
+
+446
+00:25:48,360 --> 00:25:50,720
+che come mostreremo che L' appartiene a
+
+447
+00:25:50,720 --> 00:25:54,159
+NP? Lo mostreremo mostrando che il
+
+448
+00:25:54,159 --> 00:25:57,600
+complemento di L'O appartiene ad NP. Ok?
+
+449
+00:25:57,600 --> 00:26:00,440
+Adesso saranno una serie di passaggi di
+
+450
+00:26:00,440 --> 00:26:04,159
+rimanipolazioni di cose eh provenienti
+
+451
+00:26:04,159 --> 00:26:10,320
+da definizione eccetera. Ok? Sì. facendo
+
+452
+00:26:10,320 --> 00:26:13,440
+eh facendo vedere che L'O soprasegnato
+
+453
+00:26:13,440 --> 00:26:17,039
+appartiene ad MP.
+
+454
+00:26:19,399 --> 00:26:23,559
+Allora, primo passaggio,
+
+455
+00:26:27,440 --> 00:26:31,840
+noi abbiamo questa cosa qua.
+
+456
+00:26:33,240 --> 00:26:35,440
+Siccome
+
+457
+00:26:35,440 --> 00:26:41,240
+L'O appartiene ad NP ed inoltre
+
+458
+00:26:41,720 --> 00:26:47,320
+L è NP completo per assunzione
+
+459
+00:26:47,320 --> 00:26:50,279
+complete,
+
+460
+00:26:50,279 --> 00:26:53,279
+abbiamo
+
+461
+00:26:54,760 --> 00:27:00,320
+che L'O si riduce polinomialmente ad L.
+
+462
+00:27:00,320 --> 00:27:02,640
+Ok? Questo qua per assunzioni. Ok?
+
+463
+00:27:02,640 --> 00:27:05,520
+Stiamo semplicemente andando a ritoccare
+
+464
+00:27:05,520 --> 00:27:07,520
+definizioni e giochiamo un po' su queste
+
+465
+00:27:07,520 --> 00:27:10,799
+cose qua. Ok?
+
+466
+00:27:10,799 --> 00:27:13,000
+Adesso questa è una riduzione
+
+467
+00:27:13,000 --> 00:27:14,679
+polinomiale.
+
+468
+00:27:14,679 --> 00:27:16,640
+Se L'O
+
+469
+00:27:16,640 --> 00:27:20,240
+si riduce a L, che cosa possiamo cosa
+
+470
+00:27:20,240 --> 00:27:24,880
+possiamo dire? che esiste
+
+471
+00:27:25,200 --> 00:27:28,679
+una funzione
+
+472
+00:27:28,679 --> 00:27:32,399
+di trasformazione fasforma stringhe
+
+473
+00:27:32,399 --> 00:27:34,600
+verso stringhe
+
+474
+00:27:34,600 --> 00:27:37,640
+tale per cui
+
+475
+00:27:37,640 --> 00:27:42,080
+per ogni stringa W
+
+476
+00:27:43,200 --> 00:27:46,320
+appartiene ad L'O è solo se il
+
+477
+00:27:46,320 --> 00:27:50,080
+trasformato secondo f di w appartiene A
+
+478
+00:27:50,080 --> 00:27:51,640
+L.
+
+479
+00:27:51,640 --> 00:27:54,640
+Ok? Questa è la definizione di
+
+480
+00:27:54,640 --> 00:27:59,240
+trasformazione di di riduzione. Ok?
+
+481
+00:27:59,240 --> 00:28:03,159
+Però siccome questa relazione vale come
+
+482
+00:28:03,159 --> 00:28:05,640
+un sé e solo sé, noi la possiamo
+
+483
+00:28:05,640 --> 00:28:07,919
+scrivere anche in quest'altro modo.
+
+484
+00:28:07,919 --> 00:28:11,000
+Quindi per ogni
+
+485
+00:28:11,000 --> 00:28:14,720
+per ogni V
+
+486
+00:28:14,720 --> 00:28:20,200
+non appartiene a L' è solo se F
+
+487
+00:28:20,200 --> 00:28:24,399
+non appartiene ad L.
+
+488
+00:28:24,880 --> 00:28:27,880
+Ok,
+
+489
+00:28:28,519 --> 00:28:31,320
+qua la pagina è finita. Questo possiamo
+
+490
+00:28:31,320 --> 00:28:34,480
+riscriverlo ancora in un'altro modo da
+
+491
+00:28:34,480 --> 00:28:38,960
+cui doppia per ogni w
+
+492
+00:28:38,960 --> 00:28:40,799
+appartiene
+
+493
+00:28:40,799 --> 00:28:46,440
+a L'O segnato se è solo se FB
+
+494
+00:28:46,440 --> 00:28:49,640
+appartiene a L segnato. Ok, stiamo
+
+495
+00:28:49,640 --> 00:28:52,039
+invertendo tutto. Cosa ci dice questa
+
+496
+00:28:52,039 --> 00:28:55,279
+cosa qua?
+
+497
+00:29:04,080 --> 00:29:06,760
+che L primo segnato è riducibile
+
+498
+00:29:06,760 --> 00:29:10,720
+polinomialmente a L.
+A L segnato. Sì.
+
+499
+00:29:10,720 --> 00:29:13,559
+Quindi noi possiamo dire che esiste una
+
+500
+00:29:13,559 --> 00:29:16,919
+riduzione da L'O segnato verso L
+
+501
+00:29:16,919 --> 00:29:20,919
+segnato. Ok?
+
+502
+00:29:23,760 --> 00:29:27,399
+N segnata, insomma.
+
+503
+00:29:27,559 --> 00:29:29,159
+Allora,
+
+504
+00:29:29,159 --> 00:29:32,120
+che cosa abbiamo?
+
+505
+00:29:32,120 --> 00:29:35,320
+Noi abbiamo
+
+506
+00:29:35,440 --> 00:29:37,159
+che è
+
+507
+00:29:37,159 --> 00:29:38,840
+L
+
+508
+00:29:38,840 --> 00:29:44,480
+eh Ok, questo L qui
+
+509
+00:29:45,559 --> 00:29:49,320
+appartiene a CNP.
+
+510
+00:29:49,320 --> 00:29:52,720
+Ok? Ma il suo complemento, cioè questi
+
+511
+00:29:52,720 --> 00:29:56,760
+due stanno sia in co che in NP, da cui
+
+512
+00:29:56,760 --> 00:30:00,480
+io posso prendere che questo linguaggio
+
+513
+00:30:00,480 --> 00:30:04,559
+qua, L soprasegnato che è lui sta dentro
+
+514
+00:30:04,559 --> 00:30:09,240
+NP. Quindi esiste una riduzione dal
+
+515
+00:30:09,240 --> 00:30:13,600
+complemento di L'O al complemento di L
+
+516
+00:30:13,600 --> 00:30:16,760
+che è un linguaggio in NP. Scriviamolo
+
+517
+00:30:16,760 --> 00:30:19,440
+dall'altro partio.
+
+518
+00:30:19,440 --> 00:30:24,480
+Ok? Noi abbiamo
+
+519
+00:30:25,120 --> 00:30:28,519
+che L soprasegnato appartiene a NP. Da
+
+520
+00:30:28,519 --> 00:30:30,279
+cosa? Da quelle osservazioni che avevamo
+
+521
+00:30:30,279 --> 00:30:31,600
+fatto all'inizio si vede dalla
+
+522
+00:30:31,600 --> 00:30:35,200
+figurella, ok? L soprassegnato sta in
+
+523
+00:30:35,200 --> 00:30:39,399
+NP. Da cui abbiamo che L'O soprasegnato
+
+524
+00:30:39,399 --> 00:30:43,039
+si riduce a un linguaggio che sta in NP.
+
+525
+00:30:43,039 --> 00:30:49,200
+Quindi abbiamo cosa? abbiamo che L'O
+
+526
+00:30:49,200 --> 00:30:52,399
+soprasegnato si riduce a L soprassegnato
+
+527
+00:30:52,399 --> 00:30:56,799
+e lui appartiene a NP. Quindi se L'O
+
+528
+00:30:56,799 --> 00:30:59,519
+soprasegnato si riduce a un linguaggio
+
+529
+00:30:59,519 --> 00:31:02,039
+che sta in NP,
+
+530
+00:31:02,039 --> 00:31:07,519
+anche L'O soprasegnato sta in NP,
+
+531
+00:31:07,559 --> 00:31:09,880
+da cui
+
+532
+00:31:09,880 --> 00:31:14,000
+L'O soprasegnato appartiene a NP, ma
+
+533
+00:31:14,000 --> 00:31:16,440
+questo era quello che ci serviva
+
+534
+00:31:16,440 --> 00:31:19,440
+all'inizio
+
+535
+00:31:19,720 --> 00:31:22,519
+per mostrare che L'O soprasegnato
+
+536
+00:31:22,519 --> 00:31:25,159
+appartiene a L'. Ok? abbiamo un po'
+
+537
+00:31:25,159 --> 00:31:27,279
+giocato con le definizioni. Tutto qua.
+
+538
+00:31:27,279 --> 00:31:30,000
+L'unica osservazione importante di tutta
+
+539
+00:31:30,000 --> 00:31:33,559
+questa dimostrazione è questa cosa qui,
+
+540
+00:31:33,559 --> 00:31:36,440
+cioè se noi riduciamo, e questo è il
+
+541
+00:31:36,440 --> 00:31:39,320
+pezzo importante, se noi riduciamo
+
+542
+00:31:39,320 --> 00:31:42,360
+polinomialmente un linguaggio
+
+543
+00:31:42,360 --> 00:31:45,200
+e L'O,
+
+544
+00:31:45,200 --> 00:31:48,000
+allora stiamo anche riducendo il suo il
+
+545
+00:31:48,000 --> 00:31:50,200
+complemento di L'O al complemento di L.
+
+546
+00:31:50,200 --> 00:31:52,600
+Questa è tutta la l'osservazione che
+
+547
+00:31:52,600 --> 00:31:54,720
+serve fare in questo pezzo di di
+
+548
+00:31:54,720 --> 00:31:58,320
+dimostrazione. Ok? Quindi, siccome noi
+
+549
+00:31:58,320 --> 00:32:01,799
+abbiamo ottenuto che L'O appartiene ad
+
+550
+00:32:01,799 --> 00:32:07,559
+NP, da questo abbiamo che L'O
+
+551
+00:32:07,559 --> 00:32:11,840
+appartiene a Qnp da cui L'O appartiene
+
+552
+00:32:11,840 --> 00:32:14,039
+L'O appartiene a co NP da cui abbiamo
+
+553
+00:32:14,039 --> 00:32:18,480
+che NP è un sottoinsieme di n di co NP.
+
+554
+00:32:18,480 --> 00:32:20,799
+Ok?
+
+555
+00:32:20,799 --> 00:32:23,080
+Alri,
+
+556
+00:32:23,080 --> 00:32:25,919
+altro pezzettino.
+
+557
+00:32:25,919 --> 00:32:32,720
+Un altro?
+Sì, quello.
+Ah, questo. Ok.
+
+558
+00:32:33,120 --> 00:32:37,200
+Altro pezzettino è questo qua. Noi
+
+559
+00:32:37,200 --> 00:32:40,919
+dobbiamo dimostrare che co NP
+
+560
+00:32:40,919 --> 00:32:46,679
+sia un sottoinsieme di NP.
+
+561
+00:32:50,679 --> 00:32:53,240
+Come lo facciamo?
+
+562
+00:32:53,240 --> 00:32:58,440
+sia L'O appartenente a CNP,
+
+563
+00:32:58,440 --> 00:33:01,679
+un linguaggio
+
+564
+00:33:03,080 --> 00:33:06,080
+arbitrario.
+
+565
+00:33:09,320 --> 00:33:12,320
+Mostriamo
+
+566
+00:33:14,279 --> 00:33:16,080
+che
+
+567
+00:33:16,080 --> 00:33:21,000
+L'O appartiene a NP.
+
+568
+00:33:21,440 --> 00:33:22,480
+Ok?
+
+569
+00:33:22,480 --> 00:33:25,639
+Quindi se è un linguaggio L'O qualsiasi
+
+570
+00:33:25,639 --> 00:33:29,360
+di CNP sta anche in NP, allora possiamo
+
+571
+00:33:29,360 --> 00:33:35,360
+dire che co NP è un sottoinsieme di NP.
+
+572
+00:33:35,360 --> 00:33:37,880
+Allora, facciamo un giochino simile a
+
+573
+00:33:37,880 --> 00:33:39,360
+quello che abbiamo visto prima, quindi
+
+574
+00:33:39,360 --> 00:33:43,600
+abbiamo che L'O appartiene a con NP da
+
+575
+00:33:43,600 --> 00:33:50,600
+cui L' soprassegnato appartiene a NP.
+
+576
+00:33:53,360 --> 00:33:57,480
+appartiene a NP.
+
+577
+00:34:03,039 --> 00:34:06,039
+Siccome
+
+578
+00:34:07,200 --> 00:34:13,560
+noi abbiamo che L da sopra abbiamo che L
+
+579
+00:34:13,560 --> 00:34:18,480
+è un linguaggio NP completo e L'O è un
+
+580
+00:34:18,480 --> 00:34:21,800
+linguaggio che appartiene a NP.
+
+581
+00:34:21,800 --> 00:34:27,720
+Seguiamolo qua. Quindi poiché
+
+582
+00:34:27,720 --> 00:34:33,599
+l e NP completo
+
+583
+00:34:34,359 --> 00:34:38,040
+e inoltre
+sì
+
+584
+00:34:38,040 --> 00:34:43,240
+L'O soprasegnato appartiene a NP.
+
+585
+00:34:43,240 --> 00:34:46,240
+Abbiamo
+
+586
+00:34:47,599 --> 00:34:53,960
+che L'O soprasegnato si riduce a L in
+
+587
+00:34:53,960 --> 00:34:55,440
+maniera polinomiale. Eh, tutte queste
+
+588
+00:34:55,440 --> 00:34:57,880
+riduzioni sono polinomiali.
+
+589
+00:34:57,880 --> 00:34:59,240
+Anche qui è semplicemente un
+
+590
+00:34:59,240 --> 00:35:03,359
+rimaneggiamento di definizioni e cose.
+
+591
+00:35:03,359 --> 00:35:05,359
+Adesso, per quello che abbiamo detto
+
+592
+00:35:05,359 --> 00:35:10,119
+prima, se L'O soprasegnato si riduce a
+
+593
+00:35:10,119 --> 00:35:11,720
+L,
+
+594
+00:35:11,720 --> 00:35:14,160
+allora noi possiamo considerare anche i
+
+595
+00:35:14,160 --> 00:35:18,599
+complementi, cioè noi abbiamo che L'O si
+
+596
+00:35:18,599 --> 00:35:24,400
+riduce polinomialmente a L sovrasegnato.
+
+597
+00:35:30,079 --> 00:35:33,320
+Scusate. Perché L NP concreto?
+Sì. E
+
+598
+00:35:33,320 --> 00:35:35,839
+inoltre L' appartiene a NP. Ovviamente
+
+599
+00:35:35,839 --> 00:35:40,000
+L'O si deve ridurre a L. Ok?
+
+600
+00:35:40,000 --> 00:35:42,280
+Da questa riduzione noi la possiamo, tra
+
+601
+00:35:42,280 --> 00:35:44,320
+virgolette invertire. Quindi se abbiamo
+
+602
+00:35:44,320 --> 00:35:47,800
+che L'O soprasegnato si riduce a L,
+
+603
+00:35:47,800 --> 00:35:49,319
+allora
+
+604
+00:35:49,319 --> 00:35:50,880
+L'O
+
+605
+00:35:50,880 --> 00:35:52,880
+si riduce polinomialmente a L
+
+606
+00:35:52,880 --> 00:35:57,079
+soprassegnato. Ok?
+
+607
+00:35:57,280 --> 00:36:00,920
+Ma L soprasegnato,
+
+608
+00:36:01,000 --> 00:36:04,040
+come possiamo vedere da qui,
+
+609
+00:36:04,040 --> 00:36:07,640
+sta in NP.
+
+610
+00:36:09,680 --> 00:36:12,359
+abbiamo
+
+611
+00:36:12,359 --> 00:36:13,920
+che
+
+612
+00:36:13,920 --> 00:36:17,760
+L sovrasegnato appartiene a NP
+
+613
+00:36:17,760 --> 00:36:20,240
+da cui
+
+614
+00:36:20,240 --> 00:36:24,760
+L'O appartiene a NP,
+
+615
+00:36:24,760 --> 00:36:28,119
+che è esattamente quello che volevamo
+
+616
+00:36:28,119 --> 00:36:29,880
+ottenere.
+
+617
+00:36:29,880 --> 00:36:34,319
+Sì, avremmo cari dicendo che quando
+
+618
+00:36:34,319 --> 00:36:35,960
+L'assemiato
+
+619
+00:36:35,960 --> 00:36:38,400
+appartiene L,
+
+620
+00:36:38,400 --> 00:36:40,920
+diciamo la parte superiore della maglia.
+
+621
+00:36:40,920 --> 00:36:43,000
+Sì, la prima parte
+secondo secondo
+
+622
+00:36:43,000 --> 00:36:44,920
+secondo.
+
+623
+00:36:44,920 --> 00:36:47,079
+Eh,
+la prima parte della dimostrazione
+
+624
+00:36:47,079 --> 00:36:50,960
+diceva che NP è incluso in P, quindi N
+
+625
+00:36:50,960 --> 00:36:53,480
+quadrato che si
+
+626
+00:36:53,480 --> 00:36:55,880
+con P,
+
+627
+00:36:55,880 --> 00:36:59,680
+quindi girato la puntata quadrato primo
+
+628
+00:36:59,680 --> 00:37:01,680
+quadrato.
+
+629
+00:37:01,680 --> 00:37:03,800
+Eh, sì, credo di sì. Sì, che si possa
+
+630
+00:37:03,800 --> 00:37:05,640
+accorciare anche in quel modo. Sì,
+
+631
+00:37:05,640 --> 00:37:08,440
+ottima osservazione. Grazie. Ok, quindi
+
+632
+00:37:08,440 --> 00:37:10,000
+che cosa abbiamo? abbiamo la
+
+633
+00:37:10,000 --> 00:37:12,680
+caratterizzazione di
+
+634
+00:37:12,680 --> 00:37:15,240
+questo teorema che in realtà non ci dice
+
+635
+00:37:15,240 --> 00:37:17,160
+moltissimo, ci dice solamente
+
+636
+00:37:17,160 --> 00:37:19,079
+l'intuizione è questa: semmai noi
+
+637
+00:37:19,079 --> 00:37:21,520
+avessimo un problema
+
+638
+00:37:21,520 --> 00:37:24,960
+NP completo che fa parte di NP, allora
+
+639
+00:37:24,960 --> 00:37:27,040
+queste due classi sarebbero la stessa
+
+640
+00:37:27,040 --> 00:37:32,520
+cosa. Ok? Però in realtà nessuno è mai
+
+641
+00:37:32,520 --> 00:37:35,760
+riuscito a dimostrare che questa cosa
+
+642
+00:37:35,760 --> 00:37:39,160
+sia vera, cioè non siamo mai riusciti a
+
+643
+00:37:39,160 --> 00:37:44,319
+collocare un problema NP completo dentro
+
+644
+00:37:44,319 --> 00:37:47,960
+eh dentro NP. Per questa ragione noi
+
+645
+00:37:47,960 --> 00:37:52,359
+supponiamo supponiamo che le due classi
+
+646
+00:37:52,359 --> 00:37:55,480
+siano distinte, ok? e che quindi questa
+
+647
+00:37:55,480 --> 00:38:00,400
+qui sia sia la situazione. Ok,
+
+648
+00:38:00,400 --> 00:38:04,359
+vediamo cosa ci sta dopo.
+
+649
+00:38:04,359 --> 00:38:06,280
+Una domanda. Quindi dimostrato che
+
+650
+00:38:06,280 --> 00:38:10,720
+nessun problema di qu NPA
+
+651
+00:38:10,800 --> 00:38:15,960
+perché no? Sì, sì, perché se fosse NPG
+
+652
+00:38:15,960 --> 00:38:18,960
+eh
+
+653
+00:38:19,560 --> 00:38:21,800
+se fosse NP argo, allora tutti i
+
+654
+00:38:21,800 --> 00:38:24,800
+problemi di NP si potrebbero ridurre a
+
+655
+00:38:24,800 --> 00:38:26,839
+questo problema in co NP e quindi
+
+656
+00:38:26,839 --> 00:38:28,319
+starebbero tutti là dentro. Quindi
+
+657
+00:38:28,319 --> 00:38:30,079
+nemmeno quello è stato è stato
+
+658
+00:38:30,079 --> 00:38:32,480
+dimostrato. Quello che ci chiediamo ora
+
+659
+00:38:32,480 --> 00:38:36,079
+prima della pausa e poi facciamo pausa è
+
+660
+00:38:36,079 --> 00:38:41,400
+quale relazione ci sia fra P con NP.
+
+661
+00:38:41,400 --> 00:38:45,599
+ed NP. Quindi qua abbiamo CNP,
+
+662
+00:38:45,599 --> 00:38:48,040
+qua ci sta NP
+
+663
+00:38:48,040 --> 00:38:52,359
+e qui c'è P. Ok? Allora, il risultato
+
+664
+00:38:52,359 --> 00:38:56,480
+che abbiamo in questo caso è esattamente
+
+665
+00:38:56,480 --> 00:38:59,520
+è proprio quello che vedete nella nella
+
+666
+00:38:59,520 --> 00:39:02,319
+figura. Noi non sappiamo nemmeno questo.
+
+667
+00:39:02,319 --> 00:39:06,760
+Noi non sappiamo se l'intersezione
+
+668
+00:39:06,760 --> 00:39:11,240
+fra NP e con sia esattamente P o un
+
+669
+00:39:11,240 --> 00:39:15,760
+sovrainsieme di P. Ok? Allora, siccome
+
+670
+00:39:15,760 --> 00:39:18,200
+noi abbiamo
+
+671
+00:39:18,200 --> 00:39:21,319
+che ci sono che se ci fosse un problema
+
+672
+00:39:21,319 --> 00:39:25,000
+NP completo in NP, allora le due classi
+
+673
+00:39:25,000 --> 00:39:28,319
+sarebbero equivalenti e nessuno ha mai
+
+674
+00:39:28,319 --> 00:39:32,200
+dimostrato che questo sia il caso.
+
+675
+00:39:32,200 --> 00:39:35,920
+Allora, noi abbiamo che i problemi che
+
+676
+00:39:35,920 --> 00:39:39,400
+non sono abbiamo quindi un insieme di
+
+677
+00:39:39,400 --> 00:39:43,760
+problemi che per essere in NP e in co NP
+
+678
+00:39:43,760 --> 00:39:46,440
+non possono essere NP completi perché se
+
+679
+00:39:46,440 --> 00:39:48,680
+ci fosse un problema NP completo in co
+
+680
+00:39:48,680 --> 00:39:50,359
+NP avremmo che le due classi sono le
+
+681
+00:39:50,359 --> 00:39:53,200
+stesse. Quindi noi ci attendiamo che
+
+682
+00:39:53,200 --> 00:39:54,920
+nell'intersezione
+
+683
+00:39:54,920 --> 00:39:58,480
+fra NP e con NP ci sono linguaggi non
+
+684
+00:39:58,480 --> 00:40:01,160
+tosti. E in effetti sì, ci sono tutti
+
+685
+00:40:01,160 --> 00:40:05,160
+questi qua. P i linguaggi P sono
+
+686
+00:40:05,160 --> 00:40:08,960
+linguaggi non NP completi che stanno in
+
+687
+00:40:08,960 --> 00:40:13,160
+P, in NP e co NP. Possiamo dimostrarlo
+
+688
+00:40:13,160 --> 00:40:17,119
+in questo modo. Teorema.
+
+689
+00:40:18,880 --> 00:40:21,240
+Cosa abbiamo? abbiamo che P è un
+
+690
+00:40:21,240 --> 00:40:27,800
+sottinsieme di NP e CNP.
+
+691
+00:40:32,800 --> 00:40:36,240
+Allora, la dimostrazione è abbastanza
+
+692
+00:40:36,240 --> 00:40:39,240
+semplice,
+
+693
+00:40:39,920 --> 00:40:45,599
+sia L un linguaggio
+
+694
+00:40:46,319 --> 00:40:49,319
+generico
+
+695
+00:40:50,599 --> 00:40:53,040
+di P,
+
+696
+00:40:53,040 --> 00:40:55,240
+poiché allora il primo pezzo è semplice,
+
+697
+00:40:55,240 --> 00:41:00,800
+poiché L appartiene a P e P è un
+
+698
+00:41:00,800 --> 00:41:03,839
+sottoinsieme di NP, l'abbiamo già visto.
+
+699
+00:41:03,839 --> 00:41:05,880
+Allora
+
+700
+00:41:05,880 --> 00:41:07,599
+N
+
+701
+00:41:07,599 --> 00:41:10,359
+appartiene a NP. Questo era
+
+702
+00:41:10,359 --> 00:41:14,280
+semplicissimo. Ok.
+
+703
+00:41:18,640 --> 00:41:21,640
+Consideriamo
+
+704
+00:41:24,440 --> 00:41:28,640
+il linguaggio L soprassegnato. Ok?
+
+705
+00:41:28,640 --> 00:41:31,079
+L era un linguaggio che stava dentro la
+
+706
+00:41:31,079 --> 00:41:33,160
+classe P.
+
+707
+00:41:33,160 --> 00:41:35,680
+Secondo voi il linguaggio L sovrasegnato
+
+708
+00:41:35,680 --> 00:41:39,480
+in quale classe sta?
+
+709
+00:41:42,400 --> 00:41:46,240
+Sì.
+Sì.
+Perché?
+Perché
+
+710
+00:41:46,240 --> 00:41:50,319
+basterebbe tutta.
+Esattamente. Siccome L
+
+711
+00:41:50,319 --> 00:41:52,119
+sta in P, quindi c'è una macchina
+
+712
+00:41:52,119 --> 00:41:54,760
+diuring deterministica che in tempo
+
+713
+00:41:54,760 --> 00:41:58,319
+polinomiale decide L. Se noi prendiamo
+
+714
+00:41:58,319 --> 00:42:01,000
+quella macchina di touring e gli andiamo
+
+715
+00:42:01,000 --> 00:42:03,800
+a cambiare gli stati accettanti e non
+
+716
+00:42:03,800 --> 00:42:06,400
+accettanti, li scambiamo, allora quella
+
+717
+00:42:06,400 --> 00:42:08,079
+macchina semplicemente andrà ad
+
+718
+00:42:08,079 --> 00:42:12,040
+accettare L soprassegnato. Ok? Quindi
+
+719
+00:42:12,040 --> 00:42:15,040
+noi abbiamo che L soprasegnato
+
+720
+00:42:15,040 --> 00:42:17,920
+appartiene a P e in particolare proprio
+
+721
+00:42:17,920 --> 00:42:20,319
+per questa ragione la classe P che è una
+
+722
+00:42:20,319 --> 00:42:22,880
+classe deterministica, come tutte le
+
+723
+00:42:22,880 --> 00:42:25,440
+classi deterministiche sono chiuse sotto
+
+724
+00:42:25,440 --> 00:42:28,319
+complemento. Significa che se un
+
+725
+00:42:28,319 --> 00:42:29,839
+linguaggio appartiene a una classe
+
+726
+00:42:29,839 --> 00:42:31,680
+deterministica, il suo complemento
+
+727
+00:42:31,680 --> 00:42:33,400
+appartiene alla stessa classe, ok?
+
+728
+00:42:33,400 --> 00:42:35,119
+Perché basta prendere una macchina, gli
+
+729
+00:42:35,119 --> 00:42:37,079
+scambiamo gli stati accettanti e non
+
+730
+00:42:37,079 --> 00:42:39,400
+accettanti e abbiamo risolto la cosa.
+
+731
+00:42:39,400 --> 00:42:45,079
+Ok? Ma quindi noi avremo da questo da L
+
+732
+00:42:45,079 --> 00:42:50,240
+soprasegnato appartenente a P segue
+
+733
+00:42:50,240 --> 00:42:55,559
+che L sovrasegnato appartiene a NP e
+
+734
+00:42:55,559 --> 00:42:58,559
+quindi
+
+735
+00:42:59,119 --> 00:43:03,079
+L appartiene a come NP.
+
+736
+00:43:03,079 --> 00:43:05,119
+Ok? Quindi questo ci permette di
+
+737
+00:43:05,119 --> 00:43:08,559
+mostrare che P è
+
+738
+00:43:08,559 --> 00:43:11,240
+un linguaggio che i linguaggi, cioè che
+
+739
+00:43:11,240 --> 00:43:14,000
+P è un sottieme dell'intersezione di NP
+
+740
+00:43:14,000 --> 00:43:19,160
+e co NP, però sul fatto se siano
+
+741
+00:43:19,160 --> 00:43:21,640
+eh
+
+742
+00:43:21,640 --> 00:43:25,920
+se siano se l'intersezione di CNP ed NP
+
+743
+00:43:25,920 --> 00:43:28,760
+sia esattamente P, questa è una cosa che
+
+744
+00:43:28,760 --> 00:43:31,200
+anche questo è un problema aperto. Ok?
+
+745
+00:43:31,200 --> 00:43:35,359
+Quindi, a differenza di co re, per i
+
+746
+00:43:35,359 --> 00:43:37,400
+quali noi siamo in grado di stabilire
+
+747
+00:43:37,400 --> 00:43:40,440
+delle relazioni precise fra queste
+
+748
+00:43:40,440 --> 00:43:44,000
+classi, fra NP con NP e P, non lo
+
+749
+00:43:44,000 --> 00:43:46,400
+sappiamo. Sappiamo che P è un
+
+750
+00:43:46,400 --> 00:43:48,760
+sottoinsieme dell'intersezione,
+
+751
+00:43:48,760 --> 00:43:51,800
+sappiamo, però non sappiamo se è
+
+752
+00:43:51,800 --> 00:43:53,720
+esattamente l'intersezione delle due
+
+753
+00:43:53,720 --> 00:43:57,640
+classi, non sappiamo se con NP ed NP
+
+754
+00:43:57,640 --> 00:44:00,559
+coincidano o meno. quello che potrebbe
+
+755
+00:44:00,559 --> 00:44:03,920
+accadere semmai,
+
+756
+00:44:03,920 --> 00:44:06,240
+ok,
+
+757
+00:44:06,240 --> 00:44:10,280
+vediamola qua insieme. Cosa succederebbe
+
+758
+00:44:10,280 --> 00:44:13,119
+se p fosse uguale ad np? Che cosa
+
+759
+00:44:13,119 --> 00:44:16,599
+potremmo dire della loro relazione con
+
+760
+00:44:16,599 --> 00:44:20,119
+con co con co NP?
+
+761
+00:44:23,079 --> 00:44:27,000
+Se P fosse uguale ad NP?
+
+762
+00:44:27,000 --> 00:44:30,240
+Allora, n ugu
+Allora, con NP sarebbe
+
+763
+00:44:30,240 --> 00:44:34,400
+uguale ad NP, ok? Quindi se P fosse
+
+764
+00:44:34,400 --> 00:44:38,880
+uguale ad NP tutto collasserebbe su P.
+
+765
+00:44:38,880 --> 00:44:40,800
+Però quello che potrebbe accadere ad
+
+766
+00:44:40,800 --> 00:44:46,520
+esempio è avere NP e co NP uguali che
+
+767
+00:44:46,520 --> 00:44:49,119
+però non coincidono a P. Ok? Questa è
+
+768
+00:44:49,119 --> 00:44:51,200
+un'altra situazione che si potrebbe
+
+769
+00:44:51,200 --> 00:44:53,599
+verificare. Non sappiamo se sia così
+
+770
+00:44:53,599 --> 00:44:57,240
+perché nessuno c'ha mai riuscito a
+
+771
+00:44:57,240 --> 00:45:00,480
+risolvere la questione. Quello che si
+
+772
+00:45:00,480 --> 00:45:06,040
+ritiene sia la lo stato dei fatti è che
+
+773
+00:45:06,040 --> 00:45:08,079
+P sia un sottoinsieme stretto
+
+774
+00:45:08,079 --> 00:45:10,760
+dell'intersezione di NP e con NP. Questa
+
+775
+00:45:10,760 --> 00:45:12,960
+è un'ipotesi. Ipotezziamo che sia così
+
+776
+00:45:12,960 --> 00:45:14,359
+perché nessuno è mai riuscito a
+
+777
+00:45:14,359 --> 00:45:16,960
+dimostrare diversamente. E un'altra cosa
+
+778
+00:45:16,960 --> 00:45:18,640
+che ipotizziamo
+
+779
+00:45:18,640 --> 00:45:22,160
+è che NP sia distinto da co però di
+
+780
+00:45:22,160 --> 00:45:24,559
+nuovo questa qui è un'ipotesi perché non
+
+781
+00:45:24,559 --> 00:45:28,079
+abbiamo un risultato certo a riguardo.
+
+782
+00:45:28,079 --> 00:45:30,240
+Ok?
+
+783
+00:45:30,240 --> 00:45:33,760
+Ehm, ok, possiamo fare 10 minuti, un
+
+784
+00:45:33,760 --> 00:45:37,359
+quarto d'ora di pausa.
+
+785
+00:45:40,040 --> 00:45:43,040
+Dov'è?
+
+786
+00:45:51,839 --> 00:45:55,160
+Oggi oggi
+
+787
+00:46:02,319 --> 00:46:05,319
+okam
+
+788
+00:46:09,200 --> 00:46:11,720
+giusto
+
+789
+00:46:11,720 --> 00:46:15,319
+qualche problema.
+
+790
+00:46:16,079 --> 00:46:19,079
+Ok,
+
+791
+00:46:21,240 --> 00:46:26,040
+prima di far questo, giusto un commento.
+
+792
+00:46:26,040 --> 00:46:29,319
+Nella classe CNP ci stanno i problemi
+
+793
+00:46:29,319 --> 00:46:31,800
+tosti di CONP,
+
+794
+00:46:31,800 --> 00:46:35,160
+quindi esistono i problemi CNP ardu che
+
+795
+00:46:35,160 --> 00:46:37,359
+non
+
+796
+00:46:37,359 --> 00:46:38,960
+ansate.
+
+797
+00:46:38,960 --> 00:46:43,440
+Ok? I problemi CNP ardu similmente ai
+
+798
+00:46:43,440 --> 00:46:46,359
+problemi NP hard.
+
+799
+00:46:46,359 --> 00:46:48,760
+sono i problemi almeno difficili quanto
+
+800
+00:46:48,760 --> 00:46:51,000
+tutti i problemi di 2 NP. Questa è
+
+801
+00:46:51,000 --> 00:46:53,319
+sostanzialmente l'intuizione.
+
+802
+00:46:53,319 --> 00:47:00,400
+E un certo problema L è co Np arduo
+
+803
+00:47:00,400 --> 00:47:03,599
+se il suo complemento è NP alo. Tutto
+
+804
+00:47:03,599 --> 00:47:06,040
+qua. Ok? In realtà ci sono un paio di
+
+805
+00:47:06,040 --> 00:47:08,920
+definizioni, uno le può definire anche a
+
+806
+00:47:08,920 --> 00:47:11,079
+tramite le riduzioni, però non è una
+
+807
+00:47:11,079 --> 00:47:14,040
+cosa che di cui ci occuperemo. Quindi
+
+808
+00:47:14,040 --> 00:47:16,640
+esistono i problemi co NP hard, esistono
+
+809
+00:47:16,640 --> 00:47:19,520
+i problemi con NP completi, eccetera,
+
+810
+00:47:19,520 --> 00:47:22,280
+però insomma son cose che non andremo a
+
+811
+00:47:22,280 --> 00:47:24,480
+guardare a guardare nei dettagli, giusto
+
+812
+00:47:24,480 --> 00:47:27,280
+per sapere che ci stanno che similmente
+
+813
+00:47:27,280 --> 00:47:29,880
+problemi in ard ci stanno i problemi
+
+814
+00:47:29,880 --> 00:47:32,480
+coinpi. Ok?
+
+815
+00:47:32,480 --> 00:47:35,160
+Allora, noi abbiamo
+
+816
+00:47:35,160 --> 00:47:37,800
+che
+
+817
+00:47:37,800 --> 00:47:40,960
+le classi
+
+818
+00:47:40,960 --> 00:47:43,079
+con NP,
+
+819
+00:47:43,079 --> 00:47:47,559
+NP e P.
+
+820
+00:47:51,920 --> 00:47:55,400
+Ok, meglio C NP
+
+821
+00:47:55,400 --> 00:47:58,000
+NP. E qua ci sta P. Questa è la
+
+822
+00:47:58,000 --> 00:48:00,720
+relazione che noi crediamo ci sia queste
+
+823
+00:48:00,720 --> 00:48:01,920
+classi.
+
+824
+00:48:01,920 --> 00:48:07,599
+Di conseguenza c'è tutta quest'area qui
+
+825
+00:48:07,599 --> 00:48:10,079
+che sono problemi
+
+826
+00:48:10,079 --> 00:48:13,680
+per i quali non sono né NP completi,
+
+827
+00:48:13,680 --> 00:48:17,079
+quindi non sono problemi tosti, però non
+
+828
+00:48:17,079 --> 00:48:19,559
+sono problemi che nemmeno siamo riusciti
+
+829
+00:48:19,559 --> 00:48:21,640
+a collocare dentro qui. Quindi ci sta
+
+830
+00:48:21,640 --> 00:48:25,280
+una pletola di problemi qua in mezzo che
+
+831
+00:48:25,280 --> 00:48:28,040
+non sono né difficili per quello che
+
+832
+00:48:28,040 --> 00:48:29,760
+abbiamo detto, quindi non siamo riusciti
+
+833
+00:48:29,760 --> 00:48:32,960
+a mostrare che siano problemi NP
+
+834
+00:48:32,960 --> 00:48:36,400
+completi e reputiamo che nemmeno lo
+
+835
+00:48:36,400 --> 00:48:40,559
+siano perché stando qua in mezzo
+
+836
+00:48:40,559 --> 00:48:44,079
+stanno sia in NP che Enco NP. Di
+
+837
+00:48:44,079 --> 00:48:47,359
+conseguenza noi non ci attendiamo che
+
+838
+00:48:47,359 --> 00:48:51,160
+problemi che stanno qua dentro siano NP
+
+839
+00:48:51,160 --> 00:48:54,160
+completi. Ok? Però sono problemi per i
+
+840
+00:48:54,160 --> 00:48:55,520
+quali non siamo nemmeno riusciti a
+
+841
+00:48:55,520 --> 00:48:57,359
+trovare degli algoritmi polinomiali.
+
+842
+00:48:57,359 --> 00:49:01,400
+Quindi c'è un limbo qui di problemi che
+
+843
+00:49:01,400 --> 00:49:04,200
+non sono né tosti
+
+844
+00:49:04,200 --> 00:49:07,400
+né semplici. Ok?
+
+845
+00:49:07,400 --> 00:49:11,079
+E su questi problemi si basano i sistemi
+
+846
+00:49:11,079 --> 00:49:15,160
+di crittografia corrente. Ok? Sono
+
+847
+00:49:15,160 --> 00:49:17,880
+problemi che stanno qua in mezzo. Uno di
+
+848
+00:49:17,880 --> 00:49:20,720
+questo è il problema della
+
+849
+00:49:20,720 --> 00:49:24,640
+fattorizzazione. Ok?
+
+850
+00:49:24,640 --> 00:49:26,040
+Ovviamente il problema della
+
+851
+00:49:26,040 --> 00:49:30,880
+fattorizzazione dato un numero produrre
+
+852
+00:49:30,880 --> 00:49:33,880
+una
+
+853
+00:49:34,960 --> 00:49:38,160
+fattorizzazione in numeri primi è un
+
+854
+00:49:38,160 --> 00:49:42,480
+problema che secondo voi sta in NP?
+
+855
+00:49:46,680 --> 00:49:49,920
+Siete sicuri?
+
+856
+00:49:52,520 --> 00:49:56,559
+Dato un numero intero n produrre una sua
+
+857
+00:49:56,559 --> 00:49:59,720
+fattorizzazione in numeri primi
+
+858
+00:49:59,720 --> 00:50:04,240
+lo possi è una cosa fattibile in NP?
+
+859
+00:50:04,240 --> 00:50:05,440
+No, perché non è un problema di
+
+860
+00:50:05,440 --> 00:50:08,359
+decisione. Eh, attenzione, attenzione.
+
+861
+00:50:08,359 --> 00:50:10,880
+Ok, quindi per analizzare un po' i
+
+862
+00:50:10,880 --> 00:50:12,839
+problemi di fattorizzazione ci dobbiamo
+
+863
+00:50:12,839 --> 00:50:15,599
+inventare una variante decisionale. Ok?
+
+864
+00:50:15,599 --> 00:50:18,440
+La variante decisionale che guardiamo è
+
+865
+00:50:18,440 --> 00:50:22,119
+questa. è l'insieme delle coppie di
+
+866
+00:50:22,119 --> 00:50:25,000
+numeri n K
+
+867
+00:50:25,000 --> 00:50:30,400
+tali che n è un intero
+
+868
+00:50:30,400 --> 00:50:33,400
+naturale
+
+869
+00:50:37,280 --> 00:50:42,359
+che ha almeno
+
+870
+00:50:43,799 --> 00:50:47,599
+un fattore
+
+871
+00:50:47,680 --> 00:50:49,880
+primo.
+
+872
+00:50:50,440 --> 00:50:54,520
+P non superiore a K. Ok? Quindi questa è
+
+873
+00:50:54,520 --> 00:50:56,359
+una definizione, ce ne potrebbero essere
+
+874
+00:50:56,359 --> 00:50:58,480
+anche altre, però una possibile
+
+875
+00:50:58,480 --> 00:51:00,480
+definizione di un problema decisionale
+
+876
+00:51:00,480 --> 00:51:02,680
+basato sul problema della
+
+877
+00:51:02,680 --> 00:51:07,200
+fattorizzazione è dati due numeri n e k.
+
+878
+00:51:07,200 --> 00:51:11,480
+È vero che n ammette un fattore primo di
+
+879
+00:51:11,480 --> 00:51:14,960
+valore al + k? Questa è una variante
+
+880
+00:51:14,960 --> 00:51:17,440
+decisionale. Ok?
+
+881
+00:51:17,440 --> 00:51:20,079
+e eh quindi è candidato a stare nelle
+
+882
+00:51:20,079 --> 00:51:21,799
+nostre classi di complessità che sono
+
+883
+00:51:21,799 --> 00:51:23,960
+classi di complessità
+
+884
+00:51:23,960 --> 00:51:28,040
+di tipo decisionari. Ok? Ad esempio, se
+
+885
+00:51:28,040 --> 00:51:30,720
+noi abbiamo che, che ne so, il numero
+
+886
+00:51:30,720 --> 00:51:33,040
+175
+
+887
+00:51:33,040 --> 00:51:37,960
+che è dato da 5 * 5 * 7, avremo che
+
+888
+00:51:37,960 --> 00:51:40,760
+175,6
+
+889
+00:51:40,760 --> 00:51:44,680
+questa coppia appartiene a factor perché
+
+890
+00:51:44,680 --> 00:51:49,480
+175 ha un numero primo il cui valore è
+
+891
+00:51:49,480 --> 00:51:56,640
+al + 6 che lo divide. Invece 1754
+
+892
+00:51:59,920 --> 00:52:02,799
+non appartiene a factor perché nessuno
+
+893
+00:52:02,799 --> 00:52:05,480
+dei fattori primi di 175
+
+894
+00:52:05,480 --> 00:52:09,559
+rientra dentro 4. Ok? Quindi questo è
+
+895
+00:52:09,559 --> 00:52:13,880
+una possibile variante decisionale per
+
+896
+00:52:13,880 --> 00:52:16,119
+eh il problema della fattorizzazione.
+
+897
+00:52:16,119 --> 00:52:19,599
+Ok. Teorema
+
+898
+00:52:21,200 --> 00:52:23,799
+factor
+
+899
+00:52:23,799 --> 00:52:30,359
+appartiene a NP intersecato con NP.
+
+900
+00:52:30,520 --> 00:52:32,480
+Primo pezzo,
+
+901
+00:52:32,480 --> 00:52:35,720
+factor appartiene
+
+902
+00:52:35,720 --> 00:52:38,720
+a
+
+903
+00:52:39,400 --> 00:52:42,000
+appartiene a NP. Come possiamo
+
+904
+00:52:42,000 --> 00:52:47,839
+dimostrare che factor appartena ad NP?
+
+905
+00:52:47,839 --> 00:52:49,880
+Sì,
+
+906
+00:52:49,880 --> 00:52:53,359
+siamo di cosaettino
+
+907
+00:52:56,640 --> 00:52:59,960
+sì ug che sia minore o uguale a K. Ok?
+
+908
+00:52:59,960 --> 00:53:02,440
+Quindi l'idea per dimostrare che fatto
+
+909
+00:53:02,440 --> 00:53:04,680
+appartente alla classe NP, quello che
+
+910
+00:53:04,680 --> 00:53:08,920
+noi facciamo è gessare
+
+911
+00:53:08,920 --> 00:53:14,359
+un fattore primo, quindi gess
+
+912
+00:53:14,359 --> 00:53:18,440
+di un fattore
+
+913
+00:53:19,480 --> 00:53:21,599
+primo
+
+914
+00:53:21,599 --> 00:53:24,599
+P
+
+915
+00:53:25,920 --> 00:53:28,680
+di al + koiccare
+
+916
+00:53:28,680 --> 00:53:30,680
+check.
+
+917
+00:53:30,680 --> 00:53:32,200
+che
+
+918
+00:53:32,200 --> 00:53:36,440
+P sia primo
+
+919
+00:53:37,000 --> 00:53:41,880
+e che P divida
+
+920
+00:53:41,880 --> 00:53:45,280
+N. Ok?
+
+921
+00:53:45,280 --> 00:53:48,079
+Chiaro? Che cosa facciamo? Che siamo un
+
+922
+00:53:48,079 --> 00:53:50,920
+numero primo P.
+
+923
+00:53:50,920 --> 00:53:53,760
+Verifichiamo che questo numero P sia
+
+924
+00:53:53,760 --> 00:53:56,839
+effettivamente primo, poi dividiamo n* p
+
+925
+00:53:56,839 --> 00:53:59,880
+e verifichiamo che p effettivamente
+
+926
+00:53:59,880 --> 00:54:03,000
+divide n. Ok? Siamo sicuri che questa
+
+927
+00:54:03,000 --> 00:54:06,960
+cosa è fattibile in NP?
+
+928
+00:54:09,960 --> 00:54:11,920
+Si può fare in tempo polinomiale? Questa
+
+929
+00:54:11,920 --> 00:54:14,440
+è la domanda.
+
+930
+00:54:14,440 --> 00:54:17,480
+Sì, perché
+
+931
+00:54:17,480 --> 00:54:22,720
+lo indoviniamo poi m ah la divisione
+
+932
+00:54:22,720 --> 00:54:25,599
+sia polinomiale
+
+933
+00:54:25,599 --> 00:54:27,839
+Sì, la la divisione si fa in tempo
+
+934
+00:54:27,839 --> 00:54:31,079
+polinomiale. Ok,
+
+935
+00:54:31,079 --> 00:54:34,920
+un attimo un attimo, non accavallatevi.
+
+936
+00:54:37,680 --> 00:54:39,480
+La divisione del numero di divisione
+
+937
+00:54:39,480 --> 00:54:42,119
+devo fare dipende dal numero estetico,
+
+938
+00:54:42,119 --> 00:54:45,559
+però
+dipende dalla taglia dei numeri,
+
+939
+00:54:45,559 --> 00:54:49,200
+cioè dalla taglia di n e p. Si può
+
+940
+00:54:49,200 --> 00:54:51,799
+dimostrare, noi lo vediamo, che fare la
+
+941
+00:54:51,799 --> 00:54:54,799
+divisione di due numeri interi si può
+
+942
+00:54:54,799 --> 00:54:58,079
+fare in tempo polinomiale nella taglia
+
+943
+00:54:58,079 --> 00:55:01,040
+degli operandi. Ok?
+
+944
+00:55:01,040 --> 00:55:03,590
+Ma chi ci garantisce?
+
+945
+00:55:03,590 --> 00:55:05,079
+[Musica]
+
+946
+00:55:05,079 --> 00:55:08,000
+che
+
+947
+00:55:08,000 --> 00:55:11,799
+Ok, allora abbiamo due questioni. Uno,
+
+948
+00:55:11,799 --> 00:55:14,160
+ma siamo sicuri che P non sia una cosa
+
+949
+00:55:14,160 --> 00:55:15,960
+troppo grande da gessare? Di questo
+
+950
+00:55:15,960 --> 00:55:19,640
+possiamo essere sicuri?
+
+951
+00:55:21,480 --> 00:55:23,760
+Perché stiamo gessando qualcosa. Sto
+
+952
+00:55:23,760 --> 00:55:26,200
+guess deve essere polinomiale. Prego.
+
+953
+00:55:26,200 --> 00:55:27,839
+Care
+
+954
+00:55:27,839 --> 00:55:32,280
+minore ug
+minore o uguale a KT o N.
+
+955
+00:55:32,280 --> 00:55:35,640
+Quindi P quando lo chiessiamo non è mai
+
+956
+00:55:35,640 --> 00:55:38,200
+troppo grosso perché è minore sia di n
+
+957
+00:55:38,200 --> 00:55:40,799
+che di k. Ok? Quindi questo gest che noi
+
+958
+00:55:40,799 --> 00:55:42,440
+facciamo
+
+959
+00:55:42,440 --> 00:55:45,160
+è un guess piccolino. Quindi questo può
+
+960
+00:55:45,160 --> 00:55:47,280
+essere fatto in tempo polinomiale. Poi
+
+961
+00:55:47,280 --> 00:55:51,280
+abbiamo due ordini di problemi. È vero
+
+962
+00:55:51,280 --> 00:55:53,799
+che n si può dividere per pi in tempo
+
+963
+00:55:53,799 --> 00:55:57,039
+polinomiale? Sì, si può fa'.
+
+964
+00:55:57,039 --> 00:55:59,240
+La divisione si fa in tempo polinomiale,
+
+965
+00:55:59,240 --> 00:56:02,640
+nella taglia degli operandi.
+
+966
+00:56:02,640 --> 00:56:05,400
+E l'altro test che dobbiamo fare che P
+
+967
+00:56:05,400 --> 00:56:09,680
+sia polinomiale, ok? che sia primo. Il
+
+968
+00:56:09,680 --> 00:56:13,079
+test che P sia primo, ve lo dico io, si
+
+969
+00:56:13,079 --> 00:56:15,799
+fa in tempo polinomiale deterministico.
+
+970
+00:56:15,799 --> 00:56:19,240
+È un risultato del 2003,
+
+971
+00:56:19,240 --> 00:56:22,440
+cioè un algoritmo incasinatissimo, però
+
+972
+00:56:22,440 --> 00:56:25,760
+in n^ 12 si riesce a testare in tempo
+
+973
+00:56:25,760 --> 00:56:28,520
+polinomiale che p sia un numero primo.
+
+974
+00:56:28,520 --> 00:56:32,640
+Ok? Quindi il guess
+
+975
+00:56:32,640 --> 00:56:35,880
+è il guess di una cosa piccola e il
+
+976
+00:56:35,880 --> 00:56:39,760
+check si può fare in tempo polinomiale.
+
+977
+00:56:39,760 --> 00:56:43,960
+Ok? Questo ci permette di dire
+
+978
+00:56:43,960 --> 00:56:50,280
+che il problema factor sta in NP. Ok?
+
+979
+00:56:50,280 --> 00:56:52,480
+Quello che adesso noi dobbiamo mostrare
+
+980
+00:56:52,480 --> 00:56:56,160
+è che factor
+
+981
+00:56:58,640 --> 00:57:01,039
+appartenga
+
+982
+00:57:01,039 --> 00:57:04,640
+a co?
+
+983
+00:57:06,280 --> 00:57:07,880
+Allora,
+
+984
+00:57:07,880 --> 00:57:09,920
+per dimostrare
+
+985
+00:57:09,920 --> 00:57:11,960
+che factor
+
+986
+00:57:11,960 --> 00:57:15,599
+appartiene al CNP, lo mostriamo facendo
+
+987
+00:57:15,599 --> 00:57:18,400
+vedere che il complemento di factor
+
+988
+00:57:18,400 --> 00:57:21,240
+appartenga ad NP, perché questa è la
+
+989
+00:57:21,240 --> 00:57:24,720
+definizione formale che abbiamo, ok?
+
+990
+00:57:24,720 --> 00:57:29,440
+Quindi factor appartiene a con NP
+
+991
+00:57:29,440 --> 00:57:33,400
+se il complemento di factor
+
+992
+00:57:33,400 --> 00:57:38,520
+appartene ad NP. Ok?
+
+993
+00:57:38,520 --> 00:57:41,000
+Innanzitutto ci concentriamo su cosa sia
+
+994
+00:57:41,000 --> 00:57:44,880
+il complemento di factor.
+
+995
+00:57:44,880 --> 00:57:48,880
+Cosa ci sta in questo linguaggio?
+
+996
+00:57:50,960 --> 00:57:55,480
+Dovete prendere factor e negarlo.
+
+997
+00:57:55,599 --> 00:57:58,599
+Un attimo, vediamo se c'è qualcun altro,
+
+998
+00:57:58,599 --> 00:58:01,000
+qualche voce nuova. Un attimo, un
+
+999
+00:58:01,000 --> 00:58:04,000
+attimo.
+
+1000
+00:58:05,200 --> 00:58:07,200
+Dov'è la definizione di factor? Ok,
+
+1001
+00:58:07,200 --> 00:58:09,559
+dobbiamo prendere il complemento di quel
+
+1002
+00:58:09,559 --> 00:58:12,000
+linguaggio. Che cos'è il complemento di
+
+1003
+00:58:12,000 --> 00:58:15,000
+factor?
+
+1004
+00:58:21,280 --> 00:58:23,440
+Un attimo.
+
+1005
+00:58:23,440 --> 00:58:26,440
+Nuovi
+
+1006
+00:58:26,720 --> 00:58:29,680
+prego.
+E allora sempre la copia in
+
+1007
+00:58:29,680 --> 00:58:33,200
+capital
+e anche la partenza di naturale
+
+1008
+00:58:33,200 --> 00:58:35,920
+e a questo punto vengo e magari il resto
+
+1009
+00:58:35,920 --> 00:58:37,960
+e
+
+1010
+00:58:37,960 --> 00:58:41,000
+a questo punto il il fatto che p sia
+
+1011
+00:58:41,000 --> 00:58:42,559
+limitato da K lo manteniamo, però non
+
+1012
+00:58:42,559 --> 00:58:45,760
+deve esistere. Mh mh. Quindi n è un
+
+1013
+00:58:45,760 --> 00:58:49,160
+naturale la cui fattorizzazione
+eh non
+
+1014
+00:58:49,160 --> 00:58:53,119
+contiene eh
+
+1015
+00:58:53,119 --> 00:58:55,599
+primi min k
+e quindi tutti i fattori
+
+1016
+00:58:55,599 --> 00:58:59,319
+primi
+sono maggiori di k
+i cui fattori
+
+1017
+00:58:59,319 --> 00:59:02,319
+primi
+
+1018
+00:59:04,200 --> 00:59:08,240
+sono tutti
+
+1019
+00:59:08,680 --> 00:59:12,160
+più grandi di K.
+
+1020
+00:59:12,160 --> 00:59:14,799
+Mi interessano
+come
+che n de anche
+
+1021
+00:59:14,799 --> 00:59:17,200
+intero.
+Sì, sì, sì, sì. N è un naturale
+
+1022
+00:59:17,200 --> 00:59:22,799
+e intero. Sì. Più grande di K. Ok.
+
+1023
+00:59:22,799 --> 00:59:25,720
+Adesso
+
+1024
+00:59:25,720 --> 00:59:29,200
+factor soprassegnato.
+
+1025
+00:59:29,520 --> 00:59:32,799
+No, factor soprassegnato. A perché non
+
+1026
+00:59:32,799 --> 00:59:36,039
+do ad NP una volta che abbiamo definito
+
+1027
+00:59:36,039 --> 00:59:39,240
+che cos'è?
+
+1028
+00:59:42,280 --> 00:59:44,039
+Come facciamo a stabilire, dato una
+
+1029
+00:59:44,039 --> 00:59:46,240
+coppia NK,
+
+1030
+00:59:46,240 --> 00:59:48,760
+dobbiamo stabilire che tutti i fattori
+
+1031
+00:59:48,760 --> 00:59:52,079
+primi di n siano più grandi di K. Come
+
+1032
+00:59:52,079 --> 00:59:56,359
+lo facciamo? In NP?
+
+1033
+01:00:04,160 --> 01:00:05,760
+Sì,
+possiamo parlando nello stesso modo
+
+1034
+01:00:05,760 --> 01:00:09,359
+in cui che siamo T mag> K.
+
+1035
+01:00:09,359 --> 01:00:12,359
+Tutti tutti i fattori primi di di n
+
+1036
+01:00:12,359 --> 01:00:15,039
+devono essere più grande di K. Se lei ne
+
+1037
+01:00:15,039 --> 01:00:18,319
+uno e fa il check, le sta mostrando che
+
+1038
+01:00:18,319 --> 01:00:20,640
+un fattore primo è più grati di K. Noi
+
+1039
+01:00:20,640 --> 01:00:22,880
+dobbiamo mostrare che tutti sono più
+
+1040
+01:00:22,880 --> 01:00:26,319
+grati di K.
+
+1041
+01:00:26,319 --> 01:00:28,559
+Sei quorare
+
+1042
+01:00:28,559 --> 01:00:30,280
+fattori?
+Ecco, come si fa a sapere che
+
+1043
+01:00:30,280 --> 01:00:34,119
+quello è esattamente più piccolo?
+
+1044
+01:00:34,119 --> 01:00:36,319
+Eh, però io l'ho ghesso. È interessante
+
+1045
+01:00:36,319 --> 01:00:38,640
+la procedura. Eh, noi che siamo un
+
+1046
+01:00:38,640 --> 01:00:41,119
+numero primo, vogliamo essere sicuri che
+
+1047
+01:00:41,119 --> 01:00:43,599
+sia il più piccolo fattore di n. Come
+
+1048
+01:00:43,599 --> 01:00:45,359
+facciamo a saperlo che non ce ne siano
+
+1049
+01:00:45,359 --> 01:00:47,280
+di più piccoli? Dobbiamo fare un altro
+
+1050
+01:00:47,280 --> 01:00:48,799
+guess.
+
+1051
+01:00:48,799 --> 01:00:50,200
+Possiamo fare il guest di tutti i
+
+1052
+01:00:50,200 --> 01:00:52,720
+fattori primi.
+Possiamo fare il guess
+
+1053
+01:00:52,720 --> 01:00:55,520
+della fattorizzazione. Ok? Quindi in
+
+1054
+01:00:55,520 --> 01:00:58,839
+questo caso noi che facciamo? Gessiamo
+
+1055
+01:00:58,839 --> 01:01:01,280
+tutta la fattorizzazione di n che noi
+
+1056
+01:01:01,280 --> 01:01:03,799
+sappiamo essere unica a parte l'ordine
+
+1057
+01:01:03,799 --> 01:01:07,240
+dei fattori. Quindi, come si fa?
+
+1058
+01:01:07,240 --> 01:01:09,440
+Gess
+
+1059
+01:01:09,440 --> 01:01:13,520
+della fattorizzazione
+
+1060
+01:01:17,400 --> 01:01:22,319
+di N. Ok? E quindi gessiamo che cosa?
+
+1061
+01:01:22,319 --> 01:01:27,359
+P1, P2, bla bla bla bla PM.
+
+1062
+01:01:27,359 --> 01:01:32,720
+Ok? Poi che cosa dobbiamo verificare?
+
+1063
+01:01:35,039 --> 01:01:37,559
+che il più piccolo sia maggiore o uguale
+
+1064
+01:01:37,559 --> 01:01:40,359
+di K, sia maggiore di K.
+
+1065
+01:01:40,359 --> 01:01:44,000
+Sì. Ok.
+E che moltiplicati che siano
+
+1066
+01:01:44,000 --> 01:01:46,119
+tutti i primi.
+Che siano tutti i primi
+e
+
+1067
+01:01:46,119 --> 01:01:47,520
+che moltiplicati tra loro viene
+
+1068
+01:01:47,520 --> 01:01:50,039
+effettivamente il numero
+il numero n.
+
+1069
+01:01:50,039 --> 01:01:53,559
+Ok? Quindi abbiamo tre cose da cercare
+
+1070
+01:01:53,559 --> 01:01:55,680
+che siano tutti i primi. Quanto tempo ci
+
+1071
+01:01:55,680 --> 01:01:58,680
+serve?
+
+1072
+01:01:58,960 --> 01:02:02,319
+m *
+
+1073
+01:02:03,200 --> 01:02:04,839
+m*
+
+1074
+01:02:04,839 --> 01:02:06,760
+m per polinomiale è una cosa
+
+1075
+01:02:06,760 --> 01:02:09,920
+polinomiale. Ok? La questione è ma
+
+1076
+01:02:09,920 --> 01:02:11,920
+quanti ne stiamo cheando? Sono il numero
+
+1077
+01:02:11,920 --> 01:02:14,960
+polinomiale? Cioè questi P1 PM sono
+
+1078
+01:02:14,960 --> 01:02:19,359
+tanti, pochi? Sono tantissimi.
+
+1079
+01:02:21,240 --> 01:02:23,960
+Allora direi che sono polinomiali sulla
+
+1080
+01:02:23,960 --> 01:02:27,880
+taglia.
+La taglia di chi? del dn.
+DN.
+
+1081
+01:02:27,880 --> 01:02:31,359
+Sì, perché
+perché questo è detto un po'
+
+1082
+01:02:31,359 --> 01:02:34,839
+di non so se
+benissimo, dai.
+Il più
+
+1083
+01:02:34,839 --> 01:02:37,920
+piccolo numero primo è due. Sì.
+Quindi
+
+1084
+01:02:37,920 --> 01:02:40,240
+al minimo, cioè il numero massimo di
+
+1085
+01:02:40,240 --> 01:02:42,599
+fattori che posso avere è se è una e se
+
+1086
+01:02:42,599 --> 01:02:45,240
+è 2^ n
+è una potenza di 2, quindi il
+
+1087
+01:02:45,240 --> 01:02:48,079
+male che ci va, noi facciamo 2 * 2 * 2 *
+
+1088
+01:02:48,079 --> 01:02:49,799
+2 * 2. Quelli là sono il numero
+
+1089
+01:02:49,799 --> 01:02:52,079
+polinomiale e quindi il numero
+
+1090
+01:02:52,079 --> 01:02:54,520
+polinomiale di fattori primi che il
+
+1091
+01:02:54,520 --> 01:02:57,200
+numero di fattori primi che siamo male
+
+1092
+01:02:57,200 --> 01:02:59,079
+che ci va è polinomiale. Noi possiamo
+
+1093
+01:02:59,079 --> 01:03:00,960
+rimanere in quell'ambito. Ok? Quindi
+
+1094
+01:03:00,960 --> 01:03:04,599
+sappiamo che m è bounded da un polinomio
+
+1095
+01:03:04,599 --> 01:03:08,200
+nella taglia di N.
+
+1096
+01:03:08,200 --> 01:03:11,799
+Quanto ci costa testare che sono tutti i
+
+1097
+01:03:11,799 --> 01:03:13,400
+primi?
+
+1098
+01:03:13,400 --> 01:03:15,920
+Ci costa tempo polinomiale perché
+
+1099
+01:03:15,920 --> 01:03:17,920
+dobbiamo fare un numero polinomiale di
+
+1100
+01:03:17,920 --> 01:03:21,000
+test polinomiali, ok? Quindi il check
+
+1101
+01:03:21,000 --> 01:03:23,799
+che P1, P2, bla bla PN siano
+
+1102
+01:03:23,799 --> 01:03:29,039
+polinomiali, si fa in tempo polinomiale.
+
+1103
+01:03:29,359 --> 01:03:32,760
+Poi dobbiamo cercare che cosa? che il
+
+1104
+01:03:32,760 --> 01:03:36,279
+loro prodotto
+
+1105
+01:03:36,279 --> 01:03:40,799
+sia n e la moltiplicazione si può fare
+
+1106
+01:03:40,799 --> 01:03:43,359
+in tempo polinomiale nella taglia degli
+
+1107
+01:03:43,359 --> 01:03:46,359
+operandi
+
+1108
+01:03:49,119 --> 01:03:51,720
+e poi dobbiamo verificare che siano
+
+1109
+01:03:51,720 --> 01:03:54,480
+tutti più grandi di K o che il più
+
+1110
+01:03:54,480 --> 01:03:57,200
+piccolo sia più grande di K. Comunque si
+
+1111
+01:03:57,200 --> 01:03:59,079
+fa anche questo in tempo polinomiale,
+
+1112
+01:03:59,079 --> 01:04:00,799
+cioè riscorriamo, facciamo delle
+
+1113
+01:04:00,799 --> 01:04:04,279
+verifiche e tutto ciò è fattibile in
+
+1114
+01:04:04,279 --> 01:04:08,480
+tempo polinomiale. Ok?
+
+1115
+01:04:08,680 --> 01:04:11,119
+Da ciò che cosa abbiamo? Da ciò abbiamo
+
+1116
+01:04:11,119 --> 01:04:15,559
+che factor è un problema
+
+1117
+01:04:15,559 --> 01:04:18,039
+per come l'abbiamo definito che sta qui.
+
+1118
+01:04:18,039 --> 01:04:21,400
+Ok? Questo qua è factor,
+
+1119
+01:04:21,400 --> 01:04:27,359
+è un problema che non è NP completo,
+
+1120
+01:04:27,359 --> 01:04:30,079
+ma è un problema che non sta nemmeno in
+
+1121
+01:04:30,079 --> 01:04:32,520
+B perché
+
+1122
+01:04:32,520 --> 01:04:34,559
+perché l'abbiamo dimostrato, no? sono
+
+1123
+01:04:34,559 --> 01:04:36,880
+CMC,
+
+1124
+01:04:36,880 --> 01:04:40,480
+cioè noi riteniamo che il problema della
+
+1125
+01:04:40,480 --> 01:04:42,440
+fattorizzazione
+
+1126
+01:04:42,440 --> 01:04:44,799
+sia un problema intrattabile, cioè
+
+1127
+01:04:44,799 --> 01:04:47,400
+quindi un problema non risolubile in
+
+1128
+01:04:47,400 --> 01:04:49,279
+tempo polinomiale,
+
+1129
+01:04:49,279 --> 01:04:52,119
+semplicemente perché nessuno è mai
+
+1130
+01:04:52,119 --> 01:04:54,520
+riuscito a farlo.
+
+1131
+01:04:54,520 --> 01:04:57,400
+E la cosa più interessante è che tutti,
+
+1132
+01:04:57,400 --> 01:04:59,960
+cioè tutti, buona parte dei sistemi
+
+1133
+01:04:59,960 --> 01:05:02,279
+crittografici a chiave pubblica che
+
+1134
+01:05:02,279 --> 01:05:05,520
+usiamo in questo momento, tipo RSA, si
+
+1135
+01:05:05,520 --> 01:05:06,839
+basano sul problema della
+
+1136
+01:05:06,839 --> 01:05:09,079
+fattorizzazione e si basano sul fatto
+
+1137
+01:05:09,079 --> 01:05:12,760
+che noi assumiamo che fattorizzare dei
+
+1138
+01:05:12,760 --> 01:05:16,200
+numeri sia un problema tosto. Ok? In
+
+1139
+01:05:16,200 --> 01:05:18,599
+realtà noi non lo sappiamo se sia un
+
+1140
+01:05:18,599 --> 01:05:20,920
+problema che sta dentro P o no. Siccome
+
+1141
+01:05:20,920 --> 01:05:23,279
+nessuno c'è mai riuscito, ipotizziamo
+
+1142
+01:05:23,279 --> 01:05:25,880
+che non lo sia. Quello che sappiamo è
+
+1143
+01:05:25,880 --> 01:05:28,559
+che con altissima probabilità il
+
+1144
+01:05:28,559 --> 01:05:31,680
+problema della fattorizzazione non è NP
+
+1145
+01:05:31,680 --> 01:05:34,119
+completo, quindi non è un problema tosto
+
+1146
+01:05:34,119 --> 01:05:38,079
+di NP perché Factor sta sia in NP che in
+
+1147
+01:05:38,079 --> 01:05:41,799
+co di conseguenza, se factor fosse uno
+
+1148
+01:05:41,799 --> 01:05:45,520
+dei problemi tosti di NP, se fosse un
+
+1149
+01:05:45,520 --> 01:05:47,599
+problema NP completo, allora avremmo che
+
+1150
+01:05:47,599 --> 01:05:50,440
+co NP sarebbe uguale a NP e a questo non
+
+1151
+01:05:50,440 --> 01:05:52,760
+ci aspettiamo che accada, ok? Quindi
+
+1152
+01:05:52,760 --> 01:05:55,839
+factor è un problema
+
+1153
+01:05:55,839 --> 01:05:59,160
+che non sta in Pché nessuno c'è mai
+
+1154
+01:05:59,160 --> 01:06:01,000
+riuscito a risolverlo in tempo
+
+1155
+01:06:01,000 --> 01:06:03,039
+polinomiale, però non abbiamo nemmeno la
+
+1156
+01:06:03,039 --> 01:06:05,000
+garanzia che Factor sia un problema
+
+1157
+01:06:05,000 --> 01:06:08,039
+tosto di quelli di INP. Riteniamo
+
+1158
+01:06:08,039 --> 01:06:10,760
+infatti che non lo sia. Nonostante ciò
+
+1159
+01:06:10,760 --> 01:06:14,079
+viene utilizzato per la per la sicurezza
+
+1160
+01:06:14,079 --> 01:06:16,920
+informatica in buona parte dei dei
+
+1161
+01:06:16,920 --> 01:06:18,599
+protocolli attuali. Come voi sapete,
+
+1162
+01:06:18,599 --> 01:06:21,359
+esiste un algoritmo per macchine
+
+1163
+01:06:21,359 --> 01:06:23,599
+quantistiche che è in grado di risolvere
+
+1164
+01:06:23,599 --> 01:06:25,400
+il problema della fattorizzazione in
+
+1165
+01:06:25,400 --> 01:06:28,240
+tempo polinomiale, ma come vedete questa
+
+1166
+01:06:28,240 --> 01:06:30,440
+è una domanda che insomma molti di voi
+
+1167
+01:06:30,440 --> 01:06:33,039
+vi hanno mi hanno fatto. Questo problema
+
+1168
+01:06:33,039 --> 01:06:35,079
+che è risolvibile
+
+1169
+01:06:35,079 --> 01:06:36,640
+in tempo polinomiale da macchine
+
+1170
+01:06:36,640 --> 01:06:40,039
+quantistiche non è un problema NP
+
+1171
+01:06:40,039 --> 01:06:41,680
+completo.
+
+1172
+01:06:41,680 --> 01:06:43,960
+Quello che infatti si sa, almeno quello
+
+1173
+01:06:43,960 --> 01:06:45,799
+che io so a riguardo, è che i problemi
+
+1174
+01:06:45,799 --> 01:06:49,160
+NP completi non sono risolvibili in
+
+1175
+01:06:49,160 --> 01:06:50,960
+tempo polinomiale da macchine
+
+1176
+01:06:50,960 --> 01:06:52,760
+quantistiche, cioè le macchine
+
+1177
+01:06:52,760 --> 01:06:54,640
+quantistiche riusciranno, semmai
+
+1178
+01:06:54,640 --> 01:06:56,640
+riusciremo ad averne qualcuna che
+
+1179
+01:06:56,640 --> 01:07:00,000
+veramente funziona, a risolvere in tempo
+
+1180
+01:07:00,000 --> 01:07:05,920
+polinomiale roba e i che sta qui.
+
+1181
+01:07:05,920 --> 01:07:08,440
+Ok? Cioè i problemi quelli veramente
+
+1182
+01:07:08,440 --> 01:07:12,000
+tosti, che ne so il Napsak, il be
+
+1183
+01:07:12,000 --> 01:07:15,440
+packing, tutta quella roba, il commesso
+
+1184
+01:07:15,440 --> 01:07:18,039
+viaggiatore che vedremo alla fine, no?
+
+1185
+01:07:18,039 --> 01:07:21,359
+Che sono problemi NP completi, sono
+
+1186
+01:07:21,359 --> 01:07:24,839
+problemi che non verranno risolti in
+
+1187
+01:07:24,839 --> 01:07:26,279
+tempo polinomiale da macchine
+
+1188
+01:07:26,279 --> 01:07:29,720
+quantistiche. Quindi la questione PNP
+
+1189
+01:07:29,720 --> 01:07:32,319
+rimane tutta, noi non lo sappiamo,
+
+1190
+01:07:32,319 --> 01:07:35,680
+riteniamo che non ci sia. Questa è una
+
+1191
+01:07:35,680 --> 01:07:38,079
+versione estesa, è una congettura di
+
+1192
+01:07:38,079 --> 01:07:40,559
+Aronson, mi pare che non ci sia un
+
+1193
+01:07:40,559 --> 01:07:42,880
+dispositivo fisico costruibile in questo
+
+1194
+01:07:42,880 --> 01:07:44,680
+universo che sia in grado di risolvere
+
+1195
+01:07:44,680 --> 01:07:47,200
+in tempo polinomiale
+
+1196
+01:07:47,200 --> 01:07:50,760
+i problemi più completi, cioè quelli non
+
+1197
+01:07:50,760 --> 01:07:53,799
+sono correntemente risolvibili in tempo
+
+1198
+01:07:53,799 --> 01:07:55,680
+polinomiale e ci aspettiamo che non lo
+
+1199
+01:07:55,680 --> 01:07:58,079
+saranno mai, cioè saranno sempre
+
+1200
+01:07:58,079 --> 01:08:00,359
+problemi al di fuori delle nostre
+
+1201
+01:08:00,359 --> 01:08:02,760
+capacità risolutive, a meno che,
+
+1202
+01:08:02,760 --> 01:08:04,240
+insomma, non abbiamo
+
+1203
+01:08:04,240 --> 01:08:06,920
+istanze piccole o cose del genere.
+
+1204
+01:08:06,920 --> 01:08:09,920
+Prego.
+
+1205
+01:08:10,039 --> 01:08:14,359
+Subord in questo caso quando
+
+1206
+01:08:14,359 --> 01:08:18,359
+interp il bordo si interrompe.
+Sì, sì, è
+
+1207
+01:08:18,359 --> 01:08:20,920
+una metafora che si potrebbe utilizzare
+
+1208
+01:08:20,920 --> 01:08:23,759
+a contatti a quelli in un
+Sì. Se noi ci
+
+1209
+01:08:23,759 --> 01:08:27,000
+immaginiamo che gli NP completi sono
+
+1210
+01:08:27,000 --> 01:08:28,880
+tutto metaforico, eh se c se ci
+
+1211
+01:08:28,880 --> 01:08:31,000
+immaginiamo che gli NP completi sono sul
+
+1212
+01:08:31,000 --> 01:08:33,400
+bordo di NP, ovviamente non possono
+
+1213
+01:08:33,400 --> 01:08:35,319
+essere questi perché sarebbero dentro
+
+1214
+01:08:35,319 --> 01:08:37,839
+con NP, quindi sono che possiamo pensare
+
+1215
+01:08:37,839 --> 01:08:40,239
+che questi siano gli NP completi e
+
+1216
+01:08:40,239 --> 01:08:45,719
+questi qua siano i co completi. Ok?
+
+1217
+01:08:45,719 --> 01:08:48,839
+Alright. Oggi stiamo andando più veloce
+
+1218
+01:08:48,839 --> 01:08:51,640
+del solito.
+
+1219
+01:08:51,640 --> 01:08:54,440
+Vediamo altre classi di complessità. Ok,
+
+1220
+01:08:54,440 --> 01:08:57,520
+giusto le introduciamo. Le introduciamo.
+
+1221
+01:08:57,520 --> 01:09:01,520
+Non vedremo cose troppo dettagliate
+
+1222
+01:09:01,520 --> 01:09:04,279
+perché perché richiede richiederebbe del
+
+1223
+01:09:04,279 --> 01:09:06,600
+tempo. Se poi avete curiosità me le me
+
+1224
+01:09:06,600 --> 01:09:08,640
+le chiedete.
+
+1225
+01:09:08,640 --> 01:09:10,600
+Ok? Allora, quello di cui abbiamo
+
+1226
+01:09:10,600 --> 01:09:13,480
+parlato finora sono i problemi NP che,
+
+1227
+01:09:13,480 --> 01:09:15,600
+come abbiamo detto non sono non è la
+
+1228
+01:09:15,600 --> 01:09:20,239
+classe dei problemi non polinomiali,
+
+1229
+01:09:20,239 --> 01:09:22,920
+ma sono i problemi non deterministic
+
+1230
+01:09:22,920 --> 01:09:25,080
+polynomial. Cioè, poi è rimasto
+
+1231
+01:09:25,080 --> 01:09:28,239
+classicamente il nome perché proveniva
+
+1232
+01:09:28,239 --> 01:09:30,279
+da non deterministic polynomial, ma non
+
+1233
+01:09:30,279 --> 01:09:32,560
+è che significa è non polinomiale. Poi
+
+1234
+01:09:32,560 --> 01:09:34,679
+di fatto sta che non siamo in grado di
+
+1235
+01:09:34,679 --> 01:09:36,640
+risolverli in tempo polinomiale, però
+
+1236
+01:09:36,640 --> 01:09:38,839
+non abbiamo la garanzia che non siano
+
+1237
+01:09:38,839 --> 01:09:41,440
+risolvibili in tempo polinomiale. Ok?
+
+1238
+01:09:41,440 --> 01:09:43,040
+Però ovviamente non è che le classi di
+
+1239
+01:09:43,040 --> 01:09:45,759
+complessità si esaiscono qua. Sopra NP
+
+1240
+01:09:45,759 --> 01:09:49,880
+ci stanno tante classi, alcune
+
+1241
+01:09:49,880 --> 01:09:52,799
+le vediamo oggi, altre le vedremo in
+
+1242
+01:09:52,799 --> 01:09:55,640
+altre lezioni. Daremo giusto delle delle
+
+1243
+01:09:55,640 --> 01:09:57,400
+intuizioni.
+
+1244
+01:09:57,400 --> 01:10:00,840
+Una cosa su cui ci concentriamo ora sono
+
+1245
+01:10:00,840 --> 01:10:04,440
+i problemi che in effetti, cioè possono
+
+1246
+01:10:04,440 --> 01:10:06,880
+essere risolti in tempo esponenziale,
+
+1247
+01:10:06,880 --> 01:10:09,280
+ok? Quindi è proprio un'altra categoria
+
+1248
+01:10:09,280 --> 01:10:12,120
+di problemi che sono i problemi
+
+1249
+01:10:12,120 --> 01:10:16,640
+exponential time, ok?
+
+1250
+01:10:17,440 --> 01:10:19,640
+E denotiamo la loro classe di
+
+1251
+01:10:19,640 --> 01:10:24,040
+complessità come exp.
+
+1252
+01:10:27,400 --> 01:10:31,880
+Allora, che cos'è Exp?
+
+1253
+01:10:31,880 --> 01:10:34,920
+Expo viene definita proprio come la
+
+1254
+01:10:34,920 --> 01:10:41,679
+classe dei problemi che possono essere
+
+1255
+01:10:41,679 --> 01:10:43,719
+dei problemi di decisione, sempre di
+
+1256
+01:10:43,719 --> 01:10:46,600
+cesione, tutto ciò è decisionale. Eh, ex
+
+1257
+01:10:46,600 --> 01:10:49,440
+è la classe dei problemi di decisione
+
+1258
+01:10:49,440 --> 01:10:53,159
+che possono essere risolti, decisi da
+
+1259
+01:10:53,159 --> 01:10:56,920
+macchine di touring deterministiche
+
+1260
+01:10:56,920 --> 01:10:59,800
+in tempo esponenziale.
+
+1261
+01:10:59,800 --> 01:11:04,239
+Ok? Quindi è l'unione su d time
+
+1262
+01:11:04,239 --> 01:11:09,360
+di 2^ n^ c per c che è maggiore uguale
+
+1263
+01:11:09,360 --> 01:11:11,640
+di 1. Cioè, quindi che cosa sono? sono
+
+1264
+01:11:11,640 --> 01:11:13,679
+quei problemi
+
+1265
+01:11:13,679 --> 01:11:17,480
+che possono essere risolti
+
+1266
+01:11:17,480 --> 01:11:20,640
+da macchine di touring
+
+1267
+01:11:20,640 --> 01:11:23,640
+deterministiche
+
+1268
+01:11:24,800 --> 01:11:29,400
+in il cui running time è 2 a elevato a
+
+1269
+01:11:29,400 --> 01:11:32,199
+un polinomio. Ok? Quindi quello è per
+
+1270
+01:11:32,199 --> 01:11:34,920
+noi exponential time. Exponential time,
+
+1271
+01:11:34,920 --> 01:11:37,600
+deterministic.
+
+1272
+01:11:37,600 --> 01:11:39,080
+Ok?
+
+1273
+01:11:39,080 --> 01:11:42,280
+Allora, la domanda che io ora vi faccio
+
+1274
+01:11:42,280 --> 01:11:44,120
+è
+
+1275
+01:11:44,120 --> 01:11:50,360
+che relazione c'è fra P ed time?
+
+1276
+01:11:56,880 --> 01:11:59,760
+Chi sta dentro?
+
+1277
+01:12:07,760 --> 01:12:10,159
+Pista dentro ex ovviamente perché quello
+
+1278
+01:12:10,159 --> 01:12:11,480
+che noi riusciamo a fare in tempo
+
+1279
+01:12:11,480 --> 01:12:13,920
+polinomiale lo sappiamo fare anche in
+
+1280
+01:12:13,920 --> 01:12:19,280
+tempo esponenziale. Vi ricordo c'è che
+
+1281
+01:12:19,280 --> 01:12:24,719
+i linguaggi di P stanno dentro exp.
+
+1282
+01:12:24,719 --> 01:12:26,600
+Non è che per un linguaggio per stare
+
+1283
+01:12:26,600 --> 01:12:29,040
+dentro Exp si deve risolvere in tempo
+
+1284
+01:12:29,040 --> 01:12:32,600
+esponenziale e non di meno. Basta che
+
+1285
+01:12:32,600 --> 01:12:34,719
+sia risolvibile in tempo esponenziale,
+
+1286
+01:12:34,719 --> 01:12:38,199
+ok? Quindi abbiamo che exp time sta qui
+
+1287
+01:12:38,199 --> 01:12:44,239
+sopra, ok? Questo è exp.
+
+1288
+01:12:44,239 --> 01:12:49,360
+Che relazione c'è fra exp e p?
+
+1289
+01:12:49,360 --> 01:12:54,120
+tra e p noi siamo in grado di dire
+
+1290
+01:12:54,120 --> 01:12:56,320
+che sono diversi,
+
+1291
+01:12:56,320 --> 01:12:59,639
+ok? Non vediamo il risultato, però ve lo
+
+1292
+01:12:59,639 --> 01:13:02,199
+ve la dico io. Così, per esempio, tra
+
+1293
+01:13:02,199 --> 01:13:04,520
+exp time e polynomial time noi siamo in
+
+1294
+01:13:04,520 --> 01:13:06,199
+grado di dire che le due classi di
+
+1295
+01:13:06,199 --> 01:13:08,960
+complessità sono distinte, cioè ci sono
+
+1296
+01:13:08,960 --> 01:13:13,159
+dei problemi in expolvibili
+
+1297
+01:13:13,159 --> 01:13:17,480
+in polinomial time. si chiama
+
+1298
+01:13:19,120 --> 01:13:21,840
+il teorema della gerarchia temporale,
+
+1299
+01:13:21,840 --> 01:13:24,080
+qualcosa di questo genere, che ci
+
+1300
+01:13:24,080 --> 01:13:27,320
+permette di dire che polinomial time sia
+
+1301
+01:13:27,320 --> 01:13:30,199
+distinto da da esponential time. Adesso
+
+1302
+01:13:30,199 --> 01:13:33,199
+quello che io vi chiedo è secondo voi
+
+1303
+01:13:33,199 --> 01:13:37,800
+qual è la relazione fra NP
+
+1304
+01:13:37,800 --> 01:13:41,760
+ed exp time?
+
+1305
+01:13:45,159 --> 01:13:47,800
+Un attimo che mentre ci pensate io
+
+1306
+01:13:47,800 --> 01:13:49,639
+sposto questa cosa qua che mi serve
+
+1307
+01:13:49,639 --> 01:13:52,800
+dello spazio.
+
+1308
+01:13:52,800 --> 01:13:54,679
+Un giorno imparerò a spostare le
+
+1309
+01:13:54,679 --> 01:13:59,280
+figurelle, quindi abbiamo P qua
+
+1310
+01:13:59,280 --> 01:14:03,120
+exp time è qui. Ok.
+
+1311
+01:14:03,120 --> 01:14:07,120
+Cos'è che relazione c'è fra NP ed exp
+
+1312
+01:14:07,120 --> 01:14:10,120
+time?
+
+1313
+01:14:14,639 --> 01:14:19,600
+è incluso m
+perché eh perché col fatto
+
+1314
+01:14:19,600 --> 01:14:24,960
+che ehm NP include P, però possiamo dire
+
+1315
+01:14:24,960 --> 01:14:27,840
+che extra è diverso da P, allora sarà
+
+1316
+01:14:27,840 --> 01:14:30,480
+per forza un
+E perché non facciamo una
+
+1317
+01:14:30,480 --> 01:14:34,679
+cosa di questo tipo?
+
+1318
+01:14:39,840 --> 01:14:43,679
+Sì, perché possiamo simulare i le
+
+1319
+01:14:43,679 --> 01:14:46,880
+macchine non mistiche in questo
+
+1320
+01:14:46,880 --> 01:14:49,080
+Esattamente. La dimostrazione è quella.
+
+1321
+01:14:49,080 --> 01:14:53,960
+Noi abbiamo che la relazione fra
+
+1322
+01:14:54,159 --> 01:14:56,360
+where is it?
+
+1323
+01:14:56,360 --> 01:15:01,760
+Exp, la relazione fra NP ed exp time è
+
+1324
+01:15:01,760 --> 01:15:04,120
+questo qua per un risultato che abbiamo
+
+1325
+01:15:04,120 --> 01:15:06,639
+visto proprio all'inizio inizio. Siccome
+
+1326
+01:15:06,639 --> 01:15:10,080
+noi possiamo simulare il funzionamento
+
+1327
+01:15:10,080 --> 01:15:12,080
+di una macchina
+
+1328
+01:15:12,080 --> 01:15:14,000
+non deterministica
+
+1329
+01:15:14,000 --> 01:15:18,400
+con un con una crescita temporale di
+
+1330
+01:15:18,400 --> 01:15:20,920
+tipo esponenziale, se la macchina non
+
+1331
+01:15:20,920 --> 01:15:23,120
+deterministica esegue in tempo
+
+1332
+01:15:23,120 --> 01:15:26,159
+polinomiale, come le macchine in NP, la
+
+1333
+01:15:26,159 --> 01:15:28,320
+loro simulazione con la simulazione che
+
+1334
+01:15:28,320 --> 01:15:31,320
+noi conosciamo eh di fare l'esplorazione
+
+1335
+01:15:31,320 --> 01:15:34,639
+per livelli del computation tre, quella
+
+1336
+01:15:34,639 --> 01:15:37,480
+cosa si fa in esponenziale.
+
+1337
+01:15:37,480 --> 01:15:42,320
+Per questa ragione noi abbiamo che NP è
+
+1338
+01:15:42,320 --> 01:15:45,800
+incluso dentro XP.
+
+1339
+01:15:45,800 --> 01:15:48,239
+Ok?
+
+1340
+01:15:48,239 --> 01:15:53,400
+Cosa sappiamo dire tra Exp
+
+1341
+01:15:53,400 --> 01:15:55,800
+ed NP?
+
+1342
+01:15:55,800 --> 01:15:58,880
+Sono uguali? Non sono uguali?
+
+1343
+01:15:58,880 --> 01:16:01,080
+Ci muoviamo nuovamente in un territorio
+
+1344
+01:16:01,080 --> 01:16:03,719
+sconosciuto. Non sappiamo dire nulla.
+
+1345
+01:16:03,719 --> 01:16:07,280
+Ok? Non sappiamo né se sono uguali né se
+
+1346
+01:16:07,280 --> 01:16:09,320
+sono è strettamente incluso. Ok? Questo
+
+1347
+01:16:09,320 --> 01:16:12,159
+è un altro di quei risultati per i quali
+
+1348
+01:16:12,159 --> 01:16:15,199
+non sappiamo dire un granché. Ok?
+
+1349
+01:16:15,199 --> 01:16:17,560
+Quindi, come vedete, a differenza della
+
+1350
+01:16:17,560 --> 01:16:20,440
+decidibilità in cui sapevamo distinguere
+
+1351
+01:16:20,440 --> 01:16:23,639
+le classi di decidibilità, molte delle
+
+1352
+01:16:23,639 --> 01:16:27,719
+classi di complessità sono tutt'ora
+
+1353
+01:16:27,719 --> 01:16:29,920
+tutt'ora noi non sappiamo dire molto.
+
+1354
+01:16:29,920 --> 01:16:34,239
+Sappiamo dire che exp è diverso da P, ma
+
+1355
+01:16:34,239 --> 01:16:36,679
+non lo sappiamo dire rispetto ad NP.
+
+1356
+01:16:36,679 --> 01:16:39,199
+Cioè, NP potrebbe essere uguale a Next,
+
+1357
+01:16:39,199 --> 01:16:42,320
+ma non lo sappiamo. Riteniamo che siano
+
+1358
+01:16:42,320 --> 01:16:44,760
+distinte, però nessuno è mai riuscito a
+
+1359
+01:16:44,760 --> 01:16:47,280
+dimostrarlo. Ok? È proprio un territorio
+
+1360
+01:16:47,280 --> 01:16:51,040
+molto fumoso in cui assumiamo che queste
+
+1361
+01:16:51,040 --> 01:16:53,280
+classiano distinte perché nessuno è mai
+
+1362
+01:16:53,280 --> 01:16:55,679
+riuscito a dimostrare che siano uguali.
+
+1363
+01:16:55,679 --> 01:16:58,000
+Però queste dimostrazioni ci mancano,
+
+1364
+01:16:58,000 --> 01:17:01,760
+sono picche congettura. Ok?
+
+1365
+01:17:01,760 --> 01:17:06,199
+Similmente noi abbiamo che co NP è
+
+1366
+01:17:06,199 --> 01:17:11,840
+incluso in exp. Perché secondo voi?
+
+1367
+01:17:13,800 --> 01:17:17,040
+Perché sennò cioè i problemi
+
+1368
+01:17:17,040 --> 01:17:20,159
+complementari di Conn sono in NP e
+
+1369
+01:17:20,159 --> 01:17:22,639
+quindi dopo
+
+1370
+01:17:22,639 --> 01:17:26,760
+Sì, la ragione è quella. Allora, ecco co
+
+1371
+01:17:26,760 --> 01:17:29,679
+NP sta in exp
+
+1372
+01:17:29,679 --> 01:17:32,120
+perché in CNP
+
+1373
+01:17:32,120 --> 01:17:34,520
+abbiamo i linguaggi
+
+1374
+01:17:34,520 --> 01:17:39,360
+i cui complementi stanno in NP.
+
+1375
+01:17:39,360 --> 01:17:41,760
+Ci siete?
+
+1376
+01:17:41,760 --> 01:17:44,800
+Ma per la relazione di prima,
+
+1377
+01:17:44,800 --> 01:17:49,239
+NP sta dentro exp.
+
+1378
+01:17:49,239 --> 01:17:53,040
+Exp è una classe deterministica che è
+
+1379
+01:17:53,040 --> 01:17:56,120
+chiusa sotto complemento.
+
+1380
+01:17:56,120 --> 01:17:59,120
+Allora,
+
+1381
+01:17:59,600 --> 01:18:02,360
+sia l un linguaggio in co dobbiamo
+
+1382
+01:18:02,360 --> 01:18:05,760
+mostrare che è in in exp time, ok? Come
+
+1383
+01:18:05,760 --> 01:18:11,560
+si fa? Se l appartiene a co NP, allora l
+
+1384
+01:18:11,560 --> 01:18:16,520
+soprassegnato ad appartiene a NP.
+
+1385
+01:18:16,520 --> 01:18:21,040
+Ma se L soprassegnato appartiene ad NP,
+
+1386
+01:18:21,040 --> 01:18:26,560
+allora L soprasegnato appartiene a exp.
+
+1387
+01:18:26,560 --> 01:18:29,560
+Chiaro?
+
+1388
+01:18:30,159 --> 01:18:34,880
+Se L soprasegnato appartiene a exp,
+
+1389
+01:18:34,880 --> 01:18:42,000
+allora L appartiene a exp perché
+
+1390
+01:18:42,719 --> 01:18:44,719
+exp
+
+1391
+01:18:44,719 --> 01:18:46,960
+è chiuso
+
+1392
+01:18:46,960 --> 01:18:50,440
+sotto complemento.
+
+1393
+01:18:54,120 --> 01:18:58,080
+Ok? Per questa ragione noi abbiamo che
+
+1394
+01:18:58,080 --> 01:19:03,440
+con NP sta dentro. Ok?
+
+1395
+01:19:05,080 --> 01:19:06,880
+Altra classe e poi chiudiamo. Come
+
+1396
+01:19:06,880 --> 01:19:08,920
+vedete queste le stiamo facendo molto
+
+1397
+01:19:08,920 --> 01:19:11,960
+molto velocemente, eh,
+
+1398
+01:19:11,960 --> 01:19:15,520
+se mi capite bene, NP è una buona cosa.
+
+1399
+01:19:15,520 --> 01:19:17,960
+Ci sta
+
+1400
+01:19:17,960 --> 01:19:22,719
+un'altra classe che è questa qua,
+
+1401
+01:19:22,719 --> 01:19:25,400
+Nextp.
+
+1402
+01:19:25,400 --> 01:19:27,639
+Non deterministic
+
+1403
+01:19:27,639 --> 01:19:30,320
+exponential time.
+
+1404
+01:19:30,320 --> 01:19:33,639
+Ok? Secondo voi,
+
+1405
+01:19:33,639 --> 01:19:36,400
+se questa qui
+
+1406
+01:19:36,400 --> 01:19:40,440
+è la definizione di exp,
+
+1407
+01:19:40,440 --> 01:19:44,239
+come definiamo next?
+
+1408
+01:19:44,239 --> 01:19:47,520
+Stessa cosa invece di time non
+
+1409
+01:19:47,520 --> 01:19:50,560
+esattamente. Quindi noi abbiamo che next
+
+1410
+01:19:50,560 --> 01:19:53,280
+è l'unione
+
+1411
+01:19:53,280 --> 01:19:58,679
+su C mag uguale di 1 di cosa? Di n time
+
+1412
+01:19:58,679 --> 01:20:01,920
+di 2^ n^ c.
+
+1413
+01:20:01,920 --> 01:20:04,360
+Ok?
+
+1414
+01:20:04,360 --> 01:20:06,760
+Quindi è nondeterministic exponential
+
+1415
+01:20:06,760 --> 01:20:09,199
+time definito in maniera abbastanza
+
+1416
+01:20:09,199 --> 01:20:11,520
+standard. Poi ci stanno tutta una marea
+
+1417
+01:20:11,520 --> 01:20:14,199
+di altre classi esponenziali bla bla che
+
+1418
+01:20:14,199 --> 01:20:16,120
+non vediamo. Ci ho scritto un lavoro a
+
+1419
+01:20:16,120 --> 01:20:18,080
+riguardo. Se vi incuriosisce scritto
+
+1420
+01:20:18,080 --> 01:20:21,000
+malissimo, non si capisce niente. Lo sto
+
+1421
+01:20:21,000 --> 01:20:23,679
+sistemando.
+
+1422
+01:20:23,679 --> 01:20:26,719
+Eh, ok. Secondo voi, prendendo questa
+
+1423
+01:20:26,719 --> 01:20:29,679
+figurella, dove sta
+
+1424
+01:20:29,679 --> 01:20:32,679
+Nextp?
+
+1425
+01:20:34,120 --> 01:20:38,159
+Più grande contiene tutto, ok?
+
+1426
+01:20:38,159 --> 01:20:39,880
+Quindi, next.
+
+1427
+01:20:39,880 --> 01:20:43,159
+sta qua.
+
+1428
+01:20:46,040 --> 01:20:47,920
+Va bene.
+
+1429
+01:20:47,920 --> 01:20:49,639
+Ok.
+
+1430
+01:20:49,639 --> 01:20:54,920
+Secondo voi cosa siamo in grado di dire
+
+1431
+01:20:54,920 --> 01:20:57,679
+tra exp
+
+1432
+01:20:57,679 --> 01:21:00,920
+e Next?
+
+1433
+01:21:02,760 --> 01:21:06,080
+Sono uguali, sono stretta, sono
+
+1434
+01:21:06,080 --> 01:21:09,080
+distinti.
+
+1435
+01:21:10,840 --> 01:21:14,280
+Secondo voi?
+
+1436
+01:21:17,400 --> 01:21:19,360
+Esattamente la stessa cosa. Non sappiamo
+
+1437
+01:21:19,360 --> 01:21:23,159
+dire niente, ok? Sappiamo nulla, ok? Noi
+
+1438
+01:21:23,159 --> 01:21:27,920
+abbiamo che Nextp include exp, ma non
+
+1439
+01:21:27,920 --> 01:21:32,239
+sappiamo se lo include strettamente. Ok?
+
+1440
+01:21:32,239 --> 01:21:34,520
+Quello che invece sappiamo dire è questo
+
+1441
+01:21:34,520 --> 01:21:39,159
+qua che nextp
+
+1442
+01:21:39,520 --> 01:21:42,840
+è diverso da NP.
+
+1443
+01:21:42,840 --> 01:21:45,080
+Ok? Questo lo sappiamo dire per lo
+
+1444
+01:21:45,080 --> 01:21:48,080
+stesso teorema che è quindi il teorema
+
+1445
+01:21:48,080 --> 01:21:50,840
+della gerarchia temporale che è lo
+
+1446
+01:21:50,840 --> 01:21:53,280
+stesso che ci permette di distinguere
+
+1447
+01:21:53,280 --> 01:21:57,920
+exp da p e nex da np
+
+1448
+01:21:57,920 --> 01:22:00,400
+qual è la razio dietro. Poi teorema ci
+
+1449
+01:22:00,400 --> 01:22:04,679
+permette di dire questo:
+
+1450
+01:22:04,679 --> 01:22:09,480
+se due classi di complessità temporali
+
+1451
+01:22:09,480 --> 01:22:11,960
+si differenziano per un fattore
+
+1452
+01:22:11,960 --> 01:22:14,320
+esponenziale, cioè che una è
+
+1453
+01:22:14,320 --> 01:22:16,000
+esponenzialmente
+
+1454
+01:22:16,000 --> 01:22:17,840
+più grossa dell'altra, allora
+
+1455
+01:22:17,840 --> 01:22:21,440
+distintono. Quindi sappiamo che
+
+1456
+01:22:21,440 --> 01:22:24,400
+polynomial time è distinto da
+
+1457
+01:22:24,400 --> 01:22:26,760
+exponential time. sappiamo che
+
+1458
+01:22:26,760 --> 01:22:29,480
+exponential time è distinto da double
+
+1459
+01:22:29,480 --> 01:22:32,679
+exponential time, che double exponential
+
+1460
+01:22:32,679 --> 01:22:35,920
+time è distinto da triple exponential
+
+1461
+01:22:35,920 --> 01:22:40,360
+time and. Ok? Però per esempio
+
+1462
+01:22:40,360 --> 01:22:43,320
+noi sappiamo qui per questa cosa qua che
+
+1463
+01:22:43,320 --> 01:22:45,600
+exp è diverso
+
+1464
+01:22:45,600 --> 01:22:50,199
+da P da cui abbiamo ad esempio P
+
+1465
+01:22:50,199 --> 01:22:54,840
+sottoinsieme di NP sotto di exp. Siccome
+
+1466
+01:22:54,840 --> 01:22:59,719
+P è diverso da X, da qualche parte il
+
+1467
+01:22:59,719 --> 01:23:01,920
+contenimento stretto deve apparire, ma
+
+1468
+01:23:01,920 --> 01:23:03,520
+noi non lo sappiamo dov'è. In
+
+1469
+01:23:03,520 --> 01:23:05,960
+particolare potrebbe apparire ovunque.
+
+1470
+01:23:05,960 --> 01:23:09,639
+Quindi noi sappiamo che questi due sono
+
+1471
+01:23:09,639 --> 01:23:11,840
+distinti, ma delle relazioni che stanno
+
+1472
+01:23:11,840 --> 01:23:13,840
+in mezzo noi non sappiamo niente, non
+
+1473
+01:23:13,840 --> 01:23:16,239
+siamo in grado di distinguere, ok? È una
+
+1474
+01:23:16,239 --> 01:23:19,840
+è una condizione particolarmente
+
+1475
+01:23:19,840 --> 01:23:23,840
+intricata, ok?
+
+1476
+01:23:24,159 --> 01:23:26,440
+caratterizzazione di NextP, giusto per
+
+1477
+01:23:26,440 --> 01:23:29,520
+renderla simile a NP.
+
+1478
+01:23:29,520 --> 01:23:32,320
+E con questo concludiamo. Quindi Nx sono
+
+1479
+01:23:32,320 --> 01:23:35,400
+l'insieme dei linguaggi o dei problemi
+
+1480
+01:23:35,400 --> 01:23:39,000
+di decisione che possono essere decisi
+
+1481
+01:23:39,000 --> 01:23:41,320
+in tempo esponenziali da macchine
+
+1482
+01:23:41,320 --> 01:23:43,719
+deterministiche
+
+1483
+01:23:43,719 --> 01:23:46,440
+oppure si può definire tramite
+
+1484
+01:23:46,440 --> 01:23:49,880
+certificato che è questo:
+
+1485
+01:23:49,880 --> 01:23:53,120
+un linguaggio
+
+1486
+01:23:53,400 --> 01:23:57,880
+appartiene a Nextp.
+
+1487
+01:23:59,880 --> 01:24:05,360
+Se le sue istanze Sì
+
+1488
+01:24:05,960 --> 01:24:09,840
+sono caratterizzate
+
+1489
+01:24:11,080 --> 01:24:13,280
+da certificati
+
+1490
+01:24:13,280 --> 01:24:17,400
+di taglia esponenziale
+
+1491
+01:24:21,639 --> 01:24:25,600
+che sono verificabili
+
+1492
+01:24:26,719 --> 01:24:30,920
+da macchine deterministiche
+
+1493
+01:24:33,360 --> 01:24:36,719
+in tempo polinomiale.
+
+1494
+01:24:36,719 --> 01:24:39,719
+Attenzione,
+
+1495
+01:24:40,000 --> 01:24:42,560
+sono certificati
+
+1496
+01:24:42,560 --> 01:24:45,920
+sono le stanze sì sono caratterizzati da
+
+1497
+01:24:45,920 --> 01:24:49,480
+certificati di taglia esponenziali
+
+1498
+01:24:49,480 --> 01:24:52,000
+esponenziale verificabili, quindi il
+
+1499
+01:24:52,000 --> 01:24:53,520
+certificato
+
+1500
+01:24:53,520 --> 01:24:55,800
+è di taglia esponenziale rispetto a
+
+1501
+01:24:55,800 --> 01:24:58,280
+cosa? rispetto all'input e questo
+
+1502
+01:24:58,280 --> 01:25:01,119
+certificato enorm di taglia esponenziale
+
+1503
+01:25:01,119 --> 01:25:04,639
+può essere verificato
+
+1504
+01:25:04,639 --> 01:25:08,760
+da una macchina di touring
+
+1505
+01:25:08,760 --> 01:25:11,600
+deterministica,
+
+1506
+01:25:11,600 --> 01:25:14,920
+ponete attenzione qui, che lavora in
+
+1507
+01:25:14,920 --> 01:25:19,080
+tempo polinomiale
+
+1508
+01:25:20,040 --> 01:25:22,880
+nella taglia
+
+1509
+01:25:22,880 --> 01:25:25,400
+combinata
+
+1510
+01:25:26,480 --> 01:25:29,840
+dell'input e del certificato.
+
+1511
+01:25:29,840 --> 01:25:32,199
+Quindi abbiamo l'input che ha la sua
+
+1512
+01:25:32,199 --> 01:25:34,760
+taglia, facciamo un guess di taglia
+
+1513
+01:25:34,760 --> 01:25:37,719
+esponenziale,
+
+1514
+01:25:37,719 --> 01:25:40,040
+la verifica si fa in tempo dentro
+
+1515
+01:25:40,040 --> 01:25:42,560
+polinomiale. In cosa? Nella taglia
+
+1516
+01:25:42,560 --> 01:25:44,639
+dell'impio più la taglia del del
+
+1517
+01:25:44,639 --> 01:25:47,040
+certificato. Perché non diciamo che la
+
+1518
+01:25:47,040 --> 01:25:49,360
+verifica è tempo esponenziale nella
+
+1519
+01:25:49,360 --> 01:25:52,159
+taglia del certificato?
+
+1520
+01:25:52,159 --> 01:25:54,360
+Perché sennò la verifica sarebbe il
+
+1521
+01:25:54,360 --> 01:25:57,280
+tempo doppiamente esponenziale nella
+
+1522
+01:25:57,280 --> 01:25:59,520
+taglia dell'input. Ecco perché si fa
+
+1523
+01:25:59,520 --> 01:26:02,560
+così. Quindi abbiamo l'input, gestiamo
+
+1524
+01:26:02,560 --> 01:26:05,560
+un certificato enorme. Una volta che si
+
+1525
+01:26:05,560 --> 01:26:08,080
+fa il guess, la verifica si fa in tempo
+
+1526
+01:26:08,080 --> 01:26:10,920
+polinomiale nella taglia del certificato
+
+1527
+01:26:10,920 --> 01:26:13,600
+più la taglia dell'input. Ok? Prego.
+
+1528
+01:26:13,600 --> 01:26:15,719
+Perché si aggiunge la taglia dell'input
+
+1529
+01:26:15,719 --> 01:26:18,040
+tanto è lineare, non dovrebbe influire.
+
+1530
+01:26:18,040 --> 01:26:20,119
+Sì, quello sì, perché si fa una
+
+1531
+01:26:20,119 --> 01:26:22,760
+definizione a relazioni eccetera, quindi
+
+1532
+01:26:22,760 --> 01:26:25,880
+sono le colonne della tabella, quindi si
+
+1533
+01:26:25,880 --> 01:26:28,560
+aggisce, però ovviamente non influisce
+
+1534
+01:26:28,560 --> 01:26:30,320
+perché l'input può sempre stare dentro
+
+1535
+01:26:30,320 --> 01:26:32,719
+il semplificato. Eh,
+
+1536
+01:26:32,719 --> 01:26:36,480
+questo qua, eh. Ok, non credo non credo
+
+1537
+01:26:36,480 --> 01:26:39,280
+ci sia altro. Non vedremo altri dettagli
+
+1538
+01:26:39,280 --> 01:26:41,920
+di queste classi perché sono un po' un
+
+1539
+01:26:41,920 --> 01:26:46,500
+po' triti. Ok, buona serata.
+
+1540
+01:26:46,500 --> 01:26:47,880
+[Musica]
+
+1541
+01:26:47,880 --> 01:26:50,119
+Signor

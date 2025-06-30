@@ -1,0 +1,257 @@
+\documentclass[a4paper]{article}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage[italian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[a4paper, total={6in, 8in}]{geometry}
+\usepackage{minted}
+\usepackage{mathpazo}
+\usepackage{fancyhdr}
+\usepackage{amsthm}
+\usepackage{tikz}
+\usetikzlibrary{automata,positioning,arrows.meta} % Aggiunto arrows.meta per frecce migliori
+
+% Definizione degli ambienti
+\newtheorem{theorem}{Teorema}
+\newtheorem{definition}{Definizione}
+\newtheorem{example}{Esempio}
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}{Proposizione}
+
+\hypersetup{
+    pdftitle={Lezione di Informatica Teorica - Space Complexity Avanzata},
+    pdfauthor={Appunti da Trascrizione AI}
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textit{Lezione di Informatica Teorica}}
+\fancyfoot[C]{\thepage}
+
+\title{Lezione di Informatica Teorica: Space Complexity Avanzata}
+\author{Appunti da Trascrizione Automatica}
+\date{\today}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+
+\section{Introduzione e Richiami}
+Oggi proseguiamo il discorso iniziato ieri sulla Complessità Spaziale, esplorando ulteriori classi di complessità e risultati importanti. Ieri abbiamo introdotto le classi \textbf{DSPACE} e \textbf{NSPACE}, e ci siamo focalizzati in particolare su \textbf{L} (\textbf{DSPACE}$(\log n)$) e \textbf{NL} (\textbf{NSPACE}$(\log n)$). Abbiamo visto che il problema \textbf{REACHABILITY} (raggiungibilità in un grafo orientato) è \textbf{NL}-completo.
+
+Sebbene non sia dimostrato che \textbf{REACHABILITY} appartenga a \textbf{L} (il che implicherebbe \textbf{L} = \textbf{NL}), vedremo oggi un risultato interessante sulla sua complessità in spazio deterministico che sarà fondamentale per un teorema più generale. Non si ritiene che \textbf{REACHABILITY} sia in \textbf{L}.
+
+\section{Complessità di REACHABILITY in DSPACE}
+Nonostante non si sappia se \textbf{REACHABILITY} sia risolvibile in spazio logaritmico deterministico (\textbf{L}), siamo in grado di dimostrare che appartiene a \textbf{DSPACE}$(\log^2 n)$, ovvero spazio polinomiale nel logaritmo della dimensione dell'input $n$. Questo è un risultato significativo in quanto mostra che è comunque risolvibile in spazio polilogaritmico.
+
+L'algoritmo che utilizzeremo per dimostrare questo risultato è di tipo ricorsivo e sfrutta una strategia di "ricerca binaria" sulla lunghezza dei cammini.
+
+\subsection{Principio dell'Algoritmo}
+L'osservazione chiave è la seguente: se esiste un cammino da un nodo sorgente $S$ a un nodo destinazione $T$ di lunghezza al più $K$, allora deve esistere un nodo intermedio $U$ tale che esista un cammino da $S$ a $U$ e un cammino da $U$ a $T$, entrambi di lunghezza al più $K/2$. Questa idea, combinata con il riuso dello spazio, ci permette di progettare un algoritmo efficiente in termini di memoria.
+
+Intuitivamente, se vogliamo determinare se esiste un cammino da $S$ a $T$, possiamo iterare su tutti i possibili nodi intermedi $U$ e verificare ricorsivamente se esistono cammini da $S$ a $U$ e da $U$ a $T$ entrambi di lunghezza al più $K/2$.
+
+\subsection{Algoritmo \texttt{exists-path}}
+Definiamo un algoritmo ricorsivo \texttt{exists-path}$(G, S, T, K)$ che restituisce \texttt{vero} se nel grafo orientato $G=(V,A)$ esiste un cammino da $S$ a $T$ di lunghezza al più $K$.
+
+\begin{minted}[
+    frame=lines,
+    framesep=2mm,
+    linenos,
+    tabsize=4,
+    obeytabs,
+    mathescape=true
+]{python}
+function exists-path(G, S, T, K):
+    # Caso Base 1: Se K=0, S e T devono coincidere
+    if K == 0:
+        if S == T:
+            return TRUE
+        else:
+            return FALSE
+
+    # Caso Base 2: Se K=1, S e T devono essere collegati direttamente da un arco
+    if K == 1:
+        if (S, T) in G.A: # G.A è l'insieme degli archi di G
+            return TRUE
+        else:
+            return FALSE
+    
+    # Passo Ricorsivo: K > 1
+    # Iteriamo su tutti i possibili nodi intermedi U
+    for each U in G.V:
+        # Verifichiamo ricorsivamente l'esistenza di due cammini più corti
+        # ceil(K/2) assicura che K si riduca correttamente anche per K dispari.
+        if exists-path(G, S, U, ceil(K/2)) and \
+           exists-path(G, U, T, ceil(K/2)):
+            return TRUE # Trovato un cammino, possiamo terminare
+            
+    # Se nessuna U intermedia porta a un cammino, non esiste un cammino
+    return FALSE
+\end{minted}
+
+\begin{example}
+Consideriamo il seguente grafo orientato:
+\begin{center}
+\begin{tikzpicture}[
+    node distance=1.5cm,
+    every state/.style={fill=white, draw=black, thick, text=black},
+    >=Stealth
+]
+    \node[state] (2) {2 (S)};
+    \node[state, above right of=2] (1) {1};
+    \node[state, right of=1] (4) {4};
+    \node[state, below right of=4] (3) {3};
+    \node[state, right of=3] (5) {5 (T)};
+
+    \path[->] (2) edge (1);
+    \path[->] (1) edge (4);
+    \path[->] (4) edge (3);
+    \path[->] (3) edge (5);
+    \path[->] (4) edge[bend right=20] (5); % Freccia da 4 a 5
+\end{tikzpicture}
+\end{center}
+Vogliamo sapere se esiste un cammino da $S=2$ a $T=5$. Inizialmente chiamiamo \texttt{exists-path}$(G, 2, 5, |V|)$ dove $|V|$ è il numero di vertici (5 in questo caso), per cercare un cammino di lunghezza arbitraria ma al massimo il numero di vertici.
+Il cammino diretto è $2 \to 1 \to 4 \to 3 \to 5$.
+\end{example}
+
+\subsection{Analisi della Complessità Spaziale di \texttt{exists-path}}
+Per analizzare la complessità spaziale, dobbiamo considerare lo spazio richiesto da una singola chiamata della funzione e l'altezza massima dello stack di chiamate ricorsive.
+
+1.  \textbf{Spazio per una singola chiamata}:
+    Una singola chiamata a \texttt{exists-path} deve memorizzare i parametri $S$, $T$, $K$ e la variabile $U$ nel ciclo \texttt{for}.
+    *   $S$, $T$, $U$: sono identificativi di nodi. Per un grafo con $N$ nodi, un identificativo richiede $O(\log N)$ bit di spazio (ad esempio, un indice numerico).
+    *   $K$: rappresenta la lunghezza massima del cammino. Inizialmente $K$ può essere al massimo $N$ (il numero di nodi). Quindi $K$ richiede $O(\log N)$ bit.
+    *   In totale, una singola chiamata richiede $O(\log N)$ spazio sul \emph{work tape}. Questo spazio viene riutilizzato per ogni iterazione del ciclo \texttt{for} (cambiando $U$) e per ogni chiamata ricorsiva (passando nuovi $S, T, K$).
+
+2.  \textbf{Altezza dello stack di chiamate ricorsive}:
+    L'algoritmo ricorsivo dimezza il parametro $K$ ad ogni passo (da $K$ a $\lceil K/2 \rceil$). Questo significa che il numero di livelli di ricorsione è logaritmico rispetto al valore iniziale di $K$. Poiché $K$ può essere al massimo il numero di nodi $N$, la profondità massima di ricorsione è $O(\log N)$.
+    Durante l'esecuzione, il ciclo \texttt{for each U} implica che le chiamate ricorsive per ogni $U$ non sono eseguite in parallelo. L'algoritmo esplora un ramo dell'albero di ricorsione (corrispondente a una scelta di $U$) e solo dopo aver completato quel ramo (o aver trovato un \texttt{TRUE}) passa al successivo $U$. Questo significa che, in memoria, lo stack contiene al più una sequenza di chiamate ricorsive in un singolo "percorso" attraverso l'albero di computazione (un ramo di ricerca in profondità).
+
+Combinando questi due fattori, lo spazio totale richiesto è il prodotto dello spazio per una singola chiamata per l'altezza massima dello stack:
+\[ \text{Spazio totale} = O(\text{Spazio per chiamata}) \times O(\text{Profondità stack}) \]
+\[ \text{Spazio totale} = O(\log N) \times O(\log N) = O(\log^2 N) \]
+Poiché in informatica teorica $N$ (numero di nodi) è solitamente uguale o proporzionale a $n$ (dimensione dell'input del problema), possiamo affermare che \textbf{REACHABILITY} può essere risolto in \textbf{DSPACE}$(\log^2 n)$.
+
+\section{Il Teorema di Savitch}
+Il Teorema di Savitch è uno dei risultati più importanti nella teoria della complessità spaziale, poiché stabilisce una relazione sorprendente tra le classi di complessità spaziali deterministiche e non deterministiche.
+
+\begin{theorem}[Teorema di Savitch]
+Sia $S(n)$ una funzione di spazio, tale che $S(n) \geq \Omega(\log n)$. Allora,
+\[ \mathbf{NSPACE}(S(n)) \subseteq \mathbf{DSPACE}(S(n)^2) \]
+\end{theorem}
+
+Questo teorema implica che, per funzioni di spazio che crescono almeno logaritmicamente, qualsiasi problema risolvibile in spazio non deterministico $S(n)$ può essere risolto in spazio deterministico $S(n)^2$. Questo è un contrasto netto con le classi di complessità temporale, dove il passaggio dal non deterministico al deterministico (ad esempio da \textbf{NP} a \textbf{P}) è congetturato essere esponenziale (ovvero \textbf{P} $\ne$ \textbf{NP}). Per lo spazio, il "costo" della determinizzazione è solamente quadratico.
+
+\subsection{Sketch della Dimostrazione del Teorema di Savitch}
+L'idea della dimostrazione si basa su due concetti che abbiamo già introdotto:
+1.  La riduzione di qualsiasi linguaggio in \textbf{NSPACE}$(S(n))$ al problema \textbf{REACHABILITY} su un grafo di configurazioni.
+2.  L'algoritmo \texttt{exists-path} per \textbf{REACHABILITY} in \textbf{DSPACE}$(\log^2 n)$.
+
+\begin{enumerate}
+    \item \textbf{Linguaggio e Macchina Non Deterministica:} Sia $L$ un linguaggio appartenente a \textbf{NSPACE}$(S(n))$. Per definizione, esiste una macchina di Turing non deterministica $M$ che decide $L$ e utilizza $O(S(n))$ spazio sul nastro di lavoro.
+
+    \item \textbf{Costruzione del Computation Graph:} Per simulare $M$ deterministicamente, possiamo costruire il suo \emph{computation graph} (o grafo delle configurazioni). I nodi di questo grafo rappresentano tutte le possibili \emph{configurazioni} di $M$, e un arco $(C_1, C_2)$ esiste se $M$ può passare da $C_1$ a $C_2$ in un singolo passo.
+
+    \item \textbf{Dimensioni di una Configurazione:} Una configurazione di una macchina di Turing tipicamente è definita da:
+    \begin{itemize}
+        \item Il contenuto del nastro di lavoro: $O(S(n))$ simboli. Se $|\Gamma|$ è la cardinalità dell'alfabeto del nastro di lavoro, ci sono $|\Gamma|^{O(S(n))}$ possibili contenuti del nastro di lavoro.
+        \item La posizione della testina sul nastro di input: $O(\log n)$ bit (dove $n$ è la lunghezza dell'input).
+        \item La posizione della testina sul nastro di lavoro: $O(\log S(n))$ bit (poiché il nastro di lavoro ha lunghezza $O(S(n))$).
+        \item Lo stato corrente della macchina: una costante $c$ di stati ($O(1)$ bit).
+    \end{itemize}
+    Il numero totale di possibili configurazioni $N_{conf}$ è il prodotto delle possibilità per ciascun componente. Poiché $S(n) \ge \Omega(\log n)$, il termine dominante è il contenuto del nastro di lavoro. Dunque, il numero totale di configurazioni (nodi del computation graph) $N_{conf}$ è $O(|\Gamma|^{S(n)} \cdot n \cdot S(n) \cdot c) = O(|\Gamma|^{S(n)} \cdot n \cdot S(n))$. Se consideriamo solo il termine dominante, $N_{conf} = O(|\Gamma|^{S(n)})$.
+
+    \item \textbf{Applicazione di \texttt{exists-path}:} Per decidere se l'input $x$ è in $L$, dobbiamo determinare se esiste un cammino nel computation graph dalla configurazione iniziale $C_{start}$ (con input $x$) a una delle configurazioni accettanti $C_{accept}$ (possiamo far confluire tutte le configurazioni accettanti in un unico stato finale virtuale). Questo è esattamente il problema \textbf{REACHABILITY}.
+
+    Utilizziamo l'algoritmo \texttt{exists-path} visto in precedenza. Lo spazio richiesto da \texttt{exists-path} per un grafo con $N'$ nodi è $O(\log^2 N')$.
+    Nel nostro caso, $N'$ è il numero di configurazioni $N_{conf}$.
+    Quindi, lo spazio richiesto è $O(\log^2 N_{conf})$.
+    Sostituendo $N_{conf} = O(|\Gamma|^{S(n)} \cdot n \cdot S(n))$, abbiamo:
+    \begin{align*} \text{Spazio} &= O(\log^2 (|\Gamma|^{S(n)} \cdot n \cdot S(n))) \\ &= O((\log (|\Gamma|^{S(n)}) + \log n + \log S(n))^2) \\ &= O((S(n)\log|\Gamma| + \log n + \log S(n))^2)\end{align*}
+    Poiché $S(n) \ge \Omega(\log n)$, il termine dominante all'interno della parentesi è $S(n)\log|\Gamma|$.
+    Il fattore $\log|\Gamma|$ è una costante (dipende dall'alfabeto della TM, non dalla dimensione dell'input).
+    Quindi, lo spazio totale richiesto è $O((S(n))^2) = O(S(n)^2)$.
+\end{enumerate}
+Questo dimostra che qualsiasi linguaggio decidibile in spazio non deterministico $S(n)$ può essere deciso in spazio deterministico $S(n)^2$.
+
+\section{Classi di Complessità Polinomiale Spaziale}
+Basandosi sul Teorema di Savitch, possiamo definire le classi di complessità polinomiale in spazio.
+
+\begin{definition}[Classe \textbf{PSPACE}]
+La classe \textbf{PSPACE} (Polynomial Space) è l'insieme di tutti i linguaggi che possono essere decisi da una macchina di Turing deterministica che utilizza una quantità di spazio polinomiale rispetto alla dimensione dell'input.
+\[ \mathbf{PSPACE} = \bigcup_{c \ge 1} \mathbf{DSPACE}(n^c) \]
+\end{definition}
+
+\begin{definition}[Classe \textbf{NPSPACE}]
+La classe \textbf{NPSPACE} (Non-deterministic Polynomial Space) è l'insieme di tutti i linguaggi che possono essere decisi da una macchina di Turing non deterministica che utilizza una quantità di spazio polinomiale rispetto alla dimensione dell'input.
+\[ \mathbf{NPSPACE} = \bigcup_{c \ge 1} \mathbf{NSPACE}(n^c) \]
+\end{definition}
+
+\subsection{Relazione tra PSPACE e NPSPACE}
+Dalle definizioni è immediato che $\mathbf{PSPACE} \subseteq \mathbf{NPSPACE}$.
+Tuttavia, applicando il Teorema di Savitch a funzioni di spazio polinomiali ($S(n) = n^c$):
+Se un linguaggio $L \in \mathbf{NSPACE}(n^c)$, allora per il Teorema di Savitch $L \in \mathbf{DSPACE}((n^c)^2) = \mathbf{DSPACE}(n^{2c})$. Poiché $2c$ è ancora una costante, $n^{2c}$ è ancora un polinomio.
+Quindi, $\mathbf{NPSPACE} \subseteq \mathbf{PSPACE}$.
+
+Questo porta alla conclusione sorprendente:
+\[ \mathbf{PSPACE} = \mathbf{NPSPACE} \]
+Questo risultato è molto potente. Implica che la non-determinismo non aggiunge potere computazionale significativo quando si considera lo spazio polinomiale (e oltre). La ragione intuitiva è che, a differenza del tempo (che una volta speso è "andato"), lo spazio può essere riutilizzato. Una macchina deterministica può provare tutte le scelte possibili di una macchina non deterministica riutilizzando lo stesso spazio, pur impiegando un tempo esponenziale.
+
+\section{Relazioni tra le Classi di Complessità}
+Possiamo ora visualizzare le relazioni di inclusione tra alcune delle classi di complessità che abbiamo studiato:
+
+\begin{itemize}
+    \item \textbf{L}: Linguaggi decidibili in spazio logaritmico deterministico.
+    \item \textbf{NL}: Linguaggi decidibili in spazio logaritmico non deterministico.
+    Si congettura che $\mathbf{L} \ne \mathbf{NL}$, anche se è noto che $\mathbf{L} \subseteq \mathbf{NL}$. Inoltre, per il Teorema di Savitch, $\mathbf{NL} \subseteq \mathbf{DSPACE}((\log n)^2)$.
+
+    \item \textbf{P}: Linguaggi decidibili in tempo polinomiale deterministico.
+    \item \textbf{NP}: Linguaggi decidibili in tempo polinomiale non deterministico.
+    \item \textbf{co-NP}: Linguaggi i cui complementi sono in \textbf{NP}.
+    Si congettura che $\mathbf{P} \ne \mathbf{NP}$.
+
+    \item \textbf{PSPACE}: Linguaggi decidibili in spazio polinomiale deterministico.
+    \item \textbf{NPSPACE}: Linguaggi decidibili in spazio polinomiale non deterministico.
+    Sappiamo che $\mathbf{PSPACE} = \mathbf{NPSPACE}$.
+
+    \item \textbf{EXP}: Linguaggi decidibili in tempo esponenziale deterministico.
+    \item \textbf{NEXP}: Linguaggi decidibili in tempo esponenziale non deterministico.
+\end{itemize}
+
+Le relazioni di inclusione note sono le seguenti:
+\[ \mathbf{L} \subseteq \mathbf{NL} \subseteq \mathbf{P} \subseteq \mathbf{NP} \subseteq \mathbf{PSPACE} = \mathbf{NPSPACE} \subseteq \mathbf{EXP} \subseteq \mathbf{NEXP} \]
+
+\begin{figure}[h!]
+    \centering
+    \begin{tikzpicture}[
+        scale=0.8,
+        level distance=1.5cm,
+        level 1/.style={sibling distance=2.5cm},
+        level 2/.style={sibling distance=2.5cm},
+        level 3/.style={sibling distance=3cm},
+        level 4/.style={sibling distance=3.5cm}
+    ]
+    % Disegna i cerchi concentrici per le classi
+    \draw[thick] (0,0) circle (0.5cm) node[below, yshift=-0.5em] {\textbf{L}};
+    \draw[thick] (0,0) circle (1.0cm) node[below, yshift=-0.5em] {\textbf{NL}};
+    \draw[thick] (0,0) circle (1.5cm) node[below, yshift=-0.5em] {\textbf{P}};
+    \draw[thick] (0,0) circle (2.0cm) node[below, yshift=-0.5em] {\textbf{NP}};
+    % Per co-NP si può posizionare a lato o implicare che PSPACE le contiene entrambe
+    \draw[thick] (0,0) circle (2.5cm) node[below right=0.5cm, xshift=0.5em, yshift=-0.5em] {\textbf{co-NP}};
+    \draw[thick] (0,0) circle (3.0cm) node[below, yshift=-0.5em] {\textbf{PSPACE}=\textbf{NPSPACE}};
+    \draw[thick] (0,0) circle (3.5cm) node[below, yshift=-0.5em] {\textbf{EXP}};
+    \draw[thick] (0,0) circle (4.0cm) node[below, yshift=-0.5em] {\textbf{NEXP}};
+    \end{tikzpicture}
+    \caption{Diagramma di inclusione delle principali classi di complessità.}
+    \label{fig:complexity_classes}
+\end{figure}
+
+È noto che tutte le inclusioni sono strette, tranne possibilmente $\mathbf{P} \subseteq \mathbf{NP}$ e $\mathbf{L} \subseteq \mathbf{NL}$.
+In particolare, sappiamo che $\mathbf{PSPACE}$ è strettamente più grande di $\mathbf{P}$ e $\mathbf{NL}$ è strettamente più grande di $\mathbf{L}$ (quest'ultima è una congettura ampiamente accettata, implicata dal fatto che si ritiene \textbf{REACHABILITY} non essere in \textbf{L}).
+
+Questo conclude la discussione sulle classi di complessità spaziale.
+
+\end{document}

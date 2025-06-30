@@ -1,0 +1,284 @@
+\documentclass[a4paper]{article}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage[italian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[a4paper, total={6in, 8in}]{geometry}
+\usepackage{minted}
+\usepackage{mathpazo}
+\usepackage{fancyhdr}
+\usepackage{amsthm}
+\usepackage{tikz}
+\usetikzlibrary{automata,positioning}
+
+% Definizione degli ambienti
+\newtheorem{theorem}{Teorema}[section]
+\newtheorem{definition}{Definizione}[section]
+\newtheorem{example}{Esempio}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{proposition}{Proposizione}[section]
+
+\hypersetup{
+    pdftitle={Lezione di Informatica Teorica: Macchine di Turing Non Deterministiche},
+    pdfauthor={Appunti da Trascrizione AI}
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textit{Lezione di Informatica Teorica}}
+\fancyfoot[C]{\thepage}
+
+\title{Lezione di Informatica Teorica: Macchine di Turing Non Deterministiche}
+\author{Appunti da Trascrizione Automatica}
+\date{\today}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+
+\section{Introduzione e Richiami sulle Macchine di Turing}
+
+Nella lezione precedente abbiamo introdotto il modello non deterministico delle Macchine di Turing (NTM). Oggi ci concentreremo su esercizi pratici per comprendere meglio la progettazione e il funzionamento delle NTM, apprezzandone la semplificazione rispetto alle Macchine di Turing Deterministiche (DTM).
+
+\subsection{Linguaggi Ricorsivi e Ricorsivamente Enumerabili}
+
+Rivediamo brevemente le classi di linguaggi:
+\begin{itemize}
+    \item \textbf{Linguaggi Ricorsivamente Enumerabili (RE)}: Sono quei linguaggi per i quali esistono Macchine di Turing (deterministica o non deterministica, dato che hanno lo stesso potere computazionale) che li \emph{accettano}. Se la stringa di input appartiene al linguaggio, la macchina si ferma e accetta. Se la stringa non appartiene, la macchina può fermarsi e rifiutare, oppure non fermarsi affatto (loop).
+    \item \textbf{Linguaggi Ricorsivi (R)}: Sono quei linguaggi per i quali esistono Macchine di Turing (deterministica o non deterministica) che li \emph{decidono}. Questo significa che per ogni stringa di input, la macchina si ferma sempre, fornendo una risposta corretta (accetta o rifiuta).
+\end{itemize}
+
+\begin{definition}[Condizione di Accettazione NTM]
+Una Macchina di Turing non deterministica $M$ accetta una stringa di input $w$ se e solo se esiste almeno un ramo di computazione nel suo albero di computazione che porta ad uno stato di accettazione.
+\end{definition}
+
+È fondamentale comprendere che:
+\begin{itemize}
+    \item La macchina di Turing non può dare risposte sbagliate.
+    \item Se la stringa è un'istanza "sì" del linguaggio, la macchina deve arrestarsi e accettare.
+    \item Se la stringa è un'istanza "no", la macchina può fermarsi e rifiutare, oppure non fermarsi affatto (loop).
+    \item Ogni volta che la macchina si arresta, fornisce la risposta corretta.
+\end{itemize}
+
+È importante sottolineare che le NTM sono un \textbf{modello astratto di calcolo} e non esistono fisicamente. La possibilità di simulare una NTM con una DTM implica un costo computazionale molto elevato (catastrofe di tempo, un problema aperto noto come P vs NP), ma il potere di riconoscimento dei linguaggi è il medesimo.
+
+\section{Tecnica di Progettazione: "Guess and Check"}
+
+Il principio fondamentale per la progettazione di NTM è la tecnica "Guess and Check" (Indovina e Controlla).
+
+\begin{definition}[Tecnica Guess and Check]
+Una NTM può essere concettualizzata come una macchina che "indovina" una parte della soluzione (fase di \emph{guess}) e poi "controlla" (verifica, fase di \emph{check}) che l'indovinello sia corretto.
+\end{definition}
+
+Questa metafora è estremamente utile per la progettazione, poiché una NTM non ha un vero potere di "intuizione" o "preveggenza". La sua capacità deriva dalla definizione formale di accettazione: se esiste un percorso di computazione che porta all'accettazione, allora la stringa è accettata. La fase di "check" è fondamentale per \textbf{filtrare} i percorsi di computazione che corrisponderebbero a "indovinelli" sbagliati, assicurando che solo i guess corretti possano portare a un'accettazione.
+
+\paragraph{L'Albero di Computazione:}
+Consideriamo l'albero di computazione di una NTM:
+\begin{itemize}
+    \item Ogni punto in cui la macchina compie una scelta non deterministica genera un "ramo" nell'albero.
+    \item Un "guess" corrisponde a un punto di ramificazione dove la macchina "prova" diverse opzioni.
+    \item Il "check" è una sequenza di transizioni deterministiche (o con scelte che vengono filtrate) che verifica la validità del guess. Se il guess è sbagliato, il ramo di computazione corrispondente deve terminare in uno stato non accettante o entrare in un loop.
+    \item Solo i rami che seguono un guess corretto (e superano il check) devono portare a uno stato di accettazione.
+\end{itemize}
+Questo assicura che, per la definizione di accettazione NTM, la stringa venga accettata solo se esiste un guess corretto che supera il check. La metafora del "guess and check" ci permette di ragionare come se la macchina "trovasse" la soluzione ottimale, sapendo che gli altri rami verranno scartati dal processo di check.
+
+\section{Esempi Pratici di NTM}
+
+\subsection{Esempio 1: Riconoscimento di $L = \{ww \mid w \in \{0,1\}^+\}$}
+Questo linguaggio richiede che la stringa sia composta da due copie identiche di una sottostringa $w$. Una soluzione DTM implicherebbe contare i simboli, calcolare la metà esatta della stringa e poi confrontare le due metà. Con una NTM, possiamo semplificare il processo utilizzando il "guess".
+
+\subsubsection{Architettura dell'NTM}
+La macchina userà due nastri:
+\begin{itemize}
+    \item \textbf{Nastro 1}: Nastro di input.
+    \item \textbf{Nastro 2}: Nastro ausiliario per la copia di $w$.
+\end{itemize}
+
+\subsubsection{Descrizione delle Transizioni}
+\begin{itemize}
+    \item \textbf{Stato Iniziale: $q_0$}
+        La testina del Nastro 1 è all'inizio dell'input. Il Nastro 2 è vuoto (tutto blank).
+    \item \textbf{Fase di Copia (Guess di $w$)}:
+        \begin{itemize}
+            \item Transizione da $q_0$ a $q_1$:
+                $(q_0, \alpha, \text{\_}) \to (q_1, \alpha, \alpha, R, R)$ per $\alpha \in \{0, 1\}$.
+                \textit{Spiegazione}: Copia il primo carattere di $w$ dal Nastro 1 al Nastro 2.
+            \item Loop in $q_1$ (copia continua):
+                $(q_1, \alpha, \beta) \to (q_1, \alpha, \beta, R, R)$ per $\alpha, \beta \in \{0, 1\}$ (dove $\beta$ è il carattere appena scritto).
+                \textit{Spiegazione}: Continua a copiare caratteri dal Nastro 1 al Nastro 2. La testina di Nastro 2 si muove sempre a destra, scrivendo i caratteri di $w$.
+            \item \textbf{Guess della Fine di $w$} (transizione non deterministica da $q_1$):
+                $(q_1, \alpha, \text{\_}) \to (q_2, \alpha, \text{\_}, S, L)$ per $\alpha \in \{0, 1\}$.
+                \textit{Spiegazione}: Questo è il punto del "guess". La macchina decide non deterministicamente che la porzione di $w$ è terminata. La testina del Nastro 1 si ferma (S) nel punto "gessato" (che si spera sia la metà della stringa totale). La testina del Nastro 2 si sposta a sinistra (L) per prepararsi a riavvolgere la copia di $w$.
+        \end{itemize}
+    \item \textbf{Fase di Check (Verifica del Guess)}:
+        \begin{itemize}
+            \item Riavvolgimento del Nastro 2: Loop in $q_2$:
+                $(q_2, \alpha, \beta) \to (q_2, \alpha, \beta, S, L)$ per $\alpha \in \{0, 1\}$, $\beta \in \{0, 1\}$.
+                \textit{Spiegazione}: Riporta la testina del Nastro 2 all'inizio della copia di $w$.
+            \item Posizionamento iniziale per il confronto: Transizione da $q_2$ a $q_3$:
+                $(q_2, \alpha, \text{\_}) \to (q_3, \alpha, \text{\_}, S, R)$ per $\alpha \in \{0, 1\}$.
+                \textit{Spiegazione}: La testina di Nastro 2 è ora all'inizio di $w$ (la copia). La testina di Nastro 1 è all'inizio della seconda $w$ della stringa di input.
+            \item Confronto di $w$ e della seconda metà dell'input: Loop in $q_3$:
+                $(q_3, \alpha, \beta) \to (q_3, \alpha, \beta, R, R)$ per $\alpha, \beta \in \{0, 1\}$.
+                \textit{Spiegazione}: Confronta carattere per carattere la seconda metà della stringa di input (Nastro 1) con la copia di $w$ (Nastro 2). Se in qualsiasi punto $\alpha \neq \beta$, questo ramo di computazione si blocca (rifiuta implicitamente).
+            \item \textbf{Stato Finale di Accettazione: $q_4$}
+                Transizione da $q_3$ a $q_4$:
+                $(q_3, \text{\_}, \text{\_}) \to (q_4, \text{\_}, \text{\_}, S, S)$.
+                \textit{Spiegazione}: Se entrambe le testine raggiungono un blank contemporaneamente, significa che la seconda metà dell'input è identica alla copia di $w$ e ha la stessa lunghezza. La macchina accetta.
+        \end{itemize}
+\end{itemize}
+
+\subsection{Esempio 2: Riconoscimento di $L = \{A\#B \mid A,B \in \{0,1\}^+, A \subseteq B \lor A^R \subseteq B \}$}
+Questo linguaggio richiede che la stringa di input sia della forma $A\#B$, dove $A$ e $B$ sono stringhe non vuote di 0 e 1, e $A$ è una sottostringa di $B$ oppure $A$ rovesciata ($A^R$) è una sottostringa di $B$.
+
+\subsubsection{Architettura dell'NTM}
+Si useranno due nastri:
+\begin{itemize}
+    \item \textbf{Nastro 1}: Nastro di input.
+    \item \textbf{Nastro 2}: Nastro ausiliario per la copia di $A$.
+\end{itemize}
+
+\subsubsection{Descrizione delle Transizioni}
+\begin{itemize}
+    \item \textbf{Stato Iniziale: $q_0$}
+    \item \textbf{Fase 1: Copia di A su Nastro 2}
+        \begin{itemize}
+            \item Transizione da $q_0$ a $q_1$:
+                $(q_0, \alpha, \text{\_}) \to (q_1, \alpha, \alpha, R, R)$ per $\alpha \in \{0, 1\}$.
+            \item Loop in $q_1$ (continua copia):
+                $(q_1, \alpha, \beta) \to (q_1, \alpha, \beta, R, R)$ per $\alpha, \beta \in \{0, 1\}$.
+                \textit{Spiegazione}: Copia la stringa $A$ dal Nastro 1 al Nastro 2. Alla fine, la testina di Nastro 2 sarà sul blank dopo la copia di $A$.
+        \end{itemize}
+    \item \textbf{Fase 2: Gestione del `#` e Guess sul tipo di ricerca ($A$ o $A^R$)}
+        \begin{itemize}
+            \item Transizione da $q_1$ (quando legge `#`):
+                $(q_1, \#, \text{\_}) \to (q', \#, \text{\_}, R, L)$.
+                \textit{Spiegazione}: La testina di Nastro 1 si muove a destra per entrare in $B$. La testina di Nastro 2 si muove a sinistra, posizionandosi sull'ultimo carattere di $A$ copiato, o sul blank precedente se $A$ era un solo simbolo e la testina era già sul blank successivo. Questo stato $q'$ agirà come un punto di biforcazione non deterministico.
+            \item \textbf{Biforcazione non deterministica da $q'$:}
+                \begin{itemize}
+                    \item \textbf{Ramo A ($A \subseteq B$):} Da $q'$ a $q_2$:
+                        $(q', \alpha, \beta) \to (q_2, \alpha, \beta, S, L)$ per $\alpha \in \{0, 1\}, \beta \in \{0, 1\}$.
+                        \textit{Spiegazione}: La macchina si prepara per cercare $A$. La testina di Nastro 2 (che è alla fine di $A$ copiata) deve essere riavvolta all'inizio di $A$.
+                        \begin{itemize}
+                            \item Loop in $q_2$ (riavvolgimento Nastro 2):
+                                $(q_2, \alpha, \beta) \to (q_2, \alpha, \beta, S, L)$ per $\alpha \in \{0, 1\}, \beta \in \{0, 1\}$.
+                            \item Transizione da $q_2$ a $q_3$ (Nastro 2 all'inizio di A):
+                                $(q_2, \alpha, \text{\_}) \to (q_3, \alpha, \text{\_}, S, R)$ per $\alpha \in \{0, 1\}$.
+                        \end{itemize}
+                    \item \textbf{Ramo $A^R$ ($A^R \subseteq B$):} Da $q'$ a $q_7$:
+                        $(q', \alpha, \beta) \to (q_7, \alpha, \beta, S, S)$ per $\alpha \in \{0, 1\}, \beta \in \{0, 1\}$.
+                        \textit{Spiegazione}: La macchina si prepara per cercare $A^R$. La testina di Nastro 2 è già alla fine di $A$, pronta per leggere all'indietro per simulare $A^R$.
+                \end{itemize}
+        \end{itemize}
+    \item \textbf{Fase 3: Ricerca e Check per $A \subseteq B$ (ramo da $q_3$)}
+        \begin{itemize}
+            \item \textbf{Guess della posizione di $A$ in $B$}: Loop in $q_3$:
+                $(q_3, \alpha, \text{\_}) \to (q_3, \alpha, \text{\_}, R, S)$ per $\alpha \in \{0, 1\}$.
+                \textit{Spiegazione}: La macchina salta non deterministicamente caratteri di $B$ sul Nastro 1, "gessando" il punto di inizio di $A$.
+            \item Inizio del confronto (da $q_3$ a $q_4$):
+                $(q_3, \alpha, \beta) \to (q_4, \alpha, \beta, R, R)$ per $\alpha, \beta \in \{0, 1\}$.
+            \item \textbf{Check di $A$ in $B$}: Loop in $q_4$:
+                $(q_4, \alpha, \beta) \to (q_4, \alpha, \beta, R, R)$ per $\alpha, \beta \in \{0, 1\}$.
+                \textit{Spiegazione}: Confronta carattere per carattere la sottostringa di $B$ (Nastro 1) con la copia di $A$ (Nastro 2). Se i simboli non corrispondono, il ramo di computazione fallisce.
+            \item Fine confronto di $A$ (da $q_4$ a $q_5$):
+                $(q_4, \alpha, \text{\_}) \to (q_5, \alpha, \text{\_}, S, S)$ per $\alpha \in \{0, 1\}$.
+                \textit{Spiegazione}: L'intera stringa $A$ è stata confrontata con successo. La testina di Nastro 1 è ancora in $B$.
+        \end{itemize}
+    \item \textbf{Fase 4: Ricerca e Check per $A^R \subseteq B$ (ramo da $q_7$)}
+        \begin{itemize}
+            \item \textbf{Guess della posizione di $A^R$ in $B$}: Loop in $q_7$:
+                $(q_7, \alpha, \text{\_}) \to (q_7, \alpha, \text{\_}, R, S)$ per $\alpha \in \{0, 1\}$.
+                \textit{Spiegazione}: La macchina salta non deterministicamente caratteri di $B$ sul Nastro 1, "gessando" il punto di inizio di $A^R$.
+            \item Inizio del confronto (da $q_7$ a $q_8$):
+                $(q_7, \alpha, \beta) \to (q_8, \alpha, \beta, R, L)$ per $\alpha, \beta \in \{0, 1\}$.
+                \textit{Spiegazione}: La testina di Nastro 2 si muove a sinistra per leggere $A$ al contrario, simulando $A^R$.
+            \item \textbf{Check di $A^R$ in $B$}: Loop in $q_8$:
+                $(q_8, \alpha, \beta) \to (q_8, \alpha, \beta, R, L)$ per $\alpha, \beta \in \{0, 1\}$.
+                \textit{Spiegazione}: Confronta carattere per carattere la sottostringa di $B$ (Nastro 1) con la copia di $A$ letta all'indietro (Nastro 2). Se i simboli non corrispondono, il ramo di computazione fallisce.
+            \item Fine confronto di $A^R$ (da $q_8$ a $q_5$):
+                $(q_8, \alpha, \text{\_}) \to (q_5, \alpha, \text{\_}, S, S)$ per $\alpha \in \{0, 1\}$.
+                \textit{Spiegazione}: L'intera stringa $A^R$ è stata confrontata con successo. La testina di Nastro 1 è ancora in $B$.
+        \end{itemize}
+    \item \textbf{Fase 5: Check Finale Comune e Accettazione (stato $q_5$ e $q_6$)}
+        \begin{itemize}
+            \item Verifica della fine di $B$: Loop in $q_5$:
+                $(q_5, \alpha, \text{\_}) \to (q_5, \alpha, \text{\_}, R, S)$ per $\alpha \in \{0, 1\}$.
+                \textit{Spiegazione}: La macchina si muove a destra sul Nastro 1 per assicurarsi che non ci siano altri caratteri dopo la sottostringa trovata (o per avanzare verso la fine di $B$).
+            \item Accettazione (da $q_5$ a $q_6$):
+                $(q_5, \text{\_}, \text{\_}) \to (q_6, \text{\_}, \text{\_}, S, S)$.
+                \textit{Spiegazione}: Se la testina di Nastro 1 raggiunge il blank finale dopo $B$, la stringa è accettata. $q_6$ è lo stato di accettazione.
+        \end{itemize}
+\end{itemize}
+
+\subsubsection{Errore Comune di Progettazione: Check Ambigui}
+Un errore frequente nella progettazione delle NTM si verifica quando il "check" diventa ambiguo a causa di scelte non deterministiche mal gestite, che permettono alla macchina di accettare stringhe che non appartengono al linguaggio.
+
+\textbf{Esempio di Errore (per $L = \{A\#B \mid A \subseteq B \lor A^R \subseteq B \}$):}
+Consideriamo una NTM che usa tre nastri: Nastro 1 (Input), Nastro 2 (copia di $A$ con testina all'inizio), Nastro 3 (copia di $A$ con testina alla fine).
+\begin{itemize}
+    \item La macchina copia $A$ su Nastro 2 e Nastro 3. Riavvolge Nastro 2 all'inizio di $A$, lascia Nastro 3 alla fine di $A$.
+    \item Dopo aver gessato l'inizio della sottostringa in $B$, la macchina entra in uno stato di confronto (es. $q_4$). Da questo stato, per ogni carattere di $B$, la macchina ha una transizione per confrontare con $A$ (usando Nastro 2) e una transizione per confrontare con $A^R$ (usando Nastro 3).
+    \begin{itemize}
+        \item Transizione di confronto 1 (per $A$): $(q_4, \alpha_{\text{N1}}, \alpha_{\text{N2}}, \beta_{\text{N3}}) \to (q_4, \alpha_{\text{N1}}, \alpha_{\text{N2}}, \beta_{\text{N3}}, R_1, R_2, S_3)$ se $\alpha_{\text{N1}} = \alpha_{\text{N2}}$.
+        \item Transizione di confronto 2 (per $A^R$): $(q_4, \alpha_{\text{N1}}, \beta_{\text{N2}}, \alpha_{\text{N3}}) \to (q_4, \alpha_{\text{N1}}, \beta_{\text{N2}}, \alpha_{\text{N3}}, R_1, S_2, L_3)$ se $\alpha_{\text{N1}} = \alpha_{\text{N3}}$.
+    \end{itemize}
+\end{itemize}
+
+\textbf{Perché è un errore:}
+La condizione di accettazione della NTM afferma che accetta se \emph{esiste} un ramo di computazione che porta ad accettazione. Se da $q_4$ la macchina può scegliere, per ogni simbolo successivo, se confrontare con $A$ o con $A^R$, può "mescolare" i pezzi. Ad esempio, potrebbe confrontare i primi $k$ caratteri di $B$ con i primi $k$ caratteri di $A$, e poi, per i successivi $m$ caratteri, passare a confrontarli con gli ultimi $m$ caratteri di $A$ (simulando $A^R$). Il risultato è che la macchina potrebbe accettare una sottostringa di $B$ che non è né $A$ né $A^R$, ma una combinazione delle due. Il "check" non è più robusto, e la macchina accetterebbe stringhe non conformi al linguaggio.
+Per evitare ciò, le scelte tra $A$ e $A^R$ devono avvenire \emph{prima} della fase di confronto, o il confronto deve essere strettamente legato a un solo nastro ausiliario alla volta, con una chiara separazione dei rami di computazione.
+
+\subsection{Esempio 3: Riconoscimento di $L = \{X^n \# W_1 \# \dots \# W_n \# \mid n>0, W_i \in \{a,b,c,d\}^+, \forall i \in [1,n] \exists S_i \subseteq W_i, |S_i|=i, S_i = S_i^R \}$}
+Questo linguaggio richiede una stringa composta da una sequenza di $n$ simboli 'X', seguiti da $n$ stringhe $W_i$ separate da '#', con la condizione fondamentale che ogni $W_i$ contenga una sottostringa $S_i$ di lunghezza $i$ che sia palindroma.
+
+\subsubsection{Discussione della Strategia (Non Soluzione Completa)}
+La macchina dovrà gestire più nastri e compiere diversi "guess" e "check" in modo iterativo.
+
+\textbf{Nastri suggeriti:}
+\begin{itemize}
+    \item \textbf{Nastro 1}: Nastro di Input.
+    \item \textbf{Nastro 2}: Contatore per $n$ e per la lunghezza $i$ della palindroma. Inizialmente contiene $n$ 'X'.
+    \item \textbf{Nastro 3}: Ausiliario per la copia di $S_i$ o per gestire il confronto palindromo.
+    \item \textbf{Nastro 4}: Ausiliario per $S_i^R$ (se $S_i$ viene gessata e scritta) o per una copia temporanea durante il check.
+\end{itemize}
+
+\textbf{Fasi della computazione (strategia "Guess and Check"):}
+
+1.  \textbf{Fase 1: Contare $n$ e verificare $n>0$}
+    *   La macchina scansiona $X^n$ dal Nastro 1. Per ogni 'X' letta, scrive una 'X' sul Nastro 2.
+    *   Alla fine di $X^n$, si sposta sul primo `#`. Se $n=0$ (nessuna 'X' iniziale), la macchina rifiuta.
+    *   La testina di Nastro 2 viene posizionata all'inizio delle 'X' copiate.
+
+2.  \textbf{Fase 2: Iterazione su ogni $W_i$}
+    *   La macchina entra in un ciclo che si ripete per ogni $W_i$. Per ogni iterazione, il valore di $i$ (la lunghezza della palindroma da cercare) viene gestito dal Nastro 2.
+    *   \textbf{Check del numero di $W_i$}: Ogni volta che un $W_i$ viene elaborato (e prima di passare al successivo `#`), la macchina consuma una 'X' dal Nastro 2. Alla fine della stringa di input (dopo l'ultimo $\#$ e il successivo blank), il Nastro 2 deve essere completamente vuoto. Se rimangono delle 'X' o se si finiscono le 'X' prima di leggere tutti i $W_i$, la macchina rifiuta.
+
+    *   \textbf{Guess \& Check per $S_i$ in $W_i$}: Per ogni $W_i$:
+        \begin{enumerate}
+            \item \textbf{Determinazione di $i$}: La macchina usa il Nastro 2 per determinare la lunghezza $i$ corrente (ad es., contando le 'X' rimanenti o marcando la $i$-esima 'X' per l'iterazione corrente).
+
+            \item \textbf{Guess della sottostringa $S_i$}:
+                *   La macchina scansiona $W_i$ sul Nastro 1.
+                *   \textbf{Guess della posizione di $S_i$ in $W_i$}: Non deterministicamente, la macchina decide dove inizia $S_i$ all'interno di $W_i$. Salta un numero arbitrario di caratteri in $W_i$.
+                *   \textbf{Guess della sottostringa stessa}: Una volta all'inizio gessato di $S_i$, la macchina può adottare due strategie principali:
+                    \begin{itemize}
+                        \item \textbf{Strategia A (Copia e Verifica in situ)}:
+                            *   Copia i successivi $i$ caratteri di $W_i$ dal Nastro 1 al Nastro 3.
+                            *   \textbf{Check}: Verifica che la stringa copiata sul Nastro 3 sia palindroma (leggendo dai due estremi verso il centro) E che la sua lunghezza sia esattamente $i$. Se non lo è, il ramo fallisce.
+                        \item \textbf{Strategia B (Guess della Palindroma e Verifica Presenza)}:
+                            *   La macchina "gessa" una stringa $S'$ direttamente sul Nastro 3 e Nastro 4 (es. $S'$ su Nastro 3, $(S')^R$ su Nastro 4).
+                            *   \textbf{Check 1}: Verifica che $S'$ sia palindroma (confrontando Nastro 3 con Nastro 4).
+                            *   \textbf{Check 2}: Verifica che la lunghezza di $S'$ sia esattamente $i$.
+                            *   \textbf{Check 3}: Verifica che questa $S'$ gessata (sul Nastro 3) sia una sottostringa di $W_i$ sul Nastro 1 (eseguendo una ricerca esatta di pattern).
+                    \end{itemize}
+        \end{enumerate}
+        Se per un dato $W_i$ e il suo $i$ corrente, nessun guess di $S_i$ supera tutti i check, allora tutti i rami di computazione corrispondenti a quel $W_i$ falliranno, e la stringa di input totale verrà rifiutata.
+
+3.  \textbf{Fase Finale: Accettazione}
+    *   Se tutti i $W_i$ sono stati elaborati, tutte le condizioni verificate (numero di $W_i$, presenza di $S_i$ palindroma di lunghezza $i$ per ogni $W_i$), e si raggiunge la fine della stringa di input, la macchina si sposta a uno stato di accettazione.
+
+Questa tipologia di esercizi è complessa e richiede un'attenta gestione dei nastri e dei passaggi non deterministici, sempre seguiti da un robusto meccanismo di "check" per validare gli "indovinelli" e garantire la correttezza del riconoscimento del linguaggio.
+
+\end{document}

@@ -1,0 +1,7445 @@
+1
+00:00:00,000 --> 00:00:03,000
+Ok,
+
+2
+00:00:06,560 --> 00:00:11,519
+iniziamo. Iniziamo per oggi.
+
+3
+00:00:18,520 --> 00:00:20,359
+Ok. L'ultima cosa che abbiamo introdotto
+
+4
+00:00:20,359 --> 00:00:23,439
+sono Ma che i Touring non determin
+
+5
+00:00:23,439 --> 00:00:25,240
+abbiamo visto un po' di esercizi un po'
+
+6
+00:00:25,240 --> 00:00:27,840
+di roba del finastro. Poi quello che
+
+7
+00:00:27,840 --> 00:00:30,439
+abbiamo visto è che essenzialmente
+
+8
+00:00:30,439 --> 00:00:33,079
+eh le macchine di touring non
+
+9
+00:00:33,079 --> 00:00:35,760
+deterministiche possono essere simulate
+
+10
+00:00:35,760 --> 00:00:38,040
+da macchine deterministiche
+
+11
+00:00:38,040 --> 00:00:40,640
+che ci costa un fottio riuscirà a fare
+
+12
+00:00:40,640 --> 00:00:44,440
+sta cosa costa exponential time. Ok?
+
+13
+00:00:44,440 --> 00:00:46,680
+E sostanzialmente quello che abbiamo
+
+14
+00:00:46,680 --> 00:00:50,079
+visto è che noi possiamo simulare queste
+
+15
+00:00:50,079 --> 00:00:53,359
+macchine con altre macchine, quindi
+
+16
+00:00:53,359 --> 00:00:55,800
+utilizzeremo utilizziamo il paradigma
+
+17
+00:00:55,800 --> 00:00:57,960
+non deterministico perché ci torna
+
+18
+00:00:57,960 --> 00:01:00,719
+comodo in quanto noi possiamo simulare
+
+19
+00:01:00,719 --> 00:01:03,239
+macchine non deterministiche tramite
+
+20
+00:01:03,239 --> 00:01:06,080
+macchine deterministiche e per quello di
+
+21
+00:01:06,080 --> 00:01:08,240
+cui ci occupiamo al momento, che è
+
+22
+00:01:08,240 --> 00:01:11,159
+soltanto la decidibilità dei problemi,
+
+23
+00:01:11,159 --> 00:01:14,040
+che ci mettiamo exponentiale. Noi ci
+
+24
+00:01:14,040 --> 00:01:16,040
+mettiamo double exponential time, a noi
+
+25
+00:01:16,040 --> 00:01:17,799
+non ce ne importa assolutamente niente,
+
+26
+00:01:17,799 --> 00:01:20,119
+l'importante è che sia parti, ok?
+
+27
+00:01:20,119 --> 00:01:22,560
+Dopodiché abbiamo introdotto la classe
+
+28
+00:01:22,560 --> 00:01:25,680
+R, la classe R dei problemi, i problemi
+
+29
+00:01:25,680 --> 00:01:28,280
+decidibili, i problemi indecidibili, vi
+
+30
+00:01:28,280 --> 00:01:30,680
+ricordo che tutto ciò che è in R è
+
+31
+00:01:30,680 --> 00:01:32,840
+decidibile. Perché lo chiamiamo
+
+32
+00:01:32,840 --> 00:01:34,960
+decidibile? Perché quello che è in R
+
+33
+00:01:34,960 --> 00:01:38,040
+ammette un algoritmo, cioè ammette una
+
+34
+00:01:38,040 --> 00:01:40,200
+procedura finita
+
+35
+00:01:40,200 --> 00:01:43,200
+che ci risponde sempre sì o no. Ok?
+
+36
+00:01:43,200 --> 00:01:45,439
+Quindi è decidibile, richiamo decidibili
+
+37
+00:01:45,439 --> 00:01:48,840
+tutto ciò che ammette un algoritmo.
+
+38
+00:01:48,840 --> 00:01:52,320
+Al di fuori di R ci stanno i problemi
+
+39
+00:01:52,320 --> 00:01:54,840
+indecidibili, cioè problemi per i quali
+
+40
+00:01:54,840 --> 00:01:58,640
+non esiste un algoritmo. Ok?
+
+41
+00:01:58,640 --> 00:02:00,479
+Abbiamo poi introdotto il re che è
+
+42
+00:02:00,479 --> 00:02:02,439
+questa piccola
+
+43
+00:02:02,439 --> 00:02:04,960
+finezza, no? che sono i problemi
+
+44
+00:02:04,960 --> 00:02:06,719
+semidecidibili, che comunque è una gran
+
+45
+00:02:06,719 --> 00:02:08,840
+fregatura perché non è che se un
+
+46
+00:02:08,840 --> 00:02:10,959
+problema è semidecidibile noi ce ne
+
+47
+00:02:10,959 --> 00:02:12,800
+facciamo un granché perché gli algoritmi
+
+48
+00:02:12,800 --> 00:02:13,959
+che abbiamo per i problemi
+
+49
+00:02:13,959 --> 00:02:17,280
+semidecidibili ma non decidibili ci dà
+
+50
+00:02:17,280 --> 00:02:19,200
+garanzia di risposta in caso di risposta
+
+51
+00:02:19,200 --> 00:02:21,080
+sì, ma non ci dà garanzia di risposta in
+
+52
+00:02:21,080 --> 00:02:23,040
+caso di risposta no. Di conseguenza non
+
+53
+00:02:23,040 --> 00:02:25,239
+è che ci toglie fuori dal limbo se dopo
+
+54
+00:02:25,239 --> 00:02:28,319
+due mesi di calcolo ancora non abbiamo
+
+55
+00:02:28,319 --> 00:02:30,560
+una risposta e prima che se ranna ancora
+
+56
+00:02:30,560 --> 00:02:32,400
+alla fine ci darà una risposta, non lo
+
+57
+00:02:32,400 --> 00:02:34,400
+sappiamo. Di conseguenza i problemi
+
+58
+00:02:34,400 --> 00:02:36,840
+semidecidibili in realtà sono per noi
+
+59
+00:02:36,840 --> 00:02:38,959
+indecidibili, ok? Cioè da un punto di
+
+60
+00:02:38,959 --> 00:02:41,720
+vista prettamente algoritmico
+
+61
+00:02:41,720 --> 00:02:43,599
+non è che ci offrono chissà quale
+
+62
+00:02:43,599 --> 00:02:45,360
+vantaggio rispetto agli altri. Adesso,
+
+63
+00:02:45,360 --> 00:02:47,599
+se un problema è decidibile, noi siamo
+
+64
+00:02:47,599 --> 00:02:49,680
+in grado con un algoritmo di dare sempre
+
+65
+00:02:49,680 --> 00:02:53,239
+una risposta. Quindi avevamo R, re che
+
+66
+00:02:53,239 --> 00:02:55,640
+sono i problemi semidecidibili. Al di
+
+67
+00:02:55,640 --> 00:02:58,040
+fuori di R ci sono cose completamente
+
+68
+00:02:58,040 --> 00:02:59,519
+indecidibili nel quale non abbiamo
+
+69
+00:02:59,519 --> 00:03:02,239
+nessun tipo di garanzia, né per il sì né
+
+70
+00:03:02,239 --> 00:03:06,680
+per il no che dipende, vedremo altre.
+
+71
+00:03:06,680 --> 00:03:09,680
+Ok,
+
+72
+00:03:09,680 --> 00:03:13,000
+ritorniamo con la mente alla simulazione
+
+73
+00:03:13,000 --> 00:03:15,799
+della macchina non deterministica. Ok,
+
+74
+00:03:15,799 --> 00:03:17,080
+noi abbiamo una simulazione
+
+75
+00:03:17,080 --> 00:03:18,720
+deterministica di una macchina non
+
+76
+00:03:18,720 --> 00:03:20,680
+deterministica. Preparare la lezione di
+
+77
+00:03:20,680 --> 00:03:22,040
+oggi è stato interessante perché mi
+
+78
+00:03:22,040 --> 00:03:23,799
+dovevo inventare una storia e non sapevo
+
+79
+00:03:23,799 --> 00:03:25,720
+come appiccicarla. Questo è quello che
+
+80
+00:03:25,720 --> 00:03:28,519
+mi sono inventato. Allora, se ritorniamo
+
+81
+00:03:28,519 --> 00:03:30,879
+con la mente
+
+82
+00:03:30,879 --> 00:03:33,799
+alla alle macchine non deterministiche,
+
+83
+00:03:33,799 --> 00:03:35,720
+noi abbiamo che possiamo fare una
+
+84
+00:03:35,720 --> 00:03:38,239
+simulazione deterministica.
+
+85
+00:03:38,239 --> 00:03:40,360
+Ok?
+
+86
+00:03:40,360 --> 00:03:42,680
+Focalizziamoci sulla simulazione
+
+87
+00:03:42,680 --> 00:03:45,400
+deterministica.
+
+88
+00:03:45,400 --> 00:03:47,360
+Il simulante,
+
+89
+00:03:47,360 --> 00:03:49,879
+ok, che è deterministico,
+
+90
+00:03:49,879 --> 00:03:53,760
+sa fare altro che non quello che faccia
+
+91
+00:03:53,760 --> 00:03:56,920
+il simulato.
+
+92
+00:03:58,760 --> 00:04:01,200
+È chiara la domanda? Cioè la macchina
+
+93
+00:04:01,200 --> 00:04:03,200
+che noi tiriamo fuori, noi partiamo da
+
+94
+00:04:03,200 --> 00:04:06,720
+una macchina non deterministica, ok? La
+
+95
+00:04:06,720 --> 00:04:10,040
+trasformiamo con un'opportuna procedura
+
+96
+00:04:10,040 --> 00:04:11,879
+in una macchina deterministica che
+
+97
+00:04:11,879 --> 00:04:14,760
+sappiamo che si può fare. Ok?
+
+98
+00:04:14,760 --> 00:04:18,720
+Allora, la mia domanda è la macchina
+
+99
+00:04:18,720 --> 00:04:21,400
+simulante, cioè quello che noi otteniamo
+
+100
+00:04:21,400 --> 00:04:24,479
+che è deterministico,
+
+101
+00:04:24,479 --> 00:04:28,440
+fa altro, cioè è in grado di riconoscere
+
+102
+00:04:28,440 --> 00:04:33,039
+cose diverse rispetto al simulato?
+
+103
+00:04:33,039 --> 00:04:34,600
+Se dimostriamo che la macchina non
+
+104
+00:04:34,600 --> 00:04:36,919
+deterministica riesce anche essa a
+
+105
+00:04:36,919 --> 00:04:39,160
+dimostrare la simulante, ovvero una
+
+106
+00:04:39,160 --> 00:04:40,680
+macchina deterministica, allora
+
+107
+00:04:40,680 --> 00:04:42,280
+dimostriamo che entrambi hanno lo stesso
+
+108
+00:04:42,280 --> 00:04:44,440
+potere espressivo.
+
+109
+00:04:44,440 --> 00:04:46,600
+Sì. Ok. Questo è da un punto di vista di
+
+110
+00:04:46,600 --> 00:04:49,840
+potere espressivo, è ovvio. Domanda
+
+111
+00:04:49,840 --> 00:04:53,400
+domanda è passante. Secondo voi una
+
+112
+00:04:53,400 --> 00:04:55,199
+macchina non deterministica è in grado
+
+113
+00:04:55,199 --> 00:04:56,720
+di fare ciò che una macchina
+
+114
+00:04:56,720 --> 00:04:59,320
+deterministica fa?
+
+115
+00:04:59,320 --> 00:05:02,600
+Sì. Perché?
+
+116
+00:05:05,080 --> 00:05:08,560
+Sì, non deterministica di particolare
+
+117
+00:05:08,560 --> 00:05:11,560
+deterministerministica
+
+118
+00:05:12,440 --> 00:05:13,720
+può fare quello che una macchina
+
+119
+00:05:13,720 --> 00:05:15,680
+deterministica fa semplicemente non
+
+120
+00:05:15,680 --> 00:05:18,639
+usando il non determinismo. Ok? è
+
+121
+00:05:18,639 --> 00:05:21,199
+standard, proviene da definizione. Poi
+
+122
+00:05:21,199 --> 00:05:22,600
+noi abbiamo che una macchina
+
+123
+00:05:22,600 --> 00:05:24,960
+deterministica, cioè se partiamo da una
+
+124
+00:05:24,960 --> 00:05:26,800
+macchina non deterministica, noi la
+
+125
+00:05:26,800 --> 00:05:28,560
+possiamo simulare in maniera
+
+126
+00:05:28,560 --> 00:05:31,199
+deterministica con un approccio
+
+127
+00:05:31,199 --> 00:05:34,240
+particolare che è l'esplorazione per
+
+128
+00:05:34,240 --> 00:05:37,000
+livelli delle dell'albero di
+
+129
+00:05:37,000 --> 00:05:39,160
+computazione eccetera. Ok? Ma la mia
+
+130
+00:05:39,160 --> 00:05:44,039
+domanda è la macchina deterministica che
+
+131
+00:05:44,039 --> 00:05:46,440
+si è simulante
+
+132
+00:05:46,440 --> 00:05:48,759
+la macchina non deterministica che è
+
+133
+00:05:48,759 --> 00:05:51,759
+simulata?
+
+134
+00:05:52,440 --> 00:05:56,440
+Fa è una macchina generica il simulante?
+
+135
+00:05:56,440 --> 00:05:58,919
+Dico o fa solo quello che fa il
+
+136
+00:05:58,919 --> 00:06:01,919
+simulato?
+
+137
+00:06:02,720 --> 00:06:05,199
+fa solo quello che fa il simulato, cioè
+
+138
+00:06:05,199 --> 00:06:07,160
+il simulante
+
+139
+00:06:07,160 --> 00:06:09,319
+è una macchina la cui funzione di
+
+140
+00:06:09,319 --> 00:06:13,080
+transizione viene definita apposta, cioè
+
+141
+00:06:13,080 --> 00:06:16,520
+sa fare quello, sa simulare il simulato,
+
+142
+00:06:16,520 --> 00:06:18,759
+non è che sa fare altro, ok? Cioè,
+
+143
+00:06:18,759 --> 00:06:20,919
+quindi partendo da ogni macchina non
+
+144
+00:06:20,919 --> 00:06:22,720
+deterministica,
+
+145
+00:06:22,720 --> 00:06:26,000
+la macchina deterministica simulante è
+
+146
+00:06:26,000 --> 00:06:28,639
+progettata apposta, è tenoro, cioè è
+
+147
+00:06:28,639 --> 00:06:30,520
+sartoriale. Noi prendiamo la macchina
+
+148
+00:06:30,520 --> 00:06:32,960
+non deterministica, c'ha quel tipo di
+
+149
+00:06:32,960 --> 00:06:34,520
+transizioni,
+
+150
+00:06:34,520 --> 00:06:36,800
+noi li ficchiamo nella funzione di
+
+151
+00:06:36,800 --> 00:06:38,039
+transizione di una macchina
+
+152
+00:06:38,039 --> 00:06:41,120
+deterministica simulante e il simulante
+
+153
+00:06:41,120 --> 00:06:44,319
+fa solo quello. Ok?
+
+154
+00:06:44,319 --> 00:06:46,000
+A voi risulta che una macchina
+
+155
+00:06:46,000 --> 00:06:48,360
+deterministica o non deterministica
+
+156
+00:06:48,360 --> 00:06:50,919
+durante il calcolo può cambiare il
+
+157
+00:06:50,919 --> 00:06:53,520
+proprio programma di esecuzione?
+
+158
+00:06:53,520 --> 00:06:56,039
+No, cioè la funzione di transizione è
+
+159
+00:06:56,039 --> 00:06:57,960
+carded,
+
+160
+00:06:57,960 --> 00:07:00,280
+cioè la macchina quello fa, non sa fare
+
+161
+00:07:00,280 --> 00:07:03,800
+altro. Quindi il simulante
+
+162
+00:07:03,800 --> 00:07:06,479
+deterministico, sebbene in maniera più
+
+163
+00:07:06,479 --> 00:07:08,840
+lenta, sostanzialmente fa quello che fa
+
+164
+00:07:08,840 --> 00:07:11,400
+il simulato, ok? Non è una macchina
+
+165
+00:07:11,400 --> 00:07:13,280
+generica, è una macchina progettata
+
+166
+00:07:13,280 --> 00:07:16,160
+apposta che fa solamente quella cosa là.
+
+167
+00:07:16,160 --> 00:07:18,800
+Però questa non è la nostra esperienza
+
+168
+00:07:18,800 --> 00:07:21,360
+diretta di computer.
+
+169
+00:07:21,360 --> 00:07:24,240
+La nostra esperienza diretta di computer
+
+170
+00:07:24,240 --> 00:07:26,680
+è che un computer noi gli diamo un
+
+171
+00:07:26,680 --> 00:07:29,199
+programma e quello sempre il programma
+
+172
+00:07:29,199 --> 00:07:32,720
+che gli diamo. Cioè un un computer per
+
+173
+00:07:32,720 --> 00:07:34,039
+quella che è la nostra esperienza
+
+174
+00:07:34,039 --> 00:07:36,360
+diretta è qualcosa di programmabile,
+
+175
+00:07:36,360 --> 00:07:39,400
+cioè qualcosa che la sua funzione di
+
+176
+00:07:39,400 --> 00:07:41,919
+transizione pare prendersela da un
+
+177
+00:07:41,919 --> 00:07:45,159
+programma. Ok? È chiaro? Dov'è qui
+
+178
+00:07:45,159 --> 00:07:47,159
+l'inghippo, cioè fino ora abbiamo visto
+
+179
+00:07:47,159 --> 00:07:49,720
+modelli di calcolo che fanno una sola
+
+180
+00:07:49,720 --> 00:07:52,639
+cosa, cioè una volta che fissiamo la
+
+181
+00:07:52,639 --> 00:07:55,479
+funzione di transizione sulla macchina
+
+182
+00:07:55,479 --> 00:07:57,680
+di Turing, la macchina quello fa, non è
+
+183
+00:07:57,680 --> 00:08:00,280
+che sa fare, sa svolgere altri compiti,
+
+184
+00:08:00,280 --> 00:08:02,840
+quello sa fare un linguaggio sa decidere
+
+185
+00:08:02,840 --> 00:08:05,800
+o accettare e non fa nient'altro.
+
+186
+00:08:05,800 --> 00:08:07,159
+Però abbiamo detto che le macchine in
+
+187
+00:08:07,159 --> 00:08:08,960
+Touring sono potenti quanto i computer
+
+188
+00:08:08,960 --> 00:08:11,680
+nostri. E com'è sta faccenda, cioè i
+
+189
+00:08:11,680 --> 00:08:13,560
+computer nostri, a differenza delle
+
+190
+00:08:13,560 --> 00:08:16,199
+macchine di Touring, pare possano
+
+191
+00:08:16,199 --> 00:08:20,800
+ricevere in input un programma, ok? e
+
+192
+00:08:20,800 --> 00:08:24,120
+adattare la loro funzione di transizione
+
+193
+00:08:24,120 --> 00:08:27,120
+al programma ricevuto, cioè il computer
+
+194
+00:08:27,120 --> 00:08:31,120
+che noi abbiamo sul nostro tavolo
+
+195
+00:08:31,120 --> 00:08:35,279
+svolge compiti, svolge programmi vari,
+
+196
+00:08:35,279 --> 00:08:37,399
+non è come la macchina di Touring che ne
+
+197
+00:08:37,399 --> 00:08:41,200
+svolge uno solo. Com'è sta questione? E
+
+198
+00:08:41,200 --> 00:08:42,839
+adesso dobbiamo risolvere questo
+
+199
+00:08:42,839 --> 00:08:46,320
+mismatch. mostreremo che e poi
+
+200
+00:08:46,320 --> 00:08:49,000
+introdurremo nella seconda parte altri
+
+201
+00:08:49,000 --> 00:08:52,000
+altri problemi, mostreremo che i nostri
+
+202
+00:08:52,000 --> 00:08:54,440
+computer sono in realtà delle macchine
+
+203
+00:08:54,440 --> 00:08:56,880
+di touring particolari,
+
+204
+00:08:56,880 --> 00:08:58,320
+macchine di touring che andremo a
+
+205
+00:08:58,320 --> 00:09:01,360
+definire ora, ok?
+
+206
+00:09:01,360 --> 00:09:05,600
+Un computer è sostanzialmente
+
+207
+00:09:05,600 --> 00:09:08,959
+quello che noi chiamiamo una macchina di
+
+208
+00:09:08,959 --> 00:09:12,360
+touring universale. Ok? Questo è un
+
+209
+00:09:12,360 --> 00:09:15,360
+computer
+
+210
+00:09:19,560 --> 00:09:21,680
+macchina
+
+211
+00:09:21,680 --> 00:09:24,839
+di Turing
+
+212
+00:09:25,160 --> 00:09:28,160
+Universale.
+
+213
+00:09:30,680 --> 00:09:33,120
+La macchina di tuning universale è un
+
+214
+00:09:33,120 --> 00:09:36,959
+tipo di macchina di tuning che è uguale
+
+215
+00:09:36,959 --> 00:09:40,200
+alle macchine che abbiamo visto finora,
+
+216
+00:09:40,200 --> 00:09:43,160
+solo che è in grado di eseguire un
+
+217
+00:09:43,160 --> 00:09:45,040
+programma.
+
+218
+00:09:45,040 --> 00:09:48,480
+Questa è la differenza. Ok? è questo che
+
+219
+00:09:48,480 --> 00:09:51,800
+lo rende universale, cioè la ci sono
+
+220
+00:09:51,800 --> 00:09:53,480
+delle macchine di tuning che adesso
+
+221
+00:09:53,480 --> 00:09:55,360
+vedremo, la macchina di tuning
+
+222
+00:09:55,360 --> 00:09:59,200
+universale che è una macchina che è in
+
+223
+00:09:59,200 --> 00:10:02,160
+grado di comportarsi come altre macchine
+
+224
+00:10:02,160 --> 00:10:05,320
+se gli diciamo come fare. Ok, questa è
+
+225
+00:10:05,320 --> 00:10:07,120
+l'idea.
+
+226
+00:10:07,120 --> 00:10:09,760
+I nostri computer
+
+227
+00:10:09,760 --> 00:10:12,360
+ricevono un programma e sulla base del
+
+228
+00:10:12,360 --> 00:10:14,640
+programma pare che iniziano a svolgere
+
+229
+00:10:14,640 --> 00:10:16,720
+cose differenti, no? E di fatto questa è
+
+230
+00:10:16,720 --> 00:10:18,920
+la nostra esperienza. Possiamo scrivere
+
+231
+00:10:18,920 --> 00:10:21,480
+un programma per calcolare una certa
+
+232
+00:10:21,480 --> 00:10:23,760
+cosa. Possiamo scrivere un programma per
+
+233
+00:10:23,760 --> 00:10:26,320
+calcolare un'altra cosa, no? Quindi pare
+
+234
+00:10:26,320 --> 00:10:28,959
+che il tipo di calcolo che loro facciano
+
+235
+00:10:28,959 --> 00:10:32,480
+dipende che loro fanno, dipende da un
+
+236
+00:10:32,480 --> 00:10:35,120
+programma che noi passiamo e questo è
+
+237
+00:10:35,120 --> 00:10:37,240
+diverso dalle macchine di touring viste
+
+238
+00:10:37,240 --> 00:10:39,600
+finora. Una macchina di Turing che
+
+239
+00:10:39,600 --> 00:10:41,959
+andremo a vedere ora è una macchina di
+
+240
+00:10:41,959 --> 00:10:44,200
+Turing che è in grado di comportarsi
+
+241
+00:10:44,200 --> 00:10:47,680
+come qualsiasi altra macchina di Turing
+
+242
+00:10:47,680 --> 00:10:50,279
+nel momento in cui gli diciamo come si
+
+243
+00:10:50,279 --> 00:10:53,519
+fa. Ok? È chiaro? Questo è il nostro
+
+244
+00:10:53,519 --> 00:10:55,320
+obiettivo. Quindi, in questo primo pezzo
+
+245
+00:10:55,320 --> 00:10:58,959
+di lezione noi andremo a vedere questo
+
+246
+00:10:58,959 --> 00:11:01,000
+modello di calcolo che è la macchina di
+
+247
+00:11:01,000 --> 00:11:05,360
+tingers che praticamente fa da ponte fra
+
+248
+00:11:05,360 --> 00:11:07,519
+quello che abbiamo visto finora e i
+
+249
+00:11:07,519 --> 00:11:10,160
+computer che siamo abituati a
+
+250
+00:11:10,160 --> 00:11:13,839
+utilizzare. Ok?
+
+251
+00:11:13,839 --> 00:11:15,920
+Allora, quello che ci dobbiamo inventare
+
+252
+00:11:15,920 --> 00:11:19,200
+però a questo punto è come facciamo a
+
+253
+00:11:19,200 --> 00:11:21,279
+insegnare una macchina di Turing a
+
+254
+00:11:21,279 --> 00:11:23,160
+comportarsi come un'altra macchina di
+
+255
+00:11:23,160 --> 00:11:25,120
+Turing. Questa è la cosa, cioè noi ci
+
+256
+00:11:25,120 --> 00:11:28,480
+dobbiamo inventare un codice per i
+
+257
+00:11:28,480 --> 00:11:30,959
+programmi, sostanzialmente come abbiamo
+
+258
+00:11:30,959 --> 00:11:34,399
+il codice Java, C++, Python, whatever,
+
+259
+00:11:34,399 --> 00:11:37,160
+ci dobbiamo inventare un codice che ci
+
+260
+00:11:37,160 --> 00:11:39,760
+permetta di insegnare a questa macchina
+
+261
+00:11:39,760 --> 00:11:42,320
+universale a fare le cose che fanno le
+
+262
+00:11:42,320 --> 00:11:47,920
+altre macchine di Turing. È chiaro? Ok?
+
+263
+00:11:47,920 --> 00:11:49,440
+Per le macchine che abbiamo visto
+
+264
+00:11:49,440 --> 00:11:52,079
+finora, cos'è il programma di queste
+
+265
+00:11:52,079 --> 00:11:54,519
+macchine?
+
+266
+00:11:54,519 --> 00:11:56,320
+E la funzione di transizione, cioè la
+
+267
+00:11:56,320 --> 00:11:59,079
+funzione di transizione delle macchine è
+
+268
+00:11:59,079 --> 00:12:01,279
+il loro programma che abbiamo detto è
+
+269
+00:12:01,279 --> 00:12:03,600
+fissato. Una volta che la macchina è
+
+270
+00:12:03,600 --> 00:12:06,000
+progettata, costruita, quello non
+
+271
+00:12:06,000 --> 00:12:08,480
+cambia. Ok? Quindi noi ci dobbiamo
+
+272
+00:12:08,480 --> 00:12:13,000
+inventare un modo per codificare
+
+273
+00:12:13,000 --> 00:12:16,120
+una le funzioni di transizione in
+
+274
+00:12:16,120 --> 00:12:18,040
+maniera tale che queste possono essere
+
+275
+00:12:18,040 --> 00:12:21,040
+usate come input di un'altra macchina e
+
+276
+00:12:21,040 --> 00:12:23,240
+questa macchina universale prende il
+
+277
+00:12:23,240 --> 00:12:25,839
+codice della funzione transizione di
+
+278
+00:12:25,839 --> 00:12:27,560
+altre macchine e si comporta come
+
+279
+00:12:27,560 --> 00:12:30,560
+quelle. Ok? Quindi è una macchina che
+
+280
+00:12:30,560 --> 00:12:33,440
+avrà il potere di comportarsi come tutte
+
+281
+00:12:33,440 --> 00:12:35,480
+le altre macchine, ok? Per questa
+
+282
+00:12:35,480 --> 00:12:37,240
+ragione la chiamiamo macchina
+
+283
+00:12:37,240 --> 00:12:41,600
+universale. Ok?
+
+284
+00:12:41,639 --> 00:12:43,160
+Allora,
+
+285
+00:12:43,160 --> 00:12:45,240
+ovviamente uno si può inventare tutti i
+
+286
+00:12:45,240 --> 00:12:47,079
+modi che vuole per codificare le
+
+287
+00:12:47,079 --> 00:12:48,959
+funzioni di transizione. Ce ne stanno a
+
+288
+00:12:48,959 --> 00:12:50,480
+Bizzef,
+
+289
+00:12:50,480 --> 00:12:53,519
+noi ne prendiamo uno preso dal libro di
+
+290
+00:12:53,519 --> 00:12:56,920
+eh di Hopcroft. Ok?
+
+291
+00:12:56,920 --> 00:13:02,240
+Allora, facciamo alcune semplificazioni
+
+292
+00:13:02,240 --> 00:13:05,800
+su sul tipo di macchine che andremo a a
+
+293
+00:13:05,800 --> 00:13:07,959
+simulare.
+
+294
+00:13:07,959 --> 00:13:09,680
+Semplificazioni che non tolgono il
+
+295
+00:13:09,680 --> 00:13:12,199
+potere esecutivo alle macchine, hanno lo
+
+296
+00:13:12,199 --> 00:13:13,800
+stesso potere delle macchine che abbiamo
+
+297
+00:13:13,800 --> 00:13:16,959
+visto finora. Ah, solo per semplificarci
+
+298
+00:13:16,959 --> 00:13:18,760
+un po' la vita a noi. Se siete
+
+299
+00:13:18,760 --> 00:13:21,279
+interessati nella dimostrazione di
+
+300
+00:13:21,279 --> 00:13:23,560
+eguaglianza ci sta sia negli appunti di
+
+301
+00:13:23,560 --> 00:13:26,440
+Calautti che nel libro di Hccroft. Ok?
+
+302
+00:13:26,440 --> 00:13:28,040
+La macchina che consideriamo è una
+
+303
+00:13:28,040 --> 00:13:30,600
+macchina in cui al tabellin input ha
+
+304
+00:13:30,600 --> 00:13:34,800
+solo due simboli, 0, ok?
+
+305
+00:13:34,800 --> 00:13:39,360
+E il eh
+
+306
+00:13:39,360 --> 00:13:42,079
+questo qua e poi invece l'alfabeto di
+
+307
+00:13:42,079 --> 00:13:43,920
+l'alfabeto
+
+308
+00:13:43,920 --> 00:13:47,320
+di nastro può essere 01 blank più altra
+
+309
+00:13:47,320 --> 00:13:49,959
+roba. Ok? Quindi noi dobbiamo codificare
+
+310
+00:13:49,959 --> 00:13:52,480
+questa cosa. Allora, siccome noi
+
+311
+00:13:52,480 --> 00:13:55,560
+dobbiamo codificare la funzione di
+
+312
+00:13:55,560 --> 00:13:57,959
+transizione,
+
+313
+00:13:57,959 --> 00:13:59,839
+la funzione di transizione ha
+
+314
+00:13:59,839 --> 00:14:03,519
+generalmente questa forma.
+
+315
+00:14:03,519 --> 00:14:07,320
+Se siamo in uno stato qui e leggiamo un
+
+316
+00:14:07,320 --> 00:14:11,120
+simbolo XJ,
+
+317
+00:14:11,160 --> 00:14:14,160
+allora
+
+318
+00:14:15,639 --> 00:14:19,759
+andiamo in uno stato QK,
+
+319
+00:14:19,759 --> 00:14:24,199
+scriviamo un certo simbolo L e ci
+
+320
+00:14:24,199 --> 00:14:27,560
+muoviamo di una certa direzione di M.
+
+321
+00:14:27,560 --> 00:14:30,519
+Ok? E questa è la definizione generale
+
+322
+00:14:30,519 --> 00:14:34,600
+di una di un'istruzione, diciamo, della
+
+323
+00:14:34,600 --> 00:14:39,120
+funzione di transizione. Ok?
+
+324
+00:14:39,240 --> 00:14:40,759
+Che ad esempio avremo qualcosa del
+
+325
+00:14:40,759 --> 00:14:46,360
+genere. Delta di Q3 che leggo blank,
+
+326
+00:14:46,360 --> 00:14:48,600
+vado in Q5,
+
+327
+00:14:48,600 --> 00:14:52,120
+scrivo 0 e mi sposto a destra. Ok?
+
+328
+00:14:52,120 --> 00:14:53,920
+Quindi questo è quello che dobbiamo
+
+329
+00:14:53,920 --> 00:14:55,639
+codificare. Allora, la codifica che
+
+330
+00:14:55,639 --> 00:14:57,360
+facciamo
+
+331
+00:14:57,360 --> 00:14:59,399
+è questa qua.
+
+332
+00:14:59,399 --> 00:15:03,079
+Noi codifichiamo
+
+333
+00:15:03,079 --> 00:15:06,040
+questi simboli
+
+334
+00:15:06,040 --> 00:15:12,399
+cui X con J, QK, X con L e D con M
+
+335
+00:15:12,399 --> 00:15:15,839
+partendo dai loro perici.
+
+336
+00:15:15,839 --> 00:15:18,440
+Ok?
+
+337
+00:15:18,440 --> 00:15:23,160
+Allora, ogni volta che noi, quindi noi
+
+338
+00:15:23,160 --> 00:15:27,040
+faremo questa cosa qua, la codifica
+
+339
+00:15:27,040 --> 00:15:33,120
+di Q avverrà tramite una sequenza di I0,
+
+340
+00:15:33,120 --> 00:15:40,480
+ok? Per dire Q5 metteremo 5 00.
+
+341
+00:15:40,480 --> 00:15:43,480
+Ok?
+
+342
+00:15:44,000 --> 00:15:49,030
+La codifica di X noi metteremo J0.
+
+343
+00:15:49,030 --> 00:15:52,179
+[Musica]
+
+344
+00:15:54,199 --> 00:15:57,079
+Per la direzione
+
+345
+00:15:57,079 --> 00:16:01,720
+noi assumiamo che sinistra
+
+346
+00:16:01,720 --> 00:16:06,959
+sia D1 e destra sia D2.
+
+347
+00:16:06,959 --> 00:16:10,040
+Quindi facciamo un esempio. Supponiamo
+
+348
+00:16:10,040 --> 00:16:13,560
+che vogliamo codificare questa questo
+
+349
+00:16:13,560 --> 00:16:16,440
+pezzo di funzione di transizione, ok?
+
+350
+00:16:16,440 --> 00:16:19,040
+Questo piccolo codice.
+
+351
+00:16:19,040 --> 00:16:23,880
+Allora, noi la codificheremo così.
+
+352
+00:16:24,440 --> 00:16:27,079
+Q3 00
+
+353
+00:16:27,079 --> 00:16:30,519
+e questo ci codifica Q3.
+
+354
+00:16:30,519 --> 00:16:32,519
+Dopodiché devo scrivere blank.
+
+355
+00:16:32,519 --> 00:16:37,759
+L'assunzione che faccio perché
+
+356
+00:16:38,240 --> 00:16:42,839
+x con 1 è il simbolo 0. Facciamo
+
+357
+00:16:42,839 --> 00:16:46,800
+scriviamolo da un'altra parte.
+
+358
+00:16:51,279 --> 00:16:55,360
+X con 1 è il simbolo 0, X con 2 è il
+
+359
+00:16:55,360 --> 00:16:59,759
+simbolo 1, X con 3 è il simbolo bianco,
+
+360
+00:16:59,759 --> 00:17:03,079
+X con 4 e altri sono gli altri simboli
+
+361
+00:17:03,079 --> 00:17:05,079
+di nastro della macchina. Ce li
+
+362
+00:17:05,079 --> 00:17:07,000
+facciamo, ce li assegniamo come
+
+363
+00:17:07,000 --> 00:17:09,640
+vogliamo.
+
+364
+00:17:09,640 --> 00:17:11,640
+Q1
+
+365
+00:17:11,640 --> 00:17:14,540
+è sempre lo stato iniziale.
+
+366
+00:17:14,540 --> 00:17:17,730
+[Musica]
+
+367
+00:17:21,600 --> 00:17:24,959
+Mi state vedendo?
+
+368
+00:17:25,319 --> 00:17:28,319
+Ok.
+
+369
+00:17:28,319 --> 00:17:30,120
+Q2
+
+370
+00:17:30,120 --> 00:17:33,360
+è sempre
+
+371
+00:17:33,919 --> 00:17:38,600
+il singolo stato accettante.
+
+372
+00:17:43,480 --> 00:17:45,960
+Ok? Quindi sono semplicemente assunzioni
+
+373
+00:17:45,960 --> 00:17:49,360
+sui nomi che diamo. Dobbiamo codificare
+
+374
+00:17:49,360 --> 00:17:51,640
+la funzione di transizione. Allora,
+
+375
+00:17:51,640 --> 00:17:54,000
+abbiamo che gli stati sono Q1, Q2, Q3,
+
+376
+00:17:54,000 --> 00:17:56,440
+bla bla bla. Q1 è sempre lo stato
+
+377
+00:17:56,440 --> 00:17:58,000
+iniziale, Q2 è sempre lo stato
+
+378
+00:17:58,000 --> 00:18:00,240
+accettante. Gli altri sono altra roba.
+
+379
+00:18:00,240 --> 00:18:01,760
+Cioè li potevamo chiamare Pippo e
+
+380
+00:18:01,760 --> 00:18:04,080
+Paperino, li chiamiamo Q1 e Q2. È la
+
+381
+00:18:04,080 --> 00:18:08,080
+stessima cosa. Ok? Il simbolo X1 è
+
+382
+00:18:08,080 --> 00:18:12,120
+sempre 0, X2 è sempre 1, X3 è sempre,
+
+383
+00:18:12,120 --> 00:18:13,840
+tutti gli altri gli diamo il nome che
+
+384
+00:18:13,840 --> 00:18:16,919
+vogliamo. Direzione uno è sinistra,
+
+385
+00:18:16,919 --> 00:18:20,360
+direzione 2 è destra. Ok? Sono
+
+386
+00:18:20,360 --> 00:18:23,159
+convenzioni, possiamo decidere quello
+
+387
+00:18:23,159 --> 00:18:24,520
+che vogliamo perché dobbiamo
+
+388
+00:18:24,520 --> 00:18:26,320
+semplicemente trovare il modo di
+
+389
+00:18:26,320 --> 00:18:28,360
+codificare
+
+390
+00:18:28,360 --> 00:18:30,840
+i pezzi della funzione di transizione in
+
+391
+00:18:30,840 --> 00:18:32,679
+una stringa binaria. Questa è la
+
+392
+00:18:32,679 --> 00:18:34,640
+questione, ok? Perché sennò alla
+
+393
+00:18:34,640 --> 00:18:36,320
+macchina universale non glielo riusciamo
+
+394
+00:18:36,320 --> 00:18:38,480
+a dire in nessun modo come comportarsi,
+
+395
+00:18:38,480 --> 00:18:40,919
+gli serve una stringa input e la stringa
+
+396
+00:18:40,919 --> 00:18:43,000
+che gli diamo in input deve codificare
+
+397
+00:18:43,000 --> 00:18:44,480
+la funzione di transizione della
+
+398
+00:18:44,480 --> 00:18:46,120
+macchina che vogliamo che la macchina
+
+399
+00:18:46,120 --> 00:18:50,280
+universale simuli. Ok?
+
+400
+00:18:50,280 --> 00:18:54,039
+Ora, quindi supponiamo di voler
+
+401
+00:18:54,039 --> 00:18:57,000
+codificare questo pezzo qua. Allora,
+
+402
+00:18:57,000 --> 00:18:59,039
+facciamo così,
+
+404
+00:19:03,039 --> 00:19:06,720
+e questo ci codifica Q3.
+
+405
+00:19:06,720 --> 00:19:09,559
+Dopodiché, per separare Q3 dalla
+
+406
+00:19:09,559 --> 00:19:12,919
+codifica del bianco,
+
+407
+00:19:12,919 --> 00:19:16,000
+siccome questo qui sarà un simbolo, sarà
+
+408
+00:19:16,000 --> 00:19:18,760
+in particolare X3 e sarà codificato come
+
+409
+00:19:18,760 --> 00:19:22,000
+di nuovo 00, io ci metto un 1 che mi
+
+410
+00:19:22,000 --> 00:19:24,480
+separa, ok? Quindi io separo questo
+
+411
+00:19:24,480 --> 00:19:28,000
+pezzo da questo pezzo con un 1,
+
+412
+00:19:28,000 --> 00:19:30,960
+metto 1 e poi di nuovo blank che sarebbe
+
+413
+00:19:30,960 --> 00:19:33,559
+x3 00.
+
+414
+00:19:33,559 --> 00:19:35,760
+Questo è x3.
+
+415
+00:19:35,760 --> 00:19:39,360
+che è il blanco. Dopodiché un altro uno
+
+416
+00:19:39,360 --> 00:19:44,280
+in maniera tale che separo qui X5
+
+417
+00:19:44,280 --> 00:19:50,080
+Q5 1 2 3 4 e 5 e questo è Q5. Dopo c'è
+
+418
+00:19:50,080 --> 00:19:52,760
+un 1 0 abbiamo detto che è il primo
+
+419
+00:19:52,760 --> 00:19:55,760
+singolo, quindi c'è un non 0 soltanto.
+
+420
+00:19:55,760 --> 00:19:58,840
+Questo è x1, poi c'è uno di nuovo destra
+
+421
+00:19:58,840 --> 00:20:02,280
+che è 2, questo è d
+
+422
+00:20:02,280 --> 00:20:05,440
+Ok? Allora, cosa abbiamo fatto?
+
+423
+00:20:05,440 --> 00:20:07,679
+ci siamo inventati fra 1000 modi
+
+424
+00:20:07,679 --> 00:20:09,280
+possibili
+
+425
+00:20:09,280 --> 00:20:12,600
+un modo per codificare in binario, una
+
+426
+00:20:12,600 --> 00:20:14,840
+funzione, un pezzo di funzione di
+
+427
+00:20:14,840 --> 00:20:17,000
+transizione. È chiaro cosa abbiamo
+
+428
+00:20:17,000 --> 00:20:18,760
+fatto? Abbiamo semplicemente dato nomi
+
+429
+00:20:18,760 --> 00:20:20,799
+agli stati, nomi ai simboli, nomi
+
+430
+00:20:20,799 --> 00:20:23,799
+allezioni
+
+431
+00:20:24,120 --> 00:20:27,559
+e usiamo un certo numero di zeri per
+
+432
+00:20:27,559 --> 00:20:30,840
+dire q1, q2, q3, un certo numero di zeri
+
+433
+00:20:30,840 --> 00:20:34,400
+per dire x2, x5, x1000, un numero di
+
+434
+00:20:34,400 --> 00:20:38,240
+zeri per dire d1, d bla bla. Le cose le
+
+435
+00:20:38,240 --> 00:20:42,440
+separiamo con 1 e quella stringa binaria
+
+437
+00:20:44,559 --> 00:20:46,360
+1
+
+438
+00:20:46,360 --> 00:20:48,679
+0 secondo la nostra codifica ci sta
+
+439
+00:20:48,679 --> 00:20:50,600
+codificando quel pezzo di funzione di
+
+440
+00:20:50,600 --> 00:20:52,400
+transizione.
+
+441
+00:20:52,400 --> 00:20:54,120
+È chiaro?
+
+442
+00:20:54,120 --> 00:20:56,559
+Però questo codifica
+
+443
+00:20:56,559 --> 00:21:00,559
+un sola entry, una sola entry della
+
+444
+00:21:00,559 --> 00:21:02,240
+funzione di transizione. Noi abbiamo che
+
+445
+00:21:02,240 --> 00:21:03,799
+la funzione di transizione è definita
+
+446
+00:21:03,799 --> 00:21:05,960
+per varie coppie.
+
+447
+00:21:05,960 --> 00:21:08,280
+stato
+
+448
+00:21:08,280 --> 00:21:10,480
+simbolo. E allora come facciamo? Ne
+
+449
+00:21:10,480 --> 00:21:15,080
+mettiamo una in fila all'altra.
+
+450
+00:21:15,120 --> 00:21:18,640
+Quindi avremo un pezzo di codice
+
+451
+00:21:18,640 --> 00:21:21,679
+di funzione di transizione C1. Questa
+
+452
+00:21:21,679 --> 00:21:25,480
+qui sarà una stringa di zeri e 1 dove
+
+453
+00:21:25,480 --> 00:21:28,880
+l'uno non compare mai più di una volta
+
+454
+00:21:28,880 --> 00:21:32,200
+di fila. Ok? Quindi che faccio? Per
+
+455
+00:21:32,200 --> 00:21:35,600
+mettere in fila tanti pezzi di codice,
+
+456
+00:21:35,600 --> 00:21:37,400
+di funzione di transizione, io uso
+
+457
+00:21:37,400 --> 00:21:40,600
+doppio 1 1 1 e qua scrivo il secondo
+
+458
+00:21:40,600 --> 00:21:45,080
+pezzo della funzione di transizione 1 c3
+
+459
+00:21:45,080 --> 00:21:52,320
+1 c4 e così via, ok? E li scrivo tutti.
+
+460
+00:21:53,480 --> 00:21:56,480
+Sì.
+
+461
+00:22:00,060 --> 00:22:03,180
+[Musica]
+
+462
+00:22:08,600 --> 00:22:10,640
+Sì, però pericarci la vita ce ne
+
+463
+00:22:10,640 --> 00:22:13,559
+mettiamo ok. Si potrebbe fare, però poi
+
+464
+00:22:13,559 --> 00:22:15,880
+la macchina simulante che deve andare a
+
+465
+00:22:15,880 --> 00:22:17,840
+contare quanti sono c'è da un pazzien.
+
+466
+00:22:17,840 --> 00:22:20,520
+Allora, usiamo uno. Si può fare? Sì, si
+
+467
+00:22:20,520 --> 00:22:22,880
+può fare. Ok,
+
+468
+00:22:22,880 --> 00:22:26,640
+allora siete ci siete con me che questo
+
+469
+00:22:26,640 --> 00:22:29,520
+modo ci permette di scrivere in una mega
+
+470
+00:22:29,520 --> 00:22:33,360
+stringa binaria di codificare cosa fa
+
+471
+00:22:33,360 --> 00:22:35,640
+una macchina di tuning, cioè il suo
+
+472
+00:22:35,640 --> 00:22:37,760
+programma è codificato dentro una
+
+473
+00:22:37,760 --> 00:22:40,880
+stringa binaria.
+
+474
+00:22:40,880 --> 00:22:43,200
+È chiaro? È chiaro come facciamo? È un
+
+475
+00:22:43,200 --> 00:22:46,240
+modo. Ci sono infiniti modi. Noi
+
+476
+00:22:46,240 --> 00:22:48,840
+scegliamo questo, ok? Perché il nostro
+
+477
+00:22:48,840 --> 00:22:52,279
+obiettivo è poter comunicare
+
+478
+00:22:52,279 --> 00:22:55,120
+a una macchina di touring come
+
+479
+00:22:55,120 --> 00:22:57,039
+comportarsi
+
+480
+00:22:57,039 --> 00:22:59,360
+rispetto a un'altra. Se dici, guarda,
+
+481
+00:22:59,360 --> 00:23:01,400
+quest'altra macchina in presenza di
+
+482
+00:23:01,400 --> 00:23:03,200
+questo simbolo e questo stato fa questa
+
+483
+00:23:03,200 --> 00:23:04,880
+cosa qua, ma io glielo devo dire in
+
+484
+00:23:04,880 --> 00:23:06,760
+qualche modo. Glielo dico in questo
+
+485
+00:23:06,760 --> 00:23:11,520
+modo. Ok? È chiaro?
+
+486
+00:23:11,520 --> 00:23:14,600
+Quindi in qualche modo,
+
+487
+00:23:14,600 --> 00:23:17,240
+questo poi lo vedremo anche dopo, però
+
+488
+00:23:17,240 --> 00:23:19,159
+abbiamo una prima intuizione del fatto
+
+489
+00:23:19,159 --> 00:23:21,320
+che
+
+490
+00:23:21,320 --> 00:23:25,080
+alcune, cioè che le stringhe binarie
+
+491
+00:23:25,080 --> 00:23:27,000
+possono mess possono essere messe in
+
+492
+00:23:27,000 --> 00:23:30,440
+associazione con possibili macchine di
+
+493
+00:23:30,440 --> 00:23:32,080
+tuning.
+
+494
+00:23:32,080 --> 00:23:33,480
+Ok?
+
+495
+00:23:33,480 --> 00:23:35,720
+Adesso ci saranno stringhe binarie che
+
+496
+00:23:35,720 --> 00:23:38,880
+non codificano macchine di tuning, cioè
+
+497
+00:23:38,880 --> 00:23:42,080
+per esempio stringhe con 4-1 di fila non
+
+498
+00:23:42,080 --> 00:23:45,440
+fa parte della nostra codifica. Ok?
+
+499
+00:23:45,440 --> 00:23:49,000
+Quindi recap, una macchina di Turing può
+
+500
+00:23:49,000 --> 00:23:51,360
+essere codificata guardando la sua
+
+501
+00:23:51,360 --> 00:23:53,159
+funzione di transizione. Se ci
+
+502
+00:23:53,159 --> 00:23:54,840
+inventiamo un modo di codificare la
+
+503
+00:23:54,840 --> 00:23:56,520
+funzione di transizione, noi siamo in
+
+504
+00:23:56,520 --> 00:23:58,600
+grado di trascrivere
+
+505
+00:23:58,600 --> 00:24:00,600
+il programma di una macchina di tuning
+
+506
+00:24:00,600 --> 00:24:02,320
+in una stringa binaria e ci siamo
+
+507
+00:24:02,320 --> 00:24:04,440
+inventati quello. A questo punto vuol
+
+508
+00:24:04,440 --> 00:24:06,400
+dire che c'è un'associazione fra
+
+509
+00:24:06,400 --> 00:24:09,480
+stringhe binarie e macchine diing. Però
+
+510
+00:24:09,480 --> 00:24:11,520
+questa associazione non è così forte
+
+511
+00:24:11,520 --> 00:24:13,279
+perché ci stanno stringhe binarie che
+
+512
+00:24:13,279 --> 00:24:16,840
+non non seguono quella codifica. Ok?
+
+513
+00:24:16,840 --> 00:24:19,360
+Allora, assumiamo che le stringhe
+
+514
+00:24:19,360 --> 00:24:22,000
+binarie che non seguono quella codifica
+
+515
+00:24:22,000 --> 00:24:25,200
+sono macchine con un solo stato non
+
+516
+00:24:25,200 --> 00:24:27,159
+accettante, cioè sono macchine che
+
+517
+00:24:27,159 --> 00:24:28,799
+rifiutano tutto, dicono no su
+
+518
+00:24:28,799 --> 00:24:32,720
+qualsiasio. Ok? Giusto un'assunzione.
+
+519
+00:24:32,720 --> 00:24:34,960
+Quindi avremo molti modi di descrivere
+
+520
+00:24:34,960 --> 00:24:38,000
+una macchina che non fa niente, ok?
+
+521
+00:24:38,000 --> 00:24:42,520
+solo per convenienza. Chiaro?
+
+522
+00:24:42,520 --> 00:24:44,960
+Allora, possiamo a questo punto, siccome
+
+523
+00:24:44,960 --> 00:24:47,640
+ci siamo inventati un modo per
+
+524
+00:24:47,640 --> 00:24:50,480
+codificare il funzionamento di una
+
+525
+00:24:50,480 --> 00:24:54,159
+macchina di Turing, possiamo
+
+526
+00:24:54,159 --> 00:24:57,159
+far riferimento alla
+
+527
+00:24:57,159 --> 00:24:59,520
+macchina di Turing universale che
+
+528
+00:24:59,520 --> 00:25:02,360
+chiameremo mu
+
+529
+00:25:02,360 --> 00:25:04,159
+da ora in poi perché la useremo un po'
+
+530
+00:25:04,159 --> 00:25:07,760
+di volte. Allora, che fa sta macchina
+
+531
+00:25:07,760 --> 00:25:11,000
+diuring? Questa macchina di uring riceve
+
+532
+00:25:11,000 --> 00:25:15,039
+in input una codifica
+
+533
+00:25:15,039 --> 00:25:18,159
+di una macchina secondo la codifica che
+
+534
+00:25:18,159 --> 00:25:22,640
+abbiamo visto, più una certa stringa
+
+535
+00:25:22,640 --> 00:25:25,279
+input per quella macchina.
+
+536
+00:25:25,279 --> 00:25:27,679
+E la macchina universale è in grado di
+
+537
+00:25:27,679 --> 00:25:31,919
+dirci se la macchina ricevuta input
+
+538
+00:25:31,919 --> 00:25:34,360
+tramite la codifica accetti o meno la
+
+539
+00:25:34,360 --> 00:25:37,159
+strunga input. Ok? Quindi la macchina
+
+540
+00:25:37,159 --> 00:25:39,120
+universale
+
+541
+00:25:39,120 --> 00:25:42,120
+sarà
+
+542
+00:25:43,399 --> 00:25:46,320
+Ok, mo spiego così. Ritorniamo a questa
+
+543
+00:25:46,320 --> 00:25:49,559
+cosa qua.
+
+544
+00:25:50,679 --> 00:25:53,480
+Sì. Eh, ok. È utile fare così. Abbiamo
+
+545
+00:25:53,480 --> 00:25:56,480
+detto che questa è una stringa binaria,
+
+546
+00:25:56,480 --> 00:25:59,080
+ok? Quindi possiamo associare le
+
+547
+00:25:59,080 --> 00:26:02,880
+stringhe binarie a macchine di tuning.
+
+548
+00:26:02,880 --> 00:26:05,200
+Notate che queste stringhe son
+
+549
+00:26:05,200 --> 00:26:08,559
+particolari perché iniziano con zero.
+
+550
+00:26:08,559 --> 00:26:10,600
+Vedete che iniziano tutte con zero.
+
+551
+00:26:10,600 --> 00:26:12,159
+Allora, noi possiamo usare questo
+
+552
+00:26:12,159 --> 00:26:13,840
+trucchettino.
+
+553
+00:26:13,840 --> 00:26:17,679
+Se noi infiliamo un bell uno di fronte a
+
+554
+00:26:17,679 --> 00:26:20,279
+una codifica di una macchina di ting,
+
+555
+00:26:20,279 --> 00:26:24,320
+quello là sarà un numero intero.
+
+556
+00:26:24,320 --> 00:26:26,520
+È chiaro? Quindi le macchine di Turing
+
+557
+00:26:26,520 --> 00:26:29,640
+possiamo in effetti contarle. La prima
+
+558
+00:26:29,640 --> 00:26:33,480
+macchina di Turing che è uno seguito
+
+559
+00:26:33,480 --> 00:26:35,600
+dalla stringa vuota, la seconda macchina
+
+560
+00:26:35,600 --> 00:26:38,039
+di Turing che è uno seguito da Z0, la
+
+561
+00:26:38,039 --> 00:26:40,240
+terza macchina di Turing che è uno
+
+562
+00:26:40,240 --> 00:26:44,000
+seguito da 1 e così via. Ok? Quindi noi
+
+563
+00:26:44,000 --> 00:26:46,200
+possiamo in effetti associare a ogni
+
+564
+00:26:46,200 --> 00:26:48,640
+numero, possiamo dire la terza macchina
+
+565
+00:26:48,640 --> 00:26:50,840
+di Touring, la milionesima macchina di
+
+566
+00:26:50,840 --> 00:26:52,679
+Touring. Come si fa? Si prende la
+
+567
+00:26:52,679 --> 00:26:54,399
+codifica binaria, si toglie l'uomo
+
+568
+00:26:54,399 --> 00:26:57,000
+iniziale, quello è il codice di
+
+569
+00:26:57,000 --> 00:26:59,000
+marketing. Ok? Ci serviva per la
+
+570
+00:26:59,000 --> 00:27:03,039
+definizione di dopo. Ok? È chiaro?
+
+571
+00:27:03,039 --> 00:27:05,200
+Le stringhe binari, di nuovo, le
+
+572
+00:27:05,200 --> 00:27:07,559
+stringhe binari che non seguono quella
+
+573
+00:27:07,559 --> 00:27:09,960
+codifica, allora sono per noi macchine
+
+574
+00:27:09,960 --> 00:27:11,840
+di Turing che dicono no su qualsiasi
+
+575
+00:27:11,840 --> 00:27:14,880
+cosa, cioè il loro linguaggio è vuoto.
+
+576
+00:27:14,880 --> 00:27:16,880
+Gli diamo un input, no? Gliene diamo un
+
+577
+00:27:16,880 --> 00:27:19,120
+input, un altro? No, dicono sempre di
+
+578
+00:27:19,120 --> 00:27:21,600
+no. Allora, la macchina di Turing
+
+579
+00:27:21,600 --> 00:27:24,520
+Universale
+
+580
+00:27:24,520 --> 00:27:26,559
+è
+
+581
+00:27:26,559 --> 00:27:29,640
+una macchina che riceve input una
+
+582
+00:27:29,640 --> 00:27:32,600
+stringa binaria codificando
+
+583
+00:27:32,600 --> 00:27:37,120
+che codifica, per esempio, la
+
+584
+00:27:37,200 --> 00:27:39,000
+iima
+
+585
+00:27:39,000 --> 00:27:41,720
+stringa,
+
+586
+00:27:41,720 --> 00:27:44,000
+la iesima macchina
+
+587
+00:27:44,000 --> 00:27:47,279
+e poi una stringa W.
+
+588
+00:27:47,279 --> 00:27:48,519
+Ok?
+
+589
+00:27:48,519 --> 00:27:50,559
+E questa macchina più in generale
+
+590
+00:27:50,559 --> 00:27:54,760
+possiamo semplificare riceve coppie MW
+
+591
+00:27:54,760 --> 00:27:57,440
+tale per cui M è una stringa che
+
+592
+00:27:57,440 --> 00:27:59,240
+codifica la funzione di transizione
+
+593
+00:27:59,240 --> 00:28:04,159
+della macchina M e W è un input per M.
+
+594
+00:28:04,159 --> 00:28:07,679
+La macchina MU è una macchina che
+
+595
+00:28:07,679 --> 00:28:11,519
+ricevuto input il programma M e l'input
+
+596
+00:28:11,519 --> 00:28:15,880
+w* m è in grado di dirci se M avrebbe
+
+597
+00:28:15,880 --> 00:28:20,399
+accettato - w. Ok?
+
+598
+00:28:20,399 --> 00:28:22,559
+Quindi questa macchina universale è una
+
+599
+00:28:22,559 --> 00:28:25,000
+macchina un po' particolare perché è una
+
+600
+00:28:25,000 --> 00:28:28,120
+macchina il cui suo programma è fissato.
+
+601
+00:28:28,120 --> 00:28:31,159
+Vedremo che è fissato, però input è in
+
+602
+00:28:31,159 --> 00:28:34,240
+grado di ricevere queste coppie.
+
+603
+00:28:34,240 --> 00:28:38,640
+Macchina M, stringa
+
+604
+00:28:38,640 --> 00:28:41,399
+binario. La macchina M è codificata con
+
+605
+00:28:41,399 --> 00:28:43,480
+la codifica che abbiamo visto prima.
+
+606
+00:28:43,480 --> 00:28:45,559
+L'input è l'input che vogliamo dare
+
+607
+00:28:45,559 --> 00:28:48,360
+impasto a M. La macchina universale è
+
+608
+00:28:48,360 --> 00:28:50,120
+cosa è in grado di fare? Sostanzialmente
+
+609
+00:28:50,120 --> 00:28:54,320
+la macchina universale simula M
+
+610
+00:28:54,320 --> 00:29:01,200
+su w. Se M accetta W, mu dirà sì.
+
+611
+00:29:01,200 --> 00:29:07,279
+Se M non accetta W, MV dirà no. Ok?
+
+612
+00:29:07,279 --> 00:29:10,960
+Quindi è un un decisore universale, cioè
+
+613
+00:29:10,960 --> 00:29:13,640
+perché è un decisore in grado di
+
+614
+00:29:13,640 --> 00:29:16,799
+comportarsi come altre macchine che gli
+
+615
+00:29:16,799 --> 00:29:19,320
+vengono descritte input tramite la
+
+616
+00:29:19,320 --> 00:29:21,640
+stringa doppia, la stringa M che
+
+617
+00:29:21,640 --> 00:29:23,840
+codifica una funzione di transizione.
+
+618
+00:29:23,840 --> 00:29:25,080
+Chiaro per tutti come funziona questa
+
+619
+00:29:25,080 --> 00:29:26,519
+macchina? Cioè qual è l'obiettivo di
+
+620
+00:29:26,519 --> 00:29:29,279
+questa macchina? Questa macchina è una
+
+621
+00:29:29,279 --> 00:29:32,320
+macchina che
+
+622
+00:29:32,320 --> 00:29:35,600
+prende in input un programma
+
+623
+00:29:35,600 --> 00:29:37,559
+e un input, un programma che stiamo
+
+624
+00:29:37,559 --> 00:29:40,120
+chiamando M, che è che cosa? La funzione
+
+625
+00:29:40,120 --> 00:29:41,840
+di transizione della macchina che
+
+626
+00:29:41,840 --> 00:29:44,480
+chiamiamo M. E prendo un input per
+
+627
+00:29:44,480 --> 00:29:46,840
+questo programma.
+
+628
+00:29:46,840 --> 00:29:49,799
+La macchina universale
+
+629
+00:29:49,799 --> 00:29:54,080
+è in grado di dirci se il programma M
+
+630
+00:29:54,080 --> 00:29:57,240
+quando riceve W input risponde sì o
+
+631
+00:29:57,240 --> 00:29:59,279
+risponde no.
+
+632
+00:29:59,279 --> 00:30:04,360
+È chiaro? Ok. Come funziona
+
+633
+00:30:04,360 --> 00:30:07,039
+questa macchina?
+
+634
+00:30:07,039 --> 00:30:09,640
+Stavolta son venuto senza appunti,
+
+635
+00:30:09,640 --> 00:30:13,080
+guardo velocemente.
+
+636
+00:30:14,360 --> 00:30:16,480
+Alri.
+
+637
+00:30:16,480 --> 00:30:18,440
+Ci sono vari modi in cui sta simulazione
+
+638
+00:30:18,440 --> 00:30:23,600
+si può fare. Prendo quella di OPCroft.
+
+639
+00:30:28,039 --> 00:30:30,399
+Ok,
+
+640
+00:30:30,399 --> 00:30:34,360
+questa 1 2 3 4. È una macchina a quattro
+
+641
+00:30:34,360 --> 00:30:38,360
+nastri. 1
+
+642
+00:30:39,039 --> 00:30:42,039
+2
+
+643
+00:30:42,080 --> 00:30:45,080
+3
+
+644
+00:30:47,000 --> 00:30:50,279
+e 4.
+
+645
+00:30:51,240 --> 00:30:53,799
+Questa è MU. Eh,
+
+646
+00:30:53,799 --> 00:30:57,360
+quindi la macchina MU ha quattro nastri.
+
+647
+00:30:57,360 --> 00:30:58,799
+Noi sappiamo che una macchina
+
+648
+00:30:58,799 --> 00:31:00,799
+multinastro può essere convertita in una
+
+649
+00:31:00,799 --> 00:31:03,279
+macchina monoastro, quindi siamo nel
+
+650
+00:31:03,279 --> 00:31:05,720
+reame delle cose fattibili. anche
+
+651
+00:31:05,720 --> 00:31:10,120
+standard. Sì, la Q è o
+no? È la string è
+
+652
+00:31:10,120 --> 00:31:11,559
+una stringa binaria perché stiamo
+
+653
+00:31:11,559 --> 00:31:15,080
+assumendo che m il suo alfabeto di sia
+
+654
+00:31:15,080 --> 00:31:18,679
+binario, cioè quindi il wio
+
+655
+00:31:18,679 --> 00:31:22,000
+quello che m prenderebbe input. Sì,
+
+656
+00:31:22,000 --> 00:31:26,159
+cioè, quindi anche questo
+
+657
+00:31:26,159 --> 00:31:28,960
+all'inizio. Sì, cioè quello che m dice
+
+658
+00:31:28,960 --> 00:31:32,919
+input è la codifica binaria di M e la
+
+659
+00:31:32,919 --> 00:31:36,440
+stringa W che andrebbe in passo ad M.
+
+660
+00:31:36,440 --> 00:31:39,000
+Quindi la stringa Wien alfabeto
+
+661
+00:31:39,000 --> 00:31:41,159
+originale di M
+che è binario per la
+
+662
+00:31:41,159 --> 00:31:43,880
+funzione.
+Ah, ok. Perché per
+
+663
+00:31:43,880 --> 00:31:46,039
+semplificità si può dimostrare che le
+
+664
+00:31:46,039 --> 00:31:47,919
+macchine con alfabeto binario hanno lo
+
+665
+00:31:47,919 --> 00:31:49,399
+stesso potere di tutte le altre
+
+666
+00:31:49,399 --> 00:31:51,480
+macchine. Ok? Quindi lo facciamo per
+
+667
+00:31:51,480 --> 00:31:54,559
+semplice. Quindi l'alfabeto di input di
+
+668
+00:31:54,559 --> 00:31:57,080
+M è binario, quindi W è proprio la
+
+669
+00:31:57,080 --> 00:32:00,519
+stringa che nell'impasto a M. Ok?
+
+670
+00:32:00,519 --> 00:32:03,440
+Allora,
+
+671
+00:32:03,440 --> 00:32:06,799
+cosa fa
+
+672
+00:32:06,919 --> 00:32:12,360
+la macchina U? Riceve input M, che è
+
+673
+00:32:12,360 --> 00:32:14,960
+quella codifica là,
+
+674
+00:32:14,960 --> 00:32:19,440
+e w. Vi ricordo che m cioè la codifica
+
+675
+00:32:19,440 --> 00:32:21,760
+che noi ci siamo inventati per le
+
+676
+00:32:21,760 --> 00:32:25,279
+macchine di Touring che è una lista di
+
+677
+00:32:25,279 --> 00:32:28,480
+codici, cioè che per ogni entry della
+
+678
+00:32:28,480 --> 00:32:30,799
+funzione di transizione abbiamo quello
+
+679
+00:32:30,799 --> 00:32:34,679
+w1, un altro pezzo W1 eccetera. In m non
+
+680
+00:32:34,679 --> 00:32:39,880
+compaiono mai 31 di fila, quindi m e w
+
+681
+00:32:39,880 --> 00:32:42,760
+li dividiamo con 3 uni. Ok? In questo
+
+682
+00:32:42,760 --> 00:32:45,679
+modo abbiamo doppio input sul nastro di
+
+683
+00:32:45,679 --> 00:32:48,679
+input.
+
+684
+00:32:50,919 --> 00:32:53,799
+Allora, come si comporta MU? MU si
+
+685
+00:32:53,799 --> 00:32:57,440
+comporta seguendo passo passo quello che
+
+686
+00:32:57,440 --> 00:33:01,279
+fa M sostanzialmente. Come fa a farlo?
+
+687
+00:33:01,279 --> 00:33:04,080
+Perché nel proprio input su primo nastro
+
+688
+00:33:04,080 --> 00:33:06,880
+ha la descrizione completa della
+
+689
+00:33:06,880 --> 00:33:09,200
+funzione di transizione di m. Questo è
+
+690
+00:33:09,200 --> 00:33:14,240
+il trucco. Ok? Quindi mo che cosa fa?
+
+691
+00:33:14,240 --> 00:33:18,799
+Come primo passaggio prende W
+
+692
+00:33:18,799 --> 00:33:22,720
+e lo ricodifica secondo, in questo caso,
+
+693
+00:33:22,720 --> 00:33:25,159
+i simboli che ci siamo inventati, X1,
+
+694
+00:33:25,159 --> 00:33:29,720
+X2, ok? e gli mette là, che ne so, se W
+
+695
+00:33:29,720 --> 00:33:33,440
+era 01,
+
+696
+00:33:33,440 --> 00:33:35,679
+questo abbiamo detto che è x1, questo è
+
+697
+00:33:35,679 --> 00:33:38,960
+x2, questo è x3, la sua ricodifica che
+
+698
+00:33:38,960 --> 00:33:44,960
+va a finire sul secondo nastro è 0 1
+
+699
+00:33:45,559 --> 00:33:47,399
+Ok,
+
+700
+00:33:47,399 --> 00:33:50,120
+qua ne mettiamo un altro perché fa così.
+
+701
+00:33:50,120 --> 00:33:56,559
+Ok, quindi qua c'è il eh ehm nastro
+
+702
+00:33:56,559 --> 00:34:01,360
+di M ricodificato.
+
+703
+00:34:03,279 --> 00:34:07,880
+Ok? Dopodiché la macchina U si segna lo
+
+704
+00:34:07,880 --> 00:34:12,240
+stato iniziale che è un partiamo da Q1.
+
+705
+00:34:12,240 --> 00:34:17,919
+Ok? A questo punto posiziona
+
+706
+00:34:17,919 --> 00:34:22,639
+sul secondo nastro la testina sul
+
+707
+00:34:22,639 --> 00:34:26,560
+simbolo visto da M e posiziona sul terzo
+
+708
+00:34:26,560 --> 00:34:29,480
+nastro la testina sullo stato corrente
+
+709
+00:34:29,480 --> 00:34:31,399
+di Mulato.
+
+710
+00:34:31,399 --> 00:34:32,720
+Ok?
+
+711
+00:34:32,720 --> 00:34:34,560
+La macchina
+
+712
+00:34:34,560 --> 00:34:38,599
+guardando il proprio secondo nastro e il
+
+713
+00:34:38,599 --> 00:34:41,200
+proprio terzo nastro,
+
+714
+00:34:41,200 --> 00:34:42,960
+sa
+
+715
+00:34:42,960 --> 00:34:45,919
+in quella fase di simulazione
+
+716
+00:34:45,919 --> 00:34:48,919
+in quale stato è la macchina M e quale
+
+717
+00:34:48,919 --> 00:34:51,919
+simbolo la macchina M sta leggendo.
+
+718
+00:34:51,919 --> 00:34:54,440
+È chiaro? Chiaro? Perché? Perché noi
+
+719
+00:34:54,440 --> 00:34:56,520
+stiamo simulando sul secondo nastro
+
+720
+00:34:56,520 --> 00:34:58,320
+quello che sarebbe il contenuto di
+
+721
+00:34:58,320 --> 00:35:01,160
+nastro di M. Su terzo nastro noi teniamo
+
+722
+00:35:01,160 --> 00:35:03,480
+traccia di qual è lo stato corrente di
+
+723
+00:35:03,480 --> 00:35:07,520
+N. Ok? Quindi da terzo nastro noi ci
+
+724
+00:35:07,520 --> 00:35:10,079
+prendiamo lo stato corrente. Qui sto
+
+725
+00:35:10,079 --> 00:35:11,839
+descrivendo il funzionamento di MU.
+
+726
+00:35:11,839 --> 00:35:14,560
+Quindi MU che fa? Va su terzo nastro.
+
+727
+00:35:14,560 --> 00:35:16,960
+Guardando su terzo nastro può sapere
+
+728
+00:35:16,960 --> 00:35:20,480
+qual è lo stato simulato di M.
+
+729
+00:35:20,480 --> 00:35:23,000
+guarda sul secondo nastro e può sapere
+
+730
+00:35:23,000 --> 00:35:26,920
+qual è il simbolo letto da Mulla
+
+731
+00:35:26,920 --> 00:35:29,160
+simulazione del nastro di M, che è il
+
+732
+00:35:29,160 --> 00:35:31,760
+secondo nastro di Mo. Da questa coppia
+
+733
+00:35:31,760 --> 00:35:34,800
+la macchina che fa? Va sul primo nastro
+
+734
+00:35:34,800 --> 00:35:37,000
+dove c'è la codifica della funzione di
+
+735
+00:35:37,000 --> 00:35:39,720
+transizione di M e va alla ricerca di un
+
+736
+00:35:39,720 --> 00:35:42,520
+pezzo di codice, cioè di un entry per la
+
+737
+00:35:42,520 --> 00:35:44,440
+funzione di transizione che è
+
+738
+00:35:44,440 --> 00:35:46,880
+esattamente per la coppia stato simbolo
+
+739
+00:35:46,880 --> 00:35:51,079
+attualmente simulato. È chiaro?
+
+740
+00:35:51,079 --> 00:35:53,720
+Quindi leggendo quel pezzo di codice, la
+
+741
+00:35:53,720 --> 00:35:55,880
+macchina universale che cosa saprà?
+
+742
+00:35:55,880 --> 00:35:58,839
+Saprà in quale stato transire, cosa
+
+743
+00:35:58,839 --> 00:36:03,079
+scrivere e dove spostare la destina.
+
+744
+00:36:03,079 --> 00:36:05,960
+Avete seguito fin qua? Quindi cos'è che
+
+745
+00:36:05,960 --> 00:36:09,200
+fa sta macchina MU? La macchina MU
+
+746
+00:36:09,200 --> 00:36:12,440
+simola la macchina M passo passo come
+
+747
+00:36:12,440 --> 00:36:15,920
+tenendo traccia di due cose,
+
+748
+00:36:15,920 --> 00:36:19,480
+il nastro della macchina M e lo stato
+
+749
+00:36:19,480 --> 00:36:23,240
+corrente della macchina M. Il nastro
+
+750
+00:36:23,240 --> 00:36:25,560
+della macchina M noi lo stiamo simulando
+
+751
+00:36:25,560 --> 00:36:28,680
+sul secondo nastro di MU. Lo stato
+
+752
+00:36:28,680 --> 00:36:31,000
+corrente della macchina M lo stiamo
+
+753
+00:36:31,000 --> 00:36:33,319
+ottenendo traccia sul terzo nastro di
+
+754
+00:36:33,319 --> 00:36:35,520
+MU. Quindi che facciamo? Andiamo a
+
+755
+00:36:35,520 --> 00:36:38,040
+leggere il simbolo su secondo nastro, lo
+
+756
+00:36:38,040 --> 00:36:41,119
+stato su terzo nastro. Andiamo alla
+
+757
+00:36:41,119 --> 00:36:43,359
+ricerca su primo nastro, dove c'è la
+
+758
+00:36:43,359 --> 00:36:45,480
+funzione di transizione di m, andiamo
+
+759
+00:36:45,480 --> 00:36:47,560
+alla ricerca di un entry della funzione
+
+760
+00:36:47,560 --> 00:36:50,760
+di transizione per la coppia stato
+
+761
+00:36:50,760 --> 00:36:53,440
+simbolo che abbiamo appena guardato. È
+
+762
+00:36:53,440 --> 00:36:55,880
+chiaro? Una volta che leggiamo questo,
+
+763
+00:36:55,880 --> 00:36:59,040
+la macchina universale che può fare?
+
+764
+00:36:59,040 --> 00:37:00,599
+può
+
+765
+00:37:00,599 --> 00:37:03,599
+aguornare
+
+766
+00:37:04,760 --> 00:37:07,280
+lo stato perché sappiamo quale sarà il
+
+767
+00:37:07,280 --> 00:37:10,040
+nuovo stato di M e può andare a
+
+768
+00:37:10,040 --> 00:37:12,800
+ritoccare
+
+769
+00:37:12,800 --> 00:37:14,720
+il nastro simulato di M andando a
+
+770
+00:37:14,720 --> 00:37:18,119
+sostituire il simbolo. Ok? Adesso i
+
+771
+00:37:18,119 --> 00:37:19,839
+simboli che noi abbiamo sul secondo
+
+772
+00:37:19,839 --> 00:37:22,119
+nastro sono dei simboli simulati, sono
+
+773
+00:37:22,119 --> 00:37:24,560
+hanno questa forma qua, quindi potrebbe
+
+774
+00:37:24,560 --> 00:37:26,800
+essere necessario che ci serve un po' di
+
+775
+00:37:26,800 --> 00:37:29,359
+spazio o comprimiamo un po' di cose.
+
+776
+00:37:29,359 --> 00:37:31,480
+Ecco a che serve il quarto nastro serve
+
+777
+00:37:31,480 --> 00:37:33,280
+a fare un po' dii lavori di copia
+
+778
+00:37:33,280 --> 00:37:36,560
+incolla, ok? Per estendere o accorciare
+
+779
+00:37:36,560 --> 00:37:39,119
+il secondo nastro. È chiaro come
+
+780
+00:37:39,119 --> 00:37:41,720
+funziona questa macchina? La macchina
+
+781
+00:37:41,720 --> 00:37:44,319
+universale? Sì, prego.
+Ma sul secondo
+
+782
+00:37:44,319 --> 00:37:47,520
+nastro eh viene tradotto sia M che W o
+
+783
+00:37:47,520 --> 00:37:51,640
+soltanto R?
+Eh no, su primo nastro
+
+784
+00:37:51,640 --> 00:37:54,440
+sul secondo nastro c'è la simulazione di
+
+785
+00:37:54,440 --> 00:37:57,160
+cosa sta facendo M su do.
+Ma io non
+
+786
+00:37:57,160 --> 00:37:59,800
+tocco mai il primo nastro?
+No.
+Ok?
+
+787
+00:37:59,800 --> 00:38:01,680
+Perché il primo nastro c'è il programma
+
+788
+00:38:01,680 --> 00:38:02,960
+e io il programma non lo voglio
+
+789
+00:38:02,960 --> 00:38:05,119
+cambiare. Io sul primo nastro vado a
+
+790
+00:38:05,119 --> 00:38:06,720
+guardare le entry della funzione di
+
+791
+00:38:06,720 --> 00:38:09,800
+transizione per rendermi conto ma m in
+
+792
+00:38:09,800 --> 00:38:11,920
+questa situazione che farebbe? Ah,
+
+793
+00:38:11,920 --> 00:38:13,760
+transisce in questo stato, scrive sta
+
+794
+00:38:13,760 --> 00:38:16,440
+cosa e sposta a destra. E io che faccio?
+
+795
+00:38:16,440 --> 00:38:18,280
+Aggiorno il terzo nastro per dire qual è
+
+796
+00:38:18,280 --> 00:38:20,839
+il nuovo stato. Modifico il contenuto
+
+797
+00:38:20,839 --> 00:38:23,040
+del secondo nastro per simulare il
+
+798
+00:38:23,040 --> 00:38:25,760
+contenuto della macchina simulata e poi
+
+799
+00:38:25,760 --> 00:38:27,720
+sposto la testina sul secondo nastro
+
+800
+00:38:27,720 --> 00:38:29,920
+indipendenza o a destra o a sinistra,
+
+801
+00:38:29,920 --> 00:38:33,079
+indipendenza di dove m andrebbe,
+
+802
+00:38:33,079 --> 00:38:38,160
+ma quindi eh io tengo anche traccia di
+
+803
+00:38:38,160 --> 00:38:40,359
+cosa sta succedendo in input leggendo il
+
+804
+00:38:40,359 --> 00:38:42,079
+primo nastro, oltre a simulare
+
+805
+00:38:42,079 --> 00:38:45,000
+certamente sul secondo,
+no? Quello sul
+
+806
+00:38:45,000 --> 00:38:47,440
+secondo nastro noi stiamo simulando
+
+807
+00:38:47,440 --> 00:38:50,359
+quello che la macchina M farebbe sul
+
+808
+00:38:50,359 --> 00:38:53,800
+proprio nastro, ma non
+va appunto con lo
+
+809
+00:38:53,800 --> 00:38:56,640
+scopo di risolvere l'input che gli
+Sì,
+
+810
+00:38:56,640 --> 00:38:58,760
+sì, sta facendo lo stesso lavoro di M,
+
+811
+00:38:58,760 --> 00:39:00,880
+lo sta simulando.
+
+812
+00:39:00,880 --> 00:39:02,560
+È chiaro?
+
+813
+00:39:02,560 --> 00:39:05,920
+Perché fa passo dopo passo dice: "Ok, in
+
+814
+00:39:05,920 --> 00:39:08,599
+che stato si trova la macchina M?" Che
+
+815
+00:39:08,599 --> 00:39:11,240
+cosa farebbe? Ok, lo replico. Vado a
+
+816
+00:39:11,240 --> 00:39:13,680
+guardare in che condizioni mi trovo. Ah,
+
+817
+00:39:13,680 --> 00:39:16,040
+ok, stato singolo. Vado a riguardare la
+
+818
+00:39:16,040 --> 00:39:18,119
+funzione di transizione. Che farebbe m
+
+819
+00:39:18,119 --> 00:39:20,640
+in questo caso? Si addormenterebbe. No,
+
+820
+00:39:20,640 --> 00:39:23,240
+si prende un gelato, no? Fa questa cosa
+
+821
+00:39:23,240 --> 00:39:26,040
+qua, aggiorno il terzo nastro, aggiorno
+
+822
+00:39:26,040 --> 00:39:28,000
+il secondo nastro e vado avanti. Cioè,
+
+823
+00:39:28,000 --> 00:39:32,160
+per ogni passo di m io faccio replico la
+
+824
+00:39:32,160 --> 00:39:34,560
+stessa cosa sul secondo nastro e tengo
+
+825
+00:39:34,560 --> 00:39:36,720
+aggiornato il terzo nastro per sapere lo
+
+826
+00:39:36,720 --> 00:39:39,079
+stato corrente di m.
+
+827
+00:39:39,079 --> 00:39:41,880
+Il quarto nastro lo uso per
+
+828
+00:39:41,880 --> 00:39:44,960
+scarabocchi. Ok,
+scusi se glielo chiedo,
+
+829
+00:39:44,960 --> 00:39:48,079
+peròamente chiaro. E sul secondo nastro,
+
+830
+00:39:48,079 --> 00:39:51,119
+cioè io quindi copio, traduco la solo la
+
+831
+00:39:51,119 --> 00:39:53,119
+parte input, non la macchina di touring.
+
+832
+00:39:53,119 --> 00:39:56,400
+Sì, solo il W
+e quindi eh
+secondo la
+
+833
+00:39:56,400 --> 00:40:00,920
+codifica che ci serve.
+Ok. Mentre mi
+
+834
+00:40:00,920 --> 00:40:03,119
+tengo conto di cosa devo fare mediante
+
+835
+00:40:03,119 --> 00:40:04,680
+il primo nastro.
+Mediante il primo
+
+836
+00:40:04,680 --> 00:40:09,200
+nastro. Sì. Sì, prego.
+Ma se
+
+837
+00:40:09,200 --> 00:40:13,200
+la blop input mettiamo che c'è 01
+Sì.
+E
+
+838
+00:40:13,200 --> 00:40:18,880
+quindi 0 con 10 e quell'altro è 100. Sì.
+
+839
+00:40:18,880 --> 00:40:22,720
+La magia mi dice
+quale? M o mu?
+M
+M
+mi
+
+840
+00:40:22,720 --> 00:40:25,000
+dice trasforma questo 0 in uno.
+Sì.
+
+841
+00:40:25,000 --> 00:40:27,760
+Quindi dovrei cambiare 0 e con
+00.
+
+842
+00:40:27,760 --> 00:40:30,119
+Quindi ti serve dello spazio. Ok. Devi
+
+843
+00:40:30,119 --> 00:40:32,200
+fare spazio. Usi il quarto nastro per
+
+844
+00:40:32,200 --> 00:40:34,160
+fare scarabocchi, cioè per fare copia
+
+845
+00:40:34,160 --> 00:40:35,760
+incolla e crearti lo spazio che ti
+
+846
+00:40:35,760 --> 00:40:38,280
+serve. Ecco a che serve il portonastro.
+
+847
+00:40:38,280 --> 00:40:40,800
+Chiaro? Chiaro per tutti che questa
+
+848
+00:40:40,800 --> 00:40:43,720
+macchina MU fa passo passo quello che fa
+
+849
+00:40:43,720 --> 00:40:47,280
+la macchina M. Quindi se la macchina M a
+
+850
+00:40:47,280 --> 00:40:49,079
+un certo punto arriverà a uno stato
+
+851
+00:40:49,079 --> 00:40:52,040
+accettante, la macchina MU se ne accorge
+
+852
+00:40:52,040 --> 00:40:53,680
+e accetta.
+
+853
+00:40:53,680 --> 00:40:57,040
+Se la macchina MU se la macchina M si
+
+854
+00:40:57,040 --> 00:41:00,880
+blocca in uno stato non accettante, pure
+
+855
+00:41:00,880 --> 00:41:03,119
+la macchina MU si bloccherà da qualche
+
+856
+00:41:03,119 --> 00:41:07,240
+parte e rifiuta. Se la macchina M non si
+
+857
+00:41:07,240 --> 00:41:10,160
+ferma mai, la macchina MU andrà avanti
+
+858
+00:41:10,160 --> 00:41:14,400
+all'infinito e come M non accetta.
+
+859
+00:41:14,400 --> 00:41:17,359
+Quindi è chiaro che la macchina MU sta
+
+860
+00:41:17,359 --> 00:41:18,920
+sostanzialmente
+
+861
+00:41:18,920 --> 00:41:22,119
+eseguendo il programma M.
+
+862
+00:41:22,119 --> 00:41:24,079
+In questo modo ci siamo creati una
+
+863
+00:41:24,079 --> 00:41:26,680
+macchina di Turing programmabile, cioè è
+
+864
+00:41:26,680 --> 00:41:28,800
+una macchina di Turing universale, cioè
+
+865
+00:41:28,800 --> 00:41:31,920
+una macchina di Turing che è in grado di
+
+866
+00:41:31,920 --> 00:41:34,560
+simulare il comportamento di altre
+
+867
+00:41:34,560 --> 00:41:38,040
+macchine di tuning. Domanda la funzione
+
+868
+00:41:38,040 --> 00:41:39,960
+di questa macchina, questa la chiamiamo
+
+869
+00:41:39,960 --> 00:41:41,920
+la macchina universale, no? Per
+
+870
+00:41:41,920 --> 00:41:44,560
+convenzione chiamiamo la transizione, la
+
+871
+00:41:44,560 --> 00:41:46,480
+funzione di transizione universale il
+
+872
+00:41:46,480 --> 00:41:48,160
+programma della macchina universale,
+
+873
+00:41:48,160 --> 00:41:50,599
+cioè il fatto che sta macchina simula le
+
+874
+00:41:50,599 --> 00:41:52,119
+cose.
+
+875
+00:41:52,119 --> 00:41:54,240
+È chiaro? Cos'è la funzione di
+
+876
+00:41:54,240 --> 00:41:57,040
+transizione universale? Ok. La macchina
+
+877
+00:41:57,040 --> 00:41:59,200
+di Turing universale durante la propria
+
+878
+00:41:59,200 --> 00:42:02,480
+esecuzione cambia la propria funzione di
+
+879
+00:42:02,480 --> 00:42:04,680
+transizione universale?
+
+880
+00:42:04,680 --> 00:42:06,760
+No, è sempre quella, fa sempre quel
+
+881
+00:42:06,760 --> 00:42:09,560
+lavoro. Ok? Quindi questa macchina,
+
+882
+00:42:09,560 --> 00:42:11,319
+cioè, non è che cambia la sua funzione
+
+883
+00:42:11,319 --> 00:42:13,200
+di transizione, ha una funzione di
+
+884
+00:42:13,200 --> 00:42:15,839
+transizione fissata che è in grado di
+
+885
+00:42:15,839 --> 00:42:17,839
+simulare il comportamento di macchine
+
+886
+00:42:17,839 --> 00:42:20,160
+con altre funzioni di transizione. È
+
+887
+00:42:20,160 --> 00:42:21,800
+chiaro? Cioè, questo deve essere chiaro.
+
+888
+00:42:21,800 --> 00:42:23,160
+Cioè, quindi questa macchina non è che
+
+889
+00:42:23,160 --> 00:42:25,520
+veramente caniante. Questa macchina di
+
+890
+00:42:25,520 --> 00:42:27,920
+nuovo lo sa fare solo una cosa, mette in
+
+891
+00:42:27,920 --> 00:42:29,240
+atto la funzione di transizione
+
+892
+00:42:29,240 --> 00:42:31,480
+universale che però è particolare e gli
+
+893
+00:42:31,480 --> 00:42:33,480
+permette di simulare il comportamento di
+
+894
+00:42:33,480 --> 00:42:35,640
+ante.
+
+895
+00:42:35,640 --> 00:42:37,640
+Ultime osservazioni e poi facciamo
+
+896
+00:42:37,640 --> 00:42:40,640
+pausa. I computer che noi abbiamo sono
+
+897
+00:42:40,640 --> 00:42:42,720
+computer, sono macchine universali di
+
+898
+00:42:42,720 --> 00:42:44,920
+più,
+
+899
+00:42:44,920 --> 00:42:46,760
+chiaro?
+
+900
+00:42:46,760 --> 00:42:49,760
+Quindi avranno una funzione universale
+
+901
+00:42:49,760 --> 00:42:54,160
+fissata. Qual è? Sì,
+il ciclopaspetto
+
+902
+00:42:54,160 --> 00:42:57,160
+del CPU.
+È il micro della CPU. Cioè il
+
+903
+00:42:57,160 --> 00:43:01,400
+microcodice della CPU è la funzione di
+
+904
+00:43:01,400 --> 00:43:03,119
+transizione universale dei computer che
+
+905
+00:43:03,119 --> 00:43:05,480
+usiamo. Pure i computer che noi usiamo
+
+906
+00:43:05,480 --> 00:43:07,640
+in realtà loro non è che eseguono un
+
+907
+00:43:07,640 --> 00:43:11,000
+programma che noi gli diamo. Loro un
+
+908
+00:43:11,000 --> 00:43:13,079
+programma eseguono che è il microcodice
+
+909
+00:43:13,079 --> 00:43:15,520
+della CPU che fanno? prendono da memoria
+
+910
+00:43:15,520 --> 00:43:18,599
+un istrizione, fetch, la decodificano,
+
+911
+00:43:18,599 --> 00:43:20,839
+la mettono in atto e vanno a prendere
+
+912
+00:43:20,839 --> 00:43:22,920
+l'altra e continua così, all'infinito.
+
+913
+00:43:22,920 --> 00:43:26,160
+Quindi un microprocessore reale è in
+
+914
+00:43:26,160 --> 00:43:27,800
+effetti una macchina di Turing
+
+915
+00:43:27,800 --> 00:43:31,000
+universale, la cui funzione di
+
+916
+00:43:31,000 --> 00:43:34,800
+transizione universale è il micropodice
+
+917
+00:43:34,800 --> 00:43:37,200
+del processore.
+
+918
+00:43:37,200 --> 00:43:39,040
+È chiaro? Allora, quindi questo copre il
+
+919
+00:43:39,040 --> 00:43:41,599
+gap tra Ma com'è che le macchine di
+
+920
+00:43:41,599 --> 00:43:43,480
+puring non si programmano i computer non
+
+921
+00:43:43,480 --> 00:43:46,200
+si si programmano, nemmeno quelli si
+
+922
+00:43:46,200 --> 00:43:48,559
+programmano. Cioè la loro programmazione
+
+923
+00:43:48,559 --> 00:43:50,440
+è che entrambi hanno una funzione
+
+924
+00:43:50,440 --> 00:43:52,400
+fissata.
+
+925
+00:43:52,400 --> 00:43:54,720
+Ok? La ma during ha la funzione di
+
+926
+00:43:54,720 --> 00:43:56,839
+transizione universale, i processori
+
+927
+00:43:56,839 --> 00:43:59,480
+hanno il microcodice. Una esegue la
+
+928
+00:43:59,480 --> 00:44:01,240
+funzione di transizione universale per
+
+929
+00:44:01,240 --> 00:44:04,040
+simulare altre macchine. I processori
+
+930
+00:44:04,040 --> 00:44:07,079
+usano il loro microcodice che è fissato
+
+931
+00:44:07,079 --> 00:44:11,960
+per eseguire programmi generici. Ok, è
+
+932
+00:44:11,960 --> 00:44:18,359
+chiaro? Pausa. Facciamo qua.
+
+933
+00:44:19,079 --> 00:44:21,980
+Alr
+
+934
+00:44:21,980 --> 00:44:25,000
+[Musica]
+
+935
+00:44:25,000 --> 00:44:28,280
+mi prendi. Ok,
+
+936
+00:44:28,280 --> 00:44:30,720
+let's start again.
+
+937
+00:44:30,720 --> 00:44:33,079
+Quindi a un certo punto abbiamo parlato
+
+938
+00:44:33,079 --> 00:44:36,079
+dellesima macchina M eccetera e avete
+
+939
+00:44:36,079 --> 00:44:37,800
+visto che poi non l'ho usata perché non
+
+940
+00:44:37,800 --> 00:44:42,240
+serviva. Serve ora. Ok.
+
+941
+00:44:42,640 --> 00:44:45,079
+Ah, ok. Quindi io questo lo cancello
+
+942
+00:44:45,079 --> 00:44:48,160
+proprio così non vi confondete semmai
+
+943
+00:44:48,160 --> 00:44:50,760
+doveste rivederlo. Questo ci serve dopo.
+
+944
+00:44:50,760 --> 00:44:52,760
+Alrght, quindi l'input della macchina
+
+945
+00:44:52,760 --> 00:44:54,520
+universale,
+
+946
+00:44:54,520 --> 00:44:57,559
+abbiamo detto che una coppia macchina
+
+947
+00:44:57,559 --> 00:45:00,839
+codificata in un certo modo stringa la
+
+948
+00:45:00,839 --> 00:45:02,920
+macchina universale è in grado di fare
+
+949
+00:45:02,920 --> 00:45:05,800
+questo lavoro interessante di simulare
+
+950
+00:45:05,800 --> 00:45:08,240
+la macchina N su W e darci la stessa
+
+951
+00:45:08,240 --> 00:45:10,760
+risposta. Ok? Quindi potremmo tra
+
+952
+00:45:10,760 --> 00:45:12,800
+virgolette dire la macchina universale è
+
+953
+00:45:12,800 --> 00:45:14,920
+una macchina programmabile, ok? Perché
+
+954
+00:45:14,920 --> 00:45:17,720
+riceve in input il programma da
+
+955
+00:45:17,720 --> 00:45:20,559
+eseguire.
+
+956
+00:45:20,559 --> 00:45:22,119
+Ok?
+
+957
+00:45:22,119 --> 00:45:25,800
+Allora, abbiamo introdotto
+
+958
+00:45:25,960 --> 00:45:30,920
+l'altra volta enumerotto
+
+959
+00:45:31,839 --> 00:45:33,839
+l'altra volta le due classi di
+
+960
+00:45:33,839 --> 00:45:38,000
+complessità di calcolatità
+
+961
+00:45:38,000 --> 00:45:42,559
+che sono R ed R
+
+962
+00:45:42,559 --> 00:45:44,480
+e ci siamo detti che insomma i problemi
+
+963
+00:45:44,480 --> 00:45:48,599
+possono stare in R, re R e e zone. Ok?
+
+964
+00:45:48,599 --> 00:45:51,000
+Uno di voi mi ha chiesto "Ma ci stanno
+
+965
+00:45:51,000 --> 00:45:53,000
+problemi qua?" "Sì, ci stanno problemi
+
+966
+00:45:53,000 --> 00:45:56,240
+lì" e noi andiamo a vederli, ok? Andiamo
+
+967
+00:45:56,240 --> 00:45:58,720
+a vedere un problema che non è
+
+968
+00:45:58,720 --> 00:46:02,079
+ricorsivamente numerabile, ok? E lo
+
+969
+00:46:02,079 --> 00:46:04,640
+definiamo ora. Poi vedremo un po' di
+
+970
+00:46:04,640 --> 00:46:06,839
+proprietà di linguaggi e chiudiamo per
+
+971
+00:46:06,839 --> 00:46:09,760
+oggi.
+
+972
+00:46:09,760 --> 00:46:13,880
+Alri? Allora,
+
+973
+00:46:14,000 --> 00:46:16,119
+se noi
+
+974
+00:46:16,119 --> 00:46:18,000
+adesso entri in ballo la codifica che
+
+975
+00:46:18,000 --> 00:46:19,880
+abbiamo parl di cui abbiamo parlato
+
+976
+00:46:19,880 --> 00:46:23,040
+prima, allora riconsideriamo nuovamente
+
+977
+00:46:23,040 --> 00:46:26,839
+macchine che processano in input
+
+978
+00:46:26,839 --> 00:46:29,119
+stringhe binari, ok? Quindi da adesso in
+
+979
+00:46:29,119 --> 00:46:31,599
+poi ci focalizziamo su macchine che il
+
+980
+00:46:31,599 --> 00:46:33,960
+cui input è 01, ok? Perché comunque
+
+981
+00:46:33,960 --> 00:46:36,240
+hanno il potere delle macchine che hanno
+
+982
+00:46:36,240 --> 00:46:38,319
+1000 simboli input, si può tutto
+
+983
+00:46:38,319 --> 00:46:40,839
+riquare, ok?
+
+984
+00:46:40,839 --> 00:46:43,839
+Allora,
+
+985
+00:46:44,040 --> 00:46:45,800
+se noi prendiamo una stringa binaria,
+
+986
+00:46:45,800 --> 00:46:50,040
+no, 0 1 0 bla bla bla, con quel
+
+987
+00:46:50,040 --> 00:46:51,640
+trucchetto che vi dicevo prima, che ora
+
+988
+00:46:51,640 --> 00:46:54,119
+serve prima non tanto, se noi mettiamo
+
+989
+00:46:54,119 --> 00:46:57,720
+un uno davanti a questa stringa binaria,
+
+990
+00:46:57,720 --> 00:47:00,559
+noi a quella stringa binaria possiamo
+
+991
+00:47:00,559 --> 00:47:04,000
+associare un numero intero, ok? Che è il
+
+992
+00:47:04,000 --> 00:47:06,200
+numero dato da quella codifica con l'uno
+
+993
+00:47:06,200 --> 00:47:07,760
+davanti. Perché ci mettiamo l'uno
+
+994
+00:47:07,760 --> 00:47:10,359
+davanti? Perché tante stringhe binarie
+
+995
+00:47:10,359 --> 00:47:12,280
+possono iniziare con zero e quindi
+
+996
+00:47:12,280 --> 00:47:14,599
+sarebbero indistinguibili. Allora, ci
+
+997
+00:47:14,599 --> 00:47:16,559
+mettiamo l'uno in maniera tale che noi
+
+998
+00:47:16,559 --> 00:47:19,079
+possiamo parlare della prima stringa
+
+999
+00:47:19,079 --> 00:47:22,040
+binaria che è che è la stringa vuota. La
+
+1000
+00:47:22,040 --> 00:47:24,640
+seconda stringa binaria che è zero
+
+1001
+00:47:24,640 --> 00:47:28,040
+perché sarebbe 1 concatenato 0. La terza
+
+1002
+00:47:28,040 --> 00:47:31,160
+stringa binaria che è 1
+
+1003
+00:47:31,160 --> 00:47:33,720
+perché avremo uno concatenato 1. La
+
+1004
+00:47:33,720 --> 00:47:39,079
+quarta stringa binaria, ok? E così via.
+
+1005
+00:47:39,079 --> 00:47:41,800
+A questo punto noi siamo in grado di
+
+1006
+00:47:41,800 --> 00:47:44,920
+enumerarle e in particolare abbiamo che
+
+1007
+00:47:44,920 --> 00:47:47,040
+le stringhe binarie con un indice più
+
+1008
+00:47:47,040 --> 00:47:49,160
+basso perché a questo punto abbiamo la
+
+1009
+00:47:49,160 --> 00:47:51,000
+prima stringa, la seconda stringa, la
+
+1010
+00:47:51,000 --> 00:47:53,240
+terza stringa, ok? Noi avremo che le
+
+1011
+00:47:53,240 --> 00:47:56,400
+stringhe binarie con indice più basso
+
+1012
+00:47:56,400 --> 00:48:00,440
+sono tendenzialmente più corte,
+
+1013
+00:48:00,440 --> 00:48:03,319
+ok? stringhe binarie della stessa
+
+1014
+00:48:03,319 --> 00:48:05,760
+lunghezza sono ordinate
+
+1015
+00:48:05,760 --> 00:48:07,960
+lessicograficamente, ok? Quindi noi
+
+1016
+00:48:07,960 --> 00:48:10,359
+abbiamo in effetti proprio un ordine di
+
+1017
+00:48:10,359 --> 00:48:13,160
+queste stringhe, le possiamo enumerare 1
+
+1018
+00:48:13,160 --> 00:48:16,240
+2 3 bla bla bla. Ok? Quante sono le
+
+1019
+00:48:16,240 --> 00:48:20,599
+stringhe binari? Quindi
+
+1020
+00:48:20,599 --> 00:48:23,319
+infinite. Ma sono tante quanti i numeri
+
+1021
+00:48:23,319 --> 00:48:25,960
+inferi o più dei numeri interi?
+
+1022
+00:48:25,960 --> 00:48:28,200
+Numerabili.
+Ok, sono numerabili. Quindi
+
+1023
+00:48:28,200 --> 00:48:29,680
+abbiamo tante quante di numeri interi
+
+1024
+00:48:29,680 --> 00:48:31,440
+perché li possiamo contare la prima, la
+
+1025
+00:48:31,440 --> 00:48:34,319
+seconda, la terza. C'è quindi una
+
+1026
+00:48:34,319 --> 00:48:37,000
+associazione di uniloga fra l'indice e
+
+1027
+00:48:37,000 --> 00:48:39,000
+la stringa. Le possiamo proprio contare,
+
+1028
+00:48:39,000 --> 00:48:42,040
+quindi sono
+
+1029
+00:48:42,040 --> 00:48:45,839
+eh contabili. Ok?
+
+1030
+00:48:45,839 --> 00:48:48,960
+Lo stesso tipo di discorso si può fare
+
+1031
+00:48:48,960 --> 00:48:51,319
+per le macchine diing. Le macchine di
+
+1032
+00:48:51,319 --> 00:48:53,880
+ting, perché siccome ci siamo inventati
+
+1033
+00:48:53,880 --> 00:48:55,880
+con la codifica che abbiamo visto prima
+
+1034
+00:48:55,880 --> 00:48:57,960
+e quindi abbiamo che una macchina di
+
+1035
+00:48:57,960 --> 00:49:00,000
+turing può essere associata a una
+
+1036
+00:49:00,000 --> 00:49:02,720
+stringa binaria, ok? Se noi ci
+
+1037
+00:49:02,720 --> 00:49:06,480
+impacchiamo l'uno davanti, quello lì un
+
+1038
+00:49:06,480 --> 00:49:08,359
+di conseguenza pure le macchine di
+
+1039
+00:49:08,359 --> 00:49:11,280
+Turing possono essere contate. Adesso
+
+1040
+00:49:11,280 --> 00:49:13,400
+avremo macchine di Turing che
+
+1041
+00:49:13,400 --> 00:49:15,200
+riconosceranno lo stesso linguaggio
+
+1042
+00:49:15,200 --> 00:49:17,079
+perché magari hanno funzioni di
+
+1043
+00:49:17,079 --> 00:49:19,880
+transizione differente, però alla fine
+
+1044
+00:49:19,880 --> 00:49:22,559
+fanno la stessa cosa. Ok? Esattamente
+
+1045
+00:49:22,559 --> 00:49:24,240
+come noi possiamo scrivere infiniti
+
+1046
+00:49:24,240 --> 00:49:26,480
+programmi Python per risolvere un certo
+
+1047
+00:49:26,480 --> 00:49:28,720
+problema, ci saranno macchine di touring
+
+1048
+00:49:28,720 --> 00:49:31,480
+differenti con programmi differenti che
+
+1049
+00:49:31,480 --> 00:49:33,359
+accettano e si esano lo stesso identico
+
+1050
+00:49:33,359 --> 00:49:36,599
+linguaggio. Ok? Quindi poi come abbiamo
+
+1051
+00:49:36,599 --> 00:49:39,079
+detto ci stanno tante macchine di tanti
+
+1052
+00:49:39,079 --> 00:49:41,280
+codici di macchine di Turing che in
+
+1053
+00:49:41,280 --> 00:49:44,640
+realtà non
+
+1054
+00:49:44,640 --> 00:49:46,680
+rispecchiano nessuna macchina di tuning
+
+1055
+00:49:46,680 --> 00:49:48,559
+secondo il nostro codice. Lì assumiamo
+
+1056
+00:49:48,559 --> 00:49:50,359
+che la macchina di tuning è qualcosa che
+
+1057
+00:49:50,359 --> 00:49:52,599
+rifleta tutto, dice no su qualsiasi
+
+1058
+00:49:52,599 --> 00:49:55,799
+input. Ok? Quindi esattamente come
+
+1059
+00:49:55,799 --> 00:49:58,160
+possiamo contare le stringhe binarie,
+
+1060
+00:49:58,160 --> 00:50:01,200
+possiamo contare le macchine diingine di
+
+1061
+00:50:01,200 --> 00:50:03,040
+fiori non sono vulnerabili. Abbiamo la
+
+1062
+00:50:03,040 --> 00:50:05,200
+prima, la seconda, la terza, la quarta e
+
+1063
+00:50:05,200 --> 00:50:08,319
+così via. Quante sono? Sono tante quanti
+
+1064
+00:50:08,319 --> 00:50:11,680
+i numeri naturali, ok? Quindi abbiamo
+
+1065
+00:50:11,680 --> 00:50:15,400
+infinite stringhe binarie e infinite
+
+1066
+00:50:15,400 --> 00:50:18,400
+macchine di touring
+
+1067
+00:50:18,400 --> 00:50:21,079
+e la loro numerosità è la stessa, sono
+
+1068
+00:50:21,079 --> 00:50:23,480
+tante quanto i numeri naturali. Ci
+
+1069
+00:50:23,480 --> 00:50:25,240
+inventiamo ora un particolare
+
+1070
+00:50:25,240 --> 00:50:28,240
+linguaggio.
+
+1071
+00:50:29,280 --> 00:50:33,319
+Prima di andare là definiamo cos'è
+
+1072
+00:50:33,319 --> 00:50:36,319
+per un linguaggio L
+
+1073
+00:50:36,319 --> 00:50:39,960
+il vettore caratteristico Q di L del
+
+1074
+00:50:39,960 --> 00:50:42,440
+linguaggio L. Che cos'è il vettore
+
+1075
+00:50:42,440 --> 00:50:45,280
+caratteristico di L?
+
+1076
+00:50:45,280 --> 00:50:48,079
+Il vettore caratteristico del linguaggio
+
+1077
+00:50:48,079 --> 00:50:55,880
+L è una sequenza binaria 0 1 1
+
+1078
+00:50:55,880 --> 00:51:00,040
+bla bla bla infinita
+
+1079
+00:51:00,040 --> 00:51:04,960
+che ci dice siccome noi siamo in grado
+
+1080
+00:51:04,960 --> 00:51:08,799
+di enumerare tutte le possibili
+
+1081
+00:51:08,799 --> 00:51:11,359
+stringhe, la prima, la seconda, la
+
+1082
+00:51:11,359 --> 00:51:15,000
+terza, la quarta, eccetera, Il vettore
+
+1083
+00:51:15,000 --> 00:51:18,000
+caratteristico del linguaggio L denotato
+
+1084
+00:51:18,000 --> 00:51:21,799
+in questo modo Q di L è un vettore
+
+1085
+00:51:21,799 --> 00:51:26,000
+binario in cui in posizione I ci dice se
+
+1086
+00:51:26,000 --> 00:51:28,880
+la stringa iima fa parte del linguaggio
+
+1087
+00:51:28,880 --> 00:51:33,400
+o meno. Ok? Recap Noi possiamo enumerare
+
+1088
+00:51:33,400 --> 00:51:35,400
+le stringhe, possiamo dire questa è la
+
+1089
+00:51:35,400 --> 00:51:37,280
+prima stringa, questa è la seconda
+
+1090
+00:51:37,280 --> 00:51:39,400
+stringa, questa è la terza stringa e
+
+1091
+00:51:39,400 --> 00:51:43,280
+così via, no? Di conseguenza, siccome un
+
+1092
+00:51:43,280 --> 00:51:45,880
+linguaggio,
+
+1093
+00:51:45,880 --> 00:51:49,240
+per definizione
+
+1094
+00:51:49,520 --> 00:51:52,920
+è un sottoinsieme delle stringhe
+
+1095
+00:51:52,920 --> 00:51:54,920
+costruibili su un certo alfabeto e in
+
+1096
+00:51:54,920 --> 00:51:56,319
+questo caso stiamo considerando un
+
+1097
+00:51:56,319 --> 00:51:58,440
+alfabeto binario,
+
+1098
+00:51:58,440 --> 00:52:00,839
+allora il vettore caratteristico di un
+
+1099
+00:52:00,839 --> 00:52:03,440
+certo linguaggio sostanzialmente ci dice
+
+1100
+00:52:03,440 --> 00:52:05,160
+quale stringhe fanno parte di quel
+
+1101
+00:52:05,160 --> 00:52:07,799
+linguaggio. Ci dicono in questo caso, la
+
+1102
+00:52:07,799 --> 00:52:10,119
+prima non fa parte, la seconda fa parte,
+
+1103
+00:52:10,119 --> 00:52:11,960
+la terza fa parte, la quarta no, la
+
+1104
+00:52:11,960 --> 00:52:17,079
+quinta no, la sesta sì, bla bla bla. Ok?
+
+1105
+00:52:17,079 --> 00:52:19,960
+È chiaro?
+
+1106
+00:52:19,960 --> 00:52:24,000
+E un linguaggio sull'alfabeto
+
+1107
+00:52:24,000 --> 00:52:27,160
+binario che cos'è? È un insieme di
+
+1108
+00:52:27,160 --> 00:52:30,799
+stringhe binarie. Ok?
+
+1109
+00:52:30,799 --> 00:52:33,200
+Alcune stanno nel linguaggio, altre
+
+1110
+00:52:33,200 --> 00:52:35,720
+stanno fuori il linguaggio.
+
+1111
+00:52:35,720 --> 00:52:38,079
+Per codificare un linguaggio, cioè per
+
+1112
+00:52:38,079 --> 00:52:39,720
+descrivere un linguaggio, possiamo
+
+1113
+00:52:39,720 --> 00:52:42,119
+inventarci questa lezione di vettore
+
+1114
+00:52:42,119 --> 00:52:44,880
+caratteristico del linguaggio.
+
+1115
+00:52:44,880 --> 00:52:47,240
+Lo possiamo fare
+
+1116
+00:52:47,240 --> 00:52:49,400
+perché siamo in grado di enumerare le
+
+1117
+00:52:49,400 --> 00:52:51,520
+stringhe, siamo in grado di dire qual è
+
+1118
+00:52:51,520 --> 00:52:53,880
+la prima e qual è la seconda. Di
+
+1119
+00:52:53,880 --> 00:52:56,200
+conseguenza, se noi ci mettiamo un bel
+
+1120
+00:52:56,200 --> 00:52:59,599
+vettore dove in prima posizione mettiamo
+
+1121
+00:52:59,599 --> 00:53:02,160
+zero, se la prima stringa fa parte del
+
+1122
+00:53:02,160 --> 00:53:05,240
+linguaggio o in prima posizione mettiamo
+
+1123
+00:53:05,240 --> 00:53:08,319
+uno se la prima stringa fa parte del
+
+1124
+00:53:08,319 --> 00:53:10,040
+linguaggio e così via. Quindi in
+
+1125
+00:53:10,040 --> 00:53:14,680
+posizione i di questo vettore mettiamo 0
+
+1126
+00:53:14,680 --> 00:53:17,880
+se la stringa i possiamo parlare di
+
+1127
+00:53:17,880 --> 00:53:19,839
+stringa iima perché sappiamo come
+
+1128
+00:53:19,839 --> 00:53:23,160
+numerarle, in posizione iesima di questo
+
+1129
+00:53:23,160 --> 00:53:26,440
+vettore ci sta zero se la stringa w con
+
+1130
+00:53:26,440 --> 00:53:29,680
+i che noi assumiamo essereima stringa
+
+1131
+00:53:29,680 --> 00:53:32,640
+non fa parte del linguaggio. ci mettiamo
+
+1132
+00:53:32,640 --> 00:53:35,599
+uno in questo vettore caratteristico se
+
+1133
+00:53:35,599 --> 00:53:39,960
+la stringa i doc parte del linguaggio L.
+
+1134
+00:53:39,960 --> 00:53:41,040
+E chiaro che cos'è il vettore
+
+1135
+00:53:41,040 --> 00:53:43,880
+caratteristico di di un linguaggio L? È
+
+1136
+00:53:43,880 --> 00:53:46,319
+semplicemente una stringa binaria che ci
+
+1137
+00:53:46,319 --> 00:53:49,960
+dice se una certa stringa i fa parte o
+
+1138
+00:53:49,960 --> 00:53:53,400
+non fa parte del linguaggio. Tutto qua.
+
+1139
+00:53:53,400 --> 00:53:56,079
+È chiaro? Chiaro per tutti? Perché ora
+
+1140
+00:53:56,079 --> 00:53:58,599
+dobbiamo giocare su sta cosa e inizia un
+
+1141
+00:53:58,599 --> 00:54:01,920
+po' a girarci la testa. Quindi mi devo
+
+1142
+00:54:01,920 --> 00:54:04,119
+essere sicuro che cos'è un vettore
+
+1143
+00:54:04,119 --> 00:54:06,640
+caratteristico mi sia chiaro. È
+
+1144
+00:54:06,640 --> 00:54:08,440
+l'elenco,
+
+1145
+00:54:08,440 --> 00:54:10,920
+potremmo dire l'elenco
+
+1146
+00:54:10,920 --> 00:54:13,839
+delle stringhe che fanno parte del di un
+
+1147
+00:54:13,839 --> 00:54:17,319
+certo linguaggio. Mettiamo zero se la
+
+1148
+00:54:17,319 --> 00:54:19,760
+stringa i
+
+1149
+00:54:19,760 --> 00:54:22,240
+mettiamo 0 in posizione i se la stringa
+
+1150
+00:54:22,240 --> 00:54:24,799
+i esima non fa parte del linguaggio.
+
+1151
+00:54:24,799 --> 00:54:26,599
+mettiamo uno in posizione i di questo
+
+1152
+00:54:26,599 --> 00:54:28,599
+vettore se la stringa e iima fa parte
+
+1153
+00:54:28,599 --> 00:54:31,680
+del linguaggio. È una lista binaria. Sì,
+
+1154
+00:54:31,680 --> 00:54:35,359
+no, no, sì, sì, no, bla, bla. Ok? Quindi
+
+1155
+00:54:35,359 --> 00:54:36,559
+sostanzialmente il vettore
+
+1156
+00:54:36,559 --> 00:54:39,640
+caratteristico ci dice chi fa parte del
+
+1157
+00:54:39,640 --> 00:54:41,480
+linguaggio e chi non fa parte del
+
+1158
+00:54:41,480 --> 00:54:46,760
+linguaggio. Chiaro? Ok,
+
+1159
+00:54:48,440 --> 00:54:52,440
+ci facciamo una bella tabellina.
+
+1160
+00:54:54,440 --> 00:54:58,119
+Mettiamo sulle colonne le stringhe.
+
+1161
+00:54:58,119 --> 00:55:00,559
+V1,
+
+1162
+00:55:00,559 --> 00:55:02,640
+V2,
+
+1163
+00:55:02,640 --> 00:55:04,799
+V3,
+
+1164
+00:55:04,799 --> 00:55:06,359
+V4,
+
+1165
+00:55:06,359 --> 00:55:08,960
+bla bla bla bla. Quindi prima stringa,
+
+1166
+00:55:08,960 --> 00:55:11,040
+seconda stringa, terza stringa, quarta
+
+1167
+00:55:11,040 --> 00:55:12,559
+stringa,
+
+1168
+00:55:12,559 --> 00:55:14,599
+zone. Possiamo farlo perché le sappiamo
+
+1169
+00:55:14,599 --> 00:55:17,119
+enumerare. Sulle righe mettiamo le
+
+1170
+00:55:17,119 --> 00:55:19,319
+macchine di doing che anche queste
+
+1171
+00:55:19,319 --> 00:55:21,000
+possiamo enumerare perché abbiamo
+
+1172
+00:55:21,000 --> 00:55:23,520
+trovato un codice che associa macchine a
+
+1173
+00:55:23,520 --> 00:55:25,680
+numeri. Quindi mettiamo la prima
+
+1174
+00:55:25,680 --> 00:55:29,200
+macchina, la seconda macchina,
+
+1175
+00:55:29,200 --> 00:55:32,760
+la terza macchina, la quarta macchina e
+
+1176
+00:55:32,760 --> 00:55:35,799
+così via. Ok,
+
+1177
+00:55:35,799 --> 00:55:37,599
+ci siete?
+
+1178
+00:55:37,599 --> 00:55:39,640
+Anche le macchine Touring possono essere
+
+1179
+00:55:39,640 --> 00:55:41,720
+enumerate nel modo in cui abbiamo visto.
+
+1180
+00:55:41,720 --> 00:55:43,240
+Quindi possiamo parlare della prima
+
+1181
+00:55:43,240 --> 00:55:45,079
+macchina, della seconda macchina, della
+
+1182
+00:55:45,079 --> 00:55:47,839
+terza macchina.
+
+1183
+00:55:47,839 --> 00:55:49,799
+Sì.
+
+1184
+00:55:49,799 --> 00:55:53,839
+E nel taso me rigore ci sono particolari
+
+1185
+00:55:53,839 --> 00:55:56,680
+che non vanno bene perché tipo quando si
+
+1186
+00:55:56,680 --> 00:55:58,440
+definisce una funzione di transizione
+
+1187
+00:55:58,440 --> 00:56:02,440
+della psicologica m
+m
+eh qual è stata
+
+1188
+00:56:02,440 --> 00:56:05,440
+prima? Cioè,
+come scusi quali quali
+
+1189
+00:56:05,440 --> 00:56:09,640
+coppia ha stato eh
+ci sono più
+
+1190
+00:56:09,640 --> 00:56:11,680
+ricodifiche della stessa macchina. Sì,
+
+1191
+00:56:11,680 --> 00:56:14,240
+alcune sono duplicate. Sì, alcune sono
+
+1192
+00:56:14,240 --> 00:56:16,000
+duplicate,
+
+1193
+00:56:16,000 --> 00:56:18,599
+altre sono diverse, ma riconoscono lo
+
+1194
+00:56:18,599 --> 00:56:20,920
+stesso linguaggio, quindi sì, c'è dei
+
+1195
+00:56:20,920 --> 00:56:23,039
+doppioni, ci stanno. Sì, quello sì,
+
+1196
+00:56:23,039 --> 00:56:26,559
+quello è fuorigio. Eh,
+
+1197
+00:56:26,559 --> 00:56:29,400
+al più potremmo farlo, potremmo farlo,
+
+1198
+00:56:29,400 --> 00:56:31,760
+decidere che si codificano quelle prima
+
+1199
+00:56:31,760 --> 00:56:34,520
+con indice più basso. i pezzi di
+
+1200
+00:56:34,520 --> 00:56:36,559
+funzione di transizione che prendono le
+
+1201
+00:56:36,559 --> 00:56:38,599
+coppie con indici più bassi eccetera,
+
+1202
+00:56:38,599 --> 00:56:40,480
+uno se le può inventare, però in line
+
+1203
+00:56:40,480 --> 00:56:43,079
+principio al più ci stanno dei doppioni.
+
+1204
+00:56:43,079 --> 00:56:46,079
+Ok?
+
+1205
+00:56:48,000 --> 00:56:51,079
+Alright. Allora, ogni macchina di
+
+1206
+00:56:51,079 --> 00:56:53,480
+touring abbiamo detto che accetta un
+
+1207
+00:56:53,480 --> 00:56:56,200
+certo linguaggio, no? Quindi ogni
+
+1208
+00:56:56,200 --> 00:56:58,440
+macchina di touring su una certa stringa
+
+1209
+00:56:58,440 --> 00:57:02,599
+ci dirà sì, no, sì, no. Ok? Quindi
+
+1210
+00:57:02,599 --> 00:57:04,200
+supponiamo che la prima macchina di
+
+1211
+00:57:04,200 --> 00:57:07,480
+Turing rifiuta la prima stringa, accetta
+
+1212
+00:57:07,480 --> 00:57:09,920
+la seconda, rifiuta la terza, rifiuta la
+
+1213
+00:57:09,920 --> 00:57:12,680
+quarta e così via. Che la seconda
+
+1214
+00:57:12,680 --> 00:57:14,760
+macchina di Turing accetta la prima,
+
+1215
+00:57:14,760 --> 00:57:17,520
+accetta la seconda, non accetta la
+
+1216
+00:57:17,520 --> 00:57:21,520
+terza, accetta la quarta e così via. La
+
+1217
+00:57:21,520 --> 00:57:23,359
+terza macchina di Touring non accetta la
+
+1218
+00:57:23,359 --> 00:57:24,720
+prima, non accetta la seconda, non
+
+1219
+00:57:24,720 --> 00:57:26,880
+accetta la terza, accetta la quarta e
+
+1220
+00:57:26,880 --> 00:57:28,720
+così via. La quarta macchina di Turing
+
+1221
+00:57:28,720 --> 00:57:30,280
+accetta la prima, non accetta la
+
+1222
+00:57:30,280 --> 00:57:32,559
+seconda, non accetta la terza, accetta
+
+1223
+00:57:32,559 --> 00:57:34,799
+la quarta e così via. No, è giusto un
+
+1224
+00:57:34,799 --> 00:57:37,039
+esempio. Ok?
+
+1225
+00:57:37,039 --> 00:57:41,559
+Allora, nelle righe
+
+1226
+00:57:41,599 --> 00:57:45,520
+di questa tabella, che cosa abbiamo?
+
+1227
+00:57:45,520 --> 00:57:49,280
+Abbiamo il vettore, attenzione qua
+
+1228
+00:57:49,280 --> 00:57:51,359
+perché iniziamo a muoverci su vari
+
+1229
+00:57:51,359 --> 00:57:54,440
+livelli, eh, sulle righe di questa
+
+1230
+00:57:54,440 --> 00:57:57,400
+tabella che cosa compare se prendiamo
+
+1231
+00:57:57,400 --> 00:57:59,839
+una riga? Cioè, se noi prendiamo
+
+1232
+00:57:59,839 --> 00:58:02,920
+un'intera riga, tipo questa qua, bla,
+
+1233
+00:58:02,920 --> 00:58:07,000
+questa riga infinita, che cos'è quello?
+
+1234
+00:58:07,000 --> 00:58:11,079
+Quello è il vettore
+
+1235
+00:58:11,079 --> 00:58:13,160
+caratteristico
+
+1236
+00:58:13,160 --> 00:58:18,960
+del linguaggio accettato da lati.
+
+1237
+00:58:18,960 --> 00:58:21,760
+È chiaro?
+
+1238
+00:58:21,760 --> 00:58:23,119
+È chiaro che cos'è quello? Perché i
+
+1239
+00:58:23,119 --> 00:58:24,839
+vettori caratteristici ci siamo detti
+
+1240
+00:58:24,839 --> 00:58:27,760
+che sono liste di 0 1 che ci dicono
+
+1241
+00:58:27,760 --> 00:58:29,319
+questa stringa sì, questa stringa no,
+
+1242
+00:58:29,319 --> 00:58:31,119
+questa stringa sì, questa stringa no.
+
+1243
+00:58:31,119 --> 00:58:33,319
+Ok? Quindi,
+
+1244
+00:58:33,319 --> 00:58:37,720
+sulle righe di questa
+
+1245
+00:58:37,720 --> 00:58:41,880
+sulle righe di questa
+
+1246
+00:58:42,039 --> 00:58:44,440
+matrice abbiamo i vettori
+
+1247
+00:58:44,440 --> 00:58:46,359
+caratteristici,
+
+1248
+00:58:46,359 --> 00:58:49,440
+ok? I vettori caratteristici dei
+
+1249
+00:58:49,440 --> 00:58:52,160
+linguaggi accettati da queste marche di
+
+1250
+00:58:52,160 --> 00:58:53,880
+Turing.
+
+1251
+00:58:53,880 --> 00:58:57,960
+Ok, ci siete? Adesso iniziamo a fare una
+
+1252
+00:58:57,960 --> 00:59:00,039
+piccola operazione.
+
+1253
+00:59:00,039 --> 00:59:02,960
+Spazio C. Ok, più o meno. Sì, voi
+
+1254
+00:59:02,960 --> 00:59:05,960
+vedete? Yes.
+
+1255
+00:59:05,960 --> 00:59:09,280
+Ci concentriamo
+
+1256
+00:59:11,000 --> 00:59:14,640
+sulla diagonale di questo linguaggio, di
+
+1257
+00:59:14,640 --> 00:59:17,319
+questa matrice. Ok?
+
+1258
+00:59:17,319 --> 00:59:21,680
+Ci prendiamo questa qua, guardate,
+
+1259
+00:59:24,280 --> 00:59:28,119
+e la chiamiamo D.
+
+1260
+00:59:28,119 --> 00:59:30,880
+Ok? I matematici immagino che sappiano
+
+1261
+00:59:30,880 --> 00:59:34,520
+già dove stiamo andando a parare
+
+1262
+00:59:34,520 --> 00:59:43,039
+e quindi abbiamo 0 1 0 1. Ok?
+
+1263
+00:59:43,039 --> 00:59:45,559
+Questo qua che cos'è?
+
+1264
+00:59:45,559 --> 00:59:51,400
+È la diagonale di questa matrice. Ok?
+
+1265
+00:59:51,400 --> 00:59:56,559
+Che cos'è? È una sequenza di
+
+1266
+00:59:56,559 --> 01:00:00,359
+bit, ok? è una sequenza di buleania.
+
+1267
+01:00:00,359 --> 01:00:03,359
+Ok?
+
+1268
+01:00:03,520 --> 01:00:05,520
+Da Deriamo
+
+1269
+01:00:05,520 --> 01:00:08,319
+il suo complemento,
+
+1270
+01:00:08,319 --> 01:00:10,440
+cioè prendiamo
+
+1271
+01:00:10,440 --> 01:00:12,319
+la
+
+1272
+01:00:12,319 --> 01:00:15,799
+sequenza D e la invertiamo. Dove c'è Z0
+
+1273
+01:00:15,799 --> 01:00:17,599
+ci mettiamo uno, dove c'è uno ci
+
+1274
+01:00:17,599 --> 01:00:22,039
+mettiamo Z0, quindi abbiamo
+
+1275
+01:00:22,039 --> 01:00:28,880
+1 0 1 0 bla bla bla e così via. Ok?
+
+1276
+01:00:28,880 --> 01:00:31,920
+di soprasegnato. Che cos'è? È una
+
+1277
+01:00:31,920 --> 01:00:36,880
+sequenza di bule o no?
+
+1278
+01:00:36,880 --> 01:00:39,960
+Siccome di soprasegnato è una sequenza
+
+1279
+01:00:39,960 --> 01:00:41,799
+di buleani,
+
+1280
+01:00:41,799 --> 01:00:44,760
+possiamo interpretarlo come vettore
+
+1281
+01:00:44,760 --> 01:00:49,119
+caratteristico di un certo linguaggio?
+
+1282
+01:00:49,160 --> 01:00:53,000
+Sì. Chi ce lo vieta?
+
+1283
+01:00:53,319 --> 01:00:57,119
+Nessuno. Ok, ripartiamo. Abbiamo fatto
+
+1284
+01:00:57,119 --> 01:00:59,640
+questa matrice, abbiamo preso la
+
+1285
+01:00:59,640 --> 01:01:03,240
+diagonale, l'abbiamo complementata e
+
+1286
+01:01:03,240 --> 01:01:06,480
+otteniamo 10 bla bla. Questo è un
+
+1287
+01:01:06,480 --> 01:01:09,319
+esempio, eh, è giusto per ragionare.
+
+1288
+01:01:09,319 --> 01:01:12,480
+Siccome d complementata è una sequenza
+
+1289
+01:01:12,480 --> 01:01:16,319
+di bit e i vettori caratteristici dei
+
+1290
+01:01:16,319 --> 01:01:20,640
+linguaggi sono sequenze di bit,
+
+1291
+01:01:20,640 --> 01:01:25,000
+questa qui può essere interpretata
+
+1292
+01:01:25,000 --> 01:01:28,359
+come il vettore caratteristico di un
+
+1293
+01:01:28,359 --> 01:01:31,640
+certo linguaggio. Ok?
+
+1294
+01:01:31,640 --> 01:01:34,079
+chiamiamo
+
+1295
+01:01:34,079 --> 01:01:37,079
+LD
+
+1296
+01:01:37,920 --> 01:01:39,960
+il linguaggio
+
+1297
+01:01:39,960 --> 01:01:42,319
+il cui vettore caratteristico è questo
+
+1298
+01:01:42,319 --> 01:01:45,400
+qua. Ok? LDX sta per linguaggio di
+
+1299
+01:01:45,400 --> 01:01:48,400
+diagonalizzazione.
+
+1300
+01:01:55,839 --> 01:01:57,799
+È chiaro finora che abbiamo fatto? Ci
+
+1301
+01:01:57,799 --> 01:02:00,119
+siamo costruiti sta bella matricetta, ci
+
+1302
+01:02:00,119 --> 01:02:04,079
+siamo presi la diagonale, l'abbiamo
+
+1303
+01:02:04,079 --> 01:02:07,079
+complementata. Stiamo interpretando il
+
+1304
+01:02:07,079 --> 01:02:09,520
+complemento della diagonale come un
+
+1305
+01:02:09,520 --> 01:02:12,760
+vettore caratteristico di un linguaggio.
+
+1306
+01:02:12,760 --> 01:02:15,880
+Chiamiamo LD
+
+1307
+01:02:15,880 --> 01:02:17,760
+il linguaggio
+
+1308
+01:02:17,760 --> 01:02:20,200
+il cui vettore caratteristico è questo
+
+1309
+01:02:20,200 --> 01:02:22,920
+qua. Ok?
+
+1310
+01:02:22,920 --> 01:02:25,000
+Possiamo fare questa operazione? Abbiamo
+
+1311
+01:02:25,000 --> 01:02:27,079
+fatto cose strane? Non abbiamo fatto
+
+1312
+01:02:27,079 --> 01:02:31,559
+questa strada. Ok, adesso la domanda è:
+
+1313
+01:02:31,559 --> 01:02:35,799
+esiste o no una macchina di tuning
+
+1314
+01:02:35,799 --> 01:02:41,599
+il cui linguaggio è LD?
+
+1315
+01:02:45,680 --> 01:02:47,200
+Mh.
+
+1316
+01:02:47,200 --> 01:02:50,200
+Ok,
+
+1317
+01:02:50,200 --> 01:02:53,480
+aspetta, qua ho visto un po' di votanti
+
+1318
+01:02:53,480 --> 01:02:56,839
+per il sì. Ok, adesso seguite questo
+
+1319
+01:02:56,839 --> 01:02:59,839
+ragionamento.
+
+1320
+01:03:00,839 --> 01:03:03,279
+Allora, noi in questa in questa matrice,
+
+1321
+01:03:03,279 --> 01:03:05,039
+in questa matriciona, in questa
+
+1322
+01:03:05,039 --> 01:03:07,400
+matriciana, ok, che cosa abbiamo?
+
+1323
+01:03:07,400 --> 01:03:10,279
+Abbiamo la lista di tutte le macchine di
+
+1324
+01:03:10,279 --> 01:03:14,160
+Turing. Perché? Perché le macchine di
+
+1325
+01:03:14,160 --> 01:03:16,920
+Turing possono essere numerate, quindi
+
+1326
+01:03:16,920 --> 01:03:19,039
+noi ne abbiamo infinite, però noi
+
+1327
+01:03:19,039 --> 01:03:21,599
+sappiamo esattamente la 4 miliardesima
+
+1328
+01:03:21,599 --> 01:03:24,480
+qualè. sappiamo qual è la milionesima
+
+1329
+01:03:24,480 --> 01:03:26,960
+perché le possiamo enumerare la prima,
+
+1330
+01:03:26,960 --> 01:03:29,319
+la seconda, la terza e insomma. Quindi
+
+1331
+01:03:29,319 --> 01:03:32,000
+in questa matrice noi riga per riga
+
+1332
+01:03:32,000 --> 01:03:35,440
+sappiamo chi è la macchina diing e lì ce
+
+1333
+01:03:35,440 --> 01:03:37,960
+stanno tutte, eh, non ne stiamo saltando
+
+1334
+01:03:37,960 --> 01:03:40,480
+perché tutte le macchine di tingono
+
+1335
+01:03:40,480 --> 01:03:42,359
+essere codificate secondo la codifica
+
+1336
+01:03:42,359 --> 01:03:44,319
+che abbiamo visto prima della pausa e
+
+1337
+01:03:44,319 --> 01:03:46,799
+quindi tutte le macchine di Turing
+
+1338
+01:03:46,799 --> 01:03:49,559
+possono avere un numero associato. Ok? E
+
+1339
+01:03:49,559 --> 01:03:51,920
+quindi in questa mega lista, in questa
+
+1340
+01:03:51,920 --> 01:03:55,440
+mega matrice, ci sta una riga per ognuna
+
+1341
+01:03:55,440 --> 01:03:57,240
+delle possibili macchine di touring. Non
+
+1342
+01:03:57,240 --> 01:04:00,440
+ne saltiamo nemmeno una, ok? Quindi se
+
+1343
+01:04:00,440 --> 01:04:03,079
+esiste una macchina di tuning che è in
+
+1344
+01:04:03,079 --> 01:04:06,079
+grado di riconoscere LD
+
+1345
+01:04:06,079 --> 01:04:08,640
+deve apparire dentro una alla a una
+
+1346
+01:04:08,640 --> 01:04:11,559
+certa riga. Ok? Per forza, perché là ce
+
+1347
+01:04:11,559 --> 01:04:15,079
+stanno tutte. Ci siete fin qua?
+
+1348
+01:04:15,079 --> 01:04:17,480
+Domanda.
+
+1349
+01:04:17,480 --> 01:04:19,839
+Può essere M1 questa macchina che stiamo
+
+1350
+01:04:19,839 --> 01:04:22,599
+cercando?
+
+1351
+01:04:22,599 --> 01:04:26,520
+No, perché
+perché differisce
+perché
+
+1352
+01:04:26,520 --> 01:04:29,039
+differisce il vettore caratteristico di
+
+1353
+01:04:29,039 --> 01:04:31,920
+m1 sicuramente differisce almeno in
+
+1354
+01:04:31,920 --> 01:04:34,279
+posizione 1. Quindi la macchina 1 un può
+
+1355
+01:04:34,279 --> 01:04:36,400
+essere. Andiamo avanti. Può essere la
+
+1356
+01:04:36,400 --> 01:04:39,760
+macchina due.
+
+1357
+01:04:40,520 --> 01:04:43,880
+Matematici già lo sanno, quindi
+
+1358
+01:04:43,880 --> 01:04:45,960
+lasciate la suspense agli altri. La
+
+1359
+01:04:45,960 --> 01:04:49,119
+macchina M2 può essere.
+
+1360
+01:04:49,119 --> 01:04:53,720
+Sì. No, forse no, perché
+
+1361
+01:04:53,720 --> 01:04:56,200
+quale
+
+1362
+01:04:56,200 --> 01:05:00,960
+e poi
+eh anche
+
+1363
+01:05:03,640 --> 01:05:07,559
+il secondo riferiscono sul secondo bit.
+
+1364
+01:05:07,559 --> 01:05:10,799
+Guardate il pattern. Eh, la prima
+
+1365
+01:05:10,799 --> 01:05:13,119
+macchina ha un vettore caratteristico
+
+1366
+01:05:13,119 --> 01:05:15,720
+che differisce da d soprasegnato in
+
+1367
+01:05:15,720 --> 01:05:18,200
+posizione 1
+
+1368
+01:05:18,200 --> 01:05:20,079
+per definizione, perché abbiamo preso la
+
+1369
+01:05:20,079 --> 01:05:23,440
+diagonale e l'abbiamo rivoltata.
+Quindi
+
+1370
+01:05:23,440 --> 01:05:25,760
+il vettore caratteristico della macchina
+
+1371
+01:05:25,760 --> 01:05:29,640
+numero uno differisce da di soprasegnato
+
+1372
+01:05:29,640 --> 01:05:31,880
+almeno in posizione 1. Poi può differire
+
+1373
+01:05:31,880 --> 01:05:34,200
+anche in altri posti, ma in posizione
+
+1374
+01:05:34,200 --> 01:05:36,200
+uno differisce. Quindi il vettore
+
+1375
+01:05:36,200 --> 01:05:39,400
+caratteristico della macchina 1 non è di
+
+1376
+01:05:39,400 --> 01:05:40,960
+soprasegnato.
+
+1377
+01:05:40,960 --> 01:05:44,039
+Ok, andiamo a guardare la macchina 2. Il
+
+1378
+01:05:44,039 --> 01:05:46,559
+vettore caratteristico della macchina 2
+
+1379
+01:05:46,559 --> 01:05:49,720
+equivale a di soprasegnato?
+
+1380
+01:05:49,720 --> 01:05:53,000
+No, perché il vettore caratteristico
+
+1381
+01:05:53,000 --> 01:05:55,880
+della macchina 2 differisce da di
+
+1382
+01:05:55,880 --> 01:05:58,160
+soprasegnato, almeno in posizione due.
+
+1383
+01:05:58,160 --> 01:05:59,839
+Poi magari è diverso pure da altre
+
+1384
+01:05:59,839 --> 01:06:01,920
+parti, ma in posizione du è diverso.
+
+1385
+01:06:01,920 --> 01:06:04,240
+Quindi nemmeno la macchina 2 va bene?
+
+1386
+01:06:04,240 --> 01:06:06,839
+Guardiamo la macchina 3. Il vettore
+
+1387
+01:06:06,839 --> 01:06:08,960
+caratteristico della macchina 3 equivale
+
+1388
+01:06:08,960 --> 01:06:11,119
+a di soprasegnato?
+
+1389
+01:06:11,119 --> 01:06:14,079
+No, perché il vettore caratteristico
+
+1390
+01:06:14,079 --> 01:06:16,039
+della macchina numero 3 differisce
+
+1391
+01:06:16,039 --> 01:06:18,200
+rispetto a D soprasegnato in terza
+
+1392
+01:06:18,200 --> 01:06:20,079
+posizione.
+
+1393
+01:06:20,079 --> 01:06:23,599
+Prendiamo la generica macchina I.
+
+1394
+01:06:23,599 --> 01:06:25,760
+È possibile che la macchina I abbia come
+
+1395
+01:06:25,760 --> 01:06:29,359
+vettore caratteristico disoprasegnato?
+
+1396
+01:06:29,359 --> 01:06:32,599
+Mh.
+No, perché posizione
+No, perché
+
+1397
+01:06:32,599 --> 01:06:34,240
+miima
+
+1398
+01:06:34,240 --> 01:06:36,319
+posizione il vettore caratteristico
+
+1399
+01:06:36,319 --> 01:06:39,000
+della macchina numero i
+
+1400
+01:06:39,000 --> 01:06:41,160
+differirà da di soprasegnato in
+
+1401
+01:06:41,160 --> 01:06:45,000
+posizione i. Ma allora nessuna di queste
+
+1402
+01:06:45,000 --> 01:06:48,760
+macchine ha come vettore caratteristico
+
+1403
+01:06:48,760 --> 01:06:51,000
+di soprasegnato,
+
+1404
+01:06:51,000 --> 01:06:54,039
+il che significa che non esiste una
+
+1405
+01:06:54,039 --> 01:06:57,279
+macchina di tingetti
+
+1406
+01:06:57,279 --> 01:06:59,240
+il linguaggio il cui vettore
+
+1407
+01:06:59,240 --> 01:07:01,920
+caratteristico è di soprasegnato. Quindi
+
+1408
+01:07:01,920 --> 01:07:05,160
+non esiste una macchina di tuning che
+
+1409
+01:07:05,160 --> 01:07:09,240
+accetti LD.
+
+1410
+01:07:09,520 --> 01:07:12,400
+Ma siccome in questa mega matrice
+
+1411
+01:07:12,400 --> 01:07:15,559
+abbiamo la lista di tutte le macchine di
+
+1412
+01:07:15,559 --> 01:07:19,720
+Turing che noi potremmo mai inventarci,
+
+1413
+01:07:19,720 --> 01:07:22,599
+se non ci sta proprio una macchina di
+
+1414
+01:07:22,599 --> 01:07:25,559
+Touring che accetta, allora vuol dire
+
+1415
+01:07:25,559 --> 01:07:31,000
+che è un linguaggio che sta fuori e re.
+
+1416
+01:07:32,119 --> 01:07:33,520
+È chiaro?
+
+1417
+01:07:33,520 --> 01:07:35,559
+Ma dice, "Ma è un po' artificiale questo
+
+1418
+01:07:35,559 --> 01:07:38,480
+linguaggio? Che cavolo è questo LD?
+
+1419
+01:07:38,480 --> 01:07:40,359
+Perché pare che ce lo siamo inventato
+
+1420
+01:07:40,359 --> 01:07:42,000
+apposta." Sì, ce lo siamo inventati
+
+1421
+01:07:42,000 --> 01:07:45,839
+apposta, però ha un significato. Quindi
+
+1422
+01:07:45,839 --> 01:07:48,680
+LD è qualcosa che sta qua fuori, è un
+
+1423
+01:07:48,680 --> 01:07:51,520
+linguaggio che sta fuori e re. Prego.
+Ma
+
+1424
+01:07:51,520 --> 01:07:52,760
+noi nello stesso modo in cui stiamo
+
+1425
+01:07:52,760 --> 01:07:54,559
+prendendo tutte le macchine diing
+
+1426
+01:07:54,559 --> 01:07:56,200
+esistenti, non stiamo prendendo anche
+
+1427
+01:07:56,200 --> 01:07:58,880
+tutte le string del corpo esistenti.
+E
+
+1428
+01:07:58,880 --> 01:08:00,640
+questa diagonale non fa parte di questo
+
+1429
+01:08:00,640 --> 01:08:02,240
+esemp, cioè di questo insieme, di tutte
+
+1430
+01:08:02,240 --> 01:08:03,920
+le
+Tu non prendi la diagonale, lei
+
+1431
+01:08:03,920 --> 01:08:07,839
+prende la diagonale complementata.
+
+1432
+01:08:08,799 --> 01:08:10,240
+Però anche la diagonale complementata
+
+1433
+01:08:10,240 --> 01:08:12,400
+non fa parte di questo.
+Eh, ok,
+
+1434
+01:08:12,400 --> 01:08:14,640
+supponiamo che faccia parte. Deve far
+
+1435
+01:08:14,640 --> 01:08:17,239
+parte di una di una linea. Deve essere
+
+1436
+01:08:17,239 --> 01:08:18,799
+uguale a una delle linee di questa
+
+1437
+01:08:18,799 --> 01:08:22,920
+matrice. Mi sa dire quale?
+
+1438
+01:08:23,560 --> 01:08:26,040
+Spari a caso.
+Eh, non può essere perché
+
+1439
+01:08:26,040 --> 01:08:29,600
+comunque in una cioè in un in un indice
+
+1440
+01:08:29,600 --> 01:08:31,520
+della riga c'è a lungo che differisce
+
+1441
+01:08:31,520 --> 01:08:33,640
+che differisce quindi la diagonale
+
+1442
+01:08:33,640 --> 01:08:36,000
+complementata non apparirà mai come
+
+1443
+01:08:36,000 --> 01:08:37,120
+riga.
+
+1444
+01:08:37,120 --> 01:08:38,920
+in una di queste in una di questa
+
+1445
+01:08:38,920 --> 01:08:40,920
+matrice non apparirà mai come rida
+
+1446
+01:08:40,920 --> 01:08:42,719
+dentro questa matrice la diagonale
+
+1447
+01:08:42,719 --> 01:08:44,719
+complementare.
+
+1448
+01:08:44,719 --> 01:08:47,040
+Di conseguenza, siccome noi abbiamo
+
+1449
+01:08:47,040 --> 01:08:48,880
+tanterie quanto sono tutte le macchine
+
+1450
+01:08:48,880 --> 01:08:51,480
+di tuning che mai potremmo inventarci,
+
+1451
+01:08:51,480 --> 01:08:53,440
+allora vuol dire che non ci sta proprio
+
+1452
+01:08:53,440 --> 01:08:56,719
+una macchina di tuning il cui linguaggio
+
+1453
+01:08:56,719 --> 01:09:00,480
+è LD, perciò LD non è RE, non è
+
+1454
+01:09:00,480 --> 01:09:03,159
+ricorsivamente numerabile, non esiste
+
+1455
+01:09:03,159 --> 01:09:06,319
+una macchina di Turing che è in grado di
+
+1456
+01:09:06,319 --> 01:09:08,960
+accettare MD.
+
+1457
+01:09:08,960 --> 01:09:12,239
+Adesso che cavolo è LD?
+
+1458
+01:09:12,239 --> 01:09:16,920
+Perché è stato definito un po' ad eh
+
+1459
+01:09:16,920 --> 01:09:19,920
+LD
+
+1460
+01:09:20,000 --> 01:09:24,880
+è l'insieme delle stringhe vi
+
+1461
+01:09:25,199 --> 01:09:29,080
+tale che la macchina iesima non accetta
+
+1462
+01:09:29,080 --> 01:09:32,839
+la propria stessa codifica. Ok? Quindi
+
+1463
+01:09:32,839 --> 01:09:38,359
+che contiene LD? LD è l'insieme dei
+
+1464
+01:09:38,359 --> 01:09:43,000
+codici di macchine di Touring che quando
+
+1465
+01:09:43,000 --> 01:09:47,319
+ricevono in input la propria stessa
+
+1466
+01:09:47,319 --> 01:09:50,759
+codifica della funzione di transizione
+
+1467
+01:09:50,759 --> 01:09:53,480
+dicono no.
+
+1468
+01:09:53,480 --> 01:09:56,560
+È chiaro che è questo linguaggio LD? Le
+
+1469
+01:09:56,560 --> 01:09:58,520
+macchine di Turing che fanno? Piano in
+
+1470
+01:09:58,520 --> 01:10:03,280
+input string e rispondono o sì o no.
+
+1471
+01:10:03,280 --> 01:10:04,679
+Ok?
+
+1472
+01:10:04,679 --> 01:10:06,320
+Consideriamo le macchine di Touring che
+
+1473
+01:10:06,320 --> 01:10:08,560
+prendono input stringhe binari, ok?
+
+1474
+01:10:08,560 --> 01:10:10,920
+Perché ci semplifica la vita. Macchina
+
+1475
+01:10:10,920 --> 01:10:12,640
+di touring che prende in input, una
+
+1476
+01:10:12,640 --> 01:10:15,960
+stringa binari.
+
+1477
+01:10:15,960 --> 01:10:17,960
+Gliene possiamo dare tanti input di
+
+1478
+01:10:17,960 --> 01:10:21,640
+string binari. Fra le varie stringhe che
+
+1479
+01:10:21,640 --> 01:10:24,280
+gli possiamo dare input, gli possiamo
+
+1480
+01:10:24,280 --> 01:10:26,760
+dare in input la stringa binaria che
+
+1481
+01:10:26,760 --> 01:10:29,080
+codifica la funzione di transizione di
+
+1482
+01:10:29,080 --> 01:10:31,080
+quella macchina.
+
+1483
+01:10:31,080 --> 01:10:33,080
+Ok?
+
+1484
+01:10:33,080 --> 01:10:36,400
+Se quella macchina ricevendo input la
+
+1485
+01:10:36,400 --> 01:10:40,159
+propria codifica, risponde di no, allora
+
+1486
+01:10:40,159 --> 01:10:44,199
+quella stringa fa parte di LD. Quindi LD
+
+1487
+01:10:44,199 --> 01:10:48,560
+contiene i codici di macchine di Touring
+
+1488
+01:10:48,560 --> 01:10:51,679
+che quando ricevono un input, la propria
+
+1489
+01:10:51,679 --> 01:10:54,360
+stessa codifica, rispondono no. Quella è
+
+1490
+01:10:54,360 --> 01:10:57,480
+l'ID. Sì.
+Ma quindi con la codifica tr
+
+1491
+01:10:57,480 --> 01:10:59,760
+di altre macchine si può fare oppure no?
+
+1492
+01:10:59,760 --> 01:11:02,400
+Sì, sì. Ma quindi
+qua per stare nelle D
+
+1493
+01:11:02,400 --> 01:11:05,400
+la macchina I deve rispondere no quando
+
+1494
+01:11:05,400 --> 01:11:10,000
+riceve input w con I.
+Ma se ho se posso
+
+1495
+01:11:10,000 --> 01:11:13,159
+care un input eh la codifica di un'altra
+
+1496
+01:11:13,159 --> 01:11:16,440
+macchina
+non si andrebbe un po' come
+
+1497
+01:11:16,440 --> 01:11:18,679
+controsenso al
+No, no, aspetta, la
+
+1498
+01:11:18,679 --> 01:11:21,000
+definizione del linguaggio è questa la
+
+1499
+01:11:21,000 --> 01:11:22,239
+cioè noi vogliamo definireci il
+
+1500
+01:11:22,239 --> 01:11:24,520
+linguaggio come ci gira l'insieme delle
+
+1501
+01:11:24,520 --> 01:11:26,840
+stringhe che che codificano i grafi
+
+1502
+01:11:26,840 --> 01:11:30,199
+belli. Ok? definiamo cos'è un grafo
+
+1503
+01:11:30,199 --> 01:11:32,199
+bello, lo possiamo fare, ok? Noi
+
+1504
+01:11:32,199 --> 01:11:34,960
+definiamo L in questo modo. È l'insieme
+
+1505
+01:11:34,960 --> 01:11:37,400
+dei codici binari che codificano
+
+1506
+01:11:37,400 --> 01:11:39,760
+macchine per le quali se loro
+
+1507
+01:11:39,760 --> 01:11:41,840
+ricevessero in input la propria stessa
+
+1508
+01:11:41,840 --> 01:11:45,159
+codifica risponderebbero no.
+
+1509
+01:11:45,159 --> 01:11:47,320
+No,
+qualche cosa facciano sugli altre
+
+1510
+01:11:47,320 --> 01:11:50,639
+non ci importa, ma per stare lì in LD M
+
+1511
+01:11:50,639 --> 01:11:52,360
+con I deve essere una macchina che sulla
+
+1512
+01:11:52,360 --> 01:11:54,159
+propria codifica dice di no, poi sul
+
+1513
+01:11:54,159 --> 01:11:57,080
+resto fa quello che gli gira. Però la
+
+1514
+01:11:57,080 --> 01:12:00,400
+mia domanda se guardo il problema della
+
+1515
+01:12:00,400 --> 01:12:02,920
+fermata, cioè presumo stimata un po' a
+
+1516
+01:12:02,920 --> 01:12:04,960
+parlare su questa cosa qui
+e più o meno.
+
+1517
+01:12:04,960 --> 01:12:07,199
+Però quest è un'altra cosa. Linguaggio
+
+1518
+01:12:07,199 --> 01:12:09,239
+di diagonalizzazione poi lo facciamo il
+
+1519
+01:12:09,239 --> 01:12:10,679
+problema della fermata o domani o
+
+1520
+01:12:10,679 --> 01:12:13,639
+venerdì, cioè o giovedì o venerdì, ok?
+
+1521
+01:12:13,639 --> 01:12:15,360
+Che poi lo guardiamo più altri tempi.
+
+1522
+01:12:15,360 --> 01:12:18,480
+Però noi volevamo un linguaggio che non
+
+1523
+01:12:18,480 --> 01:12:22,080
+fosse il re. Questo non è R perché
+
+1524
+01:12:22,080 --> 01:12:23,920
+perché non esiste una macchina di
+
+1525
+01:12:23,920 --> 01:12:27,440
+Touring che è in grado di accettare le
+
+1526
+01:12:27,440 --> 01:12:29,280
+Come lo sappiamo? Perché nel momento in
+
+1527
+01:12:29,280 --> 01:12:32,360
+cui le listiamo tutte,
+
+1528
+01:12:32,360 --> 01:12:36,400
+ok? Allora nessuna di loro ha il vettore
+
+1529
+01:12:36,400 --> 01:12:38,080
+caratteristico
+
+1530
+01:12:38,080 --> 01:12:40,560
+della
+
+1531
+01:12:40,560 --> 01:12:42,239
+della diagonale complementata. Ok?
+
+1532
+01:12:42,239 --> 01:12:44,080
+Nessuno ha il vettore caratteristico di
+
+1533
+01:12:44,080 --> 01:12:48,719
+L. Quindi teorema
+
+1534
+01:12:48,719 --> 01:12:50,600
+adesso l'abbiamo
+
+1535
+01:12:50,600 --> 01:12:52,440
+abbiamo dimostrato così a chiacchiere,
+
+1536
+01:12:52,440 --> 01:12:54,840
+ma sostanzialmente si riduce a questa
+
+1537
+01:12:54,840 --> 01:12:58,400
+cosa. Teorema LD
+
+1538
+01:12:58,400 --> 01:13:01,440
+non appartiene ad R.
+
+1539
+01:13:01,440 --> 01:13:04,239
+Come si dimostra? in quel modo facendo
+
+1540
+01:13:04,239 --> 01:13:06,800
+la matriciona, facendo la lista delle
+
+1541
+01:13:06,800 --> 01:13:08,320
+macchine, facendo la lista delle
+
+1542
+01:13:08,320 --> 01:13:13,400
+stringhe e facendo notare che LD ha come
+
+1543
+01:13:13,400 --> 01:13:15,400
+vettore caratteristico la diagonale
+
+1544
+01:13:15,400 --> 01:13:17,840
+complementata. Ma per definizione la
+
+1545
+01:13:17,840 --> 01:13:19,760
+diagonale complementata non può essere
+
+1546
+01:13:19,760 --> 01:13:22,040
+la riga di non può essere nessuna riga
+
+1547
+01:13:22,040 --> 01:13:24,760
+di quella matrice, ok? Tale per cui
+
+1548
+01:13:24,760 --> 01:13:29,120
+quella macchina non c'è sta.
+
+1549
+01:13:30,840 --> 01:13:33,440
+Chiaro per tutti? Ok,
+
+1550
+01:13:33,440 --> 01:13:35,639
+intuizione dietro sta roba perché
+
+1551
+01:13:35,639 --> 01:13:38,080
+esistono i linguaggi
+
+1552
+01:13:38,080 --> 01:13:40,719
+non ricorsivamente numerabili e poi
+
+1553
+01:13:40,719 --> 01:13:42,960
+introduciamo sì alcune proprietà di
+
+1554
+01:13:42,960 --> 01:13:44,560
+linguaggi che ci servono per la prossima
+
+1555
+01:13:44,560 --> 01:13:48,840
+volta, cioè perché ci stanno i linguaggi
+
+1556
+01:13:48,840 --> 01:13:52,239
+non decisibili. Sì,
+scusi, ma eh per
+
+1557
+01:13:52,239 --> 01:13:55,239
+dimostrare alla fine usiamo nella
+
+1558
+01:13:55,239 --> 01:13:57,280
+matrice prima
+si usa la matrice, sì,
+
+1559
+01:13:57,280 --> 01:13:59,800
+però prima dimostrare che per come ha
+
+1560
+01:13:59,800 --> 01:14:01,719
+definito adesso
+
+1561
+01:14:01,719 --> 01:14:04,480
+eh coincide con quella regolandita.
+
+1562
+01:14:04,480 --> 01:14:06,960
+Esattamente. Sì, sì, sì, sì, sì. Beh,
+
+1563
+01:14:06,960 --> 01:14:09,320
+poi la dimostrazione è quella
+e poi eh
+
+1564
+01:14:09,320 --> 01:14:12,080
+scusi mi son perso la e il linguaggio
+
+1565
+01:14:12,080 --> 01:14:14,960
+che i codici binari i codici di macchine
+
+1566
+01:14:14,960 --> 01:14:18,880
+di Touring le quali ricevendo input la
+
+1567
+01:14:18,880 --> 01:14:21,320
+propria bonifica
+
+1568
+01:14:21,320 --> 01:14:23,760
+la rifiutano,
+quindi non riconoscono la
+
+1569
+01:14:23,760 --> 01:14:25,960
+propria
+non riconoscono rispondono di no
+
+1570
+01:14:25,960 --> 01:14:28,840
+sulla propria modifica. Ok?
+Tutto qua. È
+
+1571
+01:14:28,840 --> 01:14:30,480
+un linguaggio un po' strano, però uno si
+
+1572
+01:14:30,480 --> 01:14:32,880
+può inventare il linguaggio che vuole.
+
+1573
+01:14:32,880 --> 01:14:35,280
+Ok?
+
+1574
+01:14:35,280 --> 01:14:37,520
+Allora, giusto un'intuizione, perché ci
+
+1575
+01:14:37,520 --> 01:14:39,800
+stanno i linguaggi indecisibili. Questa
+
+1576
+01:14:39,800 --> 01:14:41,639
+è una cosa che immagino che i matematici
+
+1577
+01:14:41,639 --> 01:14:45,199
+l'avranno già fatta.
+
+1578
+01:14:45,199 --> 01:14:47,920
+Allora,
+
+1579
+01:14:47,920 --> 01:14:49,239
+noi abbiamo detto che le macchine di
+
+1580
+01:14:49,239 --> 01:14:51,400
+Turing sono enumerabili, noi le possiamo
+
+1581
+01:14:51,400 --> 01:14:53,080
+contare, possiamo dire la prima, la
+
+1582
+01:14:53,080 --> 01:14:55,040
+seconda, la terza.
+
+1583
+01:14:55,040 --> 01:14:56,880
+Il che vuol dire che le macchine di
+
+1584
+01:14:56,880 --> 01:15:00,120
+Touring sono tante quante
+
+1585
+01:15:00,120 --> 01:15:02,360
+i numeri interi.
+
+1586
+01:15:02,360 --> 01:15:05,280
+I linguaggi che sono sono sottoinsieme
+
+1587
+01:15:05,280 --> 01:15:07,800
+di quelle stringhe, sotto insieme di V1,
+
+1588
+01:15:07,800 --> 01:15:10,120
+V2, V3, V4. Quindi abbiamo che le
+
+1589
+01:15:10,120 --> 01:15:11,920
+stringhe
+
+1590
+01:15:11,920 --> 01:15:14,800
+sono infinite, tante quante i numeri
+
+1591
+01:15:14,800 --> 01:15:17,920
+interi. I linguaggi sono tutti possibili
+
+1592
+01:15:17,920 --> 01:15:19,600
+sottoinsiemi
+
+1593
+01:15:19,600 --> 01:15:23,960
+di un numero infinito di stringhe.
+
+1594
+01:15:24,280 --> 01:15:28,199
+Quanti sono tutti possibili sottoinsiemi
+
+1595
+01:15:28,199 --> 01:15:30,920
+di un numero infinito di stringhe?
+
+1596
+01:15:30,920 --> 01:15:33,120
+Numeri reali
+son tanti quanti numeri
+
+1597
+01:15:33,120 --> 01:15:35,880
+reali son molti di più. Quindi i
+
+1598
+01:15:35,880 --> 01:15:38,679
+linguaggi sono tanti quanti i numeri
+
+1599
+01:15:38,679 --> 01:15:41,120
+reali, le macchine di touring sono tante
+
+1600
+01:15:41,120 --> 01:15:43,719
+quanti sono i numeri naturali, quindi
+
+1601
+01:15:43,719 --> 01:15:45,960
+abbiamo molti più linguaggi che
+
+1602
+01:15:45,960 --> 01:15:48,920
+algoritmi. Ecco perché ci sono linguaggi
+
+1603
+01:15:48,920 --> 01:15:51,159
+indecidibili, perché sono tanti di più.
+
+1604
+01:15:51,159 --> 01:15:53,159
+Poi la nostra testa non li partorisce
+
+1605
+01:15:53,159 --> 01:15:55,120
+perché noi siamo abituati a pensare in
+
+1606
+01:15:55,120 --> 01:15:57,159
+maniera tale che le cose riusciamo a
+
+1607
+01:15:57,159 --> 01:16:00,159
+risolverlo, ma in realtà per definizione
+
+1608
+01:16:00,159 --> 01:16:02,040
+siccome i linguaggi sono tanti quanti i
+
+1609
+01:16:02,040 --> 01:16:05,480
+numeri reali e le macchine di curing,
+
+1610
+01:16:05,480 --> 01:16:07,239
+che sono gli algoritmi sono tanti quanti
+
+1611
+01:16:07,239 --> 01:16:10,560
+i numeri interi, i numeri naturali, ci
+
+1612
+01:16:10,560 --> 01:16:12,600
+stanno molti più linguaggi algoritmi.
+
+1613
+01:16:12,600 --> 01:16:15,040
+Ecco perché ci stanno i linguaggi per i
+
+1614
+01:16:15,040 --> 01:16:16,760
+quali non esistono macchine che sono in
+
+1615
+01:16:16,760 --> 01:16:19,120
+grado di leggire. Tutto qua perché sono
+
+1616
+01:16:19,120 --> 01:16:21,920
+tante di più.
+
+1617
+01:16:21,920 --> 01:16:24,239
+Questa è la ragione filosofica che ci
+
+1618
+01:16:24,239 --> 01:16:26,639
+sta dire perché perché son tanti. Sono
+
+1619
+01:16:26,639 --> 01:16:29,840
+tanti di più. Ok. Ok. Introduciamo un
+
+1620
+01:16:29,840 --> 01:16:31,560
+paio di proprietà sui linguaggi e poi
+
+1621
+01:16:31,560 --> 01:16:34,560
+chiudiamo.
+
+1622
+01:16:37,679 --> 01:16:42,880
+Sia l un linguaggio su un certo alfabeto
+
+1623
+01:16:42,880 --> 01:16:45,760
+sigma star. Ok. Su un certo Sì. Su un
+
+1624
+01:16:45,760 --> 01:16:48,760
+certo alfabeto sigma e quindi
+
+1625
+01:16:48,760 --> 01:16:51,960
+L sigma star.
+
+1626
+01:16:52,560 --> 01:16:54,320
+Definiamo
+
+1627
+01:16:54,320 --> 01:16:58,960
+L soprasegnato come il complemento del
+
+1628
+01:16:58,960 --> 01:17:01,600
+linguaggio L. Intuitivamente cos'è il
+
+1629
+01:17:01,600 --> 01:17:03,560
+complemento del linguaggio L? È il
+
+1630
+01:17:03,560 --> 01:17:05,920
+contrario di L. Quello che sta in L non
+
+1631
+01:17:05,920 --> 01:17:08,040
+sta in l sovrasegnato, quello che non
+
+1632
+01:17:08,040 --> 01:17:10,600
+sta in Lassegnato.
+
+1633
+01:17:10,600 --> 01:17:13,199
+Di conseguenza L sovrasegnato viene
+
+1634
+01:17:13,199 --> 01:17:19,400
+definito come sigma start - L. Ok?
+
+1635
+01:17:19,400 --> 01:17:21,520
+è il contrario.
+
+1636
+01:17:21,520 --> 01:17:23,800
+Tutto qua. Questo è il complemento di un
+
+1637
+01:17:23,800 --> 01:17:26,800
+linguaggio.
+
+1638
+01:17:27,000 --> 01:17:29,920
+Prima proprietà
+
+1639
+01:17:29,920 --> 01:17:32,920
+teorema.
+
+1640
+01:17:35,199 --> 01:17:40,159
+Se L appartiene ai linguaggi ricorsivi,
+
+1641
+01:17:40,159 --> 01:17:42,880
+allora
+
+1642
+01:17:42,880 --> 01:17:47,840
+L soprasegnato è quello di ricorsivo.
+
+1643
+01:17:49,199 --> 01:17:52,120
+Chiara la proprietà? Se per L abbiamo un
+
+1644
+01:17:52,120 --> 01:17:54,159
+algoritmo che è sempre in grado di dire
+
+1645
+01:17:54,159 --> 01:17:57,159
+sì o no, allora abbiamo un algoritmo che
+
+1646
+01:17:57,159 --> 01:17:59,040
+è sempre in grado di dire sì o no anche
+
+1647
+01:17:59,040 --> 01:18:02,679
+per il complemento. Dimostrazione.
+
+1648
+01:18:02,679 --> 01:18:07,159
+Siccome L è un linguaggio
+
+1649
+01:18:07,159 --> 01:18:09,000
+ricorsivo,
+
+1650
+01:18:09,000 --> 01:18:12,440
+esisterà una macchina MDL che è sempre
+
+1651
+01:18:12,440 --> 01:18:15,960
+in grado di dirci o sì o no.
+
+1652
+01:18:15,960 --> 01:18:17,719
+Ok?
+
+1653
+01:18:17,719 --> 01:18:20,400
+Per definizione, siccome L è ricorsivo,
+
+1654
+01:18:20,400 --> 01:18:23,639
+c'è una macchina deterministica, come
+
+1655
+01:18:23,639 --> 01:18:26,159
+vogliamo, che su ogni stringa è sempre
+
+1656
+01:18:26,159 --> 01:18:28,000
+in grado di dire sì, la stringa
+
+1657
+01:18:28,000 --> 01:18:30,000
+appartiene a L, no, la stringa non
+
+1658
+01:18:30,000 --> 01:18:33,679
+appartiene L. Ok? Perché esiste tale ML?
+
+1659
+01:18:33,679 --> 01:18:36,320
+perché L e lo stiamo assumendo
+
+1660
+01:18:36,320 --> 01:18:38,760
+ricorsivo. Allora, noi possiamo
+
+1661
+01:18:38,760 --> 01:18:41,760
+costruire
+
+1662
+01:18:42,000 --> 01:18:44,360
+una macchina
+
+1663
+01:18:44,360 --> 01:18:48,280
+ML soprasegnato, cioè una macchina per
+
+1664
+01:18:48,280 --> 01:18:52,000
+questa prende in input qualcosa,
+
+1665
+01:18:52,000 --> 01:18:55,600
+una cosa di questo tipo.
+
+1666
+01:18:55,600 --> 01:18:58,040
+ML
+
+1667
+01:18:58,040 --> 01:19:00,560
+Se questo è sì,
+
+1668
+01:19:00,560 --> 01:19:02,560
+rispondiamo no.
+
+1669
+01:19:02,560 --> 01:19:05,800
+Se questo è no, rispondiamo sì. Cioè,
+
+1670
+01:19:05,800 --> 01:19:09,120
+praticamente noi la macchina per L
+
+1671
+01:19:09,120 --> 01:19:10,960
+soprassegnato
+
+1672
+01:19:10,960 --> 01:19:12,960
+noi semplicemente come la possiamo
+
+1673
+01:19:12,960 --> 01:19:15,199
+ottenere? Prendiamo, siccome stiamo
+
+1674
+01:19:15,199 --> 01:19:18,560
+assumendo che L
+
+1675
+01:19:18,560 --> 01:19:21,400
+sia un linguaggio ricorsivo, quindi una
+
+1676
+01:19:21,400 --> 01:19:25,920
+macchina che decide L ci sta.
+
+1677
+01:19:25,920 --> 01:19:30,080
+Prendiamo la macchina per L e la
+
+1678
+01:19:30,080 --> 01:19:33,679
+rivoltiamo. Praticamente che facciamo?
+
+1679
+01:19:33,679 --> 01:19:37,320
+l'unico stato accettante di Lventa
+
+1680
+01:19:37,320 --> 01:19:40,600
+non accettante
+
+1681
+01:19:41,880 --> 01:19:46,239
+e tutte le transizioni non previste
+
+1682
+01:19:46,239 --> 01:19:49,520
+dalla funzione di transizione di L
+
+1683
+01:19:49,520 --> 01:19:53,600
+inseriamo in questa nuova macchina ML
+
+1684
+01:19:53,600 --> 01:19:56,600
+soprasegnato in maniera tale che tutto
+
+1685
+01:19:56,600 --> 01:19:59,280
+ciò che la macchina ML non si aspetta la
+
+1686
+01:19:59,280 --> 01:20:01,520
+macchina ML soprasegnata le va a far
+
+1687
+01:20:01,520 --> 01:20:03,520
+finire in un nuovo stato accettato.
+
+1688
+01:20:03,520 --> 01:20:06,000
+Ok? Quindi tutto quello che veniva
+
+1689
+01:20:06,000 --> 01:20:08,719
+rifiutato dalla macchina ML verrà
+
+1690
+01:20:08,719 --> 01:20:12,520
+accettato dalla macchina ML soprasegnato
+
+1691
+01:20:12,520 --> 01:20:14,600
+e tutto quello che veniva rifiutato
+
+1692
+01:20:14,600 --> 01:20:17,199
+dalla macchina ML verrà accettato dalla
+
+1693
+01:20:17,199 --> 01:20:20,400
+macchina ML soprasegnata. È chiaro?
+
+1694
+01:20:20,400 --> 01:20:22,480
+L'intizione è questa. Noi cambiamo gli
+
+1695
+01:20:22,480 --> 01:20:24,320
+stati. Quello che è l'accettante per un
+
+1696
+01:20:24,320 --> 01:20:27,080
+diventa non accettante. Tutte le
+
+1697
+01:20:27,080 --> 01:20:30,480
+computazioni, no? Le mosse non previste
+
+1698
+01:20:30,480 --> 01:20:33,719
+da ML verranno previste da ML
+
+1699
+01:20:33,719 --> 01:20:35,800
+sovrasegnato e vanno a finire in uno
+
+1700
+01:20:35,800 --> 01:20:38,239
+stato accettante aggiuntivo che
+
+1701
+01:20:38,239 --> 01:20:40,960
+aggiungiamo. Ok? Giusto per far sì che
+
+1702
+01:20:40,960 --> 01:20:43,040
+ogni volta che ml dice di no, ml
+
+1703
+01:20:43,040 --> 01:20:45,159
+soprassegnato dice di sì e ogni volta
+
+1704
+01:20:45,159 --> 01:20:47,600
+che ml dice di sì, ml soprassegnato dice
+
+1705
+01:20:47,600 --> 01:20:51,679
+di no. Ok? Prego.
+Un chiarimento. Eh, ML
+
+1706
+01:20:51,679 --> 01:20:55,040
+segnato.
+Sì. Cioè noi eh facciamo
+
+1707
+01:20:55,040 --> 01:20:56,960
+seguire le cose delle ml e poi
+
+1708
+01:20:56,960 --> 01:20:59,920
+invertiamo il risultato oppure
+quella è
+
+1709
+01:20:59,920 --> 01:21:03,280
+solo una descrizione intuitiva.
+
+1710
+01:21:03,280 --> 01:21:06,760
+Noi ml sovprasegnato lo possiamo tenere
+
+1711
+01:21:06,760 --> 01:21:10,120
+da ML come
+
+1712
+01:21:10,120 --> 01:21:11,719
+rivoltandogli la funzione di
+
+1713
+01:21:11,719 --> 01:21:13,360
+transizione, cioè la funzione di
+
+1714
+01:21:13,360 --> 01:21:15,760
+transizione di ML prevederà delle
+
+1715
+01:21:15,760 --> 01:21:18,320
+transizioni verso stati accettanti e
+
+1716
+01:21:18,320 --> 01:21:22,320
+prevederà dei punti nel quale ML si
+
+1717
+01:21:22,320 --> 01:21:24,159
+blocca.
+Ma è solo una definizione
+
+1718
+01:21:24,159 --> 01:21:27,000
+teorica per
+No, se la definizione di ML.
+
+1719
+01:21:27,000 --> 01:21:30,120
+No, scusi, ero avanti sul perché noi,
+
+1720
+01:21:30,120 --> 01:21:31,719
+appunto, vi sta scrivendo che non
+
+1721
+01:21:31,719 --> 01:21:34,120
+definiamo dei punti di transizione
+
+1722
+01:21:34,120 --> 01:21:36,360
+complementari, cioè tutti quelli che non
+
+1723
+01:21:36,360 --> 01:21:38,800
+esistono, però cioè
+no, tutte quelle che
+
+1724
+01:21:38,800 --> 01:21:40,840
+non esistono. Si prende la funzione di
+
+1725
+01:21:40,840 --> 01:21:43,840
+transizione di ml e la si modifica per
+
+1726
+01:21:43,840 --> 01:21:45,679
+ottenere la funzione di transizione di
+
+1727
+01:21:45,679 --> 01:21:48,760
+ml soprasegnato. Come facciamo? Lo stato
+
+1728
+01:21:48,760 --> 01:21:52,360
+accettante di ML diventa non accettante.
+
+1729
+01:21:52,360 --> 01:21:55,639
+Aggiungiamo uno stato accettante e
+
+1730
+01:21:55,639 --> 01:21:58,320
+inseriamo tutte le transizioni non
+
+1731
+01:21:58,320 --> 01:22:01,080
+previste da ML.
+
+1732
+01:22:01,080 --> 01:22:04,639
+Per esempio, se in ML sono in Q4, leggo
+
+1733
+01:22:04,639 --> 01:22:08,480
+il simbolo A e mi blocco, in ML
+
+1734
+01:22:08,480 --> 01:22:11,199
+soprasegnato, in Q4, io avrò una
+
+1735
+01:22:11,199 --> 01:22:13,560
+transizione uscente con A e vado in uno
+
+1736
+01:22:13,560 --> 01:22:15,880
+stato accettante, in maniera tale che
+
+1737
+01:22:15,880 --> 01:22:19,440
+accetto quello che è non accettabile.
+
+1738
+01:22:19,440 --> 01:22:21,760
+È chiaro? Prego.
+
+1739
+01:22:21,760 --> 01:22:23,600
+Se la condizione di questo teorema è che
+
+1740
+01:22:23,600 --> 01:22:26,000
+L appartenga R,
+Sì.
+Perché non possiamo
+
+1741
+01:22:26,000 --> 01:22:28,960
+fare la stessa cosa su LD di di prima?
+
+1742
+01:22:28,960 --> 01:22:31,239
+LD non appartiene ad R.
+Eh, però nel
+
+1743
+01:22:31,239 --> 01:22:36,920
+senso LD è la diagonale de Gata di di D.
+
+1744
+01:22:36,920 --> 01:22:39,840
+Poi facciamo, cioè se la diagonale di
+
+1745
+01:22:39,840 --> 01:22:41,920
+quella matrice
+perché la perché poi lo
+
+1746
+01:22:41,920 --> 01:22:44,800
+vedremo perché quello là il LD
+
+1747
+01:22:44,800 --> 01:22:47,320
+soprasegnato, dimostreremo che sta in R
+
+1748
+01:22:47,320 --> 01:22:49,920
+ma non in R. Ok? Questa è la cosa, lo
+
+1749
+01:22:49,920 --> 01:22:52,560
+vediamo o giovedì o venerdì perché ora
+
+1750
+01:22:52,560 --> 01:22:54,840
+introduco queste proprietà e poi
+
+1751
+01:22:54,840 --> 01:22:56,520
+risolveremo tutte queste questioni
+
+1752
+01:22:56,520 --> 01:23:00,120
+appese. Sì. Ok.
+
+1753
+01:23:00,120 --> 01:23:02,159
+Ok. Quindi questa è la prima proprietà.
+
+1754
+01:23:02,159 --> 01:23:07,560
+Se abbiamo un eh Aspetta, devo finire
+
+1755
+01:23:07,560 --> 01:23:09,880
+qua, dobbiamo fare la seconda. Se
+
+1756
+01:23:09,880 --> 01:23:12,040
+abbiamo un linguaggio decidibile,
+
+1757
+01:23:12,040 --> 01:23:14,320
+ricorsivo, allora il suo complemento è
+
+1758
+01:23:14,320 --> 01:23:16,760
+ricorsivo. Secondo teorema e poi
+
+1759
+01:23:16,760 --> 01:23:20,199
+chiudiamo. Eh,
+
+1760
+01:23:20,440 --> 01:23:23,440
+teorema.
+
+1761
+01:23:23,480 --> 01:23:25,679
+Se
+
+1762
+01:23:25,679 --> 01:23:29,440
+L appartiene ad RE
+
+1763
+01:23:29,440 --> 01:23:33,920
+e L soprasegnato appartiene ad RE,
+
+1764
+01:23:33,920 --> 01:23:36,920
+allora
+
+1765
+01:23:37,040 --> 01:23:41,239
+L appartiene ad R.
+
+1766
+01:23:41,239 --> 01:23:42,880
+Ok?
+
+1767
+01:23:42,880 --> 01:23:45,080
+Quindi, se un linguaggio è
+
+1768
+01:23:45,080 --> 01:23:48,080
+ricorsivamente numerabile e il suo
+
+1769
+01:23:48,080 --> 01:23:50,880
+componente ricorsivamente numerabile,
+
+1770
+01:23:50,880 --> 01:23:54,760
+allora L è un linguaggio ricorsivo.
+
+1771
+01:23:54,760 --> 01:23:58,920
+Ok? Come si fa? Abbiamo l'intuizione.
+
+1772
+01:24:06,760 --> 01:24:10,400
+Se L appartiene ad RE, allora esiste una
+
+1773
+01:24:10,400 --> 01:24:14,600
+macchina di Turing che lo accetta. Ok?
+
+1774
+01:24:14,600 --> 01:24:16,880
+Non siamo in grado di stabilire che la
+
+1775
+01:24:16,880 --> 01:24:19,320
+macchina lo decida, però se L appartiene
+
+1776
+01:24:19,320 --> 01:24:21,679
+a RE esiste una macchina di Turing che
+
+1777
+01:24:21,679 --> 01:24:23,679
+lo accetta, quindi è in grado di dire di
+
+1778
+01:24:23,679 --> 01:24:26,480
+sì in tempo finito. Per il no non
+
+1779
+01:24:26,480 --> 01:24:30,440
+abbiamo garanzie. Ok?
+
+1780
+01:24:30,440 --> 01:24:34,199
+Se L soprassegnato appartiene ad RE,
+
+1781
+01:24:34,199 --> 01:24:36,480
+allora esiste un'altra macchina di
+
+1782
+01:24:36,480 --> 01:24:39,080
+Touring
+
+1783
+01:24:39,080 --> 01:24:42,440
+ML soprasegnato che è in grado di
+
+1784
+01:24:42,440 --> 01:24:45,480
+rispondere. Sì. Ok? In tempo finito per
+
+1785
+01:24:45,480 --> 01:24:48,360
+L soprasegnato. Eh, L soprasegnato però
+
+1786
+01:24:48,360 --> 01:24:51,920
+è il complemento di L. Ok? Allora, noi
+
+1787
+01:24:51,920 --> 01:24:55,280
+facciamo così,
+
+1788
+01:24:55,360 --> 01:24:58,320
+le infiliamo in una macchinona, in una
+
+1789
+01:24:58,320 --> 01:25:02,560
+macchina più grossa che prende l'input e
+
+1790
+01:25:02,560 --> 01:25:04,800
+lo copia in input a questa e input a
+
+1791
+01:25:04,800 --> 01:25:06,960
+questa qua.
+
+1792
+01:25:06,960 --> 01:25:09,719
+Ok?
+
+1793
+01:25:09,719 --> 01:25:11,880
+Questa è l'intuizione. Poi vi spiego
+
+1794
+01:25:11,880 --> 01:25:13,679
+come si fa.
+
+1795
+01:25:13,679 --> 01:25:16,119
+e quindi le randamo allo stesso momento.
+
+1796
+01:25:16,119 --> 01:25:18,560
+Ok? Facciamo partire ML ed ML
+
+1797
+01:25:18,560 --> 01:25:21,800
+soprasegnato e fanno un passo assieme
+
+1798
+01:25:21,800 --> 01:25:24,400
+come si fa comp facendo il prodotto
+
+1799
+01:25:24,400 --> 01:25:27,040
+cartesiano delle funzioni di transizione
+
+1800
+01:25:27,040 --> 01:25:29,320
+così si definisce. Ok? Quindi io riesco
+
+1801
+01:25:29,320 --> 01:25:31,800
+a simulare un passo di ml, un passo di
+
+1802
+01:25:31,800 --> 01:25:34,679
+ml sovrasegnato.
+
+1803
+01:25:34,679 --> 01:25:39,040
+Se la stringa W input
+
+1804
+01:25:39,040 --> 01:25:43,440
+appartiene a L, allora a un certo punto
+
+1805
+01:25:43,440 --> 01:25:47,600
+ML soprassegnato ML si fermerà e dirà di
+
+1806
+01:25:47,600 --> 01:25:53,480
+sì e quindi dico di sì pure io.
+
+1807
+01:25:55,400 --> 01:26:00,800
+Se W non appartiene ad L,
+
+1808
+01:26:00,800 --> 01:26:04,320
+allora appartiene a ML soprasegnato. Di
+
+1809
+01:26:04,320 --> 01:26:06,280
+conseguenza, questa macchina durante la
+
+1810
+01:26:06,280 --> 01:26:08,239
+sua simulazione a un certo punto dirà di
+
+1811
+01:26:08,239 --> 01:26:12,679
+sì. Ci dirà sì, è vero, W appartiene ad
+
+1812
+01:26:12,679 --> 01:26:15,159
+L soprasegnato. Io prendo quella
+
+1813
+01:26:15,159 --> 01:26:19,520
+risposta e la flippo e dico di no.
+
+1814
+01:26:19,520 --> 01:26:20,800
+È chiaro?
+
+1815
+01:26:20,800 --> 01:26:22,760
+Quindi, se un linguaggio è
+
+1816
+01:26:22,760 --> 01:26:25,280
+ricorsivamente numerabile e il suo
+
+1817
+01:26:25,280 --> 01:26:27,800
+complemento è ricorsivamente numerabile,
+
+1818
+01:26:27,800 --> 01:26:30,119
+allora in realtà sono entrambi
+
+1819
+01:26:30,119 --> 01:26:32,360
+ricorsivi, ok? Perché io posso combinare
+
+1820
+01:26:32,360 --> 01:26:34,040
+le macchine e mi piglio la prima
+
+1821
+01:26:34,040 --> 01:26:36,239
+risposta che arriva.
+
+1822
+01:26:36,239 --> 01:26:38,639
+Chiaro? Queste proprietà le utilizzeremo
+
+1823
+01:26:38,639 --> 01:26:40,840
+nelle prossime lezioni per stabilire
+
+1824
+01:26:40,840 --> 01:26:44,440
+dove si colloca Lu, dove si colloca LD,
+
+1825
+01:26:44,440 --> 01:26:48,040
+il complemento di LD, eccetera.
+
+1826
+01:26:48,040 --> 01:26:50,880
+Ok? Vediamo se devo fare altro, ma non
+
+1827
+01:26:50,880 --> 01:26:52,800
+credo. Ma quindi allora nel teorema
+
+1828
+01:26:52,800 --> 01:26:56,400
+quella L che appartiene a a R sarebbe
+
+1829
+01:26:56,400 --> 01:27:00,960
+una insieme tra L e N?
+
+1830
+01:27:00,960 --> 01:27:04,719
+No, L è un linguaggio.
+Sì, sì, sì.
+Ok.
+
+1831
+01:27:04,719 --> 01:27:08,480
+Però noi abbiamo che
+
+1832
+01:27:09,000 --> 01:27:12,440
+se L
+
+1833
+01:27:12,760 --> 01:27:15,239
+facciamo un esempio.
+Ah, no, ok. Qua
+
+1834
+01:27:15,239 --> 01:27:17,320
+c'ho
+
+1835
+01:27:17,320 --> 01:27:20,480
+R e qua c'ho R.
+
+1836
+01:27:20,480 --> 01:27:24,719
+Se io so che L sta qua ed L
+
+1837
+01:27:24,719 --> 01:27:27,800
+soprassegnato sta qua, allora in realtà
+
+1838
+01:27:27,800 --> 01:27:31,440
+stanno qua dentro.
+
+1839
+01:27:33,320 --> 01:27:35,600
+Questo è il senso del teorema. Cioè, se
+
+1840
+01:27:35,600 --> 01:27:37,119
+io ho che un linguaggio e il suo
+
+1841
+01:27:37,119 --> 01:27:38,639
+complemento sono ricorsivamente
+
+1842
+01:27:38,639 --> 01:27:40,440
+numerabili, allora in realtà sono
+
+1843
+01:27:40,440 --> 01:27:43,440
+ricorsivi.
+
+1844
+01:27:44,760 --> 01:27:46,560
+Chiaro?
+
+1845
+01:27:46,560 --> 01:27:50,119
+Ok, possiamo chiudere con questo.
+
+1846
+01:27:50,119 --> 01:27:55,040
+Alrgri, ma ce l'amo fatta.

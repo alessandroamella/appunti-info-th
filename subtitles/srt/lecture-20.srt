@@ -1,0 +1,6924 @@
+1
+00:00:01,760 --> 00:00:05,360
+No, perché non va?
+
+2
+00:00:12,519 --> 00:00:15,519
+Scusa.
+
+3
+00:00:42,320 --> 00:00:45,320
+Ok,
+
+4
+00:00:54,960 --> 00:00:58,399
+oggi vedremo vedremo vedremo un altro
+
+5
+00:00:58,399 --> 00:01:00,719
+problema NP completo,
+
+6
+00:01:00,719 --> 00:01:04,040
+così ne vediamo un bel po'. Ehm e poi
+
+7
+00:01:04,040 --> 00:01:06,360
+una definizione della classe NP che è
+
+8
+00:01:06,360 --> 00:01:10,320
+quella che più recentemente in genere si
+
+9
+00:01:10,320 --> 00:01:13,000
+fa riferimento a cui si fa riferimento
+
+10
+00:01:13,000 --> 00:01:18,320
+più recentemente. Eh, ok. Come sono and
+
+11
+00:01:18,320 --> 00:01:22,439
+come'è andata la lezione di venerdì?
+
+12
+00:01:22,720 --> 00:01:24,280
+È entrata in testa. Era difficile,
+
+13
+00:01:24,280 --> 00:01:27,280
+facile.
+
+14
+00:01:27,400 --> 00:01:31,400
+Intensa, eh. Ok, ok. era un po' intensa.
+
+15
+00:01:31,400 --> 00:01:33,119
+Ok, il mio suggerimento di nuovo per
+
+16
+00:01:33,119 --> 00:01:36,680
+quella lezione è riguardatevi il video
+
+17
+00:01:36,680 --> 00:01:38,040
+perché, insomma, ci sono un po' le
+
+18
+00:01:38,040 --> 00:01:39,759
+dimestrazioni da stare appresso, eh,
+
+19
+00:01:39,759 --> 00:01:42,240
+perché lì si deve un attimo capire
+
+20
+00:01:42,240 --> 00:01:44,520
+riduzioni eccetera. Oggi vedremo
+
+21
+00:01:44,520 --> 00:01:47,079
+un'altra riduzione tra le varie cose,
+
+22
+00:01:47,079 --> 00:01:49,079
+cioè vedremo riduzioni fino alla fine,
+
+23
+00:01:49,079 --> 00:01:51,399
+purtroppo per voi. Quindi ve l'avevo
+
+24
+00:01:51,399 --> 00:01:54,240
+detto che era un concetto che andava
+
+25
+00:01:54,240 --> 00:01:58,039
+andava digerito per bene. Eh sì,
+avrei
+
+26
+00:01:58,039 --> 00:02:03,240
+una domanda.
+Certo. Sì. E c'è una
+
+27
+00:02:03,240 --> 00:02:05,039
+struttura generale da seguire quando
+
+28
+00:02:05,039 --> 00:02:06,960
+siano queste dimostrazioni che abbiamo
+
+29
+00:02:06,960 --> 00:02:10,679
+fatto prima scorso, nel senso io devo
+
+30
+00:02:10,679 --> 00:02:15,360
+dimostrare che vabbè NP eh a parte NP
+
+31
+00:02:15,360 --> 00:02:17,879
+logicamente ci sarà in maniera triviale
+
+32
+00:02:17,879 --> 00:02:20,440
+poi NP
+no sempre
+
+33
+00:02:20,440 --> 00:02:22,440
+dipende dal problema quelli che vedremo
+
+34
+00:02:22,440 --> 00:02:25,319
+qua è super semplice ma c'è un problema
+
+35
+00:02:25,319 --> 00:02:27,640
+adesso, per esempio, sappiamo che primes
+
+36
+00:02:27,640 --> 00:02:30,120
+test di primalità è polinomiale Non ci
+
+37
+00:02:30,120 --> 00:02:32,640
+sono arrivati novedità che 2003
+
+38
+00:02:32,640 --> 00:02:35,560
+2002-2003 il lavoro che dice che mostra
+
+39
+00:02:35,560 --> 00:02:40,080
+che primes è eh
+
+40
+00:02:40,080 --> 00:02:42,879
+in P. Ok.
+
+41
+00:02:42,879 --> 00:02:45,080
+Ovviamente Primes è ok, ancora non
+
+42
+00:02:45,080 --> 00:02:48,440
+l'abbiamo fatto quella classe, però il
+
+43
+00:02:48,440 --> 00:02:50,599
+risultato precedente degli anni 70 era
+
+44
+00:02:50,599 --> 00:02:55,120
+che Primes fosse in NP e non era così
+
+45
+00:02:55,120 --> 00:02:57,640
+scontato, cioè il modo per dimostrare
+
+46
+00:02:57,640 --> 00:03:00,480
+che è NP è primo un numero si devono
+
+47
+00:03:00,480 --> 00:03:03,120
+fissare un sacco di cose, non è Quindi
+
+48
+00:03:03,120 --> 00:03:06,440
+quelli che vediamo noi sì sono semplici,
+
+49
+00:03:06,440 --> 00:03:08,720
+ma non è non è detto.
+Va bene, per
+
+50
+00:03:08,720 --> 00:03:12,840
+fortuna.
+Sì. Quindi, passando a NTD,
+
+51
+00:03:12,840 --> 00:03:17,239
+la dimostrazione. Sì.
+Ehm,
+
+52
+00:03:17,239 --> 00:03:19,560
+cioè generalmente noi diciamo eh
+
+53
+00:03:19,560 --> 00:03:21,000
+facciamo una dimostrazione come se fosse
+
+54
+00:03:21,000 --> 00:03:23,319
+un sotto insieme, quindi da una parte e
+
+55
+00:03:23,319 --> 00:03:24,760
+poi dall'altra, cioè noi abbiamo la
+
+56
+00:03:24,760 --> 00:03:28,239
+tesi, no? Allora, allora, la questione è
+
+57
+00:03:28,239 --> 00:03:29,959
+questa, non è che è come se fosse un
+
+58
+00:03:29,959 --> 00:03:32,400
+sottoinsieme.
+
+59
+00:03:32,400 --> 00:03:34,439
+Quando noi
+
+60
+00:03:34,439 --> 00:03:36,400
+mostriamo una riduzione, noi dobbiamo
+
+61
+00:03:36,400 --> 00:03:38,920
+mostrare che esiste un algoritmo che
+
+62
+00:03:38,920 --> 00:03:40,959
+trasforma istanze s di un problema in
+
+63
+00:03:40,959 --> 00:03:42,640
+istanze s di un altro problema.
+
+64
+00:03:42,640 --> 00:03:45,840
+Supponiamo di ridurre A a B. Quando
+
+65
+00:03:45,840 --> 00:03:48,840
+mostriamo una riduzione da A, poi noi
+
+66
+00:03:48,840 --> 00:03:50,640
+dobbiamo dimostrare che cosa? che quella
+
+67
+00:03:50,640 --> 00:03:52,280
+riduzione, che è un algoritmo di
+
+68
+00:03:52,280 --> 00:03:53,879
+trasformazione
+
+69
+00:03:53,879 --> 00:03:56,040
+prende le istanze S di A e le trasforma
+
+70
+00:03:56,040 --> 00:03:58,920
+in istanze S di B. Prende istanze no di
+
+71
+00:03:58,920 --> 00:04:01,799
+A e le trasforma in istanze n B. Cioè
+
+72
+00:04:01,799 --> 00:04:04,200
+sono questi due pezzi che la
+
+73
+00:04:04,200 --> 00:04:06,640
+dimostrazione mostra. Ci fa vedere,
+
+74
+00:04:06,640 --> 00:04:08,200
+guarda che questo algoritmo non è che fa
+
+75
+00:04:08,200 --> 00:04:11,439
+le cose a Muzzo, prende sì, arriva sì,
+
+76
+00:04:11,439 --> 00:04:13,480
+prende no, arriva a no. oppure
+
+77
+00:04:13,480 --> 00:04:15,439
+equivalentemente, come spesso abbiamo
+
+78
+00:04:15,439 --> 00:04:18,479
+visto, è che se siamo arrivati a sì era
+
+79
+00:04:18,479 --> 00:04:21,120
+perché partivamo da sì, quindi non
+
+80
+00:04:21,120 --> 00:04:23,960
+succede mai che partendo da un'istanza
+
+81
+00:04:23,960 --> 00:04:25,919
+no, l'algoritmo vi produce un'istanza
+
+82
+00:04:25,919 --> 00:04:28,759
+sì.
+Quindi sicuramente due versi sono
+
+83
+00:04:28,759 --> 00:04:31,440
+sono per mostrare che le stanze sì del
+
+84
+00:04:31,440 --> 00:04:33,280
+problema A sono mappate su istanze sì
+
+85
+00:04:33,280 --> 00:04:36,039
+del problema B e le istanze no del
+
+86
+00:04:36,039 --> 00:04:38,280
+problema A sono mappate su stanze no del
+
+87
+00:04:38,280 --> 00:04:40,280
+problema B. Questi sono i due versi
+
+88
+00:04:40,280 --> 00:04:42,720
+della dimostrazione.
+
+89
+00:04:42,720 --> 00:04:45,960
+Eh, non è una questione di contenimento
+
+90
+00:04:45,960 --> 00:04:47,639
+di insiemi, come abbiamo visto in altre
+
+91
+00:04:47,639 --> 00:04:49,919
+circostanze. E questa cosa qua dobbiamo
+
+92
+00:04:49,919 --> 00:04:52,320
+dimostrare perché se vi ricordate la
+
+93
+00:04:52,320 --> 00:04:54,600
+definizione di riduzione noi abbiamo che
+
+94
+00:04:54,600 --> 00:05:00,120
+F è una riduzione dal problema Ama B. Se
+
+95
+00:05:00,120 --> 00:05:03,000
+date una stringa w
+
+96
+00:05:03,000 --> 00:05:07,720
+appartiene ad A, se è solo se
+
+97
+00:05:07,720 --> 00:05:11,120
+f appartiene a B. È quel se è solo se
+
+98
+00:05:11,120 --> 00:05:13,320
+che noi dimostriamo in due direzioni. È
+
+99
+00:05:13,320 --> 00:05:15,560
+lì inipo, c'è una doppia implicazione
+
+100
+00:05:15,560 --> 00:05:18,360
+logica ed è per quello abbiamo necessità
+
+101
+00:05:18,360 --> 00:05:21,919
+di fare una dimostrazione nei due versi.
+
+102
+00:05:21,919 --> 00:05:24,520
+Una l'unica domanda poi la faccio
+
+103
+00:05:24,520 --> 00:05:28,520
+cominciare
+tranquillo.
+E certe volte mi
+
+104
+00:05:28,520 --> 00:05:30,919
+sembra nel problemo
+
+105
+00:05:30,919 --> 00:05:33,919
+del verted cover comunque sembra che
+
+106
+00:05:33,919 --> 00:05:36,199
+quello precedente. Arriviamo a un punto
+
+107
+00:05:36,199 --> 00:05:38,360
+in cui nella dimostrazione noi abbiamo
+
+108
+00:05:38,360 --> 00:05:40,400
+ottenuti dei risultati e poi ci poniamo
+
+109
+00:05:40,400 --> 00:05:43,400
+la domanda o è suff sufficientemente
+
+110
+00:05:43,400 --> 00:05:46,199
+grande tipo del vertice cover oppure è
+
+111
+00:05:46,199 --> 00:05:48,840
+soddisfacbile ciò che abbiamo
+
+112
+00:05:48,840 --> 00:05:52,479
+dimostrato. Ok? Dipende dipendea
+
+113
+00:05:52,479 --> 00:05:55,000
+su quali problemi stiamo lavorando. Cioè
+
+114
+00:05:55,000 --> 00:05:58,440
+se io devo mostrare che ne so, che
+
+115
+00:05:58,440 --> 00:06:01,280
+arrivo o stavo partendo da un'istanza sì
+
+116
+00:06:01,280 --> 00:06:03,400
+di una formula buleana, allora le
+
+117
+00:06:03,400 --> 00:06:05,360
+istanze sì di formule buleane sono
+
+118
+00:06:05,360 --> 00:06:07,400
+formule soddisfacbili
+
+119
+00:06:07,400 --> 00:06:09,240
+perché noi dobbiamo mappare
+
+120
+00:06:09,240 --> 00:06:11,599
+sostanzialmente istanze sì del problema
+
+121
+00:06:11,599 --> 00:06:14,280
+A in istanze sì del problema B e istanze
+
+122
+00:06:14,280 --> 00:06:16,160
+no del problema A in istanze no del
+
+123
+00:06:16,160 --> 00:06:20,000
+problema B. Se il problema a parla di
+
+124
+00:06:20,000 --> 00:06:22,120
+formule buuleane, le stanze sì sono
+
+125
+00:06:22,120 --> 00:06:24,120
+formule soddisfacbili e le stanze no
+
+126
+00:06:24,120 --> 00:06:26,520
+sono formule insoddisfacbili.
+
+127
+00:06:26,520 --> 00:06:29,479
+Se il problema è qualcos'altro è tipo un
+
+128
+00:06:29,479 --> 00:06:32,840
+indipendent set, le stanze sì ci saranno
+
+129
+00:06:32,840 --> 00:06:35,360
+grafichi con independent set grossi e le
+
+130
+00:06:35,360 --> 00:06:37,199
+stanze no grafiche che non hanno
+
+131
+00:06:37,199 --> 00:06:39,160
+indipendent set grossi, ma dipende
+
+132
+00:06:39,160 --> 00:06:40,840
+sempre dal problema. L'altro potrebbe
+
+133
+00:06:40,840 --> 00:06:44,599
+essere vertex cover. Le stanze sì sono
+
+134
+00:06:44,599 --> 00:06:47,319
+grafi con vertex cover piccoli. Le
+
+135
+00:06:47,319 --> 00:06:49,520
+stanze no sono grafi che non hanno
+
+136
+00:06:49,520 --> 00:06:51,759
+vertex cover piccoli. Cioè se io vado
+
+137
+00:06:51,759 --> 00:06:55,000
+alla ricerca di un set di insiemi o vado
+
+138
+00:06:55,000 --> 00:06:56,840
+alla ricerca di una soddisfacilità di
+
+139
+00:06:56,840 --> 00:06:59,280
+formula, dipende sempre su quale
+
+140
+00:06:59,280 --> 00:07:01,319
+problema io sto ragionando. Se io devo
+
+141
+00:07:01,319 --> 00:07:02,919
+mostrare che un'istanza sì sia una
+
+142
+00:07:02,919 --> 00:07:04,680
+formula soddisfacibile, devo mostrare
+
+143
+00:07:04,680 --> 00:07:06,440
+che un'istanza sì è un grafo con una
+
+144
+00:07:06,440 --> 00:07:08,720
+certa proprietà. Oggi lo rivedremo di
+
+145
+00:07:08,720 --> 00:07:10,720
+nuovo, penso dopo la pausa. Vi faccio
+
+146
+00:07:10,720 --> 00:07:13,039
+un'altra riduzione in cui stavolta
+
+147
+00:07:13,039 --> 00:07:15,639
+avremo una formula e un grafo, quindi
+
+148
+00:07:15,639 --> 00:07:17,759
+andremo da una formula con una certa
+
+149
+00:07:17,759 --> 00:07:19,520
+proprietà a un grafo con una certa
+
+150
+00:07:19,520 --> 00:07:22,199
+proprietà. Una domanda stupida. Come
+
+151
+00:07:22,199 --> 00:07:26,360
+faccio a capire eh quali sono appunto
+
+152
+00:07:26,360 --> 00:07:28,039
+queste tipo di domande adattate al
+
+153
+00:07:28,039 --> 00:07:30,759
+problema specifico a priori? Cioè se io
+
+154
+00:07:30,759 --> 00:07:33,440
+riduco un problema ad un altro Sì. Ed è
+
+155
+00:07:33,440 --> 00:07:34,840
+un problema specifico che non ho mai
+
+156
+00:07:34,840 --> 00:07:36,840
+incontrato.
+Come faccio a capire che
+
+157
+00:07:36,840 --> 00:07:39,039
+devo utilizzare una specifica domanda
+
+158
+00:07:39,039 --> 00:07:40,440
+per capire se i risultati che ho
+
+159
+00:07:40,440 --> 00:07:42,240
+dimostrato sono effettivamente corretti?
+
+160
+00:07:42,240 --> 00:07:44,120
+Allora, la questione è che la domanda
+
+161
+00:07:44,120 --> 00:07:46,720
+che si deve porre è questo. Se io parto
+
+162
+00:07:46,720 --> 00:07:49,039
+da un'istanza del problema di partenza,
+
+163
+00:07:49,039 --> 00:07:53,120
+e questo è un un auditivo digitale, cioè
+
+164
+00:07:53,120 --> 00:07:54,639
+mi faccio la domanda dentro ed è
+
+165
+00:07:54,639 --> 00:07:56,479
+sufficientemente generico da poter
+
+166
+00:07:56,479 --> 00:07:58,759
+essere adattato a qualsiasi cosa. Se io
+
+167
+00:07:58,759 --> 00:08:01,240
+parto da un'istanza sì del problema di
+
+168
+00:08:01,240 --> 00:08:02,840
+partenza e a quel punto lo devo sapere
+
+169
+00:08:02,840 --> 00:08:05,919
+io che cos'è un'istanza sì, posso essere
+
+170
+00:08:05,919 --> 00:08:08,120
+certo che ho costru che la mia riduzione
+
+171
+00:08:08,120 --> 00:08:11,120
+costruisca un'istanza sì del problema di
+
+172
+00:08:11,120 --> 00:08:13,520
+arrivo e l'istanza sì del problema di
+
+173
+00:08:13,520 --> 00:08:15,639
+arrivo dipende dal problema di arrivo.
+
+174
+00:08:15,639 --> 00:08:17,360
+Ecco perché quando pensate alle
+
+175
+00:08:17,360 --> 00:08:19,639
+riduzioni dovete fare quello che insomma
+
+176
+00:08:19,639 --> 00:08:21,400
+quello che vi ho suggerito che io in
+
+177
+00:08:21,400 --> 00:08:23,400
+genere faccio. Mi scrivo da un lato qual
+
+178
+00:08:23,400 --> 00:08:25,039
+è il problema di partenza, dall'altro
+
+179
+00:08:25,039 --> 00:08:26,759
+qual è il problema di arrivo, poi mi
+
+180
+00:08:26,759 --> 00:08:28,639
+chiedo che cos'è un istanza del problema
+
+181
+00:08:28,639 --> 00:08:30,919
+di partenza, che cos'è unistanza del
+
+182
+00:08:30,919 --> 00:08:33,519
+problema di arrivo e poi mi chiedo che
+
+183
+00:08:33,519 --> 00:08:35,959
+cos'è un'istanza sì del problema di
+
+184
+00:08:35,959 --> 00:08:38,719
+partenza, che cos'è un'istanza sì del
+
+185
+00:08:38,719 --> 00:08:41,519
+problema di arrivo, che cos'è un'istanza
+
+186
+00:08:41,519 --> 00:08:44,039
+no del problema di partenza? Che cos'è
+
+187
+00:08:44,039 --> 00:08:46,480
+un'istanza, no, del problema di arrivo.
+
+188
+00:08:46,480 --> 00:08:48,240
+Una volta che c'ho questa descrizione
+
+189
+00:08:48,240 --> 00:08:50,200
+esplicita, io a volte sui problemi più
+
+190
+00:08:50,200 --> 00:08:52,040
+sofisticati, quando devo fare riduzioni
+
+191
+00:08:52,040 --> 00:08:54,000
+più intricate, cioè io me lo scrivo a
+
+192
+00:08:54,000 --> 00:08:58,040
+parole, stanza, sì, esiste, bla bla bla.
+
+193
+00:08:58,040 --> 00:09:00,640
+Per esempio, no, io quando ho iniziato
+
+194
+00:09:00,640 --> 00:09:03,200
+la mia carriera lavoravo su teoria dei
+
+195
+00:09:03,200 --> 00:09:06,240
+giochi. Le istanze, sì, di quei problemi
+
+196
+00:09:06,240 --> 00:09:08,440
+erano giochi nelle quali c'erano
+
+197
+00:09:08,440 --> 00:09:10,839
+strategie vincenti o cose del genere e
+
+198
+00:09:10,839 --> 00:09:13,000
+quindi che cos'era una stanza? Sì, un
+
+199
+00:09:13,000 --> 00:09:15,519
+modo di distribuire la ricchezza fra i
+
+200
+00:09:15,519 --> 00:09:18,040
+giocatori tale che bla cè. Quindi erano
+
+201
+00:09:18,040 --> 00:09:20,200
+cose un po' distante dalla formula
+
+202
+00:09:20,200 --> 00:09:22,480
+buleana di partenza e per essere sicuro
+
+203
+00:09:22,480 --> 00:09:24,399
+di non perdermene per strada io me le
+
+204
+00:09:24,399 --> 00:09:26,240
+scrivevo. Cioè questo è quello che vi
+
+205
+00:09:26,240 --> 00:09:29,959
+suggerisco. Scrivete la cosa perché
+
+206
+00:09:29,959 --> 00:09:34,360
+quando la vedete scritta è più semplice.
+
+207
+00:09:34,360 --> 00:09:37,920
+Grazie.
+Nulla.
+
+208
+00:09:37,920 --> 00:09:41,480
+Allora, allora
+
+209
+00:09:42,200 --> 00:09:44,760
+come procediamo? Procediamo così.
+
+210
+00:09:44,760 --> 00:09:48,240
+Quindi, vediamo prima una definizione
+
+211
+00:09:48,240 --> 00:09:50,800
+differente della classe NP, poi vediamo
+
+212
+00:09:50,800 --> 00:09:54,440
+un altro un altro problema NP completo
+
+213
+00:09:54,440 --> 00:09:56,880
+che probabilmente già conoscete. Sì,
+
+214
+00:09:56,880 --> 00:09:59,920
+l'abbiamo visto e oggi dimostriamo che è
+
+215
+00:09:59,920 --> 00:10:04,240
+NP completo. Alrght, so definizione di
+
+216
+00:10:04,240 --> 00:10:05,880
+classe NP. Da quello che abbiamo visto
+
+217
+00:10:05,880 --> 00:10:10,120
+dagli esercizi fatti
+
+218
+00:10:10,120 --> 00:10:11,880
+la volta scorsa, come diceva il nostro
+
+219
+00:10:11,880 --> 00:10:13,360
+collega, non era molto difficile
+
+220
+00:10:13,360 --> 00:10:15,000
+dimostrare che un certo problema fosse
+
+221
+00:10:15,000 --> 00:10:17,760
+in NP. Sostanzialmente che facevamo?
+
+222
+00:10:17,760 --> 00:10:22,279
+Dato unistanza per rispondere sìamente.
+
+223
+00:10:24,640 --> 00:10:27,279
+Sì. E poiamo
+
+224
+00:10:27,279 --> 00:10:29,959
+che c'era assolutamente
+
+225
+00:10:29,959 --> 00:10:32,440
+Sì, sì, sì, sì, sì. Cioè quello che noi
+
+226
+00:10:32,440 --> 00:10:35,920
+facciamo in genere per i problemi NP è
+
+227
+00:10:35,920 --> 00:10:37,880
+un gess
+
+228
+00:10:37,880 --> 00:10:39,399
+polinomiale, perché ovviamente la
+
+229
+00:10:39,399 --> 00:10:41,240
+macchina non è che può perdere tempo, la
+
+230
+00:10:41,240 --> 00:10:42,399
+macchina deve lavorare in tempo
+
+231
+00:10:42,399 --> 00:10:43,800
+polinomiale, quindi non è che possiamo
+
+232
+00:10:43,800 --> 00:10:46,920
+gessare il mondo, possiamo ghessare un
+
+233
+00:10:46,920 --> 00:10:49,839
+una cosa piccolina, una cosa che è
+
+234
+00:10:49,839 --> 00:10:52,120
+polinomialmente più grossa dell'input.
+
+235
+00:10:52,120 --> 00:10:54,040
+In genere finora abbiamo visto dei guess
+
+236
+00:10:54,040 --> 00:10:56,040
+che erano più piccoli dell'input, ma in
+
+237
+00:10:56,040 --> 00:10:58,279
+linea di principio possiamo guessare
+
+238
+00:10:58,279 --> 00:11:00,399
+cose più grandi dell'input, l'importante
+
+239
+00:11:00,399 --> 00:11:02,680
+è che sia polinomiale, ok? Dopodiché c'è
+
+240
+00:11:02,680 --> 00:11:05,399
+un check, anche questo fattibile in
+
+241
+00:11:05,399 --> 00:11:08,440
+tempo polinomiale, tale per cui poi
+
+242
+00:11:08,440 --> 00:11:10,160
+siamo in grado di rispondere sì. Un
+
+243
+00:11:10,160 --> 00:11:12,040
+risultato interessante che però non
+
+244
+00:11:12,040 --> 00:11:14,680
+vedremo è che si può dimostrare che
+
+245
+00:11:14,680 --> 00:11:17,079
+questo check in realtà può essere molto
+
+246
+00:11:17,079 --> 00:11:19,440
+più semplice di polinomiale. È una cosa
+
+247
+00:11:19,440 --> 00:11:21,480
+che si può descrivere in logica del
+
+248
+00:11:21,480 --> 00:11:23,880
+primo ordine, insomma, il test che si fa
+
+249
+00:11:23,880 --> 00:11:26,279
+dopo è una cosa estremamente semplice,
+
+250
+00:11:26,279 --> 00:11:28,040
+un risultato carino, però troppo
+
+251
+00:11:28,040 --> 00:11:31,560
+intricato, non lo vedremo. Ehm, quindi,
+
+252
+00:11:31,560 --> 00:11:33,480
+cioè, quello che possiamo pensare è che
+
+253
+00:11:33,480 --> 00:11:36,040
+praticamente tutti sti problemi in NP
+
+254
+00:11:36,040 --> 00:11:37,600
+noi li abbiamo sempre risolti allo
+
+255
+00:11:37,600 --> 00:11:39,360
+stesso modo.
+
+256
+00:11:39,360 --> 00:11:41,240
+am qualcosa,
+
+257
+00:11:41,240 --> 00:11:44,079
+cerchiamo quel qualcosa, ok? E tutto ciò
+
+258
+00:11:44,079 --> 00:11:46,760
+deve essere fatto in terminoniale.
+
+259
+00:11:46,760 --> 00:11:49,720
+Però ve la ricordate la definizione che
+
+260
+00:11:49,720 --> 00:11:54,160
+noi abbiamo usato della classe NP?
+
+261
+00:11:59,120 --> 00:12:02,600
+NP. Eh,
+
+262
+00:12:03,320 --> 00:12:05,639
+la scrivo io
+
+263
+00:12:05,639 --> 00:12:07,760
+time.
+
+264
+00:12:07,760 --> 00:12:11,920
+Eh, no. l'unione
+yes yes yes è l'unione
+
+265
+00:12:11,920 --> 00:12:17,760
+su c magiore 1 di n time
+
+266
+00:12:17,760 --> 00:12:20,880
+di n^ c. Ok? Questa era la definizione
+
+267
+00:12:20,880 --> 00:12:24,880
+di di np. Ok? E vi ricordate che cos'è
+
+268
+00:12:24,880 --> 00:12:27,880
+nc?
+
+269
+00:12:34,440 --> 00:12:36,680
+Chi è? L'insieme
+
+270
+00:12:36,680 --> 00:12:38,880
+insieme
+Attenzione attenzione l'insieme
+
+271
+00:12:38,880 --> 00:12:42,000
+dei
+dei linguaggi
+dei linguaggi sì
+per
+
+272
+00:12:42,000 --> 00:12:44,760
+cui esiste una macchina
+
+273
+00:12:44,760 --> 00:12:48,399
+non determin
+non deterministica
+che ha
+
+274
+00:12:48,399 --> 00:12:51,360
+un algoritmo che determina che
+che li
+
+275
+00:12:51,360 --> 00:12:54,720
+decide
+che li decide
+in tempo big o dna
+
+276
+00:12:54,720 --> 00:12:57,519
+la c. Ok, chiaro?
+
+277
+00:12:57,519 --> 00:13:00,040
+Again, end time è l'insieme dei
+
+278
+00:13:00,040 --> 00:13:02,079
+linguaggi, ragazzi. Vi ricordo che
+
+279
+00:13:02,079 --> 00:13:05,920
+endime, NP, Pono tutte classi di
+
+280
+00:13:05,920 --> 00:13:08,800
+problemi di decisione, ok? I problemi di
+
+281
+00:13:08,800 --> 00:13:11,279
+calcolo là non ce ne stanno perché i
+
+282
+00:13:11,279 --> 00:13:13,839
+problemi di calcolo hanno classi a parte
+
+283
+00:13:13,839 --> 00:13:16,320
+che non forse vedremo alla fine
+
+284
+00:13:16,320 --> 00:13:18,440
+functional classes, però al momento non
+
+285
+00:13:18,440 --> 00:13:20,600
+ne abbiamo visti.
+
+286
+00:13:20,600 --> 00:13:23,000
+Quindi end time è l'insieme delle
+
+287
+00:13:23,000 --> 00:13:25,839
+classi, l'insieme dei linguaggi decisi
+
+288
+00:13:25,839 --> 00:13:27,560
+da macchine di touring non
+
+289
+00:13:27,560 --> 00:13:31,560
+deterministiche in tempo big o dall. Ok?
+
+290
+00:13:31,560 --> 00:13:34,399
+In questa definizione
+
+291
+00:13:34,399 --> 00:13:37,040
+la macchina di touring, no? che risolve,
+
+292
+00:13:37,040 --> 00:13:39,720
+che decide questo certo linguaggio. I
+
+293
+00:13:39,720 --> 00:13:42,240
+guess li può fare quando vuole o è
+
+294
+00:13:42,240 --> 00:13:46,000
+costretto a farli all'inizio?
+
+295
+00:13:48,519 --> 00:13:51,480
+Quando vuole. Ok? Cioè la definizione di
+
+296
+00:13:51,480 --> 00:13:53,920
+questi linguaggi e delle macchine che li
+
+297
+00:13:53,920 --> 00:13:56,279
+risolvono. Non è che ci dice "Guarda, è
+
+298
+00:13:56,279 --> 00:13:57,720
+l'insieme di tutti i linguaggi per i
+
+299
+00:13:57,720 --> 00:14:00,240
+quali puoi fare guess and check e via".
+
+300
+00:14:00,240 --> 00:14:02,279
+No, la definizione che abbiamo dato è
+
+301
+00:14:02,279 --> 00:14:04,120
+l'insieme dei linguaggi decidibili da
+
+302
+00:14:04,120 --> 00:14:05,959
+macchine di Touring non deterministiche
+
+303
+00:14:05,959 --> 00:14:07,800
+in tempo polinomiale e che fanno quello
+
+304
+00:14:07,800 --> 00:14:10,040
+che gli gira, cioè la macchina il non
+
+305
+00:14:10,040 --> 00:14:11,480
+determinismo lo può usare pure alla
+
+306
+00:14:11,480 --> 00:14:15,320
+fine, ok? Eppure
+
+307
+00:14:15,320 --> 00:14:19,240
+in tutti gli esempi che abbiamo visto,
+
+308
+00:14:19,240 --> 00:14:22,560
+abbiamo sempre notato che ste cose, sti
+
+309
+00:14:22,560 --> 00:14:25,079
+linguaggi si risolvono sempre facendo un
+
+310
+00:14:25,079 --> 00:14:28,160
+guess preliminare e un check successivo.
+
+311
+00:14:28,160 --> 00:14:31,199
+Ok? Allora, quello che noi ci chiediamo
+
+312
+00:14:31,199 --> 00:14:35,639
+è: "Ma è solo un caso o tutti i
+
+313
+00:14:35,639 --> 00:14:38,839
+linguaggi di NP possono essere decisi in
+
+314
+00:14:38,839 --> 00:14:41,560
+questo modo? Cioè che il guess lo porto
+
+315
+00:14:41,560 --> 00:14:43,959
+all'inizio e poi faccio una fase di
+
+316
+00:14:43,959 --> 00:14:46,759
+check. Oppure ci sono linguaggi strani
+
+317
+00:14:46,759 --> 00:14:50,320
+di NP tale per cui
+
+318
+00:14:50,320 --> 00:14:53,399
+il gess necessità di farlo più in là nel
+
+319
+00:14:53,399 --> 00:14:56,480
+calcolo. Questa è la cosa. Ok?
+
+320
+00:14:56,480 --> 00:14:59,600
+Allora, a valle di questa considerazione
+
+321
+00:14:59,600 --> 00:15:02,959
+in realtà possiamo addivenire a quella
+
+322
+00:15:02,959 --> 00:15:05,920
+che sui testi recenti di complessità
+
+323
+00:15:05,920 --> 00:15:08,440
+computazionale, tipo se leggete
+
+324
+00:15:08,440 --> 00:15:10,360
+sull'Opcroft questa cosa non è
+
+325
+00:15:10,360 --> 00:15:14,440
+riportata, però ci sta sul Aurora che vi
+
+326
+00:15:14,440 --> 00:15:16,759
+ho segnalato credo pure sul Zippser, ma
+
+327
+00:15:16,759 --> 00:15:19,240
+non ne sono sicuro. I testi più recenti
+
+328
+00:15:19,240 --> 00:15:20,920
+di complessità computazionale
+
+329
+00:15:20,920 --> 00:15:22,880
+definiscono la classe NP in un modo
+
+330
+00:15:22,880 --> 00:15:24,399
+diverso rispetto a quello che abbiamo
+
+331
+00:15:24,399 --> 00:15:26,959
+visto. Perché? Qual è l'ingippo?
+
+332
+00:15:26,959 --> 00:15:29,959
+L'ingipo della nostra definizione è che
+
+333
+00:15:29,959 --> 00:15:31,839
+noi stiamo basando la definizione di
+
+334
+00:15:31,839 --> 00:15:33,680
+questa classe su una macchina che non
+
+335
+00:15:33,680 --> 00:15:36,399
+c'è. Questo è il problema. Noi abbiamo i
+
+336
+00:15:36,399 --> 00:15:38,680
+linguaggi in NP, i linguaggi decidibili
+
+337
+00:15:38,680 --> 00:15:40,319
+in tempo polinomiali da macchine non
+
+338
+00:15:40,319 --> 00:15:42,519
+deterministiche che nessuno sarà mai in
+
+339
+00:15:42,519 --> 00:15:46,480
+grado di costruire. Ok? E quindi
+
+340
+00:15:46,480 --> 00:15:48,319
+i teorici hanno detto, "Ok, magari
+
+341
+00:15:48,319 --> 00:15:50,079
+questa definizione non è che è proprio
+
+342
+00:15:50,079 --> 00:15:52,000
+furbissima, possiamo provare a
+
+343
+00:15:52,000 --> 00:15:55,759
+inventarne un'altra qualcosa che faccia
+
+344
+00:15:55,759 --> 00:15:58,680
+riferimento a
+
+345
+00:15:58,680 --> 00:16:01,279
+altro, cioè vogliamo toglierci dalle
+
+346
+00:16:01,279 --> 00:16:03,560
+scatole ste macchine non deterministiche
+
+347
+00:16:03,560 --> 00:16:05,399
+perché queste macchine non
+
+348
+00:16:05,399 --> 00:16:06,920
+deterministiche
+
+349
+00:16:06,920 --> 00:16:11,519
+non le costruiremo mai." Prego.
+
+350
+00:16:13,639 --> 00:16:16,880
+Qualcosa che abbiamo già
+in che senso?
+
+351
+00:16:16,880 --> 00:16:19,399
+Cioè nel senso anche questi dovessare
+
+352
+00:16:19,399 --> 00:16:21,800
+assumiamo di poter risolvere già in
+
+353
+00:16:21,800 --> 00:16:23,560
+memoria
+
+354
+00:16:23,560 --> 00:16:25,240
+che avreato.
+
+355
+00:16:25,240 --> 00:16:29,160
+Sì, c'è una definizione
+
+356
+00:16:29,160 --> 00:16:32,160
+DNP in questo modo che non mi ricordo
+
+357
+00:16:32,160 --> 00:16:34,399
+come si chiama. Non è non è oracolo, è
+
+358
+00:16:34,399 --> 00:16:37,480
+un'altra cosa, però sì, una cosa simile
+
+359
+00:16:37,480 --> 00:16:40,600
+c'è. Ok? Advice con advice, cioè noi
+
+360
+00:16:40,600 --> 00:16:42,680
+abbiamo l'advice che si materializza in
+
+361
+00:16:42,680 --> 00:16:44,880
+memoria eccetera e di fatto la
+
+362
+00:16:44,880 --> 00:16:47,880
+definizione che noi possiamo mettere in
+
+363
+00:16:47,880 --> 00:16:52,120
+atto è questa qui. Ok?
+
+364
+00:16:52,120 --> 00:16:56,800
+Allora, vi ricordo che sigma
+
+365
+00:16:56,800 --> 00:16:59,680
+è il nostro alfabeto,
+
+366
+00:16:59,680 --> 00:17:02,120
+sigma star è l'insieme di tutte le
+
+367
+00:17:02,120 --> 00:17:07,039
+stringhe binarie sul nostro alfabeto.
+
+368
+00:17:07,280 --> 00:17:10,600
+una relazione binaria
+
+369
+00:17:10,600 --> 00:17:15,720
+R è su sigma star è semplicemente il
+
+370
+00:17:15,720 --> 00:17:18,400
+sottoinsieme, no,
+
+371
+00:17:18,400 --> 00:17:21,839
+del prodotto cartesiano di sigma star
+
+372
+00:17:21,839 --> 00:17:24,760
+per sigma star, ok? Quindi che cos'è R?
+
+373
+00:17:24,760 --> 00:17:28,439
+R è un insieme di coppie, ok? Quindi una
+
+374
+00:17:28,439 --> 00:17:31,080
+relazione binaria, sto solamente dando
+
+375
+00:17:31,080 --> 00:17:34,240
+nomi, eh
+
+376
+00:17:34,240 --> 00:17:38,160
+una relazione binaria
+
+377
+00:17:38,160 --> 00:17:41,919
+è su sigma star è semplicemente un
+
+378
+00:17:41,919 --> 00:17:44,600
+insieme di possibili coppie di stringhe
+
+379
+00:17:44,600 --> 00:17:48,320
+provenienti da sigma star. Ok?
+
+380
+00:17:48,320 --> 00:17:49,840
+Allora, quello che noi vogliamo
+
+381
+00:17:49,840 --> 00:17:52,440
+catturare è sostanzialmente questa
+
+382
+00:17:52,440 --> 00:17:55,200
+intuizione. L'intuizione
+
+383
+00:17:55,200 --> 00:17:57,760
+è questo, cioè nei nostri problemi che
+
+384
+00:17:57,760 --> 00:18:00,640
+abbiamo visto, no, della classe NP, noi
+
+385
+00:18:00,640 --> 00:18:03,120
+facevamo questo gess, dopodiché facevamo
+
+386
+00:18:03,120 --> 00:18:04,840
+un check
+
+387
+00:18:04,840 --> 00:18:06,760
+e noi che cosa gessavamo?
+
+388
+00:18:06,760 --> 00:18:10,320
+Sostanzialmente noi gessavamo
+
+389
+00:18:10,320 --> 00:18:13,440
+la prova che è l'istanza che avevamo in
+
+390
+00:18:13,440 --> 00:18:17,480
+input. È un'istanza. Sì. Ok. questa cosa
+
+391
+00:18:17,480 --> 00:18:20,200
+che gessiamo, questa prova che noi
+
+392
+00:18:20,200 --> 00:18:21,840
+gessiamo, che è l'istanza che abbiamo in
+
+393
+00:18:21,840 --> 00:18:24,480
+input, è un'istanza sì, noi lo chiamiamo
+
+394
+00:18:24,480 --> 00:18:27,200
+certificato. È un certificato che ci
+
+395
+00:18:27,200 --> 00:18:30,480
+certifica che una certa istanza è
+
+396
+00:18:30,480 --> 00:18:33,000
+un'istanza sì. Ok? Allora, quello che
+
+397
+00:18:33,000 --> 00:18:35,559
+noi faremo ora è combinare questa idea
+
+398
+00:18:35,559 --> 00:18:38,760
+del certificato all'interno di questa
+
+399
+00:18:38,760 --> 00:18:42,400
+nozione di relazione binaria e vedremo
+
+400
+00:18:42,400 --> 00:18:44,679
+che relazione
+
+401
+00:18:44,679 --> 00:18:49,159
+NP si può definire anche in un altro
+
+402
+00:18:49,159 --> 00:18:53,320
+modo. Ok?
+
+403
+00:18:53,840 --> 00:18:57,880
+Alright. Quindi la nostra macchina
+
+404
+00:18:57,880 --> 00:18:59,679
+che fa la nostra macchina non
+
+405
+00:18:59,679 --> 00:19:02,159
+deterministica in genere? che siamo un
+
+406
+00:19:02,159 --> 00:19:04,520
+certificato.
+
+407
+00:19:04,520 --> 00:19:08,520
+Questo certificato non può essere grosso
+
+408
+00:19:08,520 --> 00:19:10,919
+perché non abbiamo tempo di ghessare un
+
+409
+00:19:10,919 --> 00:19:13,799
+certificato più grosso di polinomiale.
+
+410
+00:19:13,799 --> 00:19:15,360
+Quindi noi diciamo che questo
+
+411
+00:19:15,360 --> 00:19:18,799
+certificato è conciso.
+
+412
+00:19:18,799 --> 00:19:21,960
+Dopodiché, dopo aver gessato questo
+
+413
+00:19:21,960 --> 00:19:25,559
+certificato conciso, la macchina che fa?
+
+414
+00:19:25,559 --> 00:19:28,520
+fa un test per verificare la correttezza
+
+415
+00:19:28,520 --> 00:19:30,799
+del certificato. Quanto tempo ci spreca
+
+416
+00:19:30,799 --> 00:19:35,039
+a testare il certificato?
+
+417
+00:19:36,520 --> 00:19:38,360
+tempo polinomiale e quindi noi diciamo
+
+418
+00:19:38,360 --> 00:19:41,760
+che questo certificato è polinomialmente
+
+419
+00:19:41,760 --> 00:19:45,600
+verificabile. Quindi
+
+420
+00:19:45,600 --> 00:19:48,600
+cheessiamo
+
+421
+00:19:51,679 --> 00:19:54,919
+un certificato
+
+422
+00:19:56,280 --> 00:19:59,280
+conciso.
+
+423
+00:20:00,640 --> 00:20:03,640
+Verifichiamo
+
+424
+00:20:06,880 --> 00:20:10,120
+in tempo
+
+425
+00:20:10,400 --> 00:20:13,400
+polinomiale
+
+426
+00:20:15,159 --> 00:20:19,919
+la veridicità verità
+
+427
+00:20:19,919 --> 00:20:23,799
+del certificato.
+
+428
+00:20:25,919 --> 00:20:28,880
+Quindi, sostanzialmente quello che
+
+429
+00:20:28,880 --> 00:20:30,520
+abbiamo fatto negli esempi della
+
+430
+00:20:30,520 --> 00:20:33,760
+settimana scorsa, noi
+
+431
+00:20:33,760 --> 00:20:36,400
+siiamo un certificato conciso è un
+
+432
+00:20:36,400 --> 00:20:37,679
+certificato che deve essere
+
+433
+00:20:37,679 --> 00:20:40,280
+polinomialmente verificabile. Ok? Queste
+
+434
+00:20:40,280 --> 00:20:42,840
+sono le due proprietà del certificato
+
+435
+00:20:42,840 --> 00:20:44,600
+che noi gessavamo con le nostre
+
+436
+00:20:44,600 --> 00:20:47,640
+macchine. Quello che noi vogliamo andare
+
+437
+00:20:47,640 --> 00:20:49,200
+a
+
+438
+00:20:49,200 --> 00:20:53,640
+mostrare è che i linguaggi NP,
+
+439
+00:20:53,640 --> 00:20:57,320
+a parte essere quelli
+
+440
+00:20:57,320 --> 00:20:59,320
+per i quali esiste una macchina non
+
+441
+00:20:59,320 --> 00:21:01,120
+deterministica che li decide in tempo
+
+442
+00:21:01,120 --> 00:21:03,880
+polinomiale, i linguaggi NP sono quei
+
+443
+00:21:03,880 --> 00:21:05,880
+linguaggi, quello che vogliamo arrivare
+
+444
+00:21:05,880 --> 00:21:08,919
+a mostrare, sono i linguaggi NP, sono
+
+445
+00:21:08,919 --> 00:21:13,240
+quei linguaggi le cui istanze si
+
+446
+00:21:13,240 --> 00:21:16,400
+ammettono certificati concisi e
+
+447
+00:21:16,400 --> 00:21:19,080
+polinomialmente verificabili. Ok? Questa
+
+448
+00:21:19,080 --> 00:21:22,640
+è la cosa. Quindi noi vogliamo spostare
+
+449
+00:21:22,640 --> 00:21:24,799
+la nostra attenzione a un tipo di
+
+450
+00:21:24,799 --> 00:21:26,200
+computazione di macchina non
+
+451
+00:21:26,200 --> 00:21:28,279
+deterministica in cui la fase di gess
+
+452
+00:21:28,279 --> 00:21:31,919
+avviene tutta all'inizio.
+
+453
+00:21:32,559 --> 00:21:35,559
+Ok?
+
+454
+00:21:36,039 --> 00:21:38,240
+Quindi questa è la nostra intuizione
+
+455
+00:21:38,240 --> 00:21:40,080
+sulle macchine, il fatto che noi
+
+456
+00:21:40,080 --> 00:21:41,880
+gessiamo un certificato e poi lo
+
+457
+00:21:41,880 --> 00:21:45,919
+verifichiamo. Giochiamo adesso su
+
+458
+00:21:45,919 --> 00:21:50,919
+la nozione di relazione. Ok?
+
+459
+00:21:50,919 --> 00:21:54,279
+Quindi abbiamo una relazione che è un
+
+460
+00:21:54,279 --> 00:21:57,600
+sottoinsieme del prodotto cartesiano
+
+461
+00:21:57,600 --> 00:22:00,919
+delle stringhe.
+
+462
+00:22:02,039 --> 00:22:08,159
+Quindi noi avremo che una coppia X y
+
+463
+00:22:09,360 --> 00:22:13,720
+che appartiene a R.
+
+464
+00:22:16,200 --> 00:22:20,760
+Noi diciamo che R
+
+465
+00:22:20,760 --> 00:22:24,480
+è polinomialmente
+
+466
+00:22:24,679 --> 00:22:27,679
+polinomialmente
+
+467
+00:22:33,760 --> 00:22:35,279
+se
+
+468
+00:22:35,279 --> 00:22:38,200
+la taglia di Y
+
+469
+00:22:38,200 --> 00:22:40,880
+è bound
+
+470
+00:22:40,880 --> 00:22:44,120
+dalla taglia di X.
+
+471
+00:22:44,120 --> 00:22:49,679
+per al eh elevato a un certo esponente C
+
+472
+00:22:49,679 --> 00:22:52,080
+fissato.
+
+473
+00:22:52,080 --> 00:22:54,880
+Ok? Quindi noi diciamo che è una
+
+474
+00:22:54,880 --> 00:22:58,080
+relazione fra stringhe,
+
+475
+00:22:58,080 --> 00:23:00,559
+una relazione binaria fra stringhe,
+
+476
+00:23:00,559 --> 00:23:02,960
+quindi sono coppie x y. Diamo questo
+
+477
+00:23:02,960 --> 00:23:06,760
+nome, la chiamiamo polinomialmente
+
+478
+00:23:06,760 --> 00:23:10,240
+se la taglia delle stringhe
+
+479
+00:23:10,240 --> 00:23:14,440
+in seconda posizione è limitata da un
+
+480
+00:23:14,440 --> 00:23:16,679
+polinomio della taglia della stringa in
+
+481
+00:23:16,679 --> 00:23:19,200
+prima posizione. Ok? Quindi noi
+
+482
+00:23:19,200 --> 00:23:22,120
+semplicemente stiamo dicendo che R è una
+
+483
+00:23:22,120 --> 00:23:25,159
+relazione polinomialmente bilanciata se
+
+484
+00:23:25,159 --> 00:23:28,919
+le stringhe da nel parte destra della
+
+485
+00:23:28,919 --> 00:23:30,440
+coppia
+
+486
+00:23:30,440 --> 00:23:31,960
+in seconda posizione della coppia non
+
+487
+00:23:31,960 --> 00:23:34,480
+sono troppo più grosse delle stringhe in
+
+488
+00:23:34,480 --> 00:23:37,840
+prima posizione. Ok? Quindi r è
+
+489
+00:23:37,840 --> 00:23:40,039
+polinomialmente
+
+490
+00:23:40,039 --> 00:23:44,279
+se la taglia di quello che appare qui
+
+491
+00:23:44,279 --> 00:23:48,039
+non eccede un polinomio della stringa in
+
+492
+00:23:48,039 --> 00:23:52,600
+prima posizione. Ok? è giusto un nome.
+
+493
+00:23:52,600 --> 00:23:57,000
+R è polinomialmente
+
+494
+00:23:57,000 --> 00:24:00,000
+polinomialmente
+
+495
+00:24:01,880 --> 00:24:03,930
+decidibile
+
+496
+00:24:03,930 --> 00:24:06,000
+[Musica]
+
+497
+00:24:06,000 --> 00:24:07,880
+se
+
+498
+00:24:07,880 --> 00:24:09,600
+r
+
+499
+00:24:09,600 --> 00:24:14,000
+si può decidere
+
+500
+00:24:14,640 --> 00:24:17,720
+in tempo
+
+501
+00:24:17,720 --> 00:24:20,360
+polinomiale.
+
+502
+00:24:22,320 --> 00:24:23,919
+deterministico
+
+503
+00:24:23,919 --> 00:24:26,919
+deterministico.
+
+504
+00:24:28,520 --> 00:24:32,600
+Ok? Quindi r è polinomialmente
+
+505
+00:24:32,600 --> 00:24:35,240
+decidibile
+
+506
+00:24:35,240 --> 00:24:37,840
+se si può decidere in tempo polinomiale
+
+507
+00:24:37,840 --> 00:24:40,840
+deterministico. Quando diciamo che R si
+
+508
+00:24:40,840 --> 00:24:42,520
+decide in tempo polinomiale
+
+509
+00:24:42,520 --> 00:24:45,000
+deterministico, significa che data una
+
+510
+00:24:45,000 --> 00:24:48,120
+coppia XY
+
+511
+00:24:48,120 --> 00:24:51,200
+codificata in un alfabeto opportuno bla
+
+512
+00:24:51,200 --> 00:24:52,919
+bla, noi in tempo polinomiale
+
+513
+00:24:52,919 --> 00:24:54,840
+deterministico siamo in grado di dire se
+
+514
+00:24:54,840 --> 00:24:56,760
+quella coppia appartiene alla relazione
+
+515
+00:24:56,760 --> 00:24:59,679
+o meno. Ok? Perché vi ripeto, R è
+
+516
+00:24:59,679 --> 00:25:01,799
+semplicemente un setto insieme di tutte
+
+517
+00:25:01,799 --> 00:25:06,080
+le possibili coppie di stringhe.
+
+518
+00:25:06,080 --> 00:25:07,960
+Basi di dati relazionali le avete fatte,
+
+519
+00:25:07,960 --> 00:25:12,039
+no? Le tabelle sono relazioni. Quindi
+
+520
+00:25:12,039 --> 00:25:14,640
+quando noi diciamo sono relazioni
+
+521
+00:25:14,640 --> 00:25:16,679
+ennarie, invece noi qua ci interessiamo
+
+522
+00:25:16,679 --> 00:25:18,679
+di relazioni binarie, cioè relazioni
+
+523
+00:25:18,679 --> 00:25:21,480
+tabelle con due colonne. Ok? Usiamo la
+
+524
+00:25:21,480 --> 00:25:23,799
+metafora del database, forse vi torna
+
+525
+00:25:23,799 --> 00:25:26,520
+più utile. Una relazione binaria che
+
+526
+00:25:26,520 --> 00:25:29,520
+cos'è una tabella? due colonna. Una
+
+527
+00:25:29,520 --> 00:25:32,240
+relazione è polinomialmente
+
+528
+00:25:32,240 --> 00:25:35,520
+se le stringhe in seconda colonna no
+
+529
+00:25:35,520 --> 00:25:38,159
+sono bounded da un polinomio delle
+
+530
+00:25:38,159 --> 00:25:41,360
+stringhe in prima colonna. Ok?
+
+531
+00:25:41,360 --> 00:25:43,159
+Diciamo che la relazione è
+
+532
+00:25:43,159 --> 00:25:45,880
+polinomialmente decidibile se esiste una
+
+533
+00:25:45,880 --> 00:25:48,320
+macchina di touring deterministica che
+
+534
+00:25:48,320 --> 00:25:50,080
+in tempo polinomiale è in grado di
+
+535
+00:25:50,080 --> 00:25:52,480
+stabilire se questa coppia fa parte di
+
+536
+00:25:52,480 --> 00:25:55,159
+questa tabella. Ok? Adesso, ovviamente,
+
+537
+00:25:55,159 --> 00:25:57,880
+se questa tabella è di taglia finita, il
+
+538
+00:25:57,880 --> 00:25:59,480
+gioco è facile, la rappresentiamo,
+
+539
+00:25:59,480 --> 00:26:02,080
+eccetera, noi dobbiamo pensarla in
+
+540
+00:26:02,080 --> 00:26:04,480
+maniera un po' più estese. R è come una
+
+541
+00:26:04,480 --> 00:26:07,159
+tabella infinita e quindi ci serve un
+
+542
+00:26:07,159 --> 00:26:09,360
+algoritmo per stabilire se una certa
+
+543
+00:26:09,360 --> 00:26:14,159
+coppia sta in quella tabella o
+
+544
+00:26:14,640 --> 00:26:20,440
+quello che noi mostreremo è questo.
+
+545
+00:26:25,159 --> 00:26:28,159
+Teorema
+
+546
+00:26:32,880 --> 00:26:37,320
+sia L un linguaggio.
+
+547
+00:26:41,200 --> 00:26:46,120
+abbiamo che L appartiene a NP
+
+548
+00:26:46,120 --> 00:26:50,520
+se e solo se
+
+549
+00:26:50,520 --> 00:26:53,480
+esiste
+
+550
+00:26:53,480 --> 00:26:57,200
+una relazione
+
+551
+00:26:58,440 --> 00:27:01,440
+binaria
+
+552
+00:27:01,880 --> 00:27:04,080
+RL
+
+553
+00:27:04,080 --> 00:27:06,399
+polinomialmente
+
+554
+00:27:06,399 --> 00:27:08,680
+bilanciata polinomialmente
+
+555
+00:27:08,680 --> 00:27:11,709
+[Musica]
+
+556
+00:27:12,080 --> 00:27:15,080
+bilanciata
+
+557
+00:27:16,640 --> 00:27:20,320
+è decidibile
+
+558
+00:27:22,120 --> 00:27:24,480
+tale che
+
+559
+00:27:24,480 --> 00:27:30,880
+per ogni stringa W vi appartiene eh No,
+
+560
+00:27:30,880 --> 00:27:34,520
+ve la scrivo meglio,
+
+561
+00:27:34,880 --> 00:27:37,200
+tale
+
+562
+00:27:38,440 --> 00:27:42,919
+L è l'insieme delle stringhe
+
+563
+00:27:42,919 --> 00:27:45,039
+X
+
+564
+00:27:45,039 --> 00:27:47,120
+tali che
+
+565
+00:27:47,120 --> 00:27:53,120
+X Y appartiene a R.
+
+566
+00:27:53,120 --> 00:27:54,640
+Ok?
+
+567
+00:27:54,640 --> 00:27:57,559
+Adesso vediamo un po' che cosa significa
+
+568
+00:27:57,559 --> 00:27:59,840
+questa cosa qui.
+
+569
+00:27:59,840 --> 00:28:03,960
+Ripetiamo la metafora del del database
+
+570
+00:28:03,960 --> 00:28:06,640
+che forse è utile. Una relazione
+
+571
+00:28:06,640 --> 00:28:08,519
+polinomialmente decid una relazione
+
+572
+00:28:08,519 --> 00:28:11,880
+binaria è una tabella a due colonne. In
+
+573
+00:28:11,880 --> 00:28:13,159
+questo caso è una tabella un po'
+
+574
+00:28:13,159 --> 00:28:15,200
+particolare perché è una tabella
+
+575
+00:28:15,200 --> 00:28:18,399
+infinita. Ok?
+
+576
+00:28:18,399 --> 00:28:22,159
+Questa relazione ci dice polinomialmente
+
+577
+00:28:22,159 --> 00:28:26,840
+se la il contenuto della seconda colonna
+
+578
+00:28:26,840 --> 00:28:30,080
+non è è polinomialmente limitato in
+
+579
+00:28:30,080 --> 00:28:32,279
+taglia dalla taglia del contenuto in
+
+580
+00:28:32,279 --> 00:28:33,919
+prima colonna. Ok? Quindi non possiamo
+
+581
+00:28:33,919 --> 00:28:36,000
+avere cose enormi in seconda colonna.
+
+582
+00:28:36,000 --> 00:28:39,200
+Esiste una costante Csa
+
+583
+00:28:39,200 --> 00:28:41,000
+quanto più grande può essere il
+
+584
+00:28:41,000 --> 00:28:43,760
+contenuto della seconda colonna.
+
+585
+00:28:43,760 --> 00:28:45,240
+Si dice che questa relazione è
+
+586
+00:28:45,240 --> 00:28:48,080
+polinomialmente decidibile se data una
+
+587
+00:28:48,080 --> 00:28:50,080
+coppia stabilire se quella coppia
+
+588
+00:28:50,080 --> 00:28:52,039
+appartiene alla tabella lo si può fare
+
+589
+00:28:52,039 --> 00:28:56,399
+in tempo polinomiale deterministico. Ok?
+
+590
+00:28:56,399 --> 00:28:58,440
+Sia L un linguaggio, questo è il
+
+591
+00:28:58,440 --> 00:29:01,600
+significato di questo teorema. Sia L un
+
+592
+00:29:01,600 --> 00:29:05,000
+linguaggio. Il linguaggio L appartiene
+
+593
+00:29:05,000 --> 00:29:10,039
+ad NP se solo se esiste una relazione
+
+594
+00:29:10,039 --> 00:29:13,279
+binaria RL. polinomialmente decidibile,
+
+595
+00:29:13,279 --> 00:29:17,159
+polinomialmente bilanciata tale che
+
+596
+00:29:17,159 --> 00:29:21,120
+in prima colonna ci stanno tutte e solo
+
+597
+00:29:21,120 --> 00:29:23,799
+le stringhe del linguaggio, ok? Cioè,
+
+598
+00:29:23,799 --> 00:29:26,559
+quindi L è un linguaggio in NP se noi
+
+599
+00:29:26,559 --> 00:29:30,840
+siamo in grado di inventarci una tabella
+
+600
+00:29:30,840 --> 00:29:33,440
+tale per cui le stringhe in prima
+
+601
+00:29:33,440 --> 00:29:36,159
+colonna sono le stringhe del linguaggio
+
+602
+00:29:36,159 --> 00:29:38,240
+e in seconda colonna che abbiamo? In
+
+603
+00:29:38,240 --> 00:29:40,799
+seconda colonna abbiamo i certificati,
+
+604
+00:29:40,799 --> 00:29:43,440
+ok? Adesso mostreremo che queste y sono
+
+605
+00:29:43,440 --> 00:29:46,960
+i certificati. Chiaro? Ripeto, una volta
+
+606
+00:29:46,960 --> 00:29:48,559
+che definiamo una relazione
+
+607
+00:29:48,559 --> 00:29:49,919
+polinomialmente decidibile,
+
+608
+00:29:49,919 --> 00:29:52,399
+polinomialmente bilanciata,
+
+609
+00:29:52,399 --> 00:29:55,480
+noi abbiamo che un linguaggio L
+
+610
+00:29:55,480 --> 00:29:58,720
+appartiene ad NP. Se è solo se è
+
+611
+00:29:58,720 --> 00:30:01,880
+possibile inventarci una relazione
+
+612
+00:30:01,880 --> 00:30:05,799
+binaria in cui in prima colonna abbiamo
+
+613
+00:30:05,799 --> 00:30:07,320
+le stringhe che appartengono al
+
+614
+00:30:07,320 --> 00:30:09,559
+linguaggio e in seconda colonna abbiamo
+
+615
+00:30:09,559 --> 00:30:11,600
+i certificati.
+
+616
+00:30:11,600 --> 00:30:13,080
+che provano che questa stringa
+
+617
+00:30:13,080 --> 00:30:15,080
+appartiene al linguaggio. Tutto qua.
+
+618
+00:30:15,080 --> 00:30:17,159
+Prego.
+Scusa, ripetere la definizione di
+
+619
+00:30:17,159 --> 00:30:19,120
+certificato?
+Certificato. Ok. Il
+
+620
+00:30:19,120 --> 00:30:21,159
+certificato è un'intuizione. Adesso
+
+621
+00:30:21,159 --> 00:30:23,360
+andiamo a vedere che cos'è il
+
+622
+00:30:23,360 --> 00:30:24,880
+certificato. L'intuizione che abbiamo
+
+623
+00:30:24,880 --> 00:30:27,919
+dato prima è ciò che la macchina di
+
+624
+00:30:27,919 --> 00:30:30,200
+touring non deterministica
+
+625
+00:30:30,200 --> 00:30:31,880
+gessa
+
+626
+00:30:31,880 --> 00:30:35,120
+per rispondere sì su una certa istanza.
+
+627
+00:30:35,120 --> 00:30:37,640
+Quella è l'intuizione di certificato.
+
+628
+00:30:37,640 --> 00:30:39,159
+Andremo a vedere che questa
+
+629
+00:30:39,159 --> 00:30:42,840
+caratterizzazione di NP
+
+630
+00:30:42,840 --> 00:30:45,320
+ha i certificati
+
+631
+00:30:45,320 --> 00:30:47,799
+in questa posizione qua, cioè questa Y
+
+632
+00:30:47,799 --> 00:30:50,039
+sono i certificati sostanzialmente. Un
+
+633
+00:30:50,039 --> 00:30:52,640
+esempio.
+
+634
+00:30:52,640 --> 00:30:54,880
+Ah,
+
+635
+00:30:54,880 --> 00:30:58,480
+indipendent set.
+
+636
+00:31:01,840 --> 00:31:04,279
+Independence set, ad esempio, è
+
+637
+00:31:04,279 --> 00:31:07,279
+l'insieme
+
+638
+00:31:08,559 --> 00:31:11,279
+delle stringhe
+
+639
+00:31:11,279 --> 00:31:15,559
+X tali che
+
+640
+00:31:15,559 --> 00:31:23,000
+X Y appartiene a R independent set
+
+641
+00:31:24,200 --> 00:31:31,360
+e R di indipendent set è una relazione
+
+642
+00:31:31,519 --> 00:31:33,039
+relazione
+
+643
+00:31:33,039 --> 00:31:36,039
+binaria
+
+644
+00:31:37,159 --> 00:31:39,519
+in cui
+
+645
+00:31:39,519 --> 00:31:44,960
+x è una coppia
+
+646
+00:31:44,960 --> 00:31:47,519
+grafo numero
+
+647
+00:31:47,519 --> 00:31:52,039
+e y è un independent set. Riuscite a
+
+648
+00:31:52,039 --> 00:31:54,799
+vedere? Sì,
+
+649
+00:31:54,799 --> 00:32:00,000
+è fuori. Ok. R è una relazione binaria
+
+650
+00:32:00,000 --> 00:32:02,799
+in cui X è l'istanza che sono le coppie
+
+651
+00:32:02,799 --> 00:32:05,679
+grafo numero e Y è il certificato. Che
+
+652
+00:32:05,679 --> 00:32:07,720
+cos'è il certificato? È un indipendenzet
+
+653
+00:32:07,720 --> 00:32:11,679
+di taglia K, ok? Un indipendet di taglia
+
+654
+00:32:11,679 --> 00:32:14,760
+e qua viene una schifezza taglia K. Ok?
+
+655
+00:32:14,760 --> 00:32:16,960
+Ve ne menziono un altro. Quali altri
+
+656
+00:32:16,960 --> 00:32:20,279
+problemi? Soddisfacibilità. Ok? Perché
+
+657
+00:32:20,279 --> 00:32:22,639
+il linguaggio della soddisfacilità delle
+
+658
+00:32:22,639 --> 00:32:25,760
+formule buuleane è un linguaggio in P?
+
+659
+00:32:25,760 --> 00:32:30,279
+Perché noi possiamo definire la
+
+660
+00:32:30,279 --> 00:32:32,480
+relazione polinomialmente decidibile e
+
+661
+00:32:32,480 --> 00:32:35,320
+polinomialmente bilanciata per SAT in
+
+662
+00:32:35,320 --> 00:32:41,240
+cui X sono formule buleane e Y è un
+
+663
+00:32:41,240 --> 00:32:44,320
+assegnamento di verità. Ok? Questa
+
+664
+00:32:44,320 --> 00:32:46,919
+relazione è polinomialmente?
+
+665
+00:32:46,919 --> 00:32:49,760
+Sì. i certificati, le y sono per giunta
+
+666
+00:32:49,760 --> 00:32:52,919
+più corte del della formula. È
+
+667
+00:32:52,919 --> 00:32:55,840
+polinomialmente verificabile decidibile,
+
+668
+00:32:55,840 --> 00:32:57,799
+sì, perché una volta che le abbiamo fare
+
+669
+00:32:57,799 --> 00:33:00,080
+il test quell'assegnamento
+
+670
+00:33:00,080 --> 00:33:03,960
+verifica la formula è facile. Ok? Questo
+
+671
+00:33:03,960 --> 00:33:05,320
+ovviamente ancora non lo abbiamo
+
+672
+00:33:05,320 --> 00:33:10,120
+dimostrato, lo dobbiamo dimostrare. Ok?
+
+673
+00:33:10,120 --> 00:33:14,320
+Quanto manca? Un po'.
+
+674
+00:33:14,320 --> 00:33:17,320
+Alrg.
+
+675
+00:33:22,519 --> 00:33:28,360
+No, andiamo dal verso facile prima.
+
+676
+00:33:30,399 --> 00:33:32,760
+Allora, quello che noi vogliamo mostrare
+
+677
+00:33:32,760 --> 00:33:35,399
+ora è che
+
+678
+00:33:35,399 --> 00:33:38,360
+sia l
+
+679
+00:33:38,360 --> 00:33:41,559
+un linguaggio
+
+680
+00:33:43,120 --> 00:33:45,639
+tale che
+
+681
+00:33:45,639 --> 00:33:48,639
+esiste
+
+682
+00:33:48,880 --> 00:33:52,799
+una relazione
+
+683
+00:33:52,880 --> 00:33:54,919
+RL
+
+684
+00:33:54,919 --> 00:33:56,519
+polinomialmente
+
+685
+00:33:56,519 --> 00:33:57,840
+decidibile
+
+686
+00:33:57,840 --> 00:34:01,559
+è bilanciata
+
+687
+00:34:02,320 --> 00:34:05,200
+tale che
+
+688
+00:34:05,200 --> 00:34:09,440
+L = XY
+
+689
+00:34:09,520 --> 00:34:13,159
+appartiene a RL. Ok? Quindi stiamo
+
+690
+00:34:13,159 --> 00:34:16,399
+dimostrando questo verso della della
+
+691
+00:34:16,399 --> 00:34:19,000
+doppia applicazione logica. Adesso noi
+
+692
+00:34:19,000 --> 00:34:21,079
+vogliamo dimostrare che se L è un
+
+693
+00:34:21,079 --> 00:34:23,520
+linguaggio
+
+694
+00:34:23,520 --> 00:34:25,639
+sia L un linguaggio caratterizzato in
+
+695
+00:34:25,639 --> 00:34:28,359
+questo modo, cioè L è un linguaggio per
+
+696
+00:34:28,359 --> 00:34:31,679
+il quale esiste una relazione
+
+697
+00:34:31,679 --> 00:34:33,359
+polinomialmente decidibile,
+
+698
+00:34:33,359 --> 00:34:35,040
+polinomialmente bilanciata che
+
+699
+00:34:35,040 --> 00:34:36,679
+caratterizza il linguaggio, cioè una
+
+700
+00:34:36,679 --> 00:34:39,440
+relazione le cui stringhe
+
+701
+00:34:39,440 --> 00:34:41,200
+in prima colonna sono le stringhe del
+
+702
+00:34:41,200 --> 00:34:44,359
+linguaggio. Ok?
+
+703
+00:34:44,359 --> 00:34:47,119
+Vi ripeto, l'intuizione è istanza
+
+704
+00:34:47,119 --> 00:34:50,919
+certificato. Sì,
+
+705
+00:34:52,879 --> 00:34:55,879
+polinomialmente
+
+706
+00:34:56,839 --> 00:35:00,040
+polinomialmente decidibile e bilanciata
+
+707
+00:35:00,040 --> 00:35:05,359
+tale che funziona. Vogliamo mostrare
+
+708
+00:35:10,160 --> 00:35:15,800
+che L appartene a NP. Ok? Secondo voi un
+
+709
+00:35:15,800 --> 00:35:17,760
+linguaggio così definito, cioè un
+
+710
+00:35:17,760 --> 00:35:19,960
+linguaggio che ha una relazione
+
+711
+00:35:19,960 --> 00:35:21,440
+polinomialmente decidibile,
+
+712
+00:35:21,440 --> 00:35:23,760
+polinomialmente bilanciata, che lo
+
+713
+00:35:23,760 --> 00:35:26,800
+caratterizza, è un linguaggio che può
+
+714
+00:35:26,800 --> 00:35:28,440
+essere deciso in tempo polinomiale da
+
+715
+00:35:28,440 --> 00:35:29,599
+una macchina di touring non
+
+716
+00:35:29,599 --> 00:35:32,599
+deterministica.
+
+717
+00:35:32,640 --> 00:35:35,400
+Sì. Cosa deve fare questa macchina per
+
+718
+00:35:35,400 --> 00:35:38,920
+decidere lì?
+
+719
+00:35:41,079 --> 00:35:45,440
+Eh, ma prima che deve fa'?
+Indovinare un
+
+720
+00:35:45,440 --> 00:35:47,720
+certificato Y
+
+721
+00:35:47,720 --> 00:35:50,359
+e poi dopo verificare.
+Ok. Ok. Allora,
+
+722
+00:35:50,359 --> 00:35:53,800
+siccome ML, mettiamo le cose precise,
+
+723
+00:35:53,800 --> 00:35:58,280
+siccome ML è polinomialmente decidibile,
+
+724
+00:35:58,280 --> 00:36:00,720
+allora vuol dire che esiste una macchina
+
+725
+00:36:00,720 --> 00:36:03,560
+di Touring deterministica che in tempo
+
+726
+00:36:03,560 --> 00:36:06,599
+polinomiale è in grado di decidere RL.
+
+727
+00:36:06,599 --> 00:36:09,319
+Ok? il tempo polinomiale che data alla
+
+728
+00:36:09,319 --> 00:36:12,000
+coppia XY, quella macchina è in grado di
+
+729
+00:36:12,000 --> 00:36:15,160
+dire sì, questa coppia appartiene a Ll,
+
+730
+00:36:15,160 --> 00:36:18,599
+no, questa coppia non appartiene a RL.
+
+731
+00:36:18,599 --> 00:36:21,160
+Come fa una macchina di touring non
+
+732
+00:36:21,160 --> 00:36:24,599
+deterministica a decidere L? Semplice.
+
+733
+00:36:24,599 --> 00:36:29,359
+Dato X in input, gessa Y scrive Y
+
+734
+00:36:29,359 --> 00:36:32,079
+nastro. Quanto tempo ci mettiamo a
+
+735
+00:36:32,079 --> 00:36:36,160
+scrivere Y nastro?
+
+736
+00:36:38,240 --> 00:36:42,040
+in particolare quanto
+
+737
+00:36:44,240 --> 00:36:45,920
+eh
+
+738
+00:36:45,920 --> 00:36:51,760
+eh che è limitata come rispetto a ximo
+
+739
+00:36:53,040 --> 00:36:56,119
+cardinalità di x^
+lunghezza di x^ c.
+
+740
+00:36:56,119 --> 00:36:58,079
+Quella c è una costante che caratterizza
+
+741
+00:36:58,079 --> 00:36:59,520
+il linguaggio. Quindi la macchina la
+
+742
+00:36:59,520 --> 00:37:02,560
+prima cosa che fa? inizia a sparare cose
+
+743
+00:37:02,560 --> 00:37:07,040
+su nastro, scrive una y di lunghezza
+
+744
+00:37:07,040 --> 00:37:11,200
+pari a lunghezza di x^ c, ok? Scrive
+
+745
+00:37:11,200 --> 00:37:13,800
+questa cosa sul nastro, ok? Sul nastro,
+
+746
+00:37:13,800 --> 00:37:18,040
+quindi poi avremo che cosa? La coppia x
+
+747
+00:37:18,040 --> 00:37:19,560
+y.
+
+748
+00:37:19,560 --> 00:37:21,240
+Quindi deve essere lanciata una
+
+749
+00:37:21,240 --> 00:37:25,720
+procedura che data la coppia X y
+
+750
+00:37:25,720 --> 00:37:28,640
+stabilisce stabilisca se questa coppia
+
+751
+00:37:28,640 --> 00:37:32,640
+appartiene a RL o meno. Siccome RL è bil
+
+752
+00:37:32,640 --> 00:37:35,400
+polinomialmente decidibile,
+
+753
+00:37:35,400 --> 00:37:37,319
+allora
+
+754
+00:37:37,319 --> 00:37:39,000
+noi abbiamo che questa macchina di
+
+755
+00:37:39,000 --> 00:37:40,440
+touring non deterministica si
+
+756
+00:37:40,440 --> 00:37:42,920
+sostanzialmente fa quello che farebbe il
+
+757
+00:37:42,920 --> 00:37:46,839
+riconoscitore di RL. Ok? Quindi in tempo
+
+758
+00:37:46,839 --> 00:37:48,839
+polinomiale, il non deterministico,
+
+759
+00:37:48,839 --> 00:37:51,119
+siamo in grado di riconoscere L. Da cui,
+
+760
+00:37:51,119 --> 00:37:54,160
+se L è caratterizzato da una relazione
+
+761
+00:37:54,160 --> 00:37:56,079
+polinomialmente decidibile e
+
+762
+00:37:56,079 --> 00:37:58,720
+polinomialmente bilanciata. Bilanciata,
+
+763
+00:37:58,720 --> 00:38:01,440
+vi ricordo che y non è più grossa di x,
+
+764
+00:38:01,440 --> 00:38:03,040
+quindi la macchina non deterministica
+
+765
+00:38:03,040 --> 00:38:06,160
+sta y la può scrivere sul nastro, ok? in
+
+766
+00:38:06,160 --> 00:38:08,720
+tempo polinomiale.
+
+767
+00:38:08,720 --> 00:38:10,920
+Quindi se L è caratterizzata da una
+
+768
+00:38:10,920 --> 00:38:14,640
+relazione binaria in quel modo, allora
+
+769
+00:38:14,640 --> 00:38:16,920
+il linguaggio appartiene a NP secondo la
+
+770
+00:38:16,920 --> 00:38:18,720
+definizione classica che abbiamo dato
+
+771
+00:38:18,720 --> 00:38:20,680
+prima, che abbiamo dato nelle lezioni
+
+772
+00:38:20,680 --> 00:38:22,480
+passate. Cioè, ci sta una macchina non
+
+773
+00:38:22,480 --> 00:38:23,640
+deterministica che è in tempo
+
+774
+00:38:23,640 --> 00:38:26,160
+polinomiale.
+
+775
+00:38:26,160 --> 00:38:28,440
+Riconosci il linguaggio. Ok, veniamo
+
+776
+00:38:28,440 --> 00:38:31,200
+adesso alla parte più intricata della
+
+777
+00:38:31,200 --> 00:38:35,000
+dimostrazione. Ok.
+
+778
+00:38:36,240 --> 00:38:39,079
+sia L
+
+779
+00:38:39,079 --> 00:38:42,480
+un linguaggio
+
+780
+00:38:43,960 --> 00:38:47,560
+in NP.
+
+781
+00:38:47,560 --> 00:38:50,560
+Vogliamo
+
+782
+00:38:51,599 --> 00:38:54,599
+mostrare
+
+783
+00:38:55,400 --> 00:38:59,160
+che esiste
+
+784
+00:38:59,160 --> 00:39:00,920
+una
+
+785
+00:39:00,920 --> 00:39:03,920
+relazione
+
+786
+00:39:04,400 --> 00:39:08,359
+RL polinomialmente decidibile e
+
+787
+00:39:08,359 --> 00:39:09,880
+bilanciata
+
+788
+00:39:09,880 --> 00:39:15,800
+tale che L = XY
+
+789
+00:39:15,800 --> 00:39:18,240
+appartiene a RL. Quindi, che cosa
+
+790
+00:39:18,240 --> 00:39:21,760
+abbiamo qui? abbiamo che L è un
+
+791
+00:39:21,760 --> 00:39:26,839
+linguaggio in NP generico a questo punto
+
+792
+00:39:27,119 --> 00:39:31,599
+e noi vogliamo mostrare che L può essere
+
+793
+00:39:31,599 --> 00:39:34,359
+il linguaggio più disgraziato di NP, ma
+
+794
+00:39:34,359 --> 00:39:37,440
+potrà sempre essere deciso da una fase
+
+795
+00:39:37,440 --> 00:39:40,280
+iniziale di gas polinomiale seguito da
+
+796
+00:39:40,280 --> 00:39:41,960
+una fase di check, cioè può essere
+
+797
+00:39:41,960 --> 00:39:43,960
+caratterizzato da una relazione
+
+798
+00:39:43,960 --> 00:39:45,319
+polinomialmente decidibile e
+
+799
+00:39:45,319 --> 00:39:47,440
+polinomialmente bilanciata. Cioè la
+
+800
+00:39:47,440 --> 00:39:49,599
+macchina di Touring non deterministica
+
+801
+00:39:49,599 --> 00:39:52,520
+che riconosce Là
+
+802
+00:39:52,520 --> 00:39:55,359
+di fare gess nello stadio avanzato della
+
+803
+00:39:55,359 --> 00:39:57,359
+computazione. Può fare tutto all'inizio.
+
+804
+00:39:57,359 --> 00:39:59,160
+Ok?
+
+805
+00:39:59,160 --> 00:40:02,160
+Alrght
+
+806
+00:40:07,440 --> 00:40:11,440
+è un linguaggio in NP, che cosa possiamo
+
+807
+00:40:11,440 --> 00:40:15,359
+dire? Che esiste?
+
+808
+00:40:19,680 --> 00:40:24,520
+Sì, se L è in NP esiste
+
+809
+00:40:24,520 --> 00:40:28,319
+una non deterministicuring machine M che
+
+810
+00:40:28,319 --> 00:40:31,319
+decide
+
+811
+00:40:32,160 --> 00:40:35,400
+L in tempo
+
+812
+00:40:35,400 --> 00:40:38,400
+polinomiale.
+
+813
+00:40:39,040 --> 00:40:42,119
+Ok. Alright.
+
+814
+00:40:42,119 --> 00:40:43,839
+Vediamo la computazione di questa
+
+815
+00:40:43,839 --> 00:40:45,359
+macchina.
+
+816
+00:40:45,359 --> 00:40:51,160
+ricordo ID0, poi ci stava ID1,
+
+817
+00:40:51,160 --> 00:40:57,520
+ID 1 ad esempio. Poi qua abbiamo altro,
+
+818
+00:40:58,000 --> 00:41:00,280
+qui c'è altro ancora
+
+819
+00:41:00,280 --> 00:41:02,960
+e così via. Ok? Quindi la computazione
+
+820
+00:41:02,960 --> 00:41:05,400
+di questa macchina è caratterizzata da
+
+821
+00:41:05,400 --> 00:41:09,280
+questo computation 3. Chiaro?
+
+822
+00:41:09,280 --> 00:41:13,240
+Se la macchina lavora in tempo
+
+823
+00:41:13,240 --> 00:41:15,160
+polinomiale,
+
+824
+00:41:15,160 --> 00:41:18,119
+che cosa possiamo dire sulla lunghezza
+
+825
+00:41:18,119 --> 00:41:22,000
+dei branch di computazione?
+
+826
+00:41:23,960 --> 00:41:27,760
+quello più lungo che accetta la
+
+827
+00:41:27,760 --> 00:41:31,160
+attenzione attenzione. Quello più lungo,
+
+828
+00:41:31,160 --> 00:41:33,599
+indipendentemente se accetta o meno, il
+
+829
+00:41:33,599 --> 00:41:36,480
+branch di computazione più lungo
+è
+
+830
+00:41:36,480 --> 00:41:39,079
+polinomiale
+è polinomiale nella taglia
+
+831
+00:41:39,079 --> 00:41:41,880
+dell'input, ok? Cioè tutti questi branci
+
+832
+00:41:41,880 --> 00:41:44,800
+di computazione, il numero di step
+
+833
+00:41:44,800 --> 00:41:46,480
+partendo
+
+834
+00:41:46,480 --> 00:41:49,480
+dalla configurazione iniziale e che
+
+835
+00:41:49,480 --> 00:41:51,520
+arrivano alle foglie, cioè dove la
+
+836
+00:41:51,520 --> 00:41:54,760
+macchina si ferma e non processa oltre,
+
+837
+00:41:54,760 --> 00:41:58,400
+ha un numero di passi, diciamo che un
+
+838
+00:41:58,400 --> 00:42:02,079
+certo polinomio P1 di N, dove n è la
+
+839
+00:42:02,079 --> 00:42:07,040
+taglia del dell'input. Ok?
+
+840
+00:42:07,040 --> 00:42:09,359
+È chiaro? Quindi questa macchina
+
+841
+00:42:09,359 --> 00:42:11,400
+processa in tempo polinomiale significa
+
+842
+00:42:11,400 --> 00:42:13,599
+che fa al più un numero polinomiale di
+
+843
+00:42:13,599 --> 00:42:17,119
+passi in qualsiasi sia il suo brancio di
+
+844
+00:42:17,119 --> 00:42:19,000
+computazione. Supponiamo che questo
+
+845
+00:42:19,000 --> 00:42:23,800
+polinomio sia +1. Ok?
+
+846
+00:42:23,800 --> 00:42:26,400
+Benissimo.
+
+847
+00:42:26,400 --> 00:42:31,240
+Se la macchina lavora in tempo P1
+
+848
+00:42:31,240 --> 00:42:34,079
+polinomiale, no,
+
+849
+00:42:34,079 --> 00:42:37,559
+potrà mai scrivere su nastro qualcosa
+
+850
+00:42:37,559 --> 00:42:41,920
+che è gigantevolmente più grande?
+
+851
+00:42:41,920 --> 00:42:44,400
+No, perché?
+
+852
+00:42:44,400 --> 00:42:47,040
+Perché non c'è il tempo. Questa macchina
+
+853
+00:42:47,040 --> 00:42:51,119
+che fa un di n passi potrà scrivere sul
+
+854
+00:42:51,119 --> 00:42:55,640
+nastro P1 N cose. Ok? Quindi ogni
+
+855
+00:42:55,640 --> 00:42:58,280
+istantaneous description
+
+856
+00:42:58,280 --> 00:43:02,480
+sarà di taglia polinomiale.
+
+857
+00:43:02,480 --> 00:43:03,920
+Ok?
+
+858
+00:43:03,920 --> 00:43:07,520
+Ripeto, questa macchina processa in
+
+859
+00:43:07,520 --> 00:43:10,280
+tempo polinomiale il proprio input,
+
+860
+00:43:10,280 --> 00:43:13,599
+poiché lavora in tempo polinomiale, non
+
+861
+00:43:13,599 --> 00:43:16,520
+ha tempo per scrivere più cose di
+
+862
+00:43:16,520 --> 00:43:20,119
+polinomiale. Quindi ognuna di queste
+
+863
+00:43:20,119 --> 00:43:22,880
+istantaneous description avrà una
+
+864
+00:43:22,880 --> 00:43:25,280
+lunghezza
+
+865
+00:43:25,280 --> 00:43:26,880
+polinomiale
+
+866
+00:43:26,880 --> 00:43:29,920
+nella taglia dell'input, una sola, ok?
+
+867
+00:43:29,920 --> 00:43:35,240
+tipo ID1 oppure questa qua sotto ID5 per
+
+868
+00:43:35,240 --> 00:43:39,319
+dire avrà una taglia che è polinomiale
+
+869
+00:43:39,319 --> 00:43:41,640
+nella taglia dell'input iniziale perché
+
+870
+00:43:41,640 --> 00:43:43,559
+perché la macchina non ha il tempo di
+
+871
+00:43:43,559 --> 00:43:45,280
+scrivere
+
+872
+00:43:45,280 --> 00:43:47,839
+spazzatura, ok? Non ce l'ha il tempo di
+
+873
+00:43:47,839 --> 00:43:51,480
+scrivere più di polinomiali, ok? Allora,
+
+874
+00:43:51,480 --> 00:43:56,000
+guardiamo questa sequenza.
+
+875
+00:43:56,480 --> 00:44:00,079
+Noi sappiamo che c'è una computazione di
+
+876
+00:44:00,079 --> 00:44:02,319
+questa macchina
+
+877
+00:44:02,319 --> 00:44:07,640
+e supponiamo cambiamo colore
+
+878
+00:44:08,520 --> 00:44:16,480
+che questo qua sia il pat accettante.
+
+879
+00:44:17,119 --> 00:44:20,119
+Ok?
+
+880
+00:44:21,440 --> 00:44:24,440
+Noi possiamo listare la sequenza
+
+881
+00:44:24,440 --> 00:44:26,319
+dell'istantaneous description della
+
+882
+00:44:26,319 --> 00:44:28,640
+macchina da ID0 verso lo stato
+
+883
+00:44:28,640 --> 00:44:32,400
+accettante. Ok? Quindi abbiamo
+
+884
+00:44:32,400 --> 00:44:35,400
+ID0,
+
+885
+00:44:35,559 --> 00:44:37,760
+ID1,
+
+886
+00:44:37,760 --> 00:44:41,319
+poi magari veniva ID4 bla bla bla bla
+
+887
+00:44:41,319 --> 00:44:47,839
+bla bla IDK che è finale, ok?
+
+888
+00:44:49,440 --> 00:44:51,920
+Questa sequenza di instantaneous
+
+889
+00:44:51,920 --> 00:44:53,800
+description della macchina è
+
+890
+00:44:53,800 --> 00:44:56,079
+sostanzialmente
+
+891
+00:44:56,079 --> 00:45:01,559
+una prova del fatto che la stringa input
+
+892
+00:45:01,559 --> 00:45:04,319
+debba essere accettata
+
+893
+00:45:04,319 --> 00:45:06,480
+o no?
+
+894
+00:45:06,480 --> 00:45:09,200
+Ci chiediamo a questo punto, questa
+
+895
+00:45:09,200 --> 00:45:12,440
+sequenza qui, ok?
+
+896
+00:45:12,440 --> 00:45:15,200
+La nostra idea è usare questo come
+
+897
+00:45:15,200 --> 00:45:18,200
+certificato
+
+898
+00:45:18,680 --> 00:45:21,440
+perché costituisce la prova che la
+
+899
+00:45:21,440 --> 00:45:23,800
+macchina accetti. Cioè se io mostro la
+
+900
+00:45:23,800 --> 00:45:25,559
+sequenza di passi, guarda, questa è
+
+901
+00:45:25,559 --> 00:45:27,559
+un'istanza sì perché questa macchina di
+
+902
+00:45:27,559 --> 00:45:29,880
+Touring fa questi passi e alla fine dice
+
+903
+00:45:29,880 --> 00:45:31,760
+di sì. Quindi questa è la ragione per
+
+904
+00:45:31,760 --> 00:45:35,480
+cui questa è un'istanza sì. Ok?
+
+905
+00:45:35,480 --> 00:45:38,400
+Quante sono le istantaneous description
+
+906
+00:45:38,400 --> 00:45:41,800
+in questa sequenza?
+
+907
+00:45:44,400 --> 00:45:48,079
+Sì, sono P di 1 N, sono bounded da
+
+908
+00:45:48,079 --> 00:45:52,160
+questo. Ok. Quanto è lunga ognuna di
+
+909
+00:45:52,160 --> 00:45:54,119
+questa
+
+910
+00:45:54,119 --> 00:45:56,599
+istantaneous description?
+
+911
+00:45:56,599 --> 00:45:58,960
+Sempre al massimo polinomiale.
+
+912
+00:45:58,960 --> 00:46:01,480
+Sempre polinomiale. Chiamiamolo, boh,
+
+913
+00:46:01,480 --> 00:46:04,240
+P2.
+
+914
+00:46:04,240 --> 00:46:06,760
+Chiamiamo P2 la lunghezza di ognuna di
+
+915
+00:46:06,760 --> 00:46:08,760
+queste istantaneous description. Quindi
+
+916
+00:46:08,760 --> 00:46:11,040
+avremo che cosa?
+
+917
+00:46:11,040 --> 00:46:14,800
+un certificato costituito da un numero
+
+918
+00:46:14,800 --> 00:46:17,240
+polinomiale di istantaneous
+
+919
+00:46:17,240 --> 00:46:19,880
+descriptions,
+
+920
+00:46:19,880 --> 00:46:22,440
+ognuna delle quali ha lunghezza
+
+921
+00:46:22,440 --> 00:46:24,400
+polinomiale.
+
+922
+00:46:24,400 --> 00:46:27,599
+È chiaro? Quindi questo certificato
+
+923
+00:46:27,599 --> 00:46:32,440
+overall che taglia ha?
+
+924
+00:46:32,559 --> 00:46:36,559
+Sì, avrà una taglia P1n
+
+925
+00:46:36,559 --> 00:46:41,680
+P2N che è un polinomio. Ok?
+
+926
+00:46:41,680 --> 00:46:46,119
+Quindi noi ci siamo inventati
+
+927
+00:46:46,119 --> 00:46:49,640
+un una sorta di certificato per questo
+
+928
+00:46:49,640 --> 00:46:53,760
+linguaggio L generico che non è che va a
+
+929
+00:46:53,760 --> 00:46:56,400
+guardare la struttura del problema, cioè
+
+930
+00:46:56,400 --> 00:46:59,640
+qui non stiamo gessando nodi, non stiamo
+
+931
+00:46:59,640 --> 00:47:03,640
+ghessando colori, non stiamo gessando
+
+932
+00:47:03,640 --> 00:47:06,440
+assegnamenti di verità, eccetera. Il
+
+933
+00:47:06,440 --> 00:47:10,240
+certificato è la sequenza di passi che
+
+934
+00:47:10,240 --> 00:47:13,319
+una macchina che decide L
+
+935
+00:47:13,319 --> 00:47:15,520
+compie per dire di sì su una certa
+
+936
+00:47:15,520 --> 00:47:18,640
+istanza. Ok? Quindi ci dobbiamo come
+
+937
+00:47:18,640 --> 00:47:20,680
+prima cosa chiedere se questo
+
+938
+00:47:20,680 --> 00:47:23,200
+certificato sia sensato o meno. Poi
+
+939
+00:47:23,200 --> 00:47:25,680
+stabiliremo se è grande o piccolo e se
+
+940
+00:47:25,680 --> 00:47:29,160
+si verifica veloce o lento. Ok?
+
+941
+00:47:29,160 --> 00:47:33,480
+Prima domanda. Siccome questa cosa qua
+
+942
+00:47:33,480 --> 00:47:35,319
+deve andare a finire, noi dobbiamo
+
+943
+00:47:35,319 --> 00:47:39,359
+costruire un RL
+
+944
+00:47:39,920 --> 00:47:43,960
+in cui X sono le istanze del linguaggio
+
+945
+00:47:43,960 --> 00:47:47,559
+e Y è il certificato che X appartiene a
+
+946
+00:47:47,559 --> 00:47:51,319
+L. Se in Y ci andiamo a ficcare questo
+
+947
+00:47:51,319 --> 00:47:55,280
+certificato qui, è vero, no, che le
+
+948
+00:47:55,280 --> 00:47:57,599
+solamente
+
+949
+00:47:57,599 --> 00:48:00,839
+tutte e sole istanze CDL hanno un
+
+950
+00:48:00,839 --> 00:48:03,000
+certificato di questo tipo, cioè una
+
+951
+00:48:03,000 --> 00:48:05,000
+sequenza di passi di una macchina di
+
+952
+00:48:05,000 --> 00:48:08,480
+Touring che fa per dire di sì.
+
+953
+00:48:08,480 --> 00:48:12,040
+Sì, quindi il certificato è sensato. Ok?
+
+954
+00:48:12,040 --> 00:48:13,839
+Quindi in linea di principio noi
+
+955
+00:48:13,839 --> 00:48:16,760
+potremmo caratterizzare l'RL del
+
+956
+00:48:16,760 --> 00:48:19,880
+linguaggio L in questo modo in cui X è
+
+957
+00:48:19,880 --> 00:48:23,839
+l'istanza di del linguaggio e Y è la
+
+958
+00:48:23,839 --> 00:48:26,200
+sequenza di passi che la macchina di
+
+959
+00:48:26,200 --> 00:48:28,839
+Touring non deterministica M fa per dire
+
+960
+00:48:28,839 --> 00:48:33,760
+di sì sulla stringa X. Ok? Per come è
+
+961
+00:48:33,760 --> 00:48:36,640
+definito questo Y esiste solo per le
+
+962
+00:48:36,640 --> 00:48:39,200
+istanze C di N. Ok? Quindi questo
+
+963
+00:48:39,200 --> 00:48:42,200
+certificato ha senso. Ci chiediamo, il
+
+964
+00:48:42,200 --> 00:48:45,559
+certificato è conciso? Quando parliamo
+
+965
+00:48:45,559 --> 00:48:47,559
+di certificato conciso significa che la
+
+966
+00:48:47,559 --> 00:48:50,680
+taglia di questo certificato è un
+
+967
+00:48:50,680 --> 00:48:55,119
+polinomio della taglia di x. Ok?
+
+968
+00:48:55,119 --> 00:48:57,079
+Questi sono gli aggettivi che usiamo. Il
+
+969
+00:48:57,079 --> 00:49:00,960
+certificato è conciso, la relazione è
+
+970
+00:49:00,960 --> 00:49:03,799
+polinomialmente bilanciata, il
+
+971
+00:49:03,799 --> 00:49:05,960
+certificato è polinomialmente
+
+972
+00:49:05,960 --> 00:49:08,319
+verificabile, la relazione è
+
+973
+00:49:08,319 --> 00:49:11,640
+polinomialmente decidibile. Ok? Allora,
+
+974
+00:49:11,640 --> 00:49:14,319
+ci chiediamo, è vero, no, che questo
+
+975
+00:49:14,319 --> 00:49:17,440
+certificato è piccolo e conciso? Sì,
+
+976
+00:49:17,440 --> 00:49:20,119
+perché abbiamo una sequenza polinomiale
+
+977
+00:49:20,119 --> 00:49:22,599
+di instantaneous description, ognuna di
+
+978
+00:49:22,599 --> 00:49:25,760
+taglia polinomiale. Quindi questa y è
+
+979
+00:49:25,760 --> 00:49:29,079
+grande, è vero, però sempre un polinomio
+
+980
+00:49:29,079 --> 00:49:31,640
+è. Ok? Quindi questo certificato è
+
+981
+00:49:31,640 --> 00:49:35,040
+conciso da cui la relazione RL è una
+
+982
+00:49:35,040 --> 00:49:38,160
+relazione polinomialmente.
+
+983
+00:49:38,160 --> 00:49:40,720
+Ok?
+
+984
+00:49:40,720 --> 00:49:42,880
+È vero, no, che questo certificato è
+
+985
+00:49:42,880 --> 00:49:45,599
+polinomialmente verificabile? È vero che
+
+986
+00:49:45,599 --> 00:49:49,119
+in tempo polinomiale deterministico
+
+987
+00:49:49,119 --> 00:49:52,640
+siamo in grado di stabilire se questa
+
+988
+00:49:52,640 --> 00:49:54,720
+sequenza,
+
+989
+00:49:54,720 --> 00:49:57,200
+questo certificato che ci danno è una
+
+990
+00:49:57,200 --> 00:50:01,760
+sequenza sensata o meno.
+
+991
+00:50:06,040 --> 00:50:09,359
+Voci nuove.
+
+992
+00:50:12,280 --> 00:50:14,920
+Y no.
+
+993
+00:50:14,920 --> 00:50:17,119
+Sì,
+sì, perché è l'insieme di
+
+994
+00:50:17,119 --> 00:50:18,599
+instantaneous description fino a quel
+
+995
+00:50:18,599 --> 00:50:21,000
+punto.
+È la sequenza, non l'insieme, la
+
+996
+00:50:21,000 --> 00:50:22,839
+sequenza di instantaneous description
+
+997
+00:50:22,839 --> 00:50:25,319
+che arrivano fino in fondo. Ma lo posso
+
+998
+00:50:25,319 --> 00:50:27,559
+fare in tempo polinomale deterministico
+
+999
+00:50:27,559 --> 00:50:31,040
+o no? Questo check
+
+1000
+00:50:31,040 --> 00:50:35,079
+deterministico. Eh,
+
+1001
+00:50:37,599 --> 00:50:38,480
+ok.
+
+1002
+00:50:38,480 --> 00:50:42,240
+unazione all'altra verifichiamo se la se
+
+1003
+00:50:42,240 --> 00:50:45,359
+lo step è leg
+esattamente nel momento in
+
+1004
+00:50:45,359 --> 00:50:48,280
+cui abbiamo la sequenza della
+
+1005
+00:50:48,280 --> 00:50:50,319
+computazione della macchina non
+
+1006
+00:50:50,319 --> 00:50:51,839
+deterministica,
+
+1007
+00:50:51,839 --> 00:50:54,480
+il verificarne la correttezza non
+
+1008
+00:50:54,480 --> 00:50:56,480
+implica non richiede l'uso del
+
+1009
+00:50:56,480 --> 00:50:58,040
+nondeterminismo.
+
+1010
+00:50:58,040 --> 00:50:59,680
+Quello che noi dobbiamo semplicemente
+
+1011
+00:50:59,680 --> 00:51:02,640
+andare a verificare a coppie
+
+1012
+00:51:02,640 --> 00:51:08,160
+se questa ID è una mossa legale rispetto
+
+1013
+00:51:08,160 --> 00:51:10,920
+alla funzione di transizione di M che è
+
+1014
+00:51:10,920 --> 00:51:14,960
+fissata. È fissata per il linguaggio L,
+
+1015
+00:51:14,960 --> 00:51:17,440
+ok? Perché M è fissato. Quindi
+
+1016
+00:51:17,440 --> 00:51:21,319
+verifichiamo e verifichiamo questo, poi
+
+1017
+00:51:21,319 --> 00:51:24,119
+verifichiamo questo, questo e così via.
+
+1018
+00:51:24,119 --> 00:51:27,000
+Ok? E questo check si può fare in tempo
+
+1019
+00:51:27,000 --> 00:51:28,640
+polinomiale deterministico perché
+
+1020
+00:51:28,640 --> 00:51:30,359
+dobbiamo semplicemente andare a
+
+1021
+00:51:30,359 --> 00:51:33,319
+verificare che questa cosa sia legale
+
+1022
+00:51:33,319 --> 00:51:34,960
+secondo una funzione di transizione
+
+1023
+00:51:34,960 --> 00:51:39,040
+fissata. Ok? Quindi noi abbiamo
+
+1024
+00:51:39,040 --> 00:51:41,559
+e con questo ma adesso ci fermiamo un
+
+1025
+00:51:41,559 --> 00:51:45,480
+attimo. Noi abbiamo che cosa? che
+
+1026
+00:51:45,480 --> 00:51:48,559
+un linguaggio appartiene ad NP, se è
+
+1027
+00:51:48,559 --> 00:51:50,799
+solo se, è caratterizzabile da una
+
+1028
+00:51:50,799 --> 00:51:52,720
+funzione,
+
+1029
+00:51:52,720 --> 00:51:54,920
+da una relazione binaria polinomialmente
+
+1030
+00:51:54,920 --> 00:51:57,119
+decidibile e polinomialmente
+
+1031
+00:51:57,119 --> 00:51:59,599
+però all'inizio siamo partiti che con me
+
+1032
+00:51:59,599 --> 00:52:02,119
+che vi dicevo, oggi vedremo una nuova
+
+1033
+00:52:02,119 --> 00:52:04,799
+caratterizzazione di NP. Ok? Ma dove sta
+
+1034
+00:52:04,799 --> 00:52:06,839
+questa nuova caratterizzazione di NP?
+
+1035
+00:52:06,839 --> 00:52:09,559
+Allora, la caratterizzazione di NP è
+
+1036
+00:52:09,559 --> 00:52:12,680
+sostanzialmente questa. I linguaggi di
+
+1037
+00:52:12,680 --> 00:52:15,839
+NP, poiché sono caratterizzati dalla
+
+1038
+00:52:15,839 --> 00:52:18,000
+relazione polinomialmente decidibile e
+
+1039
+00:52:18,000 --> 00:52:20,119
+polinomialmente
+
+1040
+00:52:20,119 --> 00:52:22,559
+sono quei linguaggi
+
+1041
+00:52:22,559 --> 00:52:25,680
+le cui soluzioni
+
+1042
+00:52:25,680 --> 00:52:28,839
+possono essere verificate in tempo
+
+1043
+00:52:28,839 --> 00:52:31,880
+polinomiale deterministico. Questa è.
+
+1044
+00:52:31,880 --> 00:52:36,240
+Quindi abbiamo in soldoni che in P ci
+
+1045
+00:52:36,240 --> 00:52:39,799
+stanno i problemi la cui soluzione si
+
+1046
+00:52:39,799 --> 00:52:42,559
+calcola in tempo polinomiale.
+
+1047
+00:52:42,559 --> 00:52:46,960
+In NP abbiamo quei linguaggi che una
+
+1048
+00:52:46,960 --> 00:52:49,000
+volta che ci danno un testimonio, un
+
+1049
+00:52:49,000 --> 00:52:51,599
+certificato, quello lo verifichiamo in
+
+1050
+00:52:51,599 --> 00:52:54,440
+tempo polinomiale. Quindi i problemi in
+
+1051
+00:52:54,440 --> 00:52:57,440
+Piluzione
+
+1052
+00:52:58,760 --> 00:53:01,680
+è facilmente ottenibile.
+
+1053
+00:53:01,680 --> 00:53:04,240
+I problemi in NP sono quei problemi la
+
+1054
+00:53:04,240 --> 00:53:06,839
+cui soluzione una volta che ci viene
+
+1055
+00:53:06,839 --> 00:53:10,040
+data è facilmente verificabile.
+
+1056
+00:53:10,040 --> 00:53:13,160
+Quindi la questione P versus NP si
+
+1057
+00:53:13,160 --> 00:53:17,119
+annoda su questo punto crociale: è vero,
+
+1058
+00:53:17,119 --> 00:53:22,200
+no, che tutti i problemi che ammettono
+
+1059
+00:53:22,200 --> 00:53:24,440
+che posso la cui soluzione possa essere
+
+1060
+00:53:24,440 --> 00:53:27,280
+verificata facilmente sono anche
+
+1061
+00:53:27,280 --> 00:53:29,400
+problemi la cui soluzione può essere
+
+1062
+00:53:29,400 --> 00:53:31,960
+calcolata facilmente.
+
+1063
+00:53:31,960 --> 00:53:34,480
+Ecco, noi riteniamo che questo non sia
+
+1064
+00:53:34,480 --> 00:53:36,960
+possibile, cioè che esista una classe
+
+1065
+00:53:36,960 --> 00:53:40,319
+che P ed NP siano separati, cioè che NP,
+
+1066
+00:53:40,319 --> 00:53:43,200
+che i problemi per i quali è facile
+
+1067
+00:53:43,200 --> 00:53:45,280
+verificare una soluzione non
+
+1068
+00:53:45,280 --> 00:53:47,559
+necessariamente sono problemi per i
+
+1069
+00:53:47,559 --> 00:53:51,480
+quali è facile calcolarla,
+
+1070
+00:53:51,480 --> 00:53:55,319
+come riporta Calauti nei suoi appunti,
+
+1071
+00:53:55,319 --> 00:53:57,520
+questo è un interessantissimo paper di
+
+1072
+00:53:57,520 --> 00:54:00,400
+Aronson dove lui fa una discussione
+
+1073
+00:54:00,400 --> 00:54:02,400
+filosofica sul fatto se P sia uguale a
+
+1074
+00:54:02,400 --> 00:54:05,640
+NP o men. E lui dice, "Se noi vivessimo
+
+1075
+00:54:05,640 --> 00:54:08,960
+in un universo in cui NP e fosse uguale
+
+1076
+00:54:08,960 --> 00:54:12,799
+a P, allora chiunque fosse in grado di
+
+1077
+00:54:12,799 --> 00:54:15,240
+apprezzare una sinfonia sarebbe Mozart,
+
+1078
+00:54:15,240 --> 00:54:17,640
+sarebbe in grado di comporla e chiunque
+
+1079
+00:54:17,640 --> 00:54:19,079
+fosse in grado di seguire una
+
+1080
+00:54:19,079 --> 00:54:21,359
+dimostrazione sarebbe Gaos, sarebbe in
+
+1081
+00:54:21,359 --> 00:54:23,280
+grado di produrle dimostrazioni, ma noi
+
+1082
+00:54:23,280 --> 00:54:26,240
+non vediamo questo. Quindi con buona
+
+1083
+00:54:26,240 --> 00:54:31,480
+probabilità NP e P sono separati, ok? e
+
+1084
+00:54:31,480 --> 00:54:33,200
+ci fermiamo
+
+1085
+00:54:33,200 --> 00:54:38,760
+per Ok, fino ai 20. Pausa.
+
+1086
+00:54:44,240 --> 00:54:47,760
+Cosa vediamo ora? Ora vediamo per la
+
+1087
+00:54:47,760 --> 00:54:50,480
+gioia di voi tutti un altro problema NP
+
+1088
+00:54:50,480 --> 00:54:53,359
+completo. Ok?
+
+1089
+00:54:53,359 --> 00:54:58,040
+un problema che vi ho già menzionato
+
+1090
+00:54:58,599 --> 00:55:01,400
+che è il problema della colorabilità dei
+
+1091
+00:55:01,400 --> 00:55:04,040
+grafi. Ok?
+
+1092
+00:55:04,040 --> 00:55:07,389
+[Musica]
+
+1093
+00:55:16,480 --> 00:55:19,119
+Allora, in cosa consiste questo
+
+1094
+00:55:19,119 --> 00:55:22,119
+problema?
+
+1095
+00:55:23,359 --> 00:55:27,039
+Abbiamo il solito nostro grafo,
+
+1096
+00:55:27,039 --> 00:55:30,799
+abbiamo una
+
+1097
+00:55:30,799 --> 00:55:33,599
+Ok, ve lo spiego a pezzi. Allora, cos'è
+
+1098
+00:55:33,599 --> 00:55:36,039
+una cos'è una colorazione di un grafo?
+
+1099
+00:55:36,039 --> 00:55:37,599
+La colorazione di un grafo, per quello
+
+1100
+00:55:37,599 --> 00:55:39,000
+che abbiamo visto già quando abbiamo
+
+1101
+00:55:39,000 --> 00:55:42,559
+parlato della riduzione, la eccetera, è
+
+1102
+00:55:42,559 --> 00:55:44,839
+sostanzialmente una funzione che assegna
+
+1103
+00:55:44,839 --> 00:55:47,119
+un colore ad ogni nodo. Dice questo
+
+1104
+00:55:47,119 --> 00:55:49,480
+nodolo coloro rosso, questo verde,
+
+1105
+00:55:49,480 --> 00:55:52,200
+questo viola, questo indaco e così via.
+
+1106
+00:55:52,200 --> 00:55:54,680
+Ok? E deve essere una funzione, una
+
+1107
+00:55:54,680 --> 00:55:57,400
+colorazione tale per cui
+
+1108
+00:55:57,400 --> 00:56:01,880
+nodi agganciati da un arco hanno colori
+
+1109
+00:56:01,880 --> 00:56:05,480
+distinti. Ok?
+
+1110
+00:56:05,480 --> 00:56:08,039
+Chiaro per tutti così è una colorazione?
+
+1111
+00:56:08,039 --> 00:56:10,680
+Tipo
+
+1112
+00:56:10,680 --> 00:56:13,920
+questo lo facciamo verde,
+
+1113
+00:56:13,920 --> 00:56:19,559
+questo lo facciamo eh giallo,
+
+1114
+00:56:19,559 --> 00:56:23,000
+questo blu
+
+1115
+00:56:23,079 --> 00:56:26,880
+e questo rosso, per esempio. Ok.
+
+1116
+00:56:26,880 --> 00:56:31,200
+Alrghto un grafo. È vero o no? Vi
+
+1117
+00:56:31,200 --> 00:56:33,079
+ricordo che noi siamo sempre interessati
+
+1118
+00:56:33,079 --> 00:56:35,839
+a problemi di decisione, ok? Quindi un
+
+1119
+00:56:35,839 --> 00:56:38,359
+problema la cui risposta è sì. No. Dato
+
+1120
+00:56:38,359 --> 00:56:42,960
+un grafo, è vero o no che ci sta un
+
+1121
+00:56:42,960 --> 00:56:45,880
+una colorazione per quel grafo?
+
+1122
+00:56:45,880 --> 00:56:48,440
+Certo, usiamo tanti colori quanti i
+
+1123
+00:56:48,440 --> 00:56:51,240
+nodi. Siamo ben contenti di colorarlo
+
+1124
+00:56:51,240 --> 00:56:53,079
+come vogliamo. Ok? Allora, il problema
+
+1125
+00:56:53,079 --> 00:56:54,920
+non sta lì. Il problema è colorare un
+
+1126
+00:56:54,920 --> 00:56:57,760
+grafo con una tavolozza limitata, ok?
+
+1127
+00:56:57,760 --> 00:57:00,599
+Quindi quello è il problema che noi
+
+1128
+00:57:00,599 --> 00:57:03,599
+definiamo.
+
+1129
+00:57:03,839 --> 00:57:07,240
+Colorabilità è definito così.
+
+1130
+00:57:07,240 --> 00:57:11,960
+È l'insieme delle coppie grafo numero K
+
+1131
+00:57:11,960 --> 00:57:17,280
+tale che è possibile
+
+1132
+00:57:18,440 --> 00:57:21,440
+colorare
+
+1133
+00:57:21,640 --> 00:57:24,240
+i nodi
+
+1134
+00:57:24,240 --> 00:57:25,760
+di
+
+1135
+00:57:25,760 --> 00:57:27,400
+G.
+
+1136
+00:57:27,400 --> 00:57:31,119
+con Kori,
+
+1137
+00:57:33,880 --> 00:57:37,720
+no con al più Kori
+
+1138
+00:57:39,520 --> 00:57:42,680
+con al più
+
+1139
+00:57:42,680 --> 00:57:48,319
+Kori, così è più esplicito. Ok.
+
+1140
+00:57:49,640 --> 00:57:51,559
+Alright.
+
+1141
+00:57:51,559 --> 00:57:53,520
+Noi vogliamo dimostrare che questo
+
+1142
+00:57:53,520 --> 00:57:57,839
+problema è NP completo.
+
+1143
+00:58:00,000 --> 00:58:02,520
+Per dimostrare che il problema è NP
+
+1144
+00:58:02,520 --> 00:58:04,599
+completo, come al solito, dobbiamo fare
+
+1145
+00:58:04,599 --> 00:58:08,480
+due cose: mostrare la membership in NP e
+
+1146
+00:58:08,480 --> 00:58:11,920
+mostrare la sua hardness. Allora, la
+
+1147
+00:58:11,920 --> 00:58:16,920
+colorabilità appartiene a NP o no?
+
+1148
+00:58:18,839 --> 00:58:22,240
+Sì, perché
+gessiamo una combinazione.
+
+1149
+00:58:22,240 --> 00:58:24,319
+Gessiamo una colorazione. Quanto tempo
+
+1150
+00:58:24,319 --> 00:58:28,319
+ci mettiamo a ghessare questa cosa?
+
+1151
+00:58:28,319 --> 00:58:29,720
+Polinomiale.
+Polinomiale, perché
+
+1152
+00:58:29,720 --> 00:58:31,599
+dobbiamo gessare un colore per ogni
+
+1153
+00:58:31,599 --> 00:58:33,839
+ognuno dei nodi. Ok? Quindi il gess si
+
+1154
+00:58:33,839 --> 00:58:36,000
+fa in tempo polinomiale. Quanto tempo ci
+
+1155
+00:58:36,000 --> 00:58:38,760
+mettiamo a verificare che questo gess
+
+1156
+00:58:38,760 --> 00:58:42,000
+sia corretto?
+
+1157
+00:58:42,039 --> 00:58:44,280
+polinomiale. Tempo quadratico. Noi per
+
+1158
+00:58:44,280 --> 00:58:46,520
+ogni coppia di nodi agganciati andiamo a
+
+1159
+00:58:46,520 --> 00:58:48,720
+vedere se il colore è lo stesso o meno.
+
+1160
+00:58:48,720 --> 00:58:50,680
+Ok? Quindi possiamo dire che
+
+1161
+00:58:50,680 --> 00:58:54,559
+colorabilità appartiene a NP.
+
+1162
+00:58:54,559 --> 00:58:56,160
+Dobbiamo mostrare adesso che
+
+1163
+00:58:56,160 --> 00:59:02,280
+colorabilità è un problema NP arduo. Ok?
+
+1164
+00:59:04,160 --> 00:59:09,240
+La riduzione si fa da 3 SAT,
+
+1165
+00:59:09,240 --> 00:59:11,839
+almeno la riduzione che vediamo ora è da
+
+1166
+00:59:11,839 --> 00:59:15,520
+3 SAT. Tres nella sua variante in cui
+
+1167
+00:59:15,520 --> 00:59:17,920
+ogni
+
+1168
+00:59:17,920 --> 00:59:20,760
+lettera, ogni clausola ha esattamente
+
+1169
+00:59:20,760 --> 00:59:22,559
+tre letterali. Ok? Così ci
+
+1170
+00:59:22,559 --> 00:59:26,839
+semplifichiamo un po' le cose.
+
+1171
+00:59:26,839 --> 00:59:29,440
+Ok? Quindi domanda che mi è stata fatta
+
+1172
+00:59:29,440 --> 00:59:31,240
+prima, ma come mi organizzo una
+
+1173
+00:59:31,240 --> 00:59:33,799
+riduzione? Allora, una riduzione è un
+
+1174
+00:59:33,799 --> 00:59:36,400
+guizzo di fantasia, cioè questo è for di
+
+1175
+00:59:36,400 --> 00:59:40,079
+dubbio, di dubbio, però possiamo dare
+
+1176
+00:59:40,079 --> 00:59:44,799
+una struttura a quello che facciamo. Ok?
+
+1177
+00:59:44,799 --> 00:59:46,920
+Cosa faccio io? Mi chiedo qual è il
+
+1178
+00:59:46,920 --> 00:59:49,319
+problema di partenza? Presat, qual è il
+
+1179
+00:59:49,319 --> 00:59:52,119
+problema di arrivo. Colorabilità. Che
+
+1180
+00:59:52,119 --> 00:59:54,000
+cos'è un'istanza del problema di
+
+1181
+00:59:54,000 --> 00:59:55,480
+partenza?
+
+1182
+00:59:55,480 --> 01:00:01,880
+è una formula fai in CNF. Ok? Che cos'è
+
+1183
+01:00:01,880 --> 01:00:05,200
+un'istanza del problema di arrivo? è una
+
+1184
+01:00:05,200 --> 01:00:08,200
+coppia grafo numero,
+
+1185
+01:00:08,200 --> 01:00:12,000
+quindi io devo inventarmi una funzione
+
+1186
+01:00:12,000 --> 01:00:15,000
+fasze
+
+1187
+01:00:15,920 --> 01:00:19,799
+sì di tre sat che sono formule in
+
+1188
+01:00:19,799 --> 01:00:22,240
+istanze sì di colorabilità che sono
+
+1189
+01:00:22,240 --> 01:00:26,839
+grafi e tavolozze di colore. Ok?
+
+1190
+01:00:26,839 --> 01:00:33,280
+Che cos'è un'istanza si per tre sat?
+
+1191
+01:00:33,890 --> 01:00:35,079
+[Musica]
+
+1192
+01:00:35,079 --> 01:00:37,119
+una formula soddisfacile che significa
+
+1193
+01:00:37,119 --> 01:00:39,599
+che è soddisfacbile
+
+1194
+01:00:39,599 --> 01:00:42,039
+combinazioni letterali che
+attenzione
+
+1195
+01:00:42,039 --> 01:00:46,960
+esiste un assegnamento di verità
+
+1196
+01:00:46,960 --> 01:00:49,839
+per le variabili tale che la formula sia
+
+1197
+01:00:49,839 --> 01:00:52,640
+soddisfatta. Eh, attenzione, quando io
+
+1198
+01:00:52,640 --> 01:00:55,119
+vi correggo sui termini e sulle parole è
+
+1199
+01:00:55,119 --> 01:00:58,039
+perché l'utilizzo di un linguaggio vago
+
+1200
+01:00:58,039 --> 01:01:00,640
+ci fa confondere, ok? Quindi dobbiamo
+
+1201
+01:01:00,640 --> 01:01:02,400
+essere precisi, senò ci perdiamo per
+
+1202
+01:01:02,400 --> 01:01:05,599
+strada. Ok? Ecco perché sono così
+
+1203
+01:01:05,599 --> 01:01:08,119
+puntiglioso nel correggere le cose. Ok?
+
+1204
+01:01:08,119 --> 01:01:11,359
+Quindi che significa che la formula FA è
+
+1205
+01:01:11,359 --> 01:01:14,000
+soddisfacbile? Significa che date le sue
+
+1206
+01:01:14,000 --> 01:01:17,240
+variabili buleane esiste un modo di
+
+1207
+01:01:17,240 --> 01:01:19,400
+scegliere per loro il valore vero o
+
+1208
+01:01:19,400 --> 01:01:22,119
+falso, tale per cui una volta che diamo
+
+1209
+01:01:22,119 --> 01:01:24,559
+questi valori nella formula tutto
+
+1210
+01:01:24,559 --> 01:01:28,039
+davvero. Ok? Che cos'è un'istanza? Sì.
+
+1211
+01:01:28,039 --> 01:01:32,039
+per il problema della colorabilità,
+
+1212
+01:01:36,799 --> 01:01:39,359
+un grafo, tale che ogni nodo non abbia
+
+1213
+01:01:39,359 --> 01:01:41,359
+nodi adiacenti legati ad un arco con lo
+
+1214
+01:01:41,359 --> 01:01:44,640
+stesso colore.
+Mh, no, attenzione, più
+
+1215
+01:01:44,640 --> 01:01:46,480
+precisa
+
+1216
+01:01:46,480 --> 01:01:49,079
+perché come ha strutturato lei la frase
+
+1217
+01:01:49,079 --> 01:01:51,119
+presuppone che sta facendo riferimento a
+
+1218
+01:01:51,119 --> 01:01:54,319
+una colorazione. No, è diverso. istanza
+
+1219
+01:01:54,319 --> 01:01:57,520
+sì per il problema della colorabilità è
+
+1220
+01:01:57,520 --> 01:02:01,440
+un grafo che può essere colorato con al
+
+1221
+01:02:01,440 --> 01:02:04,480
+più k colori. Il fatto che i nodi
+
+1222
+01:02:04,480 --> 01:02:06,119
+adiacenti abbiano colori diversi
+
+1223
+01:02:06,119 --> 01:02:09,680
+eccetera, quello proviene dal fatto se
+
+1224
+01:02:09,680 --> 01:02:12,119
+abbiamo già una colorazione in mano. Ok?
+
+1225
+01:02:12,119 --> 01:02:14,200
+Quindi dobbiamo essere precisi. Poi sì,
+
+1226
+01:02:14,200 --> 01:02:15,760
+è legato ovviamente alla nozione di
+
+1227
+01:02:15,760 --> 01:02:18,359
+colorazione. Un stanza sì del problema
+
+1228
+01:02:18,359 --> 01:02:21,279
+della colorabilità è una coppia grafo
+
+1229
+01:02:21,279 --> 01:02:24,599
+numero tale per cui quel grafo ammette
+
+1230
+01:02:24,599 --> 01:02:29,079
+una colorazione dei suoi nodi con al più
+
+1231
+01:02:29,079 --> 01:02:31,960
+numero di colori, tale per cui, e qui
+
+1232
+01:02:31,960 --> 01:02:33,839
+c'entra la descrizione fatta dal nostro
+
+1233
+01:02:33,839 --> 01:02:36,079
+collega, tale per cui quella colorazione
+
+1234
+01:02:36,079 --> 01:02:39,000
+assegna colori diversi a gra a a nodi
+
+1235
+01:02:39,000 --> 01:02:41,079
+agganciati. Ok?
+
+1236
+01:02:41,079 --> 01:02:46,000
+Che cos'è un'istanza no per tre sat?
+
+1237
+01:02:46,000 --> 01:02:47,799
+Unazione
+
+1238
+01:02:47,799 --> 01:02:51,640
+a variabili tale che quando
+No, no, no,
+
+1239
+01:02:51,640 --> 01:02:54,920
+no. Un'istanza no di satte, eh
+
+1240
+01:02:54,920 --> 01:02:58,279
+un'assegnazione a variabili. Attenzione
+
+1241
+01:02:58,279 --> 01:03:01,279
+un attimo.
+
+1242
+01:03:01,279 --> 01:03:03,400
+Non esistono assegnamenti di variabili.
+
+1243
+01:03:03,400 --> 01:03:06,160
+Se cosa c'era il suo collega prima?
+
+1244
+01:03:06,160 --> 01:03:08,720
+Beh, se nel momento in cui abbiamo
+
+1245
+01:03:08,720 --> 01:03:10,680
+censato nel momento in cuiamo la
+
+1246
+01:03:10,680 --> 01:03:13,079
+clausola da cosa
+No, no, ma cos'è
+
+1247
+01:03:13,079 --> 01:03:17,079
+unistanza? No, di Tresti.
+
+1248
+01:03:18,160 --> 01:03:22,400
+Ok, c'era il collega dietro di lei.
+
+1249
+01:03:22,400 --> 01:03:26,000
+Cos'è unistanza no di Tre SAT?
+Eh, è una
+
+1250
+01:03:26,000 --> 01:03:28,799
+un'espressione in 3CN,
+
+1251
+01:03:28,799 --> 01:03:31,240
+sì.
+Che non è soddisfacbile tramite
+
+1252
+01:03:31,240 --> 01:03:32,880
+nessun assegnamento.
+E che cosa
+
+1253
+01:03:32,880 --> 01:03:34,880
+significa?
+
+1254
+01:03:34,880 --> 01:03:37,319
+che cioè non esiste un assegnamento
+
+1255
+01:03:37,319 --> 01:03:38,640
+delle variabili che compaiono
+
+1256
+01:03:38,640 --> 01:03:41,240
+all'interno del dell'espressione che
+
+1257
+01:03:41,240 --> 01:03:43,960
+renda veri tutte le clausole.
+Sì. Ok.
+
+1258
+01:03:43,960 --> 01:03:46,880
+Allora, è importante il modo in cui ha
+
+1259
+01:03:46,880 --> 01:03:48,559
+iniziato la sua frase. Ha detto è
+
+1260
+01:03:48,559 --> 01:03:51,760
+un'espressione buleana tale che.
+
+1261
+01:03:51,760 --> 01:03:55,319
+Che cos'è un'istanza no? Un'istanza no è
+
+1262
+01:03:55,319 --> 01:03:57,039
+un'istanza
+
+1263
+01:03:57,039 --> 01:03:58,559
+perché ci stanno le istanze e poi le
+
+1264
+01:03:58,559 --> 01:04:00,240
+dividiamo in due classi. Stanze sì,
+
+1265
+01:04:00,240 --> 01:04:03,039
+istanze no. Che cos'è un'istanza? No,
+
+1266
+01:04:03,039 --> 01:04:05,359
+un'istanza no e un'istanza. Che sono le
+
+1267
+01:04:05,359 --> 01:04:07,520
+istanze di SAT? Sono formule. Quindi
+
+1268
+01:04:07,520 --> 01:04:10,839
+un'istanza no di SAT è poiché è
+
+1269
+01:04:10,839 --> 01:04:13,359
+un'istanza è una formula che ha una
+
+1270
+01:04:13,359 --> 01:04:15,799
+proprietà. Il fatto che qualsiasi
+
+1271
+01:04:15,799 --> 01:04:19,119
+assegnamento di verità noi diamo alle
+
+1272
+01:04:19,119 --> 01:04:21,440
+sue variabili il risultato della
+
+1273
+01:04:21,440 --> 01:04:24,160
+valutazione è sempre falso. Ok? Questa è
+
+1274
+01:04:24,160 --> 01:04:27,319
+un'istanza, no? Che cos'è un'istanza no
+
+1275
+01:04:27,319 --> 01:04:30,440
+della colorabilità?
+
+1276
+01:04:30,440 --> 01:04:33,760
+Un attimo. Qualcun altro?
+
+1277
+01:04:33,760 --> 01:04:36,160
+Vi ripeto, un'istanza no di colorabilità
+
+1278
+01:04:36,160 --> 01:04:38,760
+è un'istanza di colorabilità. Che che
+
+1279
+01:04:38,760 --> 01:04:42,760
+sono le istanze della colorabilità?
+
+1280
+01:04:42,799 --> 01:04:46,400
+Un attimo, un attimo.
+
+1281
+01:04:49,240 --> 01:04:52,359
+Ok.
+Una coppia di grappoa per cui non
+
+1282
+01:04:52,359 --> 01:04:55,200
+esiste nessuna combinazione di colori
+
+1283
+01:04:55,200 --> 01:04:58,160
+per farsi piedi. Ci siamo
+di al più K
+
+1284
+01:04:58,160 --> 01:04:59,720
+colori. Ok.
+
+1285
+01:04:59,720 --> 01:05:03,520
+Cioè perché fa sì che ci siamo nodi
+
+1286
+01:05:03,520 --> 01:05:06,000
+dello stesso
+Sì, esattamente. Ok, quindi
+
+1287
+01:05:06,000 --> 01:05:08,119
+istanze sì, istanze no. Istanze sì,
+
+1288
+01:05:08,119 --> 01:05:09,880
+istanze no sono due classi delle
+
+1289
+01:05:09,880 --> 01:05:11,920
+istanze. Quindi cos'è un'istanza sì è
+
+1290
+01:05:11,920 --> 01:05:13,960
+un'istanza che ha una certa proprietà,
+
+1291
+01:05:13,960 --> 01:05:16,000
+che cos'è un'istanza no è un'istanza che
+
+1292
+01:05:16,000 --> 01:05:18,400
+è una certa proprietà. Ok?
+
+1293
+01:05:18,400 --> 01:05:19,599
+Allora, quello che ora ci dobbiamo
+
+1294
+01:05:19,599 --> 01:05:23,119
+inventare è un modo di trasformare una
+
+1295
+01:05:23,119 --> 01:05:24,839
+formula soddisfacbile in un grafo
+
+1296
+01:05:24,839 --> 01:05:26,480
+colorabile e una formula non
+
+1297
+01:05:26,480 --> 01:05:28,200
+soddisfacbile in un grafo non
+
+1298
+01:05:28,200 --> 01:05:31,319
+colorabile. Ok?
+
+1299
+01:05:31,319 --> 01:05:34,640
+Quindi questa riduzione è simile a
+
+1300
+01:05:34,640 --> 01:05:37,440
+indipendenzetti in cui trasformavamo
+
+1301
+01:05:37,440 --> 01:05:39,039
+una
+
+1302
+01:05:39,039 --> 01:05:41,079
+formula in un grafo. Qui dobbiamo
+
+1303
+01:05:41,079 --> 01:05:42,799
+trasformare una formula in un grafo che
+
+1304
+01:05:42,799 --> 01:05:45,599
+può essere colorato o meno.
+
+1305
+01:05:45,599 --> 01:05:50,400
+Allora, questa ve la faccio vedere.
+
+1306
+01:05:50,400 --> 01:05:52,520
+Allora, supponiamo di avere la formula
+
+1307
+01:05:52,520 --> 01:06:00,520
+fatta così: X1 or X2 or not X3 and
+
+1308
+01:06:00,520 --> 01:06:03,720
+not X2
+
+1309
+01:06:03,720 --> 01:06:06,920
+or X3
+
+1310
+01:06:06,920 --> 01:06:10,640
+or not X4.
+
+1311
+01:06:10,640 --> 01:06:12,200
+Ok,
+
+1312
+01:06:12,200 --> 01:06:15,039
+qua mi sto dimenticando un pezzo,
+
+1313
+01:06:15,039 --> 01:06:18,720
+quindi avvio questo.
+
+1314
+01:06:23,440 --> 01:06:24,960
+Prima parte me la ricordo, la seconda
+
+1315
+01:06:24,960 --> 01:06:28,720
+non tanto. Ok, allora partiamo.
+
+1316
+01:06:28,720 --> 01:06:32,079
+Così noi dobbiamo partire da questa
+
+1317
+01:06:32,079 --> 01:06:34,279
+formula
+
+1318
+01:06:34,279 --> 01:06:37,880
+e dobbiamo generare un grafo, ok? un
+
+1319
+01:06:37,880 --> 01:06:42,680
+gafo che sia K colorabile.
+
+1320
+01:06:42,720 --> 01:06:45,240
+Partiamo con questo pezzettino di grafo,
+
+1321
+01:06:45,240 --> 01:06:49,400
+con questi tre nodi T, F,
+
+1322
+01:06:49,400 --> 01:06:51,000
+B
+
+1323
+01:06:51,000 --> 01:06:55,359
+e agganciamo così. Ok?
+
+1324
+01:06:55,359 --> 01:07:00,839
+Questi saranno i nodi che ci diranno
+
+1325
+01:07:01,359 --> 01:07:03,720
+in qualche modo se la colorazione sta
+
+1326
+01:07:03,720 --> 01:07:05,880
+codificando un assegnamento di verità
+
+1327
+01:07:05,880 --> 01:07:08,799
+che soddisfa la formula o meno. Allora,
+
+1328
+01:07:08,799 --> 01:07:12,960
+perché facciamo questo? Che cos'è che
+
+1329
+01:07:12,960 --> 01:07:15,680
+dobbiamo decidere?
+
+1330
+01:07:15,680 --> 01:07:17,000
+Cioè, nel momento in cui dobbiamo
+
+1331
+01:07:17,000 --> 01:07:19,920
+decidere che una formula f sia
+
+1332
+01:07:19,920 --> 01:07:24,599
+soddisfacbile, che dobbiamo stabilire?
+
+1333
+01:07:33,640 --> 01:07:39,000
+sempre un assegnamento ai ai letterali
+
+1334
+01:07:39,000 --> 01:07:41,640
+avere almeno una delle clausole
+almeno
+
+1335
+01:07:41,640 --> 01:07:46,200
+una tutte le clausole, ok? però
+
+1336
+01:07:46,200 --> 01:07:49,680
+in buona sostanza
+
+1337
+01:07:50,039 --> 01:07:54,200
+dove sta qua. Senò mi perdo per strada e
+
+1338
+01:07:54,200 --> 01:07:59,240
+non voglio scrivere fesserie.
+
+1339
+01:08:02,680 --> 01:08:05,680
+Ok.
+
+1340
+01:08:05,720 --> 01:08:08,720
+Ok.
+
+1341
+01:08:19,400 --> 01:08:21,480
+Quello perché c'è l'aggancio. Sì. Ok. Mi
+
+1342
+01:08:21,480 --> 01:08:24,480
+ricordavo bene. Allora, sulle formule
+
+1343
+01:08:24,480 --> 01:08:27,719
+buleane date le variabili noi dobbiamo
+
+1344
+01:08:27,719 --> 01:08:30,400
+stabilire che cosa? Per soddisfare la
+
+1345
+01:08:30,400 --> 01:08:33,799
+formula. Seè una variabile
+
+1346
+01:08:33,799 --> 01:08:36,920
+vero o falsa. Che cos'è il quibus da
+
+1347
+01:08:36,920 --> 01:08:40,480
+decidere sulla colorabilità
+
+1348
+01:08:40,480 --> 01:08:42,799
+quando vogliamo risolvere
+il colore che
+
+1349
+01:08:42,799 --> 01:08:45,040
+assume un sac?
+Ok? Quindi da un lato
+
+1350
+01:08:45,040 --> 01:08:46,759
+dobbiamo stabilire se la variabile è
+
+1351
+01:08:46,759 --> 01:08:48,480
+vero o falsa, dall'altro dobbiamo
+
+1352
+01:08:48,480 --> 01:08:50,880
+stabilire ma sto nodo che colore gli
+
+1353
+01:08:50,880 --> 01:08:53,279
+diamo? Rosso, verde, giallo. Quindi in
+
+1354
+01:08:53,279 --> 01:08:56,239
+qualche modo la nostra riduzione dovrà
+
+1355
+01:08:56,239 --> 01:08:57,920
+mappare
+
+1356
+01:08:57,920 --> 01:09:01,159
+assegnamenti di verità variabili in
+
+1357
+01:09:01,159 --> 01:09:04,080
+colori da dare ai nodi. Ok? Questa è la
+
+1358
+01:09:04,080 --> 01:09:05,440
+metafora che usiamo nella
+
+1359
+01:09:05,440 --> 01:09:07,080
+trasformazione.
+
+1360
+01:09:07,080 --> 01:09:10,400
+Quindi, nel primo, come primo pezzo del
+
+1361
+01:09:10,400 --> 01:09:13,600
+nostro grafo, mettiamo questa click di
+
+1362
+01:09:13,600 --> 01:09:17,560
+taglia 3, ok? Una click, vi ricordo, che
+
+1363
+01:09:17,560 --> 01:09:20,679
+è un pezzo di sottografo, in cui tutti i
+
+1364
+01:09:20,679 --> 01:09:22,719
+nodi sono collegati a tutti gli altri.
+
+1365
+01:09:22,719 --> 01:09:25,120
+Quanti colori ci servono per colorare
+
+1366
+01:09:25,120 --> 01:09:28,319
+questa click?
+Al massimo tre.
+Al minimo
+
+1367
+01:09:28,319 --> 01:09:30,960
+tre.
+Al minimo tre. Ok, ci servono tre
+
+1368
+01:09:30,960 --> 01:09:37,359
+colori e allora facciamo così.
+
+1369
+01:09:39,279 --> 01:09:43,120
+C'è il colore del vero,
+
+1370
+01:09:43,120 --> 01:09:46,440
+il colore del falso
+
+1371
+01:09:46,440 --> 01:09:51,120
+e un colore neutro o base. Ok?
+
+1372
+01:09:51,120 --> 01:09:54,719
+Quindi nel nostro grafo i nodi che
+
+1373
+01:09:54,719 --> 01:09:57,880
+avranno lo stesso colore del nodo T è
+
+1374
+01:09:57,880 --> 01:10:00,600
+come se mi stessimo assegnando il valore
+
+1375
+01:10:00,600 --> 01:10:03,719
+vero. I nodi che avranno lo stesso
+
+1376
+01:10:03,719 --> 01:10:07,560
+colore del nodo F è come se gli stessimo
+
+1377
+01:10:07,560 --> 01:10:10,239
+assegnando falso. Ok? Perché facciamo
+
+1378
+01:10:10,239 --> 01:10:11,960
+questa similitudine? Vi ripeto, perché
+
+1379
+01:10:11,960 --> 01:10:13,800
+dobbiamo mappare l'assegnamento di
+
+1380
+01:10:13,800 --> 01:10:17,480
+verità delle variabili verso colori da
+
+1381
+01:10:17,480 --> 01:10:21,120
+assegnare ai nodi. Ok? L'ho colorato in
+
+1382
+01:10:21,120 --> 01:10:23,239
+quel modo, poteva essere qualsiasi altra
+
+1383
+01:10:23,239 --> 01:10:27,320
+cosa, è solo per avere un omnemonic. Ok?
+
+1384
+01:10:27,320 --> 01:10:29,880
+Quindi avremo i nodi colorati come t, in
+
+1385
+01:10:29,880 --> 01:10:31,640
+questo caso verde, così ce lo
+
+1386
+01:10:31,640 --> 01:10:34,199
+ricordiamo, sono i nodi veri. I nodi
+
+1387
+01:10:34,199 --> 01:10:36,760
+colorati come f rosso, così ce li
+
+1388
+01:10:36,760 --> 01:10:38,880
+ricordiamo, sono i nodi falsi. I nodi
+
+1389
+01:10:38,880 --> 01:10:43,880
+colorati blu sono nodi altro. Ok?
+
+1390
+01:10:43,880 --> 01:10:49,040
+Allora, siccome noi dobbiamo mappare
+
+1391
+01:10:49,040 --> 01:10:51,239
+l'assegnamento di verità su una
+
+1392
+01:10:51,239 --> 01:10:54,760
+colorazione, noi avremo nodi. Per ogni
+
+1393
+01:10:54,760 --> 01:10:58,120
+variabile x con i avremo due nodi, x con
+
+1394
+01:10:58,120 --> 01:11:02,320
+i e x con i negato. Ok? Ci inventiamo
+
+1395
+01:11:02,320 --> 01:11:06,320
+questa cosa qua. Quindi avremo sì,
+
+1396
+01:11:06,320 --> 01:11:08,719
+come no?
+
+1397
+01:11:08,719 --> 01:11:14,159
+X1 è not x1.
+
+1398
+01:11:17,400 --> 01:11:20,400
+Siccome dovranno avere colori diversi,
+
+1399
+01:11:20,400 --> 01:11:23,719
+noi otteniamo questa cosa collegandoli.
+
+1400
+01:11:23,719 --> 01:11:25,600
+Poi avremo, sto trasformando proprio
+
+1401
+01:11:25,600 --> 01:11:28,320
+questa formula qua, eh,
+
+1402
+01:11:28,320 --> 01:11:29,920
+X2
+
+1403
+01:11:29,920 --> 01:11:32,000
+not X2
+
+1404
+01:11:32,000 --> 01:11:36,000
+è lì aggancio. x3
+
+1405
+01:11:36,000 --> 01:11:40,560
+not x3 e poi x4
+
+1406
+01:11:40,560 --> 01:11:45,000
+e not x4. Ok?
+
+1407
+01:11:45,000 --> 01:11:47,120
+Not x4.
+
+1408
+01:11:47,120 --> 01:11:52,679
+Ok? Allora, così come sono collegati i
+
+1409
+01:11:52,679 --> 01:11:56,880
+nodi x1, not x1, x2, not x2 e così via
+
+1410
+01:11:56,880 --> 01:11:58,840
+possono essere colorati con colori
+
+1411
+01:11:58,840 --> 01:12:01,120
+diversi, ok? non possono avere lo stesso
+
+1412
+01:12:01,120 --> 01:12:04,199
+colore. Però siccome noi dobbiamo mimare
+
+1413
+01:12:04,199 --> 01:12:06,520
+il fatto che possano essere veri o
+
+1414
+01:12:06,520 --> 01:12:09,639
+falsi, che facciamo? Li agganciamo al
+
+1415
+01:12:09,639 --> 01:12:12,320
+nodo blu. Ok? Così il colore che possono
+
+1416
+01:12:12,320 --> 01:12:16,040
+prendere X1 e not X1, X2 e not X2
+
+1417
+01:12:16,040 --> 01:12:19,639
+saranno solo verde e rosso. Ok? Quindi
+
+1418
+01:12:19,639 --> 01:12:22,840
+io faccio questo,
+
+1419
+01:12:22,840 --> 01:12:24,719
+questo,
+
+1420
+01:12:24,719 --> 01:12:26,280
+questo
+
+1421
+01:12:26,280 --> 01:12:29,679
+e questo.
+
+1422
+01:12:30,480 --> 01:12:32,120
+Chiaro?
+
+1423
+01:12:32,120 --> 01:12:35,719
+Quindi x1 e notranno
+
+1424
+01:12:35,719 --> 01:12:39,440
+essere uno vero e l'altro rosso o al
+
+1425
+01:12:39,440 --> 01:12:41,880
+contrario, però non potranno assumere il
+
+1426
+01:12:41,880 --> 01:12:44,040
+colore blu.
+
+1427
+01:12:44,040 --> 01:12:47,159
+Va bene?
+
+1428
+01:12:48,159 --> 01:12:52,480
+Così questo pezzo di grafo, eh devo fare
+
+1429
+01:12:52,480 --> 01:12:55,840
+più di qua.
+
+1430
+01:12:56,000 --> 01:12:59,000
+Come si taglia? Non si taglia. Questo
+
+1431
+01:12:59,000 --> 01:13:02,000
+pezzo di grafo ci codifica, ci andrà a
+
+1432
+01:13:02,000 --> 01:13:04,320
+codificare l'assegnamento di verità
+
+1433
+01:13:04,320 --> 01:13:07,960
+delle variabili buleane. Ok? Dobbiamo
+
+1434
+01:13:07,960 --> 01:13:11,120
+adesso inventarci altri pezzi di grafo
+
+1435
+01:13:11,120 --> 01:13:13,520
+che vanno a codificare se una formula
+
+1436
+01:13:13,520 --> 01:13:15,600
+sia se una clausola sia stata
+
+1437
+01:13:15,600 --> 01:13:18,040
+soddisfatta da un certo colore o meno,
+
+1438
+01:13:18,040 --> 01:13:20,199
+da un certo assegnamento o meno. Ok? La
+
+1439
+01:13:20,199 --> 01:13:21,960
+facciamo prima a parte e poi
+
+1440
+01:13:21,960 --> 01:13:24,679
+l'aggiungiamo. Ok?
+
+1441
+01:13:24,679 --> 01:13:27,080
+Considerate questo pezzettino di grafo,
+
+1442
+01:13:27,080 --> 01:13:29,840
+poi lo cancello. Eh,
+
+1443
+01:13:29,840 --> 01:13:32,040
+noi dobbiamo, vi ricordo che questa è
+
+1444
+01:13:32,040 --> 01:13:34,080
+una clausola che è fatta da due OR,
+
+1445
+01:13:34,080 --> 01:13:35,639
+quindi dobbiamo andare a simulare
+
+1446
+01:13:35,639 --> 01:13:41,120
+tramite colorazione un OR, ok?
+
+1447
+01:13:42,360 --> 01:13:44,920
+Lo facciamo in questo modo, cioè questo
+
+1448
+01:13:44,920 --> 01:13:47,960
+gadget qui, questo
+
+1449
+01:13:47,960 --> 01:13:49,679
+pezzettino di grafo che ci andrà a
+
+1450
+01:13:49,679 --> 01:13:53,280
+implementare questa cosa. Supponiamo,
+
+1451
+01:13:53,280 --> 01:13:56,639
+no? di dare il colore falso ai due
+
+1452
+01:13:56,639 --> 01:13:59,040
+input. Questi sono gli input e questo
+
+1453
+01:13:59,040 --> 01:14:01,440
+sarà l'output di questo pezzettino qui.
+
+1454
+01:14:01,440 --> 01:14:03,040
+Eh,
+
+1455
+01:14:03,040 --> 01:14:05,120
+guardate questo pezzo di grafo come si
+
+1456
+01:14:05,120 --> 01:14:08,120
+comporta.
+
+1457
+01:14:08,960 --> 01:14:12,040
+Se io li coloro entrambi rossi, questi
+
+1458
+01:14:12,040 --> 01:14:15,040
+qua,
+
+1459
+01:14:15,520 --> 01:14:18,159
+eh,
+
+1460
+01:14:18,159 --> 01:14:20,520
+questi qui di che colore dovranno
+
+1461
+01:14:20,520 --> 01:14:22,120
+essere?
+
+1462
+01:14:22,120 --> 01:14:25,639
+Entrambi verdi.
+Come?
+Entrambi verdi
+
+1463
+01:14:25,639 --> 01:14:28,520
+possono essere entrambi verdi.
+Uno verde
+
+1464
+01:14:28,520 --> 01:14:32,440
+e uno blu. Ok. Adesso quale? Non importa
+
+1465
+01:14:32,440 --> 01:14:35,159
+perché son collegati, eh? C'è questo c'è
+
+1466
+01:14:35,159 --> 01:14:38,120
+questo arco qua. Quindi entrambi i verdi
+
+1467
+01:14:38,120 --> 01:14:39,880
+non possono essere.
+Sì, avevo dato
+
+1468
+01:14:39,880 --> 01:14:41,520
+questo contatto quello a destra, forse è
+
+1469
+01:14:41,520 --> 01:14:44,239
+quello blu.
+Ah, ok. Ok, ok. Ok.
+
+1470
+01:14:44,239 --> 01:14:48,800
+Quindi saranno uno rosso, uno verde,
+
+1471
+01:14:48,800 --> 01:14:51,520
+uno verde
+
+1472
+01:14:51,520 --> 01:14:55,520
+e l'altro blu. Ecco qua. Certo, qua non
+
+1473
+01:14:55,520 --> 01:14:57,960
+finiamo più.
+
+1474
+01:14:57,960 --> 01:15:00,880
+Blu. Ok, quindi se quello sono uno verde
+
+1475
+01:15:00,880 --> 01:15:03,880
+e l'altro blu, il terzo nodo di quel
+
+1476
+01:15:03,880 --> 01:15:07,320
+triangolino sarà rosso. Ok? Quindi
+
+1477
+01:15:07,320 --> 01:15:10,239
+questo pezzettino di grafo è
+
+1478
+01:15:10,239 --> 01:15:14,120
+interessante perché
+
+1479
+01:15:14,639 --> 01:15:20,760
+si ha input due nodi rossi, in output ha
+
+1480
+01:15:20,760 --> 01:15:22,760
+un nodo rosso.
+
+1481
+01:15:22,760 --> 01:15:25,480
+Guardiamo una cosa simile di nuovo,
+
+1482
+01:15:25,480 --> 01:15:28,560
+quindi questo qua, questo qui, questi
+
+1483
+01:15:28,560 --> 01:15:31,159
+sono gli input output. Ok, questo è il
+
+1484
+01:15:31,159 --> 01:15:35,239
+nostro gadget. Supponiamo che invece sia
+
+1485
+01:15:35,239 --> 01:15:37,320
+uno rosso
+
+1486
+01:15:37,320 --> 01:15:40,560
+e l'altro
+
+1487
+01:15:43,360 --> 01:15:46,840
+l'altro verde. Ok. Di che colore possono
+
+1488
+01:15:46,840 --> 01:15:50,800
+essere i due nodi intermedi?
+
+1489
+01:15:53,679 --> 01:15:56,560
+Come?
+O verde o blu e blu o blu e rosso.
+
+1490
+01:15:56,560 --> 01:16:01,800
+Blu qua.
+Sì. è rosso qui.
+
+1491
+01:16:01,800 --> 01:16:05,000
+Ok? Di conseguenza l'uscita potrà essere
+
+1492
+01:16:05,000 --> 01:16:08,000
+colorata verde. Quindi questo pezzettino
+
+1493
+01:16:08,000 --> 01:16:10,679
+di grafo sta codificando la funzione
+
+1494
+01:16:10,679 --> 01:16:13,000
+logica OR.
+
+1495
+01:16:13,000 --> 01:16:16,800
+Quindi noi utilizziamo questo sottografo
+
+1496
+01:16:16,800 --> 01:16:19,960
+per codificare le clausole. le clausole
+
+1497
+01:16:19,960 --> 01:16:23,280
+loro fra tre elementi e noi
+
+1498
+01:16:23,280 --> 01:16:25,080
+semplicemente faremo una cosa di questo
+
+1499
+01:16:25,080 --> 01:16:28,400
+tipo. Questo che sono i due input che è
+
+1500
+01:16:28,400 --> 01:16:31,520
+messo in input
+
+1501
+01:16:31,520 --> 01:16:34,280
+a comerà fatto
+
+1502
+01:16:34,280 --> 01:16:37,920
+all'altro. Ok? In questo modo noi con
+
+1503
+01:16:37,920 --> 01:16:40,040
+questo pezzo di grafo noi siamo in grado
+
+1504
+01:16:40,040 --> 01:16:43,600
+di codificare la clausola le clausole.
+
+1505
+01:16:43,600 --> 01:16:45,280
+Ok?
+
+1506
+01:16:45,280 --> 01:16:49,840
+È chiaro? Allora, adesso li cancello.
+
+1507
+01:16:49,840 --> 01:16:53,000
+Attenzione. Quindi spariranno, mi serve
+
+1508
+01:16:53,000 --> 01:16:55,520
+spazio.
+
+1509
+01:16:55,520 --> 01:16:59,040
+Quindi mi servono
+
+1510
+01:17:00,679 --> 01:17:02,600
+due pezzi
+
+1511
+01:17:02,600 --> 01:17:06,920
+per le due clausole, una
+
+1512
+01:17:06,920 --> 01:17:10,880
+e l'altra due.
+
+1513
+01:17:12,719 --> 01:17:17,040
+Ok? Quindi questo qui farà riferimento
+
+1514
+01:17:17,040 --> 01:17:21,560
+alla prima clausola che è questa
+
+1515
+01:17:21,560 --> 01:17:24,320
+e questo qui farà riferimento alla
+
+1516
+01:17:24,320 --> 01:17:27,960
+seconda clausola. Ok? Qual è la prima
+
+1517
+01:17:27,960 --> 01:17:32,520
+clausola? X1 or X2 or not X3 e
+
+1518
+01:17:32,520 --> 01:17:37,639
+semplicemente le colleghiamo. X1 qua, X2
+
+1519
+01:17:37,639 --> 01:17:44,719
+qua, not X3 qui. L'altro cos'è? not x2,
+
+1520
+01:17:44,719 --> 01:17:49,840
+x3 e not x4.
+
+1521
+01:17:52,520 --> 01:17:54,400
+Ok,
+
+1522
+01:17:54,400 --> 01:17:56,400
+al primo grafico dei quelli a fianco,
+
+1523
+01:17:56,400 --> 01:17:59,480
+sì,
+colleghiamo x1, x2 e
+noi colleghiamo
+
+1524
+01:17:59,480 --> 01:18:01,639
+i nodi relativi ai letterali che
+
+1525
+01:18:01,639 --> 01:18:03,960
+appaiono in quella clausola. Quindi la
+
+1526
+01:18:03,960 --> 01:18:08,000
+prima clausola è x1 or x2 or not x3.
+
+1527
+01:18:08,000 --> 01:18:13,280
+colleghiamo il nodo x1, il nodo x2 e il
+
+1528
+01:18:13,280 --> 01:18:16,639
+nodo not x3. Stessa cosa per la seconda
+
+1529
+01:18:16,639 --> 01:18:18,800
+clausola.
+
+1530
+01:18:18,800 --> 01:18:20,360
+Una domanda, ma all'esame forse
+
+1531
+01:18:20,360 --> 01:18:23,719
+consigliate di portarci o altro
+
+1532
+01:18:23,719 --> 01:18:26,920
+un normografo?
+
+1533
+01:18:29,360 --> 01:18:31,280
+Vi portate proprio il tecnigrafo, vi
+
+1534
+01:18:31,280 --> 01:18:34,800
+mettete là.
+
+1535
+01:18:36,360 --> 01:18:39,000
+C'era il mio professore di analisi
+
+1536
+01:18:39,000 --> 01:18:40,520
+all'università quando gli diceva "Ah, ma
+
+1537
+01:18:40,520 --> 01:18:41,960
+gli appunti li possiamo portare"
+
+1538
+01:18:41,960 --> 01:18:43,920
+eccetera faceva "Voi potete portare
+
+1539
+01:18:43,920 --> 01:18:47,159
+tutto quello che passa dalla porta,
+
+1540
+01:18:47,159 --> 01:18:49,159
+solo il vostro vicino non potete usare,
+
+1541
+01:18:49,159 --> 01:18:52,920
+tutto il resto è ammesso."
+
+1542
+01:18:52,920 --> 01:18:54,520
+Allora,
+
+1543
+01:18:54,520 --> 01:18:57,560
+noi abbiamo quindi che in questo che in
+
+1544
+01:18:57,560 --> 01:19:00,360
+questo pezzo di grafo noi stiamo andando
+
+1545
+01:19:00,360 --> 01:19:03,920
+a codificare che cosa? le clausole della
+
+1546
+01:19:03,920 --> 01:19:06,120
+formula. Noi che cosa vogliamo? Noi
+
+1547
+01:19:06,120 --> 01:19:09,400
+vogliamo che l'output di queste clausole
+
+1548
+01:19:09,400 --> 01:19:12,760
+sia vero, di quel pezzo di di clausole
+
+1549
+01:19:12,760 --> 01:19:15,320
+sia vero. Ok? Quindi di che colore ci
+
+1550
+01:19:15,320 --> 01:19:17,400
+aspettiamo che siano questi nodicini
+
+1551
+01:19:17,400 --> 01:19:20,920
+qua? Verdi. Come facciamo a imporlo che
+
+1552
+01:19:20,920 --> 01:19:24,199
+siano per forza verdi? collegandoli agli
+
+1553
+01:19:24,199 --> 01:19:26,360
+altri due. Quindi quello che faccio è
+
+1554
+01:19:26,360 --> 01:19:31,520
+che collego questo al blu e al rosso.
+
+1555
+01:19:31,520 --> 01:19:35,920
+Questo al blu e al rosso. Ok?
+
+1556
+01:19:35,920 --> 01:19:39,120
+Quindi questa è una trasformazione. È
+
+1557
+01:19:39,120 --> 01:19:42,080
+intrigato. Non vi non vi darò cose così
+
+1558
+01:19:42,080 --> 01:19:46,280
+toste da inventare. Eh, non vi
+
+1559
+01:19:46,280 --> 01:19:48,520
+preoccupate, peggio ancora. No, no,
+
+1560
+01:19:48,520 --> 01:19:52,120
+scherzo. Allora, questo grafo, quindi, è
+
+1561
+01:19:52,120 --> 01:19:56,480
+un grafo particolare, abbiamo 8 minuti,
+
+1562
+01:19:56,480 --> 01:20:00,639
+è un grafo ottenuto dalla formula G.
+
+1563
+01:20:00,639 --> 01:20:02,440
+Dobbiamo stabilire il numero di colori,
+
+1564
+01:20:02,440 --> 01:20:05,199
+il numero di colori è 3. Ok? Il K
+
+1565
+01:20:05,199 --> 01:20:08,600
+dobbiamo stabilire.
+
+1566
+01:20:09,040 --> 01:20:11,320
+Questi sono tutti i dettagli che trovate
+
+1567
+01:20:11,320 --> 01:20:13,840
+negli appunti di Calauti.
+
+1568
+01:20:13,840 --> 01:20:15,719
+Ve li leggete,
+
+1569
+01:20:15,719 --> 01:20:17,480
+vi rispiego esattamente la stessa cosa.
+
+1570
+01:20:17,480 --> 01:20:20,239
+L'ho presa da là la riduzione che se in
+
+1571
+01:20:20,239 --> 01:20:24,280
+genere ne usavo un altro. Ok. Sì.
+Il
+
+1572
+01:20:24,280 --> 01:20:25,639
+problema che abbiamo fatto un po' di
+
+1573
+01:20:25,639 --> 01:20:28,520
+tempo fa sulle piastrelle si può ridurre
+
+1574
+01:20:28,520 --> 01:20:31,800
+è questo.
+Sì, noi abbiamo le le
+
+1575
+01:20:31,800 --> 01:20:33,800
+piastrelle.
+Sì.
+
+1576
+01:20:33,800 --> 01:20:35,600
+No, le piastrelle non si può ridurre a
+
+1577
+01:20:35,600 --> 01:20:37,000
+questo perché le piastrelle è
+
+1578
+01:20:37,000 --> 01:20:38,960
+indecidibile. Questo problema invece è
+
+1579
+01:20:38,960 --> 01:20:41,679
+decidibile, quindi non si può, a meno
+
+1580
+01:20:41,679 --> 01:20:42,920
+che non abbiamo una funzione di
+
+1581
+01:20:42,920 --> 01:20:45,440
+trasformazione indecidibile, ma quello
+
+1582
+01:20:45,440 --> 01:20:47,880
+ovviamente è come tirar fuori il
+
+1583
+01:20:47,880 --> 01:20:49,960
+coniglio dal cappello, ok? è una cosa
+
+1584
+01:20:49,960 --> 01:20:52,400
+che non si può fare. Alrght, allora,
+
+1585
+01:20:52,400 --> 01:20:54,400
+quello che noi sostanzialmente vogliamo
+
+1586
+01:20:54,400 --> 01:20:57,080
+mostrare ora è che la formula fai è
+
+1587
+01:20:57,080 --> 01:21:01,040
+soddisfacbile se è solo se il il grafo
+
+1588
+01:21:01,040 --> 01:21:04,679
+così generato è un grafo tre colorabile.
+
+1589
+01:21:04,679 --> 01:21:06,639
+Ok?
+
+1590
+01:21:06,639 --> 01:21:08,880
+Supponiamo che la formula sia
+
+1591
+01:21:08,880 --> 01:21:11,880
+soddisfacbile
+
+1592
+01:21:12,760 --> 01:21:14,400
+perché io mi occupo della formula
+
+1593
+01:21:14,400 --> 01:21:16,120
+soddisfacbile perché le istanze di
+
+1594
+01:21:16,120 --> 01:21:18,440
+partenza sono formule. Ok? Se fosse
+
+1595
+01:21:18,440 --> 01:21:20,360
+stato un altro grafo, avrei parlato di
+
+1596
+01:21:20,360 --> 01:21:22,639
+grafi, insieme di nodi, eccetera.
+
+1597
+01:21:22,639 --> 01:21:25,040
+Supponiamo che la formula di partenza
+
+1598
+01:21:25,040 --> 01:21:27,880
+fai sia una formula soddisfacile. Questo
+
+1599
+01:21:27,880 --> 01:21:30,560
+significa che ammette
+
+1600
+01:21:30,560 --> 01:21:34,239
+un assegnamento di verità
+
+1601
+01:21:34,239 --> 01:21:36,480
+sigma
+
+1602
+01:21:36,480 --> 01:21:38,000
+per le sue variabili tale che
+
+1603
+01:21:38,000 --> 01:21:40,600
+quell'assegnamento di verità
+
+1604
+01:21:40,600 --> 01:21:45,880
+soddisfa tutte le clausole di F. Ok?
+
+1605
+01:21:45,880 --> 01:21:48,880
+Allora, noi coloriamo
+
+1606
+01:21:48,880 --> 01:21:51,920
+il grafo G ottenuto da Fine con tre
+
+1607
+01:21:51,920 --> 01:21:55,800
+colori in questo modo. I tre nodi della
+
+1608
+01:21:55,800 --> 01:22:00,400
+parte di sopra li coloriamo così.
+
+1609
+01:22:00,400 --> 01:22:04,080
+Dopodiché dobbiamo stabilire x1 e not x1
+
+1610
+01:22:04,080 --> 01:22:07,400
+come colorarli. Se x1 è vero in sigma
+
+1611
+01:22:07,400 --> 01:22:11,040
+gli diamo gli diamo verde. Se x1 è falso
+
+1612
+01:22:11,040 --> 01:22:13,560
+in sigma gli diamo rosso. E a notte x1
+
+1613
+01:22:13,560 --> 01:22:15,679
+gli diamo l'opposto. Facciamo lo stesso
+
+1614
+01:22:15,679 --> 01:22:19,120
+per tutti gli altri. Ok?
+
+1615
+01:22:19,120 --> 01:22:20,520
+Quindi noi stiamo prendendo
+
+1616
+01:22:20,520 --> 01:22:22,280
+l'assegnamento di verità che soddisfa
+
+1617
+01:22:22,280 --> 01:22:24,159
+fai e lo stiamo trasformando in una
+
+1618
+01:22:24,159 --> 01:22:28,239
+colorazione per questo grafo. Ok?
+
+1619
+01:22:28,239 --> 01:22:30,480
+Dopodiché dobbiamo colorare la parte
+
+1620
+01:22:30,480 --> 01:22:33,080
+rimanente del grafo. La parte rimanente
+
+1621
+01:22:33,080 --> 01:22:36,199
+del grafo è colorabile perché per quello
+
+1622
+01:22:36,199 --> 01:22:38,159
+che abbiamo visto prima sulla proprietà
+
+1623
+01:22:38,159 --> 01:22:40,960
+di questi pezzettini di grafo, se questi
+
+1624
+01:22:40,960 --> 01:22:43,560
+pezzettini di grafo ricevono in input
+
+1625
+01:22:43,560 --> 01:22:46,600
+dei nodi verdi, allora l'output può
+
+1626
+01:22:46,600 --> 01:22:50,120
+essere colorato verde. E quindi, come
+
+1627
+01:22:50,120 --> 01:22:52,120
+ciò è vero per tutte le clausole, perché
+
+1628
+01:22:52,120 --> 01:22:54,960
+sigma soddisfa tutte le clausole di f,
+
+1629
+01:22:54,960 --> 01:22:57,080
+noi avremo un modo di colorare in
+
+1630
+01:22:57,080 --> 01:23:00,760
+maniera coerente questo pezzo qua.
+
+1631
+01:23:00,760 --> 01:23:03,800
+È chiaro?
+
+1632
+01:23:03,800 --> 01:23:07,199
+Chiaro per tutti?
+
+1633
+01:23:08,199 --> 01:23:10,760
+Vediamo l'altro verso. Supponiamo di
+
+1634
+01:23:10,760 --> 01:23:13,880
+essere arrivato a arrivati a un'istanza
+
+1635
+01:23:13,880 --> 01:23:18,239
+sì del problema della colorabilità.
+
+1636
+01:23:20,960 --> 01:23:23,159
+Se siamo arrivati a un'istanza sì del
+
+1637
+01:23:23,159 --> 01:23:25,920
+problema della colorabilità, allora vuol
+
+1638
+01:23:25,920 --> 01:23:28,679
+dire che questo grafo è colorabile con
+
+1639
+01:23:28,679 --> 01:23:31,960
+tre colori.
+
+1640
+01:23:31,960 --> 01:23:35,000
+Questo pezzo di grafo avrà necessità
+
+1641
+01:23:35,000 --> 01:23:37,560
+sicuramente di tre colori. Parleremo
+
+1642
+01:23:37,560 --> 01:23:40,520
+quindi del colore di T, del colore di F
+
+1643
+01:23:40,520 --> 01:23:43,480
+e del colore B.
+
+1644
+01:23:43,480 --> 01:23:46,480
+Questi altri nodi saranno colorati in un
+
+1645
+01:23:46,480 --> 01:23:50,000
+certo modo. Da questa colorazione noi
+
+1646
+01:23:50,000 --> 01:23:52,239
+deriviamo l'assegnamento di verità per
+
+1647
+01:23:52,239 --> 01:23:57,560
+la formula per la formula f
+
+1648
+01:23:57,560 --> 01:24:01,320
+e funziona così. Andiamo a vedere questi
+
+1649
+01:24:01,320 --> 01:24:04,480
+nodi e la loro colorazione.
+
+1650
+01:24:04,480 --> 01:24:07,280
+Se x con i prende lo stesso colore del
+
+1651
+01:24:07,280 --> 01:24:10,000
+nodo t, nell'assegnamento di verità gli
+
+1652
+01:24:10,000 --> 01:24:13,800
+diamo vero. Se il nodo x con i prende il
+
+1653
+01:24:13,800 --> 01:24:15,520
+colore del nodo f, allora
+
+1654
+01:24:15,520 --> 01:24:17,600
+nell'assegnamento di verità gli diamo
+
+1655
+01:24:17,600 --> 01:24:21,520
+falso. Ok?
+
+1656
+01:24:21,520 --> 01:24:23,920
+Ci chiediamo, questo assegnamento di
+
+1657
+01:24:23,920 --> 01:24:26,760
+verità è coerente e consistente. Abbiamo
+
+1658
+01:24:26,760 --> 01:24:29,199
+variabili a cui assegniamo vero e falso
+
+1659
+01:24:29,199 --> 01:24:31,320
+contemporaneamente? No, perché per
+
+1660
+01:24:31,320 --> 01:24:33,880
+ognuna delle x con i prendiamo il colore
+
+1661
+01:24:33,880 --> 01:24:36,880
+del nodo e usiamo solamente lui, ok?
+
+1662
+01:24:36,880 --> 01:24:38,679
+Quindi non è che deamo vero e falso alla
+
+1663
+01:24:38,679 --> 01:24:40,280
+stessa variabile. Quindi l'assegnamento
+
+1664
+01:24:40,280 --> 01:24:43,679
+di verità così generato è coerente. Ci
+
+1665
+01:24:43,679 --> 01:24:46,040
+chiediamo se un tale assegnamento di
+
+1666
+01:24:46,040 --> 01:24:49,800
+verità soddisfi la formula di partenza.
+
+1667
+01:24:49,800 --> 01:24:52,400
+Ok?
+
+1668
+01:24:52,400 --> 01:24:54,760
+Supponiamo per assurdo che non la
+
+1669
+01:24:54,760 --> 01:24:56,960
+soddisfi, ok? che quindi ci sia una
+
+1670
+01:24:56,960 --> 01:24:59,639
+clausola, ad esempio questa qua della
+
+1671
+01:24:59,639 --> 01:25:03,679
+formula di partenza che sia falsa in
+
+1672
+01:25:03,679 --> 01:25:05,840
+questo assegnamento di verità ottenuto
+
+1673
+01:25:05,840 --> 01:25:09,800
+dalla colorazione. Se è falsa
+
+1674
+01:25:09,800 --> 01:25:12,080
+vuol dire che questi letterali sono
+
+1675
+01:25:12,080 --> 01:25:14,360
+tutti falsi,
+
+1676
+01:25:14,360 --> 01:25:18,560
+ma se sono tutti falsi allora questo
+
+1677
+01:25:18,560 --> 01:25:21,679
+sarebbe rosso. Questo sarebbe rosso,
+
+1678
+01:25:21,679 --> 01:25:24,719
+quest'altro sarebbe rosso e quindi per
+
+1679
+01:25:24,719 --> 01:25:27,119
+come è definito questo pezzo di grafo,
+
+1680
+01:25:27,119 --> 01:25:30,920
+anche questo qui dovrebbe essere rosso,
+
+1681
+01:25:30,920 --> 01:25:34,119
+ma ciò non pot può essere perché lui è
+
+1682
+01:25:34,119 --> 01:25:36,440
+agganciato qua.
+
+1683
+01:25:36,440 --> 01:25:40,679
+Se questo è rosso, questo è rosso e
+
+1684
+01:25:40,679 --> 01:25:43,880
+quest'altro è rosso, questi qua saranno
+
+1685
+01:25:43,880 --> 01:25:47,000
+verde e blu, quindi lui rosso. Poi
+
+1686
+01:25:47,000 --> 01:25:50,719
+quest'altro rosso, quindi verde e blu
+
+1687
+01:25:50,719 --> 01:25:54,560
+rosso e questo rosso qua. Ok? Quindi ciò
+
+1688
+01:25:54,560 --> 01:25:56,119
+implicherebbe che avremmo una
+
+1689
+01:25:56,119 --> 01:25:58,280
+colorazione in cui questo rosso è
+
+1690
+01:25:58,280 --> 01:26:00,199
+agganciato a quest'altro rosso, ma ciò
+
+1691
+01:26:00,199 --> 01:26:02,920
+non è possibile. Di conseguenza
+
+1692
+01:26:02,920 --> 01:26:06,080
+l'assegnamento di verità ottenuto dalla
+
+1693
+01:26:06,080 --> 01:26:08,400
+colorazione di questo grafo deve essere
+
+1694
+01:26:08,400 --> 01:26:10,560
+una deve essere un assegnamento che
+
+1695
+01:26:10,560 --> 01:26:12,239
+soddisfa
+
+1696
+01:26:12,239 --> 01:26:16,159
+la formula di partenza.
+
+1697
+01:26:16,679 --> 01:26:20,800
+Quindi se siamo arrivati a un'istanza sì
+
+1698
+01:26:20,800 --> 01:26:23,000
+del grafo,
+
+1699
+01:26:23,000 --> 01:26:25,320
+quindi un grafo colorabile, era perché
+
+1700
+01:26:25,320 --> 01:26:28,040
+partivamo da un'istanza sì della formula
+
+1701
+01:26:28,040 --> 01:26:29,639
+buleana, quindi da una formula
+
+1702
+01:26:29,639 --> 01:26:32,639
+soddisfacile.
+
+1703
+01:26:32,960 --> 01:26:35,719
+Chiaro?
+
+1704
+01:26:35,719 --> 01:26:37,880
+A questo ora siamo tutti un po' stanchi,
+
+1705
+01:26:37,880 --> 01:26:40,320
+eh?
+
+1706
+01:26:40,320 --> 01:26:43,199
+Chiaro? più o meno.
+
+1707
+01:26:43,199 --> 01:26:45,400
+Allora, io chiuderei qua, se c'è qualche
+
+1708
+01:26:45,400 --> 01:26:50,600
+domanda rispondo, senò abbiamo bisog
+
+1709
+01:26:51,320 --> 01:26:54,639
+Mi sp. Buona serata.
+
+1710
+01:26:54,639 --> 01:26:56,320
+Grazie.
+
+1711
+01:26:56,320 --> 01:26:59,320
+Ok,
+
+1712
+01:27:01,600 --> 01:27:04,400
+alza la voce.
+
+1713
+01:27:07,679 --> 01:27:11,400
+Ripeta
+i cerchietti che destra è un
+
+1714
+01:27:11,400 --> 01:27:14,520
+vertice perché
+Sì, sì, questi qua devono
+
+1715
+01:27:14,520 --> 01:27:19,199
+essere per forza ver. Sì, esattamente.

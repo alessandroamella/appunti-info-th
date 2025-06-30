@@ -1,0 +1,7840 @@
+1
+00:00:00,000 --> 00:00:03,000
+Ok,
+
+2
+00:00:29,320 --> 00:00:31,359
+iniziamo. un po' prima che oggi c'è un
+
+3
+00:00:31,359 --> 00:00:34,120
+sacco di roba e vorrei riuscire a
+
+4
+00:00:34,120 --> 00:00:36,520
+finirla in caso concludiamo prima.
+
+5
+00:00:36,520 --> 00:00:38,920
+Allora,
+
+6
+00:00:38,920 --> 00:00:41,480
+che vediamo oggi? Oggi continuiamo a
+
+7
+00:00:41,480 --> 00:00:46,079
+vedere problemi indecidibili,
+
+8
+00:00:46,640 --> 00:00:48,440
+quindi vediamo il problema che avremmo
+
+9
+00:00:48,440 --> 00:00:50,079
+dovuto vedere nella seconda metà della
+
+10
+00:00:50,079 --> 00:00:51,719
+scorsa lezione, ma non ci siamo
+
+11
+00:00:51,719 --> 00:00:55,039
+riusciti. Lo vediamo oggi e poi
+
+12
+00:00:55,039 --> 00:00:56,760
+introduciamo
+
+13
+00:00:56,760 --> 00:00:58,760
+un concetto nuovo riguardo
+
+14
+00:00:58,760 --> 00:01:01,039
+l'indecidibilità. Ci siamo quasi, eh,
+
+15
+00:01:01,039 --> 00:01:03,719
+credo che domani chiudiamo la parte di
+
+16
+00:01:03,719 --> 00:01:05,479
+calcolabilità e poi si inizia a
+
+17
+00:01:05,479 --> 00:01:08,280
+complessità, quindi, insomma, il corso
+
+18
+00:01:08,280 --> 00:01:11,040
+anche da un punto di vista di ore e
+
+19
+00:01:11,040 --> 00:01:12,920
+abbiamo già varcato la metà, non so se
+
+20
+00:01:12,920 --> 00:01:15,759
+ve ne siete accorti, ci stiamo dirigendo
+
+21
+00:01:15,759 --> 00:01:18,200
+verso la fine.
+
+22
+00:01:18,200 --> 00:01:21,000
+Ok, allora quello che facciamo oggi è
+
+23
+00:01:21,000 --> 00:01:22,520
+una cosa simile a quello che abbiamo
+
+24
+00:01:22,520 --> 00:01:25,159
+visto durante la lezione scorsa in cui
+
+25
+00:01:25,159 --> 00:01:27,240
+abbiamo preso un problema non
+
+26
+00:01:27,240 --> 00:01:28,759
+strettamente legato alle macchine di
+
+27
+00:01:28,759 --> 00:01:31,320
+Turing. abbiamo dimostrato essere un
+
+28
+00:01:31,320 --> 00:01:33,200
+problema
+
+29
+00:01:33,200 --> 00:01:36,960
+eh non ricorsivo, indecidibile e abbiamo
+
+30
+00:01:36,960 --> 00:01:38,960
+ottenuto l'indecidibilità tramite una
+
+31
+00:01:38,960 --> 00:01:41,759
+riduzione da
+
+32
+00:01:41,759 --> 00:01:45,040
+eh linguaggio universale. Essenzialmente
+
+33
+00:01:45,040 --> 00:01:46,399
+abbiamo fatto vedere che quel problema
+
+34
+00:01:46,399 --> 00:01:49,159
+era in grado di simulare
+
+35
+00:01:49,159 --> 00:01:51,119
+funzionamenti di macchine di Turing. Ok,
+
+36
+00:01:51,119 --> 00:01:53,640
+oggi ne vedremo un altro che è il
+
+37
+00:01:53,640 --> 00:01:56,920
+problema del tassellamento, del tiling e
+
+38
+00:01:56,920 --> 00:01:59,200
+dimostreremo che anche questo problema è
+
+39
+00:01:59,200 --> 00:02:01,240
+un problema indecidibile. Questo
+
+40
+00:02:01,240 --> 00:02:03,719
+problema all'apparenza sembra molto
+
+41
+00:02:03,719 --> 00:02:06,039
+diverso, sembra abbastanza un problema
+
+42
+00:02:06,039 --> 00:02:08,640
+normale e non cose strane su macchine di
+
+43
+00:02:08,640 --> 00:02:10,280
+touring, però mostreremo che anche
+
+44
+00:02:10,280 --> 00:02:12,560
+questo problema è indecisibile.
+
+45
+00:02:12,560 --> 00:02:13,760
+Riduzione.
+
+46
+00:02:13,760 --> 00:02:16,120
+Dimostreremo questa cosa tramite una
+
+47
+00:02:16,120 --> 00:02:18,760
+riduzione. Come al solito
+
+48
+00:02:18,760 --> 00:02:20,280
+voi ve lo siete andati a riguardare il
+
+49
+00:02:20,280 --> 00:02:22,200
+concetto di riduzione perché non se ne
+
+50
+00:02:22,200 --> 00:02:25,400
+esce senò eh proprio è proprio da qui in
+
+51
+00:02:25,400 --> 00:02:27,760
+poi saranno quasi sempre riduzioni
+
+52
+00:02:27,760 --> 00:02:30,040
+durante tutte le lezioni, ok? Quindi è
+
+53
+00:02:30,040 --> 00:02:32,120
+una cosa che usiamo usiamo e usiamo e
+
+54
+00:02:32,120 --> 00:02:39,280
+usiamo e quello serve. Eh ok. Allora,
+
+55
+00:02:39,280 --> 00:02:42,879
+consideriamo questo problema che è il
+
+56
+00:02:42,879 --> 00:02:45,200
+problema
+
+57
+00:02:45,200 --> 00:02:48,720
+del tiling.
+
+58
+00:02:49,200 --> 00:02:50,959
+Tiling.
+
+59
+00:02:50,959 --> 00:02:53,959
+Ok,
+
+60
+00:02:55,120 --> 00:02:57,080
+ve lo spiego prima in maniera intuitiva,
+
+61
+00:02:57,080 --> 00:03:02,519
+poi lo formalizziamo. Ok? Ok. Che cos'è
+
+62
+00:03:02,519 --> 00:03:04,760
+il tiling? Il problema del tiling,
+
+63
+00:03:04,760 --> 00:03:09,799
+supponiamo di avere una superficie,
+
+64
+00:03:09,799 --> 00:03:14,319
+tipo il primo quadrante cartesiano, ok?
+
+65
+00:03:14,319 --> 00:03:17,280
+Che vogliamo ricoprire con delle
+
+66
+00:03:17,280 --> 00:03:21,920
+piastrelle sostanzialmente. Ok?
+
+67
+00:03:26,000 --> 00:03:28,400
+Quindi questa superficie
+
+68
+00:03:28,400 --> 00:03:31,080
+può essere
+
+69
+00:03:31,080 --> 00:03:33,680
+suddivisa in dei quadri.
+
+70
+00:03:33,680 --> 00:03:37,400
+riquadri che per noi sono di unità uno e
+
+71
+00:03:37,400 --> 00:03:39,400
+noi dovremmo andare a sistemare dentro
+
+72
+00:03:39,400 --> 00:03:41,799
+questi riquadri delle piastrelle. Questa
+
+73
+00:03:41,799 --> 00:03:43,799
+superficie, essendo il primo quadrante
+
+74
+00:03:43,799 --> 00:03:46,760
+cartesiano, è una superficie infinita,
+
+75
+00:03:46,760 --> 00:03:50,959
+ok? Ha un'origine in cui questa è la
+
+76
+00:03:50,959 --> 00:03:54,159
+cella di origine, dopodiché il resto,
+
+77
+00:03:54,159 --> 00:03:56,120
+cioè abbiamo questa superficie come se
+
+78
+00:03:56,120 --> 00:03:57,959
+avessimo una stanza infinita in cui
+
+79
+00:03:57,959 --> 00:03:59,640
+abbiamo un angolo e dobbiamo mettere
+
+80
+00:03:59,640 --> 00:04:03,319
+piastrelle su questa stanza. Ok? avremo
+
+81
+00:04:03,319 --> 00:04:07,840
+varie piastrelle di un certo tipo,
+
+82
+00:04:07,840 --> 00:04:11,680
+piastrelle che potranno essere accostate
+
+83
+00:04:11,680 --> 00:04:14,560
+orizzontalmente o verticalmente secondo
+
+84
+00:04:14,560 --> 00:04:17,359
+alcune regole. Ok? Quindi recap, noi
+
+85
+00:04:17,359 --> 00:04:19,560
+abbiamo il piano cartesiano, il primo
+
+86
+00:04:19,560 --> 00:04:21,320
+quadrante del piano cartesiano da
+
+87
+00:04:21,320 --> 00:04:23,960
+piastrellare con delle piastrelle che
+
+88
+00:04:23,960 --> 00:04:25,919
+hanno tutte la stessa dimensione e
+
+89
+00:04:25,919 --> 00:04:28,880
+ognuna andrà a riempire uno di questi
+
+90
+00:04:28,880 --> 00:04:31,759
+quadrati. Le piastrelle non si possono
+
+91
+00:04:31,759 --> 00:04:34,759
+mettere a caso. Avremo del che ci
+
+92
+00:04:34,759 --> 00:04:37,000
+saranno delle regole tale per cui alcune
+
+93
+00:04:37,000 --> 00:04:40,080
+piastrelle possono essere messe
+
+94
+00:04:40,080 --> 00:04:42,800
+una affianco all'altra orizzontalmente e
+
+95
+00:04:42,800 --> 00:04:44,639
+altre piastrelle che potranno essere
+
+96
+00:04:44,639 --> 00:04:46,840
+messe una sopra l'altra verticalmente.
+
+97
+00:04:46,840 --> 00:04:50,000
+Cioè ci saranno delle regole. Come sono
+
+98
+00:04:50,000 --> 00:04:52,479
+fatte queste piastrelle?
+
+99
+00:04:52,479 --> 00:04:54,560
+Forse vi è capitato di giocare a questo
+
+100
+00:04:54,560 --> 00:04:57,240
+gioco.
+
+101
+00:04:57,240 --> 00:05:00,960
+Una piastrella è fatta in questo modo,
+
+102
+00:05:00,960 --> 00:05:05,880
+no? Che è divisa in quattro parti.
+
+103
+00:05:05,880 --> 00:05:08,360
+Ognuna di queste parti ha un colore,
+
+104
+00:05:08,360 --> 00:05:11,560
+tipo verde,
+
+105
+00:05:11,560 --> 00:05:14,560
+blu,
+
+106
+00:05:16,320 --> 00:05:19,320
+rosso,
+
+107
+00:05:20,520 --> 00:05:22,160
+eh, che ne so.
+
+108
+00:05:22,160 --> 00:05:23,840
+Che altro abbiamo di carino? Questo
+
+109
+00:05:23,840 --> 00:05:27,319
+viola. Si vede niente. Vabboh. Questo
+
+110
+00:05:27,319 --> 00:05:30,400
+qua. Ok. Quindi le piastrelle
+
+111
+00:05:30,400 --> 00:05:33,840
+hanno questa suddivisione a quattro.
+
+112
+00:05:33,840 --> 00:05:36,360
+Ognuna di queste piastrelle è
+
+113
+00:05:36,360 --> 00:05:38,759
+caratterizzata da questa colorazione.
+
+114
+00:05:38,759 --> 00:05:40,720
+Quindi abbiamo che alcune piastrelle
+
+115
+00:05:40,720 --> 00:05:43,880
+sono di questo tipo,
+
+116
+00:05:43,880 --> 00:05:46,560
+altre piastrelle
+
+117
+00:05:46,560 --> 00:05:50,479
+sono di un altro tipo.
+
+118
+00:05:50,720 --> 00:05:52,479
+Il tipo delle piastrelle è individuato
+
+119
+00:05:52,479 --> 00:05:55,039
+dai colori dalla disposiz dal tipo di
+
+120
+00:05:55,039 --> 00:05:57,199
+colori e dalla disposizione dei colori
+
+121
+00:05:57,199 --> 00:06:01,880
+che abbiamo. Ok?
+
+122
+00:06:06,800 --> 00:06:10,160
+Possibile non c'è un colore migliore.
+
+123
+00:06:10,160 --> 00:06:15,840
+M m m questo qua. Questo mi piace.
+
+124
+00:06:18,840 --> 00:06:21,840
+Eh,
+
+125
+00:06:21,880 --> 00:06:24,880
+questo
+
+126
+00:06:25,840 --> 00:06:30,240
+Ok, abbiamo visto.
+
+127
+00:06:31,240 --> 00:06:34,880
+Ok. Alright.
+
+128
+00:06:34,880 --> 00:06:36,599
+E ne abbiamo tanti. Ok. Quindi abbiamo
+
+129
+00:06:36,599 --> 00:06:40,479
+piastrelle divise in quattro settori con
+
+130
+00:06:40,479 --> 00:06:43,280
+dei colori. Il tipo di colori e la
+
+131
+00:06:43,280 --> 00:06:45,120
+disposizione dei colori individua il
+
+132
+00:06:45,120 --> 00:06:47,759
+tipo di piastrella. Le piastrelle che
+
+133
+00:06:47,759 --> 00:06:49,759
+possono essere messe sul quadrante vanno
+
+134
+00:06:49,759 --> 00:06:51,800
+messe così come sono, non le possiamo
+
+135
+00:06:51,800 --> 00:06:54,520
+girare, ok? Quindi vanno prese così e le
+
+136
+00:06:54,520 --> 00:06:57,360
+schiaffiamo sul tavolo, ok? non le
+
+137
+00:06:57,360 --> 00:06:59,639
+possiamo girare,
+
+138
+00:06:59,639 --> 00:07:02,479
+non le possiamo strecciare, cioè quindi
+
+139
+00:07:02,479 --> 00:07:04,520
+non è che le allunghiamo, hanno tutte
+
+140
+00:07:04,520 --> 00:07:08,360
+questa stessa dimensione che è una cella
+
+141
+00:07:08,360 --> 00:07:10,400
+sul quadrante
+
+142
+00:07:10,400 --> 00:07:15,840
+e come possono essere messe
+
+143
+00:07:15,919 --> 00:07:18,960
+una di fianco all'altra. Sì,
+ad esempio
+
+144
+00:07:18,960 --> 00:07:21,240
+quattro colori
+possono averne quanti ne
+
+145
+00:07:21,240 --> 00:07:25,039
+vogliamo, più
+pure 1000.
+Ma ogni casella
+
+146
+00:07:25,039 --> 00:07:28,879
+ha 1000 colori o
+no? Ogni ogni ogni
+
+147
+00:07:28,879 --> 00:07:30,960
+tessera è divisa in quattro porzioni.
+
+148
+00:07:30,960 --> 00:07:34,560
+Una porzione c'ha un colore preso da un
+
+149
+00:07:34,560 --> 00:07:38,680
+set che vogliamo, no? Ok.
+
+150
+00:07:38,680 --> 00:07:41,919
+Sono ne abbiamo infinite piastrelle,
+
+151
+00:07:41,919 --> 00:07:44,680
+quindi abbiamo un numero finito di tipi
+
+152
+00:07:44,680 --> 00:07:47,039
+e un numero infinito di piastrelle di
+
+153
+00:07:47,039 --> 00:07:50,560
+ogni tipo. Ok? Le piastrelle possono
+
+154
+00:07:50,560 --> 00:07:54,039
+essere messe una a fianco all'altra
+
+155
+00:07:54,039 --> 00:07:57,319
+se si vanno a toccare con il lato e
+
+156
+00:07:57,319 --> 00:07:59,680
+hanno lo stesso colore. Ok? Tipo, ad
+
+157
+00:07:59,680 --> 00:08:02,960
+esempio, non posso
+
+158
+00:08:02,960 --> 00:08:07,800
+mettere questa su questa perché il
+
+159
+00:08:07,800 --> 00:08:11,440
+colore di sotto della tail di sopra è
+
+160
+00:08:11,440 --> 00:08:14,440
+blu e il colore di sopra della tile di
+
+161
+00:08:14,440 --> 00:08:18,599
+sotto è rosso. Però posso mettere, vedi
+
+162
+00:08:18,599 --> 00:08:21,240
+questo? No, però posso mettere questa su
+
+163
+00:08:21,240 --> 00:08:24,720
+questa perché così le parti verdi vanno
+
+164
+00:08:24,720 --> 00:08:29,479
+a combaciare. Ok? Quindi noi possiamo
+
+165
+00:08:29,479 --> 00:08:31,960
+mettere in maniera adiacente le
+
+166
+00:08:31,960 --> 00:08:36,880
+piastrelle solo se vanno a toccare, cioè
+
+167
+00:08:36,880 --> 00:08:39,680
+le altre piastrelle che vanno a toccare
+
+168
+00:08:39,680 --> 00:08:42,919
+sul bordo in comune hanno lo stesso
+
+169
+00:08:42,919 --> 00:08:46,080
+colore. Ok,
+
+170
+00:08:46,080 --> 00:08:49,000
+ci siamo. Piastrelliamo il primo
+
+171
+00:08:49,000 --> 00:08:51,600
+quadrante diviso in celle. Le celle
+
+172
+00:08:51,600 --> 00:08:53,600
+prenderanno queste piastrelle. Le
+
+173
+00:08:53,600 --> 00:08:55,560
+piastrelle sono un numero finito di
+
+174
+00:08:55,560 --> 00:08:58,240
+tipi. Il tipo identificato dai colori
+
+175
+00:08:58,240 --> 00:09:00,839
+che colorano le quattro porzioni.
+
+176
+00:09:00,839 --> 00:09:02,600
+Piastrelle ne abbiamo un numero
+
+177
+00:09:02,600 --> 00:09:04,800
+infinito. Le piastrelle possono essere
+
+178
+00:09:04,800 --> 00:09:07,279
+affiancate solamente se il bordo in
+
+179
+00:09:07,279 --> 00:09:10,040
+comune con la piastrella vicino
+
+180
+00:09:10,040 --> 00:09:14,240
+è dello stesso colore. Ok? Tra le varie
+
+181
+00:09:14,240 --> 00:09:18,240
+piastrelle ne avremo una particolare
+
+182
+00:09:18,240 --> 00:09:21,320
+che andrà posta per forza in prima
+
+183
+00:09:21,320 --> 00:09:23,480
+posizione che chiamiamo di zero. Ok?
+
+184
+00:09:23,480 --> 00:09:26,160
+Quindi fra tutti i tipi di piastrelle
+
+185
+00:09:26,160 --> 00:09:28,480
+uno di questi tipi è l'unico che può
+
+186
+00:09:28,480 --> 00:09:33,040
+andare in quella posizione là.
+
+187
+00:09:34,760 --> 00:09:38,000
+Ah, ho capito. Sì.
+
+188
+00:09:38,000 --> 00:09:40,480
+Cos'altro? Cos'altro? Cos'altro? Detto
+
+189
+00:09:40,480 --> 00:09:45,399
+tutto, la domanda è dato un sistema di
+
+190
+00:09:45,399 --> 00:09:47,800
+questo tipo, di tiling di questo tipo, è
+
+191
+00:09:47,800 --> 00:09:49,839
+vero, no? Che è possibile ricoprire
+
+192
+00:09:49,839 --> 00:09:52,079
+tutto il primo quadrante cartesiano?
+
+193
+00:09:52,079 --> 00:09:53,760
+Cioè, è possibile che riusciamo a
+
+194
+00:09:53,760 --> 00:09:56,640
+ricoprire quello spazio infinito? Oppure
+
+195
+00:09:56,640 --> 00:09:59,200
+la tipologia di piastrelle che abbiamo a
+
+196
+00:09:59,200 --> 00:10:01,360
+un certo punto si blocca e non riusciamo
+
+197
+00:10:01,360 --> 00:10:05,120
+a finire tutta il piastrellamento.
+
+198
+00:10:05,120 --> 00:10:07,160
+No, può essere qui una pastella identica
+
+199
+00:10:07,160 --> 00:10:09,040
+a qualche direzione? Non ho capito la
+
+200
+00:10:09,040 --> 00:10:11,040
+domanda. Se ripetere più più di una
+
+201
+00:10:11,040 --> 00:10:13,760
+piastrella identica.
+Certo, noi abbiamo
+
+202
+00:10:13,760 --> 00:10:16,519
+vari tipi di piastrelle e per ogni tipo
+
+203
+00:10:16,519 --> 00:10:19,320
+ne abbiamo infinite. Ok? Certo, senò se
+
+204
+00:10:19,320 --> 00:10:20,959
+ne avevamo finite come riempiamo un
+
+205
+00:10:20,959 --> 00:10:23,720
+piano infinito? E è un po' un problema.
+
+206
+00:10:23,720 --> 00:10:25,800
+Sì. Quindi
+
+207
+00:10:25,800 --> 00:10:29,200
+abbiamo infinite piastrelle di un numero
+
+208
+00:10:29,200 --> 00:10:32,240
+finito di tipi. L'affiancamento può
+
+209
+00:10:32,240 --> 00:10:35,440
+avvenire solo se i bordi hanno dello
+
+210
+00:10:35,440 --> 00:10:37,920
+stesso colore, son dello stesso colore.
+
+211
+00:10:37,920 --> 00:10:40,079
+In questa posizione ci deve andare a
+
+212
+00:10:40,079 --> 00:10:42,399
+finire una piastrella specifica. Non
+
+213
+00:10:42,399 --> 00:10:44,440
+possiamo metterci quello che vogliamo.
+
+214
+00:10:44,440 --> 00:10:48,200
+La domanda è se posso mettere piastrelle
+
+215
+00:10:48,200 --> 00:10:50,360
+per riempire tutte le linee di questo
+
+216
+00:10:50,360 --> 00:10:53,320
+piano e io piastrello questa stanza
+
+217
+00:10:53,320 --> 00:10:57,560
+infinitamente grande? Questo problema
+
+218
+00:10:57,560 --> 00:11:00,639
+si può dimostrare essere indecidibile,
+
+219
+00:11:00,639 --> 00:11:03,040
+cioè potete sbattere la testa quanto
+
+220
+00:11:03,040 --> 00:11:05,959
+volete, un algoritmo che risolve questo
+
+221
+00:11:05,959 --> 00:11:08,320
+problema non lo troverete, non ci sta.
+
+222
+00:11:08,320 --> 00:11:11,079
+Prego.
+Nella stessa piastrella puoi
+
+223
+00:11:11,079 --> 00:11:13,240
+sapere in due settori diversi lo stesso
+
+224
+00:11:13,240 --> 00:11:15,440
+colore.
+Sì, sì, sì, sì, sì.
+Quindi può
+
+225
+00:11:15,440 --> 00:11:17,160
+esserci una piastrellaato lo stesso
+
+226
+00:11:17,160 --> 00:11:19,200
+colore.
+Sì, su quello non abbiamo
+
+227
+00:11:19,200 --> 00:11:21,440
+vincoli, eh, cioè fa parte dell'input.
+
+228
+00:11:21,440 --> 00:11:23,240
+Fra i tipi di piastrelle abbiamo una
+
+229
+00:11:23,240 --> 00:11:26,120
+piastrella tutta blu. Vabboh. Ok. Però
+
+230
+00:11:26,120 --> 00:11:28,680
+poi verrà contornata da piastrelle che
+
+231
+00:11:28,680 --> 00:11:30,760
+la toccano con porzioni blu. Eh, non è
+
+232
+00:11:30,760 --> 00:11:33,959
+che ci metti altro. Può mettere due a
+
+233
+00:11:33,959 --> 00:11:36,040
+fianca all'altra.
+Può mettere, scusi,
+
+234
+00:11:36,040 --> 00:11:38,320
+due giù, una fianca all'altra.
+Sì, sì,
+
+235
+00:11:38,320 --> 00:11:40,399
+sì, sì. L'unica regola che dobbiamo
+
+236
+00:11:40,399 --> 00:11:44,000
+seguire è questo, che nel momento in cui
+
+237
+00:11:44,000 --> 00:11:46,240
+affianchiamo due piastrelle, o
+
+238
+00:11:46,240 --> 00:11:48,720
+orizzontalmente o verticalmente, il
+
+239
+00:11:48,720 --> 00:11:50,639
+cordo in comune deve avere lo stesso
+
+240
+00:11:50,639 --> 00:11:54,079
+colore. Tutto
+
+241
+00:11:56,320 --> 00:11:59,600
+come
+nella posizione zero.
+Sì,
+
+242
+00:11:59,600 --> 00:12:02,200
+ci deve andare una Guys, guys, guys, un
+
+243
+00:12:02,200 --> 00:12:05,000
+attimo.
+
+244
+00:12:05,000 --> 00:12:07,440
+Ci deve andare una pesterella di un
+
+245
+00:12:07,440 --> 00:12:11,680
+certo tipo che viene assegnata.
+
+246
+00:12:11,800 --> 00:12:15,320
+Questa con l'indom
+
+247
+00:12:15,320 --> 00:12:16,800
+te lo danno nell'input. Adesso lo
+
+248
+00:12:16,800 --> 00:12:19,720
+vediamo. Questa va in prima posizione.
+
+249
+00:12:19,720 --> 00:12:21,760
+Per alcune è possibile però provare
+
+250
+00:12:21,760 --> 00:12:24,360
+risposta per altre no dipende l'input.
+
+251
+00:12:24,360 --> 00:12:26,639
+Sì, alcuni input. Se lei ha un input di
+
+252
+00:12:26,639 --> 00:12:29,600
+piastrelle tutte rosse si fa un bel
+
+253
+00:12:29,600 --> 00:12:32,279
+pavimento rosso, lo ricopre. Il problema
+
+254
+00:12:32,279 --> 00:12:35,240
+è se abbiamo piastrello un po' così a
+
+255
+00:12:35,240 --> 00:12:38,240
+cavoli, se ce la facciamo a Cioè alla
+
+256
+00:12:38,240 --> 00:12:40,480
+fine è un problema di domino, no? Hai
+
+257
+00:12:40,480 --> 00:12:42,199
+visto che le tessere del domino che
+
+258
+00:12:42,199 --> 00:12:45,399
+vanno affiancate riusciamo a sistemarle?
+
+259
+00:12:45,399 --> 00:12:47,920
+Eh, più o meno quello è il problema.
+
+260
+00:12:47,920 --> 00:12:52,399
+Altre domande? Yes.
+
+261
+00:12:53,079 --> 00:12:55,639
+Sì, sì, adesso vediamo. Sì, perché se
+
+262
+00:12:55,639 --> 00:12:56,959
+avessimo tutte le combinazioni di
+
+263
+00:12:56,959 --> 00:12:59,800
+colore,
+se fossero finite, ovviamente o
+
+264
+00:12:59,800 --> 00:13:01,800
+avessimo tutte le possibili combinazioni
+
+265
+00:13:01,800 --> 00:13:04,079
+di colore, avremmo anche le piastrelle
+
+266
+00:13:04,079 --> 00:13:06,519
+monocolore, quindi le useremo. Ok?
+
+267
+00:13:06,519 --> 00:13:08,240
+Quindi i tipi di piastrella adesso lo
+
+268
+00:13:08,240 --> 00:13:10,720
+descriviamo bene. Eh,
+
+269
+00:13:10,720 --> 00:13:12,839
+c'era una domanda là.
+Quindi non abbiamo
+
+270
+00:13:12,839 --> 00:13:15,680
+ogni tipo di di di piastrella, no? Se
+
+271
+00:13:15,680 --> 00:13:17,600
+avessimo input ogni tipo di piastrella,
+
+272
+00:13:17,600 --> 00:13:19,519
+un'istanza del genere sarebbe quale
+
+273
+00:13:19,519 --> 00:13:22,560
+sarebbe la difficoltà di rispondere a
+
+274
+00:13:22,560 --> 00:13:26,079
+istanze del genere?
+
+275
+00:13:28,560 --> 00:13:30,519
+Supponiamo di avere istanze in input in
+
+276
+00:13:30,519 --> 00:13:32,920
+cui abbiamo la garanzia che tra le
+
+277
+00:13:32,920 --> 00:13:35,279
+tipologie di piastrelle ci sono tutte le
+
+278
+00:13:35,279 --> 00:13:37,639
+tipologie di piastrelle che abbiamo.
+
+279
+00:13:37,639 --> 00:13:39,800
+Qual è la difficoltà di rispondere a
+
+280
+00:13:39,800 --> 00:13:43,120
+questo problema?
+
+281
+00:13:45,800 --> 00:13:48,120
+è nulla. Si risponde sempre di sì, non
+
+282
+00:13:48,120 --> 00:13:49,920
+devo nemmeno guardare gli input, si
+
+283
+00:13:49,920 --> 00:13:51,880
+risponde in tempo costante a questo
+
+284
+00:13:51,880 --> 00:13:54,199
+problema. Cioè, io ignoro l'input e dico
+
+285
+00:13:54,199 --> 00:13:57,639
+yes, capito? Quindi non ha senso. Le
+
+286
+00:13:57,639 --> 00:14:00,120
+piastrelle, dai un attimo non vi
+
+287
+00:14:00,120 --> 00:14:03,440
+sovrapponete. Le piastrelle sono di tipo
+
+288
+00:14:03,440 --> 00:14:07,160
+finito, di tipo assegnato nell'input
+
+289
+00:14:07,160 --> 00:14:09,240
+secondo delle regole. Adesso il problema
+
+290
+00:14:09,240 --> 00:14:11,279
+lo formalizziamo, non vi preoccupate. Vi
+
+291
+00:14:11,279 --> 00:14:13,279
+ho solo voluto dare l'intizione. C'era
+
+292
+00:14:13,279 --> 00:14:15,440
+domanda là
+
+293
+00:14:15,440 --> 00:14:19,160
+sono
+Sì, sì. È tipologia di piastrelle
+
+294
+00:14:19,160 --> 00:14:24,079
+qu
+sono 5 10 20 100. Te lo dicono prima.
+
+295
+00:14:24,079 --> 00:14:27,079
+Ti danno un'istanza e ti dice guarda c'è
+
+296
+00:14:27,079 --> 00:14:30,759
+ste pile di piastrelle, no? Ne hai 18
+
+297
+00:14:30,759 --> 00:14:33,600
+tipi diversi. Ci sono delle pilone, pile
+
+298
+00:14:33,600 --> 00:14:36,920
+infinite. Dice, scusa, dice questa
+
+299
+00:14:36,920 --> 00:14:39,839
+questa tipologia se è l'unica messa a
+
+300
+00:14:39,839 --> 00:14:41,839
+stare in posizione zero. Me lo
+
+301
+00:14:41,839 --> 00:14:44,199
+piastrelli il pavimento, no? E tu e noi
+
+302
+00:14:44,199 --> 00:14:48,320
+dobbiamo dire sì o no. Questo problema è
+
+303
+00:14:48,320 --> 00:14:51,959
+indecisibile, cioè non si risolve.
+
+304
+00:14:51,959 --> 00:14:53,720
+Questo non esclude, guys. Quando noi
+
+305
+00:14:53,720 --> 00:14:55,880
+diciamo che un problema è indecidibile,
+
+306
+00:14:55,880 --> 00:14:57,720
+non significa che su ogni istanza non
+
+307
+00:14:57,720 --> 00:15:01,240
+sappiamo che dire, significa che ci sono
+
+308
+00:15:01,240 --> 00:15:03,199
+istanze sulla quali noi non siamo in
+
+309
+00:15:03,199 --> 00:15:04,759
+grado di dare la risposta. Quello è
+
+310
+00:15:04,759 --> 00:15:07,040
+sufficiente per il problema essere
+
+311
+00:15:07,040 --> 00:15:09,199
+indecidibile. Se su ogni istanza noi
+
+312
+00:15:09,199 --> 00:15:11,959
+fossimo in grado di dire sì o no, il
+
+313
+00:15:11,959 --> 00:15:15,480
+problema sarebbe in quale classe?
+
+314
+00:15:15,480 --> 00:15:20,600
+R. Ok? Quindi basta giù anche una sola
+
+315
+00:15:20,600 --> 00:15:23,320
+istanza sulla quale non sappiamo dare la
+
+316
+00:15:23,320 --> 00:15:26,000
+risposta. Il problema è indecidibile,
+
+317
+00:15:26,000 --> 00:15:28,360
+ok? Perché se siamo sfigati e ci capita
+
+318
+00:15:28,360 --> 00:15:29,880
+questa istanza in input, la nostra
+
+319
+00:15:29,880 --> 00:15:34,160
+macchina non risponde. Chiaro? Domanda
+
+320
+00:15:34,160 --> 00:15:37,360
+non so se la domanda, cioè la domanda
+
+321
+00:15:37,360 --> 00:15:39,800
+che risponde è possibile piastrellare il
+
+322
+00:15:39,800 --> 00:15:41,720
+quadrante con un set specifico oppure è
+
+323
+00:15:41,720 --> 00:15:43,519
+possibile farlo a partire da un set di
+
+324
+00:15:43,519 --> 00:15:44,720
+zero?
+
+325
+00:15:44,720 --> 00:15:47,120
+È possibile farlo con un set specifico
+
+326
+00:15:47,120 --> 00:15:49,839
+se impongo di zero.
+
+327
+00:15:49,839 --> 00:15:52,519
+Eh sì, fa parte dell'input. Ok, adesso
+
+328
+00:15:52,519 --> 00:15:54,600
+formalizziamo l'input così siamo tutti
+
+329
+00:15:54,600 --> 00:15:56,360
+contenti.
+
+330
+00:15:56,360 --> 00:16:00,720
+Ok, cos'è l'input di questo problema?
+
+331
+00:16:11,399 --> 00:16:13,000
+Un'altra cosa, per esempio, questa
+
+332
+00:16:13,000 --> 00:16:15,800
+piastrella
+
+333
+00:16:15,800 --> 00:16:19,040
+può essere messa sulla destra di questa.
+
+334
+00:16:19,040 --> 00:16:20,959
+Ok? Vi ricordo che le piastrelle non
+
+335
+00:16:20,959 --> 00:16:23,000
+ruotano, eh, non le giriamo come
+
+336
+00:16:23,000 --> 00:16:25,120
+vogliamo, vanno prese così come sono e
+
+337
+00:16:25,120 --> 00:16:27,600
+piazzate sul pavimento.
+
+338
+00:16:27,600 --> 00:16:31,160
+Ok? Input. L'input
+
+339
+00:16:31,160 --> 00:16:33,920
+è un sistema di tiling
+
+340
+00:16:33,920 --> 00:16:37,720
+che è una quadrupla
+
+341
+00:16:38,079 --> 00:16:47,160
+formata da D, D0, H e V dove D
+
+342
+00:16:47,160 --> 00:16:51,240
+è un insieme
+
+343
+00:16:53,319 --> 00:16:56,319
+finito
+
+344
+00:16:56,519 --> 00:16:58,600
+di tipi
+
+345
+00:16:58,600 --> 00:17:02,120
+di piastrella
+
+346
+00:17:06,120 --> 00:17:09,120
+D0
+
+347
+00:17:09,600 --> 00:17:15,959
+D0 appartiene a D è il tipo
+
+348
+00:17:15,959 --> 00:17:19,480
+di piastrella
+
+349
+00:17:20,520 --> 00:17:23,520
+ammessa
+
+350
+00:17:25,880 --> 00:17:30,799
+in posizione 00.
+
+351
+00:17:31,840 --> 00:17:34,280
+Ok.
+
+352
+00:17:34,280 --> 00:17:37,280
+H
+
+353
+00:17:37,960 --> 00:17:41,320
+è l'insieme delle regole di
+
+354
+00:17:41,320 --> 00:17:43,000
+affiancamento
+
+355
+00:17:43,000 --> 00:17:47,640
+orizzontale. Ok? Quindi h è
+
+356
+00:17:47,640 --> 00:17:50,240
+un sottoinsieme del prodotto cartesiano
+
+357
+00:17:50,240 --> 00:17:52,360
+D* D.
+
+358
+00:17:52,360 --> 00:17:55,240
+Ok? E queste sono intuitivamente le
+
+359
+00:17:55,240 --> 00:17:57,559
+regole
+
+360
+00:17:57,559 --> 00:18:01,520
+di affiancamento
+
+361
+00:18:04,120 --> 00:18:06,919
+orizzontale.
+
+362
+00:18:06,919 --> 00:18:08,360
+Come vedete in questa definizione
+
+363
+00:18:08,360 --> 00:18:11,720
+formale non abbiamo i colori eccetera,
+
+364
+00:18:11,720 --> 00:18:14,760
+ok? Noi abbiamo tipi tipo 1, tipo 2,
+
+365
+00:18:14,760 --> 00:18:18,280
+tipo 3, tipo K, tipo A, tipo B, tipo C.
+
+366
+00:18:18,280 --> 00:18:21,159
+Ok? Poi abbiamo un subset del prodotto
+
+367
+00:18:21,159 --> 00:18:23,159
+cartesiano che ci che ci dice il tipo
+
+368
+00:18:23,159 --> 00:18:25,240
+pippo e il tipo topolino possono stare
+
+369
+00:18:25,240 --> 00:18:29,000
+di fianco. Ok? I colori ve li ho
+
+370
+00:18:29,000 --> 00:18:31,880
+descritti prima per avere un'idea di
+
+371
+00:18:31,880 --> 00:18:34,039
+come funziona sta cosa e non partire con
+
+372
+00:18:34,039 --> 00:18:38,000
+i simboli che senò ci sparavamo. Ok? H
+
+373
+00:18:38,000 --> 00:18:40,600
+poi D
+
+374
+00:18:40,600 --> 00:18:42,360
+è un sottoinsieme del prodotto
+
+375
+00:18:42,360 --> 00:18:45,960
+cartesiano D* D. Che cosa sono? Sono le
+
+376
+00:18:45,960 --> 00:18:48,600
+regole
+
+377
+00:18:48,600 --> 00:18:53,400
+di affiancamento verticale.
+
+378
+00:18:57,280 --> 00:19:01,440
+Come si chiama? M quello originale
+
+379
+00:19:01,440 --> 00:19:03,200
+hh
+
+380
+00:19:03,200 --> 00:19:07,000
+H maiuscolo horrizontal.
+
+381
+00:19:07,919 --> 00:19:10,240
+Ok.
+
+382
+00:19:10,240 --> 00:19:14,159
+Cos'è un tiling?
+
+383
+00:19:14,159 --> 00:19:19,360
+Un tiling attraverso il sistema T
+
+384
+00:19:19,360 --> 00:19:23,440
+è una funzione
+
+385
+00:19:24,000 --> 00:19:28,799
+che mappa coppie di numeri naturali a
+
+386
+00:19:28,799 --> 00:19:31,240
+tipi di piastrelle.
+
+387
+00:19:31,240 --> 00:19:33,480
+Ok? Quindi un tiling cos'è? è
+
+388
+00:19:33,480 --> 00:19:37,640
+un'allocazione, è una funzione che mappa
+
+389
+00:19:37,640 --> 00:19:40,360
+la posizione della cella sul quadrante
+
+390
+00:19:40,360 --> 00:19:44,760
+con il tipo di piastrella che vogliamo
+
+391
+00:19:44,760 --> 00:19:48,840
+infilare lì, tale per cui l'allineamento
+
+392
+00:19:48,840 --> 00:19:51,000
+verticale, l'affiancamento verticale
+
+393
+00:19:51,000 --> 00:19:54,159
+orizzontale rispetta le regole. Quindi
+
+394
+00:19:54,159 --> 00:19:56,280
+abbiamo che
+
+395
+00:19:56,280 --> 00:20:00,600
+f 00 deve essere di 0. Quindi in
+
+396
+00:20:00,600 --> 00:20:04,240
+posizione 00 che è questo angolino qua,
+
+397
+00:20:04,240 --> 00:20:06,960
+ci deve andare il tipo specifico. Non ci
+
+398
+00:20:06,960 --> 00:20:10,240
+possiamo mettere una cosa a caso.
+
+399
+00:20:10,240 --> 00:20:12,159
+Secondo pezzo
+
+400
+00:20:12,159 --> 00:20:14,960
+f
+
+401
+00:20:14,960 --> 00:20:18,440
+di mn
+
+402
+00:20:19,120 --> 00:20:23,200
+f m + 1 n
+
+403
+00:20:23,200 --> 00:20:27,880
+appartiene ad h per ogni m ed n
+
+404
+00:20:27,880 --> 00:20:29,919
+appartenente ai naturali. E quindi
+
+405
+00:20:29,919 --> 00:20:32,559
+significa che se noi andiamo a vedere la
+
+406
+00:20:32,559 --> 00:20:35,039
+piastrella in posizione MN e la
+
+407
+00:20:35,039 --> 00:20:38,320
+piastrella alla sua destra, allora
+
+408
+00:20:38,320 --> 00:20:40,840
+questo affiancamento deve far parte
+
+409
+00:20:40,840 --> 00:20:43,600
+dell'insieme delle coppie ammissibili in
+
+410
+00:20:43,600 --> 00:20:45,720
+H.
+
+411
+00:20:45,720 --> 00:20:47,679
+Ok?
+
+412
+00:20:47,679 --> 00:20:50,120
+e
+
+413
+00:20:50,120 --> 00:20:53,120
+FMn
+
+414
+00:20:53,120 --> 00:20:55,200
+FMN
+
+415
+00:20:55,200 --> 00:21:00,480
++ 1 appartiene a V per ogni MN
+
+416
+00:21:00,480 --> 00:21:04,280
+appartenente a ai naturali. Ok? Quindi
+
+417
+00:21:04,280 --> 00:21:06,159
+cosa dice? è che se noi andiamo a
+
+418
+00:21:06,159 --> 00:21:07,960
+prendere di questa funzione
+
+419
+00:21:07,960 --> 00:21:10,559
+l'assegnamento delle pastrelle a una
+
+420
+00:21:10,559 --> 00:21:13,000
+qualsiasi posizione e a quella sopra di
+
+421
+00:21:13,000 --> 00:21:16,919
+lui, allora questa coppia di piastrelle
+
+422
+00:21:16,919 --> 00:21:19,000
+deve appartenere all'insieme delle
+
+423
+00:21:19,000 --> 00:21:21,480
+coppie ammissibili dell'affiancamento
+
+424
+00:21:21,480 --> 00:21:24,880
+verticale. Ok? Not ci stanno colori
+
+425
+00:21:24,880 --> 00:21:27,679
+eccetera, era solo per stabilire un po'
+
+426
+00:21:27,679 --> 00:21:29,640
+e difatti adesso i colori non li vedremo
+
+427
+00:21:29,640 --> 00:21:31,320
+un granché perché ce ne serviranno
+
+428
+00:21:31,320 --> 00:21:33,360
+veramente tanti, quindi invece di colori
+
+429
+00:21:33,360 --> 00:21:36,080
+inizieremo a parlare di etichette perché
+
+430
+00:21:36,080 --> 00:21:39,159
+è più facile, ok? Sennò non saprei come
+
+431
+00:21:39,159 --> 00:21:42,640
+colorare le cose, ok? Alright. È chiaro
+
+432
+00:21:42,640 --> 00:21:46,000
+per tutti il problema?
+
+433
+00:21:46,000 --> 00:21:49,440
+Allora, noi dimostreremo, sebbene questo
+
+434
+00:21:49,440 --> 00:21:52,080
+problema non sembri particolarmente
+
+435
+00:21:52,080 --> 00:21:56,600
+strambo, questo problema è indecidibile.
+
+436
+00:21:56,600 --> 00:21:58,480
+Ok?
+
+437
+00:21:58,480 --> 00:22:02,840
+E per dimostrare questa cosa
+
+438
+00:22:05,679 --> 00:22:07,320
+proporremo
+
+439
+00:22:07,320 --> 00:22:13,960
+una riduzione da hal dal negato di
+
+440
+00:22:13,960 --> 00:22:17,559
+tiling dal negato di halt e. Vi ricordo
+
+441
+00:22:17,559 --> 00:22:20,520
+che il problema halt e l'arresto di una
+
+442
+00:22:20,520 --> 00:22:24,440
+macchina su stringa vuota.
+
+443
+00:22:24,440 --> 00:22:27,360
+Il suo negato è il non arresto della di
+
+444
+00:22:27,360 --> 00:22:29,640
+una macchina su stringa vuota. Cioè,
+
+445
+00:22:29,640 --> 00:22:31,640
+dato una macchina è vero che questa
+
+446
+00:22:31,640 --> 00:22:34,039
+macchina processando la stringa vuota
+
+447
+00:22:34,039 --> 00:22:38,039
+non si ferma mai. Ok? Noi ridurremo
+
+448
+00:22:38,039 --> 00:22:41,240
+quindi il complemento di halt e al
+
+449
+00:22:41,240 --> 00:22:45,200
+problema del tiling.
+
+450
+00:22:46,559 --> 00:22:49,080
+Il simbolo della riduzione
+
+451
+00:22:49,080 --> 00:22:54,120
+qual è? è minore o uguale.
+Ok,
+
+452
+00:22:55,440 --> 00:23:00,000
+chiaro? Ok. Cos'è un'istanza? Cos'è un
+
+453
+00:23:00,000 --> 00:23:05,080
+input per il problema not halt e?
+
+454
+00:23:05,080 --> 00:23:08,919
+Una macchina.
+Una macchina. Ok. Cos'è
+
+455
+00:23:08,919 --> 00:23:13,799
+l'input per il problema del tiling?
+
+456
+00:23:14,279 --> 00:23:16,880
+E la e la quadrupla è un sistema di
+
+457
+00:23:16,880 --> 00:23:19,240
+tiling. Ok.
+
+458
+00:23:19,240 --> 00:23:21,080
+Quindi quello che noi ci dovremmo
+
+459
+00:23:21,080 --> 00:23:25,159
+inventare è una trasformazione F,
+
+460
+00:23:25,159 --> 00:23:26,799
+chiamiamola in un altro modo perché F
+
+461
+00:23:26,799 --> 00:23:29,880
+abbiamo già chiamato quello,
+
+462
+00:23:29,880 --> 00:23:34,360
+una trasformazione G che presa in input
+
+463
+00:23:34,360 --> 00:23:37,120
+la codifica di una macchina di Touring
+
+464
+00:23:37,120 --> 00:23:40,120
+sputa fuori in output un'istanza del
+
+465
+00:23:40,120 --> 00:23:42,159
+problema di tiling
+
+466
+00:23:42,159 --> 00:23:44,400
+tale per cui la macchina M non si
+
+467
+00:23:44,400 --> 00:23:47,480
+arresta sulla stringa vuota se è solo se
+
+468
+00:23:47,480 --> 00:23:49,919
+il sistema di tiling sputato fuori dalla
+
+469
+00:23:49,919 --> 00:23:52,559
+funzione. Vi ricordo che questo t è
+
+470
+00:23:52,559 --> 00:23:57,240
+ottenuto come applicazione di g su m.
+
+471
+00:23:57,240 --> 00:23:59,919
+Quindi la T che sputiamo fuori è un
+
+472
+00:23:59,919 --> 00:24:02,360
+sistema di tiling che ammetta un reale
+
+473
+00:24:02,360 --> 00:24:04,960
+tiling se solo se M non si arresta
+
+474
+00:24:04,960 --> 00:24:09,480
+mentre processa la stringa vuota. Ok?
+
+475
+00:24:09,480 --> 00:24:11,400
+Come potete intuire, ed è del trucco che
+
+476
+00:24:11,400 --> 00:24:12,960
+abbiamo usato anche per il problema di
+
+477
+00:24:12,960 --> 00:24:15,039
+corrispondenza di post, noi dobbiamo
+
+478
+00:24:15,039 --> 00:24:17,640
+codificare nel problema del tiling le
+
+479
+00:24:17,640 --> 00:24:19,600
+computazioni di questa macchina. Questo
+
+480
+00:24:19,600 --> 00:24:21,640
+è il problema. Ok? Quindi ci dobbiamo
+
+481
+00:24:21,640 --> 00:24:25,559
+inventare sta cosa. Adesso vi inverto la
+
+482
+00:24:25,559 --> 00:24:27,799
+spiegazione. Invece di spiegarvi prima
+
+483
+00:24:27,799 --> 00:24:29,399
+la riduzione, come ho fatto la scorsa
+
+484
+00:24:29,399 --> 00:24:31,440
+volta, vi faccio prima l'esempio, così
+
+485
+00:24:31,440 --> 00:24:33,840
+cerchiamo di mettere i pezzi del puzzle,
+
+486
+00:24:33,840 --> 00:24:37,600
+magari così vi perdo di meno. Ok, vi
+
+487
+00:24:37,600 --> 00:24:40,360
+chiedo. Alright. Allora, l'intuizione è
+
+488
+00:24:40,360 --> 00:24:42,279
+sostanzialmente questa. Noi dobbiamo
+
+489
+00:24:42,279 --> 00:24:45,000
+riuscire a individuare dentro sto cavolo
+
+490
+00:24:45,000 --> 00:24:47,440
+diing dov'è che possiamo codificare la
+
+491
+00:24:47,440 --> 00:24:49,200
+computazione di una macchina di Touring.
+
+492
+00:24:49,200 --> 00:24:51,000
+Questa è la è la questione sostanziale.
+
+493
+00:24:51,000 --> 00:24:53,399
+Ok?
+
+494
+00:24:53,399 --> 00:24:55,960
+Vi ricordo che le computazioni di
+
+495
+00:24:55,960 --> 00:24:59,080
+macchine di Touring possono essere
+
+496
+00:24:59,080 --> 00:25:01,880
+efficacemente rappresentate
+
+497
+00:25:01,880 --> 00:25:05,880
+come sequenze di configurazioni che la
+
+498
+00:25:05,880 --> 00:25:07,960
+macchina attraversa mentre processa una
+
+499
+00:25:07,960 --> 00:25:10,720
+certa stringa. Ok? Quindi vi ricordo che
+
+500
+00:25:10,720 --> 00:25:13,559
+quindi una computazione può essere
+
+501
+00:25:13,559 --> 00:25:15,480
+configurazione 1 seguito dalla
+
+502
+00:25:15,480 --> 00:25:17,240
+configurazione 2 seguito dalla
+
+503
+00:25:17,240 --> 00:25:20,720
+configurazione 3 bla bla bla bla
+
+504
+00:25:20,720 --> 00:25:24,640
+dove per configurazione vi ricordo che
+
+505
+00:25:24,640 --> 00:25:27,559
+una sequenza di simboli è una cosa del
+
+506
+00:25:27,559 --> 00:25:29,120
+tipo
+
+507
+00:25:29,120 --> 00:25:34,360
+eh che ne so 0 1 Q3 1
+
+508
+00:25:34,360 --> 00:25:35,960
+Questo è un esempio di configurazione in
+
+509
+00:25:35,960 --> 00:25:37,799
+cui ci essenzialmente ci dice che in
+
+510
+00:25:37,799 --> 00:25:39,480
+input abbiamo
+
+511
+00:25:39,480 --> 00:25:43,159
+questa stringa qua 011, cioè sul nastro
+
+512
+00:25:43,159 --> 00:25:46,600
+di input, siamo nello stato Q3 e stiamo
+
+513
+00:25:46,600 --> 00:25:49,120
+leggendo questo simbolo. Ok? E questa è
+
+514
+00:25:49,120 --> 00:25:52,799
+l'idea di configurazione,
+
+515
+00:25:53,279 --> 00:25:56,520
+un'assunzione che facciamo
+
+516
+00:25:56,520 --> 00:26:00,399
+sulla macchina M, istanza del problema
+
+517
+00:26:00,399 --> 00:26:04,760
+halt epsil, not halt epsil, e che è
+
+518
+00:26:04,760 --> 00:26:06,840
+un'assunzione che non limita il potere
+
+519
+00:26:06,840 --> 00:26:08,159
+espressivo delle macchine. C'è un
+
+520
+00:26:08,159 --> 00:26:11,799
+teorema sul sul testo Opcroft, potete
+
+521
+00:26:11,799 --> 00:26:13,559
+andarvelo a guardare, no? Il dettaglio
+
+522
+00:26:13,559 --> 00:26:15,640
+non lo vediamo che ci dice che
+
+523
+00:26:15,640 --> 00:26:17,559
+praticamente se noi limitiamo la
+
+524
+00:26:17,559 --> 00:26:19,600
+macchina di touring a un nastro
+
+525
+00:26:19,600 --> 00:26:22,960
+semiinfinito, cioè che ha un punto di
+
+526
+00:26:22,960 --> 00:26:24,960
+partenza e non sposta mai la testina
+
+527
+00:26:24,960 --> 00:26:27,120
+alla sinistra di quel punto di partenza,
+
+528
+00:26:27,120 --> 00:26:28,760
+la macchina ha lo stesso potere delle
+
+529
+00:26:28,760 --> 00:26:31,159
+macchine standard, ok? Esere dall'altro
+
+530
+00:26:31,159 --> 00:26:33,840
+lato sostanzialmente, ok? È la stessima
+
+531
+00:26:33,840 --> 00:26:36,960
+cosa. Questo ci serve per semplificare
+
+532
+00:26:36,960 --> 00:26:40,679
+la riduzione, ok? La riduzione che vi
+
+533
+00:26:40,679 --> 00:26:42,679
+propongo è un po' diversa dalla
+
+534
+00:26:42,679 --> 00:26:44,399
+riduzione che trovate sugli appunti di
+
+535
+00:26:44,399 --> 00:26:48,039
+Calauti. Ok? Questo è preso da Papa
+
+536
+00:26:48,039 --> 00:26:50,919
+Dimitriu, mi pare. Ok? Più altre
+
+537
+00:26:50,919 --> 00:26:53,520
+miegioni per renderlo similare a come
+
+538
+00:26:53,520 --> 00:26:57,320
+stiamo trattando noi le le macchine di
+
+539
+00:26:57,320 --> 00:27:00,320
+Turing. Ok? Alright. Allora, l'idea è
+
+540
+00:27:00,320 --> 00:27:02,960
+sostanzialmente questa.
+
+541
+00:27:02,960 --> 00:27:06,120
+Facciamo un bel disegnone, bello grosso,
+
+542
+00:27:06,120 --> 00:27:08,960
+così capiamo. Ok, questo è il nostro
+
+543
+00:27:08,960 --> 00:27:10,720
+piano.
+
+544
+00:27:10,720 --> 00:27:13,320
+Avremo il primo livello qua, secondo
+
+545
+00:27:13,320 --> 00:27:15,919
+livello qua, il terzo livello qua e
+
+546
+00:27:15,919 --> 00:27:19,520
+insomma. Poi abbiamo questo, questo,
+
+547
+00:27:19,520 --> 00:27:22,520
+questo.
+
+548
+00:27:23,279 --> 00:27:27,679
+Noi che cosa faremo? Questa è l'origine.
+
+549
+00:27:27,679 --> 00:27:31,039
+Noi sfrutteremo
+
+550
+00:27:31,159 --> 00:27:33,320
+i bordi,
+
+551
+00:27:33,320 --> 00:27:37,760
+ok? Fra ogni livello di piastrelle,
+
+552
+00:27:37,760 --> 00:27:39,039
+perché le piastrelle le possiamo
+
+553
+00:27:39,039 --> 00:27:41,480
+immaginare, siccome è un reticolo, primo
+
+554
+00:27:41,480 --> 00:27:44,480
+piano, secondo piano, oppure prima fila,
+
+555
+00:27:44,480 --> 00:27:48,360
+seconda fila, terza fila. Ok? Cosa
+
+556
+00:27:48,360 --> 00:27:51,519
+faremo? Il bordo
+
+557
+00:27:51,519 --> 00:27:53,880
+fra le file
+
+558
+00:27:53,880 --> 00:27:57,440
+lo sfrutteremo per codificare le
+
+559
+00:27:57,440 --> 00:28:00,159
+configurazioni delle della macchina che
+
+560
+00:28:00,159 --> 00:28:04,120
+calcolo. Ok? Questa è l'idea.
+
+561
+00:28:04,120 --> 00:28:06,919
+Quindi dovremmo avere intuitivamente un
+
+562
+00:28:06,919 --> 00:28:09,760
+numero di colori sufficientemente ampio
+
+563
+00:28:09,760 --> 00:28:13,279
+tale per cui i colori che mi appaiono
+
+564
+00:28:13,279 --> 00:28:15,120
+qui
+
+565
+00:28:15,120 --> 00:28:17,240
+mi stanno sostanzialmente descrivendo
+
+566
+00:28:17,240 --> 00:28:19,640
+una cosa di questo tipo.
+
+567
+00:28:19,640 --> 00:28:21,799
+Quella quella è l'intuizione. Ok? Quindi
+
+568
+00:28:21,799 --> 00:28:23,840
+vi ripeto, abbiamo la prima fila, la
+
+569
+00:28:23,840 --> 00:28:25,679
+seconda fila, la terza fila. Noi
+
+570
+00:28:25,679 --> 00:28:27,960
+sappiamo per le regole di affiancamento,
+
+571
+00:28:27,960 --> 00:28:31,000
+l'intuizione era che i colori a cavallo
+
+572
+00:28:31,000 --> 00:28:33,279
+tra la prima e la seconda fila devono
+
+573
+00:28:33,279 --> 00:28:35,519
+essere gli stessi perché sennò non
+
+574
+00:28:35,519 --> 00:28:38,480
+riusciremo a impilare le piastrelle.
+
+575
+00:28:38,480 --> 00:28:41,159
+L'intuizione è questa, avere una
+
+576
+00:28:41,159 --> 00:28:43,880
+tavolozza di colori sufficientemente
+
+577
+00:28:43,880 --> 00:28:47,840
+ampia, tale per cui tramite quei colori
+
+578
+00:28:47,840 --> 00:28:51,120
+riusciamo a fare che cosa? a codificare
+
+579
+00:28:51,120 --> 00:28:54,120
+configurazioni di macchine di touring,
+
+580
+00:28:54,120 --> 00:28:56,320
+tale per cui
+
+581
+00:28:56,320 --> 00:28:59,240
+sul bordo fra la fila 1 e la fila 2
+
+582
+00:28:59,240 --> 00:29:01,320
+avremo la prima configurazione, sul
+
+583
+00:29:01,320 --> 00:29:03,279
+bordo fra la seconda fila e la terza
+
+584
+00:29:03,279 --> 00:29:06,440
+fila avremo la seconda, poi la terza e
+
+585
+00:29:06,440 --> 00:29:09,279
+così via. Ok?
+
+586
+00:29:09,279 --> 00:29:10,799
+È chiara almeno l'intuizione?
+
+587
+00:29:10,799 --> 00:29:13,200
+L'intuizione è inventarsi delle
+
+588
+00:29:13,200 --> 00:29:16,080
+piastrelle tale per cui quando le
+
+589
+00:29:16,080 --> 00:29:18,960
+andiamo a buttare su questo piano il
+
+590
+00:29:18,960 --> 00:29:22,080
+loro affiancamento mi sta codificando il
+
+591
+00:29:22,080 --> 00:29:25,240
+funzionamento della macchina M. Yes.
+Ma
+
+592
+00:29:25,240 --> 00:29:28,279
+usiamo solo i bordi orizzontali?
+
+593
+00:29:28,279 --> 00:29:31,159
+I bordi verticali, questi qua, adesso vi
+
+594
+00:29:31,159 --> 00:29:33,559
+mostro, serviranno poi a ottenere certe
+
+595
+00:29:33,559 --> 00:29:37,320
+cose, ok? Però l'intuizione è che sul
+
+596
+00:29:37,320 --> 00:29:39,240
+sulla parte orizzontale noi dobbiamo
+
+597
+00:29:39,240 --> 00:29:42,919
+codificare il la sequenza delle
+
+598
+00:29:42,919 --> 00:29:45,919
+configurazioni che la macchina di Turing
+
+599
+00:29:45,919 --> 00:29:48,159
+M
+
+600
+00:29:48,159 --> 00:29:49,919
+osserverebbe
+
+601
+00:29:49,919 --> 00:29:52,440
+nel attraverserebbe nel momento in cui
+
+602
+00:29:52,440 --> 00:29:55,200
+stesse processando la stringa vuota.
+
+603
+00:29:55,200 --> 00:29:59,679
+Questa è l'idea. Ok? in maniera tale che
+
+604
+00:29:59,679 --> 00:30:04,279
+se la macchina M non si arresta mentre
+
+605
+00:30:04,279 --> 00:30:07,559
+processa la stringa vuota, allora di
+
+606
+00:30:07,559 --> 00:30:10,919
+file e di piastrelle ne possiamo mettere
+
+607
+00:30:10,919 --> 00:30:13,799
+infinite. Questa è l'idea. Ok? Se la
+
+608
+00:30:13,799 --> 00:30:15,720
+macchina si ferma, ste piastrelle a un
+
+609
+00:30:15,720 --> 00:30:18,799
+certo punto si fermano perché poi la
+
+610
+00:30:18,799 --> 00:30:21,000
+tipologia di piastrelle che avremo non
+
+611
+00:30:21,000 --> 00:30:23,519
+ci permetterà di piazzare una nuova
+
+612
+00:30:23,519 --> 00:30:27,039
+fila. Se invece la macchina M non si
+
+613
+00:30:27,039 --> 00:30:29,679
+arresta su epil, allora noi avremo
+
+614
+00:30:29,679 --> 00:30:31,159
+tipologie di piastrelle che ci
+
+615
+00:30:31,159 --> 00:30:32,799
+permetteranno di mettere file di
+
+616
+00:30:32,799 --> 00:30:35,919
+piastrelle l'una sull'altra senza fine.
+
+617
+00:30:35,919 --> 00:30:40,480
+È chiara l'intuizione della riduzione?
+
+618
+00:30:41,720 --> 00:30:45,000
+Yes. Ok, lo dico io. Va benissimo.
+
+619
+00:30:45,000 --> 00:30:47,000
+Allora, questa è quello che noi vogliamo
+
+620
+00:30:47,000 --> 00:30:48,919
+ottenere. Ok.
+
+621
+00:30:48,919 --> 00:30:51,760
+Adesso,
+
+622
+00:30:51,760 --> 00:30:54,519
+siccome
+
+623
+00:30:54,519 --> 00:30:58,240
+a noi servono un bel po' di tipi di
+
+624
+00:30:58,240 --> 00:31:01,120
+piastrelle, perché dobbiamo codificare
+
+625
+00:31:01,120 --> 00:31:03,399
+il funzionamento
+
+626
+00:31:03,399 --> 00:31:05,360
+della di una macchina di Touring che può
+
+627
+00:31:05,360 --> 00:31:08,320
+essere generico, ok?
+
+628
+00:31:08,320 --> 00:31:11,000
+Fare riferimento ai colori diviene un
+
+629
+00:31:11,000 --> 00:31:13,240
+po' complicato. Ok? Allora, quello che
+
+630
+00:31:13,240 --> 00:31:18,320
+faremo invece è che le quattro porzioni
+
+631
+00:31:18,320 --> 00:31:21,440
+delle piastrelle, invece di colorarle
+
+632
+00:31:21,440 --> 00:31:24,120
+gli scriviamo il nome del colore, ok?
+
+633
+00:31:24,120 --> 00:31:27,000
+Gli mettiamo un'etichetta Topo Gigio,
+
+634
+00:31:27,000 --> 00:31:31,000
+Paperino, ok? Così possiamo enumerarne
+
+635
+00:31:31,000 --> 00:31:32,960
+un po' di più di colori che non stare là
+
+636
+00:31:32,960 --> 00:31:35,799
+a scegliere le gradazioni. Ok? Quindi
+
+637
+00:31:35,799 --> 00:31:39,240
+useremo etichette per il nome del colore
+
+638
+00:31:39,240 --> 00:31:41,720
+in modo da gestirli più facilmente in
+
+639
+00:31:41,720 --> 00:31:46,679
+quantità perché ce ne servono tanti. Ok?
+
+640
+00:31:46,679 --> 00:31:50,360
+Alright. Allora, l'idea sostanzialmente
+
+641
+00:31:50,360 --> 00:31:57,360
+è questa qui, eh, vediamo di cancellare.
+
+642
+00:31:57,399 --> 00:32:03,919
+Yes. Vediamo se funziona. Uh, yes! Ok,
+
+643
+00:32:04,080 --> 00:32:07,240
+allora vediamo se c'abbiamo spazio. Sì,
+
+644
+00:32:07,240 --> 00:32:10,880
+supponiamo di avere questa macchina qua.
+
+645
+00:32:10,880 --> 00:32:13,760
+Ok,
+
+646
+00:32:13,760 --> 00:32:18,200
+Q0 stato iniziale.
+
+647
+00:32:18,679 --> 00:32:21,159
+Leggo blank, scrivo blank e vado avanti
+
+648
+00:32:21,159 --> 00:32:24,440
+e mi muovo in Q1.
+
+649
+00:32:24,440 --> 00:32:26,399
+Leggo blank, scrivo blank e torno
+
+650
+00:32:26,399 --> 00:32:30,679
+indietro e vado Q0. Ok.
+
+651
+00:32:30,679 --> 00:32:33,679
+Che fa sta macchina con la testina?
+
+652
+00:32:33,679 --> 00:32:37,519
+Pin pom pin pom pin pom. Ok.
+
+653
+00:32:37,519 --> 00:32:38,960
+Questa macchina si arresta o non si
+
+654
+00:32:38,960 --> 00:32:41,799
+arresta sull'input vuoto?
+
+655
+00:32:41,799 --> 00:32:43,519
+Non si arresta. Ok. Quindi quello che
+
+656
+00:32:43,519 --> 00:32:45,080
+noi vogliamo ottenere è un sistema di
+
+657
+00:32:45,080 --> 00:32:46,960
+tiling partendo da una macchina del
+
+658
+00:32:46,960 --> 00:32:51,760
+genere che ci permette di eh ricoprire
+
+659
+00:32:51,760 --> 00:32:53,639
+tutto il piano. Ok? Allora,
+
+660
+00:32:53,639 --> 00:32:55,519
+sostanzialmente, siccome abbiamo detto
+
+661
+00:32:55,519 --> 00:32:58,399
+che utilizzeremo dei labels, dei nomi
+
+662
+00:32:58,399 --> 00:33:02,200
+per i colori, ok? Noi avremo quindi cosa
+
+663
+00:33:02,200 --> 00:33:05,519
+avremo qua?
+
+664
+00:33:06,840 --> 00:33:09,559
+Che il colore che appare qui e il colore
+
+665
+00:33:09,559 --> 00:33:11,360
+che appare qui dovranno avere lo stesso
+
+666
+00:33:11,360 --> 00:33:14,360
+nome.
+
+667
+00:33:15,720 --> 00:33:21,480
+Lo stesso qua, lo stesso qua. Ok,
+
+668
+00:33:21,600 --> 00:33:23,720
+chiaro? Ok, disegno anche questi sopra,
+
+669
+00:33:23,720 --> 00:33:26,720
+così
+
+670
+00:33:27,399 --> 00:33:31,200
+diventa più semplice, dai.
+
+671
+00:33:31,200 --> 00:33:33,840
+Eh, ta ta.
+
+672
+00:33:33,840 --> 00:33:37,639
+Ok, allora l'idea è questa. Qual è la
+
+673
+00:33:37,639 --> 00:33:39,559
+configurazione iniziale di questa
+
+674
+00:33:39,559 --> 00:33:43,159
+macchina specifica sulla stringa vuota?
+
+675
+00:33:43,159 --> 00:33:46,760
+Q0 che legge bianco. Ok, quindi sarebbe
+
+676
+00:33:46,760 --> 00:33:49,760
+Q0
+
+677
+00:33:50,880 --> 00:33:56,480
+Q0. Ok. Che legge bianco.
+
+678
+00:33:56,840 --> 00:34:00,639
+Qual è il resto del contenuto
+
+679
+00:34:00,639 --> 00:34:02,639
+del nastro di questa macchina?
+
+680
+00:34:02,639 --> 00:34:05,279
+All'inizio
+
+681
+00:34:05,279 --> 00:34:08,480
+è tutto bianco. Ok. Quindi avremmo
+
+682
+00:34:08,480 --> 00:34:11,440
+blank blank blank. Ok? Cioè le
+
+683
+00:34:11,440 --> 00:34:13,599
+configurazioni che andiamo a mettere su
+
+684
+00:34:13,599 --> 00:34:15,720
+questo piano sono un pochino strane,
+
+685
+00:34:15,720 --> 00:34:18,040
+cioè sono estese, non ci fermiamo, la
+
+686
+00:34:18,040 --> 00:34:21,879
+scriviamo tutta, ok? Quindi noi vorremmo
+
+687
+00:34:21,879 --> 00:34:24,159
+che le etichette
+
+688
+00:34:24,159 --> 00:34:27,200
+che appaiono sul bordo tra la prima e la
+
+689
+00:34:27,200 --> 00:34:31,359
+seconda fila siano queste Q0
+
+690
+00:34:31,359 --> 00:34:34,440
+bianco, quindi una coppia che ci dice
+
+691
+00:34:34,440 --> 00:34:37,720
+che in posizione 1 abbiamo la testina e
+
+692
+00:34:37,720 --> 00:34:40,000
+stiamo leggendo bianco mentre siamo in
+
+693
+00:34:40,000 --> 00:34:41,599
+Q0.
+
+694
+00:34:41,599 --> 00:34:43,480
+Questa però
+
+695
+00:34:43,480 --> 00:34:46,040
+è solo il nome di questo colore.
+
+696
+00:34:46,040 --> 00:34:49,599
+Potrebbe essere verde verdolino. Ok.
+
+697
+00:34:49,599 --> 00:34:51,119
+Però siccome non possiamo andare a
+
+698
+00:34:51,119 --> 00:34:52,800
+guardare tutte le sfumature, prendiamo
+
+699
+00:34:52,800 --> 00:34:54,919
+queste etichette. Ok? Quindi abbiamo il
+
+700
+00:34:54,919 --> 00:34:59,000
+colore aperta parentesi Q0 blanc chiusa
+
+701
+00:34:59,000 --> 00:35:00,960
+parentesi. Lo potevamo chiamare Topo
+
+702
+00:35:00,960 --> 00:35:02,880
+Gigio, è la stessa cosa, però siccome
+
+703
+00:35:02,880 --> 00:35:05,480
+dobbiamo mapparla su funzionamento di
+
+704
+00:35:05,480 --> 00:35:07,480
+una macchina, scegliamo dei nomi che ci
+
+705
+00:35:07,480 --> 00:35:10,960
+tornino funzionali. Ok? Quindi, se noi
+
+706
+00:35:10,960 --> 00:35:14,119
+abbiamo fatto proprio un affiancamento
+
+707
+00:35:14,119 --> 00:35:17,760
+con tutti i crismi, di che colore sarà
+
+708
+00:35:17,760 --> 00:35:21,160
+questa porzione qua?
+
+709
+00:35:21,160 --> 00:35:23,400
+Uguale sarà
+
+710
+00:35:23,400 --> 00:35:28,119
+Q0 bianco, chiusa parentesi. Ok? Poi qua
+
+711
+00:35:28,119 --> 00:35:31,680
+avremo bianco bianco e qui bianco
+
+712
+00:35:31,680 --> 00:35:34,680
+bianco.
+
+713
+00:35:36,320 --> 00:35:42,079
+Come facciamo a imporre che alfa 2 vada
+
+714
+00:35:42,079 --> 00:35:44,320
+a codificare la configurazione
+
+715
+00:35:44,320 --> 00:35:47,119
+successiva? Data questa configurazione,
+
+716
+00:35:47,119 --> 00:35:49,200
+qual è la successiva secondo quella
+
+717
+00:35:49,200 --> 00:35:51,240
+macchina? Sì, prego.
+Come facciamo ad
+
+718
+00:35:51,240 --> 00:35:53,599
+essere sicuri che anche i successivi a
+
+719
+00:35:53,599 --> 00:35:56,839
+destra siano uguali al primo? che siano
+
+720
+00:35:56,839 --> 00:35:59,000
+bianchi,
+che siano bianchi anche loro.
+
+721
+00:35:59,000 --> 00:36:01,119
+Lo vedremo fra un attimo. Adesso diamo
+
+722
+00:36:01,119 --> 00:36:04,160
+giusto un'intuizione su che cosa ci deve
+
+723
+00:36:04,160 --> 00:36:06,520
+stare a quei bordi perché poi
+
+724
+00:36:06,520 --> 00:36:09,040
+giustamente dobbiamo
+
+725
+00:36:09,040 --> 00:36:12,119
+inventarci dei tipi in maniera tale che
+
+726
+00:36:12,119 --> 00:36:14,319
+non facciamo cose strane, ok?
+
+727
+00:36:14,319 --> 00:36:17,640
+Utilizzeremo i bordi verticali per
+
+728
+00:36:17,640 --> 00:36:20,720
+forzare piastrelle che vanno affiancate
+
+729
+00:36:20,720 --> 00:36:24,720
+orizzontalmente. Ok?
+
+730
+00:36:25,319 --> 00:36:28,160
+Alright. Ah, ok. Qual è la
+
+731
+00:36:28,160 --> 00:36:30,720
+configurazione successiva a quella
+
+732
+00:36:30,720 --> 00:36:32,319
+blank?
+
+733
+00:36:32,319 --> 00:36:36,480
+Eh, blank Q1 blank blank blank bla bla
+
+734
+00:36:36,480 --> 00:36:39,200
+bla bla. Ok,
+
+735
+00:36:39,200 --> 00:36:41,319
+quindi
+
+736
+00:36:41,319 --> 00:36:44,920
+se voglio che questo affiancamento di
+
+737
+00:36:44,920 --> 00:36:48,440
+piastrelle mi vada a replicare che da
+
+738
+00:36:48,440 --> 00:36:51,280
+questa configurazione io raggiungo
+
+739
+00:36:51,280 --> 00:36:55,400
+questa qui, allora questa qui, questa
+
+740
+00:36:55,400 --> 00:36:57,920
+piastrella qua e quest'altra piastrella
+
+741
+00:36:57,920 --> 00:37:00,440
+qui mi devono dare la possibilità di
+
+742
+00:37:00,440 --> 00:37:04,200
+codificare che lo stato passi da q0 a Q1
+
+743
+00:37:04,200 --> 00:37:07,119
+e vada avanti di una posizione. Ok? Come
+
+744
+00:37:07,119 --> 00:37:09,480
+faccio? Stabilisco delle etichette di
+
+745
+00:37:09,480 --> 00:37:13,599
+colori che replicano queste cose. Ok,
+
+746
+00:37:13,599 --> 00:37:16,040
+potremmo farlo rosa shocking, no? Gli
+
+747
+00:37:16,040 --> 00:37:20,040
+mettiamo un label. Ok, quindi qua ci
+
+748
+00:37:20,040 --> 00:37:24,280
+mettiamo blank,
+
+749
+00:37:24,440 --> 00:37:29,040
+qua ci mettiamo Q1 blank e qui blank.
+
+750
+00:37:29,040 --> 00:37:32,560
+Ok, quindi guardate qua che ci serve
+
+751
+00:37:32,560 --> 00:37:35,079
+come piastrella. ci servirà una
+
+752
+00:37:35,079 --> 00:37:38,160
+piastrella che simula il passaggio di Q0
+
+753
+00:37:38,160 --> 00:37:41,560
+su blank. Che piastrella ci serve qua?
+
+754
+00:37:41,560 --> 00:37:44,520
+Ci servirà una piastrella che simila il
+
+755
+00:37:44,520 --> 00:37:48,520
+passaggio di Q1 verso lì. Per fare ciò e
+
+756
+00:37:48,520 --> 00:37:51,920
+non avere cose strane, qui dovremmo
+
+757
+00:37:51,920 --> 00:37:53,839
+utilizzare
+
+758
+00:37:53,839 --> 00:37:56,560
+dei colori particolari in maniera tale
+
+759
+00:37:56,560 --> 00:37:58,760
+che questa piastrella possa essere
+
+760
+00:37:58,760 --> 00:38:01,400
+affiancata solamente a questa. Come lo
+
+761
+00:38:01,400 --> 00:38:05,640
+facciamo? Usiamo questo altro label.
+
+762
+00:38:05,640 --> 00:38:08,160
+Eh, come si chiamava?
+
+763
+00:38:08,160 --> 00:38:12,280
+È P. Sì, la chiamiamo Q1 freccetta
+
+764
+00:38:12,280 --> 00:38:16,000
+avanti e questa qua Q1 freccetta avanti.
+
+765
+00:38:16,000 --> 00:38:19,839
+Per dire cosa? Che c'è lo stato Q1 e la
+
+766
+00:38:19,839 --> 00:38:22,400
+testina in transizione verso quello che
+
+767
+00:38:22,400 --> 00:38:26,440
+è destra. Destra. Ok? Chiaro? Quindi noi
+
+768
+00:38:26,440 --> 00:38:29,720
+avremo necessità di cosa? di U
+
+769
+00:38:29,720 --> 00:38:34,359
+piastrelle che abbiano questa faccia
+
+770
+00:38:34,359 --> 00:38:39,440
+in modo tale che noi su questo bordo qua
+
+771
+00:38:39,440 --> 00:38:41,760
+stiamo codificando
+
+772
+00:38:41,760 --> 00:38:47,040
+alfa 2. Cosa sarà alfa 3?0
+
+773
+00:38:48,000 --> 00:38:53,520
+sarà Q0 blank blank blank and Quindi che
+
+774
+00:38:53,520 --> 00:38:56,599
+cosa avremo necessità? Avremo necessità
+
+775
+00:38:56,599 --> 00:38:58,880
+di una piastrella che qua c'ha blank
+
+776
+00:38:58,880 --> 00:39:00,640
+perché sennò non la riusciamo ad
+
+777
+00:39:00,640 --> 00:39:04,319
+impilare sull'altra. Qui c'ha Q1 blank,
+
+778
+00:39:04,319 --> 00:39:06,000
+senò non la riusciamo a impilare con
+
+779
+00:39:06,000 --> 00:39:08,000
+l'altra e deve che cosa? Codificare il
+
+780
+00:39:08,000 --> 00:39:10,200
+passaggio della testina verso sinistra.
+
+781
+00:39:10,200 --> 00:39:13,400
+Quindi qui che avremo? Q0 che si muove a
+
+782
+00:39:13,400 --> 00:39:19,839
+sinistra e qui avremo Q0 blank e qui
+
+783
+00:39:19,839 --> 00:39:23,880
+blank, qua blank and on. Ok? È chiaro il
+
+784
+00:39:23,880 --> 00:39:26,640
+senso? Quindi noi ci stiamo inventando
+
+785
+00:39:26,640 --> 00:39:30,000
+un attimo delle piastrelle i cui colori
+
+786
+00:39:30,000 --> 00:39:31,560
+alle quali noi stiamo dando dei noi
+
+787
+00:39:31,560 --> 00:39:33,160
+perché come vedete ce ne serviranno
+
+788
+00:39:33,160 --> 00:39:35,400
+tanti. Quanti sono i simboli di nastro?
+
+789
+00:39:35,400 --> 00:39:37,079
+Noi dovremmo avere piastrelle, non è che
+
+790
+00:39:37,079 --> 00:39:39,599
+possiamo stare là a colorarle.
+
+791
+00:39:39,599 --> 00:39:41,680
+Usiamo delle etichette per identificare
+
+792
+00:39:41,680 --> 00:39:45,400
+i colori. Ok, tutto qua. Questi colori
+
+793
+00:39:45,400 --> 00:39:48,000
+identificati tramite etichette hanno lo
+
+794
+00:39:48,000 --> 00:39:50,960
+scopo primario di codificare la sequenza
+
+795
+00:39:50,960 --> 00:39:53,119
+di configurazioni che la macchina M
+
+796
+00:39:53,119 --> 00:39:55,119
+attraversa mentre processa la stringa
+
+797
+00:39:55,119 --> 00:39:59,560
+vuota, guardando a cosa? A i bordi fra i
+
+798
+00:39:59,560 --> 00:40:02,160
+ai bordi orizzontali fra i livelli di
+
+799
+00:40:02,160 --> 00:40:07,400
+piastrella. Ok? Adesso questa idea qui e
+
+800
+00:40:07,400 --> 00:40:09,319
+dai
+
+801
+00:40:09,319 --> 00:40:12,119
+va generalizzata a una generica macchina
+
+802
+00:40:12,119 --> 00:40:15,240
+di Touring M che potremmo avere input
+
+803
+00:40:15,240 --> 00:40:17,680
+alla funzione di trasformazione G. C'era
+
+804
+00:40:17,680 --> 00:40:21,040
+una domanda lì. Sì,
+non ho rispondo.
+Ah,
+
+805
+00:40:21,040 --> 00:40:23,319
+ok. Alright.
+
+806
+00:40:23,319 --> 00:40:26,960
+Chiaro? Chiaro il principio,
+
+807
+00:40:26,960 --> 00:40:29,000
+l'idea che c'è dietro. Adesso va
+
+808
+00:40:29,000 --> 00:40:30,960
+semplicemente generalizzata in maniera
+
+809
+00:40:30,960 --> 00:40:35,400
+tale da descrivere G in modo generico.
+
+810
+00:40:35,400 --> 00:40:37,839
+Ok? Alright.
+
+811
+00:40:37,839 --> 00:40:43,079
+Mi serve un'altra pagina. Cool.
+
+812
+00:40:43,079 --> 00:40:46,400
+Andiamo a guardare qua.
+
+813
+00:40:46,400 --> 00:40:48,400
+Come vedete
+
+814
+00:40:48,400 --> 00:40:51,800
+da queste
+
+815
+00:40:52,280 --> 00:40:55,319
+da queste piastrelle qua, tipo questa
+
+816
+00:40:55,319 --> 00:40:58,000
+questa qua che è lo stesso,
+
+817
+00:40:58,000 --> 00:41:01,200
+se qui avessimo dei simboli, tipo qua X
+
+818
+00:41:01,200 --> 00:41:03,440
+qua andrebbe replicato. Quindi servono
+
+819
+00:41:03,440 --> 00:41:05,680
+delle piastrelle che simulano il fatto
+
+820
+00:41:05,680 --> 00:41:10,319
+che se la testina sul nastro è distante
+
+821
+00:41:10,319 --> 00:41:11,960
+lì non deve succedere niente. Cioè,
+
+822
+00:41:11,960 --> 00:41:14,280
+quindi quel colore dal bordo di sotto
+
+823
+00:41:14,280 --> 00:41:16,800
+deve essere passato al bordo di sopra.
+
+824
+00:41:16,800 --> 00:41:20,480
+Quindi avremo una prima
+
+825
+00:41:20,480 --> 00:41:26,800
+tipologia di piastrelle che è questa qua
+
+826
+00:41:32,000 --> 00:41:36,200
+per ogni simbolo X appartenente a gamma.
+
+827
+00:41:36,200 --> 00:41:39,560
+Ok? Qui
+
+828
+00:41:39,560 --> 00:41:43,319
+non infilo niente sui bordi per dire che
+
+829
+00:41:43,319 --> 00:41:45,800
+l'etichetta vuota e noi possiamo
+
+830
+00:41:45,800 --> 00:41:48,880
+affiancare piastrelle
+
+831
+00:41:48,880 --> 00:41:50,800
+con quel bordo verticale solo se hanno
+
+832
+00:41:50,800 --> 00:41:52,599
+la stessa etichetta. Quindi se non c'è
+
+833
+00:41:52,599 --> 00:41:55,200
+niente io posso mettere piastrelle solo
+
+834
+00:41:55,200 --> 00:41:57,640
+con quella porzione vuota. Non ci posso
+
+835
+00:41:57,640 --> 00:41:59,560
+affiancare una piastrella dove lì c'è
+
+836
+00:41:59,560 --> 00:42:02,160
+scritto altro. È come se fosse
+
+837
+00:42:02,160 --> 00:42:04,319
+un nome aggiuntivo,
+
+838
+00:42:04,319 --> 00:42:07,599
+no? colore trasparente. Ok?
+
+839
+00:42:07,599 --> 00:42:10,040
+Semplicemente non lo scriviamo.
+
+840
+00:42:10,040 --> 00:42:12,359
+Ok? Dopodiché guardiamo questo esempio
+
+841
+00:42:12,359 --> 00:42:16,200
+che ci servono? ci servono
+
+842
+00:42:16,200 --> 00:42:19,400
+piastrelle che codifichino la funzione
+
+843
+00:42:19,400 --> 00:42:22,200
+di transizione. Queste qua sono e lo
+
+844
+00:42:22,200 --> 00:42:24,119
+spostamento della testina da un lato
+
+845
+00:42:24,119 --> 00:42:26,440
+all'altro, perché la tipologia uno sono
+
+846
+00:42:26,440 --> 00:42:28,440
+queste piastrelle qua, cioè quelle
+
+847
+00:42:28,440 --> 00:42:33,160
+piastrelle che stanno su che simulano
+
+848
+00:42:33,160 --> 00:42:35,160
+una porzione di nastro lontano dalla
+
+849
+00:42:35,160 --> 00:42:38,240
+testina e lì c'è un'inerzia. Il simbolo
+
+850
+00:42:38,240 --> 00:42:40,640
+è quello e quello deve rimanere fino a
+
+851
+00:42:40,640 --> 00:42:43,040
+quando si avvicina la testina. Ok?
+
+852
+00:42:43,040 --> 00:42:44,640
+Dobbiamo codificare, adesso dobbiamo
+
+853
+00:42:44,640 --> 00:42:46,520
+descrivere in maniera generica le
+
+854
+00:42:46,520 --> 00:42:48,359
+piastrelle che codificano la funzione di
+
+855
+00:42:48,359 --> 00:42:51,400
+transizione. Ok?
+
+856
+00:42:51,400 --> 00:42:55,240
+Secondo tipo di piastrelle.
+
+857
+00:42:55,319 --> 00:42:58,960
+Supponiamo che dobbiamo codificare
+
+858
+00:42:58,960 --> 00:43:02,079
+una generica transizione
+
+859
+00:43:02,079 --> 00:43:04,880
+di configurazioni in cui abbiamo lo
+
+860
+00:43:04,880 --> 00:43:09,200
+stato Q che legge il simbolo X seguito
+
+861
+00:43:09,200 --> 00:43:13,480
+dal simbolo Z e poi c'è la funzione di
+
+862
+00:43:13,480 --> 00:43:16,960
+transizione che siamo in Q, leggiamo X,
+
+863
+00:43:16,960 --> 00:43:20,119
+andiamo in P, scriviamo Y e andiamo a
+
+864
+00:43:20,119 --> 00:43:22,400
+destra
+
+865
+00:43:22,400 --> 00:43:24,000
+in cui praticamente questo viene
+
+866
+00:43:24,000 --> 00:43:28,280
+trasformato in cosa? Yp.
+
+867
+00:43:28,280 --> 00:43:31,559
+Ok? Quindi se quello è un generico
+
+868
+00:43:31,559 --> 00:43:34,800
+pezzettino di una configurazione e siamo
+
+869
+00:43:34,800 --> 00:43:37,079
+in presenza di una fun di un pezzo di
+
+870
+00:43:37,079 --> 00:43:39,319
+funzione di transizione così, allora
+
+871
+00:43:39,319 --> 00:43:42,880
+vuol dire che transiamo da questa pezzo
+
+872
+00:43:42,880 --> 00:43:44,839
+di configurazione a questo pezzo di
+
+873
+00:43:44,839 --> 00:43:46,319
+configurazione. Adesso quindi dobbiamo
+
+874
+00:43:46,319 --> 00:43:49,240
+fare le piastrelline per quello là. Che
+
+875
+00:43:49,240 --> 00:43:53,440
+cosa abbiamo? Quindi abbiamo
+
+876
+00:43:53,440 --> 00:43:56,760
+due piastrelle
+
+877
+00:44:01,359 --> 00:44:06,280
+in cui sotto abbiamo la coppia QX,
+
+878
+00:44:06,280 --> 00:44:09,280
+sopra abbiamo Y,
+
+879
+00:44:09,280 --> 00:44:13,040
+sotto c'è Z e qui c'è PZ
+
+880
+00:44:13,040 --> 00:44:15,599
+e qua c'è P in transinzione verso
+
+881
+00:44:15,599 --> 00:44:17,440
+destra.
+
+882
+00:44:17,440 --> 00:44:20,440
+Ok? Cioè, quindi questa due tipologie di
+
+883
+00:44:20,440 --> 00:44:23,680
+piastrelle codificano che semmai la
+
+884
+00:44:23,680 --> 00:44:26,200
+macchina si troverà a leggere un simbolo
+
+885
+00:44:26,200 --> 00:44:28,960
+X,
+
+886
+00:44:28,960 --> 00:44:31,319
+questo simbolo viene sovrapposto da da
+
+887
+00:44:31,319 --> 00:44:35,400
+Y, eccetera. Adesso qui X e Y e Z sono
+
+888
+00:44:35,400 --> 00:44:38,440
+dei simboli generici. Noi dobbiamo
+
+889
+00:44:38,440 --> 00:44:41,160
+quindi generare tante piastrelle per
+
+890
+00:44:41,160 --> 00:44:46,200
+cosa? per ogni stato
+
+891
+00:44:46,599 --> 00:44:50,440
+Q e P che appartengono agli stati non
+
+892
+00:44:50,440 --> 00:44:55,559
+terminali e poi per ogni X, Y e Z che
+
+893
+00:44:55,559 --> 00:44:59,240
+sono simboli di nastro in cui X e Y però
+
+894
+00:44:59,240 --> 00:45:01,440
+devono essere quelli che appaiono qua
+
+895
+00:45:01,440 --> 00:45:04,200
+dentro. Eh,
+
+896
+00:45:04,200 --> 00:45:05,640
+chiaro? Cioè, questa è solo una
+
+897
+00:45:05,640 --> 00:45:07,640
+descrizione generica. Quindi ci stiamo
+
+898
+00:45:07,640 --> 00:45:10,079
+attrezzando con tipologie di piastrelle
+
+899
+00:45:10,079 --> 00:45:12,960
+che sono in grado di simulare
+
+900
+00:45:12,960 --> 00:45:15,400
+scrittura e spostamento di sestina a
+
+901
+00:45:15,400 --> 00:45:17,040
+destra.
+
+902
+00:45:17,040 --> 00:45:19,480
+Cosa ci serve adesso? Le piastrelle che
+
+903
+00:45:19,480 --> 00:45:21,400
+simulano scrittura e spostamento di
+
+904
+00:45:21,400 --> 00:45:24,440
+testino a sinistra. Ok?
+
+905
+00:45:24,440 --> 00:45:27,240
+Ah,
+
+906
+00:45:27,240 --> 00:45:30,559
+quindi avremo
+
+907
+00:45:31,000 --> 00:45:34,480
+No, qua
+
+908
+00:45:35,800 --> 00:45:39,359
+avremo che cosa? Tipo in caso avessimo
+
+909
+00:45:39,359 --> 00:45:41,480
+ZQX
+
+910
+00:45:41,480 --> 00:45:45,079
+e questo diviene pzy.
+
+911
+00:45:45,079 --> 00:45:46,680
+In caso di presenza di funzioni di
+
+912
+00:45:46,680 --> 00:45:52,319
+transizione qx che va in p y a sinistra.
+
+913
+00:45:52,319 --> 00:45:55,319
+Ok,
+
+914
+00:45:55,440 --> 00:45:57,880
+quindi abbiamo la stessa cosa, due
+
+915
+00:45:57,880 --> 00:46:00,880
+piastrelle.
+
+916
+00:46:11,720 --> 00:46:14,200
+Quindi che ci sta?
+
+917
+00:46:14,200 --> 00:46:20,319
+Z qui, PZ qui,
+
+918
+00:46:20,319 --> 00:46:28,240
+QX qui, Y qui e qua abbiamo Q che trans
+
+919
+00:46:30,079 --> 00:46:32,920
+P che transisce a sinistra, P che
+
+920
+00:46:32,920 --> 00:46:35,480
+transisce a sinistra e questo va fatto
+
+921
+00:46:35,480 --> 00:46:40,119
+per ogni stato Q e P appartenente ai non
+
+922
+00:46:40,119 --> 00:46:45,200
+terminali e per ogni simbolo X, y z su i
+
+923
+00:46:45,200 --> 00:46:47,720
+simboli di nastro.
+
+924
+00:46:47,720 --> 00:46:50,720
+Chiaro? Quindi questa tipologia di
+
+925
+00:46:50,720 --> 00:46:53,319
+piastrelle, ovviamente ne abbiamo tante,
+
+926
+00:46:53,319 --> 00:46:55,920
+eh, cioè per ogni combinazione di quei
+
+927
+00:46:55,920 --> 00:46:58,520
+simboli di nastro noi dobbiamo avere
+
+928
+00:46:58,520 --> 00:47:00,559
+piastrelle di quel tipo. Quindi, stiamo
+
+929
+00:47:00,559 --> 00:47:03,400
+carrozzando il sistema di tiling con
+
+930
+00:47:03,400 --> 00:47:06,119
+tutti i possibili casi che la macchina
+
+931
+00:47:06,119 --> 00:47:08,400
+si potrebbe trovare di fronte mentre
+
+932
+00:47:08,400 --> 00:47:10,359
+computa. Perché dobbiamo fare questo?
+
+933
+00:47:10,359 --> 00:47:12,240
+Perché noi non possiamo preventivamente
+
+934
+00:47:12,240 --> 00:47:14,240
+simulare la macchina per stabilire se si
+
+935
+00:47:14,240 --> 00:47:16,559
+ferma o meno, perché la funzione deve
+
+936
+00:47:16,559 --> 00:47:19,599
+produrre un sistema di tiling in tempo
+
+937
+00:47:19,599 --> 00:47:21,720
+finito, cioè quindi dobbiamo fare una
+
+938
+00:47:21,720 --> 00:47:26,079
+trasformazione generica. Prego.
+
+939
+00:47:26,079 --> 00:47:27,800
+2
+
+940
+00:47:27,800 --> 00:47:29,920
+no è il nome che diamo a due stati non
+
+941
+00:47:29,920 --> 00:47:32,000
+terminali. Ok? Vedete che noi stiamo
+
+942
+00:47:32,000 --> 00:47:34,640
+facendo solo cose per stati non
+
+943
+00:47:34,640 --> 00:47:36,400
+terminali, quindi non lo prevediamo
+
+944
+00:47:36,400 --> 00:47:38,000
+proprio che la macchina possa a un certo
+
+945
+00:47:38,000 --> 00:47:40,480
+punto transire in uno stato terminale.
+
+946
+00:47:40,480 --> 00:47:44,200
+Ok? Chiaro?
+
+947
+00:47:44,200 --> 00:47:47,319
+Ultima cosa,
+
+948
+00:47:47,319 --> 00:47:49,960
+terza tipologia.
+
+949
+00:47:49,960 --> 00:47:53,000
+La terza tipologia, che è quella che ci
+
+950
+00:47:53,000 --> 00:47:54,680
+serve per la cosa che ci diceva proprio
+
+951
+00:47:54,680 --> 00:47:57,319
+il nostro collega prima, detto come
+
+952
+00:47:57,319 --> 00:47:59,599
+facciamo a essere sicuri che qua vado a
+
+953
+00:47:59,599 --> 00:48:01,359
+finire proprio la configurazione
+
+954
+00:48:01,359 --> 00:48:04,599
+iniziale e lì usiamo questa terza
+
+955
+00:48:04,599 --> 00:48:08,480
+tipologia di piastrelle.
+
+956
+00:48:08,520 --> 00:48:11,839
+Allora, abbiamo
+
+957
+00:48:11,839 --> 00:48:17,200
+una piastrella di questo tipo
+
+958
+00:48:18,800 --> 00:48:24,680
+Q0 blank, dove Q0 è lo stato iniziale
+
+959
+00:48:24,680 --> 00:48:27,720
+e qui c'ho blank e poi un'altra
+
+960
+00:48:27,720 --> 00:48:31,760
+piastrella fatta così, blank, blank,
+
+961
+00:48:31,760 --> 00:48:34,000
+blank.
+
+962
+00:48:34,000 --> 00:48:35,880
+Ok,
+
+963
+00:48:35,880 --> 00:48:42,160
+chiaro? Questa qui è di 0.
+
+964
+00:48:42,559 --> 00:48:45,000
+Vi ricordo che parte del tiling system
+
+965
+00:48:45,000 --> 00:48:47,839
+prevedeva che noi esplicitamente
+
+966
+00:48:47,839 --> 00:48:49,559
+menzioniamo una piastrella di essere
+
+967
+00:48:49,559 --> 00:48:51,839
+tipologia di zero. Quella è di zero,
+
+968
+00:48:51,839 --> 00:48:54,280
+cioè quindi in posizione 00 ci va per
+
+969
+00:48:54,280 --> 00:48:57,400
+forza quella là. Ok? Adesso, come potete
+
+970
+00:48:57,400 --> 00:49:00,799
+vedere dalla riduzione, dalla
+
+971
+00:49:00,799 --> 00:49:03,640
+costruzione che abbiamo fatto, la prima
+
+972
+00:49:03,640 --> 00:49:05,760
+linea di piastrelle è costituita
+
+973
+00:49:05,760 --> 00:49:08,160
+solamente da questo, perché questa qui
+
+974
+00:49:08,160 --> 00:49:10,280
+va in posizione 00 perché gliela
+
+975
+00:49:10,280 --> 00:49:12,880
+imponiamo. Dopodiché di fianco a lei ci
+
+976
+00:49:12,880 --> 00:49:15,160
+possono andare solo quelle con blank
+
+977
+00:49:15,160 --> 00:49:18,079
+qui. Quindi questa qui mi andrà in prima
+
+978
+00:49:18,079 --> 00:49:20,200
+fila. In prima fila. Quindi cosa staremo
+
+979
+00:49:20,200 --> 00:49:22,480
+facendo? Staremo mantendo piastrelle in
+
+980
+00:49:22,480 --> 00:49:24,680
+maniera tale che sul bordo superiore
+
+981
+00:49:24,680 --> 00:49:27,359
+stiamo codificando la configurazione
+
+982
+00:49:27,359 --> 00:49:29,400
+iniziale della macchina M su stringa
+
+983
+00:49:29,400 --> 00:49:31,440
+vuota.
+
+984
+00:49:31,440 --> 00:49:34,200
+È chiaro?
+
+985
+00:49:34,200 --> 00:49:35,920
+Alright.
+
+986
+00:49:35,920 --> 00:49:39,599
+Adesso dimostriamo che
+
+987
+00:49:39,599 --> 00:49:41,880
+la trasformazione funziona e poi ci
+
+988
+00:49:41,880 --> 00:49:46,119
+prendiamo una pausa. Ok.
+
+989
+00:49:48,559 --> 00:49:50,880
+Primo verso, vi ricordo che noi dobbiamo
+
+990
+00:49:50,880 --> 00:49:53,960
+dimostrare sostanzialmente che
+
+991
+00:49:53,960 --> 00:49:56,079
+m
+
+992
+00:49:56,079 --> 00:50:00,480
+è un'istanza sì del complemento di halt
+
+993
+00:50:00,480 --> 00:50:01,880
+su
+
+994
+00:50:01,880 --> 00:50:04,440
+se e solo se t ottenuto come il
+
+995
+00:50:04,440 --> 00:50:08,839
+trasformato secondo g di m è un'istanza
+
+996
+00:50:08,839 --> 00:50:10,720
+sì del problema del tiling. Un'istanza
+
+997
+00:50:10,720 --> 00:50:12,760
+del problema di tiling è sì se ammette
+
+998
+00:50:12,760 --> 00:50:15,160
+un piastrellamento. Se non lo ammette,
+
+999
+00:50:15,160 --> 00:50:20,240
+non è un'istanza, no? Ok. Alright.
+
+1000
+00:50:20,240 --> 00:50:22,839
+Dimostrazione.
+
+1001
+00:50:22,839 --> 00:50:24,799
+Primo verso della dimostrazione.
+
+1002
+00:50:24,799 --> 00:50:28,000
+Dimostriamo che se m
+
+1003
+00:50:28,000 --> 00:50:30,640
+non si arresta su
+
+1004
+00:50:30,640 --> 00:50:34,480
+allora t ottenuto in quel modo specifico
+
+1005
+00:50:34,480 --> 00:50:38,079
+ammette uning. Ok? Allora, l'intuizione
+
+1006
+00:50:38,079 --> 00:50:40,119
+è molto semplice e riguarda il modo
+
+1007
+00:50:40,119 --> 00:50:42,000
+specifico in cui abbiamo definito le
+
+1008
+00:50:42,000 --> 00:50:44,200
+tipologie di piastrell.
+
+1009
+00:50:44,200 --> 00:50:47,200
+Noi andremo a piazzare in posizione 00
+
+1010
+00:50:47,200 --> 00:50:50,839
+la piastrella di 0 e poi riempila
+
+1011
+00:50:50,839 --> 00:50:53,480
+tutte le piastrelle di terza tipologia.
+
+1012
+00:50:53,480 --> 00:50:55,440
+Dopodiché
+
+1013
+00:50:55,440 --> 00:50:58,119
+noi possiamo impilare su seconda fila,
+
+1014
+00:50:58,119 --> 00:51:00,960
+su terza fila, solamente piastrelle che
+
+1015
+00:51:00,960 --> 00:51:04,280
+codificano che cosa? La sequenza delle
+
+1016
+00:51:04,280 --> 00:51:06,720
+configurazioni della macchina. Perché?
+
+1017
+00:51:06,720 --> 00:51:11,200
+Perché così abbiamo scelto i colori. Ok?
+
+1018
+00:51:11,200 --> 00:51:13,799
+Quindi noi avremo una fila aggiuntiva di
+
+1019
+00:51:13,799 --> 00:51:16,319
+piastrelle. Ogni qualvolta la macchina
+
+1020
+00:51:16,319 --> 00:51:20,000
+avrà a disposizione uno step aggiuntivo.
+
+1021
+00:51:20,000 --> 00:51:23,079
+È chiaro? Siccome la macchina non si
+
+1022
+00:51:23,079 --> 00:51:26,880
+ferma su input vuota, quanti step fa?
+
+1023
+00:51:26,880 --> 00:51:29,079
+Infiniti. Quante file di piastrelle
+
+1024
+00:51:29,079 --> 00:51:30,640
+potremmo mettere?
+
+1025
+00:51:30,640 --> 00:51:34,280
+infinite, da cui se la macchina M non si
+
+1026
+00:51:34,280 --> 00:51:38,480
+arresta su stringa vuota, allora
+
+1027
+00:51:38,480 --> 00:51:40,799
+noi riusciamo a piastrellare il nostro
+
+1028
+00:51:40,799 --> 00:51:44,040
+primo quadrante.
+
+1029
+00:51:46,839 --> 00:51:50,480
+Allora T appartiene Allora T ammette un
+
+1030
+00:51:50,480 --> 00:51:54,799
+tiling, un timingo.
+
+1031
+00:51:54,799 --> 00:51:56,920
+Chiaro?
+
+1032
+00:51:56,920 --> 00:51:59,200
+Altro verso della dimostrazione.
+
+1033
+00:51:59,200 --> 00:52:02,720
+Dobbiamo dimostrare che se la macchina
+
+1034
+00:52:02,720 --> 00:52:05,720
+si arresta
+
+1035
+00:52:05,720 --> 00:52:08,720
+su stringa vuota, allora noi non siamo
+
+1036
+00:52:08,720 --> 00:52:11,480
+in grado di piastrellare la nostra
+
+1037
+00:52:11,480 --> 00:52:13,040
+superficie.
+
+1038
+00:52:13,040 --> 00:52:15,200
+Invece di dimostrare questo, dimostriamo
+
+1039
+00:52:15,200 --> 00:52:18,599
+il suo compo. Dimostriamo che se la
+
+1040
+00:52:18,599 --> 00:52:21,119
+sistema di tiling ottenuto tramite G che
+
+1041
+00:52:21,119 --> 00:52:24,440
+ha processato M ha prodotto un sistema
+
+1042
+00:52:24,440 --> 00:52:27,160
+di tiling che ammette un tiling, allora
+
+1043
+00:52:27,160 --> 00:52:31,000
+era perché M non si arresta su stringa a
+
+1044
+00:52:31,000 --> 00:52:34,280
+ruota quando processa. Ok.
+
+1045
+00:52:34,280 --> 00:52:37,280
+Alright.
+
+1046
+00:52:38,520 --> 00:52:41,520
+Guardate le piastrelle come sono state
+
+1047
+00:52:41,520 --> 00:52:43,319
+definite. Abbiamo già visto che queste
+
+1048
+00:52:43,319 --> 00:52:46,240
+piastrelle codificano sostanzialmente,
+
+1049
+00:52:46,240 --> 00:52:49,440
+no, la sequenza delle configurazioni che
+
+1050
+00:52:49,440 --> 00:52:51,960
+la macchina
+
+1051
+00:52:51,960 --> 00:52:53,880
+attraversa nel momento in cui calcola.
+
+1052
+00:52:53,880 --> 00:52:55,960
+Ok? Questo perché? Perché in prima fila,
+
+1053
+00:52:55,960 --> 00:52:58,000
+se abbiamo un tiling, avremo una
+
+1054
+00:52:58,000 --> 00:52:59,960
+disposizione di piastrelle che codifica
+
+1055
+00:52:59,960 --> 00:53:02,839
+la configurazione iniziale.
+
+1056
+00:53:02,839 --> 00:53:05,000
+Le tipologie di piastrelle che abbiamo
+
+1057
+00:53:05,000 --> 00:53:08,160
+definito non sono non ammettono stati
+
+1058
+00:53:08,160 --> 00:53:10,799
+terminali. Di conseguenza, se siamo
+
+1059
+00:53:10,799 --> 00:53:12,720
+riusciti a piastrellare tutto, la
+
+1060
+00:53:12,720 --> 00:53:15,440
+macchina non è mai passata da uno stato
+
+1061
+00:53:15,440 --> 00:53:21,440
+terminale da cui M non si arresta mentre
+
+1062
+00:53:21,440 --> 00:53:25,240
+processa la stringa vuota. Ok? Questo ci
+
+1063
+00:53:25,240 --> 00:53:28,599
+dimostra che il problema del complemento
+
+1064
+00:53:28,599 --> 00:53:31,599
+del halting su stringa vuota può essere
+
+1065
+00:53:31,599 --> 00:53:34,319
+ricodificato sul problema del tiling, da
+
+1066
+00:53:34,319 --> 00:53:36,960
+cui non possiamo sperare che il problema
+
+1067
+00:53:36,960 --> 00:53:39,720
+del tiling sia decidibile perché il
+
+1068
+00:53:39,720 --> 00:53:41,839
+complemento di Halt su
+
+1069
+00:53:41,839 --> 00:53:43,720
+È indecidibile.
+
+1070
+00:53:43,720 --> 00:53:49,200
+Chiaro? Ok, facciamo
+
+1071
+00:53:49,240 --> 00:53:52,799
+fino a 10 di pausa. Ok, il dopo potrebbe
+
+1072
+00:53:52,799 --> 00:53:56,000
+essere lungo.
+
+1073
+00:54:02,240 --> 00:54:05,400
+E ora è un po' sofisticato e mi serve
+
+1074
+00:54:05,400 --> 00:54:08,680
+del tempo.
+
+1075
+00:54:08,839 --> 00:54:12,119
+Schermo intero. Ah no, c'era già.
+
+1076
+00:54:12,119 --> 00:54:15,280
+Schermo intero. Cool.
+
+1077
+00:54:15,280 --> 00:54:17,200
+Guys, quello che vi sto per spiegare
+
+1078
+00:54:17,200 --> 00:54:19,319
+ora,
+
+1079
+00:54:19,319 --> 00:54:22,079
+state bene attenti, bla bla bla. Non c'è
+
+1080
+00:54:22,079 --> 00:54:25,079
+trucco, non c'è inganno, non sta né
+
+1081
+00:54:25,079 --> 00:54:27,480
+sugli appunti di Calautti
+
+1082
+00:54:27,480 --> 00:54:29,880
+né sui libri segnalati perché è un
+
+1083
+00:54:29,880 --> 00:54:32,559
+argomento un po' più avanzato che in
+
+1084
+00:54:32,559 --> 00:54:35,160
+genere non viene affrontato quando si
+
+1085
+00:54:35,160 --> 00:54:36,839
+parla di calcolabilità perché è una cosa
+
+1086
+00:54:36,839 --> 00:54:39,040
+che riguarda più
+
+1087
+00:54:39,040 --> 00:54:41,680
+la teoria delle funzioni ricorsive è più
+
+1088
+00:54:41,680 --> 00:54:44,040
+una cosa della logica matematica che non
+
+1089
+00:54:44,040 --> 00:54:46,200
+della calcolabilità in informatica.
+
+1090
+00:54:46,200 --> 00:54:48,240
+Quindi se voi vi prendete un testo dove
+
+1091
+00:54:48,240 --> 00:54:50,559
+c'è si chiama gerarchia aritmetica,
+
+1092
+00:54:50,559 --> 00:54:53,559
+queste cose vengono spiegate, ma sui
+
+1093
+00:54:53,559 --> 00:54:55,640
+testi standard di calcolabilità non si
+
+1094
+00:54:55,640 --> 00:54:58,880
+trova. Però io ve la volevo mostrare da
+
+1095
+00:54:58,880 --> 00:55:00,559
+un punto di vista informatico perché
+
+1096
+00:55:00,559 --> 00:55:04,720
+secondo me ha una certa valenza
+
+1097
+00:55:04,720 --> 00:55:06,760
+carina, secondo me, ok? Perché ci
+
+1098
+00:55:06,760 --> 00:55:09,520
+servirà anche quando ci servirà a
+
+1099
+00:55:09,520 --> 00:55:11,960
+ragionare quando
+
+1100
+00:55:11,960 --> 00:55:15,440
+prenderemo la complessità. Ok? Allora,
+
+1101
+00:55:15,440 --> 00:55:18,920
+non so se avete già notato,
+
+1102
+00:55:18,920 --> 00:55:20,720
+quindi vi ripeto, sta roba non la
+
+1103
+00:55:20,720 --> 00:55:22,799
+trovate sugli appunti o sui libri,
+
+1104
+00:55:22,799 --> 00:55:24,520
+quindi è quello che vi dico io
+
+1105
+00:55:24,520 --> 00:55:27,799
+stamattina. Non so se avete notato che i
+
+1106
+00:55:27,799 --> 00:55:29,920
+problemi indecidibili che abbiamo visto
+
+1107
+00:55:29,920 --> 00:55:33,400
+finora sono tutti un po' particolari,
+
+1108
+00:55:33,400 --> 00:55:37,280
+cioè c'è una certa relazione
+
+1109
+00:55:37,280 --> 00:55:40,799
+fra un linguaggio indecidibile e il suo
+
+1110
+00:55:40,799 --> 00:55:44,160
+complemento, cioè hanno tutti la stessa
+
+1111
+00:55:44,160 --> 00:55:49,280
+faccia, guardate. Quindi noi abbiamo
+
+1112
+00:55:50,720 --> 00:55:52,680
+R,
+
+1113
+00:55:52,680 --> 00:55:54,880
+qua ci sta R che è una cenerentola.
+
+1114
+00:55:54,880 --> 00:55:56,599
+Finora non abbiamo visto un granché che
+
+1115
+00:55:56,599 --> 00:56:00,880
+sta in R. Ok. Allora, abbiamo che il
+
+1116
+00:56:00,880 --> 00:56:03,280
+linguaggio universale sta qua, sta in
+
+1117
+00:56:03,280 --> 00:56:05,799
+re, perché il linguaggio qui vi voglio
+
+1118
+00:56:05,799 --> 00:56:07,599
+un po' snappi, eh, perché ci serve del
+
+1119
+00:56:07,599 --> 00:56:09,359
+tempo.
+
+1120
+00:56:09,359 --> 00:56:11,160
+Perché il linguaggio universale sta in
+
+1121
+00:56:11,160 --> 00:56:12,319
+re? Perché dobbiamo fare un po' di
+
+1122
+00:56:12,319 --> 00:56:14,160
+ragionamenti assieme, senò ci perdiamo.
+
+1123
+00:56:14,160 --> 00:56:18,319
+Perché Lu sta in re?
+Perché esistono che
+
+1124
+00:56:18,319 --> 00:56:20,359
+lo devi accettare.
+M intuitivamente che
+
+1125
+00:56:20,359 --> 00:56:23,359
+facciamo? Simuliamo m su w se ci
+
+1126
+00:56:23,359 --> 00:56:26,480
+arrestiamo diciamo di sì. Ok? Il suo
+
+1127
+00:56:26,480 --> 00:56:31,960
+complemento dove sta?
+Sta fuori perché?
+
+1128
+00:56:31,960 --> 00:56:33,920
+Perché sennò altrimenti entrambi
+
+1129
+00:56:33,920 --> 00:56:36,880
+starebbero in R. Ok? L'intuizione,
+
+1130
+00:56:36,880 --> 00:56:40,559
+perché il complemento di Lu sta fuori R?
+
+1131
+00:56:40,559 --> 00:56:43,119
+Perché se eh
+
+1132
+00:56:43,119 --> 00:56:45,760
+esistono macchine che non arrivano mai
+
+1133
+00:56:45,760 --> 00:56:47,640
+ad accettare.
+Sì. Quindi se dobbiamo
+
+1134
+00:56:47,640 --> 00:56:50,359
+dire sì, è vero, la macchina non si
+
+1135
+00:56:50,359 --> 00:56:52,720
+ferma e noi la simuliamo, noi non ci
+
+1136
+00:56:52,720 --> 00:56:54,920
+arriveremo mai a vederlo che la macchina
+
+1137
+00:56:54,920 --> 00:56:57,079
+non si è fermata per fermarci e dire di
+
+1138
+00:56:57,079 --> 00:56:59,480
+sì. Ok? Questa è l'intuizione per cui il
+
+1139
+00:56:59,480 --> 00:57:04,839
+complemento di lu sta fuori il re. altro
+
+1140
+00:57:05,440 --> 00:57:08,440
+lne
+
+1141
+00:57:10,079 --> 00:57:11,880
+che è l'insieme
+
+1142
+00:57:11,880 --> 00:57:15,760
+delle macchine che accettano qualcosa.
+
+1143
+00:57:15,760 --> 00:57:17,480
+Ok,
+
+1144
+00:57:17,480 --> 00:57:23,359
+sta in re perché l'intuizione
+
+1145
+00:57:24,799 --> 00:57:26,160
+indovino una cosa che
+perché
+
+1146
+00:57:26,160 --> 00:57:28,319
+indoviniamo, cioè l'intuizione è quella.
+
+1147
+00:57:28,319 --> 00:57:31,079
+noi riusciamo a rispondere sì perché il
+
+1148
+00:57:31,079 --> 00:57:33,599
+tempo finito abbiamo il modo di farlo.
+
+1149
+00:57:33,599 --> 00:57:35,920
+Quindi come facciamo a sapere che
+
+1150
+00:57:35,920 --> 00:57:37,680
+unistanza che ci viene data che una
+
+1151
+00:57:37,680 --> 00:57:40,000
+macchina fa parte di LNE perché noi che
+
+1152
+00:57:40,000 --> 00:57:42,599
+siamo una cosa che accetta la simuliamo
+
+1153
+00:57:42,599 --> 00:57:44,400
+in tempo finito perché la deve accettare
+
+1154
+00:57:44,400 --> 00:57:47,520
+e siamo in grado di dire sì. Dove sta il
+
+1155
+00:57:47,520 --> 00:57:51,760
+suo complemento le
+sta fuori
+
+1156
+00:57:51,760 --> 00:57:56,359
+intuitivamente perché sta fuori il re?
+
+1157
+00:58:02,000 --> 00:58:04,880
+Perché dovrei provarle tutte
+Sì, perché
+
+1158
+00:58:04,880 --> 00:58:07,240
+per poter rispondere sì, è vero, questa
+
+1159
+00:58:07,240 --> 00:58:10,039
+macchina non accetta niente, dovrei tra
+
+1160
+00:58:10,039 --> 00:58:12,839
+virgolette provare tutte le stringhe,
+
+1161
+00:58:12,839 --> 00:58:15,799
+no? E vedere che non si arresta o dice
+
+1162
+00:58:15,799 --> 00:58:17,720
+di no. Quanto tempo intuitivamente mi
+
+1163
+00:58:17,720 --> 00:58:20,520
+serve per faare sta cosa? infinito.
+
+1164
+00:58:20,520 --> 00:58:23,480
+Quindi noi io non sono in grado in tempo
+
+1165
+00:58:23,480 --> 00:58:25,559
+finito di dire "Guarda, sta macchina non
+
+1166
+00:58:25,559 --> 00:58:27,400
+accetta niente, questa è l'intuizione
+
+1167
+00:58:27,400 --> 00:58:31,319
+che c'è dietro". Ok?
+
+1168
+00:58:31,880 --> 00:58:34,880
+Altro. Poi LD, vabbò, questo era un po'
+
+1169
+00:58:34,880 --> 00:58:37,799
+strambo. Andiamo avanti. Vediamo
+
+1170
+00:58:37,799 --> 00:58:40,480
+quest'altro. Halt.
+
+1171
+00:58:40,480 --> 00:58:42,119
+Halt sta qui, che è il problema
+
+1172
+00:58:42,119 --> 00:58:44,400
+dell'arresto. Perché Halt sta dentro il
+
+1173
+00:58:44,400 --> 00:58:47,000
+re? Perché basta vedere se la macchina
+
+1174
+00:58:47,000 --> 00:58:48,760
+basta simulare se la macchina se sta
+
+1175
+00:58:48,760 --> 00:58:51,319
+macchina si ferma, diciamo. Sì. Ok. Dove
+
+1176
+00:58:51,319 --> 00:58:53,640
+sta il suo complemento?
+Fuori.
+Fuori.
+
+1177
+00:58:53,640 --> 00:58:55,920
+Perché?
+Perché dovremmo poter dire che
+
+1178
+00:58:55,920 --> 00:58:58,520
+si ferma in tempo?
+Esattamente. Poi
+
+1179
+00:58:58,520 --> 00:59:02,400
+c'abbiamo halt su
+
+1180
+00:59:02,400 --> 00:59:04,880
+che sta in re perché
+
+1181
+00:59:04,880 --> 00:59:08,799
+è un istanza di
+perché noi simuliamo la
+
+1182
+00:59:08,799 --> 00:59:10,559
+macchina sulla stringa vuota. Se si
+
+1183
+00:59:10,559 --> 00:59:13,720
+ferma ci fermiamo e diciamo di sì. Dove
+
+1184
+00:59:13,720 --> 00:59:16,280
+sta il suo complemento?
+Fuori.
+Fuori.
+
+1185
+00:59:16,280 --> 00:59:18,760
+Ok, state notando qualcosa per questi
+
+1186
+00:59:18,760 --> 00:59:21,319
+problemi?
+
+1187
+00:59:21,319 --> 00:59:25,240
+Noi abbiamo halt e che sta fuori perché
+
+1188
+00:59:25,240 --> 00:59:27,319
+intuitivamente non siamo in grado di
+
+1189
+00:59:27,319 --> 00:59:30,880
+dire se da dire in tempo finito se la
+
+1190
+00:59:30,880 --> 00:59:32,640
+macchina non si arresta su stringa
+
+1191
+00:59:32,640 --> 00:59:34,079
+vuota. Perché se gli andiamo appresso
+
+1192
+00:59:34,079 --> 00:59:36,359
+appresso nella simulazione per essere
+
+1193
+00:59:36,359 --> 00:59:38,240
+sicuri che sta macchina non si ferma
+
+1194
+00:59:38,240 --> 00:59:40,839
+dovremmo simularla fino alla fine
+
+1195
+00:59:40,839 --> 00:59:43,240
+dell'eternità. Ok?
+
+1196
+00:59:43,240 --> 00:59:45,799
+Quindi questa è l'intuizione dei
+
+1197
+00:59:45,799 --> 00:59:48,079
+problemi che abbiamo visto finora, cioè
+
+1198
+00:59:48,079 --> 00:59:50,839
+i problemi che stanno e state attenti
+
+1199
+00:59:50,839 --> 00:59:52,359
+bene qua perché adesso facciamo il
+
+1200
+00:59:52,359 --> 00:59:53,520
+salto.
+
+1201
+00:59:53,520 --> 00:59:55,680
+I problemi che abbiamo visto finora che
+
+1202
+00:59:55,680 --> 00:59:58,559
+stanno in R
+
+1203
+00:59:58,559 --> 01:00:02,920
+sono quei problemi per i quali
+
+1204
+01:00:02,920 --> 01:00:08,160
+noi siamo in grado di rispondere sì in
+
+1205
+01:00:08,160 --> 01:00:12,000
+tempo finito.
+
+1206
+01:00:13,400 --> 01:00:17,480
+I problemi che abbiamo visto finora in R
+
+1207
+01:00:17,480 --> 01:00:19,680
+e non in R
+
+1208
+01:00:19,680 --> 01:00:23,720
+hanno il loro complemento fuori re, però
+
+1209
+01:00:23,720 --> 01:00:27,039
+il complemento che hanno è un è un
+
+1210
+01:00:27,039 --> 01:00:30,119
+linguaggio particolare.
+
+1211
+01:00:30,119 --> 01:00:33,240
+Sono tutti questi linguaggi che abbiamo
+
+1212
+01:00:33,240 --> 01:00:35,760
+visto qua, che abbiamo visto finora e
+
+1213
+01:00:35,760 --> 01:00:39,880
+che non stanno in re, hanno una
+
+1214
+01:00:39,880 --> 01:00:42,880
+peculiarità.
+
+1215
+01:00:43,160 --> 01:00:46,240
+sono linguaggi
+
+1216
+01:00:46,240 --> 01:00:48,119
+complementi
+
+1217
+01:00:48,119 --> 01:00:53,960
+di linguaggi che stanno in R.
+
+1218
+01:00:54,240 --> 01:00:56,640
+Ok? Vi ricordo che il complemento di un
+
+1219
+01:00:56,640 --> 01:00:59,319
+linguaggio è il linguaggio in cui
+
+1220
+01:00:59,319 --> 01:01:02,280
+flipliamo le risposte. Ok?
+
+1221
+01:01:02,280 --> 01:01:04,599
+Quindi se i linguaggi che abbiamo visto
+
+1222
+01:01:04,599 --> 01:01:07,000
+finora stanno fu i linguaggi che abbiamo
+
+1223
+01:01:07,000 --> 01:01:10,839
+visto finora che stanno fuori re sono
+
+1224
+01:01:10,839 --> 01:01:12,760
+complementi
+
+1225
+01:01:12,760 --> 01:01:16,760
+di linguaggi che stanno in re,
+
+1226
+01:01:16,760 --> 01:01:19,680
+allora questi linguaggi hanno una
+
+1227
+01:01:19,680 --> 01:01:21,960
+peculiarità.
+
+1228
+01:01:21,960 --> 01:01:26,119
+Sì,
+dicono que
+sono quei linguaggi per i
+
+1229
+01:01:26,119 --> 01:01:30,160
+quali noi siamo in grado di rispondere
+
+1230
+01:01:30,160 --> 01:01:33,920
+no in tempo finito. Ok? Cioè, quindi
+
+1231
+01:01:33,920 --> 01:01:37,799
+questi non sono linguaggi a caso, cioè è
+
+1232
+01:01:37,799 --> 01:01:40,640
+successo solo per caso, no? Che ci siamo
+
+1233
+01:01:40,640 --> 01:01:43,240
+imbattuti in problemi del genere. Cioè i
+
+1234
+01:01:43,240 --> 01:01:46,039
+linguaggi fuori e re che abbiamo visto
+
+1235
+01:01:46,039 --> 01:01:49,720
+finora hanno tutti questa peculiarità.
+
+1236
+01:01:49,720 --> 01:01:51,640
+Sono linguaggi
+
+1237
+01:01:51,640 --> 01:01:54,599
+per i quali noi siamo in grado di
+
+1238
+01:01:54,599 --> 01:01:59,599
+rispondere no in tempo finito. Quindi
+
+1239
+01:01:59,599 --> 01:02:02,920
+questi linguaggi re e questi linguaggi
+
+1240
+01:02:02,920 --> 01:02:06,839
+fuori re hanno una peculiarità,
+
+1241
+01:02:06,839 --> 01:02:11,359
+sono decidibili re a metà. quelli nel re
+
+1242
+01:02:11,359 --> 01:02:14,039
+rispondiamo sì in tempo finito, ma non
+
+1243
+01:02:14,039 --> 01:02:17,000
+diamo garanzie sul no. I linguaggi che
+
+1244
+01:02:17,000 --> 01:02:19,839
+abbiamo visto fuori re finora sono
+
+1245
+01:02:19,839 --> 01:02:23,000
+linguaggi per i quali rispondiamo no in
+
+1246
+01:02:23,000 --> 01:02:28,119
+tempo finito, ok? E non diamo garanzie
+
+1247
+01:02:28,119 --> 01:02:31,839
+sul sì. Ad esempio, prendiamo
+
+1248
+01:02:31,839 --> 01:02:35,920
+il linguaggio complemento di halt, no?
+
+1249
+01:02:35,920 --> 01:02:39,720
+È vero che questa macchina non si ferma
+
+1250
+01:02:39,720 --> 01:02:42,279
+sulla su quest su una data stringa?
+
+1251
+01:02:42,279 --> 01:02:46,079
+Riesco a rispondere no in tempo finito
+
+1252
+01:02:46,079 --> 01:02:48,720
+perché basta che io la simulo, vedo che
+
+1253
+01:02:48,720 --> 01:02:51,359
+si ferma e dico "No, guarda, non è una
+
+1254
+01:02:51,359 --> 01:02:53,520
+di quelle che non si ferma, è una di
+
+1255
+01:02:53,520 --> 01:02:55,319
+quelle che si ferma". Quindi no. È
+
+1256
+01:02:55,319 --> 01:02:57,960
+chiaro? Quindi i linguaggi che abbiamo
+
+1257
+01:02:57,960 --> 01:03:00,760
+visto finora sono dei linguaggi
+
+1258
+01:03:00,760 --> 01:03:02,559
+particolari
+
+1259
+01:03:02,559 --> 01:03:06,240
+che stanno in re e i loro complementi
+
+1260
+01:03:06,240 --> 01:03:09,480
+sono linguaggi per i quali abbiamo che
+
+1261
+01:03:09,480 --> 01:03:11,119
+riusciamo a rispondere no in tempo
+
+1262
+01:03:11,119 --> 01:03:14,079
+finito. Quindi noi possiamo definire e
+
+1263
+01:03:14,079 --> 01:03:16,079
+questa è una cosa che non trovate su
+
+1264
+01:03:16,079 --> 01:03:17,720
+almeno sui libri che vi ho segnalato
+
+1265
+01:03:17,720 --> 01:03:18,839
+perché è un concetto un po' più
+
+1266
+01:03:18,839 --> 01:03:22,440
+sofisticato. Noi possiamo definire
+
+1267
+01:03:22,440 --> 01:03:25,799
+un'altra classe di decidibilità che va a
+
+1268
+01:03:25,799 --> 01:03:28,880
+raccogliere appunto i linguaggi per i
+
+1269
+01:03:28,880 --> 01:03:31,200
+quali rispondiamo no in tempo finito.
+
+1270
+01:03:31,200 --> 01:03:36,079
+Ok? Quindi che cosa avremo?
+
+1271
+01:03:40,400 --> 01:03:44,359
+Qui abbiamo R
+
+1272
+01:03:44,680 --> 01:03:47,119
+e qui abbiamo
+
+1273
+01:03:47,119 --> 01:03:51,400
+co re.
+
+1274
+01:03:51,799 --> 01:03:57,880
+Cos'è la classe con R?
+
+1275
+01:03:58,279 --> 01:04:04,839
+Esattamente in C e ci stanno i linguaggi
+
+1276
+01:04:04,839 --> 01:04:08,799
+i cui complementi stanno in R. Al centro
+
+1277
+01:04:08,799 --> 01:04:11,279
+c'è R.
+Come?
+Al centro c'è R.
+Al centro
+
+1278
+01:04:11,279 --> 01:04:15,920
+c'è R. Ora vediamo. Ok.
+
+1279
+01:04:16,039 --> 01:04:19,160
+Quindi i problemi che abbiamo visto
+
+1280
+01:04:19,160 --> 01:04:22,839
+finora son problemi
+
+1281
+01:04:22,839 --> 01:04:26,359
+un po' Ok, questo mi serve spazio, ve la
+
+1282
+01:04:26,359 --> 01:04:28,599
+riscrivo
+
+1283
+01:04:28,599 --> 01:04:32,160
+perché non voglio che si sovrappongano.
+
+1284
+01:04:32,160 --> 01:04:35,960
+Quindi abbiamo questo qua,
+
+1285
+01:04:36,200 --> 01:04:40,520
+qua abbiamo R e qua abbiamo C.
+
+1286
+01:04:40,520 --> 01:04:44,200
+Ok? Quindi i linguaggi che abbiamo visto
+
+1287
+01:04:44,200 --> 01:04:47,039
+sono per esempio
+
+1288
+01:04:47,039 --> 01:04:53,160
+LU sta qui, ma lu segnato sta qui,
+
+1289
+01:04:53,160 --> 01:04:59,359
+LNE sta qui, ma L sta qui.
+
+1290
+01:04:59,359 --> 01:05:01,520
+Halt,
+
+1291
+01:05:01,520 --> 01:05:05,680
+che succidiamo? L eh non rompe le balle.
+
+1292
+01:05:05,680 --> 01:05:08,160
+Halt stai.
+
+1293
+01:05:08,160 --> 01:05:12,799
+Ma alt segnato sta qui.
+
+1294
+01:05:12,880 --> 01:05:17,039
+Hal sta qui, ma
+
+1295
+01:05:17,039 --> 01:05:22,119
+halt segnato sta qui. Poi abbiamo LD, ma
+
+1296
+01:05:22,119 --> 01:05:25,119
+dai,
+
+1297
+01:05:25,480 --> 01:05:31,279
+LD segnato sta qua e LD sta qui. Ok,
+
+1298
+01:05:31,279 --> 01:05:33,760
+chiaro? Quindi i linguaggi che abbiamo
+
+1299
+01:05:33,760 --> 01:05:38,079
+visto finora sono linguaggi indecidibili
+
+1300
+01:05:38,079 --> 01:05:42,200
+ma un po' sbilanciati, cioè che noi
+
+1301
+01:05:42,200 --> 01:05:45,520
+siamo in grado di rispondere o sì o no
+
+1302
+01:05:45,520 --> 01:05:48,200
+in tempo finito. Per i linguaggi nel re
+
+1303
+01:05:48,200 --> 01:05:50,160
+rispondiamo sì in tempo finito e non
+
+1304
+01:05:50,160 --> 01:05:52,599
+diamo garanzie sul no. Per i linguaggi
+
+1305
+01:05:52,599 --> 01:05:55,160
+in co e re
+
+1306
+01:05:55,160 --> 01:05:57,839
+siamo in grado di rispondere no in tempo
+
+1307
+01:05:57,839 --> 01:06:02,279
+finito. Ok? e
+
+1308
+01:06:02,279 --> 01:06:04,079
+eh non siamo in grado di rispondere sì
+
+1309
+01:06:04,079 --> 01:06:06,039
+in tempo finito, però sono linguaggi tra
+
+1310
+01:06:06,039 --> 01:06:08,440
+virgolette sbilanciati, cioè annullato
+
+1311
+01:06:08,440 --> 01:06:11,839
+facile, tra virgolette. Ok? Adesso se
+
+1312
+01:06:11,839 --> 01:06:16,359
+ripensiamo assieme al tiling,
+
+1313
+01:06:17,359 --> 01:06:19,640
+il tiling, il problema del tiling che
+
+1314
+01:06:19,640 --> 01:06:22,079
+abbiamo dimostrato essere indecidibile
+
+1315
+01:06:22,079 --> 01:06:24,920
+dove sta? In re
+
+1316
+01:06:24,920 --> 01:06:28,520
+o in co?
+
+1317
+01:06:28,880 --> 01:06:32,599
+CR. Ok, quindi sta fuori R. La
+
+1318
+01:06:32,599 --> 01:06:34,440
+dimostrazione che abbiamo fatto prima è
+
+1319
+01:06:34,440 --> 01:06:37,039
+che sta fuori R. Quella riduzione ci
+
+1320
+01:06:37,039 --> 01:06:40,520
+dimostra solo che sta fuori fuori R.
+
+1321
+01:06:40,520 --> 01:06:43,279
+Però per dimostrare che è in co noi
+
+1322
+01:06:43,279 --> 01:06:45,440
+dovremmo essere in grado di dimostrare
+
+1323
+01:06:45,440 --> 01:06:47,880
+no? Cioè di rispondere no in tempo
+
+1324
+01:06:47,880 --> 01:06:49,520
+finito. Qual è l'intuizione per
+
+1325
+01:06:49,520 --> 01:06:51,520
+rispondere no in tempo finito sulle
+
+1326
+01:06:51,520 --> 01:06:53,359
+stanze del tiling? Se mi arriva
+
+1327
+01:06:53,359 --> 01:06:54,880
+un'istanza di tiling e quella è
+
+1328
+01:06:54,880 --> 01:06:56,839
+un'istanza no, significa che io mi posso
+
+1329
+01:06:56,839 --> 01:06:58,760
+cervellare come voglio un modo di
+
+1330
+01:06:58,760 --> 01:07:02,240
+piastrelle non lo troverò mai. Ok?
+
+1331
+01:07:02,240 --> 01:07:04,720
+abbiamo un numero finito di tipi di
+
+1332
+01:07:04,720 --> 01:07:07,440
+piastrelle, il che significa che se noi
+
+1333
+01:07:07,440 --> 01:07:09,599
+facciamo un'esplorazione in backtracking
+
+1334
+01:07:09,599 --> 01:07:11,520
+di tutte le possibilità, quest'albero di
+
+1335
+01:07:11,520 --> 01:07:14,200
+esplorazione è finito. A un certo punto
+
+1336
+01:07:14,200 --> 01:07:16,640
+lo vedremo tutto e quando lo esploriamo
+
+1337
+01:07:16,640 --> 01:07:19,000
+tutto e non abbiamo raggiunto un
+
+1338
+01:07:19,000 --> 01:07:21,279
+tassellamento completo, lì rispondiamo
+
+1339
+01:07:21,279 --> 01:07:23,240
+no, non è possibile. Quindi questa è la
+
+1340
+01:07:23,240 --> 01:07:25,480
+ragione per cui siamo in grado di
+
+1341
+01:07:25,480 --> 01:07:27,319
+rispondere no in tempo finito sulle
+
+1342
+01:07:27,319 --> 01:07:30,359
+stanze no del tiling. Ok? Quindi tiling
+
+1343
+01:07:30,359 --> 01:07:33,599
+sta qua.
+
+1344
+01:07:35,520 --> 01:07:38,720
+Ok. Quindi again è un altro problema che
+
+1345
+01:07:38,720 --> 01:07:42,000
+ha un lato facile.
+
+1346
+01:07:42,000 --> 01:07:44,559
+Ci siamo? Ok.
+Il complemento
+il
+
+1347
+01:07:44,559 --> 01:07:48,200
+complemento sarà in r. Ok. Complemento
+
+1348
+01:07:48,200 --> 01:07:51,079
+del tiling lo mettiamo qua.
+
+1349
+01:07:51,079 --> 01:07:55,520
+Tiling soprasegnato. Ok.
+
+1350
+01:07:55,520 --> 01:07:58,480
+Allora, la nostra domanda è questa: ma
+
+1351
+01:07:58,480 --> 01:08:01,440
+ci sta un problema qua?
+
+1352
+01:08:01,440 --> 01:08:05,440
+Ok? Esistono problemi per i quali non
+
+1353
+01:08:05,440 --> 01:08:08,319
+siamo in grado di dare garanzie né su
+
+1354
+01:08:08,319 --> 01:08:10,520
+risposte sì né su risposte no. Cioè
+
+1355
+01:08:10,520 --> 01:08:14,279
+esistono problemi talmente tosti che non
+
+1356
+01:08:14,279 --> 01:08:17,759
+siamo in grado di dire niente.
+
+1357
+01:08:17,759 --> 01:08:22,199
+Questo è l'idea. Ok? Ripeto, finora per
+
+1358
+01:08:22,199 --> 01:08:23,600
+semplicemente per come abbiamo
+
+1359
+01:08:23,600 --> 01:08:25,759
+ragionato, ci siamo andati a impattare
+
+1360
+01:08:25,759 --> 01:08:30,000
+contro problemi per i quali o è facile o
+
+1361
+01:08:30,000 --> 01:08:32,960
+è possibile dire sì o è possibile dire
+
+1362
+01:08:32,960 --> 01:08:37,520
+di no con garanzia. Ok?
+
+1363
+01:08:37,520 --> 01:08:40,480
+La domanda è: esistono problemi che non
+
+1364
+01:08:40,480 --> 01:08:45,400
+stanno né in RE né in coer?
+
+1365
+01:08:45,600 --> 01:08:48,000
+Andremo a vedere oggi un problema che
+
+1366
+01:08:48,000 --> 01:08:51,839
+sta lì fuori. Ok,
+
+1367
+01:08:51,839 --> 01:08:54,199
+ma per farlo ci servono un po' di
+
+1368
+01:08:54,199 --> 01:08:57,880
+proprietà. Ok.
+
+1369
+01:09:03,920 --> 01:09:06,600
+Ma sì, si può fare. Sì, sì, sì, sì. È
+
+1370
+01:09:06,600 --> 01:09:09,199
+carina anche quella che dice lei. Sì.
+
+1371
+01:09:09,199 --> 01:09:14,120
+Ok. Allora, prima proprietà
+
+1372
+01:09:20,279 --> 01:09:26,679
+ah prima proprietà che ci serve. Ok,
+
+1373
+01:09:28,319 --> 01:09:31,319
+teorema.
+
+1374
+01:09:32,199 --> 01:09:36,520
+Vediamo di andare veloce.
+
+1375
+01:09:36,679 --> 01:09:38,960
+Fiorem,
+
+1376
+01:09:38,960 --> 01:09:42,560
+R è diverso da R. Vogliamo prima capire
+
+1377
+01:09:42,560 --> 01:09:46,000
+che relazione c'è fra queste classi R ed
+
+1378
+01:09:46,000 --> 01:09:50,120
+R. Allora, primo risultato R è
+
+1379
+01:09:50,120 --> 01:09:54,760
+differente da co perché
+
+1380
+01:09:54,760 --> 01:09:57,159
+esiste out per
+perché esistono problemi
+
+1381
+01:09:57,159 --> 01:09:59,440
+che stanno in R e non in R e quindi per
+
+1382
+01:09:59,440 --> 01:10:03,760
+forza questo deve essere vero. Ok?
+
+1383
+01:10:03,760 --> 01:10:06,600
+Secondo
+
+1384
+01:10:06,600 --> 01:10:09,600
+teorema,
+
+1385
+01:10:09,640 --> 01:10:11,679
+quello era un lemmino che ci serve dopo,
+
+1386
+01:10:11,679 --> 01:10:17,640
+eh, che R è diverso da R. Abbiamo che co
+
+1387
+01:10:17,640 --> 01:10:21,960
+intersecato re è uguale a R. Quindi
+
+1388
+01:10:21,960 --> 01:10:23,960
+quello che dimostriamo è che questa cosa
+
+1389
+01:10:23,960 --> 01:10:28,159
+è esattamente R.
+
+1390
+01:10:28,199 --> 01:10:30,360
+Per dimostrare questa cosa noi dobbiamo
+
+1391
+01:10:30,360 --> 01:10:33,400
+dimostrare due cose che co re
+
+1392
+01:10:33,400 --> 01:10:36,480
+intersecato re è un sottinieme di R e
+
+1393
+01:10:36,480 --> 01:10:38,679
+che R è un sottinsieme dell'intersezione
+
+1394
+01:10:38,679 --> 01:10:40,560
+di quei due. Cioè dobbiamo mostrare che
+
+1395
+01:10:40,560 --> 01:10:42,920
+si contengono a vicenda. In questo modo
+
+1396
+01:10:42,920 --> 01:10:46,640
+noi otteniamo che
+
+1397
+01:10:46,640 --> 01:10:50,120
+i due sono uguali. Quindi primo pezzo co
+
+1398
+01:10:50,120 --> 01:10:54,400
+re intersezione re
+
+1399
+01:10:54,400 --> 01:10:57,000
+e un sottoinsieme di R. Quindi vogliamo
+
+1400
+01:10:57,000 --> 01:11:00,800
+dimostrare questo. Mh mh.
+
+1401
+01:11:00,800 --> 01:11:03,640
+Si fa così,
+
+1402
+01:11:03,640 --> 01:11:09,280
+sia L un linguaggio
+
+1403
+01:11:10,320 --> 01:11:14,719
+tale che L appartiene a R
+
+1404
+01:11:14,719 --> 01:11:17,800
+intersecato R. Noi dimostreremo che
+
+1405
+01:11:17,800 --> 01:11:24,920
+questo linguaggio L sta in R. Ok?
+
+1406
+01:11:25,080 --> 01:11:28,080
+Siccome
+
+1407
+01:11:28,520 --> 01:11:33,480
+L appartiene a co re
+
+1408
+01:11:33,480 --> 01:11:37,440
+per definizione di co avremo che il
+
+1409
+01:11:37,440 --> 01:11:40,159
+complemento di L
+
+1410
+01:11:40,159 --> 01:11:43,040
+è in R.
+È in R.
+
+1411
+01:11:43,040 --> 01:11:48,239
+L complementato appartiene R.
+
+1412
+01:11:49,040 --> 01:11:52,480
+Dal fatto
+
+1413
+01:11:52,719 --> 01:11:54,520
+che
+
+1414
+01:11:54,520 --> 01:11:59,320
+L appartiene a R e L soprassegnato
+
+1415
+01:11:59,320 --> 01:12:03,639
+appartiene a R. Quindi dal fatto che L e
+
+1416
+01:12:03,639 --> 01:12:08,360
+il suo complemento stanno in R, allora L
+
+1417
+01:12:08,360 --> 01:12:11,280
+sta in
+R.
+
+1418
+01:12:11,280 --> 01:12:14,880
+segue che L appartiene a R e questo ci
+
+1419
+01:12:14,880 --> 01:12:17,960
+dimostra che tutti i linguaggi ci
+
+1420
+01:12:17,960 --> 01:12:20,080
+dimostra questa cosa qua, tutti i
+
+1421
+01:12:20,080 --> 01:12:22,080
+linguaggi che stanno in questa
+
+1422
+01:12:22,080 --> 01:12:25,120
+intersezione devono stare anche qua
+
+1423
+01:12:25,120 --> 01:12:29,080
+dentro. Ok? Questo non basta a
+
+1424
+01:12:29,080 --> 01:12:32,400
+dimostrare che i due sono uguali.
+
+1425
+01:12:32,400 --> 01:12:35,159
+Dobbiamo dimostrare ora quest'altra
+
+1426
+01:12:35,159 --> 01:12:39,800
+cosa. R è un sottoinsieme di co
+
+1427
+01:12:39,800 --> 01:12:43,639
+intersecato R.
+
+1428
+01:12:44,960 --> 01:12:51,400
+Sia L un linguaggio appartenente ad R.
+
+1429
+01:12:53,239 --> 01:12:58,080
+Se L appartiene ad R, allora
+
+1430
+01:12:58,080 --> 01:13:03,280
+il suo complemento appartiene ad R.
+
+1431
+01:13:04,040 --> 01:13:08,280
+Quindi cosa avrò? Avrò una macchina
+
+1432
+01:13:08,280 --> 01:13:12,719
+che è in grado di dare garanzia di
+
+1433
+01:13:12,719 --> 01:13:17,560
+risposta sia su sì che su no.
+
+1434
+01:13:17,560 --> 01:13:20,960
+E questo ci dimostra che L sia nella
+
+1435
+01:13:20,960 --> 01:13:25,679
+parte re che nella parte OR. Ok?
+
+1436
+01:13:25,679 --> 01:13:28,920
+Tutto qua.
+
+1437
+01:13:30,000 --> 01:13:35,520
+Eh. Ah! Ah, da Sì. Ok.
+
+1438
+01:13:35,520 --> 01:13:37,159
+Alright.
+
+1439
+01:13:37,159 --> 01:13:40,400
+Quindi cosa abbiamo? La prima proprietà
+
+1440
+01:13:40,400 --> 01:13:44,400
+ci dice che questi pezzi sono scissi,
+
+1441
+01:13:44,400 --> 01:13:47,760
+cioè c'è una distanza qui e che
+
+1442
+01:13:47,760 --> 01:13:49,760
+l'intersezione di questi due è
+
+1443
+01:13:49,760 --> 01:13:56,239
+esattamente R. Ok. Altro problema. Altro
+
+1444
+01:13:56,239 --> 01:13:59,639
+eh risultato.
+
+1445
+01:14:02,880 --> 01:14:05,840
+Teorema
+
+1446
+01:14:05,840 --> 01:14:08,560
+stiamo facendo perché è interessante
+
+1447
+01:14:08,560 --> 01:14:11,520
+notare come su queste classi noi siamo
+
+1448
+01:14:11,520 --> 01:14:13,639
+in grado di dire varie cose che sono
+
+1449
+01:14:13,639 --> 01:14:15,520
+separate, che la loro intersezione è
+
+1450
+01:14:15,520 --> 01:14:18,199
+esattamente quella eccetera. scopriremo
+
+1451
+01:14:18,199 --> 01:14:19,760
+che su delle classi di complessità
+
+1452
+01:14:19,760 --> 01:14:21,080
+invece non siamo in grado di dire
+
+1453
+01:14:21,080 --> 01:14:23,480
+niente, sono tutti risultati che ha
+
+1454
+01:14:23,480 --> 01:14:26,199
+detto probabilmente separato,
+
+1455
+01:14:26,199 --> 01:14:29,080
+probabilmente l'intersezione, cioè su
+
+1456
+01:14:29,080 --> 01:14:30,800
+per quanto riguarda la complessità la
+
+1457
+01:14:30,800 --> 01:14:32,639
+nostra conoscenza è veramente limitata.
+
+1458
+01:14:32,639 --> 01:14:34,360
+Per la calcolabilità invece siamo in
+
+1459
+01:14:34,360 --> 01:14:36,600
+grado di dire queste cose. Quindi
+
+1460
+01:14:36,600 --> 01:14:38,679
+teorema
+
+1461
+01:14:38,679 --> 01:14:44,600
+re è diverso da re.
+
+1462
+01:14:48,520 --> 01:14:50,400
+dimostrazione.
+
+1463
+01:14:50,400 --> 01:14:53,400
+Supponiamo
+
+1464
+01:14:54,440 --> 01:14:57,679
+per assurdo
+
+1465
+01:14:58,000 --> 01:14:59,880
+che
+
+1466
+01:14:59,880 --> 01:15:01,600
+co
+
+1467
+01:15:01,600 --> 01:15:06,120
+sia uguale ad R.
+
+1468
+01:15:10,360 --> 01:15:13,360
+Poiché
+
+1469
+01:15:14,080 --> 01:15:15,960
+C
+
+1470
+01:15:15,960 --> 01:15:19,719
+intersecato R è uguale ad R.
+
+1471
+01:15:19,719 --> 01:15:23,920
+Per il teorema di prima,
+
+1472
+01:15:25,840 --> 01:15:27,800
+se
+
+1473
+01:15:27,800 --> 01:15:31,320
+fosse vero
+
+1474
+01:15:31,560 --> 01:15:33,199
+che
+
+1475
+01:15:33,199 --> 01:15:37,639
+co re è uguale ad re,
+
+1476
+01:15:37,639 --> 01:15:39,760
+io avrei
+
+1477
+01:15:39,760 --> 01:15:42,679
+avremmo
+
+1478
+01:15:42,679 --> 01:15:46,040
+re = R.
+
+1479
+01:15:46,040 --> 01:15:48,760
+Ma ciò è impossibile per il teorema di
+
+1480
+01:15:48,760 --> 01:15:51,760
+prima.
+
+1481
+01:15:52,600 --> 01:15:55,199
+Ok? Quindi questi tre risultati ci
+
+1482
+01:15:55,199 --> 01:15:57,360
+dicono alcune cose interessanti su
+
+1483
+01:15:57,360 --> 01:16:00,719
+queste due classi. Uno, che queste due
+
+1484
+01:16:00,719 --> 01:16:03,679
+classi sono distinte, cioè quindi non
+
+1485
+01:16:03,679 --> 01:16:06,760
+collassano sulla stessa cosa, che sono
+
+1486
+01:16:06,760 --> 01:16:09,960
+sganciate, sono distinte da R e che la
+
+1487
+01:16:09,960 --> 01:16:14,920
+loro intersezione è esattamente R. Ok?
+
+1488
+01:16:14,920 --> 01:16:19,639
+Chiaro per tutti? Alri,
+
+1489
+01:16:20,280 --> 01:16:23,440
+vogliamo ora
+
+1490
+01:16:23,440 --> 01:16:26,560
+andare a caratterizzare un problema come
+
+1491
+01:16:26,560 --> 01:16:28,880
+questo qui, ok? Un problema che non sta
+
+1492
+01:16:28,880 --> 01:16:31,199
+né in re né in coccia, quindi un
+
+1493
+01:16:31,199 --> 01:16:33,960
+problema talmente tosto sulle quali non
+
+1494
+01:16:33,960 --> 01:16:35,760
+abbiamo garanzie, non possiamo dare
+
+1495
+01:16:35,760 --> 01:16:37,679
+garanzie né di rispondere sì né di
+
+1496
+01:16:37,679 --> 01:16:39,400
+rispondere no.
+
+1497
+01:16:39,400 --> 01:16:43,080
+Per fare questa cosa qua, ovviamente ci
+
+1498
+01:16:43,080 --> 01:16:47,280
+serviranno delle riduzioni perché così
+
+1499
+01:16:47,280 --> 01:16:50,120
+procediamo e ne dovremo vedere un paio.
+
+1500
+01:16:50,120 --> 01:16:53,719
+Ok? Adesso vi dico perché. Allora, ci
+
+1501
+01:16:53,719 --> 01:16:58,239
+serve una proprietà aggiuntiva
+
+1502
+01:16:58,239 --> 01:16:59,800
+che è un altro teorema che non
+
+1503
+01:16:59,800 --> 01:17:01,880
+dimostriamo, ma è semplicissimo da
+
+1504
+01:17:01,880 --> 01:17:04,120
+dimostrare perché è simile a una cosa
+
+1505
+01:17:04,120 --> 01:17:08,400
+che abbiamo già visto che è questo qua.
+
+1506
+01:17:08,400 --> 01:17:10,040
+Siano
+
+1507
+01:17:10,040 --> 01:17:14,960
+A e B due linguaggi
+
+1508
+01:17:16,000 --> 01:17:19,239
+tali che
+
+1509
+01:17:19,239 --> 01:17:23,960
+A si riduce a B. Ok?
+
+1510
+01:17:23,960 --> 01:17:27,000
+Se A
+
+1511
+01:17:27,000 --> 01:17:31,400
+non appartiene a C e re, allora B non
+
+1512
+01:17:31,400 --> 01:17:34,239
+appartiene a C e R.
+
+1513
+01:17:34,239 --> 01:17:37,760
+Ok? Eh,
+
+1514
+01:17:37,760 --> 01:17:39,639
+is it?
+
+1515
+01:17:39,639 --> 01:17:42,120
+Diamond.
+
+1516
+01:17:42,120 --> 01:17:47,159
+E se da u
+
+1517
+01:17:47,280 --> 01:17:50,480
+se A
+
+1518
+01:17:50,480 --> 01:17:54,360
+non appartiene a R,
+
+1519
+01:17:54,360 --> 01:17:56,360
+allora
+
+1520
+01:17:56,360 --> 01:17:59,760
+B non appartiene a co dimostrazione è
+
+1521
+01:17:59,760 --> 01:18:02,520
+molto simile a quella là che abbiamo già
+
+1522
+01:18:02,520 --> 01:18:04,719
+visto qualche lezione fa. Se A non
+
+1523
+01:18:04,719 --> 01:18:07,679
+appartiene a R, allora nemmeno B
+
+1524
+01:18:07,679 --> 01:18:09,800
+appartiene. Se se non appartiene a R,
+
+1525
+01:18:09,800 --> 01:18:14,480
+allora B. Nemmeno B appartiene R. Perché
+
+1526
+01:18:14,480 --> 01:18:17,520
+se così non fosse vero, cioè se fosse B
+
+1527
+01:18:17,520 --> 01:18:20,239
+se B appartenesse ad re, allora noi
+
+1528
+01:18:20,239 --> 01:18:22,880
+potremmo rispondere no in tempo finito
+
+1529
+01:18:22,880 --> 01:18:25,199
+su A, utilizzando una riduzione, una
+
+1530
+01:18:25,199 --> 01:18:26,880
+trasformazione. Questo è il trucco.
+
+1531
+01:18:26,880 --> 01:18:31,840
+Quindi ci serve sto teorema. Ok?
+
+1532
+01:18:32,360 --> 01:18:34,120
+Allora,
+
+1533
+01:18:34,120 --> 01:18:36,040
+noi consideriamo
+
+1534
+01:18:36,040 --> 01:18:38,360
+questo problema qui di cui siamo alla
+
+1535
+01:18:38,360 --> 01:18:41,120
+ricerca è questo qua.
+
+1536
+01:18:41,120 --> 01:18:43,280
+Halt
+
+1537
+01:18:43,280 --> 01:18:47,440
+per ogni lo possiamo chiamare
+
+1538
+01:18:47,840 --> 01:18:51,400
+che cos'è? è l'insieme delle macchine di
+
+1539
+01:18:51,400 --> 01:18:54,639
+Touring M
+
+1540
+01:18:54,639 --> 01:18:57,000
+tali per cui
+
+1541
+01:18:57,000 --> 01:19:01,239
+per ogni stringa W
+
+1542
+01:19:01,239 --> 01:19:06,679
+M si arresta su W.
+
+1543
+01:19:12,960 --> 01:19:15,000
+Ok?
+
+1544
+01:19:15,000 --> 01:19:19,000
+Ripeto, halt per ogni è l'insieme delle
+
+1545
+01:19:19,000 --> 01:19:22,520
+macchine di touring che da datogli
+
+1546
+01:19:22,520 --> 01:19:25,520
+qualsiasi input, questa macchina si
+
+1547
+01:19:25,520 --> 01:19:27,560
+ferma.
+
+1548
+01:19:27,560 --> 01:19:30,159
+Intuitivamente, perché non è in R questa
+
+1549
+01:19:30,159 --> 01:19:32,600
+cosa?
+
+1550
+01:19:32,600 --> 01:19:35,600
+Perché non è in R questo linguaggio?
+
+1551
+01:19:35,600 --> 01:19:36,880
+Perché dovrei controllare tutte le
+
+1552
+01:19:36,880 --> 01:19:38,400
+string
+Perché dovremmo trovare provare
+
+1553
+01:19:38,400 --> 01:19:40,639
+tutte le stringhe. Quante sono?
+Sono
+
+1554
+01:19:40,639 --> 01:19:43,600
+infinite. Ok. Perché non sta in co? è
+
+1555
+01:19:43,600 --> 01:19:45,960
+questo linguaggio
+perché la macchina va
+
+1556
+01:19:45,960 --> 01:19:47,639
+avanti all'impito.
+Perché la macchina va
+
+1557
+01:19:47,639 --> 01:19:49,120
+avanti all'infinito. Quindi questo
+
+1558
+01:19:49,120 --> 01:19:52,120
+linguaggio sembra essere candidato a non
+
+1559
+01:19:52,120 --> 01:19:54,480
+stare né in re né in co re, cioè a
+
+1560
+01:19:54,480 --> 01:19:57,040
+essere un problema sostanzialmente più
+
+1561
+01:19:57,040 --> 01:19:58,719
+complicato di quelli che abbiamo visto
+
+1562
+01:19:58,719 --> 01:20:00,920
+finora, ok? Un problema sulle quali non
+
+1563
+01:20:00,920 --> 01:20:03,800
+possiamo dare né garanzia di risposta sì
+
+1564
+01:20:03,800 --> 01:20:07,239
+né garanzia di risposta no. Ok?
+
+1565
+01:20:07,239 --> 01:20:11,400
+Allora, per riuscire
+
+1566
+01:20:12,320 --> 01:20:17,199
+a dimostrare, quindi per dimostrare
+
+1567
+01:20:19,719 --> 01:20:22,719
+che
+
+1568
+01:20:24,159 --> 01:20:25,880
+uno
+
+1569
+01:20:25,880 --> 01:20:30,199
+halt per ogni non appartiene
+
+1570
+01:20:30,199 --> 01:20:35,440
+a re e du che halt per ogni non
+
+1571
+01:20:35,440 --> 01:20:40,000
+appartiene A co re
+
+1572
+01:20:40,360 --> 01:20:43,600
+ci servono
+
+1573
+01:20:44,920 --> 01:20:48,800
+due riduzioni,
+
+1574
+01:20:50,520 --> 01:20:55,159
+una che ci tira fuori halt da R, quindi
+
+1575
+01:20:55,159 --> 01:20:58,400
+una riduzione,
+
+1576
+01:20:59,400 --> 01:21:02,480
+una riduzione che tolga
+
+1577
+01:21:02,480 --> 01:21:04,000
+halt
+
+1578
+01:21:04,000 --> 01:21:09,920
+per ogni da R e un'altra
+
+1579
+01:21:09,920 --> 01:21:13,600
+una che tolga halt
+
+1580
+01:21:13,600 --> 01:21:17,760
+per ogni da or.
+
+1581
+01:21:18,560 --> 01:21:21,719
+Ok? Siccome dobbiamo dimostrare che alt
+
+1582
+01:21:21,719 --> 01:21:24,080
+per ogni non sta né in R né in co ci
+
+1583
+01:21:24,080 --> 01:21:26,520
+servono due riduzioni, una che la butta
+
+1584
+01:21:26,520 --> 01:21:29,040
+fuori da R e una che la butti fuori da
+
+1585
+01:21:29,040 --> 01:21:32,199
+co ok?
+
+1586
+01:21:32,199 --> 01:21:36,320
+per ottenere 1.
+
+1587
+01:21:37,159 --> 01:21:39,719
+Quindi per
+
+1588
+01:21:39,719 --> 01:21:42,719
+ottenere
+
+1589
+01:21:42,800 --> 01:21:45,159
+1
+
+1590
+01:21:45,159 --> 01:21:49,679
+fa ridurremo alt il negato di halt epsil
+
+1591
+01:21:49,679 --> 01:21:53,120
+verso halt per ogni
+
+1592
+01:21:53,120 --> 01:21:57,679
+perché il negato di halt e
+
+1593
+01:21:57,679 --> 01:22:00,840
+non sta in R. Guardate qua, il negato di
+
+1594
+01:22:00,840 --> 01:22:06,360
+halt e sta in co ma non sta in r. Quindi
+
+1595
+01:22:06,360 --> 01:22:10,360
+se riduciamo halt ad alt * ogni noi
+
+1596
+01:22:10,360 --> 01:22:13,800
+spingiamo halt per ogni fuori re. Per
+
+1597
+01:22:13,800 --> 01:22:16,960
+l'altro lato noi ridurremo halt ep che
+
+1598
+01:22:16,960 --> 01:22:21,679
+sta in r ma non in co ridurremo questo a
+
+1599
+01:22:21,679 --> 01:22:24,520
+lui in maniera tale che halt per ogni
+
+1600
+01:22:24,520 --> 01:22:26,880
+non sta nemmeno in co?
+
+1601
+01:22:26,880 --> 01:22:30,000
+Lo scriviamo
+
+1602
+01:22:31,440 --> 01:22:33,159
+per
+
+1603
+01:22:33,159 --> 01:22:36,040
+ottenere
+
+1604
+01:22:36,040 --> 01:22:41,840
+2. Cosa faremo? Riduciamo halt ep verso
+
+1605
+01:22:41,840 --> 01:22:46,120
+halt per ogni. Ok?
+
+1606
+01:22:46,120 --> 01:22:47,840
+È chiaro cosa andremo a fare? Quindi il
+
+1607
+01:22:47,840 --> 01:22:50,400
+nostro obiettivo è dimostrare che halt
+
+1608
+01:22:50,400 --> 01:22:53,280
+per ogni non sta né in r né in coerre.
+
+1609
+01:22:53,280 --> 01:22:55,120
+Per dimostrare questa cosa ci servono
+
+1610
+01:22:55,120 --> 01:22:58,520
+due riduzioni, uno che la lo butta fuori
+
+1611
+01:22:58,520 --> 01:23:03,880
+da R e uno che lo butta fuori da co?
+
+1612
+01:23:04,320 --> 01:23:08,400
+Focalizziamoci sulla prima,
+
+1613
+01:23:08,400 --> 01:23:10,239
+no, sulla seconda. Partiamo da due
+
+1614
+01:23:10,239 --> 01:23:12,080
+perché è più facile. Quindi ovviamente
+
+1615
+01:23:12,080 --> 01:23:15,280
+anche il complementare di
+
+1616
+01:23:15,280 --> 01:23:18,040
+è fuori tutto.
+È fuori tutto. Sì, perché
+
+1617
+01:23:18,040 --> 01:23:21,280
+se fosse in re o in co l'altro andrebbe
+
+1618
+01:23:21,280 --> 01:23:23,199
+a parare nell'altra classe, ok? Quindi
+
+1619
+01:23:23,199 --> 01:23:25,920
+il complemento di halt per ogni sta da
+
+1620
+01:23:25,920 --> 01:23:30,239
+un'altra parte. Adesso esiste tutta una
+
+1621
+01:23:30,239 --> 01:23:33,679
+gerarchia di classi che andrebbero a
+
+1622
+01:23:33,679 --> 01:23:35,800
+categorizzare questi problemi strani,
+
+1623
+01:23:35,800 --> 01:23:37,880
+però è una cosa sofisticatissima,
+
+1624
+01:23:37,880 --> 01:23:39,840
+lasciamo stare. Ok? Però volevo
+
+1625
+01:23:39,840 --> 01:23:42,080
+mostrarvi che ci stanno problemi
+
+1626
+01:23:42,080 --> 01:23:45,159
+tostarelli che hanno sta faccia qua. Ok,
+
+1627
+01:23:45,159 --> 01:23:48,440
+partiamo da due, cioè
+
+1628
+01:23:48,440 --> 01:23:53,320
+da dimostrare che
+
+1629
+01:23:54,480 --> 01:23:56,480
+eh
+
+1630
+01:23:56,480 --> 01:24:01,159
+halt non halt per ogni non sta in co e
+
+1631
+01:24:01,159 --> 01:24:05,880
+facciamo questa riduzione da halt
+
+1632
+01:24:05,880 --> 01:24:07,679
+verso
+
+1633
+01:24:07,679 --> 01:24:11,719
+halt per ogni. Ok?
+
+1634
+01:24:11,719 --> 01:24:14,679
+Che cos'è un input per alt? una macchina
+
+1635
+01:24:14,679 --> 01:24:18,040
+è una macchina che ha la particolarità
+
+1636
+01:24:18,040 --> 01:24:21,560
+di arrestarsi sulla stringa vuota. Ok?
+
+1637
+01:24:21,560 --> 01:24:25,000
+Cos'è un input per halt per ogni?
+Una
+
+1638
+01:24:25,000 --> 01:24:26,840
+macchina.
+Una macchina la chiamiamo N
+
+1639
+01:24:26,840 --> 01:24:28,920
+per distinguerla
+
+1640
+01:24:28,920 --> 01:24:32,320
+che è ottenuta come il trasformato di m
+
+1641
+01:24:32,320 --> 01:24:34,639
+secondo una funzione f. Che
+
+1642
+01:24:34,639 --> 01:24:38,000
+caratteristica ha questa n se è
+
+1643
+01:24:38,000 --> 01:24:41,440
+un'istanza s di halt per ogni
+
+1644
+01:24:41,440 --> 01:24:43,880
+si ferma su tutte le stringhe. Non ci
+
+1645
+01:24:43,880 --> 01:24:45,760
+importa se dice sì o no, si deve
+
+1646
+01:24:45,760 --> 01:24:47,760
+arrestare. Può può dire quello che
+
+1647
+01:24:47,760 --> 01:24:52,199
+vuole, l'importante è che si fermi. Ok.
+
+1648
+01:24:52,199 --> 01:24:57,600
+Ok. Vi propongo questa riduzione.
+
+1649
+01:25:00,719 --> 01:25:04,840
+E dai. Ah,
+
+1650
+01:25:06,360 --> 01:25:09,440
+ok. Quindi abbiamo m, la funzione di
+
+1651
+01:25:09,440 --> 01:25:12,320
+transizione di Mine data impasto ad f. F
+
+1652
+01:25:12,320 --> 01:25:14,800
+tira fuori una macchina M la cui
+
+1653
+01:25:14,800 --> 01:25:17,639
+funzione di transizione codifica questa
+
+1654
+01:25:17,639 --> 01:25:20,000
+cosa qua. Quindi otteniamo una F che è
+
+1655
+01:25:20,000 --> 01:25:22,719
+un trasformato di M, una N che è un
+
+1656
+01:25:22,719 --> 01:25:25,880
+trasformato di M secondo F. Allora,
+
+1657
+01:25:25,880 --> 01:25:28,159
+questa macchina M che fa? Prendi input
+
+1658
+01:25:28,159 --> 01:25:31,400
+una stringa W, se ne frega, non fa
+
+1659
+01:25:31,400 --> 01:25:35,280
+assolutamente niente. E che cosa fa?
+
+1660
+01:25:35,280 --> 01:25:37,159
+simola
+
+1661
+01:25:37,159 --> 01:25:40,000
+su m. Ok?
+
+1662
+01:25:40,000 --> 01:25:44,360
+Se m su risponde sì, rispondiamo di sì.
+
+1663
+01:25:44,360 --> 01:25:48,040
+Se m su risponde no, rispondiamo di no.
+
+1664
+01:25:48,040 --> 01:25:51,840
+Se M su luppa, luppiamo assieme a lei.
+
+1665
+01:25:51,840 --> 01:25:53,360
+Ok?
+
+1666
+01:25:53,360 --> 01:25:55,719
+Chiaro? Molto semplice questa cosa qua.
+
+1667
+01:25:55,719 --> 01:25:57,679
+Va bene? Il passaggio è la l'altra
+
+1668
+01:25:57,679 --> 01:25:59,000
+riduzione. L'altra riduzione è più
+
+1669
+01:25:59,000 --> 01:26:02,000
+sofisticata.
+
+1670
+01:26:02,119 --> 01:26:03,639
+Alri? Dobbiamo dimostrare che
+
+1671
+01:26:03,639 --> 01:26:06,840
+effettivamente questa funzione f
+
+1672
+01:26:06,840 --> 01:26:10,119
+trasformi istanze s di halt ep verso
+
+1673
+01:26:10,119 --> 01:26:13,000
+istanze sì di halt per ogni e istanze no
+
+1674
+01:26:13,000 --> 01:26:16,080
+di halt ep su istanze no di halt per
+
+1675
+01:26:16,080 --> 01:26:19,199
+ogni. Ok? Primo verso della riduzione
+
+1676
+01:26:19,199 --> 01:26:21,320
+della della dimostrazione. Dimostriamo
+
+1677
+01:26:21,320 --> 01:26:24,920
+che se partiamo da una macchina M che si
+
+1678
+01:26:24,920 --> 01:26:28,159
+arresta su stringa vuota, allora N si
+
+1679
+01:26:28,159 --> 01:26:32,560
+arresta su tutto. Ok?
+
+1680
+01:26:32,560 --> 01:26:35,400
+abbastanza semplice, siccome la macchina
+
+1681
+01:26:35,400 --> 01:26:38,400
+N.
+
+1682
+01:26:39,239 --> 01:26:40,960
+Ok,
+
+1683
+01:26:40,960 --> 01:26:44,360
+quindi supponiamo
+
+1684
+01:26:45,400 --> 01:26:47,080
+che
+
+1685
+01:26:47,080 --> 01:26:50,600
+M appartenga ad halt
+
+1686
+01:26:50,600 --> 01:26:53,199
+da cui
+
+1687
+01:26:53,199 --> 01:26:57,360
+m si arresta
+
+1688
+01:26:57,480 --> 01:26:58,520
+su
+
+1689
+01:26:58,520 --> 01:27:02,280
+Ok? Quindi, siccome n
+
+1690
+01:27:02,280 --> 01:27:04,760
+ignora completamente il proprio input e
+
+1691
+01:27:04,760 --> 01:27:07,760
+quello che fa è simulare
+
+1692
+01:27:07,760 --> 01:27:13,280
+m su, la macchina n su tutte le stringhe
+
+1693
+01:27:13,280 --> 01:27:16,480
+w darà sempre la stessa risposta, la
+
+1694
+01:27:16,480 --> 01:27:18,600
+risposta di m su
+
+1695
+01:27:18,600 --> 01:27:20,360
+noi non ci importa cosa sia questa
+
+1696
+01:27:20,360 --> 01:27:22,679
+risposta, a noi quello che ci importa è
+
+1697
+01:27:22,679 --> 01:27:27,400
+che la macchina n si arresta sempre. Ok?
+
+1698
+01:27:27,400 --> 01:27:30,639
+È chiaro questo passaggio?
+
+1699
+01:27:32,760 --> 01:27:35,199
+da cui m si arresta su epil. Sì, scrivo
+
+1700
+01:27:35,199 --> 01:27:37,360
+un po' a cavoli, poi specialmente con
+
+1701
+01:27:37,360 --> 01:27:39,480
+questo aggcino.
+
+1702
+01:27:39,480 --> 01:27:44,000
+Ok, quindi se m si arresta su darà una
+
+1703
+01:27:44,000 --> 01:27:47,159
+risposta. A noi questa risposta non ci
+
+1704
+01:27:47,159 --> 01:27:50,400
+importa, però quello che ci importa è
+
+1705
+01:27:50,400 --> 01:27:53,760
+che n a un certo punto si ferma e dice
+
+1706
+01:27:53,760 --> 01:27:57,560
+qualcosa. Ok?
+
+1707
+01:27:57,560 --> 01:28:00,560
+segue
+
+1708
+01:28:01,400 --> 01:28:05,520
+che n appartiene ad halt per ogni. Ok?
+
+1709
+01:28:05,520 --> 01:28:08,719
+Quindi m appartiene ad alt, n appartiene
+
+1710
+01:28:08,719 --> 01:28:12,400
+ad alt per ogni istanza sì, istanza sì.
+
+1711
+01:28:12,400 --> 01:28:15,400
+Supponiamo
+
+1712
+01:28:16,679 --> 01:28:19,679
+invece
+
+1713
+01:28:21,679 --> 01:28:23,199
+che
+
+1714
+01:28:23,199 --> 01:28:28,000
+M non appartenga ad halt EP,
+
+1715
+01:28:28,000 --> 01:28:30,760
+da cui
+
+1716
+01:28:30,760 --> 01:28:33,320
+M non
+
+1717
+01:28:33,320 --> 01:28:36,920
+si arresta
+
+1718
+01:28:37,239 --> 01:28:39,760
+su EP.
+
+1719
+01:28:39,760 --> 01:28:43,199
+Che cosa possiamo dire di n?
+
+1720
+01:28:43,199 --> 01:28:45,560
+Che n
+
+1721
+01:28:45,560 --> 01:28:49,480
+siccome ignora il proprio input e non fa
+
+1722
+01:28:49,480 --> 01:28:55,600
+altro che simulare m su, se m su luppa m
+
+1723
+01:28:55,600 --> 01:28:58,679
+n lupperà per tutti i propri input, non
+
+1724
+01:28:58,679 --> 01:29:01,159
+si ferma mai. Ok? Gli possiamo dare
+
+1725
+01:29:01,159 --> 01:29:05,760
+qualsiasi cosa in input. La macchina N,
+
+1726
+01:29:05,760 --> 01:29:10,760
+siccome ignora il proprio input
+
+1727
+01:29:10,880 --> 01:29:12,880
+e simola M su
+
+1728
+01:29:12,880 --> 01:29:16,800
+lpererà come M su. Quindi in questo caso
+
+1729
+01:29:16,800 --> 01:29:19,600
+la macchina N
+
+1730
+01:29:19,600 --> 01:29:23,639
+arresta. Chiaro?
+
+1731
+01:29:23,639 --> 01:29:26,639
+Segue.
+
+1732
+01:29:27,199 --> 01:29:31,560
+N appartiene halt per ogni, quindi
+
+1733
+01:29:31,560 --> 01:29:34,639
+istanza no. Istanza no. Ok, questa era
+
+1734
+01:29:34,639 --> 01:29:36,880
+la parte di riduzione facile. Ok, adesso
+
+1735
+01:29:36,880 --> 01:29:39,280
+dobbiamo vedere l'altra che è più
+
+1736
+01:29:39,280 --> 01:29:41,679
+complicata. Ok, quindi in un quarto
+
+1737
+01:29:41,679 --> 01:29:45,719
+d'ora ce la dovremmo fare.
+
+1738
+01:29:46,080 --> 01:29:49,080
+Chiaro? Per tutti? Questo ci dimostra
+
+1739
+01:29:49,080 --> 01:29:52,880
+che cosa? Che halt e
+
+1740
+01:29:52,880 --> 01:29:58,000
+non sta in corr.
+
+1741
+01:29:58,000 --> 01:29:59,679
+Ok.
+
+1742
+01:29:59,679 --> 01:30:03,159
+Questo segue che halt per ogni non
+
+1743
+01:30:03,159 --> 01:30:07,719
+appartiene a co e re.
+
+1744
+01:30:09,880 --> 01:30:12,960
+Sì. Ok.
+
+1745
+01:30:12,960 --> 01:30:18,960
+Eh, caso 1 che era quello ah
+
+1746
+01:30:19,520 --> 01:30:23,080
+caso 1
+
+1747
+01:30:25,199 --> 01:30:26,880
+dobbiamo
+
+1748
+01:30:26,880 --> 01:30:28,679
+ridurre
+
+1749
+01:30:28,679 --> 01:30:33,000
+il negato di alt
+
+1750
+01:30:34,480 --> 01:30:38,639
+per ogni. Ok? Cos'è un'istanza per altta
+
+1751
+01:30:38,639 --> 01:30:42,400
+e? No,
+una macchina M. Cos'è un'istanza
+
+1752
+01:30:42,400 --> 01:30:44,639
+per alt per ogni una macchina che sarà
+
+1753
+01:30:44,639 --> 01:30:46,600
+ottenuta come un trasformato secondo una
+
+1754
+01:30:46,600 --> 01:30:49,719
+funzione F. Ok? Ci dobbiamo inventare
+
+1755
+01:30:49,719 --> 01:30:53,119
+sto F qua. Ok?
+
+1756
+01:30:53,119 --> 01:30:56,000
+Allora, vi faccio il disegno prima che
+
+1757
+01:30:56,000 --> 01:30:59,119
+la penna mi molli.
+
+1758
+01:30:59,119 --> 01:31:00,719
+Allora, questa cosa è un po' più
+
+1759
+01:31:00,719 --> 01:31:04,080
+complicata. Adesso
+
+1760
+01:31:04,080 --> 01:31:07,440
+ve la faccio. Ecco qua questa bella
+
+1761
+01:31:07,440 --> 01:31:10,440
+macchinona
+
+1762
+01:31:11,199 --> 01:31:16,440
+N che FDM. Allora, come funziona
+
+1763
+01:31:16,440 --> 01:31:21,960
+questa macchina? prende in input W
+
+1764
+01:31:22,639 --> 01:31:27,800
+e ci fa una cosa molto particolare.
+
+1765
+01:31:27,920 --> 01:31:31,199
+Usa la lunghezza
+
+1766
+01:31:31,199 --> 01:31:35,360
+di W come un contatore. E adesso vi
+
+1767
+01:31:35,360 --> 01:31:39,440
+spiego a quale fine.
+
+1768
+01:31:39,639 --> 01:31:42,920
+Poi c'ha m
+
+1769
+01:31:42,920 --> 01:31:45,960
+con input
+
+1770
+01:31:47,520 --> 01:31:49,199
+se m su
+
+1771
+01:31:49,199 --> 01:31:54,880
+si si ferma, allora noi luppiamo.
+
+1772
+01:31:55,159 --> 01:31:56,840
+Se m su
+
+1773
+01:31:56,840 --> 01:32:01,320
+non si ferma, allora noi ci arrestiamo,
+
+1774
+01:32:01,320 --> 01:32:03,440
+diamo una risposta al caso, cioè basta
+
+1775
+01:32:03,440 --> 01:32:05,320
+che ci fermiamo. Ok, non è ancora
+
+1776
+01:32:05,320 --> 01:32:07,320
+finito. Ok,
+
+1777
+01:32:07,320 --> 01:32:09,600
+se non si ferma si ferma. Se la
+
+1778
+01:32:09,600 --> 01:32:12,280
+simulazione di M su ha raggiunto adesso,
+
+1779
+01:32:12,280 --> 01:32:14,520
+adesso vi dico, ok, ve la spiego meglio,
+
+1780
+01:32:14,520 --> 01:32:18,600
+eh. Prendiamo in input w
+
+1781
+01:32:18,600 --> 01:32:21,159
+che cosa facciamo?
+
+1782
+01:32:21,159 --> 01:32:23,080
+Vedete, adesso vi disegno un bel
+
+1783
+01:32:23,080 --> 01:32:26,080
+cronometro,
+
+1784
+01:32:26,400 --> 01:32:31,159
+ok? Non sapevo come disegnarvelo, ok?
+
+1785
+01:32:31,159 --> 01:32:34,679
+Che è la lunghezza di W. Ok, ho scritto
+
+1786
+01:32:34,679 --> 01:32:36,440
+tutto, quindi pure se mi molla la penna,
+
+1787
+01:32:36,440 --> 01:32:39,040
+poi a voce possiamo procedere.
+
+1788
+01:32:39,040 --> 01:32:44,400
+Cosa fa N? Prende W input
+
+1789
+01:32:44,400 --> 01:32:46,840
+e simula
+
+1790
+01:32:46,840 --> 01:32:48,719
+M
+
+1791
+01:32:48,719 --> 01:32:51,639
+su
+
+1792
+01:32:51,639 --> 01:32:54,960
+per un numero di passi pari alla
+
+1793
+01:32:54,960 --> 01:32:59,600
+lunghezza di W. Quindi se W è lunga 10,
+
+1794
+01:32:59,600 --> 01:33:04,119
+Nimulerà 10 passi di M su EP.
+
+1795
+01:33:04,119 --> 01:33:07,600
+Se W è lunga 25,
+
+1796
+01:33:07,600 --> 01:33:09,840
+Nimulerà
+
+1797
+01:33:09,840 --> 01:33:14,280
+M su per 25 passi.
+
+1798
+01:33:14,280 --> 01:33:19,960
+Se all'interno di questo time bound
+
+1799
+01:33:19,960 --> 01:33:24,719
+m la simulazione di m su
+
+1800
+01:33:24,719 --> 01:33:28,840
+ha raggiunto una configurazione finale,
+
+1801
+01:33:28,840 --> 01:33:31,560
+non importa se accettante o meno, ha
+
+1802
+01:33:31,560 --> 01:33:33,560
+raggiunto una configurazione finale,
+
+1803
+01:33:33,560 --> 01:33:36,080
+cioè se all'interno di questa
+
+1804
+01:33:36,080 --> 01:33:40,639
+simulazione bounded m si è arrestata,
+
+1805
+01:33:40,639 --> 01:33:43,840
+la macchina n deliberatamente
+
+1806
+01:33:43,840 --> 01:33:48,360
+Lupa inizia a girare all'infinito.
+
+1807
+01:33:48,360 --> 01:33:53,159
+Se in questa simulazione limitata
+
+1808
+01:33:53,159 --> 01:33:55,760
+ha un numero di passi che è la lunghezza
+
+1809
+01:33:55,760 --> 01:33:59,679
+di W. M non ha raggiunto una
+
+1810
+01:33:59,679 --> 01:34:02,360
+configurazione finale,
+
+1811
+01:34:02,360 --> 01:34:05,159
+non importa eh se accettante o meno, non
+
+1812
+01:34:05,159 --> 01:34:07,360
+ha raggiunto una configurazione finale,
+
+1813
+01:34:07,360 --> 01:34:12,320
+allora N si ferma. Ok? Può rispondere
+
+1814
+01:34:12,320 --> 01:34:14,119
+sì, può rispondere no, non importa, si
+
+1815
+01:34:14,119 --> 01:34:17,520
+ferma. È chiaro? Quindi N che fa? Usa W
+
+1816
+01:34:17,520 --> 01:34:22,239
+come un cronometro. Simula M su per un
+
+1817
+01:34:22,239 --> 01:34:24,880
+numero di passi pari alla lunghezza di
+
+1818
+01:34:24,880 --> 01:34:29,480
+W. Se in questa simulazione limitata
+
+1819
+01:34:29,480 --> 01:34:32,040
+m ha raggiunto una configurazione
+
+1820
+01:34:32,040 --> 01:34:38,040
+finale, n inizia a girare a vuoto. Se M
+
+1821
+01:34:38,040 --> 01:34:40,560
+non ha raggiunto una configurazione
+
+1822
+01:34:40,560 --> 01:34:44,040
+finale, allora N si ferma e ci dice
+
+1823
+01:34:44,040 --> 01:34:47,199
+qualcosa. Sì, no? Boh, si ferma. Ok,
+
+1824
+01:34:47,199 --> 01:34:49,880
+chiaro? È chiaro come funziona N? Perché
+
+1825
+01:34:49,880 --> 01:34:52,320
+dobbiamo capire sto concetto della Sì,
+
+1826
+01:34:52,320 --> 01:34:56,679
+prego.
+Ehm M ogni volta che
+
+1827
+01:34:56,679 --> 01:34:58,760
+sostanzialmente faccio un'interazione
+
+1828
+01:34:58,760 --> 01:35:02,000
+del cronometro faccio ripartire l'intera
+
+1829
+01:35:02,000 --> 01:35:06,360
+esecuzione sull'EP o dal
+No, io no. Io
+
+1830
+01:35:06,360 --> 01:35:09,840
+eseguo m su e lo devo eseguire per un
+
+1831
+01:35:09,840 --> 01:35:12,520
+numero di passi parall.
+
+1832
+01:35:12,520 --> 01:35:14,679
+Ah,
+quindi è come la macchina
+
+1833
+01:35:14,679 --> 01:35:18,400
+universale, no? Solo che ogni volta che
+
+1834
+01:35:18,400 --> 01:35:21,480
+simuliamo uno step ce lo segniamo, ok?
+
+1835
+01:35:21,480 --> 01:35:23,639
+Un carattere di W se ne va. Quando
+
+1836
+01:35:23,639 --> 01:35:25,800
+finiscono io vado a guardare che
+
+1837
+01:35:25,800 --> 01:35:28,639
+succede. Se M nel frattempo aveva
+
+1838
+01:35:28,639 --> 01:35:30,639
+raggiunto una configurazione finale,
+
+1839
+01:35:30,639 --> 01:35:34,080
+inizia a luppare. Se M non aveva
+
+1840
+01:35:34,080 --> 01:35:36,560
+raggiunto una configurazione finale,
+
+1841
+01:35:36,560 --> 01:35:40,119
+allora mi fermo. N si ferma. Ok? Chiaro
+
+1842
+01:35:40,119 --> 01:35:42,480
+come funzione N? Sì. Eh, una cosa che
+
+1843
+01:35:42,480 --> 01:35:46,280
+non ho capito e quindi eh viene eseguita
+
+1844
+01:35:46,280 --> 01:35:48,800
+m N menda passi con NAR all lunghezza di
+
+1845
+01:35:48,800 --> 01:35:52,320
+W.
+Sì.
+
+1846
+01:35:52,320 --> 01:35:56,600
+Sta macchina
+come S della macchina.
+Non
+
+1847
+01:35:56,600 --> 01:36:00,400
+ho capito.
+Mh.
+Scep
+
+1848
+01:36:00,400 --> 01:36:03,960
+Sì. E esce. Si ferma. Si ferma. Ok. Ok.
+
+1849
+01:36:03,960 --> 01:36:07,960
+Guys, abbiamo 7 minuti.
+
+1850
+01:36:09,199 --> 01:36:13,040
+Primo verso, supponiamo
+
+1851
+01:36:14,280 --> 01:36:16,360
+che
+
+1852
+01:36:16,360 --> 01:36:21,480
+m appartiene a halt
+
+1853
+01:36:21,480 --> 01:36:24,480
+soprasegnato, quindi supponiamo che m
+
+1854
+01:36:24,480 --> 01:36:29,080
+appartenga al complemento di halt epil
+
+1855
+01:36:29,080 --> 01:36:31,320
+da cui
+
+1856
+01:36:31,320 --> 01:36:36,520
+m non si arresta.
+
+1857
+01:36:39,360 --> 01:36:43,520
+su epil. Ok.
+
+1858
+01:36:43,639 --> 01:36:45,520
+Ok.
+
+1859
+01:36:45,520 --> 01:36:49,280
+Guardate questa cosa qua.
+
+1860
+01:36:49,280 --> 01:36:52,520
+Se M State State bene a sentire questa
+
+1861
+01:36:52,520 --> 01:36:55,560
+cosa. m
+
+1862
+01:36:55,560 --> 01:36:59,760
+non si arresta su
+
+1863
+01:36:59,800 --> 01:37:01,719
+vuol dire
+
+1864
+01:37:01,719 --> 01:37:05,199
+che qualsiasi
+
+1865
+01:37:05,199 --> 01:37:10,800
+sia il time bound che consideriamo sulla
+
+1866
+01:37:10,800 --> 01:37:12,960
+simulazione
+
+1867
+01:37:12,960 --> 01:37:15,480
+m su
+
+1868
+01:37:15,480 --> 01:37:19,239
+in quel numero finito di passi non avrà
+
+1869
+01:37:19,239 --> 01:37:24,080
+raggiunto una configurazione finale.
+
+1870
+01:37:24,280 --> 01:37:26,000
+Chiaro?
+
+1871
+01:37:26,000 --> 01:37:27,960
+Di conseguenza,
+
+1872
+01:37:27,960 --> 01:37:31,960
+noi possiamo dare in input ad n una
+
+1873
+01:37:31,960 --> 01:37:36,119
+stringa w di qualsiasi lunghezza
+
+1874
+01:37:36,119 --> 01:37:38,880
+e quindi una qualsiasi stringa. La
+
+1875
+01:37:38,880 --> 01:37:42,159
+simulazione di m su,
+
+1876
+01:37:42,159 --> 01:37:46,199
+siccome m non si ferma su, non arriverà
+
+1877
+01:37:46,199 --> 01:37:48,840
+mai una configurazione finale, quindi la
+
+1878
+01:37:48,840 --> 01:37:52,239
+macchina N si arresta. si arresta su
+
+1879
+01:37:52,239 --> 01:37:55,599
+qualsiasi stringa
+
+1880
+01:37:55,599 --> 01:37:59,360
+perché qualsiasi stringa non darà mai un
+
+1881
+01:37:59,360 --> 01:38:03,760
+bound sufficientemente ampio da vedere
+
+1882
+01:38:03,760 --> 01:38:08,639
+la macchina M che si arresta su EP. Ok?
+
+1883
+01:38:08,639 --> 01:38:11,679
+È chiaro?
+
+1884
+01:38:12,040 --> 01:38:15,040
+segue
+
+1885
+01:38:16,000 --> 01:38:21,560
+n appartiene ad halt per ogni altro
+
+1886
+01:38:21,560 --> 01:38:25,800
+caso, supponiamo
+
+1887
+01:38:26,960 --> 01:38:33,520
+che m non appartenga ad halt
+
+1888
+01:38:33,520 --> 01:38:35,639
+da cui
+
+1889
+01:38:35,639 --> 01:38:40,000
+m si arresta.
+
+1890
+01:38:40,360 --> 01:38:43,360
+su.
+
+1891
+01:38:45,280 --> 01:38:48,159
+Chiaro?
+
+1892
+01:38:48,159 --> 01:38:51,159
+Bene. Se m
+
+1893
+01:38:51,159 --> 01:38:55,280
+si arresta su epil
+
+1894
+01:38:55,280 --> 01:38:58,520
+lo farà in tempo finito.
+
+1895
+01:38:58,520 --> 01:39:00,360
+No,
+
+1896
+01:39:00,360 --> 01:39:03,679
+diciamo che si arresta in t passi. In un
+
+1897
+01:39:03,679 --> 01:39:06,480
+tempo t passi.
+
+1898
+01:39:06,480 --> 01:39:10,599
+M si arresta.
+
+1899
+01:39:11,239 --> 01:39:18,480
+su epil in t passi. Ok?
+
+1900
+01:39:18,480 --> 01:39:22,560
+Guardate la definizione della macchina.
+
+1901
+01:39:22,560 --> 01:39:25,800
+Se la stringa W
+
+1902
+01:39:25,800 --> 01:39:29,679
+ha una lunghezza almeno T,
+
+1903
+01:39:29,679 --> 01:39:31,679
+la simulazione
+
+1904
+01:39:31,679 --> 01:39:34,000
+arriverà alla configurazione finale,
+
+1905
+01:39:34,000 --> 01:39:36,520
+cioè quindi se W è sufficientemente
+
+1906
+01:39:36,520 --> 01:39:40,400
+lunga, N vedrà
+
+1907
+01:39:40,400 --> 01:39:44,520
+e N vedrà M arrestarsi e quindi su
+
+1908
+01:39:44,520 --> 01:39:49,080
+quelle stringhe lunghe N luppa.
+
+1909
+01:39:49,080 --> 01:39:52,840
+Se la stringa W input
+
+1910
+01:39:52,840 --> 01:39:56,280
+è troppo corta
+
+1911
+01:39:56,280 --> 01:40:01,080
+da non permettere a nere
+
+1912
+01:40:01,080 --> 01:40:05,520
+che m si arresta su EP,
+
+1913
+01:40:05,520 --> 01:40:09,920
+allora N si arresterà
+
+1914
+01:40:09,920 --> 01:40:12,599
+su quelle stringhe. Ok? Quindi avremo
+
+1915
+01:40:12,599 --> 01:40:16,760
+che n luppa su stringhe lunghe e si
+
+1916
+01:40:16,760 --> 01:40:20,000
+ferma su stringhe corte. Quindi non è
+
+1917
+01:40:20,000 --> 01:40:23,719
+vero che n si arresta su tutto. Segue
+
+1918
+01:40:23,719 --> 01:40:28,400
+che n non appartiene ad alt per ogni. È
+
+1919
+01:40:28,400 --> 01:40:30,280
+chiaro questo secondo pezzo? La
+
+1920
+01:40:30,280 --> 01:40:32,199
+discriminante di questo secondo pezzo è
+
+1921
+01:40:32,199 --> 01:40:36,840
+che poiché m si arresta su, esiste una
+
+1922
+01:40:36,840 --> 01:40:40,440
+soglia oltre la quale la sua la
+
+1923
+01:40:40,440 --> 01:40:45,159
+simulazione di m su n m su permetterà ad
+
+1924
+01:40:45,159 --> 01:40:51,400
+n di vedere che si è arrivati alla fine.
+
+1925
+01:40:51,760 --> 01:40:55,080
+Quindi segue
+
+1926
+01:40:56,480 --> 01:40:58,040
+che
+
+1927
+01:40:58,040 --> 01:41:04,360
+m sorry n si arresta
+
+1928
+01:41:04,639 --> 01:41:07,920
+su stringhe
+
+1929
+01:41:08,679 --> 01:41:13,760
+w di lunghezza
+
+1930
+01:41:14,040 --> 01:41:17,920
+inferiore a T
+
+1931
+01:41:20,360 --> 01:41:24,400
+ed m luppa
+
+1932
+01:41:24,400 --> 01:41:27,880
+su stringhe
+
+1933
+01:41:28,159 --> 01:41:32,199
+w di lunghez
+
+1934
+01:41:34,360 --> 01:41:38,080
+al- ti.
+
+1935
+01:41:41,760 --> 01:41:44,960
+N appartiene ad alt.
+
+1936
+01:41:44,960 --> 01:41:46,960
+per ogni
+
+1937
+01:41:46,960 --> 01:41:48,520
+chiaro?
+
+1938
+01:41:48,520 --> 01:41:52,040
+Ok, ce l'abbiamo fatta
+
+1939
+01:41:52,040 --> 01:41:55,639
+e con questo chiudiamo per oggi. Faremo
+
+1940
+01:41:55,639 --> 01:41:57,320
+un'ultima lezione, credo, su
+
+1941
+01:41:57,320 --> 01:41:58,960
+calcolabilità. Ci manca ancora un
+
+1942
+01:41:58,960 --> 01:42:01,080
+risultato, dopodiché chiudiamo e
+
+1943
+01:42:01,080 --> 01:42:04,840
+inizieremo la parte di complessità. Ok,
+
+1944
+01:42:04,840 --> 01:42:09,040
+grazie mille. Buon pranzo.

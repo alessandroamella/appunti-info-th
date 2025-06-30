@@ -1,0 +1,387 @@
+\documentclass[a4paper]{article}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage[italian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[a4paper, total={6in, 8in}]{geometry}
+\usepackage{minted} % Per il pseudocodice
+\usepackage{mathpazo}
+\usepackage{fancyhdr}
+\usepackage{amsthm}
+\usepackage{tikz}
+\usetikzlibrary{automata,positioning, arrows.meta} % Aggiunto arrows.meta per frecce migliori
+
+% Definizione degli ambienti
+\newtheorem{theorem}{Teorema}[section] % Teoremi numerati per sezione
+\newtheorem{definition}[theorem]{Definizione}
+\newtheorem{example}[theorem]{Esempio}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposizione}
+\newtheorem{corollary}[theorem]{Corollario} % Aggiunto ambiente per corollario
+
+\hypersetup{
+    pdftitle={Lezione sulle Riduzioni in Informatica Teorica},
+    pdfauthor={Appunti da Trascrizione AI}
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textit{Lezione di Informatica Teorica}}
+\fancyfoot[C]{\thepage}
+
+\title{Lezione sulle Riduzioni in Informatica Teorica}
+\author{Appunti da Trascrizione Automatica}
+\date{\today}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+
+\section{Introduzione al Concetto di Riduzione}
+
+Le riduzioni sono un concetto fondamentale in Informatica Teorica, utilizzate per dimostrare risultati di indecidibilità e irriconoscibilità. Esse permettono di correlare la difficoltà computazionale di diversi problemi.
+
+\subsection{Metafora e Intuizione della Riduzione}
+L'idea intuitiva di riduzione è quella di trasformare un problema da risolvere (problema di partenza) in un altro problema (problema di arrivo) per il quale si conosce già una soluzione.
+
+\begin{example}[Gestione Tornei di Calcetto]
+Si desidera creare un'applicazione web per la gestione di tornei di calcetto, in particolare un algoritmo per la generazione automatica del calendario delle partite (problema di decisione).
+
+\textbf{Problema di Partenza (A): Generazione Calendario}
+\begin{itemize}
+    \item \textbf{Input}: Una lista di squadre (es. Juventus, Milan, Bologna, Roma).
+    \item \textbf{Output desiderato}: Un calendario di partite, ovvero una partizione dell'insieme di tutte le possibili partite in sottoinsiemi (giornate), tale che in ogni sottoinsieme le partite siano compatibili (nessuna squadra gioca più di una partita nella stessa giornata).
+\end{itemize}
+Inizialmente, la soluzione diretta per questo problema risultava difficile.
+
+\textbf{Problema di Arrivo (B): K-Colorabilità di un Grafo}
+\Si conosceva già un algoritmo funzionante per la K-colorabilità di un grafo.
+\begin{itemize}
+    \item \textbf{Input}: Un grafo $G$ e un numero intero $K$ (numero di colori).
+    \item \textbf{Output}: Una colorazione dei nodi di $G$ con $K$ colori tale che nodi adiacenti abbiano colori diversi, oppure un'indicazione che non è possibile.
+\end{itemize}
+
+\textbf{L'Idea della Riduzione}: Trasformare un'istanza del problema di generazione del calendario in un'istanza del problema di K-colorabilità, usare il risolutore della K-colorabilità e poi ritrasformare la soluzione ottenuta per risolvere il problema originale.
+
+\textbf{Funzione di Riduzione ($f$)}:
+\begin{itemize}
+    \item \textbf{Input di $f$}: Lista di squadre (istanza del problema A).
+    \item \textbf{Output di $f$}: Coppia $(G', K')$ (istanza del problema B).
+    \item \textbf{Costruzione di $G'$}:
+        \begin{itemize}
+            \item I nodi di $G'$ corrispondono a tutte le possibili partite (coppie di squadre). Per $N$ squadre, ci sono $\binom{N}{2}$ possibili partite/nodi.
+            \item Gli archi di $G'$ collegano due nodi se le partite corrispondenti sono \textit{incompatibili} (cioè, hanno una squadra in comune).
+        \end{itemize}
+    \item \textbf{Determinazione di $K'$}: $K'$ è il numero minimo di giornate necessarie. Per un campionato "all'italiana" con $N$ squadre (ogni squadra gioca contro tutte le altre), $K' = N-1$.
+    \item \textbf{Esempio con 4 squadre (J, M, B, R)}:
+        \begin{itemize}
+            \item Nodi: \{JM, JB, JR, MB, MR, BR\}
+            \item Archi: (JM, JB) (J in comune), (JM, JR), (JB, JR), (MB, MR), (MB, BR), (MR, BR), (JM, MB) (M in comune), (JM, MR), (JB, BR), (JR, MB), (JR, MR), (JB, MR) etc. (ogni coppia di partite incompatibili è collegata da un arco).
+            \item $K' = 4-1 = 3$ colori.
+        \end{itemize}
+\end{itemize}
+
+\textbf{Workflow complessivo per risolvere il problema A}:
+\begin{enumerate}
+    \item Si riceve un'istanza $x$ (lista di squadre) del problema A.
+    \item Si applica la funzione di riduzione $f$ per ottenere un'istanza $y = f(x) = (G', K')$ del problema B.
+    \item Si invia $y$ a un risolutore (solver) del problema B, ottenendo una soluzione $S_y$ (una colorazione del grafo $G'$).
+    \item Si applica una funzione $g$ per ritrasformare $S_y$ in $S_x$ (il calendario del torneo). La funzione $g$ associa ad ogni colore una giornata, e tutte le partite/nodi con lo stesso colore appartengono alla stessa giornata.
+    \item Si restituisce $S_x$.
+\end{enumerate}
+
+\textbf{Diagramma schematico:}
+\[
+\begin{tikzpicture}[node distance=2cm, auto]
+    \node (A) {Problema A};
+    \node (B) [below=of A, yshift=0.5cm] {Problema B};
+    \node (solverA) [right=of A, xshift=2cm] {Solver per A};
+    \node (solverB) [right=of B, xshift=2cm] {Solver per B};
+
+    \node (x) [left=of solverA, xshift=-1cm, yshift=0.5cm] {$x \in A$};
+    \node (y) [right=of x, xshift=0.5cm] {$y = f(x) \in B$};
+    \node (Sy) [right=of y, xshift=0.5cm] {$S_y = \text{solverB}(y)$};
+    \node (Sx) [right=of Sy, xshift=0.5cm] {$S_x = g(S_y) \in A$};
+    \node (return) [right=of Sx, xshift=0.5cm] {Return $S_x$};
+
+    \draw[->] (x) -- node[above] {$f$} (y);
+    \draw[->] (y) -- node[above] {Chiama} (Sy);
+    \draw[->] (Sy) -- node[above] {$g$} (Sx);
+    \draw[->] (Sx) -- (return);
+
+    \node (f_node) at ($(x)!0.5!(y)$) {};
+    \node (g_node) at ($(Sy)!0.5!(Sx)$) {};
+
+    \node[draw,rounded corners, dashed, fit=(f_node) (g_node) (y) (Sy)] (overall_solver) {};
+    \node[above=0.1cm of overall_solver.north, align=center] {Solver per A};
+\end{tikzpicture}
+\]
+
+\textbf{Osservazioni chiave:}
+\begin{itemize}
+    \item La riduzione è una \textbf{trasformazione di istanze} da un problema A a un problema B.
+    \item La riduzione è \textbf{direzionale}: si riduce A a B ($A \le B$), non viceversa.
+    \item La funzione di riduzione $f$ deve essere \textbf{progettata ad arte} (in modo "sensato") in modo che la soluzione ottenuta dal problema di arrivo possa essere utilmente riconvertita per il problema di partenza.
+    \item Se $A$ si riduce a $B$ ($A \le B$), intuitivamente $A$ non è più difficile di $B$.
+\end{itemize}
+
+\section{Definizione Formale di Riduzione}
+
+Per i problemi di decisione (che hanno risposta sì/no), la definizione di riduzione è più semplice, poiché la "ritrasformazione" della soluzione non è necessaria (la risposta è già 0 o 1).
+
+\begin{definition}[Riduzione tra Linguaggi/Problemi di Decisione]
+Siano $A$ e $B$ due linguaggi. Una funzione $f$ è una \textbf{riduzione} da $A$ a $B$, denotata $A \le B$, se:
+\begin{enumerate}
+    \item $f$ è \textbf{calcolabile}.
+    \item Per ogni stringa $w$, $w \in A \iff f(w) \in B$.
+\end{enumerate}
+\end{definition}
+
+\textbf{Spiegazione:}
+\begin{itemize}
+    \item La condizione $w \in A \iff f(w) \in B$ significa che $f$ deve mappare istanze "sì" di $A$ a istanze "sì" di $B$, e istanze "no" di $A$ a istanze "no" di $B$.
+    \item La calcolabilità di $f$ è cruciale: $f$ non può essere una "funzione magica" che risolve problemi difficili. Deve essere una funzione che può essere calcolata da una Macchina di Turing in tempo finito per ogni input.
+\end{itemize}
+
+\subsection{Funzioni Calcolabili e Trasduttori}
+
+Per definire formalmente cosa significa che una funzione è "calcolabile", introduciamo il concetto di trasduttore.
+
+\begin{definition}[Trasduttore]
+Un \textbf{trasduttore} è una Macchina di Turing caratterizzata da tre nastri:
+\begin{enumerate}
+    \item \textbf{Nastro di Input}: Sola lettura. Contiene la stringa di input $w$.
+    \item \textbf{Nastro di Lavoro (Work Tape)}: Lettura e scrittura. Usato per i calcoli intermedi.
+    \item \textbf{Nastro di Output}: Sola scrittura. Viene scritto il risultato $f(w)$ della funzione.
+\end{enumerate}
+\end{definition}
+
+\begin{definition}[Funzione Calcolabile]
+Una funzione $f: \Sigma^* \to \Sigma^*$ è \textbf{calcolabile} se esiste un trasduttore $M$ tale che per ogni stringa $w \in \Sigma^*$, $M$ esegue su $w$, si arresta (termina) e lascia $f(w)$ sul nastro di output.
+\end{definition}
+\textbf{Nota}: Quando si specifica una riduzione, non è necessario mostrare esplicitamente il trasduttore. È sufficiente una descrizione algoritmica (pseudocodice o linguaggio naturale) sufficientemente precisa da far capire come l'output $f(w)$ viene generato dall'input $w$.
+
+\section{Proprietà delle Riduzioni e Indecidibilità}
+
+Le riduzioni sono uno strumento potente per dimostrare l'indecidibilità dei linguaggi, sfruttando la relazione di "non più difficile di".
+
+\begin{theorem}[Proprietà Fondamentali delle Riduzioni]
+Siano $A$ e $B$ due linguaggi tali che $A \le B$.
+\begin{enumerate}
+    \item Se $A \notin R$ (A non è ricorsivo/decidibile), allora $B \notin R$ (B non è ricorsivo/decidibile).
+    \item Se $A \notin RE$ (A non è ricorsivamente enumerabile/riconoscibile), allora $B \notin RE$ (B non è ricorsivamente enumerabile/riconoscibile).
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+Procediamo per contraddizione.
+
+\textbf{Dimostrazione 1 (Decidibilità):}
+Vogliamo dimostrare: $A \notin R \implies B \notin R$.
+Assumiamo per assurdo la negazione della tesi: $A \notin R \land B \in R$.
+Se $B \in R$, allora esiste una Macchina di Turing decisore $M_B$ che decide $B$.
+Poiché $A \le B$, esiste una funzione calcolabile $f$ tale che $w \in A \iff f(w) \in B$.
+Consideriamo la seguente costruzione di una Macchina di Turing $M_A$ che decide $A$:
+
+\begin{minted}[mathescape,
+               linenos,
+               numbersep=5pt,
+               gobble=2,
+               frame=lines,
+               framesep=2mm]{text}
+  M_A \text{ su input } w:
+  1.  Calcola } f(w). \text{ (Questo è possibile perché } f \text{ è calcolabile)}.
+  2.  Simula } M_B \text{ su } f(w).
+  3.  Se } M_B \text{ accetta, } M_A \text{ accetta.
+  4.  Se } M_B \text{ rifiuta, } M_A \text{ rifiuta.
+\end{minted}
+
+\textbf{Analisi di $M_A$:}
+\begin{itemize}
+    \item $M_A$ decide $A$: Per definizione di riduzione, $w \in A \iff f(w) \in B$. Poiché $M_B$ decide $B$, $M_B$ accetta $f(w)$ se e solo se $f(w) \in B$. Dunque, $M_A$ accetta $w$ se e solo se $w \in A$.
+    \item $M_A$ si arresta sempre: $f$ si arresta sempre (perché è calcolabile) e $M_B$ si arresta sempre (perché è un decisore). Quindi $M_A$ si arresta sempre su ogni input.
+\end{itemize}
+Questo significa che $M_A$ è un decisore per $A$, quindi $A \in R$.
+Ma ciò contraddice la nostra assunzione iniziale che $A \notin R$.
+Pertanto, l'assunzione è falsa, e la tesi $A \notin R \implies B \notin R$ è vera.
+$\blacksquare$
+
+\textbf{Dimostrazione 2 (Riconoscibilità):}
+Vogliamo dimostrare: $A \notin RE \implies B \notin RE$.
+Assumiamo per assurdo la negazione della tesi: $A \notin RE \land B \in RE$.
+Se $B \in RE$, allora esiste una Macchina di Turing accettore $M_B'$ che riconosce $B$.
+Poiché $A \le B$, esiste una funzione calcolabile $f$ tale che $w \in A \iff f(w) \in B$.
+Consideriamo la seguente costruzione di una Macchina di Turing $M_A'$ che riconosce $A$:
+
+\begin{minted}[mathescape,
+               linenos,
+               numbersep=5pt,
+               gobble=2,
+               frame=lines,
+               framesep=2mm]{text}
+  M_A' \text{ su input } w:
+  1.  Calcola } f(w). \text{ (Possibile perché } f \text{ è calcolabile)}.
+  2.  Simula } M_B' \text{ su } f(w).
+  3.  Se } M_B' \text{ accetta, } M_A' \text{ accetta.
+\end{minted}
+
+\textbf{Analisi di $M_A'$:}
+\begin{itemize}
+    \item $M_A'$ riconosce $A$: Per definizione di riduzione, $w \in A \iff f(w) \in B$. Poiché $M_B'$ riconosce $B$, $M_B'$ accetta $f(w)$ se e solo se $f(w) \in B$. Dunque, $M_A'$ accetta $w$ se e solo se $w \in A$.
+    \item $M_A'$ non si arresta necessariamente su input non in $A$: Se $w \notin A$, allora $f(w) \notin B$. Poiché $M_B'$ è un accettore (non un decisore), su input non in $B$ può non terminare. Quindi, $M_A'$ può non terminare su input non in $A$. Questo è consistente con la definizione di accettore.
+\end{itemize}
+Questo significa che $M_A'$ è un accettore per $A$, quindi $A \in RE$.
+Ma ciò contraddice la nostra assunzione iniziale che $A \notin RE$.
+Pertanto, l'assunzione è falsa, e la tesi $A \notin RE \implies B \notin RE$ è vera.
+$\blacksquare$
+\end{proof}
+
+\begin{corollary}[Corollario delle Riduzioni]
+Siano $A$ e $B$ due linguaggi tali che $A \le B$.
+\begin{enumerate}
+    \item Se $B \in R$, allora $A \in R$.
+    \item Se $B \in RE$, allora $A \in RE$.
+\end{enumerate}
+\end{corollary}
+\begin{proof}
+Queste affermazioni sono le contronominali del teorema precedente.
+1. Se $A \notin R \implies B \notin R$ (Teorema 1). La sua contronominale è $B \in R \implies A \in R$.
+2. Se $A \notin RE \implies B \notin RE$ (Teorema 2). La sua contronominale è $B \in RE \implies A \in RE$.
+$\blacksquare$
+\end{proof}
+
+\textbf{Interpretazione del Corollario:}
+\begin{itemize}
+    \item Se il problema di arrivo ($B$) è decidibile/riconoscibile, allora anche il problema di partenza ($A$) lo è.
+    \item Questo implica che se vogliamo dimostrare che un problema $A$ è decidibile/riconoscibile, possiamo cercare di ridurlo a un problema $B$ che sappiamo essere decidibile/riconoscibile.
+\end{itemize}
+
+\section{Esempio: Indecidibilità di $L_{NE}$ (Non-Empty Language)}
+
+Introduciamo un nuovo linguaggio e ne studiamo la decidibilità tramite riduzione.
+
+\begin{definition}[Linguaggio $L_{NE}$]
+Il linguaggio $L_{NE}$ (Non-Empty) è l'insieme dei codici di Macchine di Turing $M_i$ tali che il linguaggio accettato da $M_i$ non è vuoto:
+$L_{NE} = \{ \langle M_i \rangle \mid L(M_i) \neq \emptyset \}$
+Intuitivamente, $L_{NE}$ contiene le Macchine di Turing che accettano almeno una stringa.
+\end{definition}
+
+\subsection{$L_{NE}$ è Ricorsivamente Enumerabile ($L_{NE} \in RE$)}
+
+\begin{proposition}
+$L_{NE} \in RE$.
+\end{proposition}
+\begin{proof}
+Possiamo costruire una Macchina di Turing $M_{NE}$ che riconosce $L_{NE}$. $M_{NE}$ prende in input il codice di una Macchina di Turing $\langle M \rangle$. L'obiettivo è verificare se $M$ accetta almeno una stringa.
+
+\begin{minted}[mathescape,
+               linenos,
+               numbersep=5pt,
+               gobble=2,
+               frame=lines,
+               framesep=2mm]{text}
+  M_{NE} \text{ su input } \langle M \rangle:
+  1.  Per ogni possibile stringa } w \in \Sigma^* \text{ (in ordine lessicografico):
+  2.      Simula } M \text{ su } w.
+  3.      Se } M \text{ accetta } w \text{ (e si ferma in stato di accettazione), } M_{NE} \text{ accetta } \langle M \rangle.
+\end{minted}
+
+Questo approccio iterativo presenta un problema: se $M$ non termina su una stringa $w$, $M_{NE}$ si blocca e non può passare a testare altre stringhe.
+Per risolvere questo, si può usare una Macchina di Turing non deterministica, oppure una strategia di "dovetailing" (simulazione parallela):
+
+\begin{minted}[mathescape,
+               linenos,
+               numbersep=5pt,
+               gobble=2,
+               frame=lines,
+               framesep=2mm]{text}
+  M_{NE} \text{ (versione non deterministica) su input } \langle M \rangle:
+  1.  Indovina (non-deterministicamente) una stringa } w \in \Sigma^*.
+  2.  Simula la Macchina Universale } U \text{ su } (\langle M \rangle, w).
+  3.  Se } U \text{ accetta } (\langle M \rangle, w), \text{ allora } M_{NE} \text{ accetta } \langle M \rangle.
+\end{minted}
+
+\textbf{Analisi:}
+\begin{itemize}
+    \item Se $L(M) \neq \emptyset$, allora esiste almeno una stringa $w_0$ tale che $M$ accetta $w_0$. In tal caso, $M_{NE}$ può non-deterministicamente indovinare $w_0$, simulare $M$ su $w_0$, e accettare. Quindi, se $\langle M \rangle \in L_{NE}$, $M_{NE}$ accetta $\langle M \rangle$.
+    \item Se $L(M) = \emptyset$, allora $M$ non accetta alcuna stringa. Indipendentemente da quale $w$ $M_{NE}$ indovina, la simulazione di $M$ su $w$ non porterà mai all'accettazione. Quindi, $M_{NE}$ non accetterà $\langle M \rangle$.
+\end{itemize}
+Poiché le Macchine di Turing non deterministiche sono equivalenti a quelle deterministiche per la classe RE, esiste una Macchina di Turing deterministica che riconosce $L_{NE}$. Quindi, $L_{NE} \in RE$.
+$\blacksquare$
+\end{proof}
+
+\subsection{$L_{NE}$ non è Ricorsivo ($L_{NE} \notin R$)}
+
+Intuitivamente, è difficile decidere se $L(M) = \emptyset$. Per rispondere "no" (cioè $M \in L_E$, $L(M) = \emptyset$), bisognerebbe essere sicuri che $M$ non accetta *nessuna* stringa, il che richiederebbe un tempo infinito per provare tutte le possibili stringhe.
+
+\begin{theorem}
+$L_{NE} \notin R$.
+\end{theorem}
+\begin{proof}
+Dimostriamo che $L_{NE}$ è indecidibile (non ricorsivo) tramite una riduzione dal linguaggio universale $L_U$, che sappiamo essere indecidibile ($L_U \notin R$).
+Vogliamo dimostrare che $L_U \le L_{NE}$.
+
+\textbf{Problema di Partenza (A)}: $L_U = \{ \langle M, w \rangle \mid M \text{ accetta } w \}$
+\textbf{Problema di Arrivo (B)}: $L_{NE} = \{ \langle M' \rangle \mid L(M') \neq \emptyset \}$
+
+La nostra funzione di riduzione $f$ deve prendere un input $\langle M, w \rangle$ (un'istanza di $L_U$) e produrre un output $\langle M' \rangle$ (un'istanza di $L_{NE}$) tale che:
+\[
+\langle M, w \rangle \in L_U \iff f(\langle M, w \rangle) = \langle M' \rangle \in L_{NE}
+\]
+
+\textbf{Costruzione della funzione di riduzione $f$:}
+La funzione $f$ prende in input $\langle M, w \rangle$ e costruisce il codice di una nuova Macchina di Turing $M'$, definita come segue:
+
+\begin{minted}[mathescape,
+               linenos,
+               numbersep=5pt,
+               gobble=2,
+               frame=lines,
+               framesep=2mm]{text}
+  M' \text{ su input } x:
+  1.  Ignora l'input } x.
+  2.  Scrive la stringa } w \text{ (ottenuta dall'input di } f) \text{ sul suo nastro.
+  3.  Simula } M \text{ (ottenuta dall'input di } f) \text{ su } w.
+  4.  Se } M \text{ accetta } w, \text{ allora } M' \text{ accetta } x.
+  5.  Se } M \text{ rifiuta } w \text{ o va in loop su } w, \text{ allora } M' \text{ rifiuta } x \text{ o va in loop su } x.
+\end{minted}
+
+La funzione $f$ è calcolabile, in quanto è un algoritmo ben definito per costruire la descrizione di $M'$ a partire da $M$ e $w$.
+
+\textbf{Verifica della condizione $w' \in A \iff f(w') \in B$:}
+Sia $w' = \langle M, w \rangle$.
+
+\textbf{Caso 1: $\langle M, w \rangle \in L_U$ (istanza "sì" di $L_U$)}
+Questo significa che $M$ accetta $w$.
+Secondo la costruzione di $M'$, se $M$ accetta $w$, allora $M'$ accetterà \emph{qualsiasi} input $x$ le venga dato.
+Quindi, il linguaggio di $M'$ è $L(M') = \Sigma^*$.
+Poiché $\Sigma^* \neq \emptyset$, ne consegue che $\langle M' \rangle \in L_{NE}$.
+La condizione è soddisfatta: un'istanza "sì" di $L_U$ è mappata a un'istanza "sì" di $L_{NE}$.
+
+\textbf{Caso 2: $\langle M, w \rangle \notin L_U$ (istanza "no" di $L_U$)}
+Questo significa che $M$ non accetta $w$ (cioè, $M$ rifiuta $w$ o $M$ va in loop su $w$).
+Secondo la costruzione di $M'$, se $M$ non accetta $w$, allora $M'$ non accetterà \emph{alcun} input $x$ le venga dato (o andrà in loop su qualsiasi $x$).
+Quindi, il linguaggio di $M'$ è $L(M') = \emptyset$.
+Ne consegue che $\langle M' \rangle \notin L_{NE}$.
+La condizione è soddisfatta: un'istanza "no" di $L_U$ è mappata a un'istanza "no" di $L_{NE}$.
+
+Poiché abbiamo dimostrato che $L_U \le L_{NE}$ e sappiamo che $L_U \notin R$, per il Teorema sulle Proprietà Fondamentali delle Riduzioni (punto 1), possiamo concludere che $L_{NE} \notin R$.
+$\blacksquare$
+\end{proof}
+
+\subsection{Linguaggio Complementare $L_E$}
+
+Consideriamo il linguaggio $L_E$, che è il complemento di $L_{NE}$.
+\begin{definition}[Linguaggio $L_E$]
+Il linguaggio $L_E$ (Empty) è l'insieme dei codici di Macchine di Turing $M_i$ tali che il linguaggio accettato da $M_i$ è vuoto:
+$L_E = \{ \langle M_i \rangle \mid L(M_i) = \emptyset \}$
+\end{definition}
+
+Sappiamo che $L_{NE} \in RE$ ma $L_{NE} \notin R$.
+Un linguaggio $L$ è decidibile ($L \in R$) se e solo se sia $L$ che il suo complemento $\bar{L}$ sono ricorsivamente enumerabili ($L \in RE$ e $\bar{L} \in RE$).
+Poiché $L_{NE} \in RE$ ma $L_{NE} \notin R$, ne consegue che il suo complemento, $L_E = \overline{L_{NE}}$, non può essere ricorsivamente enumerabile.
+Quindi, $L_E \notin RE$.
+
+\end{document}

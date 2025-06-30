@@ -1,0 +1,276 @@
+\documentclass[a4paper]{article}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage[italian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[a4paper, total={6in, 8in}]{geometry}
+\usepackage{minted}
+\usepackage{mathpazo}
+\usepackage{fancyhdr}
+\usepackage{amsthm}
+\usepackage{tikz}
+\usetikzlibrary{automata,positioning}
+
+% Definizione degli ambienti
+\newtheorem{theorem}{Teorema}
+\newtheorem{definition}{Definizione}
+\newtheorem{example}{Esempio}
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}{Proposizione}
+
+\hypersetup{
+    pdftitle={Lezione di Informatica Teorica: Teorema di Rice},
+    pdfauthor={Appunti da Trascrizione AI}
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textit{Lezione di Informatica Teorica}}
+\fancyfoot[C]{\thepage}
+
+\title{Lezione di Informatica Teorica: Teorema di Rice}
+\author{Appunti da Trascrizione Automatica}
+\date{\today}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+
+\section{Introduzione al Teorema di Rice}
+
+Abbiamo precedentemente studiato linguaggi come $L_e = \{\langle M \rangle \mid L(M) = \emptyset\}$ (il linguaggio delle macchine di Turing il cui linguaggio è vuoto) e $L_{ne} = \{\langle M \rangle \mid L(M) \neq \emptyset\}$ (il linguaggio delle macchine di Turing il cui linguaggio non è vuoto). Abbiamo dimostrato che questi linguaggi sono indecidibili. Tuttavia, la loro indecidibilità non è un caso isolato, ma rientra in un risultato molto più generale: il Teorema di Rice. Questo teorema si applica a linguaggi che contengono le codifiche di macchine di Turing le cui proprietà soddisfano determinati criteri.
+
+\subsection{Definizione di Proprietà di Macchine di Turing}
+
+Intuitivamente, una macchina di Turing ha una certa proprietà se possiede determinate caratteristiche. Per formalizzare questo concetto:
+
+\begin{definition}[Proprietà di Macchine di Turing]
+Una \textbf{proprietà $P$} di macchine di Turing è un insieme di codifiche di macchine di Turing.
+Una macchina di Turing $M$ si dice che ha la proprietà $P$ se e solo se la sua codifica $\langle M \rangle$ appartiene a $P$.
+\end{definition}
+
+Associato a una proprietà $P$, definiamo il \textbf{linguaggio della proprietà $P$} come:
+\[ L_P = \{ \langle M \rangle \mid M \text{ ha la proprietà } P \} = \{ \langle M \rangle \mid \langle M \rangle \in P \} \]
+In pratica, $L_P$ è semplicemente la proprietà $P$ stessa quando vista come un linguaggio.
+
+\subsection{Classificazione delle Proprietà}
+
+Le proprietà delle macchine di Turing possono essere categorizzate in due grandi famiglie:
+\begin{enumerate}
+    \item \textbf{Proprietà Strutturali (o Sintattiche)}: Riguardano la struttura interna della macchina di Turing o il suo comportamento computazionale, ma non direttamente il linguaggio che essa riconosce.
+    \item \textbf{Proprietà Semantiche (o di Linguaggi)}: Riguardano esclusivamente il linguaggio riconosciuto dalla macchina di Turing, indipendentemente dalla sua implementazione specifica o dal suo comportamento interno (purché sia funzionalmente equivalente).
+\end{enumerate}
+
+Il Teorema di Rice si applica specificamente alle proprietà semantiche.
+
+\begin{definition}[Proprietà Semantica]
+Una proprietà $P$ di macchine di Turing è detta \textbf{semantica} se per ogni coppia di macchine di Turing $M_1$ e $M_2$:
+\[ L(M_1) = L(M_2) \implies (\langle M_1 \rangle \in P \iff \langle M_2 \rangle \in P) \]
+Ciò significa che l'appartenenza di una macchina $M$ a una proprietà semantica $P$ dipende unicamente dal linguaggio $L(M)$ che essa riconosce. Se due macchine riconoscono lo stesso linguaggio, o entrambe possiedono la proprietà $P$ o nessuna delle due la possiede. Per questa ragione, le proprietà semantiche sono anche chiamate \textbf{proprietà di linguaggi}.
+\end{definition}
+
+\begin{example}[Proprietà Strutturale]
+Sia $P_1$ la proprietà: ``la macchina di Turing $M$ ha esattamente 5 stati''.
+$P_1 = \{ \langle M \rangle \mid M \text{ ha 5 stati} \}$.
+Questa è una proprietà strutturale. Per dimostrare che non è semantica, troviamo un controesempio:
+Siano $M_1$ e $M_2$ due macchine di Turing. $M_1$ ha 5 stati e riconosce un linguaggio $L$. $M_2$ è costruita da $M_1$ aggiungendo uno stato irraggiungibile (o una transizione superflua, ecc.), cosicché $M_2$ abbia 6 stati ma riconosca lo stesso linguaggio $L$. In questo caso, $L(M_1) = L(M_2)$, ma $\langle M_1 \rangle \in P_1$ mentre $\langle M_2 \rangle \notin P_1$. Dunque $P_1$ non è semantica.
+\end{example}
+
+\begin{example}[Proprietà Semantica]
+Sia $P_2$ la proprietà: ``il linguaggio riconosciuto da $M$ contiene solo stringhe di lunghezza pari''.
+$P_2 = \{ \langle M \rangle \mid \forall s \in L(M), |s| \text{ è pari} \}$.
+Questa è una proprietà semantica. Se $L(M_1) = L(M_2)$, allora o tutte le stringhe di $L(M_1)$ (e quindi di $L(M_2)$) hanno lunghezza pari, o nessuna (o alcune) ce l'hanno. L'appartenenza a $P_2$ dipende solo dal linguaggio.
+\end{example}
+
+\begin{example}[Proprietà Semantica: $L_e$]
+Il linguaggio $L_e = \{\langle M \rangle \mid L(M) = \emptyset\}$ è l'insieme delle macchine di Turing il cui linguaggio è vuoto. Questo è un esempio di proprietà semantica, poiché dipende solo dal linguaggio riconosciuto (in questo caso, il linguaggio vuoto).
+\end{example}
+
+\subsection{Proprietà Banali}
+
+\begin{definition}[Proprietà Banale]
+Una proprietà $P$ è detta \textbf{banale} se:
+\begin{enumerate}
+    \item Non contiene alcuna macchina di Turing: $P = \emptyset$.
+    \item Contiene tutte le macchine di Turing: $P = \{\langle M \rangle \mid M \text{ è una macchina di Turing}\}$.
+\end{enumerate}
+Se $P$ è una proprietà di linguaggi (cioè semantica), allora $P$ è banale se e solo se $P = \emptyset$ (nessun linguaggio ha la proprietà) o $P = RE$ (tutti i linguaggi ricorsivamente enumerabili hanno la proprietà).
+\end{definition}
+
+Le proprietà banali sono sempre \textbf{decidibili}. Se una proprietà è banale nel senso che $P = \emptyset$, possiamo sempre rispondere "no" per qualsiasi macchina data. Se $P$ contiene tutte le macchine, possiamo sempre rispondere "sì". Il problema di decidere se una macchina possiede una proprietà banale è quindi banale esso stesso.
+
+\section{Teorema di Rice}
+
+Il Teorema di Rice è un risultato fondamentale nella teoria della computabilità, che generalizza l'indecidibilità di problemi come $L_e$ e $L_{ne}$.
+
+\begin{theorem}[Teorema di Rice]
+Ogni proprietà non banale dei linguaggi ricorsivamente enumerabili (RE) è indecidibile.
+In altre parole, se $P$ è una proprietà semantica (proprietà di linguaggi) tale che $P \neq \emptyset$ e $P \neq RE$, allora il linguaggio $L_P = \{\langle M \rangle \mid L(M) \in P\}$ è indecidibile.
+\end{theorem}
+
+\subsection{Dimostrazione del Teorema di Rice}
+Sia $P$ una proprietà semantica non banale dei linguaggi RE. Vogliamo dimostrare che $L_P$ è indecidibile. Procediamo con una riduzione dal Problema di Halting Universale, $L_u = \{\langle M,w \rangle \mid M \text{ accetta } w\}$, che sappiamo essere indecidibile.
+
+La dimostrazione si divide in due casi, a seconda che il linguaggio vuoto $\emptyset$ appartenga o meno alla proprietà $P$.
+
+\subsubsection{Caso 1: Il linguaggio vuoto non appartiene a $P$ ($\emptyset \notin P$)}
+Poiché $P$ è una proprietà non banale, e $\emptyset \notin P$, deve esistere almeno un linguaggio $L \in P$ tale che $L \neq \emptyset$. (Se tutti i linguaggi in $P$ fossero vuoti, e $\emptyset \notin P$, allora $P$ sarebbe $\emptyset$, contraddicendo l'ipotesi che $P$ sia non banale).
+Dato che $L \in RE$, deve esistere una macchina di Turing $M_L$ tale che $L(M_L) = L$.
+
+Costruiamo una macchina di Turing $N$ a partire da una coppia $\langle M,w \rangle$ (input per $L_u$) e da $M_L$. La macchina $N$ è una nuova macchina (la cui codifica è l'output della nostra riduzione) che prende un input $x$. La sua logica di funzionamento è la seguente:
+
+\textbf{Costruzione della macchina $N_{M,w}$ (che chiamiamo $N$ per semplicità):}
+\begin{enumerate}
+    \item Su input $x$:
+    \item Ignora l'input $x$ e simula $M$ sull'input $w$.
+    \item Se la simulazione di $M$ su $w$ accetta:
+        \begin{enumerate}
+            \item Inizia a simulare $M_L$ sull'input $x$.
+            \item Se $M_L$ accetta $x$, allora $N$ accetta $x$.
+            \item Se $M_L$ rifiuta $x$, allora $N$ rifiuta $x$.
+        \end{enumerate}
+    \item Se la simulazione di $M$ su $w$ non accetta (ovvero, rifiuta o loopa):
+        \begin{enumerate}
+            \item $N$ non accetta (rifiuta o loopa).
+        \end{enumerate}
+\end{enumerate}
+
+Ora analizziamo il comportamento di $N$ per dimostrare che la riduzione funziona:
+
+\textbf{i) Se $\langle M,w \rangle \in L_u$ (cioè, $M$ accetta $w$):}
+In questo caso, la simulazione di $M$ su $w$ al passo 2 della costruzione di $N$ terminerà e accetterà. Di conseguenza, $N$ procederà sempre al passo 3 e simulerà $M_L$ su $x$. Questo significa che $N$ accetta $x$ se e solo se $M_L$ accetta $x$.
+Quindi, $L(N) = L(M_L) = L$.
+Poiché abbiamo stabilito che $L \in P$, ne consegue che $\langle N \rangle \in L_P$.
+
+\textbf{ii) Se $\langle M,w \rangle \notin L_u$ (cioè, $M$ non accetta $w$):}
+In questo caso, la simulazione di $M$ su $w$ al passo 2 della costruzione di $N$ non terminerà accettando (o rifiuterà, o loopa). Di conseguenza, $N$ non raggiungerà mai il passo 3 e quindi non accetterà mai alcun input $x$.
+Quindi, $L(N) = \emptyset$.
+Poiché abbiamo assunto $\emptyset \notin P$, ne consegue che $\langle N \rangle \notin L_P$.
+
+Questa costruzione definisce una funzione calcolabile $f: \langle M,w \rangle \mapsto \langle N \rangle$ tale che $\langle M,w \rangle \in L_u \iff \langle N \rangle \in L_P$. Poiché $L_u$ è indecidibile e $L_u \le_m L_P$, concludiamo che $L_P$ è indecidibile.
+
+\subsubsection{Caso 2: Il linguaggio vuoto appartiene a $P$ ($\emptyset \in P$)}
+Se $\emptyset \in P$, consideriamo la proprietà $\overline{P}$, definita come il complemento di $P$ rispetto all'insieme di tutti i linguaggi RE: $\overline{P} = RE \setminus P$.
+\begin{itemize}
+    \item $\overline{P}$ è una proprietà semantica, poiché se $P$ lo è, anche il suo complemento lo è.
+    \item Poiché $\emptyset \in P$, ne consegue che $\emptyset \notin \overline{P}$.
+    \item Se $P$ è non banale, allora $\overline{P}$ è anch'essa non banale. (Se $P = \emptyset$, $\overline{P} = RE$. Se $P = RE$, $\overline{P} = \emptyset$. In entrambi i casi, $\overline{P}$ sarebbe banale. Ma abbiamo assunto che $P$ è non banale, quindi anche $\overline{P}$ è non banale).
+\end{itemize}
+Riassumendo, $\overline{P}$ è una proprietà semantica non banale e $\emptyset \notin \overline{P}$. Questo è esattamente il Caso 1 che abbiamo appena dimostrato. Quindi, il linguaggio $L_{\overline{P}} = \{\langle M \rangle \mid L(M) \in \overline{P}\}$ è indecidibile.
+
+Ora, supponiamo per assurdo che $L_P$ sia decidibile. Allora esisterebbe una macchina di Turing decisore $D_P$ che decide $L_P$.
+Utilizzando $D_P$, potremmo costruire una macchina di Turing $D_{\overline{P}}$ che decide $L_{\overline{P}}$ nel modo seguente:
+\textbf{Costruzione di $D_{\overline{P}}$ su input $\langle M \rangle$:}
+\begin{enumerate}
+    \item Esegui $D_P$ su $\langle M \rangle$.
+    \item Se $D_P$ accetta $\langle M \rangle$, allora $D_{\overline{P}}$ rifiuta $\langle M \rangle$.
+    \item Se $D_P$ rifiuta $\langle M \rangle$, allora $D_{\overline{P}}$ accetta $\langle M \rangle$.
+\end{enumerate}
+Questa macchina $D_{\overline{P}}$ deciderebbe $L_{\overline{P}}$. Tuttavia, abbiamo appena dimostrato che $L_{\overline{P}}$ è indecidibile. Abbiamo raggiunto una contraddizione.
+Pertanto, la nostra supposizione iniziale che $L_P$ fosse decidibile deve essere falsa. Concludiamo quindi che $L_P$ è indecidibile anche nel Caso 2.
+
+Combinando i due casi, il Teorema di Rice è dimostrato. Ogni proprietà non banale dei linguaggi RE è indecidibile.
+
+\section{Applicazioni del Teorema di Rice}
+Il Teorema di Rice fornisce un potente strumento per dimostrare l'indecidibilità di un'ampia classe di problemi. Per applicarlo, è sufficiente verificare che la proprietà in questione sia:
+\begin{enumerate}
+    \item Una proprietà di linguaggi (cioè semantica).
+    \item Non banale.
+\end{enumerate}
+Se entrambe le condizioni sono soddisfatte, allora il problema di decidere se una macchina di Turing possiede tale proprietà è indecidibile.
+
+\begin{example}[Indecidibilità di $L_e$ e $L_{ne}$]
+\begin{enumerate}
+    \item $L_e = \{\langle M \rangle \mid L(M) = \emptyset\}$:
+    \begin{itemize}
+        \item \textbf{Proprietà semantica?}: Sì, dipende solo dal linguaggio $L(M)$.
+        \item \textbf{Non banale?}: Sì. Contiene il linguaggio vuoto (quindi non è $\emptyset$). Non contiene, ad esempio, $\Sigma^*$ (quindi non è $RE$).
+    \end{itemize}
+    Dato che è semantica e non banale, per il Teorema di Rice, $L_e$ è indecidibile.
+    \item $L_{ne} = \{\langle M \rangle \mid L(M) \neq \emptyset\}$:
+    \begin{itemize}
+        \item \textbf{Proprietà semantica?}: Sì, dipende solo dal linguaggio $L(M)$.
+        \item \textbf{Non banale?}: Sì. Contiene, ad esempio, $\Sigma^*$ (quindi non è $\emptyset$). Non contiene $\emptyset$ (quindi non è $RE$).
+    \end{itemize}
+    Dato che è semantica e non banale, per il Teorema di Rice, $L_{ne}$ è indecidibile.
+\end{enumerate}
+\end{example}
+
+\begin{example}[Decidere se $L(M)$ è finito]
+Sia $L_{finito} = \{\langle M \rangle \mid L(M) \text{ è finito}\}$.
+\begin{itemize}
+    \item \textbf{Proprietà semantica?}: Sì, la finitezza di un linguaggio è una sua proprietà intrinseca.
+    \item \textbf{Non banale?}: Sì. Contiene linguaggi finiti (e.g., $L(M)=\emptyset$ o $L(M)=\{a\}$), quindi non è $\emptyset$. Non contiene linguaggi infiniti (e.g., $L(M)=\Sigma^*$), quindi non è $RE$.
+\end{itemize}
+Per il Teorema di Rice, $L_{finito}$ è indecidibile.
+\end{example}
+
+\begin{example}[Decidere se $L(M)$ è infinito]
+Sia $L_{infinito} = \{\langle M \rangle \mid L(M) \text{ è infinito}\}$.
+\begin{itemize}
+    \item \textbf{Proprietà semantica?}: Sì.
+    \item \textbf{Non banale?}: Sì. Contiene linguaggi infiniti (e.g., $L(M)=\Sigma^*$), quindi non è $\emptyset$. Non contiene linguaggi finiti (e.g., $L(M)=\emptyset$), quindi non è $RE$.
+\end{itemize}
+Per il Teorema di Rice, $L_{infinito}$ è indecidibile.
+\end{example}
+
+\begin{example}[Decidere se $L(M)$ è riconosciuto solo da macchine con 5 stati]
+Sia $P_{solo5stati} = \{\langle M \rangle \mid L(M) \text{ è riconosciuto solo da macchine con 5 stati}\}$.
+\begin{itemize}
+    \item \textbf{Proprietà di linguaggi?}: Sì, è una proprietà semantica.
+    \item \textbf{Non banale?}: No, è banale. Ogni linguaggio ricorsivamente enumerabile che può essere riconosciuto da una macchina di Turing con 5 stati, può essere riconosciuto anche da una macchina con più di 5 stati (basta aggiungere stati irraggiungibili). Quindi, nessun linguaggio può essere riconosciuto \emph{solo} da macchine con 5 stati. Pertanto, $P_{solo5stati} = \emptyset$. Essendo $\emptyset$, è una proprietà banale.
+\end{itemize}
+Poiché è una proprietà banale, $P_{solo5stati}$ è \textbf{decidibile} (la risposta è sempre "no"). Il Teorema di Rice non si applica per dimostrare l'indecidibilità in questo caso.
+\end{example}
+
+\subsection{Altri Esempi specifici}
+
+Consideriamo il linguaggio $L = \{w\#A \mid w \in \{0,1\}^+, A=w \lor A=w^R \}$. Questo linguaggio è RE. Di seguito, una descrizione di una macchina di Turing a 2 nastri che riconosce $L$:
+\begin{itemize}
+    \item Inizialmente, il nastro 1 contiene $w\#A$.
+    \item La macchina copia $w$ sul nastro 2.
+    \item Quando incontra '\#', si sposta all'inizio di $w$ sul nastro 2.
+    \item Non deterministicamente, la macchina può scegliere tra due rami:
+        \begin{enumerate}
+            \item \textbf{Verifica $A=w$}: Confronta $A$ sul nastro 1 con $w$ sul nastro 2, leggendo entrambi da sinistra a destra. Se corrispondono e si arriva alla fine, accetta.
+            \item \textbf{Verifica $A=w^R$}: Confronta $A$ sul nastro 1 da sinistra a destra con $w$ sul nastro 2 da destra a sinistra. Se corrispondono e si arriva alla fine, accetta.
+        \end{enumerate}
+\end{itemize}
+
+\begin{example}[Decidere se $L(M)=L$]
+Sia $P_L = \{\langle M \rangle \mid L(M) = L\}$, dove $L$ è il linguaggio definito sopra.
+\begin{itemize}
+    \item \textbf{Proprietà di macchine?}: Sì.
+    \item \textbf{Proprietà semantica?}: Sì, dipende solo dal fatto che il linguaggio riconosciuto sia esattamente $L$.
+    \item \textbf{Non banale?}: Sì. Contiene il linguaggio $L$ (quindi non è $\emptyset$). Non contiene, ad esempio, il linguaggio $\Sigma^*$ (quindi non è $RE$).
+\end{itemize}
+Per il Teorema di Rice, $P_L$ è \textbf{indecidibile}.
+\end{example}
+
+\begin{example}[Decidere se ogni stringa di $L(M)$ è accettata in al più 100 passi]
+Sia $P_{100steps} = \{\langle M \rangle \mid \forall s \in L(M), M \text{ accetta } s \text{ in } \le 100 \text{ passi}\}$.
+\begin{itemize}
+    \item \textbf{Proprietà di macchine?}: Sì.
+    \item \textbf{Proprietà semantica?}: No. Dipende dal comportamento computazionale (numero di passi). Controesempio: una macchina $M_1$ accetta "a" in 10 passi. Un'altra macchina $M_2$ potrebbe accettare "a" in 200 passi (es. loopando inutilmente prima di accettare). $L(M_1) = L(M_2) = \{a\}$. Ma $M_1 \in P_{100steps}$ e $M_2 \notin P_{100steps}$.
+    \item \textbf{Banale?}: No. Contiene macchine che accettano stringhe corte in pochi passi (e.g., una macchina che accetta solo $\epsilon$ in 5 passi). Non è $RE$ (poiché non tutte le macchine soddisfano la proprietà).
+\end{itemize}
+Poiché $P_{100steps}$ non è semantica, il Teorema di Rice \textbf{non si applica}. Questo problema è in realtà \textbf{decidibile}. Una macchina per questo problema può simulare $M$ su tutte le stringhe di lunghezza $\le 100$ per 100 passi. Se $M$ accetta una stringa più lunga di 100, o non accetta una stringa in $L(M)$ entro 100 passi, allora rifiuta. Altrimenti accetta.
+\end{example}
+
+\begin{example}[Decidere se $M$ non accetta stringhe di $L$ di lunghezza 100]
+Sia $P_{no100} = \{\langle M \rangle \mid L(M) \cap \{s \mid |s|=100\} = \emptyset\}$, dove $L$ è il linguaggio definito in precedenza. In altre parole, $M$ non accetta alcuna stringa del linguaggio $L$ che abbia lunghezza 100.
+\begin{itemize}
+    \item \textbf{Proprietà di macchine?}: Sì.
+    \item \textbf{Proprietà semantica?}: Sì, dipende esclusivamente dal linguaggio $L(M)$ e dalla sua intersezione con l'insieme delle stringhe di lunghezza 100.
+    \item \textbf{Non banale?}: Sì.
+    \begin{itemize}
+        \item Non è $\emptyset$: una macchina che accetta solo $0\#0$ (lunghezza 3) appartiene a $P_{no100}$, poiché non accetta alcuna stringa di lunghezza 100.
+        \item Non è $RE$: una macchina che accetta una stringa di $L$ di lunghezza 100 (se esiste) non appartiene a $P_{no100}$. Se esistono stringhe di $L$ di lunghezza 100, allora non tutte le macchine RE appartengono a $P_{no100}$.
+    \end{itemize}
+\end{itemize}
+Poiché $P_{no100}$ è semantica e non banale, per il Teorema di Rice, è \textbf{indecidibile}.
+\end{example}
+
+\end{document}

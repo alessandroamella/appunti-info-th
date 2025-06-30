@@ -1,2 +1,1 @@
-# info-teorica
-# appunti-info-th
+# Appunti Informatica Teorica

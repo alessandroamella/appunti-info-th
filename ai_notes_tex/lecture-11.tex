@@ -1,0 +1,307 @@
+\documentclass[a4paper]{article}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage[italian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[a4paper, total={6in, 8in}]{geometry}
+\usepackage{minted} % Per il codice (se necessario, non strettamente usato in questa lezione)
+\usepackage{mathpazo} % Font più gradevole
+\usepackage{fancyhdr} % Per header e footer
+\usepackage{amsthm} % Per ambienti teorema, definizione
+\usepackage{tikz} % Per diagrammi (se necessario)
+\usetikzlibrary{automata,positioning}
+\usepackage{enumerate} % Per liste enumerate con personalizzazione
+
+% Definizione degli ambienti
+\newtheorem{theorem}{Teorema}
+\newtheorem{definition}{Definizione}
+\newtheorem{example}{Esempio}
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}{Proposizione}
+\newtheorem{remark}{Osservazione}
+
+% Impostazioni hyperref per i link nel PDF
+\hypersetup{
+    pdftitle={Lezione di Informatica Teorica: Macchina di Turing Universale e Linguaggi Indecidibili},
+    pdfauthor={Appunti da Trascrizione AI},
+    colorlinks=true,
+    linkcolor=blue,
+    citecolor=green,
+    urlcolor=cyan,
+}
+
+% Impostazioni per header e footer
+\pagestyle{fancy}
+\fancyhf{} % Pulisce tutti gli header e footer
+\fancyhead[L]{\textit{Lezione di Informatica Teorica}} % Intestazione sinistra
+\fancyfoot[C]{\thepage} % Numero di pagina centrato
+
+\title{Lezione di Informatica Teorica: Macchina di Turing Universale e Linguaggi Indecidibili}
+\author{Appunti da Trascrizione Automatica}
+\date{\today}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+
+\section{Introduzione e Ripasso}
+
+Nella lezione precedente abbiamo introdotto le Macchine di Turing Non-Deterministiche (NTM) e le classi di problemi decidibili (R) e semi-decidibili (RE).
+
+\begin{itemize}
+    \item La simulazione di una \textbf{NTM} da parte di una \textbf{DTM} è possibile, sebbene con un costo significativo in termini di tempo di esecuzione (esponenziale o doppio esponenziale). Ai fini della sola \textit{decidibilità} di un problema, l'efficienza temporale non è un fattore determinante.
+    \item La classe \textbf{R} include tutti i problemi \textbf{decidibili}, cioè per i quali esiste un algoritmo (una macchina di Turing) che termina sempre, fornendo una risposta definita (sì/no).
+    \item La classe \textbf{RE} include i problemi \textbf{semi-decidibili}. Per questi, esiste una macchina di Turing che garantisce una risposta "sì" in tempo finito se la stringa appartiene al linguaggio; tuttavia, se la stringa non appartiene al linguaggio, la macchina potrebbe non terminare mai. Questo li rende, di fatto, non algoritmicamente utili per il "no".
+    \item Esistono problemi completamente \textbf{indecidibili}, che non rientrano né in R né in RE. Per questi non è garantita alcuna risposta.
+\end{itemize}
+
+\section{La Macchina di Turing Universale (UTM)}
+
+Le Macchine di Turing (MT) studiate finora sono intrinsecamente fisse nel loro comportamento: la loro funzione di transizione è immutabile e determinano un unico compito. I computer moderni, al contrario, sono programmabili, ovvero possono eseguire programmi diversi. Per colmare questa apparente discrepanza, introduciamo il concetto di \textbf{Macchina di Turing Universale (UTM)}.
+
+\begin{definition}[Macchina di Turing Universale (UTM)]
+Una Macchina di Turing Universale ($M_U$) è una macchina di Turing che è in grado di \textbf{simulare il comportamento di qualsiasi altra Macchina di Turing} ($M$) quando le viene fornita la descrizione (codifica) di $M$ e l'input $w$ su cui $M$ dovrebbe operare.
+\end{definition}
+
+\subsection{Codifica di una Macchina di Turing (MT)}
+
+Per consentire a una UTM di simulare un'altra MT, il "programma" della MT (la sua funzione di transizione) deve essere codificato in una stringa binaria. Assumiamo, per semplicità, che le MT considerate abbiano un alfabeto di input binario $\Sigma = \{0,1\}$.
+
+Una generica istruzione della funzione di transizione $\delta$ ha la forma:
+\[ \delta(Q_i, X_j) = (Q_k, X_L, D_m) \]
+dove:
+\begin{itemize}
+    \item $Q_i$: stato corrente.
+    \item $X_j$: simbolo letto sul nastro.
+    \item $Q_k$: nuovo stato dopo la transizione.
+    \item $X_L$: simbolo da scrivere sul nastro.
+    \item $D_m$: direzione del movimento della testina (sinistra o destra).
+\end{itemize}
+
+La codifica segue queste convenzioni:
+\begin{enumerate}
+    \item \textbf{Stati ($Q_i$)}: Ogni stato $Q_i$ è codificato con una sequenza di $i$ zeri.
+    \begin{itemize}
+        \item $Q_1$ è lo stato iniziale, codificato come `0`.
+        \item $Q_2$ è lo stato accettante, codificato come `00`.
+        \item Esempio: $Q_5$ è codificato come `00000`.
+    \end{itemize}
+    \item \textbf{Simboli di Nastro ($X_j$)}: Ogni simbolo $X_j$ è codificato con una sequenza di $j$ zeri.
+    \begin{itemize}
+        \item $X_1$ è il simbolo `0`, codificato come `0`.
+        \item $X_2$ è il simbolo `1`, codificato come `00`.
+        \item $X_3$ è il simbolo blank ($\phi$), codificato come `000`.
+    \end{itemize}
+    \item \textbf{Direzioni ($D_m$)}:
+    \begin{itemize}
+        \item $D_1$ (sinistra, L) è codificato come `0`.
+        \item $D_2$ (destra, R) è codificato come `00`.
+    \end{itemize}
+    \item \textbf{Separatori}:
+    \begin{itemize}
+        \item Tra i componenti di una singola transizione (es. $Q_i$ e $X_j$), si usa il simbolo `1`.
+        \item Tra diverse transizioni (coppie $\delta(\dots)$), si usa la sequenza `11`.
+    \end{itemize}
+\end{enumerate}
+
+\begin{example}
+Codifica della transizione: $\delta(Q_3, \phi) = (Q_5, 0, \rightarrow)$
+\begin{itemize}
+    \item $Q_3 \rightarrow \textbf{000}$
+    \item $\phi$ ($X_3$) $\rightarrow \textbf{000}$
+    \item $Q_5 \rightarrow \textbf{00000}$
+    \item $0$ ($X_1$) $\rightarrow \textbf{0}$
+    \item $\rightarrow$ ($D_2$) $\rightarrow \textbf{00}$
+\end{itemize}
+La codifica di questa singola transizione sarà:
+$\textbf{000} \text{1} \textbf{000} \text{1} \textbf{00000} \text{1} \textbf{0} \text{1} \textbf{00}$
+
+La codifica completa di una MT è la concatenazione di tutte le sue transizioni, separate da `11`. Ad esempio:
+$\text{Codifica}(\delta_1) \textbf{11} \text{Codifica}(\delta_2) \textbf{11} \text{Codifica}(\delta_3) \dots$
+\end{example}
+
+\begin{remark}
+Non tutte le stringhe binarie corrisponderanno a una MT validamente codificata. Per convenzione, le stringhe che non seguono il formato di codifica (es. quelle con `111` o `1111`, o quelle non interpretabili come programma) sono considerate codifiche di MT che rifiutano qualsiasi input (il cui linguaggio è vuoto).
+\end{remark}
+
+\subsection{Architettura e Funzionamento della UTM}
+
+La UTM ($M_U$) è tipicamente una Macchina di Turing a quattro nastri. Riceve come input una stringa che è la concatenazione della codifica di una MT $M$ e di una stringa $w$, separate da una sequenza di `1` (es. `111` per distinguere dalla separazione delle transizioni). L'obiettivo di $M_U$ è simulare il comportamento di $M$ su $w$.
+
+I quattro nastri di $M_U$ hanno i seguenti ruoli:
+\begin{enumerate}
+    \item \textbf{Nastro 1 (Input/Programma $M$)}: Contiene la stringa di codifica di $M$. Questo nastro è letto dalla $M_U$ per conoscere le regole di transizione di $M$ e non viene modificato durante la simulazione.
+    \item \textbf{Nastro 2 (Nastro Simulato di $M$)}: Contiene la rappresentazione del nastro della MT $M$. Inizialmente, l'input $w$ viene copiato su questo nastro e ricodificato nel formato dei simboli $X_j$ (es. `0` diventa `0`, `1` diventa `00`, etc.). La testina della $M_U$ su questo nastro simula la posizione della testina di $M$.
+    \item \textbf{Nastro 3 (Stato Simulato di $M$)}: Contiene la codifica dello stato corrente in cui si trova la MT $M$ nella simulazione. Inizia con lo stato iniziale di $M$ ($Q_1$).
+    \item \textbf{Nastro 4 (Scratchpad/Ausiliario)}: Utilizzato per operazioni temporanee, come la gestione dello spazio sul Nastro 2 quando un simbolo deve essere riscritto e la sua codifica occupa più o meno spazio.
+\end{enumerate}
+
+\subsubsection{Passi di Simulazione}
+$M_U$ esegue la simulazione passo per passo:
+\begin{enumerate}
+    \item $M_U$ legge lo stato corrente di $M$ (dal Nastro 3) e il simbolo sotto la testina di $M$ (dal Nastro 2).
+    \item Usando questa coppia (stato, simbolo), $M_U$ cerca sul Nastro 1 (il "programma" di $M$) la transizione $\delta(Q_i, X_j) = (Q_k, X_L, D_m)$ corrispondente.
+    \item Una volta trovata la transizione, $M_U$ aggiorna la simulazione:
+    \begin{itemize}
+        \item Aggiorna lo stato sul Nastro 3 a $Q_k$.
+        \item Scrive il simbolo $X_L$ sul Nastro 2 (spostando il contenuto se necessario, usando il Nastro 4).
+        \item Sposta la testina sul Nastro 2 nella direzione $D_m$.
+    \end{itemize}
+    \item $M_U$ ripete questi passi. Se $M$ entra in uno stato di accettazione (la $M_U$ lo rileva leggendo il Nastro 3), allora $M_U$ accetta. Se $M$ si blocca in uno stato non accettante, $M_U$ si blocca. Se $M$ entra in un loop infinito, $M_U$ entrerà anch'essa in un loop infinito.
+\end{enumerate}
+In questo modo, $M_U$ replica fedelmente il comportamento di $M$ su $w$.
+
+\subsection{Connessione con i Computer Reali}
+
+Un computer che utilizziamo quotidianamente è l'equivalente di una Macchina di Turing Universale. Il suo "programma" fisso e immutabile non è l'applicazione che lanciamo, ma il \textbf{microcodice della CPU}. La CPU esegue ciclicamente un programma interno fisso (il microcodice) che è progettato per \textit{interpretare} ed \textit{eseguire} le istruzioni dei programmi che gli vengono dati in input (le nostre applicazioni). Questo risolve il dilemma: i computer non "cambiano" programma, ma hanno un programma fisso (il microcodice) che li rende universali, capaci di simulare qualsiasi altro programma.
+
+\section{Linguaggi Indecidibili: L'Argomento di Diagonalizzazione}
+
+Abbiamo affermato l'esistenza di problemi completamente indecidibili (non in RE). Una delle dimostrazioni più celebri di ciò è l'argomento di diagonalizzazione di Cantor.
+
+\subsection{Enumerazione di Stringhe e Macchine di Turing}
+
+\begin{enumerate}
+    \item \textbf{Enumerazione di stringhe binarie ($\Sigma^*$)}: L'insieme di tutte le stringhe binarie finite ($\Sigma^*$, dove $\Sigma = \{0,1\}$) è \textbf{numerabile}. Possiamo ordinarle per lunghezza crescente e, a parità di lunghezza, lessicograficamente. Questo ci permette di parlare della $1^{a}$ stringa, $2^{a}$ stringa, ecc. (es., $\epsilon, 0, 1, 00, 01, 10, 11, \dots$). La cardinalità di $\Sigma^*$ è $\aleph_0$ (aleph-zero), la stessa dei numeri naturali.
+    \item \textbf{Enumerazione delle Macchine di Turing (MT)}: Poiché ogni MT può essere codificata come una stringa binaria finita, e le stringhe binarie sono numerabili, anche l'insieme di tutte le Macchine di Turing è \textbf{numerabile}. Possiamo quindi parlare della $1^{a}$ MT ($M_1$), della $2^{a}$ MT ($M_2$), ecc.
+\end{enumerate}
+
+\subsection{Vettore Caratteristico di un Linguaggio}
+
+\begin{definition}[Vettore Caratteristico ($Q_L$)]
+Per un linguaggio $L$ su un alfabeto $\Sigma$, il suo \textbf{vettore caratteristico} $Q_L$ è una sequenza binaria infinita. Per ogni $i$-esima stringa $w_i$ (secondo l'ordine di enumerazione di $\Sigma^*$), la $i$-esima componente di $Q_L$ è $1$ se $w_i \in L$, e $0$ se $w_i \notin L$. Questo vettore descrive in modo univoco il linguaggio $L$.
+\end{definition}
+
+\subsection{Costruzione del Linguaggio di Diagonalizzazione ($L_D$)}
+
+Consideriamo una tabella infinita dove:
+\begin{itemize}
+    \item Le \textbf{colonne} sono indicizzate dalle stringhe enumerate di $\Sigma^*$: $w_1, w_2, w_3, \dots$
+    \item Le \textbf{righe} sono indicizzate dalle MT enumerate: $M_1, M_2, M_3, \dots$
+    \item La cella $(i, j)$ contiene $1$ se la MT $M_i$ \textbf{accetta} la stringa $w_j$, e $0$ altrimenti.
+\end{itemize}
+Ogni riga $i$ di questa tabella rappresenta il vettore caratteristico del linguaggio $L(M_i)$ accettato dalla macchina $M_i$.
+
+Esempio di una porzione di tabella:
+\[
+\begin{array}{c|cccccc}
+        & w_1 & w_2 & w_3 & w_4 & \dots \\
+    \hline
+    M_1 & 0 & 1 & 0 & 0 & \dots & \quad (L(M_1)) \\
+    M_2 & 1 & 1 & 0 & 1 & \dots & \quad (L(M_2)) \\
+    M_3 & 0 & 0 & 0 & 1 & \dots & \quad (L(M_3)) \\
+    M_4 & 1 & 0 & 0 & 1 & \dots & \quad (L(M_4)) \\
+    \vdots & \vdots & \vdots & \vdots & \vdots & \ddots \\
+\end{array}
+\]
+
+Procediamo alla costruzione del linguaggio di diagonalizzazione ($L_D$):
+\begin{enumerate}
+    \item \textbf{Prendere la diagonale ($D$)}: Estrarre la sequenza dei bit sulla diagonale principale: $D = d_1 d_2 d_3 d_4 \dots$, dove $d_i$ è il valore della cella $(i,i)$ (cioè se $M_i$ accetta $w_i$).
+    \textit{Nell'esempio sopra:} $D = 0101\dots$
+    \item \textbf{Complementare la diagonale ($\overline{D}$)}: Invertire ogni bit della sequenza $D$.
+    $\overline{D} = \overline{d_1} \overline{d_2} \overline{d_3} \overline{d_4} \dots$
+    \textit{Nell'esempio sopra:} $\overline{D} = 1010\dots$
+    \item \textbf{Definire $L_D$}: Interpretiamo $\overline{D}$ come il vettore caratteristico di un nuovo linguaggio, $L_D$.
+    Formalmente, $L_D = \{ w_i \mid \text{l'i-esima bit di } \overline{D} \text{ è } 1 \}$.
+\end{enumerate}
+
+\subsection{Definizione Formale di $L_D$}
+
+Il linguaggio $L_D$ può essere più intuitivamente definito come:
+\begin{definition}[Linguaggio di Diagonalizzazione $L_D$]
+$L_D = \{ \langle M_i \rangle \mid M_i \text{ è una MT e } M_i \text{ rifiuta la propria codifica } \langle M_i \rangle \}$
+dove $\langle M_i \rangle$ (o $w_i$) denota la stringa che codifica la MT $M_i$.
+In altre parole, una stringa $\langle M_i \rangle$ appartiene a $L_D$ se e solo se la macchina $M_i$ non accetta $\langle M_i \rangle$.
+\end{definition}
+
+\subsection{Teorema: $L_D$ non appartiene a RE}
+
+\begin{theorem}
+Il linguaggio $L_D$ non appartiene alla classe RE (Linguaggi Ricorsivamente Enumerabili). In altre parole, non esiste alcuna Macchina di Turing che accetta $L_D$.
+\end{theorem}
+
+\begin{proof}
+Supponiamo per contraddizione che $L_D$ sia ricorsivamente enumerabile. Se $L_D \in RE$, allora esisterebbe una Macchina di Turing, diciamo $M_k$, che accetta $L_D$. Poiché tutte le MT sono enumerate nella nostra tabella, $M_k$ corrisponde a una specifica riga $k$ in quella tabella.
+
+Consideriamo la stringa $w_k$, che è la codifica $\langle M_k \rangle$ della macchina $M_k$.
+Ora poniamoci la domanda: $w_k \in L_D$ o $w_k \notin L_D$?
+
+\begin{enumerate}[(i)]
+    \item \textbf{Caso 1: Supponiamo $w_k \in L_D$.}
+    \begin{itemize}
+        \item Per definizione di $L_D$, se $w_k \in L_D$, allora $M_k$ deve rifiutare $\langle M_k \rangle$ (cioè $w_k$).
+        \item Se $M_k$ rifiuta $w_k$, allora la cella $(k,k)$ della tabella deve essere $0$.
+        \item D'altra parte, poiché $M_k$ accetta $L_D$, e abbiamo supposto $w_k \in L_D$, $M_k$ dovrebbe accettare $w_k$. Ciò implicherebbe che la cella $(k,k)$ è $1$.
+    \end{itemize}
+    Abbiamo una contraddizione: la cella $(k,k)$ non può essere contemporaneamente $0$ e $1$.
+
+    \item \textbf{Caso 2: Supponiamo $w_k \notin L_D$.}
+    \begin{itemize}
+        \item Per definizione di $L_D$, se $w_k \notin L_D$, allora $M_k$ deve accettare $\langle M_k \rangle$ (cioè $w_k$).
+        \item Se $M_k$ accetta $w_k$, allora la cella $(k,k)$ della tabella deve essere $1$.
+        \item D'altra parte, poiché $M_k$ accetta $L_D$, e abbiamo supposto $w_k \notin L_D$, $M_k$ dovrebbe rifiutare $w_k$. Ciò implicherebbe che la cella $(k,k)$ è $0$.
+    \end{itemize}
+    Abbiamo di nuovo una contraddizione: la cella $(k,k)$ non può essere contemporaneamente $1$ e $0$.
+\end{enumerate}
+Poiché in entrambi i casi si arriva a una contraddizione, l'assunzione iniziale che $L_D \in RE$ deve essere falsa. Pertanto, $L_D$ non appartiene a RE.
+\end{proof}
+
+\subsection{Intuizione sull'Esistenza di Linguaggi Indecidibili}
+
+La ragione profonda per l'esistenza di linguaggi indecidibili (e non ricorsivamente enumerabili) è una questione di \textbf{cardinalità} degli insiemi:
+\begin{itemize}
+    \item L'insieme di tutte le \textbf{Macchine di Turing} è numerabile (ha cardinalità $\aleph_0$). Ogni MT riconosce esattamente un linguaggio.
+    \item L'insieme di tutti i \textbf{linguaggi} su un alfabeto infinito (come $\Sigma^*$) è l'insieme potenza di $\Sigma^*$. Poiché $\Sigma^*$ è numerabile, il suo insieme potenza ha la cardinalità del continuo ($2^{\aleph_0}$), che è strettamente maggiore di $\aleph_0$.
+\end{itemize}
+Questo significa che ci sono \textbf{molti più linguaggi che Macchine di Turing}. Dal momento che non ci sono abbastanza MT per riconoscere tutti i linguaggi possibili, devono esistere linguaggi per i quali non esiste alcuna MT in grado di accettarli. $L_D$ è un esempio concreto di uno di questi linguaggi.
+
+\section{Proprietà sui Linguaggi Ricorsivi e Ricorsivamente Enumerabili}
+
+Introduciamo due importanti teoremi che collegano le classi R e RE con le operazioni di complemento.
+
+\begin{theorem}[Chiusura di R sotto Complemento]
+Se un linguaggio $L$ appartiene alla classe R (è ricorsivo), allora anche il suo complemento $\overline{L}$ appartiene a R.
+\end{theorem}
+\begin{proof}
+Sia $L \in R$. Per definizione, esiste una MT $M_L$ che decide $L$. Questo significa che per ogni stringa $w$ data in input, $M_L$ termina sempre, accettando $w$ se $w \in L$ e rifiutando $w$ se $w \notin L$.
+
+Possiamo costruire una nuova MT $M_{\overline{L}}$ per decidere $\overline{L}$ come segue:
+$M_{\overline{L}}$ simula $M_L$ su qualsiasi input $w$. Poiché $M_L$ termina sempre:
+\begin{itemize}
+    \item Se $M_L$ accetta $w$ (cioè $w \in L$), allora $M_{\overline{L}}$ modifica il suo comportamento per rifiutare $w$.
+    \item Se $M_L$ rifiuta $w$ (cioè $w \notin L$), allora $M_{\overline{L}}$ modifica il suo comportamento per accettare $w$.
+\end{itemize}
+In pratica, $M_{\overline{L}}$ può essere costruita da $M_L$ semplicemente scambiando gli stati di accettazione e rifiuto (o, più precisamente, rendendo accettanti gli stati che prima conducevano al rifiuto e viceversa, assicurandosi che tutte le computazioni terminino).
+Dato che $M_L$ termina sempre, anche $M_{\overline{L}}$ terminerà sempre, fornendo una decisione per ogni input. Quindi, $M_{\overline{L}}$ è una macchina che decide $\overline{L}$, il che implica $\overline{L} \in R$.
+\end{proof}
+
+\begin{theorem}[Condizione Necessaria e Sufficiente per R]
+Un linguaggio $L$ appartiene alla classe R (è ricorsivo) se e solo se $L$ appartiene alla classe RE \textbf{e} il suo complemento $\overline{L}$ appartiene anch'esso alla classe RE.
+\[ L \in R \iff L \in RE \land \overline{L} \in RE \]
+\end{theorem}
+\begin{proof}
+($\Rightarrow$) \textbf{Se $L \in R$, allora $L \in RE \land \overline{L} \in RE$.}
+Se $L \in R$, allora per definizione $L$ è decidibile. Ogni linguaggio decidibile è anche ricorsivamente enumerabile, quindi $L \in RE$.
+Inoltre, per il teorema precedente, se $L \in R$, allora $\overline{L} \in R$. Di conseguenza, anche $\overline{L} \in RE$.
+
+($\Leftarrow$) \textbf{Se $L \in RE \land \overline{L} \in RE$, allora $L \in R$.}
+Supponiamo che $L \in RE$ e $\overline{L} \in RE$.
+\begin{itemize}
+    \item Poiché $L \in RE$, esiste una Macchina di Turing $M_L$ che accetta $L$ (garantisce terminazione per i "sì", ma potrebbe non terminare per i "no").
+    \item Poiché $\overline{L} \in RE$, esiste una Macchina di Turing $M_{\overline{L}}$ che accetta $\overline{L}$ (garantisce terminazione per i "sì" in $\overline{L}$, ovvero per i "no" in $L$).
+\end{itemize}
+Possiamo costruire una nuova MT $M_{decider}$ che decide $L$. $M_{decider}$ opera come segue su qualsiasi input $w$:
+\begin{enumerate}
+    \item $M_{decider}$ simula $M_L$ e $M_{\overline{L}}$ in \textbf{parallelo}. Questo può essere fatto, ad esempio, alternando i passi di esecuzione delle due macchine (un passo di $M_L$, poi un passo di $M_{\overline{L}}$, poi un altro passo di $M_L$, ecc., utilizzando un approccio multi-nastro o di interleaving).
+    \item Se la simulazione di $M_L$ accetta $w$ (ovvero $M_L$ entra in uno stato di accettazione), allora $M_{decider}$ \textbf{accetta} $w$.
+    \item Se la simulazione di $M_{\overline{L}}$ accetta $w$ (ovvero $M_{\overline{L}}$ entra in uno stato di accettazione), allora $M_{decider}$ \textbf{rifiuta} $w$.
+\end{enumerate}
+Dato che $w$ deve appartenere o a $L$ o a $\overline{L}$ (ma non a entrambi), una delle due macchine ($M_L$ o $M_{\overline{L}}$) è garantita a terminare e accettare $w$. Pertanto, $M_{decider}$ terminerà sempre su ogni input $w$, fornendo una risposta definita ("sì" o "no"). Questo dimostra che $M_{decider}$ decide $L$, e quindi $L \in R$.
+\end{proof}
+
+Questo teorema è cruciale: esso stabilisce che un problema è decidibile se e solo se sia il problema stesso che il suo complemento sono ricorsivamente enumerabili. Queste proprietà saranno fondamentali per classificare altri importanti problemi nelle prossime lezioni.
+
+\end{document}

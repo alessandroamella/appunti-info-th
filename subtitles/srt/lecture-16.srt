@@ -1,0 +1,5852 @@
+1
+00:00:00,000 --> 00:00:03,000
+Ok,
+
+2
+00:00:09,920 --> 00:00:11,719
+vedete?
+
+3
+00:00:11,719 --> 00:00:13,040
+Vabbò, vediamo di riuscirà a fare
+
+4
+00:00:13,040 --> 00:00:16,559
+qualcosa oggi.
+
+5
+00:00:18,240 --> 00:00:23,000
+Teorema di Rice. Ok, allora
+
+6
+00:00:23,000 --> 00:00:24,840
+tra le varie cose che abbiamo visto e
+
+7
+00:00:24,840 --> 00:00:26,760
+purtroppo oggi è niente pausa e mi
+
+8
+00:00:26,760 --> 00:00:29,800
+spiace non è dipesa da me.
+
+9
+00:00:29,800 --> 00:00:32,160
+Vediamo che riusciamo a combinare.
+
+10
+00:00:32,160 --> 00:00:34,840
+Allora, tra i vari linguaggi che abbiamo
+
+11
+00:00:34,840 --> 00:00:40,160
+visto, abbiamo visto il linguaggio vuoto
+
+12
+00:00:40,160 --> 00:00:44,600
+e il linguaggio non vuoto,
+
+13
+00:00:44,920 --> 00:00:47,000
+per cui abbiamo quindi abbiamo che il
+
+14
+00:00:47,000 --> 00:00:49,160
+linguaggio vuoto, è il linguaggio delle
+
+15
+00:00:49,160 --> 00:00:53,199
+macchine e M per cui il linguaggio di M
+
+16
+00:00:53,199 --> 00:00:56,800
+è il linguaggio vuoto,
+
+17
+00:00:56,800 --> 00:01:00,120
+il linguaggio non vuoto,
+
+18
+00:01:00,120 --> 00:01:04,600
+il linguaggio delle macchine m che è
+
+19
+00:01:04,600 --> 00:01:09,720
+diverso dal linguaggio vuoto. Ok?
+
+20
+00:01:10,640 --> 00:01:13,119
+Allora, questi linguaggi hanno la voi
+
+21
+00:01:13,119 --> 00:01:16,080
+vedete? Sì, avete la peculiarità che
+
+22
+00:01:16,080 --> 00:01:19,200
+sono linguaggi che contengono codifiche
+
+23
+00:01:19,200 --> 00:01:20,880
+di macchine di touring in cui
+
+24
+00:01:20,880 --> 00:01:22,400
+linguaggio,
+
+25
+00:01:22,400 --> 00:01:26,320
+ok? Ha una certa proprietà. Ok? In
+
+26
+00:01:26,320 --> 00:01:29,200
+questo caso può essere vuoto, può essere
+
+27
+00:01:29,200 --> 00:01:32,079
+non vuoto, no?
+
+28
+00:01:32,079 --> 00:01:35,439
+Allora, sostanzialmente noi abbiamo
+
+29
+00:01:35,439 --> 00:01:38,280
+trovato che questi linguaggi sono
+
+30
+00:01:38,280 --> 00:01:40,720
+indecidibili, ma il fatto che questi
+
+31
+00:01:40,720 --> 00:01:42,920
+linguaggi siano indecidibili è solamente
+
+32
+00:01:42,920 --> 00:01:45,439
+un caso particolare
+
+33
+00:01:45,439 --> 00:01:47,960
+di una proprietà, di un risultato molto
+
+34
+00:01:47,960 --> 00:01:50,200
+più generale che riguarda i linguaggi
+
+35
+00:01:50,200 --> 00:01:53,880
+che hanno questa forma, cioè i linguaggi
+
+36
+00:01:53,880 --> 00:01:56,560
+caratterizzati da codifiche di macchine
+
+37
+00:01:56,560 --> 00:01:58,799
+di Touring che devono soddisfare una
+
+38
+00:01:58,799 --> 00:02:01,840
+qualche proprietà. Ok?
+
+39
+00:02:01,840 --> 00:02:03,880
+Allora, noi possiamo definire quindi
+
+40
+00:02:03,880 --> 00:02:06,159
+questo concetto che è il concetto di
+
+41
+00:02:06,159 --> 00:02:08,640
+proprietà di macchine di Touring, quindi
+
+42
+00:02:08,640 --> 00:02:12,280
+è più o meno un'intuizione, no? Una
+
+43
+00:02:12,280 --> 00:02:13,800
+macchina di Touring ha una certa
+
+44
+00:02:13,800 --> 00:02:17,319
+proprietà, se
+
+45
+00:02:17,560 --> 00:02:19,840
+ha una certa proprietà se se ha delle
+
+46
+00:02:19,840 --> 00:02:21,959
+caratteristiche. Ok? Però per riuscire a
+
+47
+00:02:21,959 --> 00:02:24,040
+formalizzare questa cosa, quello che noi
+
+48
+00:02:24,040 --> 00:02:25,879
+possiamo fare è che definiamo
+
+49
+00:02:25,879 --> 00:02:30,319
+formalmente una proprietà
+
+50
+00:02:34,400 --> 00:02:38,440
+di macchine di touring
+
+51
+00:02:47,920 --> 00:02:50,480
+come
+
+52
+00:02:50,480 --> 00:02:56,200
+quindi una proprietà P come un insieme
+
+53
+00:03:05,200 --> 00:03:10,720
+di macchine di codifiche di macchine di
+
+54
+00:03:13,040 --> 00:03:14,920
+quindi noi semplicemente no se abbiamo
+
+55
+00:03:14,920 --> 00:03:18,000
+una proprietà P che è un insieme
+
+56
+00:03:18,000 --> 00:03:20,360
+Una macchina di touring ha una certa
+
+57
+00:03:20,360 --> 00:03:22,680
+proprietà, se si trova qua dentro, eh,
+
+58
+00:03:22,680 --> 00:03:25,400
+tutto qui. Ok, adesso può essere la
+
+59
+00:03:25,400 --> 00:03:27,440
+proprietà di avere 10 stati, la
+
+60
+00:03:27,440 --> 00:03:31,879
+proprietà di, che ne so,
+
+61
+00:03:31,879 --> 00:03:34,480
+fare 100 passi prima di accettare le
+
+62
+00:03:34,480 --> 00:03:38,400
+proprie stringhe, la proprietà che
+
+63
+00:03:38,400 --> 00:03:40,400
+il linguaggio accettato, sia vuoto, sia
+
+64
+00:03:40,400 --> 00:03:42,159
+non vuoto e così via. Cioè, quindi noi
+
+65
+00:03:42,159 --> 00:03:44,599
+possiamo caratterizzare le proprietà
+
+66
+00:03:44,599 --> 00:03:46,560
+delle macchine di touring in questo
+
+67
+00:03:46,560 --> 00:03:48,080
+modo.
+
+68
+00:03:48,080 --> 00:03:52,319
+Associato a questo set, di conseguenza
+
+69
+00:03:52,319 --> 00:03:55,079
+noi abbiamo che il linguaggio della
+
+70
+00:03:55,079 --> 00:03:58,760
+proprietà P è semplicemente l'insieme
+
+71
+00:03:58,760 --> 00:04:00,959
+delle codifiche di macchine di Touring
+
+72
+00:04:00,959 --> 00:04:08,040
+Male per cui M appartiene a P. Ok?
+
+73
+00:04:09,200 --> 00:04:11,920
+Allora, una cosa che noi dobbiamo però
+
+74
+00:04:11,920 --> 00:04:13,879
+verificare, cioè a cui dobbiamo stare
+
+75
+00:04:13,879 --> 00:04:16,320
+attenti, è la seguente, che una
+
+76
+00:04:16,320 --> 00:04:19,040
+proprietà per una macchina di touring
+
+77
+00:04:19,040 --> 00:04:21,359
+può fare riferimento essenzialmente a
+
+78
+00:04:21,359 --> 00:04:24,479
+due grosse categorie di caratteristiche
+
+79
+00:04:24,479 --> 00:04:27,040
+della macchina, cioè può essere una
+
+80
+00:04:27,040 --> 00:04:31,080
+proprietà che riguarda
+
+81
+00:04:31,080 --> 00:04:34,320
+il com'è fatta la macchina, cioè quanti
+
+82
+00:04:34,320 --> 00:04:36,919
+stati ha o come computa, cose di questo.
+
+83
+00:04:36,919 --> 00:04:39,479
+questo tipo e proprietà che riguardano
+
+84
+00:04:39,479 --> 00:04:42,080
+invece i linguaggi delle macchine. Ok?
+
+85
+00:04:42,080 --> 00:04:44,000
+Quindi da un lato abbiamo la famiglia di
+
+86
+00:04:44,000 --> 00:04:46,199
+proprietà che riguardano
+
+87
+00:04:46,199 --> 00:04:49,360
+la struttura delle macchine, cosa fa la
+
+88
+00:04:49,360 --> 00:04:51,880
+macchina, ok? e c'è proprio che ne so
+
+89
+00:04:51,880 --> 00:04:54,360
+fisicamente come si comporta e
+
+90
+00:04:54,360 --> 00:04:55,880
+dall'altro abbiamo la grande famiglia
+
+91
+00:04:55,880 --> 00:04:57,520
+delle proprietà di macchine che
+
+92
+00:04:57,520 --> 00:04:59,080
+riguardano invece i linguaggi
+
+93
+00:04:59,080 --> 00:05:00,639
+riconosciuti dalla macchina. Cioè,
+
+94
+00:05:00,639 --> 00:05:03,680
+quindi le proprietà dei linguaggi di
+
+95
+00:05:03,680 --> 00:05:06,560
+macchine sono proprietà un po' più
+
+96
+00:05:06,560 --> 00:05:10,039
+astratte, nel senso che non vanno sulla
+
+97
+00:05:10,039 --> 00:05:12,800
+macchina specifica, ma vanno più sul
+
+98
+00:05:12,800 --> 00:05:15,840
+linguaggio riconosciuto. Quindi noi
+
+99
+00:05:15,840 --> 00:05:18,160
+possiamo distinguere due grandi
+
+100
+00:05:18,160 --> 00:05:20,520
+famiglie, proprietà di macchine e la
+
+101
+00:05:20,520 --> 00:05:23,919
+proprietà dei linguaggi delle macchine.
+
+102
+00:05:23,919 --> 00:05:26,639
+la proprietà
+
+103
+00:05:26,639 --> 00:05:31,120
+dei linguaggi. Questo lo mettiamo dopo.
+
+104
+00:05:31,120 --> 00:05:33,000
+Ok.
+
+105
+00:05:33,000 --> 00:05:34,919
+Quindi questa è la grossa
+
+106
+00:05:34,919 --> 00:05:36,600
+categorizzazione che facciamo in queste
+
+107
+00:05:36,600 --> 00:05:38,520
+due grandi famiglie. Poi daremo un nome
+
+108
+00:05:38,520 --> 00:05:42,360
+particolare a queste cose.
+
+109
+00:05:42,360 --> 00:05:45,039
+una proprietà
+
+110
+00:05:45,039 --> 00:05:48,560
+una proprietà
+
+111
+00:05:49,560 --> 00:05:54,360
+P è banale
+
+112
+00:05:54,880 --> 00:05:56,520
+se
+
+113
+00:05:56,520 --> 00:06:00,199
+o contiene
+
+114
+00:06:00,960 --> 00:06:05,479
+tutte le macchine
+
+115
+00:06:06,960 --> 00:06:09,440
+o
+
+116
+00:06:09,440 --> 00:06:13,680
+o non ne contiene nessuna.
+
+117
+00:06:16,840 --> 00:06:20,240
+Ok? Quindi una proprietà è banale
+
+118
+00:06:20,240 --> 00:06:22,039
+essenzialmente se o ce l'hanno tutte le
+
+119
+00:06:22,039 --> 00:06:25,319
+macchine o non ce l'ha nessuno. Ok?
+
+120
+00:06:25,319 --> 00:06:29,479
+Secondo voi quanto difficile è decidere
+
+121
+00:06:29,479 --> 00:06:31,360
+una proprietà banale, stabilire se una
+
+122
+00:06:31,360 --> 00:06:35,880
+macchina ha una proprietà banale?
+
+123
+00:06:36,199 --> 00:06:41,840
+Mh.
+È
+una proprietà banale
+
+124
+00:06:41,840 --> 00:06:45,520
+costante.
+Sì, è banale. Ecco perché le
+
+125
+00:06:45,520 --> 00:06:48,000
+chiamo banali, perché date una
+
+126
+00:06:48,000 --> 00:06:49,720
+proprietà, se sappiamo che ce l'hanno
+
+127
+00:06:49,720 --> 00:06:52,160
+tutte le macchine, rispondiamo sempre di
+
+128
+00:06:52,160 --> 00:06:55,840
+sì. Se la proprietà è banale, nel senso
+
+129
+00:06:55,840 --> 00:06:57,520
+che è vuota, che non ce l'ha nessuna
+
+130
+00:06:57,520 --> 00:06:59,560
+macchina, allora noi rispondiamo sempre
+
+131
+00:06:59,560 --> 00:07:02,319
+di no. Ok? Quindi le proprietà banali,
+
+132
+00:07:02,319 --> 00:07:03,960
+scusatemi,
+
+133
+00:07:03,960 --> 00:07:06,199
+le proprietà banali sono proprietà per
+
+134
+00:07:06,199 --> 00:07:08,199
+le quali è semplicissimo rispondere
+
+135
+00:07:08,199 --> 00:07:09,879
+semplicemente per il fatto che o ce
+
+136
+00:07:09,879 --> 00:07:12,039
+l'hanno tutte o non ce l'hanno nessuna.
+
+137
+00:07:12,039 --> 00:07:17,879
+Ok? Allora, vediamo un paio di esempi.
+
+138
+00:07:17,879 --> 00:07:21,400
+Proprietà uno,
+
+139
+00:07:23,199 --> 00:07:26,639
+l'insieme delle macchine di Touring M
+
+140
+00:07:26,639 --> 00:07:29,039
+tale che M
+
+141
+00:07:29,039 --> 00:07:32,960
+cinque stati. Ok?
+
+142
+00:07:34,160 --> 00:07:35,440
+Questa, per esempio, può essere una
+
+143
+00:07:35,440 --> 00:07:38,919
+proprietà, no? Allora, come questa
+
+144
+00:07:38,919 --> 00:07:40,599
+decidere questa proprietà secondo voi è
+
+145
+00:07:40,599 --> 00:07:43,560
+qualcosa che si può fare o meno?
+
+146
+00:07:43,560 --> 00:07:45,159
+Sì. Cioè, basta che noi andiamo a
+
+147
+00:07:45,159 --> 00:07:47,319
+guardare la codifica della macchina,
+
+148
+00:07:47,319 --> 00:07:49,080
+andiamo a contare quanti sono i suoi
+
+149
+00:07:49,080 --> 00:07:51,000
+stati che ci sta là dentro perché
+
+150
+00:07:51,000 --> 00:07:53,720
+l'abbiamo codificata, no? E se sono
+
+151
+00:07:53,720 --> 00:07:57,560
+cinque rispondiamo sì, se sono
+
+152
+00:07:57,560 --> 00:08:00,039
+diversi da cinque rispondiamo no.
+
+153
+00:08:00,039 --> 00:08:03,120
+oppure questo qua. Quindi questa qui è
+
+154
+00:08:03,120 --> 00:08:06,400
+una proprietà che riguarda la forma, la
+
+155
+00:08:06,400 --> 00:08:08,840
+struttura della macchina, no? Un'altra
+
+156
+00:08:08,840 --> 00:08:11,000
+proprietà potrebbe essere P2 che è
+
+157
+00:08:11,000 --> 00:08:15,720
+l'insieme M dei linguaggi,
+
+158
+00:08:15,720 --> 00:08:18,039
+l'insieme M delle macchine, il cui
+
+159
+00:08:18,039 --> 00:08:19,560
+linguaggio
+
+160
+00:08:19,560 --> 00:08:22,560
+contiene
+
+161
+00:08:22,680 --> 00:08:24,479
+solo
+
+162
+00:08:24,479 --> 00:08:27,479
+stringhe
+
+163
+00:08:28,599 --> 00:08:32,440
+di lunghezza
+
+164
+00:08:32,839 --> 00:08:34,399
+pari.
+
+165
+00:08:34,399 --> 00:08:36,200
+Ok? Questa, per esempio, è un'altra
+
+166
+00:08:36,200 --> 00:08:38,000
+proprietà, ma questa proprietà, a
+
+167
+00:08:38,000 --> 00:08:40,000
+differenza di P1, è una proprietà che
+
+168
+00:08:40,000 --> 00:08:43,599
+riguarda il linguaggio riconosciuto
+
+169
+00:08:43,599 --> 00:08:45,320
+dalla
+
+170
+00:08:45,320 --> 00:08:47,120
+eh
+
+171
+00:08:47,120 --> 00:08:51,000
+dalla macchina, oppure P
+
+172
+00:08:51,000 --> 00:08:54,760
+insieme delle macchine di Turini L M
+
+173
+00:08:54,760 --> 00:08:58,240
+tale che il linguaggio di M è il
+
+174
+00:08:58,240 --> 00:09:00,320
+linguaggio vuoto. La riconosciate questa
+
+175
+00:09:00,320 --> 00:09:03,680
+proprietà? È il linguaggio L. Quindi e
+
+176
+00:09:03,680 --> 00:09:07,160
+lei sostanzialmente era un linguaggio di
+
+177
+00:09:07,160 --> 00:09:09,920
+una proprietà, un linguaggio della
+
+178
+00:09:09,920 --> 00:09:11,640
+proprietà
+
+179
+00:09:11,640 --> 00:09:14,120
+della vuotezza, cioè che questa macchina
+
+180
+00:09:14,120 --> 00:09:17,920
+non accetta assolutamente niente. Ok?
+
+181
+00:09:17,920 --> 00:09:20,120
+Allora,
+
+182
+00:09:20,120 --> 00:09:25,240
+noi questi linguaggi qui, questo qua e
+
+183
+00:09:25,240 --> 00:09:30,720
+questo qua, P2 e P, che riguardano
+
+184
+00:09:30,720 --> 00:09:33,720
+solamente
+
+185
+00:09:34,120 --> 00:09:38,680
+eh il linguaggio, ok? Riconosciuto dalla
+
+186
+00:09:38,680 --> 00:09:41,800
+macchina, le chiamiamo proprietà
+
+187
+00:09:41,800 --> 00:09:43,399
+semantiche,
+
+188
+00:09:43,399 --> 00:09:46,399
+ok?
+
+189
+00:09:46,680 --> 00:09:50,240
+Quindi proprietà
+
+190
+00:09:53,079 --> 00:09:56,079
+semantiche.
+
+191
+00:09:57,959 --> 00:10:00,760
+Quindi le proprietà semantiche sono
+
+192
+00:10:00,760 --> 00:10:04,079
+quelle proprietà di macchine tale per
+
+193
+00:10:04,079 --> 00:10:07,640
+cui viene caratterizzato più che la
+
+194
+00:10:07,640 --> 00:10:09,880
+macchina in sé, il suo numero di stati,
+
+195
+00:10:09,880 --> 00:10:12,640
+il suo modo di funzionare, se si stanca
+
+196
+00:10:12,640 --> 00:10:14,360
+o non si stanca quando fa la
+
+197
+00:10:14,360 --> 00:10:17,640
+computazione. La proprietà semantica è
+
+198
+00:10:17,640 --> 00:10:20,600
+una proprietà che raccoglie al suo
+
+199
+00:10:20,600 --> 00:10:23,880
+interno macchine di touring o le esclude
+
+200
+00:10:23,880 --> 00:10:26,000
+basate esclusivamente sul linguaggio che
+
+201
+00:10:26,000 --> 00:10:28,440
+riconoscono. Ok?
+
+202
+00:10:28,440 --> 00:10:30,920
+Allora, formalmente
+
+203
+00:10:30,920 --> 00:10:33,160
+una proprietà,
+
+204
+00:10:33,160 --> 00:10:35,519
+quindi una
+
+205
+00:10:35,519 --> 00:10:38,519
+proprietà
+
+206
+00:10:38,959 --> 00:10:44,240
+P di macchine
+
+207
+00:10:46,000 --> 00:10:49,639
+si dice
+
+208
+00:10:49,639 --> 00:10:52,639
+semantica
+
+209
+00:10:53,399 --> 00:10:55,480
+se
+
+210
+00:10:55,480 --> 00:11:02,040
+per ogni coppia di macchine m1 ed m2
+
+211
+00:11:02,040 --> 00:11:06,600
+tale che il linguaggio di m1 è uguale al
+
+212
+00:11:06,600 --> 00:11:09,640
+linguaggio di m2.
+
+213
+00:11:09,640 --> 00:11:11,200
+[Musica]
+
+214
+00:11:11,200 --> 00:11:12,880
+Se
+
+215
+00:11:12,880 --> 00:11:14,800
+m1
+
+216
+00:11:14,800 --> 00:11:19,519
+appartiene a p, allora
+
+217
+00:11:19,519 --> 00:11:23,200
+m2 appartiene a p. Ok? Cioè questa è
+
+218
+00:11:23,200 --> 00:11:25,160
+semplicemente una definizione formale
+
+219
+00:11:25,160 --> 00:11:27,399
+del fatto che l'appartenenza o meno di
+
+220
+00:11:27,399 --> 00:11:30,240
+macchine ha una proprietà semantica P è
+
+221
+00:11:30,240 --> 00:11:33,040
+caratterizzata solamente dal linguaggio
+
+222
+00:11:33,040 --> 00:11:35,399
+che riconosce, non da quanto tempo ci
+
+223
+00:11:35,399 --> 00:11:37,959
+mette, non se è deterministica o non
+
+224
+00:11:37,959 --> 00:11:40,839
+deterministica, non dal numero di stati,
+
+225
+00:11:40,839 --> 00:11:43,320
+eccetera. Ok? Nel momento in cui due
+
+226
+00:11:43,320 --> 00:11:45,920
+macchine distinte, che magari lavorano
+
+227
+00:11:45,920 --> 00:11:48,040
+in modo differente, una deterministica e
+
+228
+00:11:48,040 --> 00:11:50,519
+l'altra non deterministica, se hanno lo
+
+229
+00:11:50,519 --> 00:11:52,880
+stesso linguaggio, loro faranno
+
+230
+00:11:52,880 --> 00:11:55,120
+contemporaneamente parte di una propria
+
+231
+00:11:55,120 --> 00:11:57,120
+semantica o contemporaneamente ne
+
+232
+00:11:57,120 --> 00:11:59,320
+saranno fuori. Ok? Perché quelle che
+
+233
+00:11:59,320 --> 00:12:01,079
+caratterizza l'appartenenza a una
+
+234
+00:12:01,079 --> 00:12:03,360
+proprietà semantica
+
+235
+00:12:03,360 --> 00:12:05,959
+di una certa macchina è solamente il suo
+
+236
+00:12:05,959 --> 00:12:09,279
+linguaggio. Per questa ragione le
+
+237
+00:12:09,279 --> 00:12:12,360
+proprietà semantiche le chiamiamo anche
+
+238
+00:12:12,360 --> 00:12:16,199
+proprietà di linguaggi.
+
+239
+00:12:18,600 --> 00:12:21,040
+Ok? Allora, vi sto facendo questa
+
+240
+00:12:21,040 --> 00:12:24,440
+introduzione perché questo topic delle
+
+241
+00:12:24,440 --> 00:12:27,720
+proprietà dei linguaggi, proprietà delle
+
+242
+00:12:27,720 --> 00:12:30,639
+semantiche eccetera, su libri diversi
+
+243
+00:12:30,639 --> 00:12:33,160
+viene trattato in maniera diversa. Tipo
+
+244
+00:12:33,160 --> 00:12:35,079
+sugli appunti di Calautti, se
+
+245
+00:12:35,079 --> 00:12:38,279
+guarderete, lui c'ha usa le definizioni
+
+246
+00:12:38,279 --> 00:12:40,399
+di proprietà semantiche. Se leggete il
+
+247
+00:12:40,399 --> 00:12:42,800
+libro di Offcroft, loro parlano di
+
+248
+00:12:42,800 --> 00:12:45,360
+proprietà di linguaggi. Allora, questo è
+
+249
+00:12:45,360 --> 00:12:48,880
+il legame. Il legame è che le proprietà
+
+250
+00:12:48,880 --> 00:12:51,600
+semantiche, penso che pure sul testo di
+
+251
+00:12:51,600 --> 00:12:54,480
+Sipser parli di proprietà semantiche.
+
+252
+00:12:54,480 --> 00:12:56,760
+Quando si parla di proprietà semantiche
+
+253
+00:12:56,760 --> 00:12:59,320
+su quei testi è la stessa cosa che sul
+
+254
+00:12:59,320 --> 00:13:01,320
+libro di Hopcroft si chiamano proprietà
+
+255
+00:13:01,320 --> 00:13:04,519
+di linguaggi. Ok? Che cos'è una
+
+256
+00:13:04,519 --> 00:13:08,320
+proprietà di un linguaggio?
+
+257
+00:13:08,639 --> 00:13:11,600
+proprietà
+
+258
+00:13:11,600 --> 00:13:15,680
+dei linguaggi
+
+259
+00:13:17,600 --> 00:13:20,600
+re
+
+260
+00:13:21,680 --> 00:13:25,000
+una proprietà
+
+261
+00:13:25,199 --> 00:13:28,959
+una proprietà
+
+262
+00:13:30,720 --> 00:13:34,880
+P di linguaggio.
+
+263
+00:13:37,560 --> 00:13:42,680
+R e è semplicemente
+
+264
+00:13:45,040 --> 00:13:46,760
+un sottoinsieme
+
+265
+00:13:46,760 --> 00:13:49,920
+di R.
+
+266
+00:13:52,720 --> 00:13:55,199
+Quindi P è una proprietà di linguaggi se
+
+267
+00:13:55,199 --> 00:13:59,920
+è un sottoinsieme di R. Ok?
+
+268
+00:14:00,800 --> 00:14:03,399
+Come facciamo ad avere Ecco, ora c'è la
+
+269
+00:14:03,399 --> 00:14:05,639
+connessione fra proprietà di linguaggi e
+
+270
+00:14:05,639 --> 00:14:09,720
+proprietà semantiche che eh ne parla poi
+
+271
+00:14:09,720 --> 00:14:11,720
+sul libro di Hopcroft viene trattato in
+
+272
+00:14:11,720 --> 00:14:13,560
+questo modo. Se noi abbiamo che un
+
+273
+00:14:13,560 --> 00:14:16,800
+insieme P è un insieme di linguaggi,
+
+274
+00:14:16,800 --> 00:14:18,320
+cioè non è che noi possiamo andare a
+
+275
+00:14:18,320 --> 00:14:20,360
+ficcare i linguaggi dentro Pché non
+
+276
+00:14:20,360 --> 00:14:22,839
+abbiamo modo di rappresentarli. Ok?
+
+277
+00:14:22,839 --> 00:14:24,839
+Quello che noi possiamo fare è che un
+
+278
+00:14:24,839 --> 00:14:26,880
+linguaggio viene rappresentato, siccome
+
+279
+00:14:26,880 --> 00:14:29,839
+stiamo parlando di linguaggi di RE,
+
+280
+00:14:29,839 --> 00:14:33,480
+possiamo identificarlo, descriverlo in
+
+281
+00:14:33,480 --> 00:14:35,880
+maniera compatta tramite la macchina di
+
+282
+00:14:35,880 --> 00:14:38,079
+Turing che lo riconosce. Quindi ecco
+
+283
+00:14:38,079 --> 00:14:40,000
+perché c'è la connessione fra proprietà
+
+284
+00:14:40,000 --> 00:14:43,360
+di linguaggi e proprietà semantiche,
+
+285
+00:14:43,360 --> 00:14:45,320
+perché
+
+286
+00:14:45,320 --> 00:14:49,399
+da un lato una proprietà di linguaggi è
+
+287
+00:14:49,399 --> 00:14:50,920
+l'insieme
+
+288
+00:14:50,920 --> 00:14:53,959
+delle macchine di Touring. Facciamo
+
+289
+00:14:53,959 --> 00:14:56,959
+così.
+
+290
+00:14:57,399 --> 00:15:02,040
+M Allora, supponiamo che P sia una
+
+291
+00:15:02,040 --> 00:15:06,920
+proprietà di linguaggi, ok?
+
+292
+00:15:15,959 --> 00:15:19,360
+Il linguaggio della proprietà P è
+
+293
+00:15:19,360 --> 00:15:22,160
+semplicemente l'insieme delle macchine
+
+294
+00:15:22,160 --> 00:15:26,079
+di Touring L
+
+295
+00:15:26,079 --> 00:15:28,800
+M tale per cui il linguaggio di M
+
+296
+00:15:28,800 --> 00:15:33,440
+appartiene a P. Ok?
+
+297
+00:15:34,360 --> 00:15:37,279
+Ecco perché noi abbiamo il collegamento
+
+298
+00:15:37,279 --> 00:15:39,720
+fra proprietà semantiche e proprietà di
+
+299
+00:15:39,720 --> 00:15:41,360
+linguaggi, perché le proprietà
+
+300
+00:15:41,360 --> 00:15:43,240
+semantiche sono anche quelle insieme di
+
+301
+00:15:43,240 --> 00:15:46,079
+macchine. Da un lato abbiamo un insieme
+
+302
+00:15:46,079 --> 00:15:48,360
+di macchine il cui linguaggio sia
+
+303
+00:15:48,360 --> 00:15:50,079
+caratterizzato in un certo modo.
+
+304
+00:15:50,079 --> 00:15:52,240
+Dall'altro abbiamo l'insieme di macchine
+
+305
+00:15:52,240 --> 00:15:53,839
+il cui linguaggio appartiene alla
+
+306
+00:15:53,839 --> 00:15:55,480
+proprietà di P. Ecco, quindi si
+
+307
+00:15:55,480 --> 00:15:57,720
+sovrappongono i concetti, cioè proprietà
+
+308
+00:15:57,720 --> 00:16:01,000
+di linguaggi e proprietà semantiche sono
+
+309
+00:16:01,000 --> 00:16:04,000
+la stessa cosa. Io preferisco parlare di
+
+310
+00:16:04,000 --> 00:16:06,160
+proprietà di linguaggi perché è più
+
+311
+00:16:06,160 --> 00:16:08,800
+semplice ragionarci, tutto quanto. Ok?
+
+312
+00:16:08,800 --> 00:16:10,160
+Adesso in delle dimostrazioni che
+
+313
+00:16:10,160 --> 00:16:12,600
+vedremo stamattina vedrete che farò più
+
+314
+00:16:12,600 --> 00:16:14,839
+spesso riferimento alle proprietà dei
+
+315
+00:16:14,839 --> 00:16:16,360
+linguaggi che non alle proprietà
+
+316
+00:16:16,360 --> 00:16:18,199
+semantiche, ok? Però sono
+
+317
+00:16:18,199 --> 00:16:25,120
+sostanzialmente la stessa cosa. Ehm Ok.
+
+318
+00:16:27,319 --> 00:16:30,160
+Alri. Allora, una cosa interessante,
+
+319
+00:16:30,160 --> 00:16:32,319
+quindi noi abbiamo proprietà di
+
+320
+00:16:32,319 --> 00:16:34,360
+macchine, proprietà semantiche e le
+
+321
+00:16:34,360 --> 00:16:36,920
+proprietà semantiche sono le proprietà
+
+322
+00:16:36,920 --> 00:16:38,959
+di linguaggi, quindi sono insiemi di
+
+323
+00:16:38,959 --> 00:16:42,199
+linguaggi rappresentati come tramite
+
+324
+00:16:42,199 --> 00:16:43,639
+l'insieme dei codici di macchina di
+
+325
+00:16:43,639 --> 00:16:45,600
+Touring che riconoscono i linguaggi di
+
+326
+00:16:45,600 --> 00:16:47,680
+quella proprietà. Anche per le proprietà
+
+327
+00:16:47,680 --> 00:16:51,399
+di linguaggi abbiamo le proprietà
+
+328
+00:16:51,399 --> 00:16:54,199
+banali. Ok?
+
+329
+00:16:54,199 --> 00:16:58,399
+una proprietà P,
+
+330
+00:17:01,639 --> 00:17:04,959
+una proprietà
+
+331
+00:17:04,959 --> 00:17:06,679
+P
+
+332
+00:17:06,679 --> 00:17:10,520
+di linguaggi
+
+333
+00:17:11,439 --> 00:17:15,280
+di re è
+
+334
+00:17:15,280 --> 00:17:18,280
+banale
+
+335
+00:17:21,280 --> 00:17:23,439
+Se
+
+336
+00:17:23,439 --> 00:17:26,360
+o P è l'insieme vuoto, quindi nessun
+
+337
+00:17:26,360 --> 00:17:30,480
+linguaggio ha quella proprietà, o è
+
+338
+00:17:30,480 --> 00:17:33,120
+uguale a r, cioè tutti i linguaggi hanno
+
+339
+00:17:33,120 --> 00:17:34,360
+quella proprietà, ok? Quindi è
+
+340
+00:17:34,360 --> 00:17:36,280
+l'estensione della definizione di
+
+341
+00:17:36,280 --> 00:17:39,360
+proprietà banale per le macchine, la
+
+342
+00:17:39,360 --> 00:17:41,520
+trasportiamo su proprietà banale dei
+
+343
+00:17:41,520 --> 00:17:44,200
+linguaggi, ok? Quindi una proprietà è
+
+344
+00:17:44,200 --> 00:17:46,720
+banale, una proprietà di linguaggi è
+
+345
+00:17:46,720 --> 00:17:48,919
+banale se o tutti i linguaggi ce
+
+346
+00:17:48,919 --> 00:17:51,120
+l'hanno, quindi tutti i linguaggi fanno
+
+347
+00:17:51,120 --> 00:17:53,360
+parte di P e quindi tutto il resto sta
+
+348
+00:17:53,360 --> 00:17:56,320
+dentro P o se P è vuoto, cioè non ce
+
+349
+00:17:56,320 --> 00:18:00,280
+l'ha nessuno. Ok? In quel caso decidere
+
+350
+00:18:00,280 --> 00:18:03,440
+il linguaggio della proprietà P
+
+351
+00:18:03,440 --> 00:18:06,159
+significa stabilire se dato una modifica
+
+352
+00:18:06,159 --> 00:18:07,799
+di macchina e Touring il linguaggio
+
+353
+00:18:07,799 --> 00:18:09,080
+riconosciuto da quella macchina di
+
+354
+00:18:09,080 --> 00:18:11,600
+Touring fa parte della proprietà o meno.
+
+355
+00:18:11,600 --> 00:18:13,640
+Ok?
+
+356
+00:18:13,640 --> 00:18:17,559
+ad esempio per il linguaggio L
+
+357
+00:18:17,559 --> 00:18:21,559
+e sarebbe la proprietà del di essere il
+
+358
+00:18:21,559 --> 00:18:25,679
+linguaggio vuoto. Ok? Quindi stabilire
+
+359
+00:18:25,679 --> 00:18:29,000
+se una macchina appartiene a e le è
+
+360
+00:18:29,000 --> 00:18:32,120
+essenzialmente stabilire se il
+
+361
+00:18:32,120 --> 00:18:34,559
+linguaggio riconosciuto da quella
+
+362
+00:18:34,559 --> 00:18:36,799
+macchina ha la proprietà di essere il
+
+363
+00:18:36,799 --> 00:18:38,760
+linguaggio vuoto. Ok? Questa è la
+
+364
+00:18:38,760 --> 00:18:40,799
+connessione.
+
+365
+00:18:40,799 --> 00:18:46,400
+Noi avevamo visto che L ed LNE
+
+366
+00:18:47,039 --> 00:18:51,600
+e sono dei linguaggi indecidibili, ma
+
+367
+00:18:51,600 --> 00:18:54,000
+quei linguaggi indecidibili sono in
+
+368
+00:18:54,000 --> 00:18:56,080
+realtà un caso particolare di un
+
+369
+00:18:56,080 --> 00:18:59,080
+risultato molto più generale che è il
+
+370
+00:18:59,080 --> 00:19:03,559
+seguente teorema.
+
+371
+00:19:09,919 --> 00:19:13,370
+Questo è il teorema di Rise
+
+372
+00:19:13,370 --> 00:19:16,460
+[Musica]
+
+373
+00:19:18,280 --> 00:19:21,600
+che dice questo: ogni
+
+374
+00:19:21,600 --> 00:19:24,600
+proprietà
+
+375
+00:19:27,640 --> 00:19:31,440
+non banale
+
+376
+00:19:32,520 --> 00:19:37,080
+dei linguaggi G
+
+377
+00:19:39,159 --> 00:19:44,600
+R è è indecidibile.
+
+378
+00:19:47,480 --> 00:19:48,960
+Ok?
+
+379
+00:19:48,960 --> 00:19:50,919
+Cioè questo questo risultato ci dice che
+
+380
+00:19:50,919 --> 00:19:53,559
+qualsiasi sia un linguaggio che andiamo
+
+381
+00:19:53,559 --> 00:19:56,640
+a considerare che si può configurare
+
+382
+00:19:56,640 --> 00:19:59,280
+come un linguaggio di una proprietà non
+
+383
+00:19:59,280 --> 00:20:02,159
+banale, per questo teorema noi sappiamo
+
+384
+00:20:02,159 --> 00:20:03,880
+che è indecidibile, non dobbiamo nemmeno
+
+385
+00:20:03,880 --> 00:20:07,080
+andare a fare riduzioni o dimostrare
+
+386
+00:20:07,080 --> 00:20:09,760
+chissà che cosa. Se il linguaggio che
+
+387
+00:20:09,760 --> 00:20:12,760
+stiamo considerando è una proprietà non
+
+388
+00:20:12,760 --> 00:20:15,320
+banale, allora per il teorema di Rise è
+
+389
+00:20:15,320 --> 00:20:17,559
+indecisibile. Ok?
+
+390
+00:20:17,559 --> 00:20:19,120
+Adesso però dobbiamo dimostrare questo
+
+391
+00:20:19,120 --> 00:20:22,520
+teorema. Ok?
+
+392
+00:20:22,520 --> 00:20:26,480
+Eh, spazio ne abbiamo
+
+393
+00:20:28,240 --> 00:20:30,120
+più o meno.
+
+394
+00:20:30,120 --> 00:20:34,600
+Ok, dimostrazione.
+
+395
+00:20:36,200 --> 00:20:40,600
+Quindi P sia P
+
+396
+00:20:40,600 --> 00:20:42,480
+sia P
+
+397
+00:20:42,480 --> 00:20:46,000
+una proprietà
+
+398
+00:20:46,039 --> 00:20:47,700
+una proprietà
+
+399
+00:20:47,700 --> 00:20:49,760
+[Musica]
+
+400
+00:20:49,760 --> 00:20:53,120
+non banale
+
+401
+00:20:53,360 --> 00:20:57,960
+di R dei linguaggi di R. Ok?
+
+402
+00:20:57,960 --> 00:21:01,799
+Ci sono due possibili casi,
+
+403
+00:21:01,799 --> 00:21:05,520
+quindi due casi.
+
+404
+00:21:05,520 --> 00:21:07,640
+Caso A,
+
+405
+00:21:07,640 --> 00:21:13,080
+il linguaggio vuoto non appartiene a P.
+
+406
+00:21:14,320 --> 00:21:16,360
+Caso B,
+
+407
+00:21:16,360 --> 00:21:20,960
+il linguaggio vuoto appartiene a P. Ok?
+
+408
+00:21:20,960 --> 00:21:23,440
+Quindi sono le due possibili scenarie,
+
+409
+00:21:23,440 --> 00:21:26,520
+ok? O il vuoto sta dentro P o il vuoto
+
+410
+00:21:26,520 --> 00:21:31,480
+non sta dentro P. Partiamo da A.
+
+411
+00:21:31,480 --> 00:21:34,480
+Ok?
+
+412
+00:21:40,919 --> 00:21:47,200
+Se P è una proprietà non banale di RE,
+
+413
+00:21:47,200 --> 00:21:49,919
+quindi abbiamo che P è un sottoinsieme
+
+414
+00:21:49,919 --> 00:21:54,840
+di R, ok? Noi abbiamo che P è una
+
+415
+00:21:54,840 --> 00:21:58,240
+proprietà non banale
+
+416
+00:21:58,240 --> 00:22:02,360
+da cui P non può essere vuota, ok? Cioè
+
+417
+00:22:02,360 --> 00:22:05,240
+ci deve essere qualcosa di dentro.
+
+418
+00:22:05,240 --> 00:22:08,559
+E siccome il linguaggio vuoto non sta
+
+419
+00:22:08,559 --> 00:22:10,600
+dentro P, lo stiamo assumendo per il
+
+420
+00:22:10,600 --> 00:22:13,000
+caso A, che il linguaggio vuoto non sta
+
+421
+00:22:13,000 --> 00:22:17,120
+dentro P, allora dentro P deve starci un
+
+422
+00:22:17,120 --> 00:22:20,760
+linguaggio Lorsivamente
+
+423
+00:22:20,760 --> 00:22:23,360
+numerabile perché P è un sottinsieme di
+
+424
+00:22:23,360 --> 00:22:26,200
+RE che sia diverso dal linguaggio vuoto.
+
+425
+00:22:26,200 --> 00:22:30,679
+Ok? Quindi esiste
+
+426
+00:22:31,440 --> 00:22:34,720
+un linguaggio
+
+427
+00:22:37,080 --> 00:22:45,039
+L appartenente ad R tale che L Sì,
+
+428
+00:22:45,039 --> 00:22:50,760
+L è diverso da vuoto e L appartiene a P.
+
+429
+00:22:50,760 --> 00:22:52,360
+Ok?
+
+430
+00:22:52,360 --> 00:22:53,960
+È chiaro?
+
+431
+00:22:53,960 --> 00:22:56,960
+Bene.
+
+432
+00:22:58,679 --> 00:23:02,480
+Ah, lo spazio è già finito. Ok.
+
+433
+00:23:02,480 --> 00:23:07,840
+Eh. Ok. Allora, se L è un linguaggio di
+
+434
+00:23:07,840 --> 00:23:09,559
+R
+
+435
+00:23:09,559 --> 00:23:12,080
+ed Linguaggio
+
+436
+00:23:12,080 --> 00:23:13,600
+vuoto,
+
+437
+00:23:13,600 --> 00:23:16,039
+abbiamo che esiste una macchina di
+
+438
+00:23:16,039 --> 00:23:19,760
+Touring ML che accetta il linguaggio L.
+
+439
+00:23:19,760 --> 00:23:22,279
+Ok? Lo sappiamo dal fatto che L
+
+440
+00:23:22,279 --> 00:23:27,440
+appartiene a R, quindi esiste
+
+441
+00:23:27,720 --> 00:23:31,799
+esiste m serve spazio. Andiamo all'altra
+
+442
+00:23:31,799 --> 00:23:34,799
+pagina.
+
+443
+00:23:38,880 --> 00:23:42,559
+Quindi esiste
+
+444
+00:23:43,039 --> 00:23:46,400
+una macchina
+
+445
+00:23:47,880 --> 00:23:49,840
+ML
+
+446
+00:23:49,840 --> 00:23:51,880
+tale che
+
+447
+00:23:51,880 --> 00:23:57,360
+il linguaggio di ML è uguale ad L che è
+
+448
+00:23:57,360 --> 00:24:02,760
+diverso da vuoto. Ok?
+
+449
+00:24:03,600 --> 00:24:05,919
+È chiaro? Quindi fino fino ad ora
+
+450
+00:24:05,919 --> 00:24:07,360
+abbiamo fatto solamente delle
+
+451
+00:24:07,360 --> 00:24:10,279
+considerazioni su cosa ci sta dentro P.
+
+452
+00:24:10,279 --> 00:24:11,799
+Abbiamo detto che dentro P stiamo
+
+453
+00:24:11,799 --> 00:24:14,000
+assumendo che il linguaggio vuoto non ci
+
+454
+00:24:14,000 --> 00:24:16,840
+sta, però P è una proprietà non banale,
+
+455
+00:24:16,840 --> 00:24:20,640
+di conseguenza deve contenere qualcosa.
+
+456
+00:24:20,640 --> 00:24:22,760
+Questo qualcosa che contiene deve essere
+
+457
+00:24:22,760 --> 00:24:25,120
+un linguaggio L, ma siccome P è una
+
+458
+00:24:25,120 --> 00:24:26,840
+proprietà dei linguaggi ricorsivamente
+
+459
+00:24:26,840 --> 00:24:28,919
+numerabili, L deve essere ricorsivamente
+
+460
+00:24:28,919 --> 00:24:32,679
+numerabile da cui esiste una macchina ML
+
+461
+00:24:32,679 --> 00:24:38,120
+che riconosce L in particolare L è vuoto
+
+462
+00:24:38,120 --> 00:24:41,399
+perché essendo che L appartiene a P e P
+
+463
+00:24:41,399 --> 00:24:43,000
+non contiene un linguaggio vuoto, deve
+
+464
+00:24:43,000 --> 00:24:45,240
+essere per forza diverso da vuoto. Ok?
+
+465
+00:24:45,240 --> 00:24:46,799
+Chiaro?
+
+466
+00:24:46,799 --> 00:24:50,799
+A questo punto noi possiamo dimostrare
+
+467
+00:24:50,799 --> 00:24:52,520
+l'indecidibilità
+
+468
+00:24:52,520 --> 00:24:54,320
+del linguaggio
+
+469
+00:24:54,320 --> 00:24:59,600
+LP della proprietà tramite una riduzione
+
+470
+00:24:59,600 --> 00:25:04,399
+da Lu. Ok? Allora, noi abbiamo
+
+471
+00:25:04,399 --> 00:25:07,240
+LP è il linguaggio della proprietà che è
+
+472
+00:25:07,240 --> 00:25:09,159
+semplice, l'insieme delle macchine di
+
+473
+00:25:09,159 --> 00:25:13,120
+Touring M tale che il linguaggio di M
+
+474
+00:25:13,120 --> 00:25:17,960
+appartiene alla proprietà P. Ok?
+
+475
+00:25:17,960 --> 00:25:20,440
+Quello che facciamo ora è una riduzione
+
+476
+00:25:20,440 --> 00:25:27,520
+da LU a LP. Ok? Che cos'è un'istanza per
+
+477
+00:25:27,520 --> 00:25:30,200
+LU?
+
+478
+00:25:30,200 --> 00:25:33,880
+Una coppia
+macchina stringa.
+Ma stringa.
+
+479
+00:25:33,880 --> 00:25:39,520
+Ok. Che cos'è un'istanza per il P?
+È una
+
+480
+00:25:39,520 --> 00:25:41,640
+macchina. Gli diamo un nome diverso per
+
+481
+00:25:41,640 --> 00:25:46,679
+non confonderci. Ok. Quindi noi da
+
+482
+00:25:46,679 --> 00:25:50,120
+MW tramite la funzione f vogliamo
+
+483
+00:25:50,120 --> 00:25:53,159
+costruire una macchina n che è il
+
+484
+00:25:53,159 --> 00:25:58,919
+trasformato secondo F di M. Ok?
+
+485
+00:25:58,919 --> 00:26:01,919
+Alright.
+
+486
+00:26:02,120 --> 00:26:04,039
+Allora, come abbiamo visto in altre
+
+487
+00:26:04,039 --> 00:26:05,960
+riduzioni, quello che dobbiamo fare è
+
+488
+00:26:05,960 --> 00:26:09,760
+partire dalla coppia MW e tirare fuori,
+
+489
+00:26:09,760 --> 00:26:14,000
+inventarci sta macchina N, tale per cui
+
+490
+00:26:14,000 --> 00:26:16,159
+N
+
+491
+00:26:16,159 --> 00:26:20,640
+voi là non vedete, ok? Così vedete
+
+492
+00:26:20,640 --> 00:26:25,520
+N deve essere una macchina che ha la
+
+493
+00:26:25,520 --> 00:26:26,760
+deve essere una macchina in cui
+
+494
+00:26:26,760 --> 00:26:29,600
+linguaggia la proprietà P se è solo se M
+
+495
+00:26:29,600 --> 00:26:33,159
+eccet W. Ok? Questa è l'idea. Allora, la
+
+496
+00:26:33,159 --> 00:26:37,080
+riduzione si può fare in questo modo.
+
+497
+00:26:37,080 --> 00:26:39,919
+Abbiamo le nostre solite macchine
+
+498
+00:26:39,919 --> 00:26:43,399
+giganti in questa N che è il trasformato
+
+499
+00:26:43,399 --> 00:26:45,159
+di M
+
+500
+00:26:45,159 --> 00:26:48,679
+e funziona così.
+
+501
+00:26:48,679 --> 00:26:53,919
+Come prima cosa N simula
+
+502
+00:26:53,919 --> 00:26:57,360
+M su w, cioè proprio lo esegue, ok?
+
+503
+00:26:57,360 --> 00:27:00,919
+esegue m su w
+
+504
+00:27:00,919 --> 00:27:06,159
+nel momento in cui m
+
+505
+00:27:10,320 --> 00:27:13,320
+accetta
+
+506
+00:27:14,279 --> 00:27:20,159
+l'accettazione da parte di m su w
+
+507
+00:27:20,480 --> 00:27:23,480
+M
+
+508
+00:27:27,000 --> 00:27:30,720
+questa è NFM
+
+509
+00:27:30,880 --> 00:27:32,960
+dà
+
+510
+00:27:32,960 --> 00:27:37,440
+il segnale di avvio a un altro pezzo di
+
+511
+00:27:37,440 --> 00:27:41,159
+questa macchina che sta dentro che è ML,
+
+512
+00:27:41,159 --> 00:27:43,960
+che è proprio quella ML che abbiamo
+
+513
+00:27:43,960 --> 00:27:46,960
+menzionato prima. Eh, è esattamente
+
+514
+00:27:46,960 --> 00:27:50,399
+questa qui, eh.
+
+515
+00:27:50,399 --> 00:27:53,360
+ed ml viene eseguito sull'input della
+
+516
+00:27:53,360 --> 00:27:54,880
+macchina,
+
+517
+00:27:54,880 --> 00:27:57,399
+ok? Dopodiché restituisce la stessa
+
+518
+00:27:57,399 --> 00:27:59,720
+cosa.
+
+519
+00:27:59,720 --> 00:28:02,320
+Chiaro? Quindi, come funziona la
+
+520
+00:28:02,320 --> 00:28:06,039
+macchina N? La macchina N come prima
+
+521
+00:28:06,039 --> 00:28:09,320
+cosa esegue M su w.
+
+522
+00:28:09,320 --> 00:28:13,159
+Semmai m su w arriva a fermarsi a dire
+
+523
+00:28:13,159 --> 00:28:16,960
+sì, parte la computazione di ML, che è
+
+524
+00:28:16,960 --> 00:28:18,440
+proprio quell ML che abbiamo detto
+
+525
+00:28:18,440 --> 00:28:21,840
+prima, eh, non è un'altra, sull'input X
+
+526
+00:28:21,840 --> 00:28:25,120
+della macchina N. Dopodiché la macchina
+
+527
+00:28:25,120 --> 00:28:29,480
+n dà la stessa risposta di ml su X. Ok?
+
+528
+00:28:29,480 --> 00:28:31,679
+Questo è il comportamento di questa
+
+529
+00:28:31,679 --> 00:28:34,200
+macchina. Dobbiamo ora dimostrare che
+
+530
+00:28:34,200 --> 00:28:36,880
+questa è effettivamente una riduzione da
+
+531
+00:28:36,880 --> 00:28:39,840
+lu ad LP. Ok.
+
+532
+00:28:39,840 --> 00:28:41,880
+Alright.
+
+533
+00:28:41,880 --> 00:28:45,640
+Primo verso della riduzione.
+
+534
+00:28:45,640 --> 00:28:48,640
+Supponiamo
+
+535
+00:28:49,519 --> 00:28:51,360
+che
+
+536
+00:28:51,360 --> 00:28:53,519
+MW
+
+537
+00:28:53,519 --> 00:28:58,720
+appartiene ad Luu, da cui
+
+538
+00:29:00,600 --> 00:29:03,799
+M accetta w.
+
+539
+00:29:03,799 --> 00:29:06,799
+Ok.
+
+540
+00:29:08,480 --> 00:29:12,120
+Allora, guardate questa macchina.
+
+541
+00:29:12,120 --> 00:29:19,960
+Ok? Che cosa succede se M accetta w?
+
+542
+00:29:23,760 --> 00:29:26,000
+Sì. Allora, guardate, questa è una cosa
+
+543
+00:29:26,000 --> 00:29:29,960
+importante. Dentro la macchina N
+
+544
+00:29:29,960 --> 00:29:32,840
+M M di Milano, dentro la macchina
+
+545
+00:29:32,840 --> 00:29:35,600
+Napoli, la macchina Milano
+
+546
+00:29:35,600 --> 00:29:40,279
+viene sempre eseguita su W. Quindi, se
+
+547
+00:29:40,279 --> 00:29:43,279
+la riduzione ha trasformato una coppia
+
+548
+00:29:43,279 --> 00:29:47,240
+MW in quella N particolare, quel
+
+549
+00:29:47,240 --> 00:29:50,240
+pezzariello della macchina N accetta
+
+550
+00:29:50,240 --> 00:29:53,240
+sempre perché W sta proprio infilata
+
+551
+00:29:53,240 --> 00:29:56,480
+nella funzione di transizione di N. Ok?
+
+552
+00:29:56,480 --> 00:29:58,679
+Di conseguenza noi avremo che
+
+553
+00:29:58,679 --> 00:30:02,120
+indipendentemente dall'input x la
+
+554
+00:30:02,120 --> 00:30:05,600
+macchina n sua prima fase arriverà
+
+555
+00:30:05,600 --> 00:30:08,840
+sempre ad aver visto l'accettazione di m
+
+556
+00:30:08,840 --> 00:30:14,720
+su w. A quel punto che fa? si esegue ML
+
+557
+00:30:14,720 --> 00:30:18,640
+su X e fa la stessa cosa. Di conseguenza
+
+558
+00:30:18,640 --> 00:30:23,720
+il linguaggio di N è
+
+559
+00:30:24,960 --> 00:30:28,919
+il linguaggio di N è
+
+560
+00:30:28,919 --> 00:30:31,840
+L.
+
+561
+00:30:31,840 --> 00:30:33,399
+L.
+
+562
+00:30:33,399 --> 00:30:38,120
+Sì, perché perché la parte iniziale
+
+563
+00:30:38,120 --> 00:30:40,720
+della macchina fa sempre la stessa cosa
+
+564
+00:30:40,720 --> 00:30:44,360
+perché m e w la funzione f li ha
+
+565
+00:30:44,360 --> 00:30:47,360
+schiaffati dentro così come sono. Quindi
+
+566
+00:30:47,360 --> 00:30:49,080
+non è che può succedere qualcosa di
+
+567
+00:30:49,080 --> 00:30:51,840
+strano. Nella fase iniziale la macchina
+
+568
+00:30:51,840 --> 00:30:55,880
+n simula m su w indipendentemente da x.
+
+569
+00:30:55,880 --> 00:30:59,760
+Quindi, nel caso in cui M accetti w, il
+
+570
+00:30:59,760 --> 00:31:02,440
+primo pezzo di esecuzione è determinato,
+
+571
+00:31:02,440 --> 00:31:06,360
+fa sempre quello. A quel punto N si
+
+572
+00:31:06,360 --> 00:31:11,480
+comporta come ML e quindi accetta,
+
+573
+00:31:11,480 --> 00:31:16,320
+riconosce lo stesso linguaggio. Ok?
+
+574
+00:31:16,320 --> 00:31:19,320
+Segue
+
+575
+00:31:20,559 --> 00:31:25,760
+che il linguaggio di N è L.
+
+576
+00:31:25,760 --> 00:31:30,679
+Ma L abbiamo supposto essere il
+
+577
+00:31:30,679 --> 00:31:35,039
+linguaggio un linguaggio di P,
+
+578
+00:31:35,039 --> 00:31:38,039
+quindi
+
+579
+00:31:38,120 --> 00:31:42,440
+N appartiene a LP. Ok?
+
+580
+00:31:42,440 --> 00:31:47,559
+Quindi se partiamo da un'istanza Sì MW
+
+581
+00:31:47,559 --> 00:31:53,120
+di Lu, la macchina N sputata fuori dalla
+
+582
+00:31:53,120 --> 00:31:55,960
+funzione di transizione F è una macchina
+
+583
+00:31:55,960 --> 00:31:58,360
+il cui linguaggio appartiene alla
+
+584
+00:31:58,360 --> 00:32:00,880
+proprietà P. Ok? Abbiamo trasformato
+
+585
+00:32:00,880 --> 00:32:04,279
+unistanza s in un'istanza sì. Chiaro?
+
+586
+00:32:04,279 --> 00:32:08,399
+Dobbiamo adesso vedere. Sì, prego.
+
+587
+00:32:08,540 --> 00:32:10,240
+[Musica]
+
+588
+00:32:10,240 --> 00:32:12,559
+Ma FDM
+
+589
+00:32:12,559 --> 00:32:17,039
+FDM Ah, qua hai sbagliato. FM
+FDM. Sì,
+
+590
+00:32:17,039 --> 00:32:20,720
+qui ho sbagliato. Eh,
+
+591
+00:32:26,720 --> 00:32:29,760
+sì, perché prende tutto l'input. Ok, lì
+
+592
+00:32:29,760 --> 00:32:33,440
+mi ero perso un pezzetto. Ok.
+
+593
+00:32:33,440 --> 00:32:36,440
+Alright.
+
+594
+00:32:38,559 --> 00:32:40,440
+Altro verso della dimostrazione.
+
+595
+00:32:40,440 --> 00:32:43,440
+Supponiamo
+
+596
+00:32:45,720 --> 00:32:47,320
+che
+
+597
+00:32:47,320 --> 00:32:50,320
+MW
+
+598
+00:32:50,360 --> 00:32:55,720
+non appartenga a Lu, da cui
+
+599
+00:32:55,720 --> 00:33:01,159
+M non accetta W. Ok,
+
+600
+00:33:01,639 --> 00:33:03,919
+riandiamo a guardare il nostro
+
+601
+00:33:03,919 --> 00:33:06,919
+disegnino.
+
+602
+00:33:07,159 --> 00:33:10,480
+Se M
+
+603
+00:33:10,480 --> 00:33:12,519
+non accetta
+
+604
+00:33:12,519 --> 00:33:14,880
+V,
+
+605
+00:33:14,880 --> 00:33:17,600
+la seconda fase della computazione non
+
+606
+00:33:17,600 --> 00:33:20,960
+parte mai e quindi la macchina si blocca
+
+607
+00:33:20,960 --> 00:33:24,240
+prima dello start di ML e quindi non
+
+608
+00:33:24,240 --> 00:33:27,240
+risponde mai di sì. Qual è il linguaggio
+
+609
+00:33:27,240 --> 00:33:31,559
+di N in questo caso? Vuote.
+Vuoto.
+
+610
+00:33:31,559 --> 00:33:35,080
+Quindi segue
+
+611
+00:33:35,519 --> 00:33:38,080
+il linguaggio di N è il linguaggio
+
+612
+00:33:38,080 --> 00:33:39,960
+vuoto.
+
+613
+00:33:39,960 --> 00:33:41,480
+Ma il linguaggio vuoto lo stiamo
+
+614
+00:33:41,480 --> 00:33:44,200
+assumendo dentro o fuori la proprietà?
+
+615
+00:33:44,200 --> 00:33:47,240
+Nel caso A che stiamo ancora analizzando
+
+616
+00:33:47,240 --> 00:33:49,200
+è fuori,
+
+617
+00:33:49,200 --> 00:33:52,039
+poiché
+
+618
+00:33:52,039 --> 00:33:55,760
+il linguaggio vuoto non appartiene a P.
+
+619
+00:33:55,760 --> 00:33:58,760
+Allora,
+
+620
+00:33:58,960 --> 00:34:01,840
+il linguaggio di n che è uguale al
+
+621
+00:34:01,840 --> 00:34:04,000
+linguaggio vuoto, non appartiene a P nem
+
+622
+00:34:04,000 --> 00:34:07,000
+meno,
+
+623
+00:34:08,800 --> 00:34:11,800
+quindi
+
+624
+00:34:12,040 --> 00:34:14,280
+Nartiene
+
+625
+00:34:14,280 --> 00:34:18,919
+a LP. Ok? Questa cosa ci dimostra che
+
+626
+00:34:18,919 --> 00:34:22,040
+cosa? ci dimostra che
+
+627
+00:34:22,040 --> 00:34:24,760
+questa riduzione trasforma istanze sì di
+
+628
+00:34:24,760 --> 00:34:27,760
+LU in istanze sì di LP e istanze no di
+
+629
+00:34:27,760 --> 00:34:31,119
+lu istanze no di LP dal quale abbiamo
+
+630
+00:34:31,119 --> 00:34:34,639
+che cosa? Abbiamo che il linguaggio LP è
+
+631
+00:34:34,639 --> 00:34:37,800
+indecidibile perché Lu è indecidibile.
+
+632
+00:34:37,800 --> 00:34:40,240
+Ok? Questo non ci conclude la
+
+633
+00:34:40,240 --> 00:34:42,000
+dimostrazione perché noi a cosa abbiamo
+
+634
+00:34:42,000 --> 00:34:43,639
+dimostrato finora? Abbiamo dimostrato
+
+635
+00:34:43,639 --> 00:34:45,839
+che se P è una proprietà non banale che
+
+636
+00:34:45,839 --> 00:34:48,599
+esclude il linguaggio vuoto, allora è
+
+637
+00:34:48,599 --> 00:34:50,399
+indecidibile. Però quello che noi
+
+638
+00:34:50,399 --> 00:34:52,960
+vogliamo mostrare è che se P è una
+
+639
+00:34:52,960 --> 00:34:55,440
+qualsiasi proprietà non banale sia
+
+640
+00:34:55,440 --> 00:34:57,000
+indecidibile,
+
+641
+00:34:57,000 --> 00:34:58,640
+indipendentemente dal fatto se il
+
+642
+00:34:58,640 --> 00:35:00,320
+linguaggio vuoto ci sta di dentro o
+
+643
+00:35:00,320 --> 00:35:02,359
+meno. Quindi adesso dobbiamo considerare
+
+644
+00:35:02,359 --> 00:35:04,880
+il caso B.
+
+645
+00:35:04,880 --> 00:35:06,760
+Caso
+
+646
+00:35:06,760 --> 00:35:09,400
+B
+
+647
+00:35:09,400 --> 00:35:12,400
+abbiamo
+
+648
+00:35:12,520 --> 00:35:16,320
+che il linguaggio vuoto appartiene alla
+
+649
+00:35:16,320 --> 00:35:20,599
+proprietà P. Ok?
+
+650
+00:35:22,119 --> 00:35:23,880
+Consideriamo
+
+651
+00:35:23,880 --> 00:35:25,800
+eh
+
+652
+00:35:25,800 --> 00:35:29,200
+sorry questa
+
+653
+00:35:29,200 --> 00:35:31,480
+sì
+
+654
+00:35:31,480 --> 00:35:34,480
+consideriamo
+
+655
+00:35:34,960 --> 00:35:38,640
+il complemento di P
+
+656
+00:35:38,640 --> 00:35:44,040
+definito come re - P. Ok? Quella quello
+
+657
+00:35:44,040 --> 00:35:46,599
+slash là è il differenza fra insiemi,
+
+658
+00:35:46,599 --> 00:35:48,560
+eh?
+
+659
+00:35:48,560 --> 00:35:52,599
+Ok? Quindi abbiamo che il complemento di
+
+660
+00:35:52,599 --> 00:35:57,920
+P è il complemento di P rispetto a R.
+
+661
+00:35:57,920 --> 00:36:02,599
+Quindi prendiamo R, gli togliamo P. Ok?
+
+662
+00:36:02,599 --> 00:36:06,720
+Se il linguaggio vuoto sta dentro P, il
+
+663
+00:36:06,720 --> 00:36:09,040
+linguaggio vuoto può stare dentro il
+
+664
+00:36:09,040 --> 00:36:12,200
+complemento di P? No. Quindi, prima
+
+665
+00:36:12,200 --> 00:36:15,079
+cosa, il linguaggio vuoto non sta dentro
+
+666
+00:36:15,079 --> 00:36:18,720
+il complemento di P. Ok?
+
+667
+00:36:18,720 --> 00:36:22,079
+Se P
+
+668
+00:36:22,079 --> 00:36:28,160
+se P è non banale per assunzione,
+
+669
+00:36:28,160 --> 00:36:33,599
+cosa possiamo dire del complemento di P?
+
+670
+00:36:34,119 --> 00:36:37,119
+Attenzione,
+
+671
+00:36:38,480 --> 00:36:41,119
+che significa che P è non banale,
+che
+
+672
+00:36:41,119 --> 00:36:45,920
+non è vuoto
+e non è una
+Ah, quindi il
+
+673
+00:36:45,920 --> 00:36:50,000
+suo complemento
+è banale.
+È banale.
+Ah,
+
+674
+00:36:50,000 --> 00:36:53,119
+è banale.
+
+675
+00:36:53,119 --> 00:36:58,800
+Non banale, è banale. Eh, così si fa.
+
+676
+00:36:58,920 --> 00:37:01,680
+Eh, fammi pensare il miglior modo per
+
+677
+00:37:01,680 --> 00:37:03,760
+disegnarlo.
+
+678
+00:37:03,760 --> 00:37:07,480
+Ok. No, vabbò così.
+
+679
+00:37:08,000 --> 00:37:12,920
+Qua c'è re, questo è P.
+
+680
+00:37:12,920 --> 00:37:18,200
+Pere banale è o niente o tutto il re.
+
+681
+00:37:18,200 --> 00:37:20,240
+Se io prendo il suo complemento, che è
+
+682
+00:37:20,240 --> 00:37:22,280
+questa cosa qua,
+
+683
+00:37:22,280 --> 00:37:26,079
+siccome lui qua dentro non è schiacciato
+
+684
+00:37:26,079 --> 00:37:28,480
+e non è tutto, vuol dire che qua fuori
+
+685
+00:37:28,480 --> 00:37:31,839
+non possa essere né niente né tutto.
+
+686
+00:37:31,839 --> 00:37:35,040
+Quindi il complemento di P è esso stesso
+
+687
+00:37:35,040 --> 00:37:38,280
+non banale.
+
+688
+00:37:39,079 --> 00:37:43,599
+Se P è non banale, allora
+
+689
+00:37:43,599 --> 00:37:48,280
+il complemento di P è non banale.
+
+690
+00:37:49,480 --> 00:37:52,480
+Quindi, che cos'è P? È il complemento di
+
+691
+00:37:52,480 --> 00:37:57,079
+P. P segnato. P segnato è una proprietà
+
+692
+00:37:57,079 --> 00:38:00,640
+non banale che contiene il linguaggio
+
+693
+00:38:00,640 --> 00:38:03,040
+vuoto.
+
+694
+00:38:03,040 --> 00:38:06,040
+Ci siamo? Questa proprietà è decidibile
+
+695
+00:38:06,040 --> 00:38:09,280
+o indecidibile?
+
+696
+00:38:09,680 --> 00:38:13,800
+L di P segnato è indecidibile perché
+
+697
+00:38:13,800 --> 00:38:16,880
+per il caso di prima. Ripetiamo. P
+
+698
+00:38:16,880 --> 00:38:19,880
+soprasegnato che cos'è?
+
+699
+00:38:19,880 --> 00:38:23,400
+è una proprietà
+
+700
+00:38:23,400 --> 00:38:27,960
+non banale che non contiene il il
+
+701
+00:38:27,960 --> 00:38:31,599
+linguaggio vuoto. Quindi per il caso A,
+
+702
+00:38:31,599 --> 00:38:33,160
+che è quello che abbiamo dimostrato
+
+703
+00:38:33,160 --> 00:38:36,160
+prima,
+
+704
+00:38:37,599 --> 00:38:39,400
+il linguaggio
+
+705
+00:38:39,400 --> 00:38:44,160
+di P soprasegnato è indecidibile.
+
+706
+00:38:47,319 --> 00:38:50,280
+Ok?
+
+707
+00:38:50,280 --> 00:38:53,800
+Alri, adesso focalizziamoci su questo.
+
+708
+00:38:53,800 --> 00:38:56,800
+Prendiamo il complemento
+
+709
+00:38:56,800 --> 00:39:02,560
+di LP soprasegnato. Ok?
+
+710
+00:39:04,720 --> 00:39:09,240
+Siccome stiamo considerando
+
+711
+00:39:09,240 --> 00:39:14,000
+proprietà di linguaggi in re,
+
+712
+00:39:14,000 --> 00:39:17,480
+ok? Tutti i linguaggi o stanno in piso
+
+713
+00:39:17,480 --> 00:39:20,119
+prasegnato o stanno fuori piso
+
+714
+00:39:20,119 --> 00:39:23,359
+prasegnato. E se stanno fuori piso
+
+715
+00:39:23,359 --> 00:39:26,880
+frasegnato stanno in Pcho,
+
+716
+00:39:26,880 --> 00:39:28,960
+sono tutte e due all'interno della
+
+717
+00:39:28,960 --> 00:39:31,440
+classe re dei linguaggi. Di conseguenza
+
+718
+00:39:31,440 --> 00:39:36,319
+questo linguaggio è LP.
+
+719
+00:39:37,760 --> 00:39:40,040
+È chiaro?
+
+720
+00:39:40,040 --> 00:39:42,440
+Adesso
+
+721
+00:39:42,440 --> 00:39:44,040
+se
+
+722
+00:39:44,040 --> 00:39:45,839
+LDP
+
+723
+00:39:45,839 --> 00:39:49,400
+fosse decidibile
+
+724
+00:39:51,480 --> 00:39:54,720
+lo sarebbe
+
+725
+00:39:54,960 --> 00:39:57,960
+anche
+
+726
+00:39:57,960 --> 00:40:00,599
+L di P soprasegnato. Soprasegnato perché
+
+727
+00:40:00,599 --> 00:40:04,160
+sono lo stesso linguaggio.
+
+728
+00:40:05,599 --> 00:40:09,560
+Se L di P soprasegnato soprassegnato
+
+729
+00:40:09,560 --> 00:40:11,359
+fosse
+
+730
+00:40:11,359 --> 00:40:14,359
+decidibile,
+
+731
+00:40:15,119 --> 00:40:18,119
+cioè in R
+
+732
+00:40:18,119 --> 00:40:21,359
+lo sarebbe
+
+733
+00:40:21,440 --> 00:40:23,160
+anche chi?
+
+734
+00:40:23,160 --> 00:40:27,680
+LP soprasegnato,
+anche LP soprasegnato,
+
+735
+00:40:27,680 --> 00:40:31,160
+ma non lo può essere perché abbiamo
+
+736
+00:40:31,160 --> 00:40:34,160
+prima visto che è indecidibile, ma ciò
+
+737
+00:40:34,160 --> 00:40:37,520
+non è possibile
+
+738
+00:40:42,640 --> 00:40:45,040
+da cui
+
+739
+00:40:45,040 --> 00:40:49,680
+LP è indecidibile.
+
+740
+00:40:49,680 --> 00:40:54,200
+È chiaro? Ok,
+
+741
+00:40:55,839 --> 00:40:59,720
+quindi con questa dimostrazione,
+
+742
+00:40:59,720 --> 00:41:03,680
+ho fatto tutto qua. Yes. Yes.
+
+743
+00:41:03,680 --> 00:41:05,839
+Abbiamo quindi questo risultato molto
+
+744
+00:41:05,839 --> 00:41:08,000
+generale, questo risultato
+
+745
+00:41:08,000 --> 00:41:09,800
+sostanzialmente che il teorema di Rice
+
+746
+00:41:09,800 --> 00:41:12,480
+ci dice che ogni qualvolta noi siamo di
+
+747
+00:41:12,480 --> 00:41:16,000
+fronte a un linguaggio che si configura
+
+748
+00:41:16,000 --> 00:41:18,480
+come il linguaggio di una proprietà non
+
+749
+00:41:18,480 --> 00:41:21,960
+banale. Per questa ragione il linguaggio
+
+750
+00:41:21,960 --> 00:41:25,440
+è indecidibile, cioè decidere proprietà
+
+751
+00:41:25,440 --> 00:41:28,079
+non banali di linguaggi è una cosa che
+
+752
+00:41:28,079 --> 00:41:30,920
+non possiamo mai fare, cioè solo le cose
+
+753
+00:41:30,920 --> 00:41:34,480
+banali siamo in grado di rispondere,
+
+754
+00:41:34,480 --> 00:41:36,560
+cioè solo le proprietà per cui diciamo
+
+755
+00:41:36,560 --> 00:41:38,280
+sempre di sì o le proprietà per cui
+
+756
+00:41:38,280 --> 00:41:40,359
+diciamo sempre di no. Solo su quelle
+
+757
+00:41:40,359 --> 00:41:42,200
+siamo in grado di rispondere in maniera
+
+758
+00:41:42,200 --> 00:41:45,680
+automatica. Per le altre per le altre
+
+759
+00:41:45,680 --> 00:41:48,280
+proprietà, tutte le altre proprietà che
+
+760
+00:41:48,280 --> 00:41:51,400
+siano non banali, noi abbiamo che è
+
+761
+00:41:51,400 --> 00:41:53,359
+impossibile trovare algoritmi che
+
+762
+00:41:53,359 --> 00:41:56,720
+decidano quelle proprietà, ok?
+
+763
+00:41:56,720 --> 00:41:59,280
+non si può fare. E questa cosa noi la
+
+764
+00:41:59,280 --> 00:42:02,640
+possiamo sfruttare per vedere varie
+
+765
+00:42:02,640 --> 00:42:05,280
+indecidibilità di linguaggio. Un
+
+766
+00:42:05,280 --> 00:42:09,079
+primissimo esempio è,
+
+767
+00:42:09,079 --> 00:42:12,960
+per esempio, la coppia di linguaggi L e
+
+768
+00:42:12,960 --> 00:42:15,319
+L l L n. Noi abbiamo fatto delle
+
+769
+00:42:15,319 --> 00:42:18,440
+dimostrazioni tayor per mostrare che
+
+770
+00:42:18,440 --> 00:42:21,319
+siano indecidibili. Abbiamo fatto delle
+
+771
+00:42:21,319 --> 00:42:23,559
+riduzioni, ok, per dimostrare che siano
+
+772
+00:42:23,559 --> 00:42:25,920
+indecidibili, ma in realtà
+
+773
+00:42:25,920 --> 00:42:30,520
+l'indecidibilità di L e di lne
+
+774
+00:42:30,520 --> 00:42:33,520
+discende anche in maniera abbastanza
+
+775
+00:42:33,520 --> 00:42:35,280
+semplice a questo punto dal teorema di
+
+776
+00:42:35,280 --> 00:42:38,760
+Rice. Ok? Per esempio, focalizziamoci su
+
+777
+00:42:38,760 --> 00:42:40,720
+LE per vedere un po' di applicazioni del
+
+778
+00:42:40,720 --> 00:42:43,200
+teorema di Rice. Poi ne vedremo nella
+
+779
+00:42:43,200 --> 00:42:44,880
+restante parte della lezione, ne vedremo
+
+780
+00:42:44,880 --> 00:42:46,280
+un po'.
+
+781
+00:42:46,280 --> 00:42:49,559
+Allora, L
+
+782
+00:42:49,559 --> 00:42:52,040
+che cos'è? È l'insieme di codici di
+
+783
+00:42:52,040 --> 00:42:53,960
+macchine di touring tale che il
+
+784
+00:42:53,960 --> 00:42:58,160
+linguaggio di M è il linguaggio vuoto.
+
+785
+00:42:58,160 --> 00:43:00,319
+Ok?
+
+786
+00:43:00,319 --> 00:43:03,040
+Allora, siccome
+
+787
+00:43:03,040 --> 00:43:07,920
+L è un linguaggio che contiene codifiche
+
+788
+00:43:07,920 --> 00:43:11,559
+di macchine di Touring, si configura
+
+789
+00:43:11,559 --> 00:43:14,680
+come proprietà proprietà di macchine.
+
+790
+00:43:14,680 --> 00:43:16,480
+Ok?
+
+791
+00:43:16,480 --> 00:43:18,760
+Adesso, come potete vedere dalla
+
+792
+00:43:18,760 --> 00:43:21,960
+definizione, questa è una proprietà di
+
+793
+00:43:21,960 --> 00:43:24,200
+macchine, sì, ma è una proprietà che
+
+794
+00:43:24,200 --> 00:43:26,839
+riguarda i linguaggi delle macchine,
+
+795
+00:43:26,839 --> 00:43:30,640
+quindi è una proprietà semantica o una
+
+796
+00:43:30,640 --> 00:43:35,599
+proprietà di linguaggi. Ok?
+
+797
+00:43:35,760 --> 00:43:37,920
+Come facciamo? Per esempio, se volessimo
+
+798
+00:43:37,920 --> 00:43:40,760
+dimostrare che L
+
+799
+00:43:40,760 --> 00:43:45,319
+è una proprietà semantica di macchine,
+
+800
+00:43:45,319 --> 00:43:49,119
+come si potrebbe fare?
+
+801
+00:43:49,119 --> 00:43:53,079
+Consideriamo due macchine, m1 ed m2 tali
+
+802
+00:43:53,079 --> 00:43:55,640
+che il linguaggio di m1 è uguale al
+
+803
+00:43:55,640 --> 00:43:57,760
+linguaggio di m.
+
+804
+00:43:57,760 --> 00:44:03,200
+Se m sta dentro le è perché il suo
+
+805
+00:44:03,200 --> 00:44:07,440
+linguaggio è vuoto. Ma allora se m ha un
+
+806
+00:44:07,440 --> 00:44:10,079
+linguaggio che è uguale a quello di m1,
+
+807
+00:44:10,079 --> 00:44:13,040
+anche m2 deve stare dentro le da cui le
+
+808
+00:44:13,040 --> 00:44:15,920
+è una propietà semantica. Ok? Quindi noi
+
+809
+00:44:15,920 --> 00:44:19,680
+abbiamo che L
+
+810
+00:44:24,400 --> 00:44:29,480
+è una proprietà
+
+811
+00:44:29,760 --> 00:44:32,760
+semantica
+
+812
+00:44:34,119 --> 00:44:37,480
+o di linguagge.
+
+813
+00:44:37,960 --> 00:44:41,640
+Ok? Quello che ora ci chiediamo è L è
+
+814
+00:44:41,640 --> 00:44:46,200
+una proprietà banale o non banale?
+
+815
+00:44:46,200 --> 00:44:49,240
+Per essere una proprietà non banale non
+
+816
+00:44:49,240 --> 00:44:51,119
+deve
+
+817
+00:44:51,119 --> 00:44:54,200
+essere né vuota
+
+818
+00:44:54,200 --> 00:45:00,359
+né essere l'intero re. Ok? Quindi le
+
+819
+00:45:00,359 --> 00:45:03,720
+sarà una proprietà non banale.
+
+820
+00:45:03,720 --> 00:45:09,400
+Le è non banale
+
+821
+00:45:09,400 --> 00:45:17,240
+se L è diverso da vuoto e L è diverso da
+
+822
+00:45:17,240 --> 00:45:20,319
+Re. Ok?
+
+823
+00:45:20,319 --> 00:45:23,359
+Adesso L
+
+824
+00:45:23,359 --> 00:45:27,760
+è banale o no?
+
+825
+00:45:32,839 --> 00:45:36,920
+Yeah.
+Perché ci sono
+
+826
+00:45:36,920 --> 00:45:40,200
+che riconoscono
+laud
+è non banale perché
+
+827
+00:45:40,200 --> 00:45:41,800
+ci sono macchine che riconoscono solo il
+
+828
+00:45:41,800 --> 00:45:45,559
+pad vuoto e altre macchine
+Sì. E non
+
+829
+00:45:45,559 --> 00:45:48,160
+banale perché
+
+830
+00:45:48,160 --> 00:45:51,240
+non è vuota, cioè contiene un linguaggio
+
+831
+00:45:51,240 --> 00:45:54,040
+al suo interno che è il linguaggio
+
+832
+00:45:54,040 --> 00:45:55,559
+vuoto.
+
+833
+00:45:55,559 --> 00:45:57,240
+Ok? Cioè, è chiara per voi la
+
+834
+00:45:57,240 --> 00:45:59,520
+differenza? Un conto che L sia vuota, un
+
+835
+00:45:59,520 --> 00:46:01,800
+conto che L contienga il linguaggio
+
+836
+00:46:01,800 --> 00:46:04,880
+vuoto, cioè L è vuota perché contiene
+
+837
+00:46:04,880 --> 00:46:07,280
+qualcosa. Che cosa? Un linguaggio vuoto.
+
+838
+00:46:07,280 --> 00:46:11,680
+Ok? Quindi L
+
+839
+00:46:11,960 --> 00:46:15,800
+è questa cosa qua,
+
+840
+00:46:16,160 --> 00:46:19,000
+ok? È una busta che contiene una busta
+
+841
+00:46:19,000 --> 00:46:21,599
+vuota. La busta di fuori è non vuota,
+
+842
+00:46:21,599 --> 00:46:23,960
+ok? Che contiene una busta che contiene
+
+843
+00:46:23,960 --> 00:46:25,960
+niente, ok?
+
+844
+00:46:25,960 --> 00:46:30,680
+Quindi L è non vuoto perché c'è il
+
+845
+00:46:30,680 --> 00:46:33,040
+linguaggio vuoto al suo interno. È
+
+846
+00:46:33,040 --> 00:46:36,319
+banale perché tutti i linguaggi diversi
+
+847
+00:46:36,319 --> 00:46:39,800
+dal vuoto non stanno in L. Quindi L è
+
+848
+00:46:39,800 --> 00:46:44,880
+non è tutto R. Da ciò noi ricaviamo che
+
+849
+00:46:44,880 --> 00:46:49,920
+L è non banale,
+
+850
+00:46:52,960 --> 00:46:56,800
+quindi L è una proprietà di linguaggi
+
+851
+00:46:56,800 --> 00:46:58,800
+non banale
+
+852
+00:46:58,800 --> 00:47:01,480
+da cui per il teorema di Rise L è
+
+853
+00:47:01,480 --> 00:47:03,960
+indecidibile. Ok? È molto è molto più
+
+854
+00:47:03,960 --> 00:47:06,960
+lineare in questo modo. Ok?
+
+855
+00:47:06,960 --> 00:47:10,520
+e per ln
+
+856
+00:47:10,839 --> 00:47:12,480
+lne
+
+857
+00:47:12,480 --> 00:47:15,720
+è l'insieme delle macchine m tale che il
+
+858
+00:47:15,720 --> 00:47:19,000
+linguaggio di m è diverso da linguaggio
+
+859
+00:47:19,000 --> 00:47:23,040
+vuoto. Ok? Che possiamo dire di lne?
+
+860
+00:47:23,040 --> 00:47:24,920
+Possiamo dire sicuramente, questo ve lo
+
+861
+00:47:24,920 --> 00:47:27,200
+dico io, che è la parte facile che è una
+
+862
+00:47:27,200 --> 00:47:29,400
+proprietà di macchine, ok? Perché è un
+
+863
+00:47:29,400 --> 00:47:31,119
+linguaggio che contiene codifiche di
+
+864
+00:47:31,119 --> 00:47:33,200
+macchine. Quindi ogni volta che un
+
+865
+00:47:33,200 --> 00:47:35,359
+linguaggio contiene codifiche di
+
+866
+00:47:35,359 --> 00:47:37,760
+macchine è una proprietà di macchine.
+
+867
+00:47:37,760 --> 00:47:40,319
+Poi la questione è se la proprietà è
+
+868
+00:47:40,319 --> 00:47:43,920
+semantica o non semantica. Ok?
+
+869
+00:47:43,920 --> 00:47:46,599
+Il teorema di Rise è un teorema che si
+
+870
+00:47:46,599 --> 00:47:49,079
+applica solo se la proprietà è di
+
+871
+00:47:49,079 --> 00:47:51,160
+linguaggi, se la è una proprietà
+
+872
+00:47:51,160 --> 00:47:54,920
+semantica. proprietà non semantiche
+
+873
+00:47:54,920 --> 00:47:56,880
+di linguaggi, cioè quindi di di
+
+874
+00:47:56,880 --> 00:47:58,800
+macchine. Il teorema di Rice non dice
+
+875
+00:47:58,800 --> 00:48:01,599
+niente, ok? Il teorema di Ris ha come
+
+876
+00:48:01,599 --> 00:48:04,240
+premessa che si deve applicare su
+
+877
+00:48:04,240 --> 00:48:06,079
+proprietà semantiche. Se la proprietà
+
+878
+00:48:06,079 --> 00:48:09,359
+non è semantica, ma riguarda una
+
+879
+00:48:09,359 --> 00:48:11,800
+caratteristica della macchina, il
+
+880
+00:48:11,800 --> 00:48:14,400
+teorema di R non dice niente. Quella
+
+881
+00:48:14,400 --> 00:48:18,119
+proprietà può essere decidibile, può
+
+882
+00:48:18,119 --> 00:48:21,440
+essere indecidibile. Uno si deve andare
+
+883
+00:48:21,440 --> 00:48:25,400
+a guardare eh la definizione del del
+
+884
+00:48:25,400 --> 00:48:28,920
+linguaggio stesso.
+
+885
+00:48:32,880 --> 00:48:34,680
+Ad esempio,
+
+886
+00:48:34,680 --> 00:48:37,160
+questo è un po' tricky.
+
+887
+00:48:37,160 --> 00:48:39,000
+La proprietà
+
+888
+00:48:39,000 --> 00:48:43,440
+che la macchina abbia cinque stati è una
+
+889
+00:48:43,440 --> 00:48:46,440
+proprietà di macchine non semantiche
+
+890
+00:48:46,440 --> 00:48:48,280
+decidibili, andiamo, le contiamo,
+
+891
+00:48:48,280 --> 00:48:50,599
+eccetera.
+
+892
+00:48:50,599 --> 00:48:54,040
+Il linguaggio che abbiamo visto ieri,
+
+893
+00:48:54,040 --> 00:48:58,280
+halt per ogni, quello è un linguaggio di
+
+894
+00:48:58,280 --> 00:49:00,200
+macchine, quindi è una proprietà di
+
+895
+00:49:00,200 --> 00:49:03,760
+macchine. Il problema è, ok, se c'ho
+
+896
+00:49:03,760 --> 00:49:05,400
+tempo ve lo mostro, che quella proprietà
+
+897
+00:49:05,400 --> 00:49:08,799
+è non semantica perché quella proprietà
+
+898
+00:49:08,799 --> 00:49:12,280
+dice la macchina si arresta su tutti gli
+
+899
+00:49:12,280 --> 00:49:15,599
+input, ok? Però noi potremmo avere
+
+900
+00:49:15,599 --> 00:49:17,240
+macchine
+
+901
+00:49:17,240 --> 00:49:20,720
+che riconoscono lo stesso linguaggio
+
+902
+00:49:20,720 --> 00:49:22,839
+perché una si arresta su tutto e dice di
+
+903
+00:49:22,839 --> 00:49:24,839
+no. L'altra deliberatamente invece di
+
+904
+00:49:24,839 --> 00:49:27,200
+dire no, inizia a luppare. Queste due
+
+905
+00:49:27,200 --> 00:49:28,839
+macchine
+
+906
+00:49:28,839 --> 00:49:31,440
+hanno lo stesso linguaggio, però una sta
+
+907
+00:49:31,440 --> 00:49:33,559
+in halt per ogni e l'altra no. Quindi
+
+908
+00:49:33,559 --> 00:49:35,680
+halt per ogni non è una proprietà
+
+909
+00:49:35,680 --> 00:49:38,040
+semantica. Ok? Se abbiamo tempo ve la
+
+910
+00:49:38,040 --> 00:49:40,280
+rispiego sta cosa, però per dirvi quella
+
+911
+00:49:40,280 --> 00:49:43,280
+proprietà là mi arresto su tutte le su
+
+912
+00:49:43,280 --> 00:49:44,839
+tutte le stringhe. Quella è una
+
+913
+00:49:44,839 --> 00:49:47,520
+proprietà di macchine è una proprietà
+
+914
+00:49:47,520 --> 00:49:50,079
+non semantica.
+
+915
+00:49:50,079 --> 00:49:52,720
+È una proprietà indecidibile,
+
+916
+00:49:52,720 --> 00:49:55,119
+ma non discende dal teorema di Ris
+
+917
+00:49:55,119 --> 00:49:58,240
+indecidibilità, perché il teorema di Ris
+
+918
+00:49:58,240 --> 00:50:01,040
+implica l'indecidibilità solamente di
+
+919
+00:50:01,040 --> 00:50:03,480
+proprietà semantiche. Ok? sulle
+
+920
+00:50:03,480 --> 00:50:05,119
+proprietà non semantiche ci dobbiamo
+
+921
+00:50:05,119 --> 00:50:06,480
+andare a guardare il linguaggio e
+
+922
+00:50:06,480 --> 00:50:09,599
+cercare di capire che succede. Ok?
+
+923
+00:50:09,599 --> 00:50:13,960
+Alri. Qui avevo un po' di esempi.
+
+924
+00:50:19,960 --> 00:50:23,640
+Ok. Avevamo vi avevo tra gli appunti che
+
+925
+00:50:23,640 --> 00:50:30,000
+avevo messo prima, partiamo da P2. Mh.
+
+926
+00:50:30,000 --> 00:50:34,720
+Dove sta? Dove sta P2?
+
+927
+00:50:35,359 --> 00:50:38,599
+Questo l'avevamo scritto all'inizio, eh.
+
+928
+00:50:38,599 --> 00:50:42,319
+La proprietà P2, l'insieme delle
+
+929
+00:50:42,319 --> 00:50:48,240
+macchine M tali che il linguaggio di M
+
+930
+00:50:48,240 --> 00:50:51,640
+contiene solo stringhe di lunghezza
+
+931
+00:50:51,640 --> 00:50:55,480
+pari. Ok?
+
+932
+00:50:56,680 --> 00:50:58,559
+Adesso noi vogliamo capire se questo
+
+933
+00:50:58,559 --> 00:51:01,640
+linguaggio se questa proprietà P2 il
+
+934
+00:51:01,640 --> 00:51:03,599
+linguaggio relativo alla proprietà P2
+
+935
+00:51:03,599 --> 00:51:08,960
+sia decidibile o meno. Ok? Allora,
+
+936
+00:51:08,960 --> 00:51:12,040
+prima domanda. Questo linguaggio è una
+
+937
+00:51:12,040 --> 00:51:14,680
+proprietà di macchine?
+
+938
+00:51:14,680 --> 00:51:17,200
+Sì, perché perché è un linguaggio che
+
+939
+00:51:17,200 --> 00:51:19,440
+contiene codifiche di macchine, ok? E
+
+940
+00:51:19,440 --> 00:51:22,839
+quindi è una proprietà di macchine.
+
+941
+00:51:22,839 --> 00:51:26,000
+Questo proprietà è una proprietà di
+
+942
+00:51:26,000 --> 00:51:27,520
+linguaggi,
+
+943
+00:51:27,520 --> 00:51:29,760
+una proprietà o equivalentemente una
+
+944
+00:51:29,760 --> 00:51:33,280
+proprietà semantica di macchine. Sì,
+
+945
+00:51:33,280 --> 00:51:35,920
+perché è relativa solamente al
+
+946
+00:51:35,920 --> 00:51:38,799
+linguaggio che la macchina riconosce.
+
+947
+00:51:38,799 --> 00:51:40,359
+Ok?
+
+948
+00:51:40,359 --> 00:51:41,960
+Bene,
+
+949
+00:51:41,960 --> 00:51:45,559
+questa quindi abbiamo che questa P2 è
+
+950
+00:51:45,559 --> 00:51:48,520
+una proprietà di linguaggi o
+
+951
+00:51:48,520 --> 00:51:50,640
+equivalentemente una proprietà semantica
+
+952
+00:51:50,640 --> 00:51:52,520
+di macchine.
+
+953
+00:51:52,520 --> 00:51:57,520
+Questa proprietà è banale o non banale?
+
+954
+00:51:57,520 --> 00:52:03,880
+Non banale, perché chi ci sta dentro P2?
+
+955
+00:52:17,480 --> 00:52:18,720
+[Musica]
+
+956
+00:52:18,720 --> 00:52:21,200
+L'insieme vuoto ci sta.
+L'insieme vuoto
+
+957
+00:52:21,200 --> 00:52:23,240
+ci sta.
+
+958
+00:52:23,240 --> 00:52:26,240
+Poi
+
+959
+00:52:26,520 --> 00:52:28,839
+xy
+
+960
+00:52:28,839 --> 00:52:33,319
+sì, tipo 00 sta là dentro. Ok.
+
+961
+00:52:33,319 --> 00:52:35,960
+E così via. Ce ne stanno tante qua, eh.
+
+962
+00:52:35,960 --> 00:52:37,799
+Questa proprietà
+
+963
+00:52:37,799 --> 00:52:40,119
+è infinita, cioè c'ha infiniti
+
+964
+00:52:40,119 --> 00:52:43,240
+linguaggi, ok? Quindi questa proprietà è
+
+965
+00:52:43,240 --> 00:52:45,960
+sicuramente non vuota. Questa proprietà
+
+966
+00:52:45,960 --> 00:52:49,079
+contiene tutto il re? No,
+no, perché i
+
+967
+00:52:49,079 --> 00:52:51,359
+linguaggi costring dispari non stanno
+
+968
+00:52:51,359 --> 00:52:55,760
+dentro du. Quindi i linguaggi
+
+969
+00:52:57,920 --> 00:53:02,200
+con stringhe dispari
+
+970
+00:53:04,799 --> 00:53:07,110
+non stanno
+
+971
+00:53:07,110 --> 00:53:09,359
+[Musica]
+
+972
+00:53:09,359 --> 00:53:11,160
+dentro
+
+973
+00:53:11,160 --> 00:53:12,680
+P2.
+
+974
+00:53:12,680 --> 00:53:19,480
+Di conseguenza, P2 è una proprietà
+
+975
+00:53:19,480 --> 00:53:22,680
+di linguaggi
+
+976
+00:53:23,240 --> 00:53:27,000
+non banale.
+
+977
+00:53:27,440 --> 00:53:30,440
+Per questa ragione,
+
+978
+00:53:30,440 --> 00:53:33,760
+per il teorema di Rice, decidere P2 è
+
+979
+00:53:33,760 --> 00:53:36,319
+indecidibile, ok? direttamente, possiamo
+
+980
+00:53:36,319 --> 00:53:38,880
+dire, senza stare là a fare altre
+
+981
+00:53:38,880 --> 00:53:41,119
+dimostrazioni. Nel momento in cui noi
+
+982
+00:53:41,119 --> 00:53:43,200
+riconosciamo che un linguaggio è una
+
+983
+00:53:43,200 --> 00:53:46,480
+proprietà semantica non banale, per il
+
+984
+00:53:46,480 --> 00:53:48,559
+teorema di Rice, quella proprietà è
+
+985
+00:53:48,559 --> 00:53:52,720
+indecidibile. Ok?
+
+986
+00:53:59,440 --> 00:54:02,200
+Eh, + 1, come l'avevo definito?
+
+987
+00:54:02,200 --> 00:54:06,799
+E qua c'ho esatto due cose diverse,
+
+988
+00:54:07,040 --> 00:54:10,480
+no? Ok. La proprietà P1 invece, come
+
+989
+00:54:10,480 --> 00:54:15,839
+dicevamo, è una proprietà di macchina
+
+990
+00:54:15,880 --> 00:54:19,040
+non semantica.
+
+991
+00:54:19,040 --> 00:54:23,440
+Eh, perché non semantica? Ok,
+
+992
+00:54:23,440 --> 00:54:25,760
+perché non semantica la proprietà +1? Un
+
+993
+00:54:25,760 --> 00:54:27,440
+attimo che la scriviamo qua, così lo
+
+994
+00:54:27,440 --> 00:54:30,760
+vediamo formalmente.
+
+995
+00:54:31,000 --> 00:54:37,079
+Quindi P1 è una proprietà di macchine
+
+996
+00:54:43,960 --> 00:54:48,760
+che non semantica perché
+
+997
+00:54:51,880 --> 00:54:54,040
+ok dalla descrizione vediamo che non è
+
+998
+00:54:54,040 --> 00:54:56,079
+non è non fa riferimento al linguaggio
+
+999
+00:54:56,079 --> 00:54:57,520
+di quella macchina, quindi dice ah è
+
+1000
+00:54:57,520 --> 00:54:59,240
+intuitivo. Ma se noi volessimo
+
+1001
+00:54:59,240 --> 00:55:02,040
+dimostrarle che non semantica,
+dovremmo
+
+1002
+00:55:02,040 --> 00:55:04,440
+trovare due macchine che conoscono lo
+
+1003
+00:55:04,440 --> 00:55:07,160
+stesso linguaggio,
+
+1004
+00:55:07,160 --> 00:55:10,920
+però il fatto che la prima partita uno
+
+1005
+00:55:10,920 --> 00:55:13,440
+non impulsa, che è la seconda partita.
+
+1006
+00:55:13,440 --> 00:55:17,480
+Sì, quindi dovremmo per dimostrare che è
+
+1007
+00:55:17,480 --> 00:55:19,680
+non semantico, è una proprietà non
+
+1008
+00:55:19,680 --> 00:55:20,960
+semantica. Dobbiamo trovare un
+
+1009
+00:55:20,960 --> 00:55:25,799
+controesempio, cioè due macchine
+
+1010
+00:55:25,799 --> 00:55:29,160
+che abbiano lo stesso linguaggio,
+
+1011
+00:55:29,160 --> 00:55:31,799
+una macchina appartiene a +1 e l'altra
+
+1012
+00:55:31,799 --> 00:55:34,559
+macchina appartiene non appartiene a +1.
+
+1013
+00:55:34,559 --> 00:55:36,680
+Come facciamo? Prendiamo una macchina
+
+1014
+00:55:36,680 --> 00:55:39,440
+con cinque stati che riconosca un certo
+
+1015
+00:55:39,440 --> 00:55:43,440
+linguaggio e la chiamiamo m1.
+
+1016
+00:55:43,440 --> 00:55:47,839
+Ok? Da m generiamo una macchina m2 in
+
+1017
+00:55:47,839 --> 00:55:50,119
+cui aggiungiamo un sesto stato che non
+
+1018
+00:55:50,119 --> 00:55:52,160
+fa niente, è uno stato irraggiungibile,
+
+1019
+00:55:52,160 --> 00:55:54,280
+non è attaccato a nulla. Quindi quella
+
+1020
+00:55:54,280 --> 00:55:56,240
+che cos'è? È una macchina m2 che ha lo
+
+1021
+00:55:56,240 --> 00:55:58,440
+stesso linguaggio di m1, ma il suo
+
+1022
+00:55:58,440 --> 00:56:01,680
+numero di stati è differente. Avremo che
+
+1023
+00:56:01,680 --> 00:56:05,480
+m1 appartiene a +1 ed m2 non appartiene
+
+1024
+00:56:05,480 --> 00:56:08,359
+a a +1. Di conseguenza la proprietà è
+
+1025
+00:56:08,359 --> 00:56:11,480
+non semantica, cioè è relativa a com'è
+
+1026
+00:56:11,480 --> 00:56:14,280
+fatta la macchina più che al linguaggio
+
+1027
+00:56:14,280 --> 00:56:19,880
+che che le macchine riconoscono. Ok?
+
+1028
+00:56:19,880 --> 00:56:21,960
+Alright.
+
+1029
+00:56:21,960 --> 00:56:25,079
+Ok. Vediamo alcuni esempi di
+
+1030
+00:56:25,079 --> 00:56:28,079
+applicazione.
+
+1031
+00:56:28,799 --> 00:56:32,200
+Come siamo messi?
+
+1032
+00:56:33,200 --> 00:56:36,200
+Esempi
+
+1033
+00:56:36,319 --> 00:56:39,839
+di applicazione.
+
+1034
+00:56:44,079 --> 00:56:46,000
+Primo,
+
+1035
+00:56:46,000 --> 00:56:50,799
+data una macchina M.
+
+1036
+00:56:50,799 --> 00:56:53,799
+Decidere
+
+1037
+00:56:58,119 --> 00:57:00,000
+se
+
+1038
+00:57:00,000 --> 00:57:01,920
+L
+
+1039
+00:57:01,920 --> 00:57:05,720
+è finito.
+
+1040
+00:57:05,720 --> 00:57:07,319
+Ok?
+
+1041
+00:57:07,319 --> 00:57:09,200
+Per finito il linguaggio è finito. Se ha
+
+1042
+00:57:09,200 --> 00:57:12,119
+un numero finito di stringa, eh? Ok.
+
+1043
+00:57:12,119 --> 00:57:15,839
+Quindi data M, chiamiamola quindi L, ad
+
+1044
+00:57:15,839 --> 00:57:19,240
+esempio, è l'insieme
+
+1045
+00:57:19,240 --> 00:57:21,640
+di macchine M, tale per cui il
+
+1046
+00:57:21,640 --> 00:57:26,680
+linguaggio di M è finito.
+
+1047
+00:57:27,039 --> 00:57:30,079
+Ok? LDA è una proprietà di macchine o
+
+1048
+00:57:30,079 --> 00:57:32,039
+no?
+
+1049
+00:57:32,039 --> 00:57:34,119
+Sì, perché le sue stringhe sono
+
+1050
+00:57:34,119 --> 00:57:38,720
+codifinghe di macchine. Ok?
+
+1051
+00:57:39,000 --> 00:57:42,480
+è una proprietà semantica o no?
+
+1052
+00:57:42,480 --> 00:57:44,880
+Semantica.
+È una proprietà semantica,
+
+1053
+00:57:44,880 --> 00:57:47,359
+quindi una proprietà che è relativa al
+
+1054
+00:57:47,359 --> 00:57:49,000
+linguaggio.
+
+1055
+00:57:49,000 --> 00:57:50,720
+Ok?
+
+1056
+00:57:50,720 --> 00:57:57,280
+Questa proprietà è banale o non banale?
+
+1057
+00:58:03,079 --> 00:58:07,119
+Non banale o banale?
+
+1058
+00:58:08,200 --> 00:58:10,720
+Per essere banale deve o non averci
+
+1059
+00:58:10,720 --> 00:58:12,799
+niente di dentro o deve avere di dentro
+
+1060
+00:58:12,799 --> 00:58:16,599
+tutti i linguaggi. Ok? Per avere per
+
+1061
+00:58:16,599 --> 00:58:18,599
+quindi per provare che sia non banale
+
+1062
+00:58:18,599 --> 00:58:20,319
+dobbiamo trovare un linguaggio che sta
+
+1063
+00:58:20,319 --> 00:58:22,680
+dentro e un linguaggio che sta fuori.
+
+1064
+00:58:22,680 --> 00:58:24,240
+Ok? In questo modo siamo sicuri che
+
+1065
+00:58:24,240 --> 00:58:26,960
+qualcosa ci sta e quindi è non vuota e
+
+1066
+00:58:26,960 --> 00:58:29,079
+che qualcosa non ci sta e quindi non è
+
+1067
+00:58:29,079 --> 00:58:31,200
+tutto il re. Qual è un linguaggio che
+
+1068
+00:58:31,200 --> 00:58:35,240
+sta dentro la
+
+1069
+00:58:37,000 --> 00:58:38,799
+il linguaggio vuoto o il linguaggio che
+
+1070
+00:58:38,799 --> 00:58:41,400
+contiene una stringa sola? Ok? Qualsiasi
+
+1071
+00:58:41,400 --> 00:58:43,240
+linguaggio con un numero finito di
+
+1072
+00:58:43,240 --> 00:58:46,720
+stringhe sta dentro la proprietà eh di
+
+1073
+00:58:46,720 --> 00:58:49,160
+la. Ok?
+
+1074
+00:58:49,160 --> 00:58:52,280
+E un linguaggio che sta fuori L?
+
+1075
+00:58:52,280 --> 00:58:54,839
+Il linguaggio di tutte le stringhe.
+Il
+
+1076
+00:58:54,839 --> 00:58:56,319
+linguaggio di tutte le stringhe, ad
+
+1077
+00:58:56,319 --> 00:58:58,680
+esempio. Ok? cioè qualsiasi cosa che ha
+
+1078
+00:58:58,680 --> 00:59:00,440
+un numero infinito di stringe. Per
+
+1079
+00:59:00,440 --> 00:59:05,720
+esempio a elev n con n > 0. Ok? Quello è
+
+1080
+00:59:05,720 --> 00:59:09,839
+un linguaggio infinito. Quindi l a
+
+1081
+00:59:09,839 --> 00:59:12,440
+proprietà semantica o equivalentemente
+
+1082
+00:59:12,440 --> 00:59:14,839
+una proprietà di linguaggi
+
+1083
+00:59:14,839 --> 00:59:16,799
+non banale.
+
+1084
+00:59:16,799 --> 00:59:19,960
+Per il teorema di Ris è indecisibile.
+
+1085
+00:59:19,960 --> 00:59:22,000
+Ok?
+
+1086
+00:59:22,000 --> 00:59:24,400
+B
+
+1087
+00:59:24,400 --> 00:59:30,039
+data una macchina M. decidere
+
+1088
+00:59:31,640 --> 00:59:34,760
+se LM
+
+1089
+00:59:34,760 --> 00:59:39,119
+è infinito.
+
+1090
+00:59:39,640 --> 00:59:43,240
+Ok? Questo è speculare.
+
+1091
+00:59:43,240 --> 00:59:46,240
+Quindi
+
+1092
+00:59:46,280 --> 00:59:48,920
+è vero che LB
+
+1093
+00:59:48,920 --> 00:59:52,440
+è una proprietà di macchine? Sì.
+Sì. È
+
+1094
+00:59:52,440 --> 00:59:55,559
+una proprietà semantica o una proprietà
+
+1095
+00:59:55,559 --> 00:59:56,920
+di struttura? Com'è? chiamiamo la
+
+1096
+00:59:56,920 --> 01:00:00,000
+proprietà semantica o non semantica?
+
+1097
+01:00:00,000 --> 01:00:01,680
+Semantica.
+È una proprietà semantica
+
+1098
+01:00:01,680 --> 01:00:03,160
+perché è una proprietà che riguarda il
+
+1099
+01:00:03,160 --> 01:00:05,079
+linguaggio riconosciuto dalla macchina.
+
+1100
+01:00:05,079 --> 01:00:08,799
+Ok? È banale o non banale?
+Non banale.
+È
+
+1101
+01:00:08,799 --> 01:00:10,680
+banale perché è lo speculare di quella
+
+1102
+01:00:10,680 --> 01:00:12,680
+di prima, quindi qualcosa starà dentro,
+
+1103
+01:00:12,680 --> 01:00:16,520
+qualcosa starà fuori. Quindi LDB,
+
+1104
+01:00:16,520 --> 01:00:19,160
+poiché è una proprietà di linguaggi non
+
+1105
+01:00:19,160 --> 01:00:22,079
+banale, per il teorema di Rise è
+
+1106
+01:00:22,079 --> 01:00:23,599
+indecidibile.
+
+1107
+01:00:23,599 --> 01:00:26,599
+Ok?
+
+1108
+01:00:35,319 --> 01:00:39,119
+C. Ok. C
+
+1109
+01:00:39,119 --> 01:00:42,760
+data una macchina
+
+1110
+01:00:50,079 --> 01:00:54,960
+data una macchina M.
+
+1111
+01:00:55,480 --> 01:01:02,079
+e decidere se il linguaggio di M, LDM,
+
+1112
+01:01:02,079 --> 01:01:06,080
+è un linguaggio
+
+1113
+01:01:06,080 --> 01:01:09,039
+[Musica]
+
+1114
+01:01:09,039 --> 01:01:11,200
+accettato
+
+1115
+01:01:11,200 --> 01:01:14,160
+[Musica]
+
+1116
+01:01:14,160 --> 01:01:16,359
+solo
+
+1117
+01:01:16,359 --> 01:01:19,960
+da macchine
+
+1118
+01:01:20,559 --> 01:01:22,760
+con cinque
+
+1119
+01:01:22,760 --> 01:01:25,160
+stati.
+
+1120
+01:01:28,680 --> 01:01:31,960
+Ok, questo è è una variazione di di
+
+1121
+01:01:31,960 --> 01:01:32,960
+quello che abbiamo visto prima.
+
+1122
+01:01:32,960 --> 01:01:37,440
+Attenzione qua. Quindi abbiamo LDC
+
+1123
+01:01:37,440 --> 01:01:39,960
+è il linguaggio delle macchine touring
+
+1124
+01:01:39,960 --> 01:01:43,720
+tale che il LDM
+
+1125
+01:01:43,720 --> 01:01:47,720
+è riconosciuto da macchine
+
+1126
+01:01:47,720 --> 01:01:50,079
+solamente da macchine con cinque stati.
+
+1127
+01:01:50,079 --> 01:01:53,079
+Ok.
+
+1128
+01:01:53,799 --> 01:01:56,119
+Alri, questa qui è una proprietà di
+
+1129
+01:01:56,119 --> 01:01:58,200
+macchine o non è una proprietà di
+
+1130
+01:01:58,200 --> 01:02:02,000
+macchine? È una proprietà di macchine.
+
+1131
+01:02:02,000 --> 01:02:04,359
+Ci focalizziamo ora su un altro elemento
+
+1132
+01:02:04,359 --> 01:02:07,920
+prima. Questa qui è una proprietà banale
+
+1133
+01:02:07,920 --> 01:02:11,520
+o non banale?
+
+1134
+01:02:11,520 --> 01:02:13,680
+È banale.
+
+1135
+01:02:13,680 --> 01:02:17,160
+Perché è banale?
+
+1136
+01:02:26,079 --> 01:02:28,079
+Per quello che vi ho detto prima, se una
+
+1137
+01:02:28,079 --> 01:02:30,720
+macchina cinque state cingo si fa
+
+1138
+01:02:30,720 --> 01:02:33,720
+cercare anche con se uno stato m
+m E
+
+1139
+01:02:33,720 --> 01:02:37,400
+quindi chi sono i linguaggi riconosciuti
+
+1140
+01:02:37,400 --> 01:02:40,599
+solamente da macchine con cinque stati?
+
+1141
+01:02:40,599 --> 01:02:43,920
+nessuno. Quindi NDC è una proprietà
+
+1142
+01:02:43,920 --> 01:02:47,599
+banale. Ripeto,
+
+1143
+01:02:47,599 --> 01:02:49,680
+ogni linguaggio
+
+1144
+01:02:49,680 --> 01:02:52,400
+può essere riconosciuto da macchine di
+
+1145
+01:02:52,400 --> 01:02:54,880
+Turing con un numero qualsivoglia di
+
+1146
+01:02:54,880 --> 01:02:57,400
+stati, perché nel momento in cui abbiamo
+
+1147
+01:02:57,400 --> 01:02:59,760
+una macchina che riconosca un
+
+1148
+01:02:59,760 --> 01:03:02,559
+linguaggio, noi la possiamo inflazionare
+
+1149
+01:03:02,559 --> 01:03:05,599
+di stati inutili e quindi lo stesso
+
+1150
+01:03:05,599 --> 01:03:07,720
+linguaggio viene riconosciuto da
+
+1151
+01:03:07,720 --> 01:03:10,440
+macchine di touring con un altro numero
+
+1152
+01:03:10,440 --> 01:03:14,000
+di stati. Di conseguenza, i linguaggi
+
+1153
+01:03:14,000 --> 01:03:17,799
+che vengono riconosciuti da che vengono
+
+1154
+01:03:17,799 --> 01:03:20,559
+riconosciuti solamente da macchine di
+
+1155
+01:03:20,559 --> 01:03:24,480
+touring con cinque stati non ci stanno
+
+1156
+01:03:24,480 --> 01:03:27,240
+perché nessun linguaggio che sia
+
+1157
+01:03:27,240 --> 01:03:29,240
+riconosciuto dalla macchina di Touring
+
+1158
+01:03:29,240 --> 01:03:31,559
+cinque stati non può essere riconosciuto
+
+1159
+01:03:31,559 --> 01:03:34,880
+dalla macchina di Touring con 15.
+
+1160
+01:03:34,880 --> 01:03:37,359
+Quindi LDC
+
+1161
+01:03:37,359 --> 01:03:41,400
+in realtà è vuota, non c'ha niente lì
+
+1162
+01:03:41,400 --> 01:03:43,520
+dentro, ok? Quindi è una proprietà
+
+1163
+01:03:43,520 --> 01:03:45,039
+banale
+
+1164
+01:03:45,039 --> 01:03:48,079
+e per questa ragione è decidibile.
+
+1165
+01:03:48,079 --> 01:03:51,079
+Ok?
+
+1166
+01:03:51,200 --> 01:03:54,200
+Alright.
+
+1167
+01:03:54,720 --> 01:03:57,920
+Eh, questo li abbiamo visti. 5
+
+1168
+01:03:57,920 --> 01:03:59,520
+6
+
+1169
+01:03:59,520 --> 01:04:03,839
+Ah, qua c'avevo l'esentino, però
+
+1170
+01:04:03,839 --> 01:04:08,480
+non so se ce la facciamo a vederlo.
+
+1171
+01:04:14,400 --> 01:04:17,119
+Ok, vediamo.
+
+1172
+01:04:17,119 --> 01:04:18,920
+Ce la dovremmo fare, insomma. Allora,
+
+1173
+01:04:18,920 --> 01:04:21,799
+supponiamo di avere questo linguaggio L
+
+1174
+01:04:21,799 --> 01:04:24,799
+=
+
+1175
+01:04:25,359 --> 01:04:28,839
+W cancelletto A
+
+1176
+01:04:28,839 --> 01:04:35,279
+tali che W appartiene a 0 1+
+
+1177
+01:04:35,400 --> 01:04:38,880
+a = w
+
+1178
+01:04:38,880 --> 01:04:40,920
+oppure
+
+1179
+01:04:40,920 --> 01:04:45,599
+A è UG = Aw reverse.
+
+1180
+01:04:45,599 --> 01:04:48,599
+Ok?
+
+1181
+01:04:51,760 --> 01:04:54,319
+Qua. Boh, non vi chiederò altri perché
+
+1182
+01:04:54,319 --> 01:04:57,319
+no.
+
+1183
+01:05:01,079 --> 01:05:04,079
+Allora,
+
+1184
+01:05:06,960 --> 01:05:10,480
+proprietà uno
+
+1185
+01:05:13,160 --> 01:05:17,799
+e l'insieme di macchine di Touring M.
+
+1186
+01:05:17,799 --> 01:05:21,680
+No, vai, dai che ce la facciamo.
+
+1187
+01:05:24,920 --> 01:05:26,839
+Per infrensarci un po' la memoria,
+
+1188
+01:05:26,839 --> 01:05:28,400
+scriviamo una macchina di Turing che fa
+
+1189
+01:05:28,400 --> 01:05:30,559
+questo, ok? Che riconosca questo
+
+1190
+01:05:30,559 --> 01:05:33,559
+linguaggio.
+
+1191
+01:05:35,000 --> 01:05:36,720
+Alright.
+
+1192
+01:05:36,720 --> 01:05:40,240
+Allora, come ce la organizziamo? Ricop
+
+1193
+01:05:40,240 --> 01:05:42,079
+su un secondo nastro. Noi non stiamo
+
+1194
+01:05:42,079 --> 01:05:44,079
+vedendo queste macchine ormai da qualche
+
+1195
+01:05:44,079 --> 01:05:46,920
+lezione, però ci saranno alla fine, eh,
+
+1196
+01:05:46,920 --> 01:05:49,520
+quindi riprendetele, inventatevi
+
+1197
+01:05:49,520 --> 01:05:53,079
+esercizi, risolvete cose strane, eh,
+
+1198
+01:05:53,079 --> 01:05:55,559
+così vi vi preparate un po'. Ok. Allora,
+
+1199
+01:05:55,559 --> 01:05:57,279
+che abbiamo?
+
+1200
+01:05:57,279 --> 01:06:01,440
+Eh, ah facciamo due nastri sulla quale
+
+1201
+01:06:01,440 --> 01:06:04,400
+sul primo c'abbiamo l'input,
+
+1202
+01:06:04,400 --> 01:06:08,440
+sul secondo io mi ci ricopio w B in
+
+1203
+01:06:08,440 --> 01:06:13,359
+maniera tale poi da verificare che A sia
+
+1204
+01:06:13,359 --> 01:06:18,559
+o uguale a W o a W reverse. Ok?
+
+1205
+01:06:18,559 --> 01:06:22,319
+Si può fare sia deterministica che non
+
+1206
+01:06:22,319 --> 01:06:24,079
+deterministica. La facciamo non
+
+1207
+01:06:24,079 --> 01:06:26,279
+deterministica per semplificità, non è
+
+1208
+01:06:26,279 --> 01:06:28,760
+che la semplificherebbe più di tanto.
+
+1209
+01:06:28,760 --> 01:06:33,640
+Ok? Allora, che abbiamo Q0
+
+1210
+01:06:33,640 --> 01:06:36,920
+qua, quindi iniziamo a ricopiare W sul
+
+1211
+01:06:36,920 --> 01:06:38,559
+secondo nastro. Sul primo c'è alfa,
+
+1212
+01:06:38,559 --> 01:06:41,559
+lascio alfa e vado avanti. Sul secondo
+
+1213
+01:06:41,559 --> 01:06:45,319
+c'è blank, scrivo alfa e vado avanti. Lo
+
+1214
+01:06:45,319 --> 01:06:47,599
+faccio per tutti.
+
+1215
+01:06:47,599 --> 01:06:50,720
+Sul primo c'è alfa, alfa e vado avanti.
+
+1216
+01:06:50,720 --> 01:06:53,240
+Sul secondo c'è blank, scrivo alfa. Vado
+
+1217
+01:06:53,240 --> 01:06:54,880
+avanti
+
+1218
+01:06:54,880 --> 01:06:58,559
+fino a quando sul primo c'è cancelletto,
+
+1219
+01:06:58,559 --> 01:07:01,400
+lascio cancelletto e vado avanti. Sul
+
+1220
+01:07:01,400 --> 01:07:04,119
+secondo c'è blank, lascio blank e torno
+
+1221
+01:07:04,119 --> 01:07:06,319
+dietro.
+
+1222
+01:07:06,319 --> 01:07:08,079
+V2.
+
+1223
+01:07:08,079 --> 01:07:10,520
+A quel punto noi non deterministicamente
+
+1224
+01:07:10,520 --> 01:07:14,680
+decidiamo se A è W o W reversa. Ok?
+
+1225
+01:07:14,680 --> 01:07:19,520
+Questo ramo si occupa del caso che A si
+
+1226
+01:07:19,520 --> 01:07:22,640
+addoppia a V reverse, quindi è Q3.
+
+1227
+01:07:22,640 --> 01:07:24,760
+E abbiamo sul primo nastro c'è alfa,
+
+1228
+01:07:24,760 --> 01:07:28,119
+lascio alfa e vado avanti. Sul secondo
+
+1229
+01:07:28,119 --> 01:07:30,480
+nastro c'è alfa, lascio alfa e torno
+
+1230
+01:07:30,480 --> 01:07:33,119
+dietro.
+
+1231
+01:07:33,119 --> 01:07:35,240
+Lo facciamo per tutti. Sul primo nastro
+
+1232
+01:07:35,240 --> 01:07:37,920
+c'è alfa, lascio alfa e vado avanti. Sul
+
+1233
+01:07:37,920 --> 01:07:40,520
+secondo nastro c'è alfa, lascio alfa e
+
+1234
+01:07:40,520 --> 01:07:42,760
+torno dietro.
+
+1235
+01:07:42,760 --> 01:07:45,279
+Fino a quando
+
+1236
+01:07:45,279 --> 01:07:48,039
+sul primo c'è blank, lascio blank e sto
+
+1237
+01:07:48,039 --> 01:07:50,359
+fermo. Sul secondo c'è blank, lascio
+
+1238
+01:07:50,359 --> 01:07:53,880
+blank e sto fermo e accettiamo
+
+1239
+01:07:53,880 --> 01:07:56,160
+U4
+
+1240
+01:07:56,160 --> 01:07:58,400
+dall'altro lato
+
+1241
+01:07:58,400 --> 01:08:02,640
+e se invece a è uguale proprio a W.
+
+1242
+01:08:02,640 --> 01:08:04,880
+Quindi andiamo qua.
+
+1243
+01:08:04,880 --> 01:08:08,480
+Sul secondo nastro c'è Black, cioè no,
+
+1244
+01:08:08,480 --> 01:08:11,640
+non c'è Blank, c'è alfa.
+
+1245
+01:08:11,640 --> 01:08:15,160
+C'è alfa la alfa e torno dietro riavvgo
+
+1246
+01:08:15,160 --> 01:08:18,080
+tutto quei cinque
+
+1247
+01:08:18,080 --> 01:08:21,040
+sul secondo as alfa lascio alfa e torno
+
+1248
+01:08:21,040 --> 01:08:23,319
+dietro
+
+1249
+01:08:23,319 --> 01:08:26,719
+fino a quando
+
+1250
+01:08:29,159 --> 01:08:32,560
+e va avanti.
+
+1251
+01:08:35,799 --> 01:08:38,000
+Sul primo c'è alfa, la scalfa e va
+
+1252
+01:08:38,000 --> 01:08:40,279
+davanti. Sul secondo c'è Alfa, lascio
+
+1253
+01:08:40,279 --> 01:08:43,279
+Alfa e vado avanti. Quando accettiamo e
+
+1254
+01:08:43,279 --> 01:08:45,880
+sul primo c'è Blank, lascio blank, sto
+
+1255
+01:08:45,880 --> 01:08:48,120
+fermo. Sul secondo c'è Blank, lascio
+
+1256
+01:08:48,120 --> 01:08:50,759
+Blank e sto fermo. Ok, quindi questa è
+
+1257
+01:08:50,759 --> 01:08:53,799
+una macchina, ok, ci mancava un pezzino
+
+1258
+01:08:53,799 --> 01:08:56,520
+qua. Questa è una macchina che riconosce
+
+1259
+01:08:56,520 --> 01:09:00,679
+quel linguaggio là. Ok.
+
+1260
+01:09:00,679 --> 01:09:02,159
+Alright.
+
+1261
+01:09:02,159 --> 01:09:05,359
+Proprietà 1,
+
+1262
+01:09:05,359 --> 01:09:09,080
+questa qua l'insieme delle macchine tali
+
+1263
+01:09:09,080 --> 01:09:12,560
+che il linguaggio DM è uguale al
+
+1264
+01:09:12,560 --> 01:09:17,120
+linguaggio L, che è questo L che abbiamo
+
+1265
+01:09:17,120 --> 01:09:21,199
+scritto qua. Eh, è proprio lui.
+
+1266
+01:09:21,199 --> 01:09:24,199
+Allora,
+
+1267
+01:09:24,239 --> 01:09:26,719
+questo qui è il problema di decidere se
+
+1268
+01:09:26,719 --> 01:09:29,040
+una macchina ha come linguaggio un
+
+1269
+01:09:29,040 --> 01:09:31,319
+linguaggio fissato.
+
+1270
+01:09:31,319 --> 01:09:34,199
+Questo problema è decidibile o
+
+1271
+01:09:34,199 --> 01:09:37,199
+indecidibile?
+
+1272
+01:09:42,920 --> 01:09:45,120
+Voci nuove, voci nuove. Un attimo
+
+1273
+01:09:45,120 --> 01:09:47,799
+qualche volto nuovo,
+
+1274
+01:09:47,799 --> 01:09:52,080
+qualche nuovo talento. Su,
+
+1275
+01:09:59,280 --> 01:10:01,520
+voi vedete? Eh,
+
+1276
+01:10:01,520 --> 01:10:05,520
+questa è una L. Eh,
+
+1277
+01:10:13,199 --> 01:10:16,320
+allora, decidere se il linguaggio di una
+
+1278
+01:10:16,320 --> 01:10:20,159
+certa macchina è un linguaggio dato è un
+
+1279
+01:10:20,159 --> 01:10:24,920
+problema decidibile o indecidibile?
+
+1280
+01:10:33,600 --> 01:10:35,840
+Guys, lì sopra che non vi ho sentito per
+
+1281
+01:10:35,840 --> 01:10:39,199
+nulla oggi.
+
+1282
+01:10:39,199 --> 01:10:42,199
+Eh,
+
+1283
+01:10:54,360 --> 01:10:57,280
+prego.
+È indecidibile. è indecidibile
+
+1284
+01:10:57,280 --> 01:10:59,280
+perché è indecidibile
+
+1285
+01:10:59,280 --> 01:11:02,600
+è una prospetà di macchine, una prosetà
+
+1286
+01:11:02,600 --> 01:11:05,360
+sistematica e non è banale perché ci
+
+1287
+01:11:05,360 --> 01:11:07,320
+sono
+
+1288
+01:11:07,320 --> 01:11:11,360
+cioè l dentro,
+cioè R dentro
+e gli altri
+
+1289
+01:11:11,360 --> 01:11:13,159
+non stanno for. Ok, avete sentito?
+
+1290
+01:11:13,159 --> 01:11:16,840
+Quindi il problema di data una macchina,
+
+1291
+01:11:16,840 --> 01:11:19,800
+ok? Stabilire se il linguaggio di questa
+
+1292
+01:11:19,800 --> 01:11:22,280
+macchina è un certo linguaggio L è un
+
+1293
+01:11:22,280 --> 01:11:25,679
+problema indecidibile perché perché
+
+1294
+01:11:25,679 --> 01:11:29,000
+equivale a decidere una proprietà di
+
+1295
+01:11:29,000 --> 01:11:31,040
+linguaggio non banale. Qual è questa
+
+1296
+01:11:31,040 --> 01:11:33,400
+proprietà? È la proprietà di essere
+
+1297
+01:11:33,400 --> 01:11:36,719
+uguale al linguaggio L. Allora, P1,
+
+1298
+01:11:36,719 --> 01:11:39,360
+questo linguaggio è un linguaggio di
+
+1299
+01:11:39,360 --> 01:11:41,080
+macchine, quindi è una proprietà di
+
+1300
+01:11:41,080 --> 01:11:43,199
+macchine, è una proprietà semantica
+
+1301
+01:11:43,199 --> 01:11:45,080
+perché riguarda i linguaggi delle
+
+1302
+01:11:45,080 --> 01:11:49,159
+macchine, è una proprietà non banale
+
+1303
+01:11:49,159 --> 01:11:53,120
+perché dentro di sé c'ha L e fuori di sé
+
+1304
+01:11:53,120 --> 01:11:55,440
+c'ha le cose diverse da L, quindi questa
+
+1305
+01:11:55,440 --> 01:11:58,600
+proprietà non è né vuota né tutto il re.
+
+1306
+01:11:58,600 --> 01:12:01,679
+Quindi per il teorema di Rice questa
+
+1307
+01:12:01,679 --> 01:12:06,760
+proprietà è indecidibile. Ok? Quindi, ad
+
+1308
+01:12:06,760 --> 01:12:08,440
+esempio,
+
+1309
+01:12:08,440 --> 01:12:11,120
+questo ci dice varie cose, no? Il
+
+1310
+01:12:11,120 --> 01:12:19,000
+problema di date due macchine m1 ed m2.
+
+1311
+01:12:19,760 --> 01:12:23,000
+No, quella è un'altra cosa. Ok.
+
+1312
+01:12:23,000 --> 01:12:28,159
+Eh, altro esempio. P2
+
+1313
+01:12:31,280 --> 01:12:35,000
+M l'insieme delle macchine M tale che il
+
+1314
+01:12:35,000 --> 01:12:38,840
+linguaggio di M è L
+
+1315
+01:12:38,840 --> 01:12:40,400
+è
+
+1316
+01:12:40,400 --> 01:12:44,840
+ogni stringa
+
+1317
+01:12:45,239 --> 01:12:48,800
+di L
+
+1318
+01:12:48,800 --> 01:12:53,120
+M la accetta.
+
+1319
+01:12:55,880 --> 01:12:59,600
+in al più
+
+1320
+01:13:00,520 --> 01:13:04,239
+100 passi.
+
+1321
+01:13:04,800 --> 01:13:07,800
+Ok.
+
+1322
+01:13:17,080 --> 01:13:19,280
+Ok. Questa qui è una proprietà di
+
+1323
+01:13:19,280 --> 01:13:21,520
+macchine o non è una proprietà di
+
+1324
+01:13:21,520 --> 01:13:24,520
+macchine?
+
+1325
+01:13:31,679 --> 01:13:33,000
+È una proprietà di macchine perché
+
+1326
+01:13:33,000 --> 01:13:36,960
+contiene codici di macchinatori.
+
+1327
+01:13:38,600 --> 01:13:42,159
+Questa qui è una proprietà banale o non
+
+1328
+01:13:42,159 --> 01:13:43,960
+banale? Vi ricordo che la distinzione
+
+1329
+01:13:43,960 --> 01:13:45,440
+noi abbiamo proprietà di macchine e
+
+1330
+01:13:45,440 --> 01:13:47,800
+proprietà di linguaggi. Una proprietà di
+
+1331
+01:13:47,800 --> 01:13:51,239
+macchine è banale se o contiene tutte le
+
+1332
+01:13:51,239 --> 01:13:53,360
+macchine o non contiene nessuna
+
+1333
+01:13:53,360 --> 01:13:55,920
+macchina. Una proprietà di linguaggi è
+
+1334
+01:13:55,920 --> 01:13:58,880
+banale se o non contiene nessun
+
+1335
+01:13:58,880 --> 01:14:00,800
+linguaggio o contiene tutti i linguaggi,
+
+1336
+01:14:00,800 --> 01:14:03,560
+ok? Sono similari. Quindi la proprietà
+
+1337
+01:14:03,560 --> 01:14:07,040
+P2 è una proprietà di macchine. Questa
+
+1338
+01:14:07,040 --> 01:14:11,320
+questa proprietà è banale o non banale?
+
+1339
+01:14:11,320 --> 01:14:14,199
+È banale perché abbiamo detto che la
+
+1340
+01:14:14,199 --> 01:14:16,400
+proprietà per una è indecidibile. Di
+
+1341
+01:14:16,400 --> 01:14:18,920
+conseguenza io sto chiedendo che m
+
+1342
+01:14:18,920 --> 01:14:22,639
+accetti in altri 100 passi che non so.
+
+1343
+01:14:22,639 --> 01:14:25,639
+Eh, ma questo è Ok, questo è non lo
+
+1344
+01:14:25,639 --> 01:14:28,199
+sappiamo. Una un conto è se una cosa non
+
+1345
+01:14:28,199 --> 01:14:32,120
+lo sappiamo, un'altra cosa è se è vero o
+
+1346
+01:14:32,120 --> 01:14:34,320
+meno. Nel senso è vero o no che
+
+1347
+01:14:34,320 --> 01:14:37,400
+l'espansione di pi greco decimale a un
+
+1348
+01:14:37,400 --> 01:14:40,360
+certo punto c'ha 100 zeri di fila.
+
+1349
+01:14:40,360 --> 01:14:42,600
+Noi non lo sappiamo, però di principio
+
+1350
+01:14:42,600 --> 01:14:46,440
+questa cosa è o vera o falsa. Ok? Quindi
+
+1351
+01:14:46,440 --> 01:14:50,080
+è un'altra cosa, cioè un'altra cosa. P2
+
+1352
+01:14:50,080 --> 01:14:53,679
+è una proprietà di macchine banale o non
+
+1353
+01:14:53,679 --> 01:14:56,679
+banale?
+
+1354
+01:15:00,239 --> 01:15:02,840
+Moralmente
+
+1355
+01:15:02,840 --> 01:15:07,679
+sarebbe da dire banale in quanto, cioè è
+
+1356
+01:15:07,679 --> 01:15:09,400
+coloni che ci frega, cioè ogni stringa
+
+1357
+01:15:09,400 --> 01:15:12,960
+di L
+perché ogni stringa di L ècta con
+
+1358
+01:15:12,960 --> 01:15:15,239
+100 passi,
+quindi abbiamo una ceramica
+
+1359
+01:15:15,239 --> 01:15:18,960
+strica
+che viene accettata un numero
+
+1360
+01:15:18,960 --> 01:15:21,000
+pico di passi, però sarà un numero fisso
+
+1361
+01:15:21,000 --> 01:15:23,639
+e noi possiamo permetterci guardando
+
+1362
+01:15:23,639 --> 01:15:25,800
+semplicemente per ciò che è andato suo
+
+1363
+01:15:25,800 --> 01:15:28,600
+Sì. Sì. Eh, soprattutto sono dei loop
+
+1364
+01:15:28,600 --> 01:15:33,639
+che sono della stringa
+possiamo ottenere
+
+1365
+01:15:33,639 --> 01:15:37,239
+doc una stringa che vada oltre c passi
+
+1366
+01:15:37,239 --> 01:15:38,560
+indipendentemente la traccia anche se
+
+1367
+01:15:38,560 --> 01:15:40,480
+modifichiamo possiamo costruire possiamo
+
+1368
+01:15:40,480 --> 01:15:43,600
+andare oltre. Quindi il per ogni
+ah
+è
+
+1369
+01:15:43,600 --> 01:15:45,400
+una cioè ci multifica tutto quanto.
+E
+
+1370
+01:15:45,400 --> 01:15:50,639
+quindi P2 è vuoto.
+P2 è vuota. Recap, P2
+
+1371
+01:15:50,639 --> 01:15:53,000
+non contiene nessuna macchina perché non
+
+1372
+01:15:53,000 --> 01:15:55,639
+c'è nessuna macchina che ci dia garanzia
+
+1373
+01:15:55,639 --> 01:15:59,840
+di di riconoscere L in 100 passi, perché
+
+1374
+01:15:59,840 --> 01:16:04,080
+sulle stringhe lunghe che W è lunga 200,
+
+1375
+01:16:04,080 --> 01:16:05,960
+quella macchina non ha meno nemmeno il
+
+1376
+01:16:05,960 --> 01:16:09,840
+tempo di leggerla W, ok? Quindi non sarà
+
+1377
+01:16:09,840 --> 01:16:11,840
+in grado di riconoscere L. Quella
+
+1378
+01:16:11,840 --> 01:16:13,600
+proprietà è vuota, è una proprietà
+
+1379
+01:16:13,600 --> 01:16:16,040
+banale, quindi è decidibile perché
+
+1380
+01:16:16,040 --> 01:16:20,159
+rispondiamo sempre di no. Ok?
+
+1381
+01:16:21,440 --> 01:16:25,880
+Eh, alright. P3,
+
+1382
+01:16:28,679 --> 01:16:34,239
+l'insieme delle macchine di Touring M
+
+1383
+01:16:34,239 --> 01:16:39,520
+tali che M non accetta.
+
+1384
+01:16:45,800 --> 01:16:48,440
+Non accetta che cosa?
+
+1385
+01:16:48,440 --> 01:16:51,600
+L intersecato
+
+1386
+01:16:51,600 --> 01:16:53,400
+01
+
+1387
+01:16:53,400 --> 01:16:57,760
+cancelletto all 100.
+
+1388
+01:16:59,840 --> 01:17:02,120
+Ok?
+
+1389
+01:17:02,120 --> 01:17:04,320
+Che significa questo? Che in P3 ci
+
+1390
+01:17:04,320 --> 01:17:06,560
+stanno quelle macchine di touring che
+
+1391
+01:17:06,560 --> 01:17:08,960
+non accettano questo linguaggio. Qual è
+
+1392
+01:17:08,960 --> 01:17:12,600
+questo linguaggio? È il linguaggio
+
+1393
+01:17:12,600 --> 01:17:16,320
+delle stringhe che stanno in L e sono
+
+1394
+01:17:16,320 --> 01:17:21,320
+lunghe. 100 caratteri. Ok,
+
+1395
+01:17:21,760 --> 01:17:28,199
+ripetiamo. P3 è l'insieme delle macchine
+
+1396
+01:17:32,600 --> 01:17:34,520
+e l'insieme delle macchine che non
+
+1397
+01:17:34,520 --> 01:17:36,880
+accettano quel linguaggio particolare
+
+1398
+01:17:36,880 --> 01:17:39,320
+lì. Ok?
+
+1399
+01:17:39,320 --> 01:17:42,719
+Allora, quello che vogliamo capire è se
+
+1400
+01:17:42,719 --> 01:17:47,960
+questo linguaggio sia decidibile o meno.
+
+1401
+01:17:55,440 --> 01:17:58,120
+Allora, P3
+
+1402
+01:17:58,120 --> 01:18:02,639
+è una proprietà di macchine o no? Sì, è
+
+1403
+01:18:02,639 --> 01:18:06,480
+una proprietà di macchine. Ok.
+
+1404
+01:18:06,480 --> 01:18:10,760
+Poi ci chiediamo P3
+
+1405
+01:18:10,760 --> 01:18:16,120
+è banale o non banale?
+
+1406
+01:18:29,320 --> 01:18:31,880
+è non banale perché
+
+1407
+01:18:31,880 --> 01:18:35,280
+perché ci sono macchine che accettano
+
+1408
+01:18:35,280 --> 01:18:37,560
+e
+
+1409
+01:18:37,560 --> 01:18:39,560
+esattamente. Quindi qualche macchina sta
+
+1410
+01:18:39,560 --> 01:18:42,199
+in P3, qualche macchina non sta in P3.
+
+1411
+01:18:42,199 --> 01:18:45,520
+Quindi P3 è una proprietà di macchine ed
+
+1412
+01:18:45,520 --> 01:18:48,920
+è una proprietà non banale. Ok?
+
+1413
+01:18:48,920 --> 01:18:51,080
+Quello che dobbiamo capire ora per poter
+
+1414
+01:18:51,080 --> 01:18:53,120
+applicare il teorema di Rice è se questa
+
+1415
+01:18:53,120 --> 01:18:56,120
+proprietà P3 sia semantica o meno. La
+
+1416
+01:18:56,120 --> 01:19:00,960
+proprietà P3 è semantica o no?
+
+1417
+01:19:05,480 --> 01:19:07,040
+Sì.
+
+1418
+01:19:07,040 --> 01:19:11,920
+di sì perché scritta M non accettacato.
+
+1419
+01:19:11,920 --> 01:19:16,320
+Può essere scritto come lm diverso da
+
+1420
+01:19:16,320 --> 01:19:20,679
+secato. E a questo punto transverso.
+
+1421
+01:19:20,800 --> 01:19:23,480
+Vabbè, sono hanno lo stesso L. Hanno lo
+
+1422
+01:19:23,480 --> 01:19:25,840
+stesso L diversi.
+Sì, sì. Questa è una
+
+1423
+01:19:25,840 --> 01:19:27,360
+proprietà semantica perché è una
+
+1424
+01:19:27,360 --> 01:19:29,000
+proprietà che riguarda i linguaggi. Se
+
+1425
+01:19:29,000 --> 01:19:31,280
+volessimo essere un pelino più formali,
+
+1426
+01:19:31,280 --> 01:19:35,679
+noi avremmo siano m1 ed m2 due macchine,
+
+1427
+01:19:35,679 --> 01:19:37,360
+ok?
+
+1428
+01:19:37,360 --> 01:19:39,639
+Che abbiano lo stesso linguaggio.
+
+1429
+01:19:39,639 --> 01:19:42,440
+Supponiamo che m1 appartiene alla alla
+
+1430
+01:19:42,440 --> 01:19:45,080
+proprietà P3.
+
+1431
+01:19:45,080 --> 01:19:47,239
+Se m1 appartiene alla proprietà P3,
+
+1432
+01:19:47,239 --> 01:19:49,639
+allora il linguaggio di m1 deve essere
+
+1433
+01:19:49,639 --> 01:19:52,000
+diverso da questa.
+
+1434
+01:19:52,000 --> 01:19:54,760
+Ma m che l'abbiamo presa apposta avere
+
+1435
+01:19:54,760 --> 01:19:59,280
+lo stesso linguaggio di m1, ok?
+
+1436
+01:19:59,280 --> 01:20:02,560
+Avrà anch'essa un linguaggio diverso da
+
+1437
+01:20:02,560 --> 01:20:05,120
+lui, quindi nemmeno M2 sta in P3. Quindi
+
+1438
+01:20:05,120 --> 01:20:06,920
+questa è una proprietà di macchi, una
+
+1439
+01:20:06,920 --> 01:20:09,199
+proprietà non banale, una proprietà
+
+1440
+01:20:09,199 --> 01:20:12,159
+semantica e quindi è decidibile o
+
+1441
+01:20:12,159 --> 01:20:14,760
+indecidibile? è indecidibile per il
+
+1442
+01:20:14,760 --> 01:20:18,840
+teorema di Rice. Ok?
+
+1443
+01:20:19,120 --> 01:20:22,320
+E va bene. Con questo chiudiamo per
+
+1444
+01:20:22,320 --> 01:20:24,719
+oggi. Grazie mille. Dalla settimana
+
+1445
+01:20:24,719 --> 01:20:27,560
+prossima cambiamo argomenti, iniziamo
+
+1446
+01:20:27,560 --> 01:20:30,000
+complessità. Ok?
+
+1447
+01:20:30,000 --> 01:20:33,040
+Di nuovo, per complessità ci servono le
+
+1448
+01:20:33,040 --> 01:20:35,880
+riduzioni, quindi se il concetto di
+
+1449
+01:20:35,880 --> 01:20:39,360
+riduzione ancora non vi è chiaro, andate
+
+1450
+01:20:39,360 --> 01:20:42,760
+a riguardar, cercate di appropriarvene
+
+1451
+01:20:42,760 --> 01:20:45,560
+perché ne vedremo a non finire di
+
+1452
+01:20:45,560 --> 01:20:49,480
+riduzione. Ok, babbo giornata, buon
+
+1453
+01:20:49,480 --> 01:20:52,480
+weekend.

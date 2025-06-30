@@ -1,0 +1,7373 @@
+1
+00:00:00,199 --> 00:00:03,040
+Quello che vedremo oggi
+
+2
+00:00:03,040 --> 00:00:07,080
+sono dopo aver definito questa
+
+3
+00:00:07,080 --> 00:00:10,120
+fantastica nozione di NP completezza,
+
+4
+00:00:10,120 --> 00:00:13,120
+oggi vedremo problemi NP completi. Ok,
+
+5
+00:00:13,120 --> 00:00:16,720
+chiaro per tutti? Cos'è NP hard? Cos'è
+
+6
+00:00:16,720 --> 00:00:18,800
+NP completo?
+
+7
+00:00:18,800 --> 00:00:21,640
+Il corso sta stando troppo difficile.
+
+8
+00:00:21,640 --> 00:00:23,720
+No, si capisce. Vado troppo veloce. Se
+
+9
+00:00:23,720 --> 00:00:26,119
+vado troppo veloce rallentatemi, eh.
+
+10
+00:00:26,119 --> 00:00:31,320
+Vado veloce. Ah, ok.
+
+11
+00:00:32,320 --> 00:00:33,800
+Ok, quindi quello che faremo oggi
+
+12
+00:00:33,800 --> 00:00:35,800
+vedremo
+
+13
+00:00:35,800 --> 00:00:38,320
+sperabilmente cinque problemi NP
+
+14
+00:00:38,320 --> 00:00:41,520
+completi, forse sei, però visto l'orario
+
+15
+00:00:41,520 --> 00:00:44,239
+deito. Eh,
+
+16
+00:00:44,239 --> 00:00:47,120
+siamo partiti. Ok, prima cosa, ieri
+
+17
+00:00:47,120 --> 00:00:50,480
+avevo lasciato la domanda di dimostrare
+
+18
+00:00:50,480 --> 00:00:53,800
+l'NP hardness o NP completezza di Exact
+
+19
+00:00:53,800 --> 00:00:59,359
+3at. Ci avete pensato? Avete risolto?
+
+20
+00:01:00,000 --> 00:01:02,079
+Come si fa?
+
+21
+00:01:02,079 --> 00:01:03,840
+Le variabili.
+
+22
+00:01:03,840 --> 00:01:09,360
+Sì. Ok. Allora, come si fa? Si prende
+
+23
+00:01:09,360 --> 00:01:11,600
+la formula iniziale che è una tre satat,
+
+24
+00:01:11,600 --> 00:01:14,040
+quindi le sue clausole hanno al più tre
+
+25
+00:01:14,040 --> 00:01:16,439
+variabili. Ok? La dobbiamo trasformare
+
+26
+00:01:16,439 --> 00:01:18,280
+tre letterali, la dobbiamo trasformare
+
+27
+00:01:18,280 --> 00:01:21,200
+in una formula le cui clausole tutte le
+
+28
+00:01:21,200 --> 00:01:23,920
+clausole hanno esattamente
+
+29
+00:01:23,920 --> 00:01:27,920
+tre letterali. Qua registra, registra.
+
+30
+00:01:27,920 --> 00:01:31,560
+Come si procede? Si prendono a turno
+
+31
+00:01:31,560 --> 00:01:33,520
+tutte le clausole della formula di
+
+32
+00:01:33,520 --> 00:01:35,840
+partenza. Se quella clausola è
+
+33
+00:01:35,840 --> 00:01:37,799
+esattamente tre letterali, la copiamo
+
+34
+00:01:37,799 --> 00:01:41,079
+così com'è. Se la clausola ha meno,
+
+35
+00:01:41,079 --> 00:01:43,320
+strettamente meno di tre letterali,
+
+36
+00:01:43,320 --> 00:01:45,360
+prendiamo a caso un po' di letterali che
+
+37
+00:01:45,360 --> 00:01:47,280
+stanno già dentro in quella clausa e li
+
+38
+00:01:47,280 --> 00:01:50,520
+replichiamo. Finita la riduzione, ok? La
+
+39
+00:01:50,520 --> 00:01:53,280
+formula è semanticamente equivalente e
+
+40
+00:01:53,280 --> 00:01:55,920
+di conseguenza noi abbiamo che Xat 3 SAT
+
+41
+00:01:55,920 --> 00:01:59,320
+è nardbo. Per questa ragione, quando
+
+42
+00:01:59,320 --> 00:02:04,479
+parlerò di tre SAT da qui in avanti,
+
+43
+00:02:04,479 --> 00:02:07,240
+indistintamente mi farò farò riferimento
+
+44
+00:02:07,240 --> 00:02:09,479
+o alla variante con esattamente tre
+
+45
+00:02:09,479 --> 00:02:12,440
+letterali o alla variante con tre
+
+46
+00:02:12,440 --> 00:02:14,200
+letterali, dipende quale ci torna
+
+47
+00:02:14,200 --> 00:02:17,280
+comodo, però giusto perché trasformare
+
+48
+00:02:17,280 --> 00:02:19,640
+l'una nell'altra è una cosa estremamente
+
+49
+00:02:19,640 --> 00:02:22,840
+semplice, ok? Quindi si può fare
+
+50
+00:02:22,840 --> 00:02:25,800
+senza problemi. Ok? Allora, quello che
+
+51
+00:02:25,800 --> 00:02:29,280
+oggi vedremo sono una serie di problemi
+
+52
+00:02:29,280 --> 00:02:32,720
+sul grafo che magari già ne avete visti.
+
+53
+00:02:32,720 --> 00:02:35,959
+Oggi dimostreremo che sono NP completi,
+
+54
+00:02:35,959 --> 00:02:39,080
+ok? NP al hard, quindi sono problemi
+
+55
+00:02:39,080 --> 00:02:41,920
+inerentemente combinatorici
+
+56
+00:02:41,920 --> 00:02:44,440
+per i quali non conosciamo algoritmi di
+
+57
+00:02:44,440 --> 00:02:47,720
+soluzione polinomiale. Ok? Il primo che
+
+58
+00:02:47,720 --> 00:02:49,800
+andiamo a guardare è uno che abbiamo già
+
+59
+00:02:49,800 --> 00:02:52,200
+introdotto la volta scorsa, è il
+
+60
+00:02:52,200 --> 00:02:55,360
+problema dell'indipendent set.
+
+61
+00:02:55,360 --> 00:02:59,400
+in independent
+
+62
+00:02:59,400 --> 00:03:03,519
+set. Ok.
+
+63
+00:03:05,200 --> 00:03:09,640
+Allora, che cos'è un independent set?
+
+64
+00:03:09,640 --> 00:03:13,640
+Dato un grafo,
+
+65
+00:03:18,680 --> 00:03:22,040
+unindipend per un grafo, l'abbiamo già
+
+66
+00:03:22,040 --> 00:03:26,799
+definito, è un insieme di nodi
+
+67
+00:03:26,799 --> 00:03:29,840
+tali per cui non esiste un arco fra
+
+68
+00:03:29,840 --> 00:03:32,680
+nessuna coppia di nodi di questo set.
+
+69
+00:03:32,680 --> 00:03:37,959
+Quindi S è un indipendent set dei nodi
+
+70
+00:03:37,959 --> 00:03:42,519
+del grafo. Se presa una qualsiasi coppia
+
+71
+00:03:42,519 --> 00:03:45,599
+di nodi dentro S non ci sta un arco che
+
+72
+00:03:45,599 --> 00:03:47,599
+li collega, ok? Sono quindi un insieme
+
+73
+00:03:47,599 --> 00:03:52,239
+di set di di elementi di insieme di nodi
+
+74
+00:03:52,239 --> 00:03:55,159
+completamente sganciati. Ok.
+Grafo non
+
+75
+00:03:55,159 --> 00:03:58,879
+orientato.
+Grafo non orientato. Sì, sì.
+
+76
+00:03:58,879 --> 00:04:00,879
+Oggi facciamo è tutto non orientato
+
+77
+00:04:00,879 --> 00:04:02,959
+tranne forse l'ultimissimo problema se
+
+78
+00:04:02,959 --> 00:04:05,280
+ci arriviamo. Ok?
+
+79
+00:04:05,280 --> 00:04:09,280
+Ah, alright. Allora, ovviamente questo
+
+80
+00:04:09,280 --> 00:04:11,400
+problema, come dicevamo,
+
+81
+00:04:11,400 --> 00:04:13,959
+ogni grafo ammette un indipendent set,
+
+82
+00:04:13,959 --> 00:04:18,479
+ad esempio, il set vuoto. Ok? Quindi
+
+83
+00:04:18,479 --> 00:04:20,120
+quello che ci interessano sono
+
+84
+00:04:20,120 --> 00:04:22,400
+indipendent set grandi perché è quelli
+
+85
+00:04:22,400 --> 00:04:24,560
+che sono difficili da provare. Ok?
+
+86
+00:04:24,560 --> 00:04:26,759
+Quindi la definizione di problemi di
+
+87
+00:04:26,759 --> 00:04:28,600
+decisione, perché vi ripeto che nella
+
+88
+00:04:28,600 --> 00:04:31,120
+classe NP come in P stanno problemi di
+
+89
+00:04:31,120 --> 00:04:33,360
+decisione, non problemi di calcolo. Ci
+
+90
+00:04:33,360 --> 00:04:34,919
+serve una versione di decisione di
+
+91
+00:04:34,919 --> 00:04:37,759
+questo problema ed è la seguente.
+
+92
+00:04:37,759 --> 00:04:41,680
+Indipenden set è l'insieme delle coppie,
+
+93
+00:04:41,680 --> 00:04:44,280
+grafo
+
+94
+00:04:44,280 --> 00:04:49,080
+numero intero, ok? K talé
+
+95
+00:04:49,080 --> 00:04:52,080
+esiste
+
+96
+00:04:52,600 --> 00:04:54,680
+un
+
+97
+00:04:54,680 --> 00:04:58,479
+independent set
+
+98
+00:04:59,280 --> 00:05:02,520
+di taglia
+
+99
+00:05:02,520 --> 00:05:06,160
+almeno K
+
+100
+00:05:06,680 --> 00:05:08,720
+in G.
+
+101
+00:05:08,720 --> 00:05:11,320
+Ok? Questa è la definizione del problema
+
+102
+00:05:11,320 --> 00:05:13,039
+di decisione dell'indipendenzetti.
+
+103
+00:05:13,039 --> 00:05:14,560
+Quindi ci danno un grafo, ci danno un
+
+104
+00:05:14,560 --> 00:05:16,400
+numero. È vero o no che esiste
+
+105
+00:05:16,400 --> 00:05:20,240
+unindipendette di taglia almeno k?
+
+106
+00:05:20,240 --> 00:05:22,960
+Ok? Noi dimostreremo che questo problema
+
+107
+00:05:22,960 --> 00:05:26,880
+è n completo. Ok?
+
+108
+00:05:26,880 --> 00:05:28,960
+Per dimostrare che il problema è NP
+
+109
+00:05:28,960 --> 00:05:31,199
+completo, quale cose dobbiamo
+
+110
+00:05:31,199 --> 00:05:32,800
+dimostrare?
+
+111
+00:05:32,800 --> 00:05:35,960
+Due pezzi dobbiamo fare che sono
+
+112
+00:05:35,960 --> 00:05:40,919
+NP,
+membership in NP e
+NPS. Ok? Quindi,
+
+113
+00:05:40,919 --> 00:05:43,440
+per essere uno dei problemi più tosti di
+
+114
+00:05:43,440 --> 00:05:46,520
+NP deve stare in NP, senò non sarebbe
+
+115
+00:05:46,520 --> 00:05:49,960
+uno dei problemi più tosti di NP e
+
+116
+00:05:49,960 --> 00:05:53,039
+ovviamente deve essere NP ald. Ok.
+
+117
+00:05:53,039 --> 00:05:54,560
+Membership
+
+118
+00:05:54,560 --> 00:05:58,600
+in NP. Membership membership.
+
+119
+00:05:58,600 --> 00:06:02,360
+Ok. Che independence set appartiene a
+
+120
+00:06:02,360 --> 00:06:04,880
+NP. È vero, no che Independence
+
+121
+00:06:04,880 --> 00:06:08,199
+appartiene a NP? Basta avere una
+
+122
+00:06:08,199 --> 00:06:10,039
+macchina non deterministica che in tempo
+
+123
+00:06:10,039 --> 00:06:12,479
+polinomiale è in grado di decidere
+
+124
+00:06:12,479 --> 00:06:14,160
+un'istanza di questo problema. Ce la
+
+125
+00:06:14,160 --> 00:06:17,160
+facciamo?
+
+126
+00:06:17,240 --> 00:06:21,000
+Gessiamo il risultato, no?
+
+127
+00:06:21,000 --> 00:06:24,880
+Sì. Quindi ghessiamo l'insieme S,
+
+128
+00:06:24,880 --> 00:06:27,280
+contiamo i suoi elementi perché dobbiamo
+
+129
+00:06:27,280 --> 00:06:30,039
+essere sicuri di averne gessati almeno
+
+130
+00:06:30,039 --> 00:06:31,759
+K.
+
+131
+00:06:31,759 --> 00:06:35,120
+Dopodiché andiamo a coppie dentro S e
+
+132
+00:06:35,120 --> 00:06:38,240
+vediamo se c'è un arco chece. Se non c'è
+
+133
+00:06:38,240 --> 00:06:41,280
+rispondiamo sì. Ok. Questa cosa si fa in
+
+134
+00:06:41,280 --> 00:06:44,520
+tempo polinomiale.
+
+135
+00:06:47,520 --> 00:06:53,120
+Se il gess è grosso o è polinomiale?
+
+136
+00:06:56,440 --> 00:06:58,639
+polinomiale per
+il get è polinomiale
+
+137
+00:06:58,639 --> 00:07:00,800
+perché dobbiamo decidere per ogni nodo
+
+138
+00:07:00,800 --> 00:07:02,919
+se lo prendiamo o meno, quindi non è che
+
+139
+00:07:02,919 --> 00:07:05,240
+chissà che cosa andiamo a gessare. Ok?
+
+140
+00:07:05,240 --> 00:07:07,560
+Quindi il gess è polinomiale, il check è
+
+141
+00:07:07,560 --> 00:07:10,319
+polinomiale. Da questo noi abbiamo che
+
+142
+00:07:10,319 --> 00:07:14,840
+independentet è in NP. Ok? La parte più
+
+143
+00:07:14,840 --> 00:07:18,520
+tosta è mostrare che hardness, questa è
+
+144
+00:07:18,520 --> 00:07:22,479
+la parte più tosta, hardness
+
+145
+00:07:22,479 --> 00:07:28,280
+independent set è np hard.
+
+146
+00:07:28,280 --> 00:07:29,960
+Ok?
+
+147
+00:07:29,960 --> 00:07:33,960
+Per dimostrare che indipend NPR abbiamo
+
+148
+00:07:33,960 --> 00:07:36,440
+due strade. O riduciamo tutti i problemi
+
+149
+00:07:36,440 --> 00:07:38,960
+di NP a indipendent Z, che è una cosa
+
+150
+00:07:38,960 --> 00:07:41,240
+che è meglio evitare, oppure ci
+
+151
+00:07:41,240 --> 00:07:43,759
+scegliamo un problema
+
+152
+00:07:43,759 --> 00:07:47,720
+NP completo o NP ardo da ridurre a
+
+153
+00:07:47,720 --> 00:07:49,840
+indipendente. Quello che vedremo
+
+154
+00:07:49,840 --> 00:07:54,520
+stamattina è una riduzione da 3 SAT a
+
+155
+00:07:54,520 --> 00:07:58,599
+indipendent. Ok?
+
+156
+00:08:01,520 --> 00:08:04,080
+tre sat nella variante di esattamente
+
+157
+00:08:04,080 --> 00:08:06,919
+tre nodi, ok? Che così tre esattamente
+
+158
+00:08:06,919 --> 00:08:09,879
+tre letterali che così ci semplifica un
+
+159
+00:08:09,879 --> 00:08:12,360
+po' le cose. Ok?
+
+160
+00:08:12,360 --> 00:08:14,560
+Allora,
+
+161
+00:08:14,560 --> 00:08:17,319
+ragioniamoci un po' assieme. Che cos'è
+
+162
+00:08:17,319 --> 00:08:21,199
+un'istanza di tre SAT?
+La formula
+è una
+
+163
+00:08:21,199 --> 00:08:25,199
+formula fai in CNF, ok? Questo è
+
+164
+00:08:25,199 --> 00:08:29,000
+importante che sia in CNF, eh.
+
+165
+00:08:29,720 --> 00:08:31,759
+Che cos'è un'istanza per
+
+166
+00:08:31,759 --> 00:08:34,279
+l'indipendenzette?
+
+167
+00:08:34,279 --> 00:08:38,159
+Grafo K.
+È un grafo numero grafo G
+
+168
+00:08:38,159 --> 00:08:41,959
+numero K. Ok?
+
+169
+00:08:41,959 --> 00:08:45,040
+Quindi noi dobbiamo trovare una funzione
+
+170
+00:08:45,040 --> 00:08:49,600
+di trasformazione fann
+
+171
+00:08:49,800 --> 00:08:51,760
+polinomiale
+
+172
+00:08:51,760 --> 00:08:55,000
+e trasforma
+
+173
+00:08:55,000 --> 00:09:00,360
+formule CNF. in coppie grafo numero
+
+174
+00:09:00,360 --> 00:09:02,079
+talé
+
+175
+00:09:02,079 --> 00:09:04,920
+se la formula di partenza fai è
+
+176
+00:09:04,920 --> 00:09:06,519
+soddisfacbile,
+
+177
+00:09:06,519 --> 00:09:10,440
+allora il grafo G ottenuto da F ha un
+
+178
+00:09:10,440 --> 00:09:13,560
+indipendent di taglia K, dove pure K è
+
+179
+00:09:13,560 --> 00:09:16,920
+ottenuto da FA. Ok? Se la formula è
+
+180
+00:09:16,920 --> 00:09:18,440
+insoddisfacbile,
+
+181
+00:09:18,440 --> 00:09:20,320
+allora il grafo G non deve avere
+
+182
+00:09:20,320 --> 00:09:23,800
+un'indipendenzetta di taglia K. Ok?
+
+183
+00:09:23,800 --> 00:09:26,240
+Quindi dobbiamo, vedremo questa cosa un
+
+184
+00:09:26,240 --> 00:09:28,120
+po' poco usuale, le altre riduzioni
+
+185
+00:09:28,120 --> 00:09:30,519
+saranno un po' più semplici, almeno
+
+186
+00:09:30,519 --> 00:09:32,160
+questa della prima parte di lezione, in
+
+187
+00:09:32,160 --> 00:09:34,839
+cui dobbiamo prendere una formula
+
+188
+00:09:34,839 --> 00:09:39,720
+e la trasformiamo in un grafo. Ok?
+
+189
+00:09:39,720 --> 00:09:43,440
+Prendiamo un esempio.
+
+190
+00:09:43,440 --> 00:09:47,079
+Non so, facciamo ad esempio X1
+
+191
+00:09:47,079 --> 00:09:54,399
+or X2 or not X3 and
+
+192
+00:09:54,399 --> 00:09:56,839
+X2
+
+193
+00:09:56,839 --> 00:10:03,079
+or X3 or X4
+
+194
+00:10:03,920 --> 00:10:05,680
+and
+
+195
+00:10:05,680 --> 00:10:10,160
+I don't know. Not. Eh, sì.
+
+196
+00:10:10,200 --> 00:10:13,839
+Not X3 or
+
+197
+00:10:13,839 --> 00:10:18,600
+not X4 or X5. Ok. Scritto
+
+198
+00:10:18,600 --> 00:10:20,240
+come
+
+199
+00:10:20,240 --> 00:10:24,920
+not X3 or not X4 or is 5. Sì, ho ho
+
+200
+00:10:24,920 --> 00:10:27,640
+preso troppo spazio.
+
+201
+00:10:27,640 --> 00:10:29,240
+Alright,
+
+202
+00:10:29,240 --> 00:10:33,480
+allora ragioniamo prima assieme.
+
+203
+00:10:37,360 --> 00:10:39,959
+Che cos'è un'istanza per il problema di
+
+204
+00:10:39,959 --> 00:10:42,200
+CNF?
+
+205
+00:10:42,200 --> 00:10:47,279
+Di SAT SAT. Che cos'è?
+
+206
+00:10:49,120 --> 00:10:52,399
+Dai su
+
+207
+00:10:53,880 --> 00:10:56,800
+una formula. Ok. Che cos'è un'istanza?
+
+208
+00:10:56,800 --> 00:10:58,639
+Ve lo ripeto perché ci serve mappare le
+
+209
+00:10:58,639 --> 00:11:01,560
+idee. Che cos'è un'istanza per file per
+
+210
+00:11:01,560 --> 00:11:04,360
+tre satat? File è una formula. Che cos'è
+
+211
+00:11:04,360 --> 00:11:08,560
+un'istanza per tre per independence set?
+
+212
+00:11:08,560 --> 00:11:11,320
+Scusate, ho dormito 4 ore.
+
+213
+00:11:11,320 --> 00:11:14,720
+Cos'è un per l'istanza di indipendenza?
+
+214
+00:11:14,720 --> 00:11:18,160
+Accoppia grafo numero.
+Grafo numero. Ok.
+
+215
+00:11:18,160 --> 00:11:20,440
+Noi vogliamo mappare questo problema su
+
+216
+00:11:20,440 --> 00:11:24,720
+quest'altro. Ok? E
+
+217
+00:11:24,720 --> 00:11:27,120
+in particolare la difficoltà di questo
+
+218
+00:11:27,120 --> 00:11:29,320
+problema sulla difficoltà di questo
+
+219
+00:11:29,320 --> 00:11:32,639
+problema. Ok? Secondo voi che cos'è che
+
+220
+00:11:32,639 --> 00:11:35,639
+rende difficile risolvere il problema
+
+221
+00:11:35,639 --> 00:11:40,240
+della formula buleana?
+
+222
+00:11:41,780 --> 00:11:44,079
+[Musica]
+
+223
+00:11:44,079 --> 00:11:47,120
+Cos'è che lo rende combinatorio
+
+224
+00:11:47,120 --> 00:11:49,120
+il fatto che io abbia tante possibili
+
+225
+00:11:49,120 --> 00:11:51,959
+combina? Posso assegnare di
+Sì, cioè la
+
+226
+00:11:51,959 --> 00:11:53,560
+cosa difficile del problema della
+
+227
+00:11:53,560 --> 00:11:56,440
+formula buleana è che noi alla fine
+
+228
+00:11:56,440 --> 00:12:00,320
+dobbiamo decidere per ogni variabile se
+
+229
+00:12:00,320 --> 00:12:04,360
+va vero o falso. Ok?
+
+230
+00:12:04,360 --> 00:12:07,720
+In maniera similare, sul problema
+
+231
+00:12:07,720 --> 00:12:09,519
+dell'indipendence set, cos'è che
+
+232
+00:12:09,519 --> 00:12:12,480
+dobbiamo decidere?
+
+233
+00:12:13,000 --> 00:12:17,279
+Se il nodo
+wait wait wait nuove voci
+
+234
+00:12:17,279 --> 00:12:20,800
+so che lo sai.
+
+235
+00:12:21,639 --> 00:12:27,320
+So independent set che dobbiamo decidere
+
+236
+00:12:27,800 --> 00:12:31,600
+se prendere un nodo o meno. Okamo
+
+237
+00:12:31,600 --> 00:12:34,320
+facendo adesso è per dare un'idea del
+
+238
+00:12:34,320 --> 00:12:36,560
+perché costruiremo la riduzione in quel
+
+239
+00:12:36,560 --> 00:12:39,440
+modo. Cioè
+
+240
+00:12:39,440 --> 00:12:41,720
+quando vi andate a leggere sui libri,
+
+241
+00:12:41,720 --> 00:12:44,199
+no, le riduzioni, non è che vi scrivono
+
+242
+00:12:44,199 --> 00:12:46,480
+sul libro come ci sono arrivati, vi
+
+243
+00:12:46,480 --> 00:12:48,839
+danno la riduzione e basta. Ok? Quello
+
+244
+00:12:48,839 --> 00:12:51,120
+che stiamo facendo ora è cercare di
+
+245
+00:12:51,120 --> 00:12:52,920
+capire come sta cosa uno se la possa
+
+246
+00:12:52,920 --> 00:12:57,120
+inventata, ok? Perché mi chiedevano che
+
+247
+00:12:57,120 --> 00:12:59,600
+eserci, che problemi ci saranno sulla
+
+248
+00:12:59,600 --> 00:13:02,199
+prova scritta con altissima probabilità
+
+249
+00:13:02,199 --> 00:13:05,199
+ci sarà. vi do un problema che non
+
+250
+00:13:05,199 --> 00:13:07,480
+abbiamo visto a lezione, ovviamente non
+
+251
+00:13:07,480 --> 00:13:09,360
+vi do una cosa catastroficamente
+
+252
+00:13:09,360 --> 00:13:12,120
+complicata, vi do un problemino e vi
+
+253
+00:13:12,120 --> 00:13:16,000
+dico di che NP completo e quindi la
+
+254
+00:13:16,000 --> 00:13:19,279
+riduzione ve la dovete inventare. Ok?
+
+255
+00:13:19,279 --> 00:13:22,040
+Allora, quindi a noi seria per costruire
+
+256
+00:13:22,040 --> 00:13:24,120
+riduzioni. Com'è che faccio io quando
+
+257
+00:13:24,120 --> 00:13:25,959
+costruisco riduzioni? Faccio così, mi
+
+258
+00:13:25,959 --> 00:13:28,600
+metto i problemi così come li avete
+
+259
+00:13:28,600 --> 00:13:30,279
+visti, me li metto uno a fianco
+
+260
+00:13:30,279 --> 00:13:32,560
+all'altro, me li incolonno, mi inizio a
+
+261
+00:13:32,560 --> 00:13:34,519
+scrivere cos'è un'istanza di un
+
+262
+00:13:34,519 --> 00:13:36,440
+problema, cos'è l'istanza dell'altro
+
+263
+00:13:36,440 --> 00:13:39,480
+problema. Cosa sono le istanze sì, cosa
+
+264
+00:13:39,480 --> 00:13:41,680
+sono le istanze sì, cosa sono le istanze
+
+265
+00:13:41,680 --> 00:13:43,360
+no? Cosa sono le stanze no? perché mi
+
+266
+00:13:43,360 --> 00:13:46,279
+serve chiarezza per capire cosa devo
+
+267
+00:13:46,279 --> 00:13:48,639
+mappare su cosa. Dopodiché inizio a
+
+268
+00:13:48,639 --> 00:13:51,440
+ragionare sulla struttura del problema e
+
+269
+00:13:51,440 --> 00:13:55,720
+mi chiedo ok, ma su preso
+
+270
+00:13:55,720 --> 00:13:58,199
+fare per risolverlo?
+
+271
+00:13:58,199 --> 00:14:02,000
+No, che devo fare per risolverlo? Date
+
+272
+00:14:02,000 --> 00:14:04,519
+una variabile buleiana, date tutte le
+
+273
+00:14:04,519 --> 00:14:06,639
+sue variabili buleane, devo stabilire se
+
+274
+00:14:06,639 --> 00:14:09,000
+gli do vero o gli do falso. Dall'altro
+
+275
+00:14:09,000 --> 00:14:11,759
+lato c'è il problema dell'indipendenza.
+
+276
+00:14:11,759 --> 00:14:15,000
+Che devo fare stringendo quando risolvo
+
+277
+00:14:15,000 --> 00:14:17,079
+il problema dell'indipendenza?
+
+278
+00:14:17,079 --> 00:14:19,519
+Devo scegliere nodi da includere in S e
+
+279
+00:14:19,519 --> 00:14:22,720
+nodi da escludere in S. Variabile vera,
+
+280
+00:14:22,720 --> 00:14:26,000
+variabile falsa, nodo dentro, nodo
+
+281
+00:14:26,000 --> 00:14:30,560
+fuori. Notate una similità? Sì. Allora,
+
+282
+00:14:30,560 --> 00:14:33,680
+la nostra riduzione ce la inventiamo
+
+283
+00:14:33,680 --> 00:14:37,600
+tale per cui assegnare vero a una certa
+
+284
+00:14:37,600 --> 00:14:40,800
+variabile dovrà significare infilare un
+
+285
+00:14:40,800 --> 00:14:43,360
+particolare nodo nell'indipendenzet e
+
+286
+00:14:43,360 --> 00:14:45,680
+assegnare falso una certa variabile
+
+287
+00:14:45,680 --> 00:14:49,720
+dovrà essere mappato su tenere un nodo
+
+288
+00:14:49,720 --> 00:14:52,279
+fuori dall'indipendenza. Ok? Perché vi
+
+289
+00:14:52,279 --> 00:14:54,680
+ricordo la questione della riduzione è
+
+290
+00:14:54,680 --> 00:14:57,720
+prendere una formula, trasformarla in un
+
+291
+00:14:57,720 --> 00:15:00,199
+grafo, e un numero tale per cui un
+
+292
+00:15:00,199 --> 00:15:03,360
+risolutore di indipendentet ci dirà se
+
+293
+00:15:03,360 --> 00:15:06,199
+la formula di partenza era soddisfacile.
+
+294
+00:15:06,199 --> 00:15:08,639
+Ok? Questa è la questione. Quindi è
+
+295
+00:15:08,639 --> 00:15:10,839
+ovvio che la struttura dei due problemi
+
+296
+00:15:10,839 --> 00:15:13,959
+vada mappata in qualche modo. Siccome
+
+297
+00:15:13,959 --> 00:15:16,240
+sulle formule scelgo per le variabili,
+
+298
+00:15:16,240 --> 00:15:19,680
+vero o falso? E sui grafi io scelgo nodo
+
+299
+00:15:19,680 --> 00:15:22,040
+dentro fuori l'indipendetta. Una prima
+
+300
+00:15:22,040 --> 00:15:25,639
+idea che va verificata è
+
+301
+00:15:25,639 --> 00:15:28,240
+inventare una trasformazione di una
+
+302
+00:15:28,240 --> 00:15:30,480
+formula in un grafo tale per cui
+
+303
+00:15:30,480 --> 00:15:34,240
+semanticamente a nodo vero a variabile
+
+304
+00:15:34,240 --> 00:15:36,560
+vera abbiamo nodo nell'indipendetto e a
+
+305
+00:15:36,560 --> 00:15:38,319
+variabile falsa abbiamo nodo fuori
+
+306
+00:15:38,319 --> 00:15:41,040
+dall'indipendenza. Ok? Questa è l'idea
+
+307
+00:15:41,040 --> 00:15:46,319
+di fondo. Ok? Alrght.
+
+308
+00:15:47,079 --> 00:15:50,519
+Ovviamente se noi vogliamo descrivere
+
+309
+00:15:50,519 --> 00:15:53,880
+tramite l'appartenenza o meno di alcuni
+
+310
+00:15:53,880 --> 00:15:58,399
+nodi all'indipendent set, se
+
+311
+00:15:58,399 --> 00:16:00,959
+certe variabili buleane sono vere e
+
+312
+00:16:00,959 --> 00:16:03,959
+false, io dovrò evitare che
+
+313
+00:16:03,959 --> 00:16:06,279
+nell'indipendentette vadano a finire
+
+314
+00:16:06,279 --> 00:16:08,680
+nodi
+
+315
+00:16:08,680 --> 00:16:11,040
+che sono corrispondenti a variabili
+
+316
+00:16:11,040 --> 00:16:14,199
+opposte, a letterali opposti.
+
+317
+00:16:14,199 --> 00:16:16,360
+Ok? Cioè, quindi io non vorrò che
+
+318
+00:16:16,360 --> 00:16:20,040
+nell'indipendenza andranno a finire nodi
+
+319
+00:16:20,040 --> 00:16:22,839
+relativi a x1 e not x1 e quindi
+
+320
+00:16:22,839 --> 00:16:25,560
+significa che dovero allumina al suo
+
+321
+00:16:25,560 --> 00:16:28,480
+negato. Ok? Quindi mi dovrò inventare
+
+322
+00:16:28,480 --> 00:16:30,240
+questa trasformazione tale per cui
+
+323
+00:16:30,240 --> 00:16:34,959
+questa proprietà venga soddisfatta. Ok?
+
+324
+00:16:34,959 --> 00:16:36,639
+Guardiamo la definizione di
+
+325
+00:16:36,639 --> 00:16:39,639
+indipendentet.
+
+326
+00:16:40,360 --> 00:16:42,519
+Quando noi vogliamo ottenere che due
+
+327
+00:16:42,519 --> 00:16:45,440
+nodi non possano stare nell'indipendent
+
+328
+00:16:45,440 --> 00:16:49,920
+set se stanno mimando variabili opposte,
+
+329
+00:16:49,920 --> 00:16:52,360
+come facciamo a evitare che i nodi
+
+330
+00:16:52,360 --> 00:16:55,399
+vadano a finire nell'indipendenza setet?
+
+331
+00:16:55,399 --> 00:16:57,720
+Vediamo,
+devono essere nodi congiunti,
+
+332
+00:16:57,720 --> 00:17:00,399
+quindi noi sfrutteremo questa idea di
+
+333
+00:17:00,399 --> 00:17:03,000
+costruire un grafo
+
+334
+00:17:03,000 --> 00:17:06,360
+in cui congiungiamo nodi relativi a
+
+335
+00:17:06,360 --> 00:17:08,720
+variabili opposte, così quelli là
+
+336
+00:17:08,720 --> 00:17:11,400
+nell'indipendent non ci possono finire.
+
+337
+00:17:11,400 --> 00:17:12,919
+Ok?
+
+338
+00:17:12,919 --> 00:17:15,720
+Questa costruzione è una cosa, cioè
+
+339
+00:17:15,720 --> 00:17:17,640
+anche quando ci pensate che viene
+
+340
+00:17:17,640 --> 00:17:19,720
+costruita tipo il Lego, cioè si
+
+341
+00:17:19,720 --> 00:17:22,039
+costruisce pezzo a pezzo. Io adesso so
+
+342
+00:17:22,039 --> 00:17:23,720
+dove sto andando a parare perché ho in
+
+343
+00:17:23,720 --> 00:17:25,439
+mente la riduzione, ma quando voi la
+
+344
+00:17:25,439 --> 00:17:27,880
+fate per la prima volta, semmai vi
+
+345
+00:17:27,880 --> 00:17:29,799
+cimentete in questa idea, è una cosa che
+
+346
+00:17:29,799 --> 00:17:32,520
+si fa sostanzialmente a prove, cioè uno
+
+347
+00:17:32,520 --> 00:17:36,000
+c'ha un'idea, mi guida, inizio a farla,
+
+348
+00:17:36,000 --> 00:17:39,280
+la scrivo là, dopodiché verifico se
+
+349
+00:17:39,280 --> 00:17:42,039
+funziona, se trovo un errore va giusto,
+
+350
+00:17:42,039 --> 00:17:44,000
+ok? Cioè, non è che uno fin dall'inizio
+
+351
+00:17:44,000 --> 00:17:45,320
+sa dove sta andando a parare,
+
+352
+00:17:45,320 --> 00:17:47,039
+soprattutto sulle riduzioni più
+
+353
+00:17:47,039 --> 00:17:49,840
+complicate. Io ricordo che per una delle
+
+354
+00:17:49,840 --> 00:17:51,960
+riduzioni più toste che abbia fatto
+
+355
+00:17:51,960 --> 00:17:54,400
+nella mia carriera sono serviti due mesi
+
+356
+00:17:54,400 --> 00:17:57,120
+per ottenerla perché ogni volta che la
+
+357
+00:17:57,120 --> 00:18:00,240
+facevo trovavo che c'era un problema.
+
+358
+00:18:00,240 --> 00:18:02,799
+Ok?
+
+359
+00:18:02,799 --> 00:18:07,640
+Alri. Allora, facciamo così.
+
+360
+00:18:07,640 --> 00:18:11,120
+per ognuno dei letterali
+
+361
+00:18:11,120 --> 00:18:13,240
+in ogni clausola.
+
+362
+00:18:13,240 --> 00:18:17,039
+Quindi noi da questo V dobbiamo ottenere
+
+363
+00:18:17,039 --> 00:18:20,039
+una coppia grafo numero. Ok? Ci
+
+364
+00:18:20,039 --> 00:18:23,159
+concentriamo prima sul grafo
+
+365
+00:18:23,159 --> 00:18:26,440
+e sì e facciamo così.
+
+366
+00:18:26,440 --> 00:18:30,600
+Per ognuno dei letterali
+
+367
+00:18:30,600 --> 00:18:33,000
+di ogni clausola
+
+368
+00:18:33,000 --> 00:18:35,960
+mettiamo un nodo nel nostro grafo.
+
+369
+00:18:35,960 --> 00:18:37,600
+Quindi, per esempio, consideriamo la
+
+370
+00:18:37,600 --> 00:18:41,080
+prima clausola. Avremo x1,
+
+371
+00:18:41,080 --> 00:18:42,960
+x2
+
+372
+00:18:42,960 --> 00:18:47,159
+not x3. Guardate che
+
+373
+00:18:47,159 --> 00:18:49,360
+i nodi sono per i letterali, non per le
+
+374
+00:18:49,360 --> 00:18:50,799
+variabili. Ok? E quindi, per esempio,
+
+375
+00:18:50,799 --> 00:18:54,520
+sul terzo nodo ho messo not.
+
+376
+00:18:54,520 --> 00:18:56,760
+Poi lo devo fare anche per la seconda
+
+377
+00:18:56,760 --> 00:18:59,159
+clausola, quindi avrò
+
+378
+00:18:59,159 --> 00:19:01,799
+X2,
+
+379
+00:19:01,799 --> 00:19:04,039
+X3,
+
+380
+00:19:04,039 --> 00:19:05,760
+X4
+
+381
+00:19:05,760 --> 00:19:08,000
+e poi per la terza clausola e quindi
+
+382
+00:19:08,000 --> 00:19:12,159
+avrò nota
+
+383
+00:19:19,520 --> 00:19:22,159
+ceravamo dettieravamo detti che noi
+
+384
+00:19:22,159 --> 00:19:26,919
+colleghiamo i nodi dei letterali
+
+385
+00:19:26,919 --> 00:19:30,720
+dei letterali opposti. Ok? Quindi che ne
+
+386
+00:19:30,720 --> 00:19:35,840
+so X3 e not.
+
+387
+00:19:37,080 --> 00:19:38,720
+Qua ne abbiamo veramente pochi. Ah no,
+
+388
+00:19:38,720 --> 00:19:42,840
+qua è not X4. Eh,
+
+389
+00:19:45,799 --> 00:19:47,520
+alright.
+
+390
+00:19:47,520 --> 00:19:52,919
+Note X4 e poi collegato questo.
+
+391
+00:19:52,919 --> 00:19:55,280
+Aggiungo un Note X2 qua, senò è
+
+392
+00:19:55,280 --> 00:19:59,600
+veramente un grafo scemo.
+
+393
+00:20:01,480 --> 00:20:03,400
+Questo qua nel la seconda clausola la
+
+394
+00:20:03,400 --> 00:20:07,200
+metto not X2 invece di X2. Quindi questa
+
+395
+00:20:07,200 --> 00:20:10,840
+qua è così
+
+396
+00:20:11,640 --> 00:20:17,159
+e quindi collevo questo qua. Ok.
+
+397
+00:20:18,280 --> 00:20:22,840
+Quindi abbiamo tante triple di nodi.
+
+398
+00:20:22,840 --> 00:20:26,919
+Quanti sono i
+
+399
+00:20:26,919 --> 00:20:31,480
+quanti sono i le clausole del nostro
+
+400
+00:20:31,480 --> 00:20:34,520
+della nostra formula fil. Ok? Quindi
+
+401
+00:20:34,520 --> 00:20:40,360
+abbiamo tanti nodi quanti letterali. Ok?
+
+402
+00:20:43,000 --> 00:20:44,520
+Supponiamo,
+
+403
+00:20:44,520 --> 00:20:46,240
+ve lo faccio a passaggi, così vi faccio
+
+404
+00:20:46,240 --> 00:20:49,159
+capire proprio il metodo costruttivo,
+
+405
+00:20:49,159 --> 00:20:52,200
+ok? Abbiamo questo grafico che più o
+
+406
+00:20:52,200 --> 00:20:54,200
+meno qualcuna delle nostre idee le
+
+407
+00:20:54,200 --> 00:20:57,840
+copre. Ok? Benissimo.
+
+408
+00:20:57,840 --> 00:20:59,919
+Focalizziamoci. Voi la formula la
+
+409
+00:20:59,919 --> 00:21:02,240
+vedete? Sì, la vedete. Ve l'abbasso un
+
+410
+00:21:02,240 --> 00:21:05,360
+pochettino. Ok.
+
+411
+00:21:05,360 --> 00:21:06,440
+Allora, quello che noi dobbiamo
+
+412
+00:21:06,440 --> 00:21:09,720
+verificare ora è che se abbiamo una
+
+413
+00:21:09,720 --> 00:21:12,880
+formula fai soddisfacbile otteniamo un
+
+414
+00:21:12,880 --> 00:21:15,400
+grafo con un un numero con un
+
+415
+00:21:15,400 --> 00:21:17,880
+indipendetto di taglia
+
+416
+00:21:17,880 --> 00:21:20,520
+K. Ok? Questo ancora non ve lo
+
+417
+00:21:20,520 --> 00:21:23,080
+specifico, no? Mentre se la formula non
+
+418
+00:21:23,080 --> 00:21:25,480
+è soddisfaccibile, no, otteniamo un
+
+419
+00:21:25,480 --> 00:21:27,520
+grafo che non ha un'indipendetta di
+
+420
+00:21:27,520 --> 00:21:29,960
+taglia K o equivalentemente è che se
+
+421
+00:21:29,960 --> 00:21:32,440
+abbiamo ottenuto unindipenden un grafo,
+
+422
+00:21:32,440 --> 00:21:34,320
+con un indipendentette di taglia k era
+
+423
+00:21:34,320 --> 00:21:37,960
+perché la formula era soddisfacile. Ok?
+
+424
+00:21:37,960 --> 00:21:39,600
+Allora,
+
+425
+00:21:39,600 --> 00:21:41,679
+iniziamo a guardare la riduzione così
+
+426
+00:21:41,679 --> 00:21:43,840
+com'è. Supponiamo che la formula
+
+427
+00:21:43,840 --> 00:21:49,840
+iniziale fai sia soddisfacile. Ok?
+
+428
+00:21:49,840 --> 00:21:52,360
+Se è soddisfaciile,
+
+429
+00:21:52,360 --> 00:21:56,760
+esiste un assegnamento sigma per le sue
+
+430
+00:21:56,760 --> 00:22:00,840
+variabili tali che sigma soddisfa fai.
+
+431
+00:22:00,840 --> 00:22:04,600
+Uso questo simbolo qua, eh
+
+432
+00:22:04,600 --> 00:22:08,159
+sigma soddisfa.
+
+433
+00:22:13,279 --> 00:22:16,279
+Ok.
+
+434
+00:22:23,520 --> 00:22:27,080
+Prendiamo questo assegnamento di verità.
+
+435
+00:22:27,080 --> 00:22:29,480
+Questo assegnamento di verità assegnerà
+
+436
+00:22:29,480 --> 00:22:32,600
+alle variabili vero, falso e così via,
+
+437
+00:22:32,600 --> 00:22:37,440
+no? L'assegnamento sigma soddisfa fai,
+
+438
+00:22:37,440 --> 00:22:41,240
+ok? Significa che l'assegnamento sigma
+
+439
+00:22:41,240 --> 00:22:45,960
+che cosa fa? fa sì che in ogni clausola
+
+440
+00:22:45,960 --> 00:22:50,799
+ci sia almeno un letterale vero.
+
+441
+00:22:50,799 --> 00:22:52,600
+È chiaro?
+
+442
+00:22:52,600 --> 00:22:54,720
+Chiaro per tutti?
+
+443
+00:22:54,720 --> 00:22:57,720
+Ok.
+
+444
+00:22:57,919 --> 00:23:00,200
+Allora, che cosa facciamo? Noi dobbiamo
+
+445
+00:23:00,200 --> 00:23:04,159
+mostrare che poiché la formula f è
+
+446
+00:23:04,159 --> 00:23:06,480
+soddisfacbile, allora esiste un
+
+447
+00:23:06,480 --> 00:23:09,960
+indipendent set di taglia K e questo K
+
+448
+00:23:09,960 --> 00:23:12,480
+ancora non sappiamo chi è. Ok?
+
+449
+00:23:12,480 --> 00:23:15,000
+Facciamo questo.
+
+450
+00:23:15,000 --> 00:23:17,200
+Per ognuno
+
+451
+00:23:17,200 --> 00:23:20,720
+delle clausole di fai
+
+452
+00:23:20,720 --> 00:23:24,960
+prendiamo un letterale vero secondo
+
+453
+00:23:24,960 --> 00:23:26,640
+sigma.
+
+454
+00:23:26,640 --> 00:23:28,559
+Quando dico un letterale vero secondo
+
+455
+00:23:28,559 --> 00:23:31,159
+sigma, potrebbe essere che sigma rende
+
+456
+00:23:31,159 --> 00:23:33,640
+vero questo letterale e quindi sta
+
+457
+00:23:33,640 --> 00:23:37,679
+assegnando x3 falso. Ok? Un conto è
+
+458
+00:23:37,679 --> 00:23:39,880
+assegnamento alle variabili, un conto è
+
+459
+00:23:39,880 --> 00:23:41,960
+il valore di verità dei letterari. Ok?
+
+460
+00:23:41,960 --> 00:23:44,120
+Quindi noi sappiamo che sigma soddisfa
+
+461
+00:23:44,120 --> 00:23:46,240
+fai, quindi sigma soddisfa tutte le
+
+462
+00:23:46,240 --> 00:23:48,480
+clausole di f, che vuol dire che ogni
+
+463
+00:23:48,480 --> 00:23:50,919
+clausola ha almeno un letterale vero
+
+464
+00:23:50,919 --> 00:23:52,880
+secondo sigma.
+
+465
+00:23:52,880 --> 00:23:55,440
+Prendiamo la prima clausola, becchiamo
+
+466
+00:23:55,440 --> 00:23:59,000
+un suo letterale vero, il relativo nodo
+
+467
+00:23:59,000 --> 00:24:02,240
+lo infiliamo dentro s, ok? Quindi
+
+468
+00:24:02,240 --> 00:24:05,360
+costruiamo un insieme s di sigma
+
+469
+00:24:05,360 --> 00:24:09,320
+proveniente da sigma. Ok?
+
+470
+00:24:09,320 --> 00:24:13,840
+Quindi, se il letterale della clausola i
+
+471
+00:24:13,840 --> 00:24:17,559
+è vero, un letterale della prendiamo il
+
+472
+00:24:17,559 --> 00:24:20,279
+relativo nodo di quella tripletta di
+
+473
+00:24:20,279 --> 00:24:23,840
+nodi e lo insuriamo dentro s di sigma.
+
+474
+00:24:23,840 --> 00:24:25,480
+Ci siete? Come stiamo costruendo s di
+
+475
+00:24:25,480 --> 00:24:27,600
+sigma?
+
+476
+00:24:27,600 --> 00:24:33,200
+Facciamo questo per tutte le clausole di
+
+477
+00:24:33,200 --> 00:24:35,679
+file. Ok,
+
+478
+00:24:35,679 --> 00:24:37,840
+ci siete?
+
+479
+00:24:37,840 --> 00:24:40,320
+Sì.
+Eh,
+
+480
+00:24:40,320 --> 00:24:43,720
+tu si prendono tutti i letterali,
+no?
+
+481
+00:24:43,720 --> 00:24:47,120
+Uno uno a clausola. La la riduzione non
+
+482
+00:24:47,120 --> 00:24:50,440
+è finita. Vi mostro, ok? Ve l'anticipo.
+
+483
+00:24:50,440 --> 00:24:52,440
+È sbagliata sta riduzione. Dobbiamo però
+
+484
+00:24:52,440 --> 00:24:54,520
+capire dove andare a mettere una pezza.
+
+485
+00:24:54,520 --> 00:24:57,320
+Ok? Ecco perché ve la sto facendo a
+
+486
+00:24:57,320 --> 00:24:59,919
+pezzi. Ok?
+
+487
+00:24:59,919 --> 00:25:03,360
+Ripeto, partiamo da sigma. Sigma
+
+488
+00:25:03,360 --> 00:25:07,480
+soddisfa. Siccome sigma soddisfa file,
+
+489
+00:25:07,480 --> 00:25:11,559
+allora ogni clausola è soddisfatta da
+
+490
+00:25:11,559 --> 00:25:13,520
+sigma, il che significa che secondo
+
+491
+00:25:13,520 --> 00:25:15,880
+sigma in ognuna delle clausole c con i
+
+492
+00:25:15,880 --> 00:25:18,480
+ci sta un certo letterale che è vero.
+
+493
+00:25:18,480 --> 00:25:21,919
+Dobbiamo costruire s partendo da sigma e
+
+494
+00:25:21,919 --> 00:25:24,760
+lo chiamiamo s sigma per ricordarci che
+
+495
+00:25:24,760 --> 00:25:28,520
+è un s che proviene da sigma. Ok?
+
+496
+00:25:28,520 --> 00:25:31,600
+Sigma è costruito così. Prendiamo una
+
+497
+00:25:31,600 --> 00:25:33,480
+clausola.
+
+498
+00:25:33,480 --> 00:25:36,919
+Siccome sigma soddisfa quella clausola,
+
+499
+00:25:36,919 --> 00:25:40,000
+questa clausola avrà un almeno un
+
+500
+00:25:40,000 --> 00:25:43,279
+letterale vero. Ne prendiamo uno a caso,
+
+501
+00:25:43,279 --> 00:25:47,559
+lo infiliamo dentro s sigma, ok? E
+
+502
+00:25:47,559 --> 00:25:50,279
+facciamo questo per tutte le clausole. È
+
+503
+00:25:50,279 --> 00:25:55,240
+chiaro? Bene. Quante nodi ci stanno in
+
+504
+00:25:55,240 --> 00:25:57,320
+Sigma?
+
+505
+00:25:57,320 --> 00:25:59,120
+Tante quante sono le clausole.
+Tante
+
+506
+00:25:59,120 --> 00:26:01,960
+quante sono le clausole. Ok? Quindi
+
+507
+00:26:01,960 --> 00:26:06,399
+avremo che la cardinalità
+
+508
+00:26:06,399 --> 00:26:10,000
+di questo insieme è m dove m sono le
+
+509
+00:26:10,000 --> 00:26:13,799
+clausole. Ok?
+
+510
+00:26:15,960 --> 00:26:20,080
+Quindi iniziamo a fare questo.
+
+511
+00:26:20,080 --> 00:26:22,919
+Il la noi dovevamo avere un'istanza di
+
+512
+00:26:22,919 --> 00:26:26,279
+indipendent set che è grafo numero. Come
+
+513
+00:26:26,279 --> 00:26:29,240
+k diamo M.
+
+514
+00:26:29,240 --> 00:26:31,960
+Ok?
+
+515
+00:26:31,960 --> 00:26:34,200
+Scrivo meglio. Questa è una coppia.
+
+516
+00:26:34,200 --> 00:26:36,880
+Questa è la mega parentesi. Ok? Qua c'è
+
+517
+00:26:36,880 --> 00:26:40,399
+una virgola e questa è m. Ok? Quindi G
+
+518
+00:26:40,399 --> 00:26:44,440
+viene generato secondo quell'algoritmo.
+
+519
+00:26:44,440 --> 00:26:48,840
+Il K della coppia GK è M, il numero di
+
+520
+00:26:48,840 --> 00:26:51,840
+clausole.
+
+521
+00:26:51,840 --> 00:26:54,840
+Riguardiamo
+
+522
+00:26:55,360 --> 00:26:58,600
+qual è la taglia di Sigma
+
+523
+00:26:58,600 --> 00:27:03,080
+M per costruzione. Ok? S sigma è un
+
+524
+00:27:03,080 --> 00:27:07,200
+indipenden set o no?
+
+525
+00:27:10,000 --> 00:27:15,200
+Per non esserlo che dovrebbe succedere?
+
+526
+00:27:16,000 --> 00:27:20,279
+Lo sa pure l'ambulanza. C M
+Attenzione,
+
+527
+00:27:20,279 --> 00:27:22,360
+attenzione, attenzione, M non c'entra.
+
+528
+00:27:22,360 --> 00:27:25,919
+Sto prendendo Sigma.
+
+529
+00:27:25,919 --> 00:27:28,799
+La domanda che adesso noi ci poniamo è i
+
+530
+00:27:28,799 --> 00:27:32,840
+nodi che abbiamo infilato in Sigma sono
+
+531
+00:27:32,840 --> 00:27:35,559
+o non sono un indipendetto?
+
+532
+00:27:35,559 --> 00:27:39,120
+Supponiamo che non lo siano.
+
+533
+00:27:39,120 --> 00:27:41,600
+Se non sono un indipendent set, che deve
+
+534
+00:27:41,600 --> 00:27:44,720
+succedere? ci deve essere due nodi
+
+535
+00:27:44,720 --> 00:27:47,880
+dentro sigma che sono collegati da un
+
+536
+00:27:47,880 --> 00:27:53,559
+arco. Ok? Da un arco di quale grafo?
+
+537
+00:27:53,559 --> 00:27:56,480
+Questo. Non un grafo a caso, questo qua.
+
+538
+00:27:56,480 --> 00:27:59,080
+Quali nodi sono collegati in questo
+
+539
+00:27:59,080 --> 00:28:02,080
+grafo?
+
+540
+00:28:07,320 --> 00:28:08,760
+Rivediamo che questo è un passaggio
+
+541
+00:28:08,760 --> 00:28:13,399
+importante per prendiamo Sigma.
+
+542
+00:28:13,399 --> 00:28:16,480
+ci chiediamo se i suoi nodi sono
+
+543
+00:28:16,480 --> 00:28:19,880
+unindipendet o meno. Supponiamo che non
+
+544
+00:28:19,880 --> 00:28:21,640
+lo siano, cioè per contraddizione
+
+545
+00:28:21,640 --> 00:28:24,200
+assumiamo che Sigma non è un indipendent
+
+546
+00:28:24,200 --> 00:28:27,279
+set. Se non è un indipendent set ci
+
+547
+00:28:27,279 --> 00:28:29,679
+stanno due nodi dentro s sigma che sono
+
+548
+00:28:29,679 --> 00:28:31,919
+collegati da un arco. Questi nodi e
+
+549
+00:28:31,919 --> 00:28:33,480
+questi archi non è che vengono da un
+
+550
+00:28:33,480 --> 00:28:36,640
+grafo a caso, vengono da questo. Ok?
+
+551
+00:28:36,640 --> 00:28:41,039
+Quindi se ci sono due nodi in Sigma che
+
+552
+00:28:41,039 --> 00:28:43,159
+sono collegati da un arco, saranno ad
+
+553
+00:28:43,159 --> 00:28:47,039
+esempio questo e questo o non possono
+
+554
+00:28:47,039 --> 00:28:51,440
+essere altri. Quindi se fossero
+
+555
+00:28:51,440 --> 00:28:52,960
+collegati
+
+556
+00:28:52,960 --> 00:28:56,360
+due nodi dentro s sigma, allora avremmo
+
+557
+00:28:56,360 --> 00:29:00,880
+che sigma sta valutando, vero? Un
+
+558
+00:29:00,880 --> 00:29:04,000
+letterale è il suo opposto. Ma cioè
+
+559
+00:29:04,000 --> 00:29:05,480
+possibile?
+
+560
+00:29:05,480 --> 00:29:10,919
+No, quindi Sigma è un independent.
+
+561
+00:29:10,919 --> 00:29:14,559
+Ci siete con la col ragionamento?
+
+562
+00:29:14,559 --> 00:29:17,159
+Ok. Quindi cosa abbiamo dimostrato? Che
+
+563
+00:29:17,159 --> 00:29:19,919
+questa trasformazione
+
+564
+00:29:19,919 --> 00:29:22,080
+se parte da una formula fa
+
+565
+00:29:22,080 --> 00:29:24,279
+insoddisfacbile
+
+566
+00:29:24,279 --> 00:29:27,799
+ottiene una coppia grafo numero in cui
+
+567
+00:29:27,799 --> 00:29:30,240
+il grafo ha un'indipendenzetta di taglia
+
+568
+00:29:30,240 --> 00:29:32,600
+quel numero dove quel numero è il numero
+
+569
+00:29:32,600 --> 00:29:35,039
+di clausole di F. Ok? È finita la
+
+570
+00:29:35,039 --> 00:29:37,120
+dimostrazione? No, perché dobbiamo
+
+571
+00:29:37,120 --> 00:29:40,440
+dimostrare che se arriviamo a una coppia
+
+572
+00:29:40,440 --> 00:29:42,720
+del genere
+
+573
+00:29:42,720 --> 00:29:45,840
+era perché la formula di partenza era
+
+574
+00:29:45,840 --> 00:29:50,320
+soddisfacile. Ok?
+
+575
+00:29:50,480 --> 00:29:52,240
+Supponiamo di essere arrivati a
+
+576
+00:29:52,240 --> 00:29:56,440
+un'istanza sì, quindi questo grafo
+
+577
+00:29:56,440 --> 00:30:01,240
+ottenuto partendo da quella formula
+
+578
+00:30:01,240 --> 00:30:06,240
+ha un'indipendenza di taglia M. Ok?
+
+579
+00:30:06,240 --> 00:30:10,159
+Sia s e state qua attenti perché ora c'è
+
+580
+00:30:10,159 --> 00:30:12,960
+il passaggio strano. Sia s un
+
+581
+00:30:12,960 --> 00:30:16,320
+indipendent set di taglia M su un grafo
+
+582
+00:30:16,320 --> 00:30:19,679
+ottenuto in questo modo. Ok? L'idea
+
+583
+00:30:19,679 --> 00:30:22,559
+sarebbe e quella che noi vorremmo è che
+
+584
+00:30:22,559 --> 00:30:24,600
+andando a guardare chi sono i nodi
+
+585
+00:30:24,600 --> 00:30:27,880
+dentro noi tiriamo fuori un assegnamento
+
+586
+00:30:27,880 --> 00:30:31,039
+di verità per fichi
+
+587
+00:30:31,039 --> 00:30:34,559
+che f sia soddisfacile. Ok?
+
+588
+00:30:34,559 --> 00:30:37,240
+Prendiamo un indipendenzetto
+
+589
+00:30:37,240 --> 00:30:42,640
+di taglia M, ok? E facciamo così. Quindi
+
+590
+00:30:42,640 --> 00:30:47,799
+partiamo da S e costruiamo un sigma S,
+
+591
+00:30:47,799 --> 00:30:51,880
+ok? Un assegnamento che parte dalla
+
+592
+00:30:51,880 --> 00:30:55,480
+dall'indipendent set qua sopra. Quanti
+
+593
+00:30:55,480 --> 00:30:59,559
+quanti nodi ha questo indipendentet? S
+
+594
+00:30:59,559 --> 00:31:05,039
+almeno M. Ok? per definizione.
+
+595
+00:31:05,399 --> 00:31:11,960
+Se il un nodo letterale dentro s
+
+596
+00:31:12,200 --> 00:31:14,799
+nodo dentro s,
+
+597
+00:31:14,799 --> 00:31:18,799
+allora noi assegniamo a sigma il
+
+598
+00:31:18,799 --> 00:31:21,399
+relativo assegnamento di verità coerente
+
+599
+00:31:21,399 --> 00:31:23,320
+con il fatto che quel letterale sia
+
+600
+00:31:23,320 --> 00:31:27,360
+dentro S. Quindi se ci sta x2 dentro s
+
+601
+00:31:27,360 --> 00:31:31,919
+sigma assegna vero a x2. Se dentro S not
+
+602
+00:31:31,919 --> 00:31:36,760
+x3, allora sigma assegna falso a x3. Ok?
+
+603
+00:31:36,760 --> 00:31:41,960
+Bene. Possiamo essere certi che una
+
+604
+00:31:41,960 --> 00:31:45,159
+assegnamento di verità fatto così
+
+605
+00:31:45,159 --> 00:31:49,720
+soddisfi la formula di partenza?
+
+606
+00:31:54,000 --> 00:31:57,159
+Be careful.
+
+607
+00:32:12,120 --> 00:32:15,960
+No, mi sa dire perché
+
+608
+00:32:15,960 --> 00:32:20,480
+x2 è vera cosa?
+
+609
+00:32:21,080 --> 00:32:22,880
+No, no, ovviamente questi qua non
+
+610
+00:32:22,880 --> 00:32:25,559
+possono entrare nell'indipendent set
+
+611
+00:32:25,559 --> 00:32:27,679
+perché nell'indipendent set le cose
+
+612
+00:32:27,679 --> 00:32:30,080
+agganciate da un arco non ci stanno,
+
+613
+00:32:30,080 --> 00:32:32,639
+cioè non saranno dentro s. Quindi
+
+614
+00:32:32,639 --> 00:32:35,840
+sicuramente la sigma di s che tiro fuori
+
+615
+00:32:35,840 --> 00:32:38,159
+è qualcosa di coerente, cioè non è che
+
+616
+00:32:38,159 --> 00:32:40,720
+assegna vero e falso alla stessa
+
+617
+00:32:40,720 --> 00:32:43,679
+variabile perché ovviamente essendo un
+
+618
+00:32:43,679 --> 00:32:46,000
+indipendetto in indipendentetto ci sarà
+
+619
+00:32:46,000 --> 00:32:49,600
+questo e questo in s. Quindi sigma di s
+
+620
+00:32:49,600 --> 00:32:51,559
+è consistente.
+
+621
+00:32:51,559 --> 00:32:54,080
+Ma siamo sicuri che sigma di soddisfa
+
+622
+00:32:54,080 --> 00:32:56,440
+fai?
+
+623
+00:32:56,440 --> 00:32:59,279
+Per soddisfare fai sigma di s che
+
+624
+00:32:59,279 --> 00:33:02,559
+dovrebbe fare? soddisfare tutte le
+
+625
+00:33:02,559 --> 00:33:06,000
+clausole e siamo sicuri che sigma di
+
+626
+00:33:06,000 --> 00:33:09,320
+soddisfi tutte le clausole? Io potrei
+
+627
+00:33:09,320 --> 00:33:11,760
+teoricamente prendere, facciamo m sia
+
+628
+00:33:11,760 --> 00:33:13,840
+tre, io posso prendere tre nodi che però
+
+629
+00:33:13,840 --> 00:33:16,200
+non appartengono a tre clausole diverse.
+
+630
+00:33:16,200 --> 00:33:19,039
+Esattamente, è quello il problema.
+
+631
+00:33:19,039 --> 00:33:23,080
+Questa riduzione non funziona perché
+
+632
+00:33:23,080 --> 00:33:27,320
+S a cui noi chiediamo che sia almeno M e
+
+633
+00:33:27,320 --> 00:33:30,679
+in questo esempio specifico è 3 potrebbe
+
+634
+00:33:30,679 --> 00:33:34,399
+essere questo qua,
+
+635
+00:33:36,000 --> 00:33:39,760
+cioè io riempo S con con più nodi che
+
+636
+00:33:39,760 --> 00:33:42,000
+provengono dalla stessa clausola. Ok?
+
+637
+00:33:42,000 --> 00:33:45,039
+Quindi per formule più intricate io la
+
+638
+00:33:45,039 --> 00:33:48,200
+garanzia che la sigma di s che sto
+
+639
+00:33:48,200 --> 00:33:51,720
+costruendo soddisfica ce l'ho. Ok?
+
+640
+00:33:51,720 --> 00:33:54,440
+Quindi dobbiamo evitare che in Sadano a
+
+641
+00:33:54,440 --> 00:33:57,039
+finire noti provenienti da una stessa
+
+642
+00:33:57,039 --> 00:34:00,559
+clausola. Come facciamo?
+
+643
+00:34:00,559 --> 00:34:03,639
+Li colleghiamo. Ok? Questo ci risolve la
+
+644
+00:34:03,639 --> 00:34:06,639
+questione.
+
+645
+00:34:17,260 --> 00:34:20,379
+[Musica]
+
+646
+00:34:20,560 --> 00:34:23,800
+Ok, questo
+
+647
+00:34:23,800 --> 00:34:26,599
+non
+
+648
+00:34:26,599 --> 00:34:29,240
+4 sono
+
+649
+00:34:29,240 --> 00:34:34,839
+Yes. E quello le soddisfa la formula.
+
+650
+00:34:34,839 --> 00:34:37,359
+Ripetiamo. Ok, adesso vi ho fatto vedere
+
+651
+00:34:37,359 --> 00:34:39,359
+il passaggio lungo per far vedere come
+
+652
+00:34:39,359 --> 00:34:42,280
+si ci si arriva a costruire queste cose.
+
+653
+00:34:42,280 --> 00:34:44,240
+Cioè, uno ci prova, inizia a fare un
+
+654
+00:34:44,240 --> 00:34:47,040
+primo mapping, poi vede che le cose non
+
+655
+00:34:47,040 --> 00:34:49,639
+funzionano, lo aggiusta un pochettino.
+
+656
+00:34:49,639 --> 00:34:53,919
+Ok. È così che funziona. Cioè nessuno,
+
+657
+00:34:53,919 --> 00:34:55,599
+immagino che qualcuno ci sia, ma non
+
+658
+00:34:55,599 --> 00:34:57,400
+sono quello io che riesce ad avere la
+
+659
+00:34:57,400 --> 00:34:59,520
+soluzione fin dall'inizio. Io ci devo
+
+660
+00:34:59,520 --> 00:35:03,040
+pensare. Ok? Come ci penso? Ci penso a
+
+661
+00:35:03,040 --> 00:35:05,760
+passi e gran parte, cioè tutti i miei
+
+662
+00:35:05,760 --> 00:35:07,960
+colleghi, quelli che conosco io, sarà
+
+663
+00:35:07,960 --> 00:35:10,119
+che non conosco Geni, non lo so,
+
+664
+00:35:10,119 --> 00:35:13,760
+procedono a passi. Ok.
+
+665
+00:35:13,760 --> 00:35:16,480
+Però ricordo uno dei miei supervisori a
+
+666
+00:35:16,480 --> 00:35:19,000
+Oxford che era un genio e lui procedeva
+
+667
+00:35:19,000 --> 00:35:22,920
+a passi, quindi così si fa, cioè magari
+
+668
+00:35:22,920 --> 00:35:24,920
+riusciva a vedere un po' oltre, no?
+
+669
+00:35:24,920 --> 00:35:26,920
+Faceva dei passi più grossi, ma la
+
+670
+00:35:26,920 --> 00:35:29,200
+rifinitura andava sempre fatta. Nessuno
+
+671
+00:35:29,200 --> 00:35:33,040
+è in grado di vedere la fin. Ok?
+
+672
+00:35:33,040 --> 00:35:36,280
+C'è un'interessante discussione
+
+673
+00:35:36,280 --> 00:35:37,960
+di
+
+674
+00:35:37,960 --> 00:35:41,720
+Scott Aronson che è un famoso
+
+675
+00:35:41,720 --> 00:35:44,520
+informatico teorico, una discussione
+
+676
+00:35:44,520 --> 00:35:47,560
+filosofica sul fatto per cui P sia
+
+677
+00:35:47,560 --> 00:35:51,000
+inverso da NP e lui sosteneva lui dice
+
+678
+00:35:51,000 --> 00:35:53,720
+se P fosse uguale a NP
+
+679
+00:35:53,720 --> 00:35:58,040
+di teoremi sarebbe ugualmente semplice
+
+680
+00:35:58,040 --> 00:36:00,319
+come verificarne la dimostrazione
+
+681
+00:36:00,319 --> 00:36:03,000
+corretta, cioè La differenza sta nel
+
+682
+00:36:03,000 --> 00:36:04,720
+fatto che uno se lo deve inventare e
+
+683
+00:36:04,720 --> 00:36:06,800
+quello è la parte difficile. Se noi
+
+684
+00:36:06,800 --> 00:36:08,520
+fossimo in grado di sapere fin
+
+685
+00:36:08,520 --> 00:36:10,960
+dall'inizio avere la visione fino in
+
+686
+00:36:10,960 --> 00:36:13,160
+fondo di come dimostrare qualcosa,
+
+687
+00:36:13,160 --> 00:36:15,599
+allora P sarebbe uguale a NP, cosa che
+
+688
+00:36:15,599 --> 00:36:20,319
+non ci aspettiamo che accada. Ok? Sì.
+
+689
+00:36:20,319 --> 00:36:24,640
+Poi per esempio un esponente Mente
+
+690
+00:36:24,640 --> 00:36:26,560
+secondo,
+no? La dimostrazione la
+
+691
+00:36:26,560 --> 00:36:28,839
+dimostrazione di problemi, la
+
+692
+00:36:28,839 --> 00:36:33,000
+dimostrazione di teoremi n argo per
+
+693
+00:36:33,000 --> 00:36:36,599
+parti logica ridotto per logica estesa è
+
+694
+00:36:36,599 --> 00:36:39,760
+indecidibile, cioè non si fa.
+
+695
+00:36:39,760 --> 00:36:41,480
+Però la questione è appunto questa, cioè
+
+696
+00:36:41,480 --> 00:36:44,440
+la parte difficile è essere creativi, è
+
+697
+00:36:44,440 --> 00:36:46,119
+quella la parte difficile.
+Stiamo
+
+698
+00:36:46,119 --> 00:36:50,200
+supponendo che Q ugp
+se P è uguale a NP.
+
+699
+00:36:50,200 --> 00:36:53,240
+Sì, sì,
+però comunque potrebbero
+
+700
+00:36:53,240 --> 00:36:54,720
+comunque avere un esponente molto
+
+701
+00:36:54,720 --> 00:36:56,680
+diverso, quindi uno è un al quadrato,
+
+702
+00:36:56,680 --> 00:36:59,920
+l'altro è 100.
+
+703
+00:36:59,920 --> 00:37:04,760
+Ah, va. Ok, però sì, in realtà noi
+
+704
+00:37:04,760 --> 00:37:06,960
+prendiamo dal dalla polinomialità il
+
+705
+00:37:06,960 --> 00:37:10,200
+fatto che sia semplice, ok? Quindi è
+
+706
+00:37:10,200 --> 00:37:12,920
+normale, è naturale che quando pensiate
+
+707
+00:37:12,920 --> 00:37:15,720
+a queste cose la soluzione non vi viene
+
+708
+00:37:15,720 --> 00:37:19,440
+al primo colpo, ok? Si fa si fa prove si
+
+709
+00:37:19,440 --> 00:37:22,240
+fa prove guidate dall'intuito, cioè non
+
+710
+00:37:22,240 --> 00:37:23,960
+è che io mi metto e provo tutte le
+
+711
+00:37:23,960 --> 00:37:26,240
+riduzioni possibili. Io faccio quelle
+
+712
+00:37:26,240 --> 00:37:28,280
+considerazioni che vi ho detto prima. Mi
+
+713
+00:37:28,280 --> 00:37:30,079
+studio qual è il problema iniziale, mi
+
+714
+00:37:30,079 --> 00:37:32,440
+studio qual è il problema finale, le sue
+
+715
+00:37:32,440 --> 00:37:34,760
+istanze. Istanza sì, istanza sì, istanza
+
+716
+00:37:34,760 --> 00:37:36,880
+no, istanza no. Poi cerco di capire come
+
+717
+00:37:36,880 --> 00:37:38,920
+mappare le caratteristiche di un
+
+718
+00:37:38,920 --> 00:37:40,560
+problema sulle caratteristiche di un
+
+719
+00:37:40,560 --> 00:37:43,160
+altro. Ok? E quelle sono in genere le
+
+720
+00:37:43,160 --> 00:37:45,119
+domande che mi pongo. Mi pongo domande
+
+721
+00:37:45,119 --> 00:37:47,520
+del tipo, ok? Ma la soluzione del primo
+
+722
+00:37:47,520 --> 00:37:50,319
+problema in cosa consiste? Scegliere le
+
+723
+00:37:50,319 --> 00:37:52,880
+variabili vero o falso. Ma la soluzione
+
+724
+00:37:52,880 --> 00:37:54,920
+del secondo problema in cosa consiste?
+
+725
+00:37:54,920 --> 00:37:57,359
+Scegliere i nodi dentro fuori. Ah, ok.
+
+726
+00:37:57,359 --> 00:37:59,240
+Allora, probabilmente devo inventarmi
+
+727
+00:37:59,240 --> 00:38:02,680
+una riduzione, una trasformazione che mi
+
+728
+00:38:02,680 --> 00:38:05,839
+mappi la scelta vero o falso su nodi
+
+729
+00:38:05,839 --> 00:38:07,760
+dentro fuori. Ok? Cioè, quindi ho una
+
+730
+00:38:07,760 --> 00:38:11,119
+guida, ovviamente non so dove andrò,
+
+731
+00:38:11,119 --> 00:38:14,040
+però un minimo di guida ce l'ho,
+
+732
+00:38:14,040 --> 00:38:16,920
+nonostante c'ho la guida.
+
+733
+00:38:16,920 --> 00:38:20,760
+Le riduzioni vanno rifinite, nessuno se
+
+734
+00:38:20,760 --> 00:38:23,079
+le riesce a inventare al primo colpo.
+
+735
+00:38:23,079 --> 00:38:25,680
+Ok? Sui libri questo non ve lo dicono
+
+736
+00:38:25,680 --> 00:38:28,319
+perché sul libro c'è la riduzione punto.
+
+737
+00:38:28,319 --> 00:38:30,280
+E uno pensa: "Oh cavolo, è stato un
+
+738
+00:38:30,280 --> 00:38:32,599
+genio questo inventarselo." Magari ci ha
+
+739
+00:38:32,599 --> 00:38:36,760
+messo 3 mesi e non ve l'ha detto. Ok.
+
+740
+00:38:36,760 --> 00:38:39,920
+Eh, alright. Allora,
+
+741
+00:38:39,920 --> 00:38:43,640
+Milla, è tardissimo.
+
+742
+00:38:45,079 --> 00:38:47,040
+Ridimostriamo quindi che questa
+
+743
+00:38:47,040 --> 00:38:49,760
+riduzione è corretta, la facciamo
+
+744
+00:38:49,760 --> 00:38:52,839
+pulita, poi alle prossime andrò un
+
+745
+00:38:52,839 --> 00:38:57,560
+pelino più veloce. Ok?
+
+746
+00:38:59,319 --> 00:39:01,599
+Allora, noi vogliamo dimostrare che 3
+
+747
+00:39:01,599 --> 00:39:05,200
+SAT si riduce a
+
+748
+00:39:05,200 --> 00:39:07,160
+indipendetti. In questo modo noi avremo
+
+749
+00:39:07,160 --> 00:39:11,680
+che indipendence set è np hardware come
+
+750
+00:39:11,680 --> 00:39:14,160
+tre esat, ok? Da cui otterremo l' NP
+
+751
+00:39:14,160 --> 00:39:18,280
+completezza di dell'indipendent. Chiaro?
+
+752
+00:39:18,280 --> 00:39:21,720
+Funziona così la riduzione sia fai una
+
+753
+00:39:21,720 --> 00:39:25,040
+formula in CNF, guardate, fai deve
+
+754
+00:39:25,040 --> 00:39:27,359
+essere in CNF. Noi stiamo trasformando,
+
+755
+00:39:27,359 --> 00:39:29,319
+noi possiamo costruire questo grafo con
+
+756
+00:39:29,319 --> 00:39:32,200
+questa formula, con questa forma perché
+
+757
+00:39:32,200 --> 00:39:34,920
+FC GNF. Se fai fosse stata in un altro
+
+758
+00:39:34,920 --> 00:39:37,440
+modo, non avremmo saputo che fare. Però
+
+759
+00:39:37,440 --> 00:39:40,359
+siccome noi sappiamo che basta una
+
+760
+00:39:40,359 --> 00:39:42,839
+formula in CNF per renderla
+
+761
+00:39:42,839 --> 00:39:45,000
+difficilmente risolvibile, noi ci
+
+762
+00:39:45,000 --> 00:39:47,079
+prendiamo quello perché ci siamo questa
+
+763
+00:39:47,079 --> 00:39:49,400
+cosa qua. Ok?
+
+764
+00:39:49,400 --> 00:39:53,040
+Sia fai una formula in GNF, dobbiamo
+
+765
+00:39:53,040 --> 00:39:56,280
+generare la coppia GK.
+
+766
+00:39:56,280 --> 00:39:58,560
+Come generiamo G? Dobbiamo dire chi sono
+
+767
+00:39:58,560 --> 00:40:01,000
+i noi, chi sono gli altri, chi sono Sì,
+
+768
+00:40:01,000 --> 00:40:04,640
+gli Ari. Ok.
+
+769
+00:40:05,520 --> 00:40:08,640
+I nodi di G. Abbiamo un nodo per ognuno
+
+770
+00:40:08,640 --> 00:40:13,800
+dei letterali che appare dentro F.
+
+771
+00:40:15,680 --> 00:40:21,440
+Gli archi di G chi sono? Abbiamo archi
+
+772
+00:40:21,440 --> 00:40:23,839
+che collegano i letterai di una stessa
+
+773
+00:40:23,839 --> 00:40:25,640
+clausola e quindi lì abbiamo le
+
+774
+00:40:25,640 --> 00:40:29,319
+triplette, ok? e poi archi che collegano
+
+775
+00:40:29,319 --> 00:40:31,960
+nodi relativi a letterari opposti.
+
+776
+00:40:31,960 --> 00:40:34,240
+Finita la definizione di G, vi ricordo
+
+777
+00:40:34,240 --> 00:40:36,440
+che la funzione di trasformazione è un
+
+778
+00:40:36,440 --> 00:40:38,599
+algoritmo, ma io non lo sto scrivendo
+
+779
+00:40:38,599 --> 00:40:40,599
+questo algoritmo. Va bene così? Va
+
+780
+00:40:40,599 --> 00:40:42,680
+benissimo così. Sull'esame andrà bene
+
+781
+00:40:42,680 --> 00:40:46,280
+così? Andrà bene così. Se si capisce in
+
+782
+00:40:46,280 --> 00:40:48,880
+maniera cristallina
+
+783
+00:40:48,880 --> 00:40:51,359
+cosa state trasformando in cosa e come
+
+784
+00:40:51,359 --> 00:40:54,319
+lo ottenete. Prego.
+Se per esempio esame
+
+785
+00:40:54,319 --> 00:40:56,200
+facessimo un errore come non mette gli
+
+786
+00:40:56,200 --> 00:40:58,920
+altri varie cause perdremmo
+
+787
+00:40:58,920 --> 00:41:02,960
+completamente? No, te lo stimo. E certo,
+
+788
+00:41:02,960 --> 00:41:06,480
+no, io stesso sbagliai una riduzione
+
+789
+00:41:06,480 --> 00:41:09,599
+quando ero studente all'esame di
+
+790
+00:41:09,599 --> 00:41:11,880
+l'ho fatto. Ecco, ecco perché poi ci
+
+791
+00:41:11,880 --> 00:41:13,640
+sono diventato attento, perché un errore
+
+792
+00:41:13,640 --> 00:41:15,599
+comune che ho fatto nella mia prova
+
+793
+00:41:15,599 --> 00:41:17,560
+d'esame, ho fatto la riduzione nel verso
+
+794
+00:41:17,560 --> 00:41:20,920
+opposto, cioè ho ridotto tra virgolette,
+
+795
+00:41:20,920 --> 00:41:22,960
+non era indipendetta, era un'altra cosa,
+
+796
+00:41:22,960 --> 00:41:25,839
+ho ridotto indipendetta a tre esatti e
+
+797
+00:41:25,839 --> 00:41:27,800
+invece devo fare l'altra via. Ok, quello
+
+798
+00:41:27,800 --> 00:41:30,160
+è un errore comunissimo, ci dovete stare
+
+799
+00:41:30,160 --> 00:41:32,440
+attenti. Ok?
+
+800
+00:41:32,440 --> 00:41:35,280
+Se ci chiedi un esercizio, un problema
+
+801
+00:41:35,280 --> 00:41:38,319
+un altro io devo ridurre
+No, lei dipende
+
+802
+00:41:38,319 --> 00:41:40,040
+che cosa vuole ottenere. Se lei vuole
+
+803
+00:41:40,040 --> 00:41:42,599
+ottenere che indipendetta è NP arduo,
+
+804
+00:41:42,599 --> 00:41:44,560
+per dire, allora deve ridurre un
+
+805
+00:41:44,560 --> 00:41:47,880
+problema NP arduo noto a indipendentet.
+
+806
+00:41:47,880 --> 00:41:50,760
+Se lei vuole mostrare che Indipendent
+
+807
+00:41:50,760 --> 00:41:53,800
+sta in NP, allora può ridurre
+
+808
+00:41:53,800 --> 00:41:56,280
+Indipendent a un problema NP completo,
+
+809
+00:41:56,280 --> 00:41:59,040
+ma è una la cosa un po' lunga, le
+
+810
+00:41:59,040 --> 00:42:00,880
+conviene la macchina non deterministica,
+
+811
+00:42:00,880 --> 00:42:03,280
+ok?
+
+812
+00:42:03,280 --> 00:42:04,800
+Eh, quindi abbiamo detto il grafo,
+
+813
+00:42:04,800 --> 00:42:08,119
+dobbiamo dire K. Chi è K? È il numero di
+
+814
+00:42:08,119 --> 00:42:10,440
+clausole di fil. Ok? Questa è la
+
+815
+00:42:10,440 --> 00:42:13,440
+trasformazione.
+
+816
+00:42:13,599 --> 00:42:15,160
+Alri?
+
+817
+00:42:15,160 --> 00:42:18,280
+Dobbiamo dimostrare quindi che se
+
+818
+00:42:18,280 --> 00:42:21,360
+partiamo da f soddisfaccibile
+
+819
+00:42:21,360 --> 00:42:22,880
+[Musica]
+
+820
+00:42:22,880 --> 00:42:25,319
+f di f, cioè la trasformazione di f
+
+821
+00:42:25,319 --> 00:42:28,119
+secondo f genera una bocca grafo numero
+
+822
+00:42:28,119 --> 00:42:32,319
+tale che il grafo ha un certo il grafo
+
+823
+00:42:32,319 --> 00:42:35,520
+ha un indipendette di taglia k con k
+
+824
+00:42:35,520 --> 00:42:39,079
+numero di clausole di fil. Ok?
+
+825
+00:42:39,079 --> 00:42:42,520
+Supponiamo che fai sia soddisfacile.
+
+826
+00:42:42,520 --> 00:42:45,119
+Se fai è soddisfacbile,
+
+827
+00:42:45,119 --> 00:42:46,720
+allora
+
+828
+00:42:46,720 --> 00:42:50,119
+esiste un assegnamento sigma che
+
+829
+00:42:50,119 --> 00:42:52,559
+soddisfa.
+
+830
+00:42:52,559 --> 00:42:54,760
+Ci siete?
+
+831
+00:42:54,760 --> 00:42:58,400
+Adesso noi dobbiamo mostrare che
+
+832
+00:42:58,400 --> 00:43:02,839
+G ha un indipendetti di taglia M, ok? Di
+
+833
+00:43:02,839 --> 00:43:06,960
+K. Che K è quell M lì. Come facciamo?
+
+834
+00:43:06,960 --> 00:43:09,880
+Partiamo da S. e costruiamo un insieme
+
+835
+00:43:09,880 --> 00:43:13,720
+sma, quello che avevamo scritto là. Ok?
+
+836
+00:43:13,720 --> 00:43:16,640
+Che ci infiliamo in sma?
+
+837
+00:43:16,640 --> 00:43:20,559
+Per ognuna delle triplette di nodi
+
+838
+00:43:20,559 --> 00:43:23,440
+prendiamo un nodo
+
+839
+00:43:23,440 --> 00:43:27,800
+in cui letterale è vero in sigma.
+
+840
+00:43:27,800 --> 00:43:30,680
+Abbiamo garanzia che questo c'è perché
+
+841
+00:43:30,680 --> 00:43:33,640
+sigma soddisfa.
+
+842
+00:43:33,640 --> 00:43:37,920
+Quindi in S di sigma finiranno tanti
+
+843
+00:43:37,920 --> 00:43:42,079
+nodi quanto le clausole e in particolare
+
+844
+00:43:42,079 --> 00:43:46,200
+un nodo per ogni clausola.
+
+845
+00:43:47,319 --> 00:43:50,960
+Prendo un nodo
+
+846
+00:43:50,960 --> 00:43:55,119
+relativo a un letterale
+
+847
+00:43:55,119 --> 00:43:59,839
+reso vero da sigma.
+
+848
+00:44:01,480 --> 00:44:06,119
+Abbiamo la garanzia che questo letterale
+
+849
+00:44:06,119 --> 00:44:07,920
+esista
+
+850
+00:44:07,920 --> 00:44:10,440
+perché sigma
+
+851
+00:44:10,440 --> 00:44:14,760
+soddisfacendo file
+
+852
+00:44:15,160 --> 00:44:20,200
+deve soddisfare tutte le clausole.
+
+853
+00:44:20,200 --> 00:44:25,599
+È quella uguale.
+Sì, sì, è quella model.
+
+854
+00:44:28,359 --> 00:44:29,559
+Ok.
+
+855
+00:44:29,559 --> 00:44:34,079
+È chiaro per tutti come possiamo sma?
+
+856
+00:44:35,559 --> 00:44:39,880
+Quanti nodi ha s sigma?
+
+857
+00:44:41,640 --> 00:44:45,680
+M ed m è K. Quindi semmai S sigma fosse
+
+858
+00:44:45,680 --> 00:44:47,640
+un indipendente sarebbe dalla taglia
+
+859
+00:44:47,640 --> 00:44:50,640
+giusta.
+
+860
+00:44:50,760 --> 00:44:53,920
+Sigma è un indipendent.
+
+861
+00:44:53,920 --> 00:44:57,720
+Supponiamo per assurdo che non lo sia.
+
+862
+00:44:57,720 --> 00:45:00,720
+Ok?
+
+863
+00:45:03,559 --> 00:45:06,400
+Se
+
+864
+00:45:06,400 --> 00:45:10,720
+ah ah no, ve lo dimostro meglio.
+
+865
+00:45:10,720 --> 00:45:13,480
+Ok, guardiamo il contenuto di Sigma.
+
+866
+00:45:13,480 --> 00:45:15,599
+Stavo facendo un passo extra. Ok,
+
+867
+00:45:15,599 --> 00:45:19,960
+guardiamo il contenuto di Sigma.
+
+868
+00:45:24,240 --> 00:45:26,640
+No, stavo procedendo bene.
+
+869
+00:45:26,640 --> 00:45:28,520
+Sigma,
+
+870
+00:45:28,520 --> 00:45:30,839
+Sigma
+
+871
+00:45:30,839 --> 00:45:33,400
+è un indipendenzet, sì o no? Supponiamo
+
+872
+00:45:33,400 --> 00:45:38,760
+che non lo sia. Ok? Se non lo è, devono
+
+873
+00:45:38,760 --> 00:45:41,920
+esserci due nodi dentro Sigma che sono
+
+874
+00:45:41,920 --> 00:45:45,800
+collegati da un arco. Ok?
+
+875
+00:45:45,800 --> 00:45:48,240
+Quali archi ci stanno in questo grafo? o
+
+876
+00:45:48,240 --> 00:45:50,800
+quello delle triplette o quello tra le
+
+877
+00:45:50,800 --> 00:45:52,440
+triplette.
+
+878
+00:45:52,440 --> 00:45:55,760
+È possibile che ci sia
+
+879
+00:45:55,760 --> 00:45:59,240
+ci siano due nodi
+
+880
+00:45:59,240 --> 00:46:01,920
+in sma provenienti dalla stessa
+
+881
+00:46:01,920 --> 00:46:03,880
+tripletta e quindi sono collegati da un
+
+882
+00:46:03,880 --> 00:46:06,640
+arco, no? perché ne abbiamo preso uno a
+
+883
+00:46:06,640 --> 00:46:10,160
+tripletta. Quindi sicuramente sem mai ci
+
+884
+00:46:10,160 --> 00:46:13,960
+dovessero essere due nodi collegati da
+
+885
+00:46:13,960 --> 00:46:17,720
+un arco in sma, devono essere nodi che
+
+886
+00:46:17,720 --> 00:46:20,480
+provengono da triplette differenti.
+
+887
+00:46:20,480 --> 00:46:22,400
+Chiaro?
+
+888
+00:46:22,400 --> 00:46:26,559
+Ma se questo è il caso, allora vuol dire
+
+889
+00:46:26,559 --> 00:46:29,920
+che sono nodi
+
+890
+00:46:29,920 --> 00:46:32,559
+relativi a letterali
+
+891
+00:46:32,559 --> 00:46:34,440
+opposti,
+
+892
+00:46:34,440 --> 00:46:37,760
+ma ciò non può essere perché partiamo da
+
+893
+00:46:37,760 --> 00:46:42,319
+un assegnamento sigma che è consistente.
+
+894
+00:46:42,319 --> 00:46:45,319
+Quindi Sigma
+
+895
+00:46:45,319 --> 00:46:48,960
+è un indipendent di taglia K e quindi se
+
+896
+00:46:48,960 --> 00:46:50,960
+la formula f era soddisfaccibile abbiamo
+
+897
+00:46:50,960 --> 00:46:52,839
+ottenuto un'istanza sì del problema
+
+898
+00:46:52,839 --> 00:46:57,319
+dell'indipendetta. Ok?
+
+899
+00:46:57,520 --> 00:46:59,359
+Wow!
+
+900
+00:46:59,359 --> 00:47:02,720
+Altro verso.
+
+901
+00:47:02,760 --> 00:47:05,800
+Supponiamo che siamo arrivati a
+
+902
+00:47:05,800 --> 00:47:08,559
+un'istanza sì dell'indipendet.
+
+903
+00:47:08,559 --> 00:47:10,760
+Ok?
+
+904
+00:47:10,760 --> 00:47:12,319
+sia
+
+905
+00:47:12,319 --> 00:47:17,599
+un indipenden set di taglia k
+
+906
+00:47:17,599 --> 00:47:19,920
+la nostra istanza di indipenden noi
+
+907
+00:47:19,920 --> 00:47:22,800
+vogliamo mostrare e da qui riusciamo a
+
+908
+00:47:22,800 --> 00:47:25,400
+ottenere un assegnamento s sigma che ci
+
+909
+00:47:25,400 --> 00:47:28,200
+certifichi che la formula iniziale di
+
+910
+00:47:28,200 --> 00:47:31,319
+partenza, qua mi manca un pezzeriello,
+
+911
+00:47:31,319 --> 00:47:34,559
+la formula iniziale di partenza è
+
+912
+00:47:34,559 --> 00:47:38,640
+soddisfacile. Ok, partiamo da S. S è un
+
+913
+00:47:38,640 --> 00:47:41,760
+insieme di taglia
+
+914
+00:47:41,760 --> 00:47:45,800
+M. Ok.
+
+915
+00:47:46,240 --> 00:47:47,880
+Alright.
+
+916
+00:47:47,880 --> 00:47:50,559
+È possibile che noi dentro esse abbiamo
+
+917
+00:47:50,559 --> 00:47:52,559
+più nodi provenienti dalla stessa
+
+918
+00:47:52,559 --> 00:47:56,559
+tripletta? No. Quindi in S abbiamo un
+
+919
+00:47:56,559 --> 00:48:00,319
+esattamente un nodo da ogni tripletta.
+
+920
+00:48:00,319 --> 00:48:03,440
+Come generiamo Sigma?
+
+921
+00:48:03,440 --> 00:48:05,000
+Sigma
+
+922
+00:48:05,000 --> 00:48:06,559
+assegna.
+
+923
+00:48:06,559 --> 00:48:12,920
+Ok. Per ogni nodo che sta in Seriamo,
+
+924
+00:48:13,960 --> 00:48:20,119
+se ci sta un letterale tipo x 2, il
+
+925
+00:48:20,119 --> 00:48:23,680
+sigma di S mettiamo X2, vero? Se dentro
+
+926
+00:48:23,680 --> 00:48:27,480
+Sono di un letterale negato,
+
+927
+00:48:27,480 --> 00:48:30,680
+in sigma di S mettiamo ad esempio x3 =
+
+928
+00:48:30,680 --> 00:48:34,359
+falso, ok? e lo facciamo per tutte
+
+929
+00:48:34,359 --> 00:48:37,280
+queste.
+
+930
+00:48:37,280 --> 00:48:39,720
+Prima domanda.
+
+931
+00:48:39,720 --> 00:48:42,000
+Questo assegnamento di verità è
+
+932
+00:48:42,000 --> 00:48:45,520
+consistente generato in questo modo?
+
+933
+00:48:45,520 --> 00:48:49,160
+Cioè, abbiamo la garanzia che non ci sia
+
+934
+00:48:49,160 --> 00:48:51,599
+una variabile buleana che dentro sigma e
+
+935
+00:48:51,599 --> 00:48:54,240
+sia vero che falsa
+
+936
+00:48:54,240 --> 00:48:58,880
+per forza perché in s cose opposte non
+
+937
+00:48:58,880 --> 00:49:00,839
+ci possono finire perché ci stanno gli
+
+938
+00:49:00,839 --> 00:49:05,559
+archi che le legano, ok? Quindi Sigma di
+
+939
+00:49:05,559 --> 00:49:09,680
+S è un assegnamento consistente.
+
+940
+00:49:09,680 --> 00:49:12,200
+Guardate che sigma di S potrebbe essere
+
+941
+00:49:12,200 --> 00:49:15,400
+incompleto, cioè questa questo metodo
+
+942
+00:49:15,400 --> 00:49:17,920
+che abbiamo di tradurre il contenuto di
+
+943
+00:49:17,920 --> 00:49:20,280
+s in un assegnamento di verità potrebbe
+
+944
+00:49:20,280 --> 00:49:22,799
+far accadere che in sigma di s alcune
+
+945
+00:49:22,799 --> 00:49:25,280
+variabili non sono assegnate a niente.
+
+946
+00:49:25,280 --> 00:49:27,520
+In quel caso ci mettiamo valore a caso.
+
+947
+00:49:27,520 --> 00:49:29,960
+Ok?
+
+948
+00:49:29,960 --> 00:49:34,200
+Quindi da qui otteniamo che sigma di S è
+
+949
+00:49:34,200 --> 00:49:37,440
+consistente. Ci chiediamo se sigma di
+
+950
+00:49:37,440 --> 00:49:40,440
+Soddisfi
+
+951
+00:49:41,559 --> 00:49:43,440
+Ok?
+
+952
+00:49:43,440 --> 00:49:48,680
+Supponiamo per assurdo che non sia così.
+
+953
+00:49:48,720 --> 00:49:51,520
+Di conseguenza
+
+954
+00:49:51,520 --> 00:49:56,200
+esiste una clausola dentro fai
+
+955
+00:49:56,200 --> 00:50:00,520
+i cui letterali sono tutti falsi secondo
+
+956
+00:50:00,520 --> 00:50:03,400
+sigma di s,
+
+957
+00:50:03,400 --> 00:50:06,079
+ma ciò equivarrebbe
+
+958
+00:50:06,079 --> 00:50:10,240
+al fatto che in Sremmo
+
+959
+00:50:10,240 --> 00:50:13,079
+preso alcun nodo di una certa tripletta,
+
+960
+00:50:13,079 --> 00:50:16,160
+ma ciò non è possibile. Di conseguenza
+
+961
+00:50:16,160 --> 00:50:18,520
+questo qui deve essere un assegnamento
+
+962
+00:50:18,520 --> 00:50:20,839
+di verità che certifica che fai è
+
+963
+00:50:20,839 --> 00:50:22,440
+soddisfacile.
+
+964
+00:50:22,440 --> 00:50:24,079
+Chiaro?
+
+965
+00:50:24,079 --> 00:50:27,359
+Quindi noi otteniamo che questa
+
+966
+00:50:27,359 --> 00:50:30,880
+riduzione trasforma istanze sì di CNF su
+
+967
+00:50:30,880 --> 00:50:34,520
+istanze s di indipendentet e istanze no
+
+968
+00:50:34,520 --> 00:50:39,440
+di CNF in istanze no di independence set
+
+969
+00:50:39,440 --> 00:50:45,079
+eh da cui independence 7 è NP arduo e
+
+970
+00:50:45,079 --> 00:50:48,400
+siccome rank anche l' NP è NP completo.
+
+971
+00:50:48,400 --> 00:50:49,920
+Chiaro?
+
+972
+00:50:49,920 --> 00:50:51,640
+Ok,
+
+973
+00:50:51,640 --> 00:50:57,020
+ci fermiamo. Pausa. 10 minuti.
+
+974
+00:50:57,020 --> 00:50:59,520
+[Musica]
+
+975
+00:50:59,520 --> 00:51:01,680
+[Applauso]
+
+976
+00:51:01,680 --> 00:51:04,680
+Ripartiamo.
+
+977
+00:51:31,760 --> 00:51:33,280
+Alri,
+
+978
+00:51:33,280 --> 00:51:35,520
+vediamo
+
+979
+00:51:35,520 --> 00:51:39,839
+un altro po' di problemi.
+
+980
+00:51:50,040 --> 00:51:52,720
+Ok, altro problema sul grafo. Vertex
+
+981
+00:51:52,720 --> 00:51:55,720
+cover.
+
+982
+00:52:02,960 --> 00:52:06,559
+Allora, cos'è un vertex cover
+
+983
+00:52:06,559 --> 00:52:08,640
+di un grafo?
+
+984
+00:52:08,640 --> 00:52:12,839
+Un lo sapete mai visto prima? Ok. Un
+
+985
+00:52:12,839 --> 00:52:15,720
+vertex cover
+
+986
+00:52:15,720 --> 00:52:20,680
+di un grafo è un sottoinsieme dei suoi
+
+987
+00:52:20,680 --> 00:52:23,359
+vertici,
+
+988
+00:52:23,359 --> 00:52:27,720
+magari chiamiamolo C.
+
+989
+00:52:27,720 --> 00:52:30,839
+tale per cui
+
+990
+00:52:30,839 --> 00:52:33,599
+ogni arco
+
+991
+00:52:33,599 --> 00:52:36,960
+del grafo
+
+992
+00:52:37,000 --> 00:52:40,960
+ha almeno un end point in C.
+
+993
+00:52:40,960 --> 00:52:45,240
+Ok? Quello è un vert, cioè un vert è un
+
+994
+00:52:45,240 --> 00:52:47,559
+insieme dei nodi del grafo tale per cui
+
+995
+00:52:47,559 --> 00:52:50,119
+copriamo tutti gli archi, ok? significa
+
+996
+00:52:50,119 --> 00:52:52,000
+che
+
+997
+00:52:52,000 --> 00:52:55,799
+eh noi siamo in grado di
+
+998
+00:52:55,799 --> 00:52:58,280
+vedere tutti gli archi. Una similitudine
+
+999
+00:52:58,280 --> 00:53:00,319
+un po' un po' fessa potrebbe essere,
+
+1000
+00:53:00,319 --> 00:53:04,280
+supponiamo di avere una casa con vari
+
+1001
+00:53:04,280 --> 00:53:09,119
+corridoi no corridoi sono gli archi e i
+
+1002
+00:53:09,119 --> 00:53:13,400
+nodi sono i punti in cui andiamo a i
+
+1003
+00:53:13,400 --> 00:53:15,400
+corridoi si incontrano. Se andiamo a
+
+1004
+00:53:15,400 --> 00:53:17,680
+mettere delle telecamere
+
+1005
+00:53:17,680 --> 00:53:19,559
+nei punti di incontro, noi siamo in
+
+1006
+00:53:19,559 --> 00:53:21,760
+grado di controllare tutti i corridori.
+
+1007
+00:53:21,760 --> 00:53:27,040
+Ok? Quello è un po' il senso del del
+
+1008
+00:53:27,040 --> 00:53:29,559
+vertex cover. Ok?
+
+1009
+00:53:29,559 --> 00:53:32,640
+Dato un grafo. È vero o no che questo
+
+1010
+00:53:32,640 --> 00:53:34,200
+dobbiamo sempre trovare la versione di
+
+1011
+00:53:34,200 --> 00:53:37,280
+decisione? eh dato un grafo e quindi un
+
+1012
+00:53:37,280 --> 00:53:40,000
+verte cover per questo potrebbe essere
+
+1013
+00:53:40,000 --> 00:53:42,440
+ad esempio
+
+1014
+00:53:42,440 --> 00:53:47,799
+questo qua e poi ci manca questo
+
+1015
+00:53:47,799 --> 00:53:50,240
+arco qui, quindi ce ne serve un altro,
+
+1016
+00:53:50,240 --> 00:53:54,400
+ad esempio questo. Ok?
+
+1017
+00:53:54,400 --> 00:53:57,400
+Allora,
+
+1018
+00:53:58,559 --> 00:54:01,319
+dato un grafo, è vero, no? Che un grafo
+
+1019
+00:54:01,319 --> 00:54:05,079
+ha un vertex cover?
+
+1020
+00:54:05,079 --> 00:54:09,599
+Sì. Quale? Eh,
+tutti i nodi. Ok. Quindi,
+
+1021
+00:54:09,599 --> 00:54:11,839
+dato un grafo, decidere se ha un vertex
+
+1022
+00:54:11,839 --> 00:54:14,640
+cover o meno è un problema banale. La
+
+1023
+00:54:14,640 --> 00:54:17,079
+risposta è sempre sì. Tutti i nodi sono
+
+1024
+00:54:17,079 --> 00:54:19,480
+un vertex cover del grafo. Problema più
+
+1025
+00:54:19,480 --> 00:54:23,760
+difficile è al solito quest'altro vertex
+
+1026
+00:54:23,760 --> 00:54:27,319
+cover. È l'insieme delle coppie grafo
+
+1027
+00:54:27,319 --> 00:54:34,559
+numero tale che G ha un vertex.
+
+1028
+00:54:34,559 --> 00:54:37,400
+cover
+
+1029
+00:54:37,400 --> 00:54:40,599
+di taglia
+
+1030
+00:54:41,160 --> 00:54:44,240
+al più K.
+
+1031
+00:54:44,240 --> 00:54:47,680
+Ok, quindi independent set eravamo
+
+1032
+00:54:47,680 --> 00:54:49,799
+interessati a trovare independent di
+
+1033
+00:54:49,799 --> 00:54:52,839
+taglia grande. Invece vertex cover,
+
+1034
+00:54:52,839 --> 00:54:54,960
+siamo interessati a trovare vertex cover
+
+1035
+00:54:54,960 --> 00:54:59,559
+di taglia piccola. Ok.
+
+1036
+00:54:59,559 --> 00:55:02,240
+Alright.
+
+1037
+00:55:02,240 --> 00:55:05,359
+Dimostriamo che vertex cover è NP
+
+1038
+00:55:05,359 --> 00:55:08,359
+completo.
+
+1039
+00:55:11,799 --> 00:55:14,160
+Ovviamente sempre i due passaggi. È vero
+
+1040
+00:55:14,160 --> 00:55:17,599
+o no che vertex cover appartiene a NP?
+
+1041
+00:55:17,599 --> 00:55:19,720
+Sì. Come facciamo?
+
+1042
+00:55:19,720 --> 00:55:23,400
+che siamo i nodi e poi controlliamo che
+
+1043
+00:55:23,400 --> 00:55:26,079
+siano al alk
+
+1044
+00:55:26,079 --> 00:55:28,000
+effettivamente ricoprano che ricoprano
+
+1045
+00:55:28,000 --> 00:55:30,119
+tutto. Questo guess e questo check si
+
+1046
+00:55:30,119 --> 00:55:32,359
+può fare in tempo polinomiale, sì.
+
+1047
+00:55:32,359 --> 00:55:35,240
+Quindi vertex cover,
+
+1048
+00:55:35,240 --> 00:55:38,480
+abbiamo che vertex cover appartiene a
+
+1049
+00:55:38,480 --> 00:55:40,440
+NP.
+
+1050
+00:55:40,440 --> 00:55:44,920
+Dobbiamo ora mostrare che vertex cover è
+
+1051
+00:55:44,920 --> 00:55:46,440
+NP
+
+1052
+00:55:46,440 --> 00:55:48,359
+arduo.
+
+1053
+00:55:48,359 --> 00:55:50,720
+Ok.
+
+1054
+00:55:51,880 --> 00:55:55,280
+La riduzione è particolarmente furba.
+
+1055
+00:55:55,280 --> 00:55:57,720
+Facciamo una riduzione da independent
+
+1056
+00:55:57,720 --> 00:56:00,559
+set. Ok?
+
+1057
+00:56:00,559 --> 00:56:02,319
+Che una volta che iniziamo ad avere
+
+1058
+00:56:02,319 --> 00:56:04,559
+problemi NP completi, quelli là li
+
+1059
+00:56:04,559 --> 00:56:06,280
+possiamo usare come sorgenti di
+
+1060
+00:56:06,280 --> 00:56:08,480
+complessità. Ok? Per esempio, ora non è
+
+1061
+00:56:08,480 --> 00:56:11,200
+che sto andando a, sebbene sia possibile
+
+1062
+00:56:11,200 --> 00:56:13,920
+fare una riduzione da SAT a vertex
+
+1063
+00:56:13,920 --> 00:56:17,240
+cover, però c'ho Indipenden Set che è
+
+1064
+00:56:17,240 --> 00:56:19,400
+già un problema su grafiche, è una cosa
+
+1065
+00:56:19,400 --> 00:56:21,880
+molto più semplice, ok? Quindi io
+
+1066
+00:56:21,880 --> 00:56:25,640
+trasformo l'indipendent setanze
+
+1067
+00:56:25,640 --> 00:56:28,480
+di indipendence set in istanze di vertex
+
+1068
+00:56:28,480 --> 00:56:32,520
+cover, ok? Quindi all'esame
+
+1069
+00:56:32,520 --> 00:56:35,240
+qualsiasi problemazione
+
+1070
+00:56:35,240 --> 00:56:37,960
+che
+Sì, molto probabilmente te lo
+
+1071
+00:56:37,960 --> 00:56:40,359
+suggerisco io il problema. Guarda che
+
+1072
+00:56:40,359 --> 00:56:43,280
+forse questo ti è utile. Ok.
+
+1073
+00:56:43,280 --> 00:56:45,319
+Ah sì, perché senò insomma c'è da
+
+1074
+00:56:45,319 --> 00:56:49,680
+pensare anche a quello ed è lunga. Ok.
+
+1075
+00:56:49,680 --> 00:56:55,559
+Alright. Allora, solita storia.
+
+1076
+00:56:55,599 --> 00:56:59,440
+Che cos'è un'istanza di indipendet?
+
+1077
+00:56:59,440 --> 00:57:02,079
+Grafo numero.
+
+1078
+00:57:02,079 --> 00:57:05,200
+Che cos'è un'istanza per vertex? Come?
+
+1079
+00:57:05,200 --> 00:57:06,880
+Grafo numero li chiamiamo in un modo
+
+1080
+00:57:06,880 --> 00:57:09,119
+diverso H ed, giusto per non
+
+1081
+00:57:09,119 --> 00:57:12,039
+confonderci. Ok? Quindi quello che noi
+
+1082
+00:57:12,039 --> 00:57:15,119
+dovremmo fare è
+
+1083
+00:57:15,119 --> 00:57:17,440
+trovare una funzione di trasformazione
+
+1084
+00:57:17,440 --> 00:57:20,280
+calcolabile in tempo polinomiale che
+
+1085
+00:57:20,280 --> 00:57:24,359
+dato una coppia GK grafo numero k tira
+
+1086
+00:57:24,359 --> 00:57:28,760
+fuori una coppia grafo H numero L. tale
+
+1087
+00:57:28,760 --> 00:57:32,160
+per cui il grafo G ha un indipendenzette
+
+1088
+00:57:32,160 --> 00:57:37,359
+di taglia al- K se solo se il grafo HX
+
+1089
+00:57:37,359 --> 00:57:41,280
+cover di taglia al + L. Ok?
+
+1090
+00:57:41,280 --> 00:57:44,680
+La riduzione è furbissima e si basa su
+
+1091
+00:57:44,680 --> 00:57:48,240
+questa osservazione.
+
+1092
+00:57:48,680 --> 00:57:51,680
+L'emma
+
+1093
+00:57:54,200 --> 00:58:02,039
+sia G v è un grafo
+
+1094
+00:58:02,039 --> 00:58:03,640
+non diretto. Eh, qui stiamo facendo
+
+1095
+00:58:03,640 --> 00:58:07,520
+tutta roba non diretta al momento.
+
+1096
+00:58:08,839 --> 00:58:13,440
+e sia s
+
+1097
+00:58:13,440 --> 00:58:16,240
+un insieme
+
+1098
+00:58:16,240 --> 00:58:19,440
+di nodi.
+
+1099
+00:58:23,039 --> 00:58:26,039
+Allora,
+
+1100
+00:58:26,599 --> 00:58:33,280
+S è un independent set
+
+1101
+00:58:33,720 --> 00:58:36,200
+se e solo se
+
+1102
+00:58:36,200 --> 00:58:41,119
+il complemento di S, quindi V - S
+
+1103
+00:58:41,119 --> 00:58:44,599
+è un vertex cover.
+
+1104
+00:58:44,599 --> 00:58:47,760
+Ok? Cosa ci dice questa proprietà? E se
+
+1105
+00:58:47,760 --> 00:58:51,160
+noi abbiamo un grafo e un insieme S,
+
+1106
+00:58:51,160 --> 00:58:54,799
+quell'insieme S è un un dipendent set.
+
+1107
+00:58:54,799 --> 00:58:57,559
+Se solo se il suo complemento, cioè gli
+
+1108
+00:58:57,559 --> 00:59:01,200
+altri nodi, sono un vert color, ok? C'è
+
+1109
+00:59:01,200 --> 00:59:03,280
+questa proprietà di dualità tra i due
+
+1110
+00:59:03,280 --> 00:59:05,240
+insiemi che ci permette poi di fare una
+
+1111
+00:59:05,240 --> 00:59:09,920
+riduzione immediata. Dimostrazione.
+
+1112
+00:59:13,720 --> 00:59:16,079
+Facciamo questo verso. Quindi cosa
+
+1113
+00:59:16,079 --> 00:59:17,119
+abbiamo?
+
+1114
+00:59:17,119 --> 00:59:23,760
+S è un independent set.
+
+1115
+00:59:28,760 --> 00:59:35,200
+Assumiamo per assurdo che V - S non sia
+
+1116
+00:59:35,200 --> 00:59:37,799
+un vertex cover. Questo è fero assurdo.
+
+1117
+00:59:37,799 --> 00:59:40,799
+Ok.
+
+1118
+00:59:45,599 --> 00:59:48,119
+Chiaro cosa stiamo facendo? Dobbiamo
+
+1119
+00:59:48,119 --> 00:59:49,880
+mostrare che se S è un indipendenzetta,
+
+1120
+00:59:49,880 --> 00:59:52,880
+allora V - S è un vertex cover. Come lo
+
+1121
+00:59:52,880 --> 00:59:55,079
+dimostriamo? Partiamo per assurdo.
+
+1122
+00:59:55,079 --> 00:59:58,319
+Diciamo supponiamo che invece V - S non
+
+1123
+00:59:58,319 --> 01:00:01,119
+sia un vertex cover, nonostante Sano un
+
+1124
+01:00:01,119 --> 01:00:07,039
+indipendente. Ok? Se V - S non è un
+
+1125
+01:00:07,039 --> 01:00:10,720
+vertex cover,
+
+1126
+01:00:10,720 --> 01:00:16,680
+significa che ci sta in G
+
+1127
+01:00:17,039 --> 01:00:20,359
+un arco
+
+1128
+01:00:20,680 --> 01:00:23,520
+i cui end point
+
+1129
+01:00:23,520 --> 01:00:29,480
+entrambi stanno non stanno in V - S.
+
+1130
+01:00:29,480 --> 01:00:31,799
+Ma se non stanno in V- S, dove stanno
+
+1131
+01:00:31,799 --> 01:00:33,839
+quegli end point?
+
+1132
+01:00:33,839 --> 01:00:39,480
+S.
+In S. E quindi S non è un indipendet,
+
+1133
+01:00:39,480 --> 01:00:42,799
+perciò B - S deve essere un verte cover.
+
+1134
+01:00:42,799 --> 01:00:45,880
+Chiaro? Ripeto,
+
+1135
+01:00:45,880 --> 01:00:48,880
+prendiamo S un indipendent, consideriamo
+
+1136
+01:00:48,880 --> 01:00:51,839
+il suo complemento rispetto a B.
+
+1137
+01:00:51,839 --> 01:00:53,920
+Supponiamo che il suo complemento
+
+1138
+01:00:53,920 --> 01:00:56,039
+rispetto a V, che ne so, chiamiamolo C,
+
+1139
+01:00:56,039 --> 01:00:58,640
+dai,
+
+1140
+01:00:58,640 --> 01:01:02,160
+non sia un vertex cover. Se C non è un
+
+1141
+01:01:02,160 --> 01:01:04,319
+vertex cover, allora significa che
+
+1142
+01:01:04,319 --> 01:01:08,480
+esiste un arco di G i cui end point non
+
+1143
+01:01:08,480 --> 01:01:11,440
+stanno in C, ma siccome C è il
+
+1144
+01:01:11,440 --> 01:01:14,079
+complemento di S, se gli end point di
+
+1145
+01:01:14,079 --> 01:01:15,880
+questo arco non stanno in C, devono
+
+1146
+01:01:15,880 --> 01:01:17,960
+stare tutti e due in S.
+
+1147
+01:01:17,960 --> 01:01:23,039
+Ma allora in Sno nodi agganciati e
+
+1148
+01:01:23,039 --> 01:01:24,960
+quindi S non era un dipenden set.
+
+1149
+01:01:24,960 --> 01:01:27,640
+Contraddizione, C deve essere per forza
+
+1150
+01:01:27,640 --> 01:01:31,280
+un vertex cover.
+
+1151
+01:01:32,280 --> 01:01:35,280
+Supponiamo
+
+1152
+01:01:36,359 --> 01:01:42,079
+che C = V - Sia
+
+1153
+01:01:42,079 --> 01:01:45,640
+vertex cover
+
+1154
+01:01:46,559 --> 01:01:47,880
+S.
+
+1155
+01:01:47,880 --> 01:01:53,960
+non sia un independent set per assurdo.
+
+1156
+01:01:53,960 --> 01:01:56,240
+Ok, facciamo la cosa al contrario, è
+
+1157
+01:01:56,240 --> 01:01:59,240
+simile.
+
+1158
+01:02:01,599 --> 01:02:04,599
+M
+
+1159
+01:02:04,680 --> 01:02:07,480
+ok.
+
+1160
+01:02:07,480 --> 01:02:11,000
+Supponiamo che S non sia un independent
+
+1161
+01:02:11,000 --> 01:02:13,520
+set, nonostante il suo complemento sia
+
+1162
+01:02:13,520 --> 01:02:15,720
+un vertex cover.
+
+1163
+01:02:15,720 --> 01:02:18,240
+Se S
+
+1164
+01:02:18,240 --> 01:02:21,680
+non è un indipendentet,
+
+1165
+01:02:21,680 --> 01:02:26,920
+allora ci stanno due nodi in S
+
+1166
+01:02:26,920 --> 01:02:30,240
+collegati da un arco.
+
+1167
+01:02:30,240 --> 01:02:34,480
+Ma se ci sono due nodi in S collegati da
+
+1168
+01:02:34,480 --> 01:02:38,200
+un arco, quello è un arco i cui due end
+
+1169
+01:02:38,200 --> 01:02:41,400
+point non stanno in C. Ma allora C non
+
+1170
+01:02:41,400 --> 01:02:43,760
+era un vertex cover, contraddizione.
+
+1171
+01:02:43,760 --> 01:02:45,520
+Quindi S deve essere per forza un
+
+1172
+01:02:45,520 --> 01:02:49,680
+indipendente. Sì.
+
+1173
+01:02:49,720 --> 01:02:53,279
+Ah, ok. Supponiamo che C, che è il
+
+1174
+01:02:53,279 --> 01:02:56,319
+complemento di S, sia un vertex cover e
+
+1175
+01:02:56,319 --> 01:02:59,279
+che S non sia un indipendent set. per
+
+1176
+01:02:59,279 --> 01:03:01,680
+assurdo.
+
+1177
+01:03:01,680 --> 01:03:04,400
+Se S non è un indipendent set, allora ci
+
+1178
+01:03:04,400 --> 01:03:06,200
+devono essere due nodi dentro S
+
+1179
+01:03:06,200 --> 01:03:08,359
+collegati, il che significa che esiste
+
+1180
+01:03:08,359 --> 01:03:11,319
+un arco i cui end point stanno dentro S,
+
+1181
+01:03:11,319 --> 01:03:13,960
+ma se i suoi end point stanno dentro S,
+
+1182
+01:03:13,960 --> 01:03:15,640
+quelli non possono stare dentro C, che è
+
+1183
+01:03:15,640 --> 01:03:18,240
+il suo complemento e quindi quello di
+
+1184
+01:03:18,240 --> 01:03:20,279
+partenza non era un vertex cover, è una
+
+1185
+01:03:20,279 --> 01:03:23,119
+contraddizione. Di conseguenza abbiamo
+
+1186
+01:03:23,119 --> 01:03:25,279
+questa proprietà che se S è un
+
+1187
+01:03:25,279 --> 01:03:26,839
+indipendent
+
+1188
+01:03:26,839 --> 01:03:30,520
+di eh G, allora il suo complemento è un
+
+1189
+01:03:30,520 --> 01:03:34,839
+vertex cover di C di G. Ok? Quindi
+
+1190
+01:03:34,839 --> 01:03:36,880
+possiamo
+
+1191
+01:03:36,880 --> 01:03:40,000
+ottenere la trasformazione in questo
+
+1192
+01:03:40,000 --> 01:03:44,480
+modo semplicissima. GK trasformato in
+
+1193
+01:03:44,480 --> 01:03:47,000
+HL.
+
+1194
+01:03:47,000 --> 01:03:48,799
+Sfruttiamo questa proprietà eh di
+
+1195
+01:03:48,799 --> 01:03:51,720
+dualità.
+
+1196
+01:03:51,720 --> 01:03:54,880
+Dobbiamo dobbiamo dire sostanzialmente H
+
+1197
+01:03:54,880 --> 01:03:58,440
+come si ottiene da G L H come si ottiene
+
+1198
+01:03:58,440 --> 01:04:01,440
+da G e K ed L come si ottiene da G e K.
+
+1199
+01:04:01,440 --> 01:04:03,960
+Ok?
+
+1200
+01:04:03,960 --> 01:04:09,039
+H lo definiamo uguale a G
+
+1201
+01:04:09,160 --> 01:04:12,640
+e L lo definiamo come il numero di nodi
+
+1202
+01:04:12,640 --> 01:04:18,680
+- k - k. Ok?
+
+1203
+01:04:19,599 --> 01:04:22,279
+Quindi il grafro rimane invariato,
+
+1204
+01:04:22,279 --> 01:04:25,359
+l'intero viene complementato, diciamo,
+
+1205
+01:04:25,359 --> 01:04:26,720
+prendiamo il numero di nodi, gli
+
+1206
+01:04:26,720 --> 01:04:31,359
+sottraiamo K. Ok?
+
+1207
+01:04:31,359 --> 01:04:33,799
+Chiaro? Com'è questa trasformazione? Il
+
+1208
+01:04:33,799 --> 01:04:37,599
+grafo rimane di invariato.
+
+1209
+01:04:37,640 --> 01:04:39,520
+Al numero
+
+1210
+01:04:39,520 --> 01:04:43,599
+L, che cosa diamo? Il numero di nodi
+
+1211
+01:04:43,599 --> 01:04:46,720
+meno questo K. Quindi se il numero di
+
+1212
+01:04:46,720 --> 01:04:50,599
+minori era 10, K è 3, qua gli diamo 7.
+
+1213
+01:04:50,599 --> 01:04:52,880
+Ok? È chiaro? Come si ottiene L? Questa
+
+1214
+01:04:52,880 --> 01:04:54,680
+trasformazione si può ottenere in tempo
+
+1215
+01:04:54,680 --> 01:04:57,079
+polinomiale? Sì, il grafoo è ricopiato,
+
+1216
+01:04:57,079 --> 01:04:58,920
+poi dobbiamo fare una differenza. È una
+
+1217
+01:04:58,920 --> 01:05:01,319
+cosa abbastanza semplice. Qua lo scrivo
+
+1218
+01:05:01,319 --> 01:05:04,880
+un pelino meglio.
+
+1219
+01:05:05,319 --> 01:05:07,880
+Ok.
+
+1220
+01:05:07,880 --> 01:05:10,240
+Dobbiamo ora dimostrare
+
+1221
+01:05:10,240 --> 01:05:14,039
+che se G ha un indipendenzetto di taglia
+
+1222
+01:05:14,039 --> 01:05:17,640
+almeno K, allora
+
+1223
+01:05:17,640 --> 01:05:21,760
+H un verde cover di taglia al più l è
+
+1224
+01:05:21,760 --> 01:05:25,440
+quel numero particolare. Eh,
+
+1225
+01:05:25,440 --> 01:05:27,720
+ok? Per far questo usiamo il lemma di
+
+1226
+01:05:27,720 --> 01:05:31,520
+prima. È semplicissimo. Ok? Supponiamo
+
+1227
+01:05:31,520 --> 01:05:35,359
+che G abbia un indipenden set di taglia
+
+1228
+01:05:35,359 --> 01:05:37,839
+K.
+
+1229
+01:05:37,839 --> 01:05:42,680
+sia S tale indipendette.
+
+1230
+01:05:43,119 --> 01:05:45,440
+Il suo complemento
+
+1231
+01:05:45,440 --> 01:05:50,720
+è un vertex cover di C
+
+1232
+01:05:50,720 --> 01:05:56,359
+di taglia numero di nodi - k
+
+1233
+01:05:57,359 --> 01:05:59,160
+sia
+
+1234
+01:05:59,160 --> 01:06:02,200
+GK un'istanza sì di indipendetta. Di
+
+1235
+01:06:02,200 --> 01:06:05,319
+conseguenza, G è un grafo che ammette un
+
+1236
+01:06:05,319 --> 01:06:08,359
+indipendente di taglia K,
+
+1237
+01:06:08,359 --> 01:06:11,039
+sia S
+
+1238
+01:06:11,039 --> 01:06:14,880
+un tale indipende Z, ok?
+
+1239
+01:06:14,880 --> 01:06:18,440
+Di taglia K.
+
+1240
+01:06:18,920 --> 01:06:23,640
+Consideriamo il complemento di S.
+
+1241
+01:06:23,640 --> 01:06:26,160
+Per ilma precedente
+
+1242
+01:06:26,160 --> 01:06:28,839
+il complemento di S
+
+1243
+01:06:28,839 --> 01:06:31,680
+è un verte cover. Un vertex cover di
+
+1244
+01:06:31,680 --> 01:06:35,000
+chi? Di G.
+
+1245
+01:06:35,000 --> 01:06:38,799
+Ma siccome H è uguale a G, il
+
+1246
+01:06:38,799 --> 01:06:44,640
+complemento di Sà un verte cover di H.
+
+1247
+01:06:47,039 --> 01:06:50,000
+Qual è la taglia del complemento di S? È
+
+1248
+01:06:50,000 --> 01:06:55,839
+quel numerello là. numero di nodi - k.
+
+1249
+01:06:55,839 --> 01:06:59,400
+Quindi se S
+
+1250
+01:06:59,400 --> 01:07:01,640
+è un'indipendenza
+
+1251
+01:07:01,640 --> 01:07:04,200
+di C,
+
+1252
+01:07:04,200 --> 01:07:07,200
+allora il complemento
+
+1253
+01:07:07,200 --> 01:07:09,319
+di S
+
+1254
+01:07:09,319 --> 01:07:14,839
+è un verte cover di H di quella taglia
+
+1255
+01:07:14,839 --> 01:07:17,240
+da cui
+
+1256
+01:07:17,240 --> 01:07:20,079
+se parto da un istanza Sì di indipendent
+
+1257
+01:07:20,079 --> 01:07:24,799
+arrivo a un istanza Sì di verte cover.
+
+1258
+01:07:24,799 --> 01:07:27,599
+È chiaro per tutti? Il il fulcro della
+
+1259
+01:07:27,599 --> 01:07:29,799
+dimostrazione è il lemma che abbiamo
+
+1260
+01:07:29,799 --> 01:07:32,520
+dato prima, che è il duale, cioè il
+
+1261
+01:07:32,520 --> 01:07:34,960
+complemento di indipendent un verde
+
+1262
+01:07:34,960 --> 01:07:38,119
+score. Ok?
+
+1263
+01:07:38,119 --> 01:07:41,599
+Altro verso della dimostrazione.
+
+1264
+01:07:41,599 --> 01:07:45,599
+Supponiamo di essere arrivati a
+
+1265
+01:07:45,599 --> 01:07:50,960
+un'istanza s di vertex cover.
+
+1266
+01:07:51,400 --> 01:07:54,640
+Quindi in H
+
+1267
+01:07:54,640 --> 01:08:02,440
+esiste un vertex cover di taglia L.
+
+1268
+01:08:03,720 --> 01:08:06,960
+Chiamiamo questo vertex cover.
+
+1269
+01:08:06,960 --> 01:08:09,920
+C.
+
+1270
+01:08:09,920 --> 01:08:13,440
+Consideriamo il suo complemento.
+
+1271
+01:08:13,440 --> 01:08:16,719
+Complemento di C.
+
+1272
+01:08:16,719 --> 01:08:20,319
+Per il lemma precedente
+
+1273
+01:08:20,319 --> 01:08:26,440
+il complemento di C è un indipendent
+
+1274
+01:08:26,440 --> 01:08:29,960
+di H.
+
+1275
+01:08:29,960 --> 01:08:34,080
+Ma H è ug,
+
+1276
+01:08:34,440 --> 01:08:39,719
+quindi il complemento di C è un
+
+1277
+01:08:39,719 --> 01:08:41,640
+indipendenza
+
+1278
+01:08:41,640 --> 01:08:44,839
+di G.
+
+1279
+01:08:44,920 --> 01:08:49,480
+ci chiediamo se il complemento di C sia
+
+1280
+01:08:49,480 --> 01:08:52,560
+un indipendezza sufficientemente grande
+
+1281
+01:08:52,560 --> 01:08:56,640
+per forza, perché siccome C ha una
+
+1282
+01:08:56,640 --> 01:08:59,600
+taglia al più questo,
+
+1283
+01:08:59,600 --> 01:09:02,679
+il suo complemento ha una taglia almeno
+
+1284
+01:09:02,679 --> 01:09:05,279
+questo per definizione della
+
+1285
+01:09:05,279 --> 01:09:08,120
+trasformazione.
+
+1286
+01:09:08,120 --> 01:09:10,159
+Di conseguenza,
+
+1287
+01:09:10,159 --> 01:09:14,000
+se siamo arrivati a un'istanza
+
+1288
+01:09:14,000 --> 01:09:19,199
+sì di vertex cover, era perché partivamo
+
+1289
+01:09:19,199 --> 01:09:24,080
+da un'istanza sì di indipendent
+
+1290
+01:09:24,239 --> 01:09:28,560
+da cui vertex cover
+
+1291
+01:09:28,560 --> 01:09:33,560
+è np arduo e quindi NP completo.
+
+1292
+01:09:33,560 --> 01:09:35,319
+Cioè, gran parte dei problemi
+
+1293
+01:09:35,319 --> 01:09:37,359
+combinatori.
+
+1294
+01:09:37,359 --> 01:09:40,440
+NP completo, ok? Sono tutti relati fra
+
+1295
+01:09:40,440 --> 01:09:43,440
+di loro.
+
+1296
+01:09:43,440 --> 01:09:46,400
+Chiaro per tutti questa dimostrazione?
+
+1297
+01:09:46,400 --> 01:09:48,560
+Altro problema. Questo lo conoscete
+
+1298
+01:09:48,560 --> 01:09:51,000
+sicuro perché, insomma, è abbastanza
+
+1299
+01:09:51,000 --> 01:09:53,799
+semplice.
+
+1300
+01:09:53,799 --> 01:09:56,600
+Problema della
+
+1301
+01:09:56,600 --> 01:09:59,480
+click o cricca, non so come lo chiamate,
+
+1302
+01:09:59,480 --> 01:10:02,040
+cos'è una click o una cricca su grafo,
+
+1303
+01:10:02,040 --> 01:10:04,440
+lo sapete?
+
+1304
+01:10:04,440 --> 01:10:07,080
+No, è un sottografo
+
+1305
+01:10:07,080 --> 01:10:11,000
+completamente connesso.
+
+1306
+01:10:13,120 --> 01:10:16,159
+Ok? Cioè, quindi abbiamo un grafo, che
+
+1307
+01:10:16,159 --> 01:10:20,440
+ne so, questo qua.
+
+1308
+01:10:28,600 --> 01:10:32,520
+Questa qui è una click di taglia 3. Ok.
+
+1309
+01:10:32,520 --> 01:10:34,679
+Perché tutti i nodi sono collegati a
+
+1310
+01:10:34,679 --> 01:10:37,360
+coppie. Ok.
+
+1311
+01:10:37,360 --> 01:10:40,440
+Dato un grafo.
+
+1312
+01:10:40,440 --> 01:10:43,320
+È vero, no, che questo grafo ammette una
+
+1313
+01:10:43,320 --> 01:10:46,320
+click.
+
+1314
+01:10:47,280 --> 01:10:51,280
+Sì. Quale?
+L'insieme vuoto o l'insieme
+
+1315
+01:10:51,280 --> 01:10:55,080
+di un nodo. Quindi è un problema banale.
+
+1316
+01:10:55,080 --> 01:10:57,520
+Ci serve la sua variante, la solita
+
+1317
+01:10:57,520 --> 01:11:02,840
+variante V. Utile. Click.
+
+1318
+01:11:02,840 --> 01:11:06,719
+e l'insieme delle coppie grafo numero
+
+1319
+01:11:06,719 --> 01:11:12,960
+tali che G ha una click
+
+1320
+01:11:13,440 --> 01:11:16,600
+di taglia
+
+1321
+01:11:16,600 --> 01:11:20,199
+almeno K.
+
+1322
+01:11:22,440 --> 01:11:25,440
+Ok.
+
+1323
+01:11:27,840 --> 01:11:32,640
+Vogliamo dimostrare che click è NP
+
+1324
+01:11:32,640 --> 01:11:35,640
+completo.
+
+1325
+01:11:37,239 --> 01:11:40,120
+Per essere NP completo dobbiamo fare
+
+1326
+01:11:40,120 --> 01:11:42,800
+sempre i due passaggi. Membership
+
+1327
+01:11:42,800 --> 01:11:46,639
+hardness hardness. È vero, no, che click
+
+1328
+01:11:46,639 --> 01:11:51,239
+appartiene a NP?
+
+1329
+01:11:52,760 --> 01:11:56,199
+Sì. No, forse
+
+1330
+01:11:56,199 --> 01:12:00,639
+sì. Come lo dimostriamo?
+
+1331
+01:12:05,320 --> 01:12:08,239
+Gessiamo la click, cerchiamo la click.
+
+1332
+01:12:08,239 --> 01:12:10,880
+Gioco fatto. Si fa in tempo polinomiale.
+
+1333
+01:12:10,880 --> 01:12:13,880
+Il problema è in NP. Dobbiamo dimostrare
+
+1334
+01:12:13,880 --> 01:12:16,480
+che è click
+
+1335
+01:12:16,480 --> 01:12:20,440
+e NPR2.
+
+1336
+01:12:28,560 --> 01:12:30,920
+Ok.
+
+1337
+01:12:30,920 --> 01:12:33,560
+Riduzione pure in questo caso da
+
+1338
+01:12:33,560 --> 01:12:37,199
+independent set.
+
+1339
+01:12:42,480 --> 01:12:44,719
+un'istanza di independent set è una
+
+1340
+01:12:44,719 --> 01:12:48,159
+coppia GK, un'istanza per click e una
+
+1341
+01:12:48,159 --> 01:12:54,199
+coppia HL. La facciamo così. Ok,
+
+1342
+01:12:57,600 --> 01:13:00,800
+dobbiamo trovare una trasformazione F
+
+1343
+01:13:00,800 --> 01:13:03,800
+opportuna.
+
+1344
+01:13:04,760 --> 01:13:09,040
+Già tutto sto sp. Ah, ok.
+
+1345
+01:13:09,040 --> 01:13:14,040
+ci focalizziamo su questa cosa, ok?
+
+1346
+01:13:14,040 --> 01:13:17,960
+Sia G un grafo di E.
+
+1347
+01:13:17,960 --> 01:13:21,679
+Definiamo il complemento di G
+
+1348
+01:13:21,679 --> 01:13:24,760
+come il grafo in cui i nodi sono gli
+
+1349
+01:13:24,760 --> 01:13:29,679
+stessi e gli archi sono
+
+1350
+01:13:29,679 --> 01:13:33,239
+scambiati, flippati. Dove non ci stava
+
+1351
+01:13:33,239 --> 01:13:35,159
+ce lo mettiamo. Dove ci stava lo
+
+1352
+01:13:35,159 --> 01:13:39,880
+togliamo. Ok? Quell viene fuori
+un
+
+1353
+01:13:39,880 --> 01:13:42,960
+attimo come
+quella viene fuori
+è
+
+1354
+01:13:42,960 --> 01:13:46,800
+l'insieme degli edg del grafo.
+
+1355
+01:13:46,800 --> 01:13:49,840
+Un grafo è una coppia no di archi e è
+
+1356
+01:13:49,840 --> 01:13:53,239
+edges. Non so come non sono a conoscenza
+
+1357
+01:13:53,239 --> 01:13:55,520
+di parole italiane si usano parole
+
+1358
+01:13:55,520 --> 01:13:58,679
+diverse per archi diretti e non diretti
+
+1359
+01:13:58,679 --> 01:14:00,639
+in italiano
+
+1360
+01:14:00,639 --> 01:14:01,719
+me l'hanno mai detto no perché in
+
+1361
+01:14:01,719 --> 01:14:03,320
+inglese generalmente si usano parole
+
+1362
+01:14:03,320 --> 01:14:06,280
+diverse. Quindi mi chiedevo se ci sta
+
+1363
+01:14:06,280 --> 01:14:09,560
+che in inglese edge è non diretto, arc è
+
+1364
+01:14:09,560 --> 01:14:13,080
+diretto. Ok, vabbò.
+
+1365
+01:14:13,080 --> 01:14:16,239
+Quindi noi abbiamo questo grafo B dove è
+
+1366
+01:14:16,239 --> 01:14:18,760
+l'insieme degli edge.
+
+1367
+01:14:18,760 --> 01:14:21,719
+Il complemento di G lo definiamo come il
+
+1368
+01:14:21,719 --> 01:14:25,679
+grafico in cui i nodi sono uguali,
+
+1369
+01:14:25,679 --> 01:14:27,960
+gli archi sono all'opposto.
+
+1370
+01:14:27,960 --> 01:14:32,719
+Se una coppia di nodi non era collegata,
+
+1371
+01:14:32,719 --> 01:14:36,120
+in G soprasegnato, li colleghiamo. Se
+
+1372
+01:14:36,120 --> 01:14:39,840
+una coppia di nodi era collegata in G,
+
+1373
+01:14:39,840 --> 01:14:42,520
+in G soprasegnato, togliamo l'ar. Ok,
+
+1374
+01:14:42,520 --> 01:14:46,679
+facciamo proprio l'opposto. Torn
+
+1375
+01:14:49,800 --> 01:14:52,800
+Lemma.
+
+1376
+01:14:53,600 --> 01:14:55,440
+Allora, questo lo sto improvvisando,
+
+1377
+01:14:55,440 --> 01:14:57,560
+solo la proprietà. Sta stiamo attenti
+
+1378
+01:14:57,560 --> 01:14:59,600
+che non vorrei dire stupidaggine, ok?
+
+1379
+01:14:59,600 --> 01:15:07,920
+però dovrebbe funzionare sia G un grafo
+
+1380
+01:15:08,800 --> 01:15:12,520
+se eh ah ah ah.
+
+1381
+01:15:12,520 --> 01:15:15,199
+Allora,
+
+1382
+01:15:15,199 --> 01:15:21,520
+S è un independent set
+
+1383
+01:15:22,400 --> 01:15:24,600
+di G
+
+1384
+01:15:24,600 --> 01:15:28,520
+se è solo se S
+
+1385
+01:15:28,520 --> 01:15:32,800
+è una click
+
+1386
+01:15:32,800 --> 01:15:36,400
+in G soprassegnato. Ok, questa è la
+
+1387
+01:15:36,400 --> 01:15:39,120
+proprietà che ci serve.
+
+1388
+01:15:39,120 --> 01:15:41,400
+Dovrebbe funzionare. No, vediamo un po'.
+
+1389
+01:15:41,400 --> 01:15:44,400
+Ok,
+
+1390
+01:15:47,199 --> 01:15:49,600
+questo l'avevamo fatto doppio.
+
+1391
+01:15:49,600 --> 01:15:51,440
+Sì.
+
+1392
+01:15:51,440 --> 01:15:54,440
+Allora,
+
+1393
+01:15:55,280 --> 01:16:03,639
+sia S un independent set di G, assumiamo
+
+1394
+01:16:04,080 --> 01:16:05,719
+che
+
+1395
+01:16:05,719 --> 01:16:12,000
+S non sia una click.
+
+1396
+01:16:12,000 --> 01:16:15,719
+in G soprasegnato. Questo per assurdo.
+
+1397
+01:16:15,719 --> 01:16:18,719
+Ok.
+
+1398
+01:16:19,800 --> 01:16:22,800
+Allora,
+
+1399
+01:16:22,800 --> 01:16:26,639
+sì, sì, se S
+
+1400
+01:16:26,639 --> 01:16:29,360
+non è
+
+1401
+01:16:29,360 --> 01:16:31,480
+una click
+
+1402
+01:16:31,480 --> 01:16:36,159
+in G soprasegnato,
+
+1403
+01:16:37,000 --> 01:16:40,480
+allora vuol dire
+
+1404
+01:16:40,480 --> 01:16:44,280
+che in Sno
+
+1405
+01:16:45,520 --> 01:16:47,760
+nodi
+
+1406
+01:16:48,239 --> 01:16:52,520
+che in G soprasegnato non sono
+
+1407
+01:16:52,520 --> 01:16:55,400
+collegati.
+
+1408
+01:16:55,400 --> 01:16:58,320
+Ripeto, stiamo partendo da S che è un
+
+1409
+01:16:58,320 --> 01:17:01,800
+indipendent set per G.
+
+1410
+01:17:01,800 --> 01:17:05,440
+Allora, noi vogliamo mostrare che S è
+
+1411
+01:17:05,440 --> 01:17:09,239
+una click in GR, ok?
+
+1412
+01:17:09,239 --> 01:17:11,480
+Lo mostriamo per assurdo. Supponiamo che
+
+1413
+01:17:11,480 --> 01:17:14,719
+questo insieme S di nodi in g barrato
+
+1414
+01:17:14,719 --> 01:17:18,480
+non sia una click.
+
+1415
+01:17:18,480 --> 01:17:22,560
+Se non è una click, S in G barrato deve
+
+1416
+01:17:22,560 --> 01:17:25,800
+avere due nodi non collegati fra di
+
+1417
+01:17:25,800 --> 01:17:28,520
+loro.
+
+1418
+01:17:28,520 --> 01:17:31,159
+Ma allora vuol dire che quei due nodi in
+
+1419
+01:17:31,159 --> 01:17:33,760
+G non barrato
+
+1420
+01:17:33,760 --> 01:17:37,920
+erano collegati e allora S non era un
+
+1421
+01:17:37,920 --> 01:17:41,600
+indipendent di GAR,
+
+1422
+01:17:41,600 --> 01:17:44,960
+quindi per forza S deve essere una click
+
+1423
+01:17:44,960 --> 01:17:49,040
+di GAR. Chiaro?
+
+1424
+01:17:49,159 --> 01:17:52,000
+Altro verso.
+
+1425
+01:17:52,000 --> 01:17:53,719
+Ma ce la facciamo pure a fare dominating
+
+1426
+01:17:53,719 --> 01:17:56,080
+set mostruoso.
+
+1427
+01:17:56,080 --> 01:17:59,000
+Allora, sia
+
+1428
+01:17:59,000 --> 01:18:03,719
+S una click
+
+1429
+01:18:03,719 --> 01:18:07,600
+di G barrato.
+
+1430
+01:18:07,600 --> 01:18:10,600
+Assumiamo
+
+1431
+01:18:12,440 --> 01:18:16,480
+che S non
+
+1432
+01:18:16,480 --> 01:18:21,080
+sia un indipendent set in G e questo per
+
+1433
+01:18:21,080 --> 01:18:24,080
+assurdo.
+
+1434
+01:18:25,920 --> 01:18:28,280
+Ok.
+
+1435
+01:18:28,280 --> 01:18:30,840
+Alright.
+
+1436
+01:18:30,840 --> 01:18:36,800
+G barrato G. S è una click qui, Sindet
+
+1437
+01:18:36,800 --> 01:18:41,080
+qui. Se S non è un indipendentet in G
+
+1438
+01:18:41,080 --> 01:18:43,239
+non barrato,
+
+1439
+01:18:43,239 --> 01:18:48,480
+ci sono due nodi di S che dentro G sono
+
+1440
+01:18:48,480 --> 01:18:51,480
+collegati.
+
+1441
+01:18:51,880 --> 01:18:55,080
+Ma allora per definizione di grafo
+
+1442
+01:18:55,080 --> 01:18:58,120
+soprasegnato, quei due nodi qui erano
+
+1443
+01:18:58,120 --> 01:19:00,360
+sganciati.
+
+1444
+01:19:00,360 --> 01:19:04,560
+da cui S non era una click di GR.
+
+1445
+01:19:04,560 --> 01:19:07,080
+Contraddizione.
+
+1446
+01:19:07,080 --> 01:19:08,920
+Chiaro?
+
+1447
+01:19:08,920 --> 01:19:12,679
+Quindi abbiamo questo lemma intermedio
+
+1448
+01:19:12,679 --> 01:19:17,440
+che ci dice che se S dato un insieme S
+
+1449
+01:19:17,440 --> 01:19:23,000
+in S è una un indipendenzet di G se solo
+
+1450
+01:19:23,000 --> 01:19:26,520
+se è una click di G barrato. Sfruttiamo
+
+1451
+01:19:26,520 --> 01:19:29,000
+questa proprietà per la trasformazione.
+
+1452
+01:19:29,000 --> 01:19:31,120
+Anche in questo caso trasformazione
+
+1453
+01:19:31,120 --> 01:19:34,400
+molto semplice.
+
+1454
+01:19:34,400 --> 01:19:38,520
+Quindi partendo da GK dobbiamo ottenere
+
+1455
+01:19:38,520 --> 01:19:41,520
+HL.
+
+1456
+01:19:43,320 --> 01:19:47,480
+Facciamo così, H è ottenuto come G
+
+1457
+01:19:47,480 --> 01:19:49,000
+barrato,
+
+1458
+01:19:49,000 --> 01:19:51,120
+ok?
+
+1459
+01:19:51,120 --> 01:19:56,199
+Mentre L è ottenuto come K. Prendiamo,
+
+1460
+01:19:56,199 --> 01:19:59,400
+lo copiamo.
+
+1461
+01:20:00,880 --> 01:20:02,400
+Ok.
+
+1462
+01:20:02,400 --> 01:20:04,320
+Chiara la riduzione?
+
+1463
+01:20:04,320 --> 01:20:09,760
+H e G bar invertiamo e otteniamo H. L è
+
+1464
+01:20:09,760 --> 01:20:15,639
+la copia di K. 5 5 9 9 1000 1000.
+
+1465
+01:20:15,639 --> 01:20:18,639
+Ok?
+
+1466
+01:20:19,080 --> 01:20:21,159
+Dobbiamo dimostrare che questa
+
+1467
+01:20:21,159 --> 01:20:24,840
+trasformazione trasforma istanze sì di
+
+1468
+01:20:24,840 --> 01:20:28,000
+indipendentet in istanze sì di click e
+
+1469
+01:20:28,000 --> 01:20:30,199
+istanze no di indipendent setet in
+
+1470
+01:20:30,199 --> 01:20:34,800
+istanze no di click. Ok?
+
+1471
+01:20:36,920 --> 01:20:38,880
+Supponiamo
+
+1472
+01:20:38,880 --> 01:20:45,920
+che GK sia un'istanza s di indipendetta.
+
+1473
+01:20:46,840 --> 01:20:50,400
+Ciò vuol dire che G
+
+1474
+01:20:50,400 --> 01:20:55,360
+ammette un indipendent set S di taglia
+
+1475
+01:20:55,360 --> 01:20:58,360
+K.
+
+1476
+01:21:00,600 --> 01:21:03,920
+Per il demma precedente
+
+1477
+01:21:03,920 --> 01:21:05,719
+S
+
+1478
+01:21:05,719 --> 01:21:09,800
+è una click di G barrato
+
+1479
+01:21:09,800 --> 01:21:15,800
+di taglia K, ma per definizione di H
+
+1480
+01:21:15,800 --> 01:21:18,280
+Slick
+
+1481
+01:21:18,280 --> 01:21:22,760
+di H di taglia L.
+
+1482
+01:21:24,560 --> 01:21:27,560
+Chiaro?
+
+1483
+01:21:27,760 --> 01:21:29,280
+Quindi
+
+1484
+01:21:29,280 --> 01:21:32,480
+partendo da un'istanza sì di indipendent
+
+1485
+01:21:32,480 --> 01:21:37,400
+siamo arrivati a un'istanza sì di click.
+
+1486
+01:21:40,080 --> 01:21:42,679
+Supponiamo di essere arrivati a
+
+1487
+01:21:42,679 --> 01:21:45,800
+un'istanza sì di click.
+
+1488
+01:21:45,800 --> 01:21:49,280
+Quindi h
+
+1489
+01:21:49,280 --> 01:21:53,360
+ha una click S
+
+1490
+01:21:53,360 --> 01:21:55,239
+di taglia
+
+1491
+01:21:55,239 --> 01:21:57,880
+L.
+
+1492
+01:21:59,840 --> 01:22:03,800
+Per il lemma precedente,
+
+1493
+01:22:06,600 --> 01:22:12,880
+S è un indipendent set di taglia L di H
+
+1494
+01:22:12,880 --> 01:22:15,880
+barrato,
+
+1495
+01:22:15,960 --> 01:22:22,880
+ma per definizione di H L, hrato è G,
+
+1496
+01:22:22,880 --> 01:22:28,040
+L è UG = K e quindi S
+
+1497
+01:22:28,040 --> 01:22:32,600
+è un indipendent set
+
+1498
+01:22:32,600 --> 01:22:36,760
+di G di taglia K. Quindi se siamo
+
+1499
+01:22:36,760 --> 01:22:39,000
+arrivati a un'istanza Sì, era perché
+
+1500
+01:22:39,000 --> 01:22:42,239
+partivamo da un istanza Sì,
+
+1501
+01:22:42,239 --> 01:22:44,080
+da cui
+
+1502
+01:22:44,080 --> 01:22:47,719
+indipendence si riduce a click e quindi
+
+1503
+01:22:47,719 --> 01:22:50,800
+click è NPR. Insieme alla membership in
+
+1504
+01:22:50,800 --> 01:22:54,520
+NP abbiamo che click è np completo.
+
+1505
+01:22:54,520 --> 01:22:56,920
+Ok.
+
+1506
+01:22:57,199 --> 01:23:00,280
+Altro esempio.
+
+1507
+01:23:00,280 --> 01:23:04,840
+Ci siete? Sto andando troppo veloce.
+
+1508
+01:23:05,239 --> 01:23:07,600
+No. Alrght.
+
+1509
+01:23:07,600 --> 01:23:11,080
+Ultimo problema di oggi a questo punto
+
+1510
+01:23:11,080 --> 01:23:15,480
+perché l'altro è troppo lungo.
+
+1511
+01:23:15,480 --> 01:23:19,159
+Dominating set.
+
+1512
+01:23:25,159 --> 01:23:29,760
+Dominating set è un altro problema di
+
+1513
+01:23:29,760 --> 01:23:31,440
+sugrafo.
+
+1514
+01:23:31,440 --> 01:23:34,320
+È un problema simile al vertex cover, ma
+
+1515
+01:23:34,320 --> 01:23:37,639
+non completamente.
+
+1516
+01:23:44,679 --> 01:23:50,120
+Cos'è un dominating set di un grafo?
+
+1517
+01:23:50,120 --> 01:23:53,840
+Un dominating set di un grafo
+
+1518
+01:23:53,840 --> 01:23:58,080
+è un insieme di nodi
+
+1519
+01:23:58,080 --> 01:24:01,760
+tale per cui
+
+1520
+01:24:01,760 --> 01:24:04,800
+tutti i nodi
+
+1521
+01:24:04,800 --> 01:24:09,440
+fuori il dominating set
+
+1522
+01:24:09,440 --> 01:24:12,480
+sono agganciati a qualche nodo del
+
+1523
+01:24:12,480 --> 01:24:16,840
+dominating set. Ok? Ripeto, un insieme
+
+1524
+01:24:16,840 --> 01:24:20,920
+di di nodi di un grafo è un dominating
+
+1525
+01:24:20,920 --> 01:24:23,600
+set per il grafo.
+
+1526
+01:24:23,600 --> 01:24:29,320
+Se per tutti i nodi fuori D
+
+1527
+01:24:29,320 --> 01:24:32,000
+es un arco che mi collega a un nodo in
+
+1528
+01:24:32,000 --> 01:24:39,920
+D. Ok? Questo è il dominio y
+un nodoì.
+
+1529
+01:24:39,920 --> 01:24:42,280
+Esattamente come ci faceva notare il
+
+1530
+01:24:42,280 --> 01:24:45,320
+nostro collega,
+
+1531
+01:24:45,320 --> 01:24:48,760
+questo qui è un dominating set per
+
+1532
+01:24:48,760 --> 01:24:51,440
+questo grafo, però
+
+1533
+01:24:51,440 --> 01:24:55,600
+quello lì non è un vertex cover perché
+
+1534
+01:24:55,600 --> 01:24:58,760
+c'è questo arco qua che non è coperto da
+
+1535
+01:24:58,760 --> 01:25:03,280
+niente. Ok? Quindi il dominating set è
+
+1536
+01:25:03,280 --> 01:25:05,320
+noi vogliamo essere in grado di
+
+1537
+01:25:05,320 --> 01:25:09,040
+raggiungere da D tutti gli altri nodi,
+
+1538
+01:25:09,040 --> 01:25:11,639
+invece nel verte cover noi vogliamo
+
+1539
+01:25:11,639 --> 01:25:13,400
+essere in grado di coprire tutti gli
+
+1540
+01:25:13,400 --> 01:25:16,080
+archi. Ok? C'è questa differenza nella
+
+1541
+01:25:16,080 --> 01:25:18,719
+definizione.
+
+1542
+01:25:18,719 --> 01:25:21,239
+Chiaro per tutti? Ok.
+
+1543
+01:25:21,239 --> 01:25:26,520
+Yes. Quindi sempre un solo insieme di
+
+1544
+01:25:26,520 --> 01:25:29,360
+Sì, questa è un osservazione
+
+1545
+01:25:29,360 --> 01:25:31,400
+interessante e sarà appunto alla base
+
+1546
+01:25:31,400 --> 01:25:33,480
+della riduzione,
+
+1547
+01:25:33,480 --> 01:25:36,679
+cioè un vertex cover
+
+1548
+01:25:36,679 --> 01:25:39,719
+e un dominio inset.
+
+1549
+01:25:39,719 --> 01:25:44,119
+Ok? Perché? Perché se copriamo tutti gli
+
+1550
+01:25:44,119 --> 01:25:46,880
+archi, vi ricordo che un vertex cover è
+
+1551
+01:25:46,880 --> 01:25:51,440
+un insieme di nodi tale per cui preso un
+
+1552
+01:25:51,440 --> 01:25:54,400
+qualsiasi arco, almeno uno dei suoi end
+
+1553
+01:25:54,400 --> 01:25:56,400
+point sta nel vertex cover. Di
+
+1554
+01:25:56,400 --> 01:25:57,960
+conseguenza
+
+1555
+01:25:57,960 --> 01:26:00,840
+io posso raggiungere l'altro end point
+
+1556
+01:26:00,840 --> 01:26:03,000
+da qualcuno che sta nel vertex cover,
+
+1557
+01:26:03,000 --> 01:26:04,960
+quindi un vertex cover, questo ve lo
+
+1558
+01:26:04,960 --> 01:26:08,600
+segno che è utile.
+
+1559
+01:26:09,360 --> 01:26:12,920
+Vertex cover
+
+1560
+01:26:13,719 --> 01:26:17,080
+è sempre
+
+1561
+01:26:18,040 --> 01:26:19,600
+un
+
+1562
+01:26:19,600 --> 01:26:22,600
+dominating
+
+1563
+01:26:23,320 --> 01:26:25,239
+set,
+
+1564
+01:26:25,239 --> 01:26:28,719
+ma non viceversa
+
+1565
+01:26:29,560 --> 01:26:34,320
+come l'esempio mostra. Ok?
+
+1566
+01:26:34,320 --> 01:26:39,679
+Quindi, che intuizione possiamo avere?
+
+1567
+01:26:40,119 --> 01:26:42,080
+Nelle ultime due riduzioni che abbiamo
+
+1568
+01:26:42,080 --> 01:26:43,960
+visto, la trasformazione è stata
+
+1569
+01:26:43,960 --> 01:26:46,119
+estremamente semplice. Prendevamo il
+
+1570
+01:26:46,119 --> 01:26:49,080
+grafo e lo ricopiavamo tipo nella
+
+1571
+01:26:49,080 --> 01:26:51,960
+trasformazione da indipendetta a vertex
+
+1572
+01:26:51,960 --> 01:26:56,119
+cover o ne facevamo il suo opposto. Ok?
+
+1573
+01:26:56,119 --> 01:26:57,639
+Quindi in linea di principio quello che
+
+1574
+01:26:57,639 --> 01:27:01,159
+si potrebbe fare perché eh ok no, no
+
+1575
+01:27:01,159 --> 01:27:03,880
+andiamo per passi. Vogliamo mostrare che
+
+1576
+01:27:03,880 --> 01:27:07,639
+dominating set è np completo. Ok? Quindi
+
+1577
+01:27:07,639 --> 01:27:11,000
+ci servono sempre le due condizioni,
+
+1578
+01:27:11,000 --> 01:27:14,159
+dominating set sia in NP e dominating
+
+1579
+01:27:14,159 --> 01:27:18,520
+set sia NP arduo. È vero o no che
+
+1580
+01:27:18,520 --> 01:27:23,800
+dominating set appartiene a NP?
+
+1581
+01:27:26,679 --> 01:27:30,119
+Gesso cecco bla. Si fa tutto in tempo
+
+1582
+01:27:30,119 --> 01:27:33,080
+polinomiale, quindi dominate inset sta
+
+1583
+01:27:33,080 --> 01:27:35,960
+in NP. Ok. Quello che ci manca da
+
+1584
+01:27:35,960 --> 01:27:40,239
+mostrare è che dominating set è
+
+1585
+01:27:40,239 --> 01:27:42,400
+np arduo
+
+1586
+01:27:42,400 --> 01:27:45,679
+[Musica]
+
+1587
+01:27:45,679 --> 01:27:48,639
+e la riduzione la facciamo da vertex
+
+1588
+01:27:48,639 --> 01:27:51,639
+cover.
+
+1589
+01:27:51,960 --> 01:27:53,520
+Sì,
+
+1590
+01:27:53,520 --> 01:27:56,159
+anche questi
+
+1591
+01:27:56,159 --> 01:28:01,840
+in taglia.
+Sì, sì, sì, sì. Giusto,
+
+1592
+01:28:02,199 --> 01:28:06,199
+eh? Where is it? Allora, mi serve una lo
+
+1593
+01:28:06,199 --> 01:28:08,280
+scrivo qua di fianco, giustamente mi
+
+1594
+01:28:08,280 --> 01:28:10,119
+sono dimenticato una cosa. Dobbiamo
+
+1595
+01:28:10,119 --> 01:28:13,000
+definire il problema.
+
+1596
+01:28:13,000 --> 01:28:14,600
+È vero, no, che un grafo ha un
+
+1597
+01:28:14,600 --> 01:28:17,360
+dominating set? Certo, l'insieme di
+
+1598
+01:28:17,360 --> 01:28:19,440
+tutti i nodi è sempre un dominating set.
+
+1599
+01:28:19,440 --> 01:28:21,119
+Quindi, come ci faceva giustamente
+
+1600
+01:28:21,119 --> 01:28:22,880
+notare il nostro collega, anche in
+
+1601
+01:28:22,880 --> 01:28:25,800
+questo caso dobbiamo definire
+
+1602
+01:28:25,800 --> 01:28:27,920
+una variante di decisione di questo
+
+1603
+01:28:27,920 --> 01:28:30,320
+problema che sia sensato studiato.
+
+1604
+01:28:30,320 --> 01:28:33,000
+Quindi, dominating set, l'insieme delle
+
+1605
+01:28:33,000 --> 01:28:39,480
+coppie, grafo numero, tale che G ha un
+
+1606
+01:28:39,480 --> 01:28:43,560
+dominating set, dominating
+
+1607
+01:28:43,560 --> 01:28:45,239
+set
+
+1608
+01:28:45,239 --> 01:28:48,280
+di taglia
+
+1609
+01:28:48,280 --> 01:28:50,000
+al più.
+
+1610
+01:28:50,000 --> 01:28:52,760
+K. Ok.
+
+1611
+01:28:52,760 --> 01:28:56,159
+Alright. Quindi dominating set così
+
+1612
+01:28:56,159 --> 01:29:00,199
+definito in NP. Sì, facciamo un guess di
+
+1613
+01:29:00,199 --> 01:29:03,639
+di K nodi. Vediamo, verifichiamo la
+
+1614
+01:29:03,639 --> 01:29:05,520
+condizione di dominate in set. Se è così
+
+1615
+01:29:05,520 --> 01:29:07,679
+rispondiamo sì. Quindi il problema è in
+
+1616
+01:29:07,679 --> 01:29:10,320
+NP perché tutto ciò si fa in polinomial
+
+1617
+01:29:10,320 --> 01:29:13,320
+time.
+
+1618
+01:29:15,639 --> 01:29:18,119
+NP hard. NP hard. Dobbiamo fare una
+
+1619
+01:29:18,119 --> 01:29:21,639
+riduzione da vertex cover. Ok? Adesso
+
+1620
+01:29:21,639 --> 01:29:25,880
+noi abbiamo che un vertex cover è sempre
+
+1621
+01:29:25,880 --> 01:29:29,199
+un dominating set, quindi nella nostra
+
+1622
+01:29:29,199 --> 01:29:31,000
+riduzione
+
+1623
+01:29:31,000 --> 01:29:36,239
+GK che va verso HL
+
+1624
+01:29:36,239 --> 01:29:38,080
+L.
+
+1625
+01:29:38,080 --> 01:29:41,159
+Se noi il grafo G
+
+1626
+01:29:41,159 --> 01:29:44,600
+lo lasciamo invariato, cioè H è la
+
+1627
+01:29:44,600 --> 01:29:49,280
+stessa cosa di G, avremmo che se G ha un
+
+1628
+01:29:49,280 --> 01:29:52,840
+verte cover di taglia K,
+
+1629
+01:29:52,840 --> 01:29:55,040
+allora
+
+1630
+01:29:55,040 --> 01:29:58,400
+H avrebbe un un dominating set di taglia
+
+1631
+01:29:58,400 --> 01:30:00,800
+K, perché un vertex cover è sempre un
+
+1632
+01:30:00,800 --> 01:30:03,679
+dominating set, però non avremmo la
+
+1633
+01:30:03,679 --> 01:30:08,199
+garanzia del verso opposto, ok? Perché
+
+1634
+01:30:08,199 --> 01:30:12,239
+potrebbe accadere che partiamo da una
+
+1635
+01:30:12,239 --> 01:30:14,400
+coppia GK
+
+1636
+01:30:14,400 --> 01:30:19,560
+in cui G non ha un vertex cover
+
+1637
+01:30:19,560 --> 01:30:21,880
+di taglia K perché magari gli servono
+
+1638
+01:30:21,880 --> 01:30:24,960
+più nodi per coprire tutti gli archi,
+
+1639
+01:30:24,960 --> 01:30:28,000
+mentre lui ha un domaine di set di
+
+1640
+01:30:28,000 --> 01:30:31,000
+taglia K perché servono meno nodi a
+
+1641
+01:30:31,000 --> 01:30:36,520
+coprire tutti i nodi. Ok? Quindi H non
+
+1642
+01:30:36,520 --> 01:30:38,719
+può essere la semplice propria di G,
+
+1643
+01:30:38,719 --> 01:30:40,719
+deve essere un'altra cosa e la facciamo
+
+1644
+01:30:40,719 --> 01:30:43,159
+così.
+
+1645
+01:30:43,159 --> 01:30:46,920
+Allora, supponiamo di star trasformando,
+
+1646
+01:30:46,920 --> 01:30:50,520
+voi lo vedete? Sì, di star trasformando
+
+1647
+01:30:50,520 --> 01:30:54,000
+questo qui.
+
+1648
+01:30:55,040 --> 01:30:57,480
+Noi aggiungiamo
+
+1649
+01:30:57,480 --> 01:31:00,400
+dei nodi. Ok?
+
+1650
+01:31:00,400 --> 01:31:02,639
+Allora, gli diamo dei nomi. Questo è
+
+1651
+01:31:02,639 --> 01:31:06,440
+uno, questo è due, questo è 3 e questo è
+
+1652
+01:31:06,440 --> 01:31:09,800
+4. Ok?
+
+1653
+01:31:09,800 --> 01:31:12,400
+Voi la vedete più o meno? così, quindi
+
+1654
+01:31:12,400 --> 01:31:15,600
+devo farlo qua. Facciamo così, la
+
+1655
+01:31:15,600 --> 01:31:20,520
+struttura è più o meno preservata,
+
+1656
+01:31:20,520 --> 01:31:25,520
+quindi facciamo 1 2 3 4, quindi parte
+
+1657
+01:31:25,520 --> 01:31:27,679
+del grafo, cioè il grafo viene preso e
+
+1658
+01:31:27,679 --> 01:31:31,000
+ricopiato. Poi ci aggiungiamo alcune
+
+1659
+01:31:31,000 --> 01:31:33,199
+cosine per farci tornare i conti.
+
+1660
+01:31:33,199 --> 01:31:35,639
+Aggiungiamo
+
+1661
+01:31:35,639 --> 01:31:41,199
+un vertice in h per ognuno
+
+1662
+01:31:41,199 --> 01:31:45,800
+degli archi di G. Quindi facciamo un
+
+1663
+01:31:45,800 --> 01:31:48,280
+vertice qua,
+
+1664
+01:31:48,280 --> 01:31:52,040
+un vertice qua, un vertice qua, un
+
+1665
+01:31:52,040 --> 01:31:55,600
+vertice qua.
+
+1666
+01:31:55,840 --> 01:31:57,480
+Ok?
+
+1667
+01:31:57,480 --> 01:31:59,840
+E per distinguere li chiamiamo con delle
+
+1668
+01:31:59,840 --> 01:32:06,800
+lettere A, B, C, D, ok?
+
+1669
+01:32:08,040 --> 01:32:12,679
+E poi le li agganciamo ai rispettivi
+
+1670
+01:32:12,679 --> 01:32:17,080
+nodi dell'arco.
+
+1671
+01:32:19,400 --> 01:32:21,000
+Ok?
+
+1672
+01:32:21,000 --> 01:32:26,199
+Quindi, come si ottiene H da G?
+
+1673
+01:32:26,199 --> 01:32:29,440
+H G si ottiene in questo modo. Prendiamo
+
+1674
+01:32:29,440 --> 01:32:33,040
+G, lo schiaffiamo dentro Hic.
+
+1675
+01:32:33,040 --> 01:32:34,639
+Dopodiché ci aggiungiamo un po' di
+
+1676
+01:32:34,639 --> 01:32:36,960
+pezzi.
+
+1677
+01:32:36,960 --> 01:32:39,000
+Aggiungiamo
+
+1678
+01:32:39,000 --> 01:32:44,560
+in h un vertice per ognuno degli archi
+
+1679
+01:32:44,560 --> 01:32:46,960
+di G.
+
+1680
+01:32:46,960 --> 01:32:49,679
+Sono i vertici che qua ho chiamato con
+
+1681
+01:32:49,679 --> 01:32:53,080
+le lettere, ok? Quindi è questo qua che
+
+1682
+01:32:53,080 --> 01:32:56,679
+è relativo a questo arco qui, questo qui
+
+1683
+01:32:56,679 --> 01:32:59,760
+che è relativo a questo arco qui, questo
+
+1684
+01:32:59,760 --> 01:33:02,280
+qua che è relativo a questo arco qui e
+
+1685
+01:33:02,280 --> 01:33:04,320
+questo qua che è relativo a questo arco
+
+1686
+01:33:04,320 --> 01:33:06,560
+qui. Ok?
+
+1687
+01:33:06,560 --> 01:33:10,800
+Dopodiché quel ogni nodo aggiunto per un
+
+1688
+01:33:10,800 --> 01:33:13,840
+edge lo agganciamo agli end point
+
+1689
+01:33:13,840 --> 01:33:17,800
+dell'arco a cui mi si riferisce. Ok?
+
+1690
+01:33:17,800 --> 01:33:19,800
+Chiaro?
+
+1691
+01:33:19,800 --> 01:33:21,719
+Bene,
+
+1692
+01:33:21,719 --> 01:33:25,920
+questo è h
+
+1693
+01:33:25,920 --> 01:33:31,480
+questo è h ottenuto da G. L
+
+1694
+01:33:31,480 --> 01:33:35,480
+otteniamo uguale a K. Scrivere ogni
+
+1695
+01:33:35,480 --> 01:33:38,679
+formula che un nodo per ogni arco per
+
+1696
+01:33:38,679 --> 01:33:40,320
+esempio
+non lo scrivere a formula. Scriv
+
+1697
+01:33:40,320 --> 01:33:45,360
+a parola. Esiste un valore che
+
+1698
+01:33:45,360 --> 01:33:48,639
+esiste modi
+
+1699
+01:33:49,520 --> 01:33:52,920
+sembra.
+Sì, sì, si potresti fare con la
+
+1700
+01:33:52,920 --> 01:33:55,679
+cardenalità, però cioè non non dovete
+
+1701
+01:33:55,679 --> 01:33:58,639
+non è necessario essere estremamente
+
+1702
+01:33:58,639 --> 01:34:01,199
+formali quando descrivete una ruzione.
+
+1703
+01:34:01,199 --> 01:34:03,600
+L'importante è che è chiaro che fate,
+
+1704
+01:34:03,600 --> 01:34:06,040
+cioè così come ve l'ho descritto a
+
+1705
+01:34:06,040 --> 01:34:08,560
+parole, sareste in grado di scrivere un
+
+1706
+01:34:08,560 --> 01:34:12,280
+algoritmo che trasforma G in H.
+
+1707
+01:34:12,280 --> 01:34:15,440
+Sì. E allora va, cioè l'importante è che
+
+1708
+01:34:15,440 --> 01:34:17,520
+la vostra descrizione linguistica
+
+1709
+01:34:17,520 --> 01:34:20,080
+permetta di tirare fuori un algoritmo.
+
+1710
+01:34:20,080 --> 01:34:22,159
+Tutto qua
+
+1711
+01:34:22,159 --> 01:34:25,040
+chiaro? Ok. Adesso noi in questi ultimi
+
+1712
+01:34:25,040 --> 01:34:30,600
+5 minuti, mi sa 6 dobbiamo mostrare che
+
+1713
+01:34:30,600 --> 01:34:35,920
+se G K è un'istanza Sì di vertex cover,
+
+1714
+01:34:35,920 --> 01:34:39,159
+allora HL è un'istanza Sì di dominate
+
+1715
+01:34:39,159 --> 01:34:40,760
+inset.
+
+1716
+01:34:40,760 --> 01:34:43,480
+E se HL è un'istanza sì di dominati in
+
+1717
+01:34:43,480 --> 01:34:46,040
+sette, allora era perché GK, cioè
+
+1718
+01:34:46,040 --> 01:34:48,320
+stavamo partendo da un'istanza sì di
+
+1719
+01:34:48,320 --> 01:34:54,320
+verte, no? Di vertex di sì. Ok?
+
+1720
+01:34:54,320 --> 01:34:57,840
+Supponiamo che GK sia un'istanza C di
+
+1721
+01:34:57,840 --> 01:35:01,360
+vertex CO,
+
+1722
+01:35:01,520 --> 01:35:06,840
+poiché allora esiste un insieme C di
+
+1723
+01:35:06,840 --> 01:35:13,510
+taglia K che è un verte cover di G.
+
+1724
+01:35:13,510 --> 01:35:15,159
+[Musica]
+
+1725
+01:35:15,159 --> 01:35:18,159
+Ok?
+
+1726
+01:35:18,800 --> 01:35:25,280
+Allora, prendiamo questo C. Ok,
+
+1727
+01:35:30,639 --> 01:35:32,159
+poi vi dico una cosa giusto per
+
+1728
+01:35:32,159 --> 01:35:35,040
+aggiustare, però se la dico adesso in un
+
+1729
+01:35:35,040 --> 01:35:37,639
+casino, te la dico alla fine. Prendiamo
+
+1730
+01:35:37,639 --> 01:35:42,159
+questo C, ok? Questo C ci chiediamo se
+
+1731
+01:35:42,159 --> 01:35:46,520
+sia o no un dominate in set di H.
+
+1732
+01:35:46,520 --> 01:35:51,560
+Allora, siccome C era un verte cover di
+
+1733
+01:35:51,560 --> 01:35:53,520
+G,
+
+1734
+01:35:53,520 --> 01:35:55,800
+da C
+
+1735
+01:35:55,800 --> 01:36:00,920
+di cosenza in H, riusciamo sicuramente a
+
+1736
+01:36:00,920 --> 01:36:04,119
+raggiungere tutti i nodi con un nome
+
+1737
+01:36:04,119 --> 01:36:07,000
+numerico perché perché C era un verte
+
+1738
+01:36:07,000 --> 01:36:09,000
+cover di G.
+
+1739
+01:36:09,000 --> 01:36:12,760
+Però per costruzione di H da C
+
+1740
+01:36:12,760 --> 01:36:15,639
+raggiungiamo i nodi con un nome
+
+1741
+01:36:15,639 --> 01:36:17,280
+letterale
+
+1742
+01:36:17,280 --> 01:36:19,520
+perché il grafo H è stato costruito in
+
+1743
+01:36:19,520 --> 01:36:23,520
+quel modo. Ok? Quindi se C è un verte
+
+1744
+01:36:23,520 --> 01:36:29,199
+cover di G di taglia K, allora C sarà un
+
+1745
+01:36:29,199 --> 01:36:34,520
+dominating set di H di taglia L che è
+
+1746
+01:36:34,520 --> 01:36:37,239
+uguale a K. Ok? E quindi se partiamo da
+
+1747
+01:36:37,239 --> 01:36:39,560
+unanza S,
+
+1748
+01:36:39,560 --> 01:36:42,760
+quindi se GK è un'istanza Sì, allora il
+
+1749
+01:36:42,760 --> 01:36:45,320
+suo trasformato che è hl è un distanza
+
+1750
+01:36:45,320 --> 01:36:48,920
+sì di dominate in set. Altro verso,
+
+1751
+01:36:48,920 --> 01:36:54,480
+questo è è un pelino più intricato, ok?
+
+1752
+01:36:55,040 --> 01:36:59,480
+sia D, quindi supponiamo che HL sia
+
+1753
+01:36:59,480 --> 01:37:04,440
+un'istanza Sì, di dominating set, quindi
+
+1754
+01:37:04,440 --> 01:37:05,960
+esiste
+
+1755
+01:37:05,960 --> 01:37:10,840
+un dominating set Dlia
+
+1756
+01:37:10,840 --> 01:37:12,719
+L.
+
+1757
+01:37:12,719 --> 01:37:15,719
+Ok?
+
+1758
+01:37:15,960 --> 01:37:19,360
+Questo insieme D
+
+1759
+01:37:19,360 --> 01:37:24,679
+in linea di principio per come è fatto H
+
+1760
+01:37:24,679 --> 01:37:26,639
+può contenere
+
+1761
+01:37:26,639 --> 01:37:31,639
+nodi i cui nomi sono numeri o nodi i cui
+
+1762
+01:37:31,639 --> 01:37:35,199
+numeri i numeri i cui nomi sono lettere.
+
+1763
+01:37:35,199 --> 01:37:36,560
+Ok?
+
+1764
+01:37:36,560 --> 01:37:39,440
+Prendiamo questo D
+
+1765
+01:37:39,440 --> 01:37:43,880
+e facciamo questa operazione.
+
+1766
+01:37:45,199 --> 01:37:50,000
+Se compare un nodo lettera, diciamo,
+
+1767
+01:37:50,000 --> 01:37:52,760
+dentro D,
+
+1768
+01:37:52,760 --> 01:37:55,480
+lo sostituiamo
+
+1769
+01:37:55,480 --> 01:37:59,280
+con uno dei due nodi numero a cui
+
+1770
+01:37:59,280 --> 01:38:02,280
+agganciamo.
+
+1771
+01:38:03,360 --> 01:38:05,119
+È chiaro?
+
+1772
+01:38:05,119 --> 01:38:11,400
+Quindi da D otteniamo un dibilde
+
+1773
+01:38:11,920 --> 01:38:16,040
+tale per cui i suoi nodi sono tutti nodi
+
+1774
+01:38:16,040 --> 01:38:19,960
+con un nome numerico.
+
+1775
+01:38:20,480 --> 01:38:22,760
+Ma allora,
+
+1776
+01:38:22,760 --> 01:38:26,119
+siccome questo ditilde è particolare,
+
+1777
+01:38:26,119 --> 01:38:30,119
+siccome un dominate in set di H deve
+
+1778
+01:38:30,119 --> 01:38:35,040
+raggiungere da ditilde non solo i nodi
+
+1779
+01:38:35,040 --> 01:38:38,360
+il cui nome è un numero,
+
+1780
+01:38:38,360 --> 01:38:41,119
+ma anche i nodi il cui nome è una
+
+1781
+01:38:41,119 --> 01:38:42,760
+lettera.
+
+1782
+01:38:42,760 --> 01:38:47,000
+Di conseguenza noi avremo che questo
+
+1783
+01:38:47,000 --> 01:38:49,920
+ditilde, i cui nodi all'interno sono
+
+1784
+01:38:49,920 --> 01:38:53,719
+quelli numerici, riescono ad acchiappare
+
+1785
+01:38:53,719 --> 01:38:58,320
+i nodi che mimano gli archi. Quindi di
+
+1786
+01:38:58,320 --> 01:38:59,960
+tilde
+
+1787
+01:38:59,960 --> 01:39:05,800
+su G è un vertex covere.
+
+1788
+01:39:07,239 --> 01:39:08,960
+Ve lo riesco, ve lo dimostro in un altro
+
+1789
+01:39:08,960 --> 01:39:13,360
+modo. Supponiamo che D tild sia un
+
+1790
+01:39:13,360 --> 01:39:16,199
+dominating set di questo che abbiamo
+
+1791
+01:39:16,199 --> 01:39:18,840
+detto contenga solo
+
+1792
+01:39:18,840 --> 01:39:21,800
+nodi con nomi numerici.
+
+1793
+01:39:21,800 --> 01:39:25,920
+Supponiamo per assurdo che di tilde
+
+1794
+01:39:25,920 --> 01:39:31,440
+non sia un verte cover di chi? Ehi, come
+
+1795
+01:39:31,440 --> 01:39:35,560
+on man del grafo di sopra che è quello
+
+1796
+01:39:35,560 --> 01:39:37,400
+di partenza.
+
+1797
+01:39:37,400 --> 01:39:44,760
+Se di tilde non è un vertex cover di G,
+
+1798
+01:39:44,760 --> 01:39:49,920
+esiste un arco in Gi,
+
+1799
+01:39:49,920 --> 01:39:55,520
+due end point non stanno in ditilde.
+
+1800
+01:39:55,520 --> 01:39:59,159
+Ma se i due end point di quell'arco non
+
+1801
+01:39:59,159 --> 01:40:02,920
+stanno in ditte e sono nodi, il cui è un
+
+1802
+01:40:02,920 --> 01:40:07,119
+numero, significa che in questo in
+
+1803
+01:40:07,119 --> 01:40:09,800
+questo grafo non avrei per esempio né
+
+1804
+01:40:09,800 --> 01:40:14,040
+due né tre. Ma se in ditilde non ho né
+
+1805
+01:40:14,040 --> 01:40:17,560
+due né tre, io a B non lo raggiungo in
+
+1806
+01:40:17,560 --> 01:40:21,800
+nessun modo, ok? Quindi per forza di
+
+1807
+01:40:21,800 --> 01:40:24,599
+tildx
+
+1808
+01:40:24,599 --> 01:40:28,280
+cover del graf iniziale di taglia K, fra
+
+1809
+01:40:28,280 --> 01:40:32,760
+l'altro. Ok? Quindi se siamo arrivati a
+
+1810
+01:40:32,760 --> 01:40:35,599
+un'istanza sì era perché partivamo da
+
+1811
+01:40:35,599 --> 01:40:38,560
+un'istanza sì,
+
+1812
+01:40:38,560 --> 01:40:40,599
+da cui
+
+1813
+01:40:40,599 --> 01:40:43,800
+vertex cover si riduce al dominating
+
+1814
+01:40:43,800 --> 01:40:47,960
+set. Dominating set è NP arduo perché
+
+1815
+01:40:47,960 --> 01:40:51,080
+vertex cover è NP arduo e quindi
+
+1816
+01:40:51,080 --> 01:40:55,239
+dominating set è NP completo. È
+
+1817
+01:40:55,239 --> 01:40:57,080
+fantastico,
+
+1818
+01:40:57,080 --> 01:40:59,639
+ce l'abbiamo fatta. Ok, chiaro per
+
+1819
+01:40:59,639 --> 01:41:03,040
+tutti? Ok, quello che vi consiglio, la
+
+1820
+01:41:03,040 --> 01:41:05,199
+lezione di oggi è un po' intricata
+
+1821
+01:41:05,199 --> 01:41:07,599
+perché abbiamo visto trasformazioni,
+
+1822
+01:41:07,599 --> 01:41:11,040
+cose qua. Quello che vi consiglio è
+
+1823
+01:41:11,040 --> 01:41:14,520
+rivedetevi la lezione, ripercorrete le
+
+1824
+01:41:14,520 --> 01:41:17,520
+dimostrazioni.
+
+1825
+01:41:17,880 --> 01:41:22,679
+Quello che vi suggerisco è
+
+1826
+01:41:23,159 --> 01:41:28,880
+provate a a far finta che voi stiate di
+
+1827
+01:41:28,880 --> 01:41:31,560
+quelle proprietà a un vostro collega. Vi
+
+1828
+01:41:31,560 --> 01:41:34,880
+mettete su carta, iniziate a scrivere e
+
+1829
+01:41:34,880 --> 01:41:37,239
+fate finta di spiegare a qualcuno.
+
+1830
+01:41:37,239 --> 01:41:40,639
+Quello là vi permette di organizzarvi le
+
+1831
+01:41:40,639 --> 01:41:44,760
+idee, è chiaro?
+
+1832
+01:41:45,080 --> 01:41:47,599
+E lo fate più di una volta. Ok? Questa
+
+1833
+01:41:47,599 --> 01:41:49,480
+cosa vi permetterà un attimo di
+
+1834
+01:41:49,480 --> 01:41:52,480
+riassarvi. La lezione di oggi era un po'
+
+1835
+01:41:52,480 --> 01:41:55,480
+intricata.

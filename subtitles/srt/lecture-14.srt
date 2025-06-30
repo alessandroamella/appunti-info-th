@@ -1,0 +1,7726 @@
+1
+00:00:00,000 --> 00:00:03,000
+Ok,
+
+2
+00:00:07,120 --> 00:00:12,080
+iniziamo. Iniziamo. Ah,
+
+3
+00:00:12,320 --> 00:00:15,040
+dopo questa pausa forzata di una
+
+4
+00:00:15,040 --> 00:00:17,720
+settimana che immagino avrete sfruttato
+
+5
+00:00:17,720 --> 00:00:21,000
+sicuramente per ripetervi le cose che ne
+
+6
+00:00:21,000 --> 00:00:24,400
+sono certo. Vi ricordate una cipa, eh?
+
+7
+00:00:24,400 --> 00:00:26,920
+Ok. E come facciamo oggi? È un po' un
+
+8
+00:00:26,920 --> 00:00:29,240
+problema. Ok. Perché oggi facciamo
+
+9
+00:00:29,240 --> 00:00:31,320
+riduzioni. Quindi, che cos'è una
+
+10
+00:00:31,320 --> 00:00:36,640
+riduzione? Ve la ricordate? Eh sì.
+
+11
+00:00:36,640 --> 00:00:38,559
+Fatemi vedere un po' le facce. Siete
+
+12
+00:00:38,559 --> 00:00:41,440
+spersi. Niente,
+
+13
+00:00:41,440 --> 00:00:43,440
+che ha mai sentito sta cosa? Chi è che
+
+14
+00:00:43,440 --> 00:00:47,399
+si ricorda cos'è una ridezione?
+
+15
+00:00:47,399 --> 00:00:50,399
+Ok,
+
+16
+00:00:50,520 --> 00:00:53,520
+prego.
+
+17
+00:00:54,160 --> 00:00:57,680
+Sì, trasformando
+
+18
+00:01:02,320 --> 00:01:05,320
+esattamente.
+
+19
+00:01:08,479 --> 00:01:10,840
+Esattamente. Esattamente. È una
+
+20
+00:01:10,840 --> 00:01:13,119
+definizione formale di cos'è per noi una
+
+21
+00:01:13,119 --> 00:01:15,400
+riduzione.
+
+22
+00:01:15,400 --> 00:01:17,439
+Rintuizione c'è, è corretta. Prendiamo
+
+23
+00:01:17,439 --> 00:01:19,080
+istanze di un problema, le trasformiamo
+
+24
+00:01:19,080 --> 00:01:21,479
+in istanze di un altro problema,
+
+25
+00:01:21,479 --> 00:01:23,680
+riutilizziamo le soluzioni per il
+
+26
+00:01:23,680 --> 00:01:25,360
+problema di partenza, ok? E quando
+
+27
+00:01:25,360 --> 00:01:27,960
+invece parliamo di problemi indecisione,
+
+28
+00:01:27,960 --> 00:01:29,799
+che cos'è per noi una reduzione?
+
+29
+00:01:29,799 --> 00:01:31,600
+Formalmente
+
+30
+00:01:31,600 --> 00:01:35,680
+ve lo ricordate? Prego.
+
+31
+00:01:39,439 --> 00:01:41,799
+Primo, stesso
+
+32
+00:01:41,799 --> 00:01:43,479
+al secondo. Esattamente. Quindi,
+
+33
+00:01:43,479 --> 00:01:47,159
+formalmente, per noi una riduzione è una
+
+34
+00:01:47,159 --> 00:01:50,799
+funzione fita
+
+35
+00:01:50,799 --> 00:01:53,159
+fra due problemi, cioè quindi è una
+
+36
+00:01:53,159 --> 00:01:56,280
+funzione che è tailored, dato un
+
+37
+00:01:56,280 --> 00:01:58,280
+problema di partenza e un problema di
+
+38
+00:01:58,280 --> 00:02:00,200
+arrivo, però non è che trasforma
+
+39
+00:02:00,200 --> 00:02:03,640
+problemi, trasforma cose? Trasforma
+
+40
+00:02:03,640 --> 00:02:06,320
+istanze di problemi, ok? Quindi è una
+
+41
+00:02:06,320 --> 00:02:08,959
+funzione che viene pensata fra problemi,
+
+42
+00:02:08,959 --> 00:02:12,000
+però è una funzione che trasforma
+
+43
+00:02:12,000 --> 00:02:15,920
+stringhe su stringhe. Ok?
+
+44
+00:02:15,920 --> 00:02:17,840
+Fuzione
+
+45
+00:02:17,840 --> 00:02:24,879
+da un problema A un problema B. Se uno F
+
+46
+00:02:24,879 --> 00:02:28,200
+è calcolabile.
+
+47
+00:02:30,080 --> 00:02:32,599
+Ok? Quindi se F non è calcolabile non è
+
+48
+00:02:32,599 --> 00:02:35,120
+una riduzione
+
+49
+00:02:35,120 --> 00:02:38,920
+e secondariamente
+
+50
+00:02:40,480 --> 00:02:43,000
+F deve essere tale per cui per ogni
+
+51
+00:02:43,000 --> 00:02:45,640
+stringa w che appartiene all'insieme
+
+52
+00:02:45,640 --> 00:02:48,560
+delle stringhe W appartiene al
+
+53
+00:02:48,560 --> 00:02:52,519
+linguaggio A se è solo se il trasformato
+
+54
+00:02:52,519 --> 00:02:57,080
+di W tramite F appartiene a B. Ok? È
+
+55
+00:02:57,080 --> 00:02:58,920
+chiaro per voi cosa significa se è solo
+
+56
+00:02:58,920 --> 00:03:01,239
+se? Cioè che quando diciamo qua se è
+
+57
+00:03:01,239 --> 00:03:03,120
+solo sé,
+
+58
+00:03:03,120 --> 00:03:06,599
+che cosa intendiamo?
+
+59
+00:03:09,760 --> 00:03:11,879
+Sì.
+
+60
+00:03:11,879 --> 00:03:16,159
+Che significa se solo? C'è
+
+61
+00:03:17,440 --> 00:03:20,560
+quando quando
+
+62
+00:03:20,560 --> 00:03:23,560
+ha un significato formale specifico, eh
+
+63
+00:03:23,560 --> 00:03:25,200
+perché poi lo riutilizziamo nelle
+
+64
+00:03:25,200 --> 00:03:27,080
+dimostrazioni.
+
+65
+00:03:27,080 --> 00:03:29,519
+Se X appartiene a allora anche f(x)
+
+66
+00:03:29,519 --> 00:03:32,840
+appartiene B.
+Se X non appartiene ad A,
+
+67
+00:03:32,840 --> 00:03:35,560
+allora anche f(x) non
+non appartiene a
+
+68
+00:03:35,560 --> 00:03:37,120
+B. Ok? Questo è il significato. Se è
+
+69
+00:03:37,120 --> 00:03:39,439
+solo 6 significa che se W appartiene ad
+
+70
+00:03:39,439 --> 00:03:42,480
+A, allora il trasformato di W rispetto a
+
+71
+00:03:42,480 --> 00:03:47,879
+F appartiene a B. Se W non appartiene ad
+
+72
+00:03:47,879 --> 00:03:51,319
+A, allora il trasformato di W rispetto a
+
+73
+00:03:51,319 --> 00:03:55,680
+F non appartiene a B. Ok? E se il
+
+74
+00:03:55,680 --> 00:03:59,360
+trasformato di W appartiene a B, che B
+
+75
+00:03:59,360 --> 00:04:03,360
+che possiamo dire del B? Ripeto, abbiamo
+
+76
+00:04:03,360 --> 00:04:08,920
+f appartiene a B. E allora
+
+77
+00:04:10,280 --> 00:04:13,040
+W appartiene ad A. Ok? In genere questi
+
+78
+00:04:13,040 --> 00:04:14,840
+saranno i modi in cui sfruttiamo le
+
+79
+00:04:14,840 --> 00:04:17,919
+cose, eh, cioè che se W appartiene ad A,
+
+80
+00:04:17,919 --> 00:04:20,120
+dimostriamo che il trasformato di W
+
+81
+00:04:20,120 --> 00:04:22,400
+appartiene a B.
+
+82
+00:04:22,400 --> 00:04:26,000
+Se il trasformato di W appartiene a B,
+
+83
+00:04:26,000 --> 00:04:29,759
+era perché partivamo da una W che
+
+84
+00:04:29,759 --> 00:04:32,520
+apparteneva ad A, ok? e cioè le stringhe
+
+85
+00:04:32,520 --> 00:04:34,919
+che noi otteniamo per testarle se
+
+86
+00:04:34,919 --> 00:04:36,960
+appartengono a B o meno. Non è che sono
+
+87
+00:04:36,960 --> 00:04:40,039
+stringhe a caso, sono stringhe ottenute
+
+88
+00:04:40,039 --> 00:04:42,199
+tramite la trasformazione di F. Questo è
+
+89
+00:04:42,199 --> 00:04:45,440
+importante, eh, oggi lo vedremo per vari
+
+90
+00:04:45,440 --> 00:04:47,520
+esempi, però questa è la cosa specifica.
+
+91
+00:04:47,520 --> 00:04:49,600
+Nel momento in cui trasformiamo stringhe
+
+92
+00:04:49,600 --> 00:04:52,320
+su stringhe, le stringhe in arrivo hanno
+
+93
+00:04:52,320 --> 00:04:54,720
+forma specifica. Le stringhe in arrivo
+
+94
+00:04:54,720 --> 00:04:56,800
+sono stringhe ottenute tramite la
+
+95
+00:04:56,800 --> 00:04:59,160
+trasformazione F. Ok? Questo è
+
+96
+00:04:59,160 --> 00:05:01,160
+importante, senò le dimostrazioni non ci
+
+97
+00:05:01,160 --> 00:05:03,440
+funzionano. Ok?
+
+98
+00:05:03,440 --> 00:05:05,759
+Alr e vi ricordate per cosa le abbiamo
+
+99
+00:05:05,759 --> 00:05:09,280
+usate le riduzioni?
+
+100
+00:05:12,320 --> 00:05:17,160
+Un attimo, eh, vediamo un po'.
+
+101
+00:05:18,080 --> 00:05:21,280
+Dimostrare un problema è
+Ok, le abbiamo
+
+102
+00:05:21,280 --> 00:05:23,880
+usate per mostrare la difficoltà
+
+103
+00:05:23,880 --> 00:05:26,759
+reciproca di alcuni problemi. Ok? Cioè,
+
+104
+00:05:26,759 --> 00:05:28,560
+quindi se riduciamo un problema
+
+105
+00:05:28,560 --> 00:05:32,000
+indecidibile A a un problema B, allora
+
+106
+00:05:32,000 --> 00:05:33,520
+possiamo dire che anche B è
+
+107
+00:05:33,520 --> 00:05:36,039
+indecidibile. Ok? Ci siamo lasciati con
+
+108
+00:05:36,039 --> 00:05:39,520
+un esempino sul linguaggio vuoto e via.
+
+109
+00:05:39,520 --> 00:05:41,639
+Quello che faremo oggi è noi ci
+
+110
+00:05:41,639 --> 00:05:43,680
+chiediamo, ma questi problemi che sono
+
+111
+00:05:43,680 --> 00:05:46,840
+indecidibili sono tutti un po' problemi
+
+112
+00:05:46,840 --> 00:05:49,360
+del piffero, cioè sono tutti problemi
+
+113
+00:05:49,360 --> 00:05:52,039
+che riguardano macchine di touring
+
+114
+00:05:52,039 --> 00:05:53,560
+eccetera, ma è possibile che non ci
+
+115
+00:05:53,560 --> 00:05:55,919
+siano problemi più naturali che siano
+
+116
+00:05:55,919 --> 00:05:58,000
+indecidibili. Oggi vedremo un paio di
+
+117
+00:05:58,000 --> 00:06:00,440
+problemi naturali che sono indecidibili,
+
+118
+00:06:00,440 --> 00:06:02,479
+cioè problemi più standard che fanno
+
+119
+00:06:02,479 --> 00:06:04,360
+parte della nostra, a parte il problema
+
+120
+00:06:04,360 --> 00:06:07,840
+dell'arresto che più o meno
+
+121
+00:06:07,840 --> 00:06:10,039
+riusciamo, no? è qualcosa che fa parte
+
+122
+00:06:10,039 --> 00:06:12,039
+del del dominio delle cose che pensiamo,
+
+123
+00:06:12,039 --> 00:06:14,080
+no? Dice magari un compilatore, se me lo
+
+124
+00:06:14,080 --> 00:06:15,520
+dicesse, sarebbe utile, però per il
+
+125
+00:06:15,520 --> 00:06:17,319
+resto quella comunque è un problema su
+
+126
+00:06:17,319 --> 00:06:19,400
+macchine, altri problemi che abbiamo
+
+127
+00:06:19,400 --> 00:06:21,120
+visto, quella roba stranissima del
+
+128
+00:06:21,120 --> 00:06:24,000
+linguaggio diagonale eccetera, ma è
+
+129
+00:06:24,000 --> 00:06:26,360
+possibile che sti problemi indecidibili
+
+130
+00:06:26,360 --> 00:06:28,199
+hanno tutte forme strane? Quello che
+
+131
+00:06:28,199 --> 00:06:30,360
+vedremo oggi è che ci sono problemi
+
+132
+00:06:30,360 --> 00:06:32,599
+abbastanza naturali per i quali non
+
+133
+00:06:32,599 --> 00:06:36,000
+esistono algoritmi che li risolvono, ok?
+
+134
+00:06:36,000 --> 00:06:37,919
+E ovviamente
+
+135
+00:06:37,919 --> 00:06:39,479
+no, non è così ovvio, però per
+
+136
+00:06:39,479 --> 00:06:41,400
+dimostrare la loro indicibilità quello
+
+137
+00:06:41,400 --> 00:06:43,240
+che faremo faremo delle riduzioni perché
+
+138
+00:06:43,240 --> 00:06:45,960
+tramite riduzioni noi saremo più
+
+139
+00:06:45,960 --> 00:06:48,000
+facilmente in grado di dire "Ok, questo
+
+140
+00:06:48,000 --> 00:06:49,599
+problema è indecidibile perché è in
+
+141
+00:06:49,599 --> 00:06:51,319
+grado di codificare, che ne so, il
+
+142
+00:06:51,319 --> 00:06:54,000
+problema dell'arresto o il problema del
+
+143
+00:06:54,000 --> 00:06:56,199
+linguaggio universale, no? Quindi avremo
+
+144
+00:06:56,199 --> 00:06:59,199
+problemi altri, diciamo, che saranno
+
+145
+00:06:59,199 --> 00:07:01,160
+indicibili mostrati tramite delle
+
+146
+00:07:01,160 --> 00:07:02,879
+riduzioni." Ok? Quindi questo è quello
+
+147
+00:07:02,879 --> 00:07:04,400
+che faremo oggi. Vediamo un problema
+
+148
+00:07:04,400 --> 00:07:07,120
+prima della pausa e un problema dopo la
+
+149
+00:07:07,120 --> 00:07:08,960
+pausa.
+
+150
+00:07:08,960 --> 00:07:14,879
+Ok. Altro altro? No.
+
+151
+00:07:14,919 --> 00:07:17,680
+Alri. Il primo problema che consideriamo
+
+152
+00:07:17,680 --> 00:07:22,840
+è questo qua, il problema
+
+153
+00:07:24,240 --> 00:07:27,639
+di corrispondenza
+
+154
+00:07:32,360 --> 00:07:34,240
+di post,
+
+155
+00:07:34,240 --> 00:07:38,800
+chiamiamo PCP. PCP. Ok.
+Post.
+Post.
+
+156
+00:07:38,800 --> 00:07:43,520
+Post. Sì. nome di un matematico.
+
+157
+00:07:44,440 --> 00:07:46,520
+Allora, questo problema è un problema su
+
+158
+00:07:46,520 --> 00:07:51,919
+stringhe che si configura così.
+
+159
+00:07:54,520 --> 00:07:57,560
+Abbiamo due liste di stringhe definite
+
+160
+00:07:57,560 --> 00:08:00,960
+sullo stesso alfabeto,
+
+161
+00:08:00,960 --> 00:08:04,000
+ad esempio
+
+162
+00:08:04,000 --> 00:08:08,599
+questa e questa qua,
+
+163
+00:08:08,759 --> 00:08:11,000
+questa qui
+
+164
+00:08:11,000 --> 00:08:13,840
+e questa qui,
+
+165
+00:08:13,840 --> 00:08:16,919
+questa qui e questa qua. Ok? Quindi
+
+166
+00:08:16,919 --> 00:08:21,479
+abbiamo due liste che chiamiamo A e B di
+
+167
+00:08:21,479 --> 00:08:24,319
+stringhe
+
+168
+00:08:24,319 --> 00:08:27,120
+definite sullo stesso alfabeto. Abbiamo
+
+169
+00:08:27,120 --> 00:08:29,479
+tante stringhe in A quante sono in B,
+
+170
+00:08:29,479 --> 00:08:32,000
+quindi potremmo vederle pure come in
+
+171
+00:08:32,000 --> 00:08:35,080
+coppie, ok? Coppie corrispondenti da
+
+172
+00:08:35,080 --> 00:08:37,399
+quel nome
+
+173
+00:08:37,399 --> 00:08:39,360
+che possono essere qualsiasi, ok? Cioè
+
+174
+00:08:39,360 --> 00:08:40,880
+l'unico vincolo è che siano definite
+
+175
+00:08:40,880 --> 00:08:43,200
+sullo stesso alfabeto.
+
+176
+00:08:43,200 --> 00:08:47,720
+Allora, quello che noi ci chiediamo è se
+
+177
+00:08:47,720 --> 00:08:49,360
+esista
+
+178
+00:08:49,360 --> 00:08:51,240
+o meno
+
+179
+00:08:51,240 --> 00:08:54,360
+una sequenza
+
+180
+00:08:54,360 --> 00:08:56,920
+al solo, dico parole, poi lo scriviamo.
+
+181
+00:08:56,920 --> 00:09:00,040
+Ok? Noi abbiamo che un'istanza è fatta
+
+182
+00:09:00,040 --> 00:09:02,160
+in questo modo, no? un'istanza sì di
+
+183
+00:09:02,160 --> 00:09:04,320
+questo problema è un'istanza tale per
+
+184
+00:09:04,320 --> 00:09:08,000
+cui esiste una sequenza di indici tale
+
+185
+00:09:08,000 --> 00:09:10,440
+per cui se prendiamo le stringhe dalla
+
+186
+00:09:10,440 --> 00:09:12,760
+lista A secondo l'ordine di quei di
+
+187
+00:09:12,760 --> 00:09:14,720
+quegli indici e le stringhe dalla lista
+
+188
+00:09:14,720 --> 00:09:16,800
+B secondo l'ordine di quegli indici,
+
+189
+00:09:16,800 --> 00:09:19,320
+arriviamo a costruire la stessa cosa.
+
+190
+00:09:19,320 --> 00:09:21,399
+Ok? Cioè, quindi quello che noi ci
+
+191
+00:09:21,399 --> 00:09:24,600
+chiediamo è data queste due liste di
+
+192
+00:09:24,600 --> 00:09:27,720
+stringhe A e B, dove magari queste le
+
+193
+00:09:27,720 --> 00:09:32,800
+chiamiamo R1, R2, R3 e così via. E
+
+194
+00:09:32,800 --> 00:09:37,519
+queste sono S1, S2, S3 e così via.
+
+195
+00:09:37,519 --> 00:09:39,839
+Quello che ci chiediamo è vero, no, che
+
+196
+00:09:39,839 --> 00:09:44,440
+esiste una sequenza di indici I1, I2,
+
+197
+00:09:44,440 --> 00:09:49,440
+I con n strettamente maggiore di 0 tale
+
+198
+00:09:49,440 --> 00:09:54,839
+per cui R1 concatenato, R2 concatenato,
+
+199
+00:09:54,839 --> 00:09:58,839
+bla bla bla bla concatenato. Sorry,
+
+200
+00:09:58,839 --> 00:10:02,440
+this is wrong.
+
+201
+00:10:02,839 --> 00:10:07,560
+R1 concatenato R2 concatenato bla bla
+
+202
+00:10:07,560 --> 00:10:14,600
+bla R è uguale a che cosa? A S1
+
+203
+00:10:14,600 --> 00:10:18,320
+concatenato S2 concatenato bla bla bla
+
+204
+00:10:18,320 --> 00:10:21,279
+bla concatenato SIN.
+
+205
+00:10:21,279 --> 00:10:23,440
+Ok?
+
+206
+00:10:23,440 --> 00:10:26,399
+Contate che non è che questi devono
+
+207
+00:10:26,399 --> 00:10:29,440
+essere uguali a coppie, eh? Cioè è la
+
+208
+00:10:29,440 --> 00:10:32,160
+somma totale che deve essere la stessa
+
+209
+00:10:32,160 --> 00:10:33,839
+sem
+devono essere ordinate le
+
+210
+00:10:33,839 --> 00:10:36,079
+microstringere.
+In che senso?
+Cioè da
+
+211
+00:10:36,079 --> 00:10:40,240
+essere per forza S1 S2 oppure S1 S4.
+No,
+
+212
+00:10:40,240 --> 00:10:42,959
+no, I1, I2, I3, I4. Ad esempio, una
+
+213
+00:10:42,959 --> 00:10:48,680
+soluzione per questa qua è questa.
+
+214
+00:10:48,680 --> 00:10:53,440
+La sequenza 2 1 1 3 è una soluzione per
+
+215
+00:10:53,440 --> 00:10:56,560
+quell'istanza specifica perché partiamo
+
+216
+00:10:56,560 --> 00:10:58,240
+dalla lista, per esempio, quelle
+
+217
+00:10:58,240 --> 00:11:01,120
+costruite da R e quelle costruite da S.
+
+218
+00:11:01,120 --> 00:11:04,920
+Ok? Prendiamo la stringa con indice 2
+
+219
+00:11:04,920 --> 00:11:07,680
+che è 10
+
+220
+00:11:07,680 --> 00:11:12,839
+1 1 mentre su S la stringa di indice 2 è
+
+221
+00:11:12,839 --> 00:11:17,240
+10. Poi prendiamo 1
+
+222
+00:11:17,240 --> 00:11:22,000
+su R e prendiamo 1
+
+223
+00:11:22,000 --> 00:11:25,120
+sulle stringhe S, poi un altro uno sulla
+
+224
+00:11:25,120 --> 00:11:28,839
+stringhe R, un altro 1 sulle stringhe S
+
+225
+00:11:28,839 --> 00:11:33,480
+e poi abbiamo l'indice 3 che è 1 0 e 1.
+
+226
+00:11:33,480 --> 00:11:35,519
+Chiaro? Cioè, quindi noi abbiamo una
+
+227
+00:11:35,519 --> 00:11:38,519
+sequenza di indici
+
+228
+00:11:38,519 --> 00:11:40,760
+tale per cui se concateniamo le stringhe
+
+229
+00:11:40,760 --> 00:11:42,279
+che provengono da A secondo quegli
+
+230
+00:11:42,279 --> 00:11:44,360
+indici otteniamo una stringa.
+
+231
+00:11:44,360 --> 00:11:46,160
+Concateniamo le stringhe che provengono
+
+232
+00:11:46,160 --> 00:11:48,440
+da B secondo quella sequenza di indici e
+
+233
+00:11:48,440 --> 00:11:51,320
+otteniamo la stessa stringa. È chiaro il
+
+234
+00:11:51,320 --> 00:11:55,160
+problema? Scusate, ma questo
+com'è?
+
+235
+00:11:55,160 --> 00:12:01,320
+Scusa, s
+non è la concazione della s
+eh
+
+236
+00:12:01,320 --> 00:12:03,560
+non c'è. Ah yeah ah
+
+237
+00:12:03,560 --> 00:12:06,959
+thank you. Ok queste due stringhe sono
+
+238
+00:12:06,959 --> 00:12:09,519
+uguali. Ok
+
+239
+00:12:09,519 --> 00:12:11,200
+istanze per cui una tale soluzione non
+
+240
+00:12:11,200 --> 00:12:13,639
+esiste perché iniziamo a a concatenarle
+
+241
+00:12:13,639 --> 00:12:16,000
+come vogliamo, ma non arriveremo mai a
+
+242
+00:12:16,000 --> 00:12:18,680
+ottenere due stringhe uguali. Ok? Quindi
+
+243
+00:12:18,680 --> 00:12:21,199
+questo è un problema di decisione. Date
+
+244
+00:12:21,199 --> 00:12:23,680
+queste due liste A e B, noi ci chiediamo
+
+245
+00:12:23,680 --> 00:12:26,800
+è vero o no che esiste una sequenza di
+
+246
+00:12:26,800 --> 00:12:30,440
+indici I1, I2, bla bla in N, tale per
+
+247
+00:12:30,440 --> 00:12:32,480
+cui se concateniamo le liste provenienti
+
+248
+00:12:32,480 --> 00:12:34,680
+da A, le stringhe proveniente da A, in
+
+249
+00:12:34,680 --> 00:12:37,279
+quell'ordine otteniamo la stessa stringa
+
+250
+00:12:37,279 --> 00:12:39,120
+che otterremmo se concatenassimo le
+
+251
+00:12:39,120 --> 00:12:40,560
+stringhe provenienti da B in
+
+252
+00:12:40,560 --> 00:12:42,839
+quell'ordine. Quindi la nostra risposta
+
+253
+00:12:42,839 --> 00:12:44,680
+è solamente sì, no, non siamo
+
+254
+00:12:44,680 --> 00:12:47,360
+interessati a sapere chi è. Sappiamo
+
+255
+00:12:47,360 --> 00:12:49,240
+siamo solo interessati a sapere se c'è o
+
+256
+00:12:49,240 --> 00:12:51,240
+meno. Ok.
+
+257
+00:12:51,240 --> 00:12:54,279
+La lista è finita.
+La liste sono finite.
+
+258
+00:12:54,279 --> 00:12:57,000
+Le liste sono finite e gli indici, la
+
+259
+00:12:57,000 --> 00:12:59,000
+sequenza di indici deve contenere almeno
+
+260
+00:12:59,000 --> 00:13:01,480
+un indice perché ovviamente se non
+
+261
+00:13:01,480 --> 00:13:03,880
+avessimo la concatenazione di nulla
+
+262
+00:13:03,880 --> 00:13:05,440
+avremo stringa vuota uguale a stringa
+
+263
+00:13:05,440 --> 00:13:07,480
+vuota. La risposta sarebbe banale, ok?
+
+264
+00:13:07,480 --> 00:13:10,440
+Quindi dobbiamo avere almeno un indice.
+
+265
+00:13:10,440 --> 00:13:13,040
+Ok? Adesso secondo voi questo problema
+
+266
+00:13:13,040 --> 00:13:16,920
+sta in R o no?
+
+267
+00:13:24,800 --> 00:13:28,680
+Sì,
+ho sentito un Sì,
+
+268
+00:13:28,680 --> 00:13:31,240
+sì. Se stai nel re ci deve essere una
+
+269
+00:13:31,240 --> 00:13:32,519
+macchina di Turing che è in grado di
+
+270
+00:13:32,519 --> 00:13:34,760
+risolverlo, anche non deterministica,
+
+271
+00:13:34,760 --> 00:13:37,959
+eh, che lo accetti, che lo accetti, ok?
+
+272
+00:13:37,959 --> 00:13:39,839
+Che sia in grado di dire sì in tempo
+
+273
+00:13:39,839 --> 00:13:43,440
+finito. Come possiamo fare?
+
+274
+00:13:43,440 --> 00:13:45,800
+Allora, se deterministica
+
+275
+00:13:45,800 --> 00:13:49,120
+indovina qual è
+
+276
+00:13:49,120 --> 00:13:50,600
+che è la sequenza. Indoviniamo una
+
+277
+00:13:50,600 --> 00:13:53,480
+sequenza finita di indici. Concateniamo
+
+278
+00:13:53,480 --> 00:13:55,079
+le stringhe provenienti da A,
+
+279
+00:13:55,079 --> 00:13:56,800
+concateniamo le stringhe provenienti da
+
+280
+00:13:56,800 --> 00:14:00,120
+B. Poiché la la sequenza di indici che è
+
+281
+00:14:00,120 --> 00:14:02,000
+stata è finita, tutte ste operazioni si
+
+282
+00:14:02,000 --> 00:14:03,759
+possono fare in tempo finito. Si
+
+283
+00:14:03,759 --> 00:14:05,519
+confrontano le stringhe. Se è la stessa
+
+284
+00:14:05,519 --> 00:14:09,040
+cosa, diciamo di sì. Ok? Questo
+
+285
+00:14:09,040 --> 00:14:12,959
+algoritmo dà garanzia di risposta no.
+
+286
+00:14:12,959 --> 00:14:15,320
+No, no. Quindi questo algoritmo ci dice
+
+287
+00:14:15,320 --> 00:14:19,040
+solamente che il problema sta in R. Ok?
+
+288
+00:14:19,040 --> 00:14:21,000
+La questione è se questo problema sia in
+
+289
+00:14:21,000 --> 00:14:24,240
+R o meno. Dimostreremo che questo
+
+290
+00:14:24,240 --> 00:14:26,839
+problema non sta in R, ok? Quindi potete
+
+291
+00:14:26,839 --> 00:14:28,759
+sbattere la testa quanto volete. Un
+
+292
+00:14:28,759 --> 00:14:30,199
+algoritmo che lo risolve non lo
+
+293
+00:14:30,199 --> 00:14:34,800
+troverete mai. Ok?
+
+294
+00:14:34,800 --> 00:14:37,560
+E come si fa?
+
+295
+00:14:37,560 --> 00:14:40,160
+ci serve una riduzione. Ecco perché,
+
+296
+00:14:40,160 --> 00:14:42,680
+insomma, ci serve un po' il concetto di
+
+297
+00:14:42,680 --> 00:14:45,680
+riduzione.
+
+298
+00:14:46,320 --> 00:14:49,519
+Dimostreremo che questo problema è
+
+299
+00:14:49,519 --> 00:14:51,160
+indecidibile
+
+300
+00:14:51,160 --> 00:14:54,600
+tramite una riduzione da Lu, quindi ci
+
+301
+00:14:54,600 --> 00:14:57,759
+inventeremo un modo per trasformare il
+
+302
+00:14:57,759 --> 00:15:01,160
+problema LU nel problema di stabilire se
+
+303
+00:15:01,160 --> 00:15:02,839
+due liste di stringhe possono essere
+
+304
+00:15:02,839 --> 00:15:04,480
+concatenate e ottenere lo stesso
+
+305
+00:15:04,480 --> 00:15:07,079
+risultato. Ok?
+
+306
+00:15:07,079 --> 00:15:10,160
+In particolare faremo la cosa in più
+
+307
+00:15:10,160 --> 00:15:12,680
+passaggi, ok? Per semplificarci il
+
+308
+00:15:12,680 --> 00:15:14,440
+compito.
+
+309
+00:15:14,440 --> 00:15:16,680
+Come primo passaggio
+
+310
+00:15:16,680 --> 00:15:20,560
+ridurremo il linguaggio universale a una
+
+311
+00:15:20,560 --> 00:15:23,560
+variante del problema PCP che chiamiamo
+
+312
+00:15:23,560 --> 00:15:26,160
+modified PCP. Poi vi spiego qual è la
+
+313
+00:15:26,160 --> 00:15:28,639
+differenza.
+
+314
+00:15:28,639 --> 00:15:30,959
+Dopodiché
+
+315
+00:15:30,959 --> 00:15:36,040
+ridurremo quello a PCP. Ok?
+
+316
+00:15:37,600 --> 00:15:40,399
+Adesso domanda per voi. Se il linguaggio
+
+317
+00:15:40,399 --> 00:15:43,639
+universale si traduce al modified PCP e
+
+318
+00:15:43,639 --> 00:15:47,360
+il modified PCP si riduce a PCP, è vero
+
+319
+00:15:47,360 --> 00:15:50,600
+o no che le usi riduce a PCP?
+
+320
+00:15:50,600 --> 00:15:52,839
+Sì, perché
+
+321
+00:15:52,839 --> 00:15:56,680
+per la proprietà che avevamo detto su
+
+322
+00:15:56,680 --> 00:15:58,399
+Attenzione, non l'ho menzionata
+
+323
+00:15:58,399 --> 00:16:00,440
+esplicitamente, però Sì, è vero. Ma
+
+324
+00:16:00,440 --> 00:16:03,160
+perché?
+
+325
+00:16:03,160 --> 00:16:06,040
+transitività
+mh
+transitività
+per la
+
+326
+00:16:06,040 --> 00:16:08,279
+transitività delle riduzioni. Ok, però
+
+327
+00:16:08,279 --> 00:16:10,079
+anche sì quella che diceva lei, nel
+
+328
+00:16:10,079 --> 00:16:12,360
+senso io ottengo la indecidibilità di
+
+329
+00:16:12,360 --> 00:16:14,279
+quello intermedio e poi riapplico il
+
+330
+00:16:14,279 --> 00:16:15,880
+teorema e ce l'ho quello. Però,
+
+331
+00:16:15,880 --> 00:16:19,240
+sostanzialmente, se io riesco a ridurre
+
+332
+00:16:19,240 --> 00:16:24,880
+lu a Mpcp tramite una funzione f ed Mpcp
+
+333
+00:16:24,880 --> 00:16:28,759
+lo riduco a PCP tramite una funzione G
+
+334
+00:16:28,759 --> 00:16:30,959
+che devono essere entrambi calcolabili,
+
+335
+00:16:30,959 --> 00:16:34,959
+allora la composizione di G con F è una
+
+336
+00:16:34,959 --> 00:16:39,399
+funzione che trasforma le istanze da LU
+
+337
+00:16:39,399 --> 00:16:43,600
+verso F verso PCP. Ok? Quindi avremmo G
+
+338
+00:16:43,600 --> 00:16:45,759
+di F.
+
+339
+00:16:45,759 --> 00:16:49,399
+Questo è quello che otterremo. Ok.
+
+340
+00:16:49,399 --> 00:16:51,959
+Ma ridurre LU direttamente a PCP non lo
+
+341
+00:16:51,959 --> 00:16:53,839
+facciamo perché è troppo complicato,
+
+342
+00:16:53,839 --> 00:16:55,839
+perché è più tricky. Sì, ci conviene
+
+343
+00:16:55,839 --> 00:16:57,720
+avere un problema intermedio che poi
+
+344
+00:16:57,720 --> 00:17:00,000
+trasformiamo la PCP. Lo vedremo anche in
+
+345
+00:17:00,000 --> 00:17:02,880
+altre lezioni che per riuscire a ridurre
+
+346
+00:17:02,880 --> 00:17:04,799
+un problema o un altro ci serve un
+
+347
+00:17:04,799 --> 00:17:06,959
+problema intermedio, non perché non sia
+
+348
+00:17:06,959 --> 00:17:09,480
+possibile, ma perché è difficile, cioè
+
+349
+00:17:09,480 --> 00:17:11,480
+dovremmo stare attenti a troppe cose.
+
+350
+00:17:11,480 --> 00:17:13,160
+Quindi prendiamo prima un problema in
+
+351
+00:17:13,160 --> 00:17:15,199
+mezzo che è un po' più simile, un po'
+
+352
+00:17:15,199 --> 00:17:17,919
+più simile, eh ci lo possiamo gestire un
+
+353
+00:17:17,919 --> 00:17:21,039
+po' meglio. Quindi riduciamo L a MPCP e
+
+354
+00:17:21,039 --> 00:17:24,280
+poi MPCP lo riduciamo a PCP. Vorrebbe
+
+355
+00:17:24,280 --> 00:17:27,039
+un'altra domanda. Ma la riduzione tra
+
+356
+00:17:27,039 --> 00:17:32,080
+MPCP a PCP
+sì
+eh noi la svolgiamo
+
+357
+00:17:32,080 --> 00:17:34,600
+effettivamente come dimostrazione oppure
+
+358
+00:17:34,600 --> 00:17:38,400
+enunciamo soltanto che poiché MPCP ha
+
+359
+00:17:38,400 --> 00:17:41,360
+delle condizioni particolari di PCP noi
+
+360
+00:17:41,360 --> 00:17:44,000
+presupponiamo della tesi che è comunque
+
+361
+00:17:44,000 --> 00:17:48,919
+riducibile,
+no? Adesso vi enuncio MPCP e
+
+362
+00:17:48,919 --> 00:17:50,480
+le spiego perché non possiamo fare
+
+363
+00:17:50,480 --> 00:17:52,320
+questo tipo di discorso. Ok? Allora,
+
+364
+00:17:52,320 --> 00:17:56,840
+MPCP è una variante di PCP
+
+365
+00:17:56,840 --> 00:17:59,799
+in cui abbiamo la stessima cosa, le due
+
+366
+00:17:59,799 --> 00:18:02,880
+liste, le stringhe, eccetera, bla bla.
+
+367
+00:18:02,880 --> 00:18:04,960
+Vogliamo calcolare una sequenza di
+
+368
+00:18:04,960 --> 00:18:06,360
+indici. Come al solito, è proprio
+
+369
+00:18:06,360 --> 00:18:10,919
+uguale. L'unica differenza è che su MPCP
+
+370
+00:18:10,919 --> 00:18:14,200
+questo indice qua, il primo, deve essere
+
+371
+00:18:14,200 --> 00:18:17,679
+uno per forza. Tutto qua. Ok? Cioè la
+
+372
+00:18:17,679 --> 00:18:21,640
+differenza fra MPCP e PCP è che le
+
+373
+00:18:21,640 --> 00:18:25,280
+soluzioni corrette per MPCP devono avere
+
+374
+00:18:25,280 --> 00:18:27,640
+come sequenza soluzione una sequenza che
+
+375
+00:18:27,640 --> 00:18:30,559
+parte da uno. Tutto qua. Cioè noi siamo
+
+376
+00:18:30,559 --> 00:18:33,720
+vogliamo che sia questa la coppia
+
+377
+00:18:33,720 --> 00:18:36,720
+d'inizio.
+
+378
+00:18:36,840 --> 00:18:40,080
+Possiamo quindi dire che siccome MPCP è
+
+379
+00:18:40,080 --> 00:18:43,280
+un caso particolare di PCP otteniamo la
+
+380
+00:18:43,280 --> 00:18:46,440
+riduzione, no? Perché potrebbe essere
+
+381
+00:18:46,440 --> 00:18:48,280
+che MPCP,
+
+382
+00:18:48,280 --> 00:18:50,240
+essendo un caso particolare, se è più
+
+383
+00:18:50,240 --> 00:18:51,840
+facile.
+
+384
+00:18:51,840 --> 00:18:53,720
+Quindi ci serve una dimostrazione
+
+385
+00:18:53,720 --> 00:18:55,960
+formale, ok? Che alla fine non sarà
+
+386
+00:18:55,960 --> 00:18:57,840
+molto difficile portare l'uno all'altro,
+
+387
+00:18:57,840 --> 00:18:59,640
+dobbiamo crearci delle cose in maniera
+
+388
+00:18:59,640 --> 00:19:02,360
+tale da forzare la soluzione. Tutto qua.
+
+389
+00:19:02,360 --> 00:19:04,760
+Però nel momento in cui riduciamo da un
+
+390
+00:19:04,760 --> 00:19:06,320
+problema all'altro, noi dobbiamo
+
+391
+00:19:06,320 --> 00:19:08,200
+mostrare per ognuno dei passaggi la
+
+392
+00:19:08,200 --> 00:19:10,600
+trasformazione. Ok?
+
+393
+00:19:10,600 --> 00:19:13,120
+Avrei una curiosità,
+ma è possibile
+
+394
+00:19:13,120 --> 00:19:15,200
+costruire eh un problema intermediario
+
+395
+00:19:15,200 --> 00:19:17,400
+che risulta più difficile effettivamente
+
+396
+00:19:17,400 --> 00:19:19,520
+da quello in cui vogliamo ridurci? Cioè,
+
+397
+00:19:19,520 --> 00:19:22,679
+per esempio, avere un MPCP in realtà
+
+398
+00:19:22,679 --> 00:19:24,640
+diventa più complicato a risolvere
+
+399
+00:19:24,640 --> 00:19:28,080
+rispetto che PCB stesso.
+Sì. Il problema
+
+400
+00:19:28,080 --> 00:19:30,640
+qual è? Il problema è che
+
+401
+00:19:30,640 --> 00:19:32,520
+io posso sempre ridurre un problema
+
+402
+00:19:32,520 --> 00:19:35,120
+facile o un problema difficile.
+
+403
+00:19:35,120 --> 00:19:37,360
+La questione è che non si può ridurre un
+
+404
+00:19:37,360 --> 00:19:39,120
+problema difficile o un problema facile.
+
+405
+00:19:39,120 --> 00:19:41,640
+Quindi se io voglio voglio partire da L
+
+406
+00:19:41,640 --> 00:19:44,679
+per arrivare a PCP e io passo di mezzo
+
+407
+00:19:44,679 --> 00:19:46,200
+da un problema che è estremamente
+
+408
+00:19:46,200 --> 00:19:48,039
+complicato, io magari riesco a ridurre
+
+409
+00:19:48,039 --> 00:19:49,880
+LO a quello intermedio, ma poi non
+
+410
+00:19:49,880 --> 00:19:51,720
+riesco a ridurre quell'intermedio a PCP
+
+411
+00:19:51,720 --> 00:19:53,000
+perché quello intermedio è troppo
+
+412
+00:19:53,000 --> 00:19:54,880
+difficile per essere ridotto lì. Lo
+
+413
+00:19:54,880 --> 00:19:57,000
+vedremo alla prossima lezione perché al
+
+414
+00:19:57,000 --> 00:20:00,480
+momento stiamo vedendo tutti i problemi
+
+415
+00:20:00,480 --> 00:20:03,000
+re fuori re, forse non ve ne siete
+
+416
+00:20:03,000 --> 00:20:04,799
+accorti ancora, hanno tutti più o meno
+
+417
+00:20:04,799 --> 00:20:08,280
+la stessa forma. La prossima lezione ci
+
+418
+00:20:08,280 --> 00:20:09,919
+accorgeremo che ci sono problemi
+
+419
+00:20:09,919 --> 00:20:12,120
+sostanzialmente più sofisticati, più
+
+420
+00:20:12,120 --> 00:20:13,720
+problematici di quelli che abbiamo visto
+
+421
+00:20:13,720 --> 00:20:16,559
+finora. Ecco, se noi riduccessimo a
+
+422
+00:20:16,559 --> 00:20:18,919
+questo problema molto più difficile, la
+
+423
+00:20:18,919 --> 00:20:21,240
+riduzione verso PCP non riusciremmo a
+
+424
+00:20:21,240 --> 00:20:22,799
+ottenerla.
+
+425
+00:20:22,799 --> 00:20:24,799
+Ok? E quindi, cioè, è ovvio, io un
+
+426
+00:20:24,799 --> 00:20:26,520
+problema lo posso posso complicarmelo
+
+427
+00:20:26,520 --> 00:20:28,960
+come voglio. Ad esempio,
+
+428
+00:20:28,960 --> 00:20:32,400
+quando vi ho fatto l'esempio della
+
+429
+00:20:32,400 --> 00:20:34,360
+eh trasformazione del problema del
+
+430
+00:20:34,360 --> 00:20:35,679
+campionato nel problema della
+
+431
+00:20:35,679 --> 00:20:38,120
+colorabilità, no? Il problema della
+
+432
+00:20:38,120 --> 00:20:39,200
+colorabilità è un problema
+
+433
+00:20:39,200 --> 00:20:41,080
+sostanzialmente più complicato del
+
+434
+00:20:41,080 --> 00:20:42,960
+problema del generare un campionato,
+
+435
+00:20:42,960 --> 00:20:44,760
+perché con un algoritmo opportuno
+
+436
+00:20:44,760 --> 00:20:46,280
+generare un campionato si fa in tempo
+
+437
+00:20:46,280 --> 00:20:48,120
+polinomiale.
+
+438
+00:20:48,120 --> 00:20:50,240
+Ok? Noi a quel tempo semplicemente non
+
+439
+00:20:50,240 --> 00:20:52,200
+ce n'eravamo non c'eravamo resi conto di
+
+440
+00:20:52,200 --> 00:20:53,880
+come si potesse fare. Tutti i nostri
+
+441
+00:20:53,880 --> 00:20:56,159
+tentativi polinomiali fallivano. A quel
+
+442
+00:20:56,159 --> 00:20:57,559
+punto ho detto vabboh, abbiamo un
+
+443
+00:20:57,559 --> 00:20:59,400
+algoritmo per la colorabilità,
+
+444
+00:20:59,400 --> 00:21:02,960
+sfruttiamo quello. Ok? Però il problema
+
+445
+00:21:02,960 --> 00:21:05,280
+della colorabilità è un problema più
+
+446
+00:21:05,280 --> 00:21:07,320
+arduo, cioè un problema per quale non
+
+447
+00:21:07,320 --> 00:21:09,600
+non siamo a conoscenza di algoritmi
+
+448
+00:21:09,600 --> 00:21:12,200
+polinomiali. Quindi io st cosa stavamo
+
+449
+00:21:12,200 --> 00:21:13,919
+facendo? Stavo trasformando un problema
+
+450
+00:21:13,919 --> 00:21:16,559
+che ammette soluzione polinomiale in un
+
+451
+00:21:16,559 --> 00:21:18,799
+problema che non lo ammette.
+
+452
+00:21:18,799 --> 00:21:21,120
+Cioè, quindi io posso sempre trasformare
+
+453
+00:21:21,120 --> 00:21:23,000
+un problema difficile in un problema
+
+454
+00:21:23,000 --> 00:21:24,880
+facile in uno difficile. Il problema è
+
+455
+00:21:24,880 --> 00:21:26,360
+che se poi sto coso intermedio lo devo
+
+456
+00:21:26,360 --> 00:21:27,840
+riportare su un problema facile, quella
+
+457
+00:21:27,840 --> 00:21:30,279
+cosa non si fa. Quindi e dobbiamo essere
+
+458
+00:21:30,279 --> 00:21:32,960
+noi furbi, sen noi ci perdiamo per
+
+459
+00:21:32,960 --> 00:21:38,360
+strada. Ok,
+grazie.
+Niente. Ah, ok.
+
+460
+00:21:38,360 --> 00:21:40,279
+Partiamo. Quindi la prima cosa che
+
+461
+00:21:40,279 --> 00:21:46,440
+facciamo è ridurre lu a
+
+462
+00:21:46,480 --> 00:21:50,880
+mpcpina nuova,
+
+463
+00:21:50,960 --> 00:21:54,159
+abbiamo lu e mcp.
+
+464
+00:21:54,159 --> 00:21:55,799
+Ok,
+
+465
+00:21:55,799 --> 00:21:57,720
+dobbiamo fare questa riduzione. Il
+
+466
+00:21:57,720 --> 00:21:59,640
+problema di partenza è Lu, il problema
+
+467
+00:21:59,640 --> 00:22:02,039
+di arrivo è MCP. Queste sono sempre le
+
+468
+00:22:02,039 --> 00:22:03,840
+domande che vi dovete porre. Qual è il
+
+469
+00:22:03,840 --> 00:22:05,640
+problema di partenza? Qual è il problema
+
+470
+00:22:05,640 --> 00:22:07,320
+di arrivo?
+
+471
+00:22:07,320 --> 00:22:09,279
+Qual è un istanza del problema di
+
+472
+00:22:09,279 --> 00:22:12,279
+partenza?
+
+473
+00:22:16,159 --> 00:22:20,600
+Quali sono le stanze di Lu?
+
+474
+00:22:21,039 --> 00:22:22,200
+Ve lo ricordate il linguaggio
+
+475
+00:22:22,200 --> 00:22:24,080
+universale?
+
+476
+00:22:24,080 --> 00:22:27,080
+No.
+
+477
+00:22:27,279 --> 00:22:30,480
+Una coppia macchina stringa.
+Una coppia
+
+478
+00:22:30,480 --> 00:22:33,320
+macchina stringa. Ok.
+
+479
+00:22:33,320 --> 00:22:39,799
+Che sono le istanze di MPCP?
+
+480
+00:22:41,200 --> 00:22:43,720
+L'abbiamo detto prima questo, eh, sono
+
+481
+00:22:43,720 --> 00:22:46,480
+due liste di stringhe, ok? Quindi
+
+482
+00:22:46,480 --> 00:22:49,440
+abbiamo A e B, ok? Quindi noi ci
+
+483
+00:22:49,440 --> 00:22:52,320
+dobbiamo inventare come trasformare una
+
+484
+00:22:52,320 --> 00:22:55,200
+coppia macchina stringa
+
+485
+00:22:55,200 --> 00:22:57,760
+in due liste di stringhe. E questa
+
+486
+00:22:57,760 --> 00:22:59,200
+trasformazione non è che deve essere a
+
+487
+00:22:59,200 --> 00:23:00,720
+buffo, deve essere una cosa che
+
+488
+00:23:00,720 --> 00:23:03,080
+trasforma in stanze. Sì.
+
+489
+00:23:03,080 --> 00:23:06,440
+di LU inanze sì di MPCP
+
+490
+00:23:06,440 --> 00:23:09,919
+e istanze no di in istanze no di MPCP.
+
+491
+00:23:09,919 --> 00:23:15,640
+Ok? Quali sono le istanze sì di LU?
+
+492
+00:23:20,159 --> 00:23:22,080
+Tutte quelle macchine che accettano la
+
+493
+00:23:22,080 --> 00:23:24,919
+stringa
+quelle coppie macchina stringa
+
+494
+00:23:24,919 --> 00:23:27,440
+tale per cui se la macchina processa
+
+495
+00:23:27,440 --> 00:23:29,799
+l'oper
+
+496
+00:23:29,799 --> 00:23:32,720
+di sì. Ok?
+
+497
+00:23:32,720 --> 00:23:35,600
+Quali sono le stringhe s di MPCP? Le
+
+498
+00:23:35,600 --> 00:23:38,320
+istanze Sì di MPCP.
+
+499
+00:23:38,320 --> 00:23:40,360
+La corrispondenza.
+Attenzione,
+
+500
+00:23:40,360 --> 00:23:44,200
+attenzione, sono le coppie di liste di
+
+501
+00:23:44,200 --> 00:23:47,600
+stringhe A e B, tale per cui esiste una
+
+502
+00:23:47,600 --> 00:23:50,080
+sequenza di indici
+
+503
+00:23:50,080 --> 00:23:52,159
+che se prendiamo le stringhe proveniente
+
+504
+00:23:52,159 --> 00:23:54,120
+da A e proveniente da B, costruiamo la
+
+505
+00:23:54,120 --> 00:23:57,520
+stessa cosa. Ok? Quali sono le stanze no
+
+506
+00:23:57,520 --> 00:24:00,720
+di LU?
+
+507
+00:24:06,640 --> 00:24:09,919
+Quali sono le stanze noi lu?
+
+508
+00:24:09,919 --> 00:24:11,640
+Sì,
+
+509
+00:24:11,640 --> 00:24:15,120
+anche in cui non accetta.
+Non accetta W.
+
+510
+00:24:15,120 --> 00:24:17,360
+Ma non accetta W significa che si ferma
+
+511
+00:24:17,360 --> 00:24:19,440
+e dice di no o significa qualcosa di
+
+512
+00:24:19,440 --> 00:24:21,640
+particolare?
+
+513
+00:24:21,640 --> 00:24:24,159
+Risponde di no oppure non
+esattamente.
+
+514
+00:24:24,159 --> 00:24:27,840
+Ok. E le stanze no sono quelle coppie MW
+
+515
+00:24:27,840 --> 00:24:33,320
+per le quali M processando W M non dice
+
+516
+00:24:33,320 --> 00:24:35,760
+di sì, cioè quindi o si ferma e dice di
+
+517
+00:24:35,760 --> 00:24:39,520
+no o non si ferma mai. Ok? Le stanze no
+
+518
+00:24:39,520 --> 00:24:42,520
+di MPCP sono le coppie di liste di
+
+519
+00:24:42,520 --> 00:24:44,720
+stringhe tale per cui non esiste la
+
+520
+00:24:44,720 --> 00:24:46,480
+sequenza. Ok? Allora, la questione
+
+521
+00:24:46,480 --> 00:24:50,120
+adesso è inventarsi un modo per
+
+522
+00:24:50,120 --> 00:24:54,159
+trasformare le istanze di MW in due
+
+523
+00:24:54,159 --> 00:24:57,679
+liste di string. Ok?
+
+524
+00:24:57,679 --> 00:25:00,240
+È una riduzione un po' tosta e quindi ve
+
+525
+00:25:00,240 --> 00:25:02,000
+la
+
+526
+00:25:02,000 --> 00:25:03,799
+dico.
+
+527
+00:25:03,799 --> 00:25:06,679
+Cioè non è non è difficile, cioè non è
+
+528
+00:25:06,679 --> 00:25:08,600
+non è intricata una volta che ci viene
+
+529
+00:25:08,600 --> 00:25:11,399
+spiegata, eh, però venir fuori con
+
+530
+00:25:11,399 --> 00:25:13,360
+l'idea non è la cosa più semplice di
+
+531
+00:25:13,360 --> 00:25:15,200
+questo mondo. Ok? Allora, quello che noi
+
+532
+00:25:15,200 --> 00:25:17,679
+dobbiamo ottenere è praticamente noi
+
+533
+00:25:17,679 --> 00:25:20,240
+vogliamo
+
+534
+00:25:20,240 --> 00:25:23,600
+far sì che tramite le stringhe delle
+
+535
+00:25:23,600 --> 00:25:28,520
+liste A e B vogliamo simulare il
+
+536
+00:25:28,520 --> 00:25:31,520
+comportamento della macchina M su W.
+
+537
+00:25:31,520 --> 00:25:33,799
+Cioè questa è l'idea. Ci dobbiamo
+
+538
+00:25:33,799 --> 00:25:37,360
+inventare quindi un modo per infilare
+
+539
+00:25:37,360 --> 00:25:42,440
+stringhe in A e B tali per cui
+
+540
+00:25:42,440 --> 00:25:46,440
+se la macchina M accetta W noi riusciamo
+
+541
+00:25:46,440 --> 00:25:48,720
+a ad avere le corrispondenze, ok? A
+
+542
+00:25:48,720 --> 00:25:51,520
+costruire una soluzione di MCP. Se la
+
+543
+00:25:51,520 --> 00:25:54,159
+macchina non accetta W, allora noi
+
+544
+00:25:54,159 --> 00:25:56,320
+questa ricostruzione non sappiamo essere
+
+545
+00:25:56,320 --> 00:26:00,000
+in grado di farla. Ok? Allora, l'idea
+
+546
+00:26:00,000 --> 00:26:04,480
+alla base della riduzione è la seguente.
+
+547
+00:26:04,480 --> 00:26:08,840
+Vi ricordo che ogni, cioè la
+
+548
+00:26:08,840 --> 00:26:11,080
+computazione di ogni macchina di Touring
+
+549
+00:26:11,080 --> 00:26:14,320
+su una certa stringa, ok?
+
+550
+00:26:14,320 --> 00:26:17,640
+Può essere
+
+551
+00:26:19,640 --> 00:26:22,000
+può essere codificata tramite la
+
+552
+00:26:22,000 --> 00:26:24,200
+sequenza dell instantaneous descriptions
+
+553
+00:26:24,200 --> 00:26:26,440
+che la macchina attraversa. Ok? Cioè la
+
+554
+00:26:26,440 --> 00:26:29,559
+sequenza delle configurazioni che la
+
+555
+00:26:29,559 --> 00:26:32,159
+macchina attraversa
+
+556
+00:26:32,159 --> 00:26:34,960
+sono sostanzialmente la storia del
+
+557
+00:26:34,960 --> 00:26:39,399
+calcolo della macchina su W. Ok? E che
+
+558
+00:26:39,399 --> 00:26:43,200
+sono queste configurazioni?
+
+559
+00:26:43,600 --> 00:26:46,480
+Le possiamo rappresentare come stringhe.
+
+560
+00:26:46,480 --> 00:26:49,520
+Adesso, se pezzi di configurazioni le
+
+561
+00:26:49,520 --> 00:26:52,880
+andiamo a infilare dentro A e dentro B,
+
+562
+00:26:52,880 --> 00:26:55,520
+siamo più o meno in grado di ricostruire
+
+563
+00:26:55,520 --> 00:26:59,320
+la faccenda. Ok? Questa è l'idea.
+
+564
+00:26:59,320 --> 00:27:01,520
+Allora, sostanzialmente noi avremo che
+
+565
+00:27:01,520 --> 00:27:06,039
+una computazione di m su w
+
+566
+00:27:06,840 --> 00:27:10,880
+sarà una stringa in cui c'è
+
+567
+00:27:10,880 --> 00:27:13,679
+un cancelletto, la prima configurazione
+
+568
+00:27:13,679 --> 00:27:16,360
+alfa 1, un cancelletto, poi la seconda
+
+569
+00:27:16,360 --> 00:27:18,919
+configurazione, un cancelletto, la terza
+
+570
+00:27:18,919 --> 00:27:23,200
+configurazione e così via, dove tra alfa
+
+571
+00:27:23,200 --> 00:27:29,559
+1 e alfa 2 c'è la relazione di next step
+
+572
+00:27:29,559 --> 00:27:32,840
+della macchina. Ok, però quello che noi
+
+573
+00:27:32,840 --> 00:27:34,840
+andremo a guardare è solamente una
+
+574
+00:27:34,840 --> 00:27:37,919
+stringa, quindi noi andremo a infilare
+
+575
+00:27:37,919 --> 00:27:41,320
+pezzi di questa stringa lunghissima che
+
+576
+00:27:41,320 --> 00:27:44,159
+codifica i passi della macchina M che
+
+577
+00:27:44,159 --> 00:27:47,279
+processa W. L' andiamo a mettere qua
+
+578
+00:27:47,279 --> 00:27:50,640
+dentro. Ok, tutto tutto qui. Questo è il
+
+579
+00:27:50,640 --> 00:27:53,120
+trucco. Ok, adesso però ci dobbiamo
+
+580
+00:27:53,120 --> 00:27:56,080
+inventare delle coppie di stringhe R con
+
+581
+00:27:56,080 --> 00:27:58,200
+I, s con i in maniera tale che il tutto
+
+582
+00:27:58,200 --> 00:28:00,279
+torni. Ok? Quello è la parte
+
+583
+00:28:00,279 --> 00:28:03,559
+trucchettosa della riduzione.
+
+584
+00:28:03,559 --> 00:28:06,120
+E facciamo così.
+
+585
+00:28:06,120 --> 00:28:08,159
+Ci sono
+
+586
+00:28:08,159 --> 00:28:12,159
+cinque classi di coppie di stringhe R e
+
+587
+00:28:12,159 --> 00:28:14,960
+S con I, no?
+
+588
+00:28:14,960 --> 00:28:20,120
+che servono a permetterci di ricostruire
+
+589
+00:28:21,240 --> 00:28:22,559
+ci permettono di ricostruire il
+
+590
+00:28:22,559 --> 00:28:24,799
+funzionamento di m su w. Allora, l'idea
+
+591
+00:28:24,799 --> 00:28:28,440
+sarebbe sarebbe questa che le stringhe
+
+592
+00:28:28,440 --> 00:28:31,120
+che provengono da R e le stringhe che
+
+593
+00:28:31,120 --> 00:28:34,120
+provengono dagli Saranno
+
+594
+00:28:34,120 --> 00:28:38,200
+fatte tale per cui
+
+595
+00:28:39,240 --> 00:28:42,640
+questa stringa qui, che è la stringa
+
+596
+00:28:42,640 --> 00:28:46,000
+codificante, la sequenza di
+
+597
+00:28:46,000 --> 00:28:47,480
+configurations che la macchina
+
+598
+00:28:47,480 --> 00:28:50,760
+attraverse, sarà possibile ottenerla sia
+
+599
+00:28:50,760 --> 00:28:53,679
+tramite la concatenazione degli R con I,
+
+600
+00:28:53,679 --> 00:28:56,080
+sia tramite la concatenazione degli s
+
+601
+00:28:56,080 --> 00:28:59,720
+con i, però la stringa proveniente da s
+
+602
+00:28:59,720 --> 00:29:02,720
+dagli s con i sarà, tra virgolette un
+
+603
+00:29:02,720 --> 00:29:05,039
+passo avanti rispetto alla stringa
+
+604
+00:29:05,039 --> 00:29:07,080
+proveniente dagli arregoni. Ok? Quindi
+
+605
+00:29:07,080 --> 00:29:12,519
+avremo una cosa di questo tipo, cioè
+
+606
+00:29:18,679 --> 00:29:22,559
+no, alfa 1, alfa 2, alfa 3. Cioè noi ci
+
+607
+00:29:22,559 --> 00:29:26,080
+andremo a collocare intuitivamente in un
+
+608
+00:29:26,080 --> 00:29:28,360
+contesto nel quale
+
+609
+00:29:28,360 --> 00:29:31,640
+agganciando le stringhe che provengono
+
+610
+00:29:31,640 --> 00:29:35,159
+da dalla lista A e agganciando le liste
+
+611
+00:29:35,159 --> 00:29:37,679
+che provengono dalla dalla le stringhe
+
+612
+00:29:37,679 --> 00:29:40,320
+che provengono dalla lista B, la loro
+
+613
+00:29:40,320 --> 00:29:42,640
+concatenazione sarà per le stringhe che
+
+614
+00:29:42,640 --> 00:29:45,720
+provengono da B una configurazione
+
+615
+00:29:45,720 --> 00:29:48,760
+avanti rispetto a quello che otteniamo
+
+616
+00:29:48,760 --> 00:29:51,760
+concatenando le stringhe che ok? Quindi
+
+617
+00:29:51,760 --> 00:29:54,279
+noi manterremo questa cosa che le
+
+618
+00:29:54,279 --> 00:29:56,919
+stringhe che provengono da A è come se
+
+619
+00:29:56,919 --> 00:29:58,840
+inseguissero le stringhe che provengono
+
+620
+00:29:58,840 --> 00:30:01,200
+da B, ok? Perché saranno sempre un passo
+
+621
+00:30:01,200 --> 00:30:03,480
+dietro, quindi questo sarà avanti,
+
+622
+00:30:03,480 --> 00:30:05,559
+questo sarà indietro e si inseguiranno,
+
+623
+00:30:05,559 --> 00:30:08,360
+andranno sempre avanti assieme e le
+
+624
+00:30:08,360 --> 00:30:10,760
+stringhe proveniendo da A, provenienti
+
+625
+00:30:10,760 --> 00:30:13,120
+da A, potranno raggiungere quelle
+
+626
+00:30:13,120 --> 00:30:14,720
+proveniente da B solamente se la
+
+627
+00:30:14,720 --> 00:30:16,880
+macchina entra in uno stato accettato.
+
+628
+00:30:16,880 --> 00:30:18,760
+Ok?
+
+629
+00:30:18,760 --> 00:30:21,000
+Chiara l'intuizione?
+
+630
+00:30:21,000 --> 00:30:22,559
+Questo è quello che vogliamo ottenere,
+
+631
+00:30:22,559 --> 00:30:24,559
+però ora dobbiamo vedere il dettaglio.
+
+632
+00:30:24,559 --> 00:30:30,320
+Ok? Allora, op.
+
+633
+00:30:36,080 --> 00:30:38,720
+Prima classe di stringhe. Abbiamo detto
+
+634
+00:30:38,720 --> 00:30:40,279
+che noi vogliamo ottenere che le
+
+635
+00:30:40,279 --> 00:30:42,279
+stringhe che provengono da B siano un
+
+636
+00:30:42,279 --> 00:30:45,080
+passo avanti rispetto alle stringhe che
+
+637
+00:30:45,080 --> 00:30:50,240
+provengono da A. Ok? Allora, la stringa
+
+638
+00:30:50,240 --> 00:30:54,120
+R1 e la stringa S1. Allora, qui metterò
+
+639
+00:30:54,120 --> 00:30:56,000
+sempre ciò che mi proviene da A e qui
+
+640
+00:30:56,000 --> 00:30:59,960
+quello che proviene da B. Ok?
+
+641
+00:30:59,960 --> 00:31:03,919
+Allora, R1 sarà fatta così.
+
+642
+00:31:03,919 --> 00:31:06,919
+Cancelletto.
+
+643
+00:31:08,000 --> 00:31:11,760
+Mentre S1 sarà fatta così. Cancelletto
+
+644
+00:31:11,760 --> 00:31:15,440
+Q0, dove Q0 è lo stato iniziale
+
+645
+00:31:15,440 --> 00:31:20,440
+della macchina M. e poi la stringa W
+
+646
+00:31:20,440 --> 00:31:24,600
+con tutti i suoi simboli. Ok?
+
+647
+00:31:26,240 --> 00:31:29,000
+Chiaro che facciamo? Quindi la prima
+
+648
+00:31:29,000 --> 00:31:32,120
+coppia delle liste EB c'ha sta forma
+
+649
+00:31:32,120 --> 00:31:36,559
+particolare R1 c'è il cancelletto.
+
+650
+00:31:36,559 --> 00:31:39,919
+RS1 ha cancelletto0
+
+651
+00:31:39,919 --> 00:31:41,840
+alla configurazione iniziale di M.
+
+652
+00:31:41,840 --> 00:31:44,120
+Praticamente cancelletto configurazione
+
+653
+00:31:44,120 --> 00:31:47,039
+iniziale cancelletto. Ok?
+
+654
+00:31:47,039 --> 00:31:50,440
+E siccome un'istanza di MPCP e ogni
+
+655
+00:31:50,440 --> 00:31:52,639
+soluzione candidata dovrà partire da
+
+656
+00:31:52,639 --> 00:31:55,200
+questa coppia di di stringhe, nel
+
+657
+00:31:55,200 --> 00:31:57,919
+momento in cui iniziamo ad agganciare
+
+658
+00:31:57,919 --> 00:31:59,679
+noi avremo già che la stringa
+
+659
+00:31:59,679 --> 00:32:01,720
+proveniente dalla lista A è un passo
+
+660
+00:32:01,720 --> 00:32:04,000
+dietro alla stringa proveniente dalla
+
+661
+00:32:04,000 --> 00:32:07,600
+lista B. Ok?
+
+662
+00:32:07,600 --> 00:32:09,639
+Ok. Quindi questa è la prima classe. Poi
+
+663
+00:32:09,639 --> 00:32:11,480
+vi faccio vedere un esempio specifico.
+
+664
+00:32:11,480 --> 00:32:13,799
+La prima classe
+
+665
+00:32:13,799 --> 00:32:18,320
+di stringhe, seconda classe di stringhe,
+
+666
+00:32:18,320 --> 00:32:23,639
+abbiamo la stringa X,
+
+667
+00:32:23,720 --> 00:32:28,519
+la stringa X e la stringa X,
+
+668
+00:32:28,519 --> 00:32:31,639
+dove X è un qualsiasi simbolo per ogni x
+
+669
+00:32:31,639 --> 00:32:34,519
+appartenente a gamma. Quindi X è un
+
+670
+00:32:34,519 --> 00:32:37,039
+qualsiasi simbolo di nastro. Quindi
+
+671
+00:32:37,039 --> 00:32:39,120
+avremo che la seconda classe di string
+
+672
+00:32:39,120 --> 00:32:44,200
+che ne so R2 S2 R3 S3 ne avremo una per
+
+673
+00:32:44,200 --> 00:32:46,960
+ogni possibile simbolo che può apparire
+
+674
+00:32:46,960 --> 00:32:49,240
+sul nastro e poi c'abbiamo un'altra che
+
+675
+00:32:49,240 --> 00:32:52,639
+è cancelletto. Cancelletto.
+
+676
+00:32:52,639 --> 00:32:54,279
+Ok?
+
+677
+00:32:54,279 --> 00:32:56,039
+A che ci serve questa roba? Ve lo
+
+678
+00:32:56,039 --> 00:32:57,960
+vedremo nell'esempio che poi vi faccio
+
+679
+00:32:57,960 --> 00:33:00,440
+vedere. ci serve a poter estendere,
+
+680
+00:33:00,440 --> 00:33:03,039
+quindi stiamo partendo con A che c'ha
+
+681
+00:33:03,039 --> 00:33:04,919
+solo cancelletto. Le stringhe provenenti
+
+682
+00:33:04,919 --> 00:33:08,320
+da B c'hanno cancelletto, stato,
+
+683
+00:33:08,320 --> 00:33:12,200
+simboli, cancelletto. Per estendere A ed
+
+684
+00:33:12,200 --> 00:33:14,240
+inseguire B, noi avremo che in A
+
+685
+00:33:14,240 --> 00:33:16,360
+possiamo inserire simboli per ricopiare
+
+686
+00:33:16,360 --> 00:33:19,760
+le cose. Ok? Questo è il senso. E questa
+
+687
+00:33:19,760 --> 00:33:24,840
+è la seconda classe di simboli di di
+
+688
+00:33:24,840 --> 00:33:28,000
+stringa. Ok?
+
+689
+00:33:28,000 --> 00:33:31,039
+Terza classeamo.
+
+690
+00:33:31,039 --> 00:33:33,120
+Ma non è che stai facendo in questo
+
+691
+00:33:33,120 --> 00:33:35,960
+momento?
+Sto trasformando, sto
+
+692
+00:33:35,960 --> 00:33:37,720
+costruendo
+
+693
+00:33:37,720 --> 00:33:41,039
+un'istanza di MPCP
+
+694
+00:33:41,039 --> 00:33:44,240
+partendo da un'istanza di M da partendo
+
+695
+00:33:44,240 --> 00:33:47,840
+da Mw da un'istanza di Lu.
+
+696
+00:33:47,840 --> 00:33:50,760
+Quindi io sto partendo da MU, sto
+
+697
+00:33:50,760 --> 00:33:52,639
+definendo la funzione f sostanzialmente,
+
+698
+00:33:52,639 --> 00:33:58,240
+quindi input fent m w. Ok.
+
+699
+00:33:58,240 --> 00:34:01,399
+F inizia a girare. Tratatan tratatan,
+
+700
+00:34:01,399 --> 00:34:03,240
+tratatan. Allora, che fa? Inizia a
+
+701
+00:34:03,240 --> 00:34:06,480
+tirare fuori ste coppie. La prima coppia
+
+702
+00:34:06,480 --> 00:34:08,040
+che tira fuori è cancelletto.
+
+703
+00:34:08,040 --> 00:34:11,919
+Cancelletto Q0 W cancelletto. Cioè da
+
+704
+00:34:11,919 --> 00:34:14,879
+dove la prende w? Dall'input ha ricevuto
+
+705
+00:34:14,879 --> 00:34:17,079
+input, M è W. Quindi la prima cosa che
+
+706
+00:34:17,079 --> 00:34:20,119
+sputa fuori è sta coppia cancelletto
+
+707
+00:34:20,119 --> 00:34:23,639
+cancelletto Q0 W cancelletto. Ok, può
+
+708
+00:34:23,639 --> 00:34:26,079
+farlo? Così sta solo sputando fuori
+
+709
+00:34:26,079 --> 00:34:29,159
+singoli. Poi che cos'altro ci appiccica
+
+710
+00:34:29,159 --> 00:34:34,760
+ad A e B la funzione F? Quello coppie 00
+
+711
+00:34:34,760 --> 00:34:37,079
+1 1. Cancelletto cancelletto. Può farlo
+
+712
+00:34:37,079 --> 00:34:39,960
+sì. Sta generando quindi le liste A e B
+
+713
+00:34:39,960 --> 00:34:44,879
+per il trasformato di F.
+
+714
+00:34:45,359 --> 00:34:46,720
+Non mi è chiaro a cosa serve il
+
+715
+00:34:46,720 --> 00:34:49,119
+passaggio? Cioè perché devono essere di
+
+716
+00:34:49,119 --> 00:34:52,119
+pari lunghezza? Le le sarà più chiaro
+
+717
+00:34:52,119 --> 00:34:54,240
+quando faccio un esempio. Ok. Perché
+
+718
+00:34:54,240 --> 00:34:55,800
+capisco che è un po' complicato da
+
+719
+00:34:55,800 --> 00:34:57,680
+togliere. Poi lo vediamo e cerchiamo di
+
+720
+00:34:57,680 --> 00:35:00,680
+capire. Ok, la pausa sarà cortissima
+
+721
+00:35:00,680 --> 00:35:05,480
+oggi questo orario. Ok, terza classe di
+
+722
+00:35:05,480 --> 00:35:07,240
+di coppie.
+
+723
+00:35:07,240 --> 00:35:09,440
+Dobbiamo codificare sostanzialmente
+
+724
+00:35:09,440 --> 00:35:12,079
+nelle stringhe proven a e b la funzione
+
+725
+00:35:12,079 --> 00:35:16,040
+di transizione di della macchina M. Ok?
+
+726
+00:35:16,040 --> 00:35:19,720
+Allora, facciamo così.
+
+727
+00:35:19,720 --> 00:35:24,520
+Su A mettiamo la stringa QX dove X è un
+
+728
+00:35:24,520 --> 00:35:27,160
+simbolo proveniente da gamma e su B
+
+729
+00:35:27,160 --> 00:35:30,520
+abbiamo la stringa YP.
+
+730
+00:35:30,520 --> 00:35:35,040
+Per ogni regola del tipo che sono nello
+
+731
+00:35:35,040 --> 00:35:38,880
+stato Q, leggo X, transisco in P, scrivo
+
+732
+00:35:38,880 --> 00:35:42,119
+Y e vado a destra.
+
+733
+00:35:42,119 --> 00:35:44,880
+Ok? Quindi, se nella macchina M, che è
+
+734
+00:35:44,880 --> 00:35:48,040
+la funzione f
+
+735
+00:35:48,040 --> 00:35:51,720
+prende in input, ok? Vede una cosa del
+
+736
+00:35:51,720 --> 00:35:54,079
+genere nella funzione di transizione, la
+
+737
+00:35:54,079 --> 00:35:56,560
+funzione f sputa questa coppia di
+
+738
+00:35:56,560 --> 00:36:00,000
+string. Ok? Questo ci serve che cosa? A
+
+739
+00:36:00,000 --> 00:36:02,200
+simulare che
+
+740
+00:36:02,200 --> 00:36:05,240
+se sono nello stato Q e sto leggendo X,
+
+741
+00:36:05,240 --> 00:36:08,119
+al passo successivo, al posto di X ci
+
+742
+00:36:08,119 --> 00:36:14,680
+sarà Y sarà avanzato e diventato P. Ok,
+
+743
+00:36:16,480 --> 00:36:20,720
+then altro
+
+744
+00:36:20,839 --> 00:36:23,839
+ZQX
+
+745
+00:36:24,359 --> 00:36:27,800
++ ZY,
+
+746
+00:36:27,800 --> 00:36:32,640
+dove z X y sono di nuovo simboli che
+
+747
+00:36:32,640 --> 00:36:37,160
+appartengono a gamma, ok? e li infiliamo
+
+748
+00:36:37,160 --> 00:36:40,119
+là. Se esiste una regola del tipo sono
+
+749
+00:36:40,119 --> 00:36:43,599
+in Q, leggo X, transisco in P, scrivo Y
+
+750
+00:36:43,599 --> 00:36:45,839
+e vado dietro.
+
+751
+00:36:45,839 --> 00:36:48,400
+Ok? Perché?
+
+752
+00:36:48,400 --> 00:36:51,280
+Perché se questo è un pezzo
+
+753
+00:36:51,280 --> 00:36:54,280
+delligurazione
+
+754
+00:36:54,560 --> 00:36:58,079
+che significa? sono in Q e sto leggendo
+
+755
+00:36:58,079 --> 00:37:01,760
+X perché X appare alla sua destra. Nella
+
+756
+00:37:01,760 --> 00:37:05,680
+configurazione successiva al posto di X
+
+757
+00:37:05,680 --> 00:37:08,640
+noi avremo Yato
+
+758
+00:37:08,640 --> 00:37:10,800
+Q che è indietreggia di un posto si
+
+759
+00:37:10,800 --> 00:37:14,200
+troverà alla destra di Z perché Z stava
+
+760
+00:37:14,200 --> 00:37:19,280
+alla sinistra della testina. Ok?
+
+761
+00:37:23,119 --> 00:37:25,880
+avanti.
+
+762
+00:37:25,880 --> 00:37:28,000
+Poi dobbiamo gestirci il caso nel caso
+
+763
+00:37:28,000 --> 00:37:30,079
+in cui ovviamente Ah, ok, c'è
+
+764
+00:37:30,079 --> 00:37:32,599
+un'assunzione che va fatta in unetto.
+
+765
+00:37:32,599 --> 00:37:34,680
+Noi stiamo assumendo
+
+766
+00:37:34,680 --> 00:37:38,640
+che m è una macchina particolare,
+
+767
+00:37:38,640 --> 00:37:40,520
+è una macchina che non scrive mai il
+
+768
+00:37:40,520 --> 00:37:43,800
+bianco e questo è un'assunzione, ok?
+
+769
+00:37:43,800 --> 00:37:46,119
+perché possiamo sostituire il bianco con
+
+770
+00:37:46,119 --> 00:37:49,680
+un altro simbolo. Una peculiarità di M è
+
+771
+00:37:49,680 --> 00:37:54,920
+che M ha un nastro semiinfinito,
+
+772
+00:37:54,920 --> 00:37:57,800
+cioè non sposta mai la sua testina alla
+
+773
+00:37:57,800 --> 00:38:00,520
+sinistra della posizione iniziale.
+
+774
+00:38:00,520 --> 00:38:02,480
+Questo si può assumere senza perdita di
+
+775
+00:38:02,480 --> 00:38:04,160
+generalità. C'è un teorema sul vostro
+
+776
+00:38:04,160 --> 00:38:06,000
+libro che mostra che qualsiasi macchina
+
+777
+00:38:06,000 --> 00:38:08,359
+di Touring può essere trasformata in
+
+778
+00:38:08,359 --> 00:38:10,599
+questa variante. Ok? Perché usiamo
+
+779
+00:38:10,599 --> 00:38:12,640
+questo constraint sulle macchine? Perché
+
+780
+00:38:12,640 --> 00:38:14,400
+fare la riduzione così ci viene più
+
+781
+00:38:14,400 --> 00:38:18,480
+semplice? Ok.
+
+782
+00:38:19,000 --> 00:38:20,560
+Alright. Quindi abbiamo dobbiamo
+
+783
+00:38:20,560 --> 00:38:23,880
+gestirci un caso in cui lo stato Q sia
+
+784
+00:38:23,880 --> 00:38:27,040
+leggendo l'ultimo blank. Quindi abbiamo
+
+785
+00:38:27,040 --> 00:38:30,280
+Q SAR
+
+786
+00:38:30,280 --> 00:38:34,040
+e poi abbiamo YP SAR. Nel momento in cui
+
+787
+00:38:34,040 --> 00:38:37,880
+c'è una transizione in cui sono in Q,
+
+788
+00:38:37,880 --> 00:38:39,960
+leggo blank,
+
+789
+00:38:39,960 --> 00:38:44,200
+vado in P, scrivo Y e mi muovo avanti.
+
+790
+00:38:44,200 --> 00:38:47,839
+E l'altra è ZQ
+
+791
+00:38:47,839 --> 00:38:49,720
+che diventa
+
+792
+00:38:49,720 --> 00:38:51,319
+pzy
+
+793
+00:38:51,319 --> 00:38:52,880
+sharp.
+
+794
+00:38:52,880 --> 00:38:56,720
+Se sono in Q leggo blank, transisco in
+
+795
+00:38:56,720 --> 00:39:01,319
+in P, scrivo Y e vado dietro. Ok, queste
+
+796
+00:39:01,319 --> 00:39:03,040
+ovviamente vanno tutte generate, adesso
+
+797
+00:39:03,040 --> 00:39:05,800
+lo vediamo un esempio specifico, vanno
+
+798
+00:39:05,800 --> 00:39:07,960
+tutte generate per tutti i possibili le
+
+799
+00:39:07,960 --> 00:39:11,640
+possibili triple di simboli zx y che
+
+800
+00:39:11,640 --> 00:39:13,920
+appartengono al gamma che rispettino
+
+801
+00:39:13,920 --> 00:39:17,280
+quelle condizioni.
+
+802
+00:39:18,000 --> 00:39:21,599
+Ok, questa era la terza classe di coppie
+
+803
+00:39:21,599 --> 00:39:23,520
+di stringhe.
+
+804
+00:39:23,520 --> 00:39:26,839
+Avanti, quarta,
+
+805
+00:39:26,839 --> 00:39:30,280
+quarta classe.
+
+806
+00:39:33,720 --> 00:39:36,319
+La terza coppia di string, cioè la terza
+
+807
+00:39:36,319 --> 00:39:39,040
+classe di stringhe, viene definita per
+
+808
+00:39:39,040 --> 00:39:41,240
+una Q
+
+809
+00:39:41,240 --> 00:39:44,960
+che è uno stato non terminale. Ok? Q non
+
+810
+00:39:44,960 --> 00:39:47,640
+è uno stato qualsiasi, è solo uno stato
+
+811
+00:39:47,640 --> 00:39:49,960
+non terminale. Lo scriviamo qua. Q
+
+812
+00:39:49,960 --> 00:39:55,440
+appartiene a Q - F. Ok,
+
+813
+00:39:56,440 --> 00:40:00,040
+quarta coppia, quarta categoria di
+
+814
+00:40:00,040 --> 00:40:02,760
+coppie di stringhe.
+
+815
+00:40:02,760 --> 00:40:04,280
+Allora, tutte queste cose che abbiamo
+
+816
+00:40:04,280 --> 00:40:07,560
+visto finora permetteranno di estendere
+
+817
+00:40:07,560 --> 00:40:09,240
+la stringhe proveniente da A e le
+
+818
+00:40:09,240 --> 00:40:10,760
+stringhe provenienti da B con la
+
+819
+00:40:10,760 --> 00:40:12,319
+computazione di M. Poi facciamo un
+
+820
+00:40:12,319 --> 00:40:13,720
+esempio, vi faccio vedere come cosa
+
+821
+00:40:13,720 --> 00:40:17,960
+succede. Però tutto ciò farà sì che le
+
+822
+00:40:17,960 --> 00:40:19,920
+stringhe che provengono da B saranno
+
+823
+00:40:19,920 --> 00:40:21,640
+sempre un passo avanti rispetto alle
+
+824
+00:40:21,640 --> 00:40:23,440
+stringhe che provengono da A. Noi gli
+
+825
+00:40:23,440 --> 00:40:25,680
+dobbiamo dare la possibilità alle
+
+826
+00:40:25,680 --> 00:40:27,079
+stringhe che provengono da A di
+
+827
+00:40:27,079 --> 00:40:29,000
+raggiungere le stringhe provenienti da B
+
+828
+00:40:29,000 --> 00:40:31,480
+nel momento in cui la macchina transisce
+
+829
+00:40:31,480 --> 00:40:33,680
+in uno stato accettante. Quindi la
+
+830
+00:40:33,680 --> 00:40:36,240
+quarta classe di coppie di stringhe
+
+831
+00:40:36,240 --> 00:40:39,319
+faranno sì che le stringhe provenenti da
+
+832
+00:40:39,319 --> 00:40:42,280
+A possono accelerare un po'. Ok?
+
+833
+00:40:42,280 --> 00:40:46,640
+E allora per gli stati Q appartenenti
+
+834
+00:40:46,640 --> 00:40:49,800
+agli stati finali
+
+835
+00:40:49,800 --> 00:40:51,480
+definiamo
+
+836
+00:40:51,480 --> 00:40:54,480
+XQY
+
+837
+00:40:56,760 --> 00:40:59,760
+QY
+
+838
+00:41:03,200 --> 00:41:06,000
+Q. Ok? dove Q è un qualsiasi stato
+
+839
+00:41:06,000 --> 00:41:08,599
+finale, X e Y sono simboli provenienti
+
+840
+00:41:08,599 --> 00:41:10,560
+da
+
+841
+00:41:10,560 --> 00:41:15,040
+sono simboli provenienti da gamma.
+
+842
+00:41:16,400 --> 00:41:19,400
+Ok?
+
+843
+00:41:19,920 --> 00:41:22,160
+Quinta e ultima classe di regole.
+
+844
+00:41:22,160 --> 00:41:24,920
+Capisco che è intricato, le riduzioni
+
+845
+00:41:24,920 --> 00:41:27,839
+sono così alle volte. Adesso vediamo un
+
+846
+00:41:27,839 --> 00:41:29,440
+esempio per renderci conto di come
+
+847
+00:41:29,440 --> 00:41:32,240
+funziona sta cosa. Ok? Quinta classe di
+
+848
+00:41:32,240 --> 00:41:34,079
+string
+
+849
+00:41:34,079 --> 00:41:38,760
+abbiamo Q sharp
+
+850
+00:41:38,760 --> 00:41:43,440
+sharp su B dove Q appartiene agli stati
+
+851
+00:41:43,440 --> 00:41:46,520
+finali. Ok?
+
+852
+00:41:46,520 --> 00:41:50,160
+Chiaro? Cioè che cosa cosa fa sta
+
+853
+00:41:50,160 --> 00:41:52,720
+funzione di trasformazione f? Prende
+
+854
+00:41:52,720 --> 00:41:57,640
+input la coppia MW e inizia a sputare
+
+855
+00:41:57,640 --> 00:42:01,079
+fuori in output liste A e B. dove ci
+
+856
+00:42:01,079 --> 00:42:04,440
+stanno coppie di stringhe che seguono
+
+857
+00:42:04,440 --> 00:42:07,400
+queste regole. Ok? Adesso possono
+
+858
+00:42:07,400 --> 00:42:10,680
+sembrare completamente senza senso, ma
+
+859
+00:42:10,680 --> 00:42:12,599
+quello che vedremo ora è che una
+
+860
+00:42:12,599 --> 00:42:17,200
+trasformazione si fatta permette di
+
+861
+00:42:17,200 --> 00:42:19,319
+ottenere appunto la riduzione, cioè noi
+
+862
+00:42:19,319 --> 00:42:21,280
+saremo in grado di generare un'istanza
+
+863
+00:42:21,280 --> 00:42:24,800
+di MPCP che è un'istanza soscina
+
+864
+00:42:24,800 --> 00:42:28,040
+M accetta W. Ok?
+
+865
+00:42:28,040 --> 00:42:30,839
+Alri,
+
+866
+00:42:30,839 --> 00:42:33,839
+supponiamo
+
+867
+00:42:40,240 --> 00:42:43,240
+Q2,
+
+868
+00:42:43,240 --> 00:42:44,760
+Q3.
+
+869
+00:42:44,760 --> 00:42:47,480
+Ok? Supponiamo quindi di avere una
+
+870
+00:42:47,480 --> 00:42:49,960
+coppia MW
+
+871
+00:42:49,960 --> 00:42:53,079
+da dare input alla funzione f. Adesso
+
+872
+00:42:53,079 --> 00:42:55,839
+disegniamo cos'è questa M, diciamo cos'è
+
+873
+00:42:55,839 --> 00:42:59,960
+w e vediamo che cosa esce fuori per su
+
+874
+00:42:59,960 --> 00:43:02,720
+dal termine della trasformazione. Ok? La
+
+875
+00:43:02,720 --> 00:43:05,800
+macchina M è fatta di una cosa di questo
+
+876
+00:43:05,800 --> 00:43:09,880
+tipo. Vediamo un po'.
+
+877
+00:43:10,200 --> 00:43:15,760
+Ok, Q1 è lo stato iniziale.
+
+878
+00:43:16,040 --> 00:43:20,160
+Sono in Q1, se leggo 1 scrivo 0 torno
+
+879
+00:43:20,160 --> 00:43:23,119
+indietro.
+
+880
+00:43:23,440 --> 00:43:28,559
+Se leggo zero, scrivo 1, vado avanti.
+
+881
+00:43:29,880 --> 00:43:31,680
+Poi
+
+882
+00:43:31,680 --> 00:43:35,079
+sono in Q2,
+
+883
+00:43:35,280 --> 00:43:39,599
+leggo 1, scrivo 0 e vado avanti.
+
+884
+00:43:39,599 --> 00:43:41,760
+Sono in Q1,
+
+885
+00:43:41,760 --> 00:43:46,480
+leggo blank, scrivo 1 e torno dietro.
+
+886
+00:43:46,480 --> 00:43:48,480
+in Q2
+
+887
+00:43:48,480 --> 00:43:50,960
+scrivo leggo blank, scrivo 0 e vado
+
+888
+00:43:50,960 --> 00:43:54,440
+avanti e poi c'è questa transizione
+
+889
+00:43:54,440 --> 00:43:57,800
+00 0 e torno dietro. Ok? Supponiamo che
+
+890
+00:43:57,800 --> 00:44:01,920
+quindi m sia questa cosa qua. Questo è
+
+891
+00:44:01,920 --> 00:44:03,839
+m,
+
+892
+00:44:03,839 --> 00:44:05,400
+ok?
+
+893
+00:44:05,400 --> 00:44:09,520
+E w è 01.
+
+894
+00:44:09,520 --> 00:44:10,720
+Ok?
+
+895
+00:44:10,720 --> 00:44:14,920
+Quindi abbiamo questa coppia
+
+896
+00:44:14,920 --> 00:44:17,559
+MW
+
+897
+00:44:17,559 --> 00:44:20,520
+che viene data impasto alla funzione F
+
+898
+00:44:20,520 --> 00:44:23,640
+di riduzione.
+
+899
+00:44:23,640 --> 00:44:27,280
+La funzione f riduzione legge la
+
+900
+00:44:27,280 --> 00:44:29,800
+funzione di transizione di M che gli
+
+901
+00:44:29,800 --> 00:44:32,040
+viene data input come con la codifica
+
+902
+00:44:32,040 --> 00:44:34,119
+delle macchine che abbiamo visto quella
+
+903
+00:44:34,119 --> 00:44:36,920
+volta. Ok?
+
+904
+00:44:36,920 --> 00:44:40,200
+Riceve quindi la codifica di M, riceve w
+
+905
+00:44:40,200 --> 00:44:44,079
+input e deve sputare fuori in output
+
+906
+00:44:44,079 --> 00:44:47,400
+questa cosa qua. Ok?
+
+907
+00:44:47,400 --> 00:44:50,960
+Deve sputare in output le liste A e B.
+
+908
+00:44:50,960 --> 00:44:53,839
+Allora,
+
+909
+00:44:53,839 --> 00:44:56,280
+la computazione, vediamo prima assieme
+
+910
+00:44:56,280 --> 00:44:58,319
+la computazione di questa macchina sulla
+
+911
+00:44:58,319 --> 00:45:03,000
+stringa 01, ok? Q101.
+
+912
+00:45:04,640 --> 00:45:08,880
+Come funzionerebbe? Allora, siamo in Q1,
+
+913
+00:45:08,880 --> 00:45:11,640
+leggiamo 0,
+
+914
+00:45:11,640 --> 00:45:14,440
+ok? Quindi si attiva questa questo
+
+915
+00:45:14,440 --> 00:45:18,319
+branch qua, ok? Siamo in Q1, leggiamo 0,
+
+916
+00:45:18,319 --> 00:45:23,119
+che facciamo? Scriviamo 1 sullo 0,
+
+917
+00:45:23,119 --> 00:45:26,839
+da Q1 transiamo in Q2 e ci spostiamo a
+
+918
+00:45:26,839 --> 00:45:30,520
+destra. Quindi da questa configurazione
+
+919
+00:45:30,520 --> 00:45:32,319
+otteniamo
+
+920
+00:45:32,319 --> 00:45:34,520
+quest'altra configurazione. È chiaro?
+
+921
+00:45:34,520 --> 00:45:39,319
+Questa è tutta roba vecchia. Ok. Poi
+
+922
+00:45:39,319 --> 00:45:42,319
+siamo in Q2,
+
+923
+00:45:42,319 --> 00:45:46,760
+leggiamo 1. Quindi siamo qui su questo
+
+924
+00:45:46,760 --> 00:45:50,480
+ramo qua, siamo in Q2, leggiamo 1,
+
+925
+00:45:50,480 --> 00:45:53,920
+scriviamo 0 e andiamo ancora a destra.
+
+926
+00:45:53,920 --> 00:45:57,359
+Quindi ci sposteremo in
+
+927
+00:45:57,359 --> 00:45:59,240
+1
+
+928
+00:45:59,240 --> 00:46:01,800
+ci spostiamo a destra, quindi Q2 avanza
+
+929
+00:46:01,800 --> 00:46:04,640
+verso destra e transiamo verso Q1.
+
+930
+00:46:04,640 --> 00:46:08,960
+Quindi questo sarebbe la
+
+931
+00:46:08,960 --> 00:46:11,839
+il resto della configurazione. Ok?
+
+932
+00:46:11,839 --> 00:46:16,040
+Quindi adesso siamo in Q1 e leggiamo
+
+933
+00:46:16,040 --> 00:46:18,559
+blank.
+
+934
+00:46:18,559 --> 00:46:21,359
+Siamo in Qo.
+
+935
+00:46:21,359 --> 00:46:25,599
+Leggiamo blank. Scriviamo 1, torniamo
+
+936
+00:46:25,599 --> 00:46:28,359
+indietro e transiamo verso Q2. Di
+
+937
+00:46:28,359 --> 00:46:32,720
+conseguenza abbiamo 1
+
+938
+00:46:32,720 --> 00:46:34,880
+Q2
+
+939
+00:46:34,880 --> 00:46:37,880
+0.
+
+940
+00:46:39,400 --> 00:46:41,280
+Ok? Sto solo simulando il funzionamento
+
+941
+00:46:41,280 --> 00:46:43,119
+di questa macchina di Touring su questa
+
+942
+00:46:43,119 --> 00:46:46,559
+stringa. Ok.
+
+943
+00:46:48,200 --> 00:46:51,960
+Ultimo passaggio, siamo in Q2, leggiamo
+
+944
+00:46:51,960 --> 00:46:54,079
+0,
+
+945
+00:46:54,079 --> 00:46:57,640
+scriviamo 0 e ci spostiamo verso destra
+
+946
+00:46:57,640 --> 00:47:01,000
+e andiamo verso Q3. E allora che cosa
+
+947
+00:47:01,000 --> 00:47:02,800
+avviene?
+
+948
+00:47:02,800 --> 00:47:08,280
+Q3 10 1.
+
+949
+00:47:10,440 --> 00:47:13,440
+Chiaro?
+
+950
+00:47:15,640 --> 00:47:16,800
+Questo è il funzionamento di questa
+
+951
+00:47:16,800 --> 00:47:18,640
+macchina su W. Adesso quello che noi
+
+952
+00:47:18,640 --> 00:47:21,720
+vogliamo vedere è che la simulazione che
+
+953
+00:47:21,720 --> 00:47:23,720
+otteniamo che otteniamo tramite la
+
+954
+00:47:23,720 --> 00:47:25,880
+riduzione che abbiamo proposto prima va
+
+955
+00:47:25,880 --> 00:47:27,800
+a replicare esattamente il funzionamento
+
+956
+00:47:27,800 --> 00:47:31,160
+di questa macchina. Ok? Quindi noi
+
+957
+00:47:31,160 --> 00:47:34,200
+partiamo da quella macchina, dobbiamo
+
+958
+00:47:34,200 --> 00:47:40,359
+produrre le liste A e B. Ok? Allora,
+
+959
+00:47:40,359 --> 00:47:42,319
+che abbiamo?
+
+960
+00:47:42,319 --> 00:47:45,200
+Mettiamo B. Qua
+
+961
+00:47:45,200 --> 00:47:49,079
+abbiamo che la prima coppia cos'è? È
+
+962
+00:47:49,079 --> 00:47:50,599
+cancelletto
+
+963
+00:47:50,599 --> 00:47:55,200
+su A, cancelletto Q101
+
+964
+00:47:55,200 --> 00:47:58,760
+cancelletto. Ok? Questa è la è la prima
+
+965
+00:47:58,760 --> 00:48:02,040
+classe di coppie,
+
+966
+00:48:02,040 --> 00:48:05,400
+ok? Poi la seconda classe di coppie era
+
+967
+00:48:05,400 --> 00:48:07,599
+sui simboli. Supponiamo che l'alfabeto
+
+968
+00:48:07,599 --> 00:48:10,359
+di nastro sia 01.
+
+969
+00:48:10,359 --> 00:48:17,400
+Quindi abbiamo 0 0 1
+
+970
+00:48:17,400 --> 00:48:21,160
+bianco bianco.
+
+971
+00:48:21,160 --> 00:48:26,160
+Ok, cancelletto cancelletto
+
+972
+00:48:26,640 --> 00:48:28,440
+e chiudiamo.
+
+973
+00:48:28,440 --> 00:48:32,920
+Questa è la seconda classe di stringhe.
+
+974
+00:48:33,839 --> 00:48:36,319
+La terza classe di stringhe è noi
+
+975
+00:48:36,319 --> 00:48:41,160
+dobbiamo andare a codificare
+
+976
+00:48:41,960 --> 00:48:45,359
+eh allora che abbiamo usato questa qua.
+
+977
+00:48:45,359 --> 00:48:49,680
+Ok, codifichiamo quelle che ci serve.
+
+978
+00:48:49,680 --> 00:48:52,599
+Se andiamo a guardare le appunti che
+
+979
+00:48:52,599 --> 00:48:54,200
+avevamo preso, quindi abbiamo che per
+
+980
+00:48:54,200 --> 00:48:57,400
+ogni stato non terminale, quindi Q1 Q2,
+
+981
+00:48:57,400 --> 00:49:01,319
+dobbiamo fare questa cosa qui. Q1,
+
+982
+00:49:01,319 --> 00:49:04,640
+il possibile simbolo che leggiamo è 0,
+
+983
+00:49:04,640 --> 00:49:08,400
+quindi è q 0. Questa cosa che cosa
+
+984
+00:49:08,400 --> 00:49:12,040
+diventa? Scriviamo 1 e transiamo in Q2.
+
+985
+00:49:12,040 --> 00:49:17,160
+Quindi l'altra stinga è 1 Q2.
+
+986
+00:49:19,720 --> 00:49:22,720
+Poi
+
+987
+00:49:26,680 --> 00:49:29,880
+quello da dove viene? Sì, siamo in Q1,
+
+988
+00:49:29,880 --> 00:49:31,960
+leggiamo
+
+989
+00:49:31,960 --> 00:49:35,440
+1, scriviamo 0,
+
+990
+00:49:35,440 --> 00:49:37,480
+sì. E andiamo a sinistra. Quindi adesso
+
+991
+00:49:37,480 --> 00:49:41,520
+traduco questa qua.
+
+992
+00:49:43,760 --> 00:49:46,799
+Sono 0, quindi
+
+993
+00:49:46,799 --> 00:49:49,799
+0 q1.
+
+994
+00:49:49,799 --> 00:49:53,640
+Questo di Q2
+
+995
+00:49:53,799 --> 00:49:55,480
+oppure
+
+996
+00:49:55,480 --> 00:50:01,799
+Q1 Q1 1. Questo di Q2.
+
+997
+00:50:01,799 --> 00:50:03,880
+Sto semplicemente applicando quelle
+
+998
+00:50:03,880 --> 00:50:09,559
+regole lì, eh, perché abbiamo Q1
+
+999
+00:50:09,880 --> 00:50:15,359
+Q1 legge Q1, ok? Che sarebbe questo Q1
+
+1000
+00:50:15,359 --> 00:50:19,280
+legge 1, sul quale ci scrive 0 e qui
+
+1001
+00:50:19,280 --> 00:50:22,200
+abbiamo che questi uni qua diventano 0
+
+1002
+00:50:22,200 --> 00:50:25,559
+qua. Dopodiché noi prima di Q1 potremmo
+
+1003
+00:50:25,559 --> 00:50:28,240
+avere o 0 o 1 e lo dobbiamo replicare.
+
+1004
+00:50:28,240 --> 00:50:33,599
+Quindi sarebbe questo e quest'altro. Ok,
+
+1005
+00:50:36,960 --> 00:50:38,680
+eccetera eccetera eccetera. Qual è
+
+1006
+00:50:38,680 --> 00:50:42,000
+l'altro prezzo? Ok, poi ce ne saranno
+
+1007
+00:50:42,000 --> 00:50:45,079
+altri, non ve le faccio vedere tutte,
+
+1008
+00:50:45,079 --> 00:50:48,400
+però vediamo un po'. Abbiamo codificato
+
+1009
+00:50:48,400 --> 00:50:51,040
+quello che ci serve. Sì, eccola qua.
+
+1010
+00:50:51,040 --> 00:50:53,520
+Allora, supponiamo quindi che vogliamo
+
+1011
+00:50:53,520 --> 00:50:56,559
+costruire da
+
+1012
+00:50:56,559 --> 00:50:59,559
+A
+
+1013
+00:50:59,680 --> 00:51:02,839
+e B
+
+1014
+00:51:02,839 --> 00:51:04,720
+la stringa ottenuta dalle
+
+1015
+00:51:04,720 --> 00:51:06,680
+concatenazioni. Abbiamo detto che noi
+
+1016
+00:51:06,680 --> 00:51:10,440
+partiamo sempre dalla prima coppia,
+
+1017
+00:51:10,440 --> 00:51:13,839
+questa qui. E quindi che cosa abbiamo?
+
+1018
+00:51:13,839 --> 00:51:17,760
+Diamo cancelletto qua e cancelletto
+
+1019
+00:51:17,760 --> 00:51:20,079
+Q1
+
+1020
+00:51:20,079 --> 00:51:23,119
+cancelletto. Ok? Adesso notate questa
+
+1021
+00:51:23,119 --> 00:51:25,640
+cosa qua.
+
+1022
+00:51:25,640 --> 00:51:27,680
+Le stringhe. Vi do l'intuizione perché
+
+1023
+00:51:27,680 --> 00:51:30,359
+poi farla tutta poca, eh, e visto che si
+
+1024
+00:51:30,359 --> 00:51:34,280
+è fatto abbastanza tardi,
+
+1025
+00:51:35,960 --> 00:51:37,920
+le stringhe che provengono da B, come
+
+1026
+00:51:37,920 --> 00:51:41,319
+vedete qui, sono un passo avanti
+
+1027
+00:51:41,319 --> 00:51:43,280
+rispetto alla stringa proveniente da A,
+
+1028
+00:51:43,280 --> 00:51:45,920
+cioè qui c'è la prima configurazione,
+
+1029
+00:51:45,920 --> 00:51:49,040
+mentre qua non ci sta niente. Ok?
+
+1030
+00:51:49,040 --> 00:51:53,480
+Concentriamoci su questo pezzo qua
+
+1031
+00:51:53,480 --> 00:51:56,240
+in cui ci dice che noi siamo nello stato
+
+1032
+00:51:56,240 --> 00:51:57,920
+Q1,
+
+1033
+00:51:57,920 --> 00:52:02,720
+stiamo leggendo zero. Ok? Guardate qua,
+
+1034
+00:52:02,720 --> 00:52:07,280
+c'è questa coppia Q10,
+
+1035
+00:52:07,280 --> 00:52:10,680
+scrivo 1, vado in Q2 che è la codifica
+
+1036
+00:52:10,680 --> 00:52:15,640
+coppie di cosa? di questo ramo qua. Di
+
+1037
+00:52:15,640 --> 00:52:17,559
+conseguenza
+
+1038
+00:52:17,559 --> 00:52:21,280
+questa stringa qui e questa stringa qui
+
+1039
+00:52:21,280 --> 00:52:24,000
+la posso estendere con questa coppia
+
+1040
+00:52:24,000 --> 00:52:27,640
+qua. Ok?
+
+1041
+00:52:27,799 --> 00:52:32,799
+Quindi io prendo questa coppia qui, Q10,
+
+1042
+00:52:32,799 --> 00:52:35,240
+lo infilo qua,
+
+1043
+00:52:35,240 --> 00:52:38,160
+quindi avrò Q10.
+
+1044
+00:52:38,160 --> 00:52:40,640
+E guardate che qui stiamo avendo un
+
+1045
+00:52:40,640 --> 00:52:44,599
+matching dei simboli,
+
+1046
+00:52:44,599 --> 00:52:47,000
+mentre sulla stringa che proviene da B
+
+1047
+00:52:47,000 --> 00:52:51,799
+devoirci questa. Quindi su B si inizierà
+
+1048
+00:52:51,799 --> 00:52:54,960
+a costruire che cosa? l'inizio della
+
+1049
+00:52:54,960 --> 00:52:57,079
+seconda configurazione.
+
+1050
+00:52:57,079 --> 00:53:00,680
+Quindi guardate qua, avevamo che
+
+1051
+00:53:00,680 --> 00:53:03,000
+all'inizio questo pezzo che era un passo
+
+1052
+00:53:03,000 --> 00:53:05,799
+avanti rispetto a questo qua. Nel
+
+1053
+00:53:05,799 --> 00:53:08,520
+momento in cui tento di matcare questi
+
+1054
+00:53:08,520 --> 00:53:12,000
+simboli con questi qua, sono costretto a
+
+1055
+00:53:12,000 --> 00:53:14,079
+prendere una coppia di stringhe
+
+1056
+00:53:14,079 --> 00:53:16,119
+proveniente da A e proveniente da B,
+
+1057
+00:53:16,119 --> 00:53:19,559
+tale per cui la stringa proveniente da A
+
+1058
+00:53:19,559 --> 00:53:23,960
+mi questo pezzo qui, però sono costretto
+
+1059
+00:53:23,960 --> 00:53:26,040
+a prendere da B delle stringhe che
+
+1060
+00:53:26,040 --> 00:53:28,400
+stanno simulando quale sarà la prossima
+
+1061
+00:53:28,400 --> 00:53:31,040
+configurazione. Di conseguenza, qui sto,
+
+1062
+00:53:31,040 --> 00:53:33,520
+iniz, mentre qui sto scrivendo a poco a
+
+1063
+00:53:33,520 --> 00:53:36,400
+poco alfa 1, qua sto già iniziando a
+
+1064
+00:53:36,400 --> 00:53:40,319
+scrivere alfa 2. Secondo cosa? secondo
+
+1065
+00:53:40,319 --> 00:53:42,680
+la funzione di transizione della
+
+1066
+00:53:42,680 --> 00:53:45,480
+macchina, perché queste coppie qua sono
+
+1067
+00:53:45,480 --> 00:53:47,880
+scritte secondo le possibili transizioni
+
+1068
+00:53:47,880 --> 00:53:50,240
+che la macchina può effettuare. Di
+
+1069
+00:53:50,240 --> 00:53:53,160
+conseguenza, a B, cioè la stringa
+
+1070
+00:53:53,160 --> 00:53:56,319
+provenente da B, ci appiccicherò pezzi
+
+1071
+00:53:56,319 --> 00:53:58,920
+che stanno simulando il next step della
+
+1072
+00:53:58,920 --> 00:54:01,000
+macchina. Ad esempio, una volta che c'ho
+
+1073
+00:54:01,000 --> 00:54:03,240
+questo,
+
+1074
+00:54:03,240 --> 00:54:07,200
+posso prendere queste coppie qua, tipo
+
+1075
+00:54:07,200 --> 00:54:11,040
+questa qui e avrò
+
+1076
+00:54:11,040 --> 00:54:17,960
+1 1. Poi posso prendere questa,
+
+1077
+00:54:21,040 --> 00:54:23,160
+avrò
+
+1078
+00:54:23,160 --> 00:54:24,839
+cancelletto.
+
+1079
+00:54:24,839 --> 00:54:28,640
+Cancelletto. E come potete vedere avremo
+
+1080
+00:54:28,640 --> 00:54:31,359
+che dopo aver agganciato questi pezzi di
+
+1081
+00:54:31,359 --> 00:54:35,119
+stringhe, la stringa proveniente da A ha
+
+1082
+00:54:35,119 --> 00:54:38,079
+ha la prima configurazione, mentre la
+
+1083
+00:54:38,079 --> 00:54:40,400
+stringa proveniente da B c'ha già due
+
+1084
+00:54:40,400 --> 00:54:43,160
+configurazioni.
+
+1085
+00:54:43,160 --> 00:54:47,119
+Andiamo a prendere quest'altro.
+
+1086
+00:54:49,319 --> 00:54:51,920
+Eh
+
+1087
+00:54:51,920 --> 00:54:54,920
+no, quella è su Q1, mi serve quella su
+
+1088
+00:54:54,920 --> 00:54:59,400
+Q2. Vediamo dov'è.
+
+1089
+00:55:04,319 --> 00:55:07,319
+Ok,
+
+1090
+00:55:07,400 --> 00:55:11,280
+scrive zero e va avanti. Questo qua.
+
+1091
+00:55:11,280 --> 00:55:15,480
+Questa qui, ad esempio,
+
+1092
+00:55:17,559 --> 00:55:19,760
+dov'è? Dov'è? Dov'è?
+
+1093
+00:55:19,760 --> 00:55:22,240
+legge 1, scrive zero e va avanti. Questo
+
+1094
+00:55:22,240 --> 00:55:26,440
+qua. Codifichiamo questo pezzo qua.
+
+1095
+00:55:26,440 --> 00:55:30,920
+Avremo qui una cosa di questo tipo.
+
+1096
+00:55:30,920 --> 00:55:37,520
+Tra le altre eh avremo Q2 1 e qua avremo
+
+1097
+00:55:37,520 --> 00:55:42,359
+0 Q1. Ok? Fra ce ne sono varie qui, eh,
+
+1098
+00:55:42,359 --> 00:55:43,960
+ce ne sono tante, non è solo questo.
+
+1099
+00:55:43,960 --> 00:55:47,359
+Quindi questo pezzo qua
+
+1100
+00:55:47,359 --> 00:55:51,880
+Q2 1 e 0 Q1 proviene dalla
+
+1101
+00:55:51,880 --> 00:55:56,280
+trasformazione di questa pezzo di
+
+1102
+00:55:56,280 --> 00:55:57,760
+funzione di transizione. Quindi, che
+
+1103
+00:55:57,760 --> 00:56:01,240
+cosa avrò qua?
+
+1104
+00:56:01,280 --> 00:56:03,480
+Qui inizia con uno. Allora, per
+
+1105
+00:56:03,480 --> 00:56:06,920
+estendere A con lo stesso simbolo che
+
+1106
+00:56:06,920 --> 00:56:09,119
+sta da quelli di B, devo usare questa
+
+1107
+00:56:09,119 --> 00:56:12,720
+qui, ad esempio, 1 e quindi c'avrò uno
+
+1108
+00:56:12,720 --> 00:56:15,640
+qua e uno qua. Da dove mi proviene? Mi
+
+1109
+00:56:15,640 --> 00:56:19,559
+proviene dalla scelta di questa coppia.
+
+1110
+00:56:19,559 --> 00:56:23,119
+Poi devo estendere qui con dei simboli
+
+1111
+00:56:23,119 --> 00:56:25,319
+che sono uguali a questi. Vado a
+
+1112
+00:56:25,319 --> 00:56:28,039
+pescarmeli. Chi sono? Questi qua? E se
+
+1113
+00:56:28,039 --> 00:56:29,720
+io mi prendo loro, io mi devo anche
+
+1114
+00:56:29,720 --> 00:56:33,319
+prendere questo pezzo qui. Quindi avrò
+
+1115
+00:56:33,319 --> 00:56:35,000
+Q2
+
+1116
+00:56:35,000 --> 00:56:36,839
+1
+
+1117
+00:56:36,839 --> 00:56:41,400
+qui, ma 0 Q1 qua, perché proviene da
+
+1118
+00:56:41,400 --> 00:56:43,960
+questo pezzo di B, no?
+
+1119
+00:56:43,960 --> 00:56:46,599
+Poi prendo un cancelletto e un altro
+
+1120
+00:56:46,599 --> 00:56:49,559
+cancelletto e di nuovo avrò che la
+
+1121
+00:56:49,559 --> 00:56:51,319
+lista,
+
+1122
+00:56:51,319 --> 00:56:53,319
+cioè la stringa provenente dalla lista
+
+1123
+00:56:53,319 --> 00:56:56,359
+A, mi avrà codificato alfa 1 e alfa 2,
+
+1124
+00:56:56,359 --> 00:56:59,559
+mentre su B avrò alfa 1, alfa 2 e alfa
+
+1125
+00:56:59,559 --> 00:57:02,559
+3.
+
+1126
+00:57:02,799 --> 00:57:05,119
+La questione è che l'organizzazione
+
+1127
+00:57:05,119 --> 00:57:09,200
+delle stringhe su A e B è fatta ad arte
+
+1128
+00:57:09,200 --> 00:57:12,039
+in maniera tale da
+
+1129
+00:57:12,039 --> 00:57:15,720
+procur da codificare i passi che la che
+
+1130
+00:57:15,720 --> 00:57:17,720
+la macchina di Touring fa da una
+
+1131
+00:57:17,720 --> 00:57:20,319
+configurazione all'altra. Ok? Non è che
+
+1132
+00:57:20,319 --> 00:57:23,039
+nella riduzione costruiamo pezzi di
+
+1133
+00:57:23,039 --> 00:57:26,760
+coppie, no, così a caso, no? mettiamo le
+
+1134
+00:57:26,760 --> 00:57:29,359
+coppie di stringhe che permettono
+
+1135
+00:57:29,359 --> 00:57:31,720
+nella ricostruzione delle stringhe
+
+1136
+00:57:31,720 --> 00:57:33,640
+provenienti da A e B, permettono di
+
+1137
+00:57:33,640 --> 00:57:35,359
+simulare il funzionamento di questa
+
+1138
+00:57:35,359 --> 00:57:38,359
+macchina, ok? Cioè i pezzi delle coppie
+
+1139
+00:57:38,359 --> 00:57:40,200
+di stringhe che stanno in A e che stanno
+
+1140
+00:57:40,200 --> 00:57:44,359
+in B stanno descrivendo cosa c'è nella
+
+1141
+00:57:44,359 --> 00:57:46,240
+configurazione alfa con i e che cosa
+
+1142
+00:57:46,240 --> 00:57:48,319
+deve avvenire nella configurazione alfa
+
+1143
+00:57:48,319 --> 00:57:53,480
+i + 1. Questa cosa va avanti avanti
+
+1144
+00:57:53,480 --> 00:57:56,920
+fino a quando raggiungeremo poi la una
+
+1145
+00:57:56,920 --> 00:57:59,079
+configurazione finale tale per cui
+
+1146
+00:57:59,079 --> 00:58:02,280
+possiamo utilizzare queste regole che,
+
+1147
+00:58:02,280 --> 00:58:04,680
+come vedete, sono più lunghe le stringhe
+
+1148
+00:58:04,680 --> 00:58:06,520
+provenenti da A che le lunghe che le
+
+1149
+00:58:06,520 --> 00:58:08,599
+stringhe provenenti da B, tale per cui a
+
+1150
+00:58:08,599 --> 00:58:10,920
+quel punto la stringa proveniente dalla
+
+1151
+00:58:10,920 --> 00:58:13,119
+lista A potrà raggiungere la stringa
+
+1152
+00:58:13,119 --> 00:58:17,200
+proveniente dalla lista B.
+
+1153
+00:58:18,000 --> 00:58:20,240
+Chiara l'intuizione?
+
+1154
+00:58:20,240 --> 00:58:24,000
+più o meno. Ok? L'intuizione è nelle
+
+1155
+00:58:24,000 --> 00:58:27,400
+stringhe delle liste A e B noi dobbiamo
+
+1156
+00:58:27,400 --> 00:58:31,079
+andare a mettere tutte le ipotetiche
+
+1157
+00:58:31,079 --> 00:58:33,520
+computazioni che la macchina M potrebbe
+
+1158
+00:58:33,520 --> 00:58:37,760
+fare sul W. Guardate che noi nelle nelle
+
+1159
+00:58:37,760 --> 00:58:40,799
+stringhe della lista A e della lista B
+
+1160
+00:58:40,799 --> 00:58:42,920
+non stiamo
+
+1161
+00:58:42,920 --> 00:58:45,799
+codificando la computazione di M su w
+
+1162
+00:58:45,799 --> 00:58:48,359
+perché altrimenti dovremmo simularla e
+
+1163
+00:58:48,359 --> 00:58:51,000
+se simulassimo m su w questa simulazione
+
+1164
+00:58:51,000 --> 00:58:53,799
+potrebbe non terminare mai. Nelle
+
+1165
+00:58:53,799 --> 00:58:56,480
+stringhe della lista A e della lista B
+
+1166
+00:58:56,480 --> 00:58:59,520
+stiamo mettendo pezzi di possibili
+
+1167
+00:58:59,520 --> 00:59:01,920
+computazioni prese da dove? dalla
+
+1168
+00:59:01,920 --> 00:59:05,079
+funzione di transizione. Diceva nel caso
+
+1169
+00:59:05,079 --> 00:59:07,440
+in cui, per esempio, questo qua che
+
+1170
+00:59:07,440 --> 00:59:09,280
+dice?
+
+1171
+00:59:09,280 --> 00:59:14,680
+Nel caso in cui Q fossimo in Q2 e
+
+1172
+00:59:14,680 --> 00:59:18,480
+leggessimo 1, allora dovremmo scrivere 0
+
+1173
+00:59:18,480 --> 00:59:21,000
+transiring 1 e andare avanti. Cioè
+
+1174
+00:59:21,000 --> 00:59:23,200
+queste coppie di stringhe codificano la
+
+1175
+00:59:23,200 --> 00:59:26,000
+funzione di transizione, non la
+
+1176
+00:59:26,000 --> 00:59:28,559
+computazione in sé. Cioè, non è che
+
+1177
+00:59:28,559 --> 00:59:32,880
+simuliamo M su W e poi costruiamo, no?
+
+1178
+00:59:32,880 --> 00:59:35,880
+Dentro A e B mettiamo tutti i casi che
+
+1179
+00:59:35,880 --> 00:59:39,119
+potrebbero accadere, però casi sensati,
+
+1180
+00:59:39,119 --> 00:59:40,880
+cioè cose che devono rispecchiare il
+
+1181
+00:59:40,880 --> 00:59:43,599
+funzionamento della macchina.
+Sì.
+
+1182
+00:59:43,599 --> 00:59:45,920
+Quindi, allora, nella prima classe,
+
+1183
+00:59:45,920 --> 00:59:47,920
+diciamo, è la forma di come avviene
+
+1184
+00:59:47,920 --> 00:59:49,960
+questa transizione.
+Sì.
+La seconda
+
+1185
+00:59:49,960 --> 00:59:51,599
+classe sono i simboli che si possono
+
+1186
+00:59:51,599 --> 00:59:53,720
+incontrare da una parte all'altra. La
+
+1187
+00:59:53,720 --> 00:59:57,440
+terza e la quarta sono eh
+La terza è la
+
+1188
+00:59:57,440 --> 01:00:00,720
+funzione di transizione
+e la quarta
+E la
+
+1189
+01:00:00,720 --> 01:00:03,440
+quarta è se entro in uno stato finale
+
+1190
+01:00:03,440 --> 01:00:05,720
+devo dare la possibilità alle stringhe
+
+1191
+01:00:05,720 --> 01:00:07,720
+di A di essere più lunghe delle stringhe
+
+1192
+01:00:07,720 --> 01:00:10,839
+di B in maniera tale da allungare la
+
+1193
+01:00:10,839 --> 01:00:12,599
+stringa proveniente da A di più di
+
+1194
+01:00:12,599 --> 01:00:14,680
+quanto si allunga la stringa proveniente
+
+1195
+01:00:14,680 --> 01:00:17,160
+da B e possono cacciare se la può
+
+1196
+01:00:17,160 --> 01:00:19,280
+raggiungere.
+Ma sia terza e quarta sono
+
+1197
+01:00:19,280 --> 01:00:20,880
+tutte le possibili mosse che possono
+
+1198
+01:00:20,880 --> 01:00:23,160
+essere svolte mediante la macchina. La
+
+1199
+01:00:23,160 --> 01:00:25,440
+terza sono tutte le possibili mosse che
+
+1200
+01:00:25,440 --> 01:00:27,640
+possono essere svolte dalla macchina. La
+
+1201
+01:00:27,640 --> 01:00:32,240
+quarta è sono regole inventate apposta.
+
+1202
+01:00:32,240 --> 01:00:34,760
+È come se la macchina cancellasse pezzi
+
+1203
+01:00:34,760 --> 01:00:37,119
+di input. In realtà non fa quello. Sono
+
+1204
+01:00:37,119 --> 01:00:39,039
+regole inventate apposta per permettere
+
+1205
+01:00:39,039 --> 01:00:40,920
+alle stringhe provenienti dalla lista A
+
+1206
+01:00:40,920 --> 01:00:43,799
+di raggiungere le stringhe provenenti
+
+1207
+01:00:43,799 --> 01:00:46,079
+dalla lista B perché so più lunghe, sono
+
+1208
+01:00:46,079 --> 01:00:49,039
+sempre state avanti.
+
+1209
+01:00:49,039 --> 01:00:52,319
+E la quinta invece? La quinta è la cosa
+
+1210
+01:00:52,319 --> 01:00:54,160
+di chiusura, perché praticamente che
+
+1211
+01:00:54,160 --> 01:00:56,599
+cosa succede? Se noi continuassimo a
+
+1212
+01:00:56,599 --> 01:01:01,680
+simulare qui, noi avremmo altri pezzi di
+
+1213
+01:01:01,680 --> 01:01:05,480
+stringhe qua e qua, fino a quando
+
+1214
+01:01:05,480 --> 01:01:07,559
+arriveremo a un punto in cui avremmo
+
+1215
+01:01:07,559 --> 01:01:11,680
+cancelletto Q3, cancelletto cancelletto
+
+1216
+01:01:11,680 --> 01:01:14,960
+e qui cancelletto Q3, cancelletto
+
+1217
+01:01:14,960 --> 01:01:17,960
+cancelletto.
+
+1218
+01:01:17,960 --> 01:01:20,599
+La quinta serve a chiudere il pattern.
+
+1219
+01:01:20,599 --> 01:01:23,880
+Tutto qua.
+
+1220
+01:01:25,160 --> 01:01:28,160
+Nulla. Allora, la cosa che è importante
+
+1221
+01:01:28,160 --> 01:01:32,119
+sottolineare è questa.
+
+1222
+01:01:32,280 --> 01:01:35,720
+La funzione f è una funzione che deve
+
+1223
+01:01:35,720 --> 01:01:38,119
+essere calcolabile, cioè è una funzione
+
+1224
+01:01:38,119 --> 01:01:41,079
+che ricevuto il suo input sputa l'output
+
+1225
+01:01:41,079 --> 01:01:43,440
+in tempo finito e lo sputa sempre, non è
+
+1226
+01:01:43,440 --> 01:01:46,359
+che si incastra da qualche parte e non
+
+1227
+01:01:46,359 --> 01:01:50,160
+ci dice no. Quindi la funzione fasforma
+
+1228
+01:01:50,160 --> 01:01:53,640
+la coppia Mw in due liste di stringhe A
+
+1229
+01:01:53,640 --> 01:01:57,799
+e B non è che può simulare M su w perché
+
+1230
+01:01:57,799 --> 01:02:00,640
+se inizia a simulare m su w e M non si
+
+1231
+01:02:00,640 --> 01:02:03,000
+arresta mai, la trasformazione non
+
+1232
+01:02:03,000 --> 01:02:05,240
+finirebbe mai.
+
+1233
+01:02:05,240 --> 01:02:08,200
+Quello che fa la funzione di riduzione è
+
+1234
+01:02:08,200 --> 01:02:11,799
+che prende la funzione di di transizione
+
+1235
+01:02:11,799 --> 01:02:15,480
+di f e la codifica in queste coppie di
+
+1236
+01:02:15,480 --> 01:02:18,039
+possibili computazioni che sono il
+
+1237
+01:02:18,039 --> 01:02:20,400
+numero finito. Sono i possibili passi
+
+1238
+01:02:20,400 --> 01:02:23,559
+che la macchina potrebbe mai fare.
+
+1239
+01:02:23,559 --> 01:02:25,680
+È quello il senso. Ok? E questo si può
+
+1240
+01:02:25,680 --> 01:02:29,359
+fare in tempo finito.
+
+1241
+01:02:30,160 --> 01:02:32,200
+È chiara l'intuizione? Poi se leggete
+
+1242
+01:02:32,200 --> 01:02:34,319
+sul vostro libro ci stanno tutti i
+
+1243
+01:02:34,319 --> 01:02:36,440
+dettagli, ve lo spiega anche un altro
+
+1244
+01:02:36,440 --> 01:02:38,760
+modo. Ok?
+
+1245
+01:02:38,760 --> 01:02:41,760
+Alrght
+
+1246
+01:02:42,960 --> 01:02:47,119
+ora dimostrare che
+
+1247
+01:02:47,680 --> 01:02:50,599
+questa è una riduzione da L a MPCP. Ok?
+
+1248
+01:02:50,599 --> 01:02:53,079
+Dobbiamo adesso dimostrare
+
+1249
+01:02:53,079 --> 01:02:56,680
+questa cosa qua.
+
+1250
+01:03:00,680 --> 01:03:02,559
+Ok. Perché fino a mo abbiamo dato una
+
+1251
+01:03:02,559 --> 01:03:04,799
+sola trasformazione. Quello che ora
+
+1252
+01:03:04,799 --> 01:03:06,520
+dobbiamo dimostrare è che questa
+
+1253
+01:03:06,520 --> 01:03:09,880
+trasformazione in effetti
+
+1254
+01:03:09,880 --> 01:03:12,160
+trasforma istanze sì di LU in istanze sì
+
+1255
+01:03:12,160 --> 01:03:15,599
+di MPCP e istanze no di LU in istanze no
+
+1256
+01:03:15,599 --> 01:03:17,960
+di MPCP.
+
+1257
+01:03:17,960 --> 01:03:20,279
+Primo pezzo della dimostrazione,
+
+1258
+01:03:20,279 --> 01:03:23,839
+dobbiamo dimostrare che se partiamo
+
+1259
+01:03:23,839 --> 01:03:28,279
+da un'istanza s di Lu, allora il
+
+1260
+01:03:28,279 --> 01:03:32,319
+trasformato della coppia MW è una coppia
+
+1261
+01:03:32,319 --> 01:03:35,440
+di liste di stringhe AB tale per cui
+
+1262
+01:03:35,440 --> 01:03:40,520
+ammetto una soluzione secondo MPCP.
+
+1263
+01:03:40,680 --> 01:03:43,319
+Ok? La dimostrazione sta sostanzialmente
+
+1264
+01:03:43,319 --> 01:03:45,279
+nella costruzione. La costruzione che
+
+1265
+01:03:45,279 --> 01:03:47,920
+abbiamo mostrato è una costruzione che
+
+1266
+01:03:47,920 --> 01:03:50,000
+permette di simulare il funzionamento
+
+1267
+01:03:50,000 --> 01:03:52,920
+della macchina M su W tramite la
+
+1268
+01:03:52,920 --> 01:03:54,480
+concatenazione di stringhe che
+
+1269
+01:03:54,480 --> 01:03:56,520
+descrivono le configurazioni che la
+
+1270
+01:03:56,520 --> 01:03:59,279
+macchina attraversa di passo in passo.
+
+1271
+01:03:59,279 --> 01:04:03,799
+Ok? Se la macchina M
+
+1272
+01:04:03,799 --> 01:04:06,640
+accetta W,
+
+1273
+01:04:06,640 --> 01:04:07,920
+ok?
+
+1274
+01:04:07,920 --> 01:04:10,760
+La la stringa, la sequenza di indici che
+
+1275
+01:04:10,760 --> 01:04:12,680
+possiamo costruire per la soluzione di
+
+1276
+01:04:12,680 --> 01:04:15,240
+MPCP ovviamente parte della prima coppia
+
+1277
+01:04:15,240 --> 01:04:20,359
+in cui abbiamo h * A e poi HQ0 WH e
+
+1278
+01:04:20,359 --> 01:04:23,559
+quindi partiamo da quella. Dopodiché
+
+1279
+01:04:23,559 --> 01:04:29,119
+abbiamo regole di questa classe qua
+
+1280
+01:04:29,119 --> 01:04:32,839
+che ci permettono di ricopiare i pezzi
+
+1281
+01:04:32,839 --> 01:04:35,760
+della configurazione distanti dalla
+
+1282
+01:04:35,760 --> 01:04:37,520
+testina.
+
+1283
+01:04:37,520 --> 01:04:40,839
+Mentre queste regole qua, queste coppie
+
+1284
+01:04:40,839 --> 01:04:44,160
+qui ci permettono di allungare le
+
+1285
+01:04:44,160 --> 01:04:46,520
+stringhe per le porzioni di
+
+1286
+01:04:46,520 --> 01:04:48,680
+configurazioni che stanno nell'intorno
+
+1287
+01:04:48,680 --> 01:04:51,319
+della testina e quindi di simulare il
+
+1288
+01:04:51,319 --> 01:04:53,960
+comportamento della macchina. Quindi, se
+
+1289
+01:04:53,960 --> 01:04:56,640
+m accetta w noi saremo in grado di
+
+1290
+01:04:56,640 --> 01:04:59,160
+concatenare pezzi di stringhe fino ad
+
+1291
+01:04:59,160 --> 01:05:01,559
+arrivare al momento in cui in queste
+
+1292
+01:05:01,559 --> 01:05:05,920
+configurazioni apparirà lo stato finale.
+
+1293
+01:05:05,920 --> 01:05:08,319
+Se appare lo stato finale, noi potremo
+
+1294
+01:05:08,319 --> 01:05:10,640
+poi andare a usare coppie di questo
+
+1295
+01:05:10,640 --> 01:05:13,720
+tipo, nel quale le coppie di A sono più
+
+1296
+01:05:13,720 --> 01:05:15,799
+lunghe, cioè la stringa della lista A è
+
+1297
+01:05:15,799 --> 01:05:17,359
+più lunga delle stringhe proveniente
+
+1298
+01:05:17,359 --> 01:05:20,200
+dalla lista B e permettiamo alla stringa
+
+1299
+01:05:20,200 --> 01:05:23,160
+proveniente da A di raggiungere
+
+1300
+01:05:23,160 --> 01:05:25,240
+la stringa proveniente dalla lista B,
+
+1301
+01:05:25,240 --> 01:05:28,160
+fino a quando, come ultima coppia,
+
+1302
+01:05:28,160 --> 01:05:30,359
+possiamo usare questa qui che ci
+
+1303
+01:05:30,359 --> 01:05:32,799
+permette di matchare le due stringhe,
+
+1304
+01:05:32,799 --> 01:05:35,240
+ok? Perché? Perché la la macchina M m
+
+1305
+01:05:35,240 --> 01:05:38,200
+mentre processo la W arriverà a un certo
+
+1306
+01:05:38,200 --> 01:05:41,640
+momento in uno stato accettabile.
+
+1307
+01:05:41,640 --> 01:05:43,200
+È chiaro?
+
+1308
+01:05:43,200 --> 01:05:47,480
+Quindi M processa W. Noi possiamo
+
+1309
+01:05:47,480 --> 01:05:49,839
+appiccicare, impivare le stringhe
+
+1310
+01:05:49,839 --> 01:05:52,240
+provenienti da A e proveniente da B
+
+1311
+01:05:52,240 --> 01:05:55,760
+secondo la computazione di MV fino a
+
+1312
+01:05:55,760 --> 01:05:59,440
+quando M arrivi a uno stato accettante.
+
+1313
+01:05:59,440 --> 01:06:03,359
+Dopodiché le classi di coppie 4 e 5 ci
+
+1314
+01:06:03,359 --> 01:06:05,680
+permetteranno di
+
+1315
+01:06:05,680 --> 01:06:07,559
+avere le stringhe che provengono da A,
+
+1316
+01:06:07,559 --> 01:06:09,039
+di raggiungere le stringhe che
+
+1317
+01:06:09,039 --> 01:06:11,960
+provengono da B. Tutto qua. Ok? Quindi
+
+1318
+01:06:11,960 --> 01:06:14,640
+con questo dimostriamo che se partiamo
+
+1319
+01:06:14,640 --> 01:06:18,000
+da un'istanza C di LU stiamo costruendo
+
+1320
+01:06:18,000 --> 01:06:21,720
+il trasformato della coppia MW e
+
+1321
+01:06:21,720 --> 01:06:24,720
+un'istanza s del problema MPCP.
+
+1322
+01:06:24,720 --> 01:06:26,279
+Ok?
+
+1323
+01:06:26,279 --> 01:06:29,480
+Altro verso della riduzione della della
+
+1324
+01:06:29,480 --> 01:06:31,920
+prova. Ok? Supponiamo che la riduzione
+
+1325
+01:06:31,920 --> 01:06:35,480
+ci abbia costruito un'istanza sì di
+
+1326
+01:06:35,480 --> 01:06:37,760
+MPCP. Dobbiamo adesso dimostrare che
+
+1327
+01:06:37,760 --> 01:06:41,200
+stavamo partendo da un'istanza Sì di Lu.
+
+1328
+01:06:41,200 --> 01:06:43,319
+Allora, se siamo arrivati a un'istanza
+
+1329
+01:06:43,319 --> 01:06:45,839
+sì di MPCP, l'istanza sì che abbiamo
+
+1330
+01:06:45,839 --> 01:06:47,839
+costruito non è che è un'istanza a caso,
+
+1331
+01:06:47,839 --> 01:06:51,640
+è un'istanza che ha questa forma.
+
+1332
+01:06:51,640 --> 01:06:54,920
+Ok? Quindi una possibile soluzione dovrà
+
+1333
+01:06:54,920 --> 01:06:59,000
+partire per forza con questa coppia di
+
+1334
+01:06:59,000 --> 01:07:01,960
+stringhe che inizierà a far partire la
+
+1335
+01:07:01,960 --> 01:07:04,200
+simulazione della macchina sulla stringa
+
+1336
+01:07:04,200 --> 01:07:07,440
+input. Adesso, poiché le coppie di
+
+1337
+01:07:07,440 --> 01:07:09,520
+stringhe ce le siamo inventate apposta
+
+1338
+01:07:09,520 --> 01:07:11,400
+per simulare il funzionamento della
+
+1339
+01:07:11,400 --> 01:07:14,559
+macchina, se riusciamo a costruire delle
+
+1340
+01:07:14,559 --> 01:07:16,760
+stringhe che quando si estendono
+
+1341
+01:07:16,760 --> 01:07:19,559
+arrivano a costruire la stessa cosa è
+
+1342
+01:07:19,559 --> 01:07:21,119
+perché a un certo punto avremmo
+
+1343
+01:07:21,119 --> 01:07:24,880
+utilizzato coppie della classe 4 e 5. Di
+
+1344
+01:07:24,880 --> 01:07:27,440
+conseguenza, nella simulazione della
+
+1345
+01:07:27,440 --> 01:07:29,240
+macchina, sta macchina deve arrivare a
+
+1346
+01:07:29,240 --> 01:07:31,599
+un certo punto ad accettare nello stato
+
+1347
+01:07:31,599 --> 01:07:35,200
+accettante da cui l'istanza di partenza
+
+1348
+01:07:35,200 --> 01:07:37,520
+di LU da cui partivamo era un'istanza
+
+1349
+01:07:37,520 --> 01:07:40,520
+semplice.
+
+1350
+01:07:41,079 --> 01:07:42,880
+È chiaro?
+
+1351
+01:07:42,880 --> 01:07:45,839
+Questo dimostra, capisco che è tosta,
+
+1352
+01:07:45,839 --> 01:07:47,160
+eh?
+
+1353
+01:07:47,160 --> 01:07:49,279
+Questo serve un po' di tempo, poi dovete
+
+1354
+01:07:49,279 --> 01:07:51,039
+riguardarvela,
+
+1355
+01:07:51,039 --> 01:07:52,640
+soprattutto sul libro perché vi dà
+
+1356
+01:07:52,640 --> 01:07:54,599
+ulteriori dettagli e serve tempo per
+
+1357
+01:07:54,599 --> 01:07:57,520
+capire. Ok? Questa cosa cosa dimostra?
+
+1358
+01:07:57,520 --> 01:08:00,920
+Dimostra che
+
+1359
+01:08:00,920 --> 01:08:02,839
+dimostra che ci ho messo molto più tempo
+
+1360
+01:08:02,839 --> 01:08:05,119
+del del previsto e quindi il secondo
+
+1361
+01:08:05,119 --> 01:08:08,079
+problema non so come lo facendere. Ok?
+
+1362
+01:08:08,079 --> 01:08:10,079
+In caso spostiamo la prossima lezione.
+
+1363
+01:08:10,079 --> 01:08:12,039
+Allora, che cosa dimostra? dimostra che
+
+1364
+01:08:12,039 --> 01:08:13,640
+nu
+
+1365
+01:08:13,640 --> 01:08:17,440
+si riduce a MPCP
+
+1366
+01:08:17,440 --> 01:08:22,319
+da cui MPCP non è un problema ricorsivo,
+
+1367
+01:08:22,319 --> 01:08:25,239
+non è un problema di R. Sì, prego.
+
+1368
+01:08:25,239 --> 01:08:27,239
+Scusi, quindi la dimostrazione noi la
+
+1369
+01:08:27,239 --> 01:08:31,520
+facciamo solo per, diciamo, i casi
+
+1370
+01:08:31,520 --> 01:08:33,640
+positivi,
+
+1371
+01:08:33,640 --> 01:08:36,560
+no? Per i casi positivi. Ok.
+
+1372
+01:08:36,560 --> 01:08:39,159
+Perché, cioè da da un lato e dall'altro
+
+1373
+01:08:39,159 --> 01:08:42,480
+con i positivi,
+sì,
+i negativi ancora
+
+1374
+01:08:42,480 --> 01:08:46,000
+non abbiamo fatto.
+Eh, attenzione, nel
+
+1375
+01:08:46,000 --> 01:08:49,400
+momento in cui nel momento in cui
+
+1376
+01:08:49,400 --> 01:08:51,799
+abbiamo dimostrato, è una questione di
+
+1377
+01:08:51,799 --> 01:08:54,239
+equivalenza logica, no? Se abbiamo
+
+1378
+01:08:54,239 --> 01:08:58,239
+dimostrato che la funzione ha generato
+
+1379
+01:08:58,239 --> 01:09:01,199
+un'istanza sì perché stava partendo da
+
+1380
+01:09:01,199 --> 01:09:05,159
+unistanza sì, questo è logicamente
+
+1381
+01:09:05,159 --> 01:09:07,719
+equivalente a dimostrare che se partiamo
+
+1382
+01:09:07,719 --> 01:09:11,719
+da no produciamo no. Ok?
+
+1383
+01:09:11,719 --> 01:09:13,159
+È una questione di riscrittura
+
+1384
+01:09:13,159 --> 01:09:15,520
+dell'implicazione logica. Se lei prende
+
+1385
+01:09:15,520 --> 01:09:20,239
+a eh no, x implica y che è uguale al not
+
+1386
+01:09:20,239 --> 01:09:24,040
+y, questa cosa la può riscrivere come
+
+1387
+01:09:24,040 --> 01:09:27,199
+not y implica not, cioè lei prende il
+
+1388
+01:09:27,199 --> 01:09:29,920
+converso, ci mette il not davanti è la
+
+1389
+01:09:29,920 --> 01:09:32,759
+stessa cosa. Ok? L'importante
+
+1390
+01:09:32,759 --> 01:09:34,560
+è che venga fatta in tutti e due i
+
+1391
+01:09:34,560 --> 01:09:36,719
+versi. Ok? Adesso la cosa interessante
+
+1392
+01:09:36,719 --> 01:09:38,640
+da notare qual è? è che noi abbiamo
+
+1393
+01:09:38,640 --> 01:09:43,120
+dimostrato l'indecedibilità di MPCP
+
+1394
+01:09:43,120 --> 01:09:46,279
+senza fare dimostrazioni strane
+
+1395
+01:09:46,279 --> 01:09:48,799
+dell'inesistenza di macchine eccetera.
+
+1396
+01:09:48,799 --> 01:09:50,960
+Abbiamo preso un problema indecidibile
+
+1397
+01:09:50,960 --> 01:09:52,960
+che è nuato
+
+1398
+01:09:52,960 --> 01:09:54,800
+che le sue istanze sì possono essere
+
+1399
+01:09:54,800 --> 01:09:57,760
+mappate su istanze sì del problema PCP e
+
+1400
+01:09:57,760 --> 01:09:59,960
+che le istanze no del problema L possono
+
+1401
+01:09:59,960 --> 01:10:02,520
+essere mappate su istanze no di L di di
+
+1402
+01:10:02,520 --> 01:10:07,080
+MPCP. Da per questa ragione siccome MPCP
+
+1403
+01:10:07,080 --> 01:10:11,360
+mostra una struttura simile a LU deve
+
+1404
+01:10:11,360 --> 01:10:12,840
+essere per forza indecidibile,
+
+1405
+01:10:12,840 --> 01:10:15,520
+altrimenti potremmo risolvere LU tramite
+
+1406
+01:10:15,520 --> 01:10:19,560
+un risolutore di MPCP. Ok? Quindi cosa
+
+1407
+01:10:19,560 --> 01:10:23,120
+ci dice questo? Che MPCP è in R, perché
+
+1408
+01:10:23,120 --> 01:10:24,800
+l'abbiamo visto prima, basta cheare una
+
+1409
+01:10:24,800 --> 01:10:28,199
+soluzione, però non sta in R, cioè non
+
+1410
+01:10:28,199 --> 01:10:31,719
+avremo mai un algoritmo che in tempo
+
+1411
+01:10:31,719 --> 01:10:34,600
+finito è in grado di dirci no, questa
+
+1412
+01:10:34,600 --> 01:10:38,800
+istanza non ha una soluzione.
+
+1413
+01:10:39,239 --> 01:10:42,239
+Chiaro?
+
+1414
+01:10:48,000 --> 01:10:51,239
+M ok,
+
+1415
+01:10:51,239 --> 01:10:54,880
+ci manca un pezzo.
+
+1416
+01:10:56,480 --> 01:10:58,760
+No, è inutile farlo di corsa. Facciamo
+
+1417
+01:10:58,760 --> 01:11:01,719
+un po' di pausa e il secondo problema lo
+
+1418
+01:11:01,719 --> 01:11:03,719
+vediamo la prossima volta. Allora,
+
+1419
+01:11:03,719 --> 01:11:06,560
+facciamo un dai 5 minuti di pausa e
+
+1420
+01:11:06,560 --> 01:11:08,640
+cecchiamo.
+
+1421
+01:11:08,640 --> 01:11:11,640
+510.
+
+1422
+01:11:18,640 --> 01:11:21,640
+Ok.
+
+1423
+01:11:24,000 --> 01:11:25,679
+Allora, cosa abbiamo visto nella prima
+
+1424
+01:11:25,679 --> 01:11:27,719
+metà della lezione? Un po' più di metà,
+
+1425
+01:11:27,719 --> 01:11:30,120
+diciamo, abbiamo visto che il problema
+
+1426
+01:11:30,120 --> 01:11:34,880
+LU si riduce a MPCP. Ok, la riduzione
+
+1427
+01:11:34,880 --> 01:11:38,040
+intricata, lo so benissimo
+
+1428
+01:11:38,040 --> 01:11:40,840
+questa altre saranno intricate. Il
+
+1429
+01:11:40,840 --> 01:11:42,679
+teorema di Cook sarà una cosa
+
+1430
+01:11:42,679 --> 01:11:44,679
+impossibile che è veramente enorme.
+
+1431
+01:11:44,679 --> 01:11:47,600
+Cioè, ci sono alcune dimostrazioni che
+
+1432
+01:11:47,600 --> 01:11:50,560
+sono veramente toste. Questa è una di
+
+1433
+01:11:50,560 --> 01:11:53,239
+quelle, ok? Ma non perché una volta che
+
+1434
+01:11:53,239 --> 01:11:55,520
+capite il principio che ci sta dietro,
+
+1435
+01:11:55,520 --> 01:11:58,320
+non è che è intrigata, è lunga. Questa è
+
+1436
+01:11:58,320 --> 01:12:00,120
+la cosa. Si deve capire che dietro ci
+
+1437
+01:12:00,120 --> 01:12:03,120
+sta il principio che io estendo, cioè mi
+
+1438
+01:12:03,120 --> 01:12:05,120
+costruisco le coppie di stringhe sulla
+
+1439
+01:12:05,120 --> 01:12:07,159
+lista A e sulla lista B, in maniera tale
+
+1440
+01:12:07,159 --> 01:12:10,239
+da far sì che quando vado ad appiccicare
+
+1441
+01:12:10,239 --> 01:12:13,000
+pezzi di stringhe sono costretto a
+
+1442
+01:12:13,000 --> 01:12:15,320
+simulare il funzionamento di m su w.
+
+1443
+01:12:15,320 --> 01:12:16,960
+Quella è la è la ragione che ci sta
+
+1444
+01:12:16,960 --> 01:12:20,320
+dietro. Tutto qua. Ok? Poi è lunga
+
+1445
+01:12:20,320 --> 01:12:23,159
+perché è fatta di tanti pezzi. Questa è
+
+1446
+01:12:23,159 --> 01:12:26,440
+la cosa, cioè non è difficile di per sé.
+
+1447
+01:12:26,440 --> 01:12:27,960
+Ok?
+
+1448
+01:12:27,960 --> 01:12:29,639
+Quindi prima cosa abbiamo visto? Abbiamo
+
+1449
+01:12:29,639 --> 01:12:35,679
+visto che LU si riduce a MPCP, però MPCP
+
+1450
+01:12:35,679 --> 01:12:39,000
+non è il problema iniziale, ok? Perché
+
+1451
+01:12:39,000 --> 01:12:41,239
+MPCP? A che ci serviva la riduzione da
+
+1452
+01:12:41,239 --> 01:12:44,600
+LU a MPCP? Perché MPCP
+
+1453
+01:12:44,600 --> 01:12:46,679
+imponendo che la soluzione deve partire
+
+1454
+01:12:46,679 --> 01:12:50,280
+dalla coppia di indice 1 impone che
+
+1455
+01:12:50,280 --> 01:12:52,560
+dobbiamo costruire quando iniziamo a
+
+1456
+01:12:52,560 --> 01:12:54,880
+costruire le stringhe siamo ci viene
+
+1457
+01:12:54,880 --> 01:12:57,520
+imposto che iniziamo a simulare m su w.
+
+1458
+01:12:57,520 --> 01:13:00,280
+Quello è sostanzialmente il trucco, ok?
+
+1459
+01:13:00,280 --> 01:13:02,719
+Però la riduzione ci dimostra quindi che
+
+1460
+01:13:02,719 --> 01:13:05,639
+MPCP è indecidibile.
+
+1461
+01:13:05,639 --> 01:13:08,440
+Come facciamo a dimostrare che PCP è
+
+1462
+01:13:08,440 --> 01:13:10,520
+indecidibile? Lo facciamo facendo
+
+1463
+01:13:10,520 --> 01:13:13,000
+un'altra riduzione
+
+1464
+01:13:13,000 --> 01:13:15,199
+da MPCP
+
+1465
+01:13:15,199 --> 01:13:18,120
+a PCP. Ok?
+
+1466
+01:13:18,120 --> 01:13:21,239
+Dobbiamo fare questa seconda riduzione e
+
+1467
+01:13:21,239 --> 01:13:23,280
+siccome MPCP
+
+1468
+01:13:23,280 --> 01:13:24,800
+l'abbiamo appena dimostrato
+
+1469
+01:13:24,800 --> 01:13:27,040
+indecidibile, anche PCP sarà
+
+1470
+01:13:27,040 --> 01:13:29,880
+indecidibile. Ok?
+
+1471
+01:13:29,880 --> 01:13:34,560
+Che cos'è un'istanza per MPCP?
+
+1472
+01:13:35,320 --> 01:13:39,480
+una coppia.
+Una coppia di
+
+1473
+01:13:41,320 --> 01:13:44,679
+cos'è unistanza per PCP?
+
+1474
+01:13:44,679 --> 01:13:49,280
+Un'altra coppia di list. Ok?
+
+1475
+01:13:50,520 --> 01:13:52,440
+Quindi dobbiamo inventarci una
+
+1476
+01:13:52,440 --> 01:13:55,320
+trasformazione fra le coppie di liste A
+
+1477
+01:13:55,320 --> 01:13:58,360
+e B in coppie di liste C e D tale per
+
+1478
+01:13:58,360 --> 01:14:02,199
+cui A e B è un'istanza s di MPCP. Se è
+
+1479
+01:14:02,199 --> 01:14:06,280
+solo se CD è un'istanza sì di PCP. Ok?
+
+1480
+01:14:06,280 --> 01:14:08,600
+Vi ricordo che l'unica differenza è che
+
+1481
+01:14:08,600 --> 01:14:12,480
+le soluzioni per MPCP richiedono
+
+1482
+01:14:12,480 --> 01:14:14,719
+che la soluzione parta dalla coppia
+
+1483
+01:14:14,719 --> 01:14:17,960
+all'indice 1, mentre per PCP questo
+
+1484
+01:14:17,960 --> 01:14:20,000
+vincolo non è richiesto. Qualsiasi
+
+1485
+01:14:20,000 --> 01:14:24,239
+sequenza di indici va benissimo. Ok?
+
+1486
+01:14:24,239 --> 01:14:27,040
+Allora, la riduzione è questa. Ve lo
+
+1487
+01:14:27,040 --> 01:14:29,719
+faccio su un esempio specifico e così ve
+
+1488
+01:14:29,719 --> 01:14:33,239
+la faccio capire. Ok?
+
+1489
+01:14:34,400 --> 01:14:37,120
+Supponiamo di avere la stessa lista che
+
+1490
+01:14:37,120 --> 01:14:40,880
+abbiamo visto all'inizio, ok?
+
+1491
+01:14:40,880 --> 01:14:45,320
+Come esempio 1 1 1
+
+1492
+01:14:45,320 --> 01:14:47,920
+poi abbiamo 1
+
+1493
+01:14:47,920 --> 01:14:49,679
+1
+
+1494
+01:14:49,679 --> 01:14:54,679
+e qui c'era uno 0 e poi ci sta 1 0 e 0.
+
+1495
+01:14:54,679 --> 01:14:57,679
+Ok?
+
+1496
+01:14:57,880 --> 01:15:01,960
+Da questa dobbiamo ottenere CD. Ok?
+
+1497
+01:15:01,960 --> 01:15:04,280
+Quindi che fa questa coppia? Questa
+
+1498
+01:15:04,280 --> 01:15:06,560
+funzione di transizione? Prende la
+
+1499
+01:15:06,560 --> 01:15:09,040
+coppia di liste A e B con le sue
+
+1500
+01:15:09,040 --> 01:15:14,199
+stringhe al suo interno. Ok? Sputa fuori
+
+1501
+01:15:14,199 --> 01:15:17,239
+due liste di stringhe che chiamiamo C e
+
+1502
+01:15:17,239 --> 01:15:20,360
+D solamente per distinguerla in cui le
+
+1503
+01:15:20,360 --> 01:15:23,880
+coppie di stringhe che fanno parte di C
+
+1504
+01:15:23,880 --> 01:15:27,679
+e D provengono dalle coppie di stringhe
+
+1505
+01:15:27,679 --> 01:15:30,159
+che che stavano in A e B. Quindi
+
+1506
+01:15:30,159 --> 01:15:32,880
+prendiamo quelle, le modifichiamo un
+
+1507
+01:15:32,880 --> 01:15:35,800
+pochettino in maniera tale da ottenere
+
+1508
+01:15:35,800 --> 01:15:37,880
+la riduzione
+
+1509
+01:15:37,880 --> 01:15:41,960
+e funziona così.
+
+1510
+01:15:42,639 --> 01:15:45,080
+Per ognuna
+
+1511
+01:15:45,080 --> 01:15:50,440
+delle stringhe provenienti da A,
+
+1512
+01:15:50,440 --> 01:15:55,520
+mettiamo una stringa in C in cui ogni
+
+1513
+01:15:55,520 --> 01:15:59,040
+simbolo della stringa di partenza viene
+
+1514
+01:15:59,040 --> 01:16:02,400
+seguito da un asterisco. Che significa,
+
+1515
+01:16:02,400 --> 01:16:04,239
+per esempio, supponiamo di star
+
+1516
+01:16:04,239 --> 01:16:09,960
+trasformando questa, quindi qui avremo
+
+1517
+01:16:10,560 --> 01:16:12,679
+1
+
+1518
+01:16:12,679 --> 01:16:15,040
+asterisco.
+
+1519
+01:16:15,040 --> 01:16:17,280
+Supponiamo di trasformare la seconda,
+
+1520
+01:16:17,280 --> 01:16:21,320
+quindi avremo 1 asterisco, 0 asterisco,
+
+1521
+01:16:21,320 --> 01:16:25,520
+1 asterisco, 1 asterisco, 1 asterisco.
+
+1522
+01:16:25,520 --> 01:16:28,280
+Ok? Cioè l'asterisco è un nuovo simbolo
+
+1523
+01:16:28,280 --> 01:16:30,840
+che aggiungiamo. Quando prendiamo le
+
+1524
+01:16:30,840 --> 01:16:32,960
+stringhe proveniente da A, le prendiamo
+
+1525
+01:16:32,960 --> 01:16:34,760
+e le ricopiamo in questo modo. Prendiamo
+
+1526
+01:16:34,760 --> 01:16:36,520
+il un simbolo e ci appiccichiamo
+
+1527
+01:16:36,520 --> 01:16:38,159
+asterisco, un altro simbolo, ci mettiamo
+
+1528
+01:16:38,159 --> 01:16:40,360
+un asterisco. Ok? Facciamo sempre così.
+
+1529
+01:16:40,360 --> 01:16:44,080
+Questa qua diventa 1 asterisco 0
+
+1530
+01:16:44,080 --> 01:16:48,000
+asterisco. Ok?
+
+1531
+01:16:48,000 --> 01:16:52,400
+Chiaro? Molto semplice.
+
+1532
+01:16:52,440 --> 01:16:57,760
+Le le stringhe proveniente da B
+
+1533
+01:16:57,760 --> 01:17:02,239
+vengono trasformate in stringhe di D in
+
+1534
+01:17:02,239 --> 01:17:04,400
+un modo simile
+
+1535
+01:17:04,400 --> 01:17:07,040
+nel quale l'asterisco,
+
+1536
+01:17:07,040 --> 01:17:10,120
+invece di seguire il simbolo
+
+1537
+01:17:10,120 --> 01:17:13,520
+lo precede. Quindi avremo
+
+1538
+01:17:13,520 --> 01:17:18,800
+asterisco 1, asterisco 1, asterisco 1,
+
+1539
+01:17:18,800 --> 01:17:22,880
+poi qui avremo asterisco 1, asterisco 0
+
+1540
+01:17:22,880 --> 01:17:28,199
+e poi avremo asterisco 0.
+
+1541
+01:17:28,280 --> 01:17:30,560
+Ok? Cioè, facciamo sto trucchetto.
+
+1542
+01:17:30,560 --> 01:17:33,080
+Prendiamo le stringhe da A e mettiamo
+
+1543
+01:17:33,080 --> 01:17:35,840
+dopo i simboli un asterisco. Prendiamo
+
+1544
+01:17:35,840 --> 01:17:38,520
+le stringhe da B e mettiamo prima dei
+
+1545
+01:17:38,520 --> 01:17:42,080
+simboli un asterisco. Ok?
+
+1546
+01:17:42,080 --> 01:17:44,960
+Come potete vedere al allo stato attuale
+
+1547
+01:17:44,960 --> 01:17:47,199
+della trasformazione
+
+1548
+01:17:47,199 --> 01:17:51,760
+la l'istanza CD non ammetterà mai una
+
+1549
+01:17:51,760 --> 01:17:54,920
+soluzione perché tutte le stringhe della
+
+1550
+01:17:54,920 --> 01:17:57,400
+lista C partono con un simbolo diverso
+
+1551
+01:17:57,400 --> 01:18:00,560
+dalle stringhe della lista D. Ok? Quindi
+
+1552
+01:18:00,560 --> 01:18:02,480
+la riduzione non è ancora finita,
+
+1553
+01:18:02,480 --> 01:18:05,320
+dobbiamo aggiungerci dei pezzi.
+
+1554
+01:18:05,320 --> 01:18:08,199
+Allora, il pezzo aggiuntivo
+
+1555
+01:18:08,199 --> 01:18:11,800
+è che in C
+
+1556
+01:18:11,800 --> 01:18:15,159
+prendiamo questa stringa qui che era
+
+1557
+01:18:15,159 --> 01:18:17,840
+quella proveniente dalla prima coppia e
+
+1558
+01:18:17,840 --> 01:18:20,679
+ne facciamo un'altra copia fatta così.
+
+1559
+01:18:20,679 --> 01:18:23,440
+Mettiamo un asterisco all'inizio e poi
+
+1560
+01:18:23,440 --> 01:18:26,320
+la ricopriamo. Uno asterisco.
+
+1561
+01:18:26,320 --> 01:18:29,320
+Ok?
+
+1562
+01:18:30,560 --> 01:18:34,320
+per D. Invece questa qua è semplicemente
+
+1563
+01:18:34,320 --> 01:18:39,719
+questa ricopiata, quindi avremo
+
+1564
+01:18:39,719 --> 01:18:44,960
+asterisco 1, asterisco 1, asterisco 1.
+
+1565
+01:18:44,960 --> 01:18:47,960
+Ok?
+
+1566
+01:18:50,679 --> 01:18:53,360
+Vi faccio notare ancora
+
+1567
+01:18:53,360 --> 01:18:56,120
+che così come è fatta l'istanza CD
+
+1568
+01:18:56,120 --> 01:18:59,239
+ancora non ammette soluzione
+
+1569
+01:18:59,239 --> 01:19:00,800
+perché
+
+1570
+01:19:00,800 --> 01:19:02,639
+la stringa che noi siamo in grado di
+
+1571
+01:19:02,639 --> 01:19:06,320
+costruire partendo dalla lista C termina
+
+1572
+01:19:06,320 --> 01:19:09,280
+con un asterisco, mentre le stringhe che
+
+1573
+01:19:09,280 --> 01:19:11,159
+la stringa proveniente dalla
+
+1574
+01:19:11,159 --> 01:19:14,280
+concatenazione di stringhe della lista D
+
+1575
+01:19:14,280 --> 01:19:15,800
+termina con un simbolo diverso
+
+1576
+01:19:15,800 --> 01:19:18,560
+dall'asterisco. Ok? Quindi questa ancora
+
+1577
+01:19:18,560 --> 01:19:21,320
+è un'istanza no. Ci dobbiamo aggiungere
+
+1578
+01:19:21,320 --> 01:19:23,800
+un pezzello.
+
+1579
+01:19:23,800 --> 01:19:27,239
+Mettiamo il simbolo dollaro come ultima
+
+1580
+01:19:27,239 --> 01:19:31,440
+stringa e il simbolo asterisco dollaro a
+
+1581
+01:19:31,440 --> 01:19:36,000
+come ultima stringa. Ok?
+
+1582
+01:19:38,800 --> 01:19:42,760
+Chiaro? Quindi la trasformazione che fa?
+
+1583
+01:19:42,760 --> 01:19:44,520
+Questo deve essere chiaro, eh? La
+
+1584
+01:19:44,520 --> 01:19:47,040
+trasformazione non è che si occupa di
+
+1585
+01:19:47,040 --> 01:19:50,840
+stabilire se l'istanza AB è un'istanza
+
+1586
+01:19:50,840 --> 01:19:54,360
+sì. Perché non possiamo farlo? Perché il
+
+1587
+01:19:54,360 --> 01:19:56,560
+problema MPCP è un problema
+
+1588
+01:19:56,560 --> 01:19:59,560
+indecidibile. Quindi se noi volessimo
+
+1589
+01:19:59,560 --> 01:20:02,520
+mai, fin da principio stabilire se
+
+1590
+01:20:02,520 --> 01:20:04,560
+l'istanza che abbiamo che stiamo
+
+1591
+01:20:04,560 --> 01:20:07,080
+trasformando è un'istanza sì per poter
+
+1592
+01:20:07,080 --> 01:20:09,520
+sputare in output un'istanza sì, questa
+
+1593
+01:20:09,520 --> 01:20:11,560
+cosa non la si può fare in tempo
+
+1594
+01:20:11,560 --> 01:20:13,760
+garantito essere finito perché il
+
+1595
+01:20:13,760 --> 01:20:15,639
+problema MPCP sappiamo non essere
+
+1596
+01:20:15,639 --> 01:20:17,960
+ricorsivo. Quindi la funzione che
+
+1597
+01:20:17,960 --> 01:20:21,280
+trasforma le liste A e B in liste C e D
+
+1598
+01:20:21,280 --> 01:20:26,199
+non si dovrà mai chiedere se la liste A
+
+1599
+01:20:26,199 --> 01:20:28,360
+B ammettono una soluzione. Deve
+
+1600
+01:20:28,360 --> 01:20:32,080
+prenderle e trasformarle senza porsi la
+
+1601
+01:20:32,080 --> 01:20:35,239
+questione. Ok? Deve però ovviamente fare
+
+1602
+01:20:35,239 --> 01:20:37,440
+una trasformazione che mantenga la
+
+1603
+01:20:37,440 --> 01:20:39,719
+risposta, cioè deve fare una
+
+1604
+01:20:39,719 --> 01:20:43,760
+trasformazione che per sua struttura,
+
+1605
+01:20:43,760 --> 01:20:45,840
+senza sapere se stiamo partendo da un
+
+1606
+01:20:45,840 --> 01:20:48,239
+istanza, sì. istanza, no. Le stanze sì
+
+1607
+01:20:48,239 --> 01:20:50,639
+le trasforma in istanze sì di PCP e le
+
+1608
+01:20:50,639 --> 01:20:52,679
+stanze no di MPCP le trasforma in
+
+1609
+01:20:52,679 --> 01:20:56,360
+istanze no di PCP. È chiaro? Quindi
+
+1610
+01:20:56,360 --> 01:20:58,360
+questa è la parte fondamentale. La parte
+
+1611
+01:20:58,360 --> 01:21:01,360
+fondamentale è che la funzione che fa la
+
+1612
+01:21:01,360 --> 01:21:02,920
+riduzione
+
+1613
+01:21:02,920 --> 01:21:05,679
+non può sapere se l'istanza di partenza
+
+1614
+01:21:05,679 --> 01:21:08,639
+è sì o no, perché per saperlo dovrebbe
+
+1615
+01:21:08,639 --> 01:21:10,320
+tentare di risolvere un problema
+
+1616
+01:21:10,320 --> 01:21:11,800
+indecidibile, ma la funzione di
+
+1617
+01:21:11,800 --> 01:21:13,480
+trasformazione deve essere una funzione
+
+1618
+01:21:13,480 --> 01:21:15,880
+calcolabile, ok? cioè che la sua
+
+1619
+01:21:15,880 --> 01:21:18,080
+risposta la deve dare in tempo finito.
+
+1620
+01:21:18,080 --> 01:21:21,400
+Quindi f non potrà mai tentare di
+
+1621
+01:21:21,400 --> 01:21:23,800
+risolvere l'istanza di partenza, ok?
+
+1622
+01:21:23,800 --> 01:21:25,800
+Deve fare una trasformazione di
+
+1623
+01:21:25,800 --> 01:21:27,320
+struttura.
+
+1624
+01:21:27,320 --> 01:21:29,400
+E per questo insieme specifico, per
+
+1625
+01:21:29,400 --> 01:21:30,880
+questo problema specifico lo fa in
+
+1626
+01:21:30,880 --> 01:21:33,639
+questo modo. Prende le stringhe di A per
+
+1627
+01:21:33,639 --> 01:21:37,080
+produrre le stringhe di C. Come fa? le
+
+1628
+01:21:37,080 --> 01:21:38,760
+prendi a uno a uno e ci metti un
+
+1629
+01:21:38,760 --> 01:21:42,239
+asterisco dopo ogni simbolo. Dopodiché
+
+1630
+01:21:42,239 --> 01:21:44,679
+aggiunge una stringa all'inizio, quella
+
+1631
+01:21:44,679 --> 01:21:46,600
+di indice zero, per esempio. Supponiamo
+
+1632
+01:21:46,600 --> 01:21:53,320
+che questo è indice 0 1 2 3 4 Ok?
+
+1633
+01:21:53,320 --> 01:21:56,040
+Aggiunge una stringa di indice 0 che è
+
+1634
+01:21:56,040 --> 01:21:58,840
+uguale alla stringa di indice 1 più un
+
+1635
+01:21:58,840 --> 01:22:01,800
+asterisco all'inizio. Ok? Dopodiché,
+
+1636
+01:22:01,800 --> 01:22:04,280
+come ultima stringa, mette dollaro, che
+
+1637
+01:22:04,280 --> 01:22:05,880
+è un altro simbolo che non faceva parte
+
+1638
+01:22:05,880 --> 01:22:07,639
+dell'alfabeto.
+
+1639
+01:22:07,639 --> 01:22:10,960
+Come ottiene le stringhe di D?
+
+1640
+01:22:10,960 --> 01:22:14,000
+Va a guardare le stringhe di B
+
+1641
+01:22:14,000 --> 01:22:17,120
+e che fa? Le ricopia mettendo un
+
+1642
+01:22:17,120 --> 01:22:19,360
+asterisco di fronte prima di ogni
+
+1643
+01:22:19,360 --> 01:22:22,679
+singolo. Ok? Poi la stringa di indice 0
+
+1644
+01:22:22,679 --> 01:22:25,880
+è uguale alla stringa di indice 1 e poi
+
+1645
+01:22:25,880 --> 01:22:28,719
+l'ultima stringa di D è asterisco
+
+1646
+01:22:28,719 --> 01:22:32,760
+dollaro. Ok? Tutto qua. Sì.
+Quello che
+
+1647
+01:22:32,760 --> 01:22:34,560
+abbiamo fatto per la stringa 1 possiamo
+
+1648
+01:22:34,560 --> 01:22:36,159
+farlo per qualsiasi, cioè per la coppia
+
+1649
+01:22:36,159 --> 01:22:37,600
+di stringa 1 possiamo farlo per
+
+1650
+01:22:37,600 --> 01:22:39,679
+qualsiasi.
+Lo potremmo fare in linea di
+
+1651
+01:22:39,679 --> 01:22:41,440
+principio per quello che vogliamo. Lo
+
+1652
+01:22:41,440 --> 01:22:43,719
+facciamo per la prima stringa perché ci
+
+1653
+01:22:43,719 --> 01:22:47,000
+serve, ora lo vedremo. Ci serve perché
+
+1654
+01:22:47,000 --> 01:22:50,719
+noi dobbiamo imporre che le soluzioni
+
+1655
+01:22:50,719 --> 01:22:53,600
+che il solver di PCP propone parta
+
+1656
+01:22:53,600 --> 01:22:56,840
+sempre dalla prima coppia perché MPCP
+
+1657
+01:22:56,840 --> 01:22:58,600
+vuole una soluzione che parta dalla
+
+1658
+01:22:58,600 --> 01:23:00,480
+prima coppia. Ecco perché la facciamo su
+
+1659
+01:23:00,480 --> 01:23:03,679
+quella e non sull'altra. Chiaro? Perché
+
+1660
+01:23:03,679 --> 01:23:06,040
+il principio che ci sta dietro è sempre
+
+1661
+01:23:06,040 --> 01:23:08,760
+io trasformo le istanze di una di un
+
+1662
+01:23:08,760 --> 01:23:11,440
+problema in istanze di un altro problema
+
+1663
+01:23:11,440 --> 01:23:14,560
+per usare il solver dell'altro problema.
+
+1664
+01:23:14,560 --> 01:23:17,199
+Ok? Siccome il solver di PCP quando gli
+
+1665
+01:23:17,199 --> 01:23:19,400
+diamo l'istanza a lui di partire dalla
+
+1666
+01:23:19,400 --> 01:23:22,040
+prima coppia non gliene importa niente
+
+1667
+01:23:22,040 --> 01:23:25,040
+per forzarlo a darci una soluzione che
+
+1668
+01:23:25,040 --> 01:23:26,719
+parta dalla prima coppia io me le
+
+1669
+01:23:26,719 --> 01:23:30,159
+costruisco ad arte. Questo è è il senso.
+
+1670
+01:23:30,159 --> 01:23:31,679
+Ok.
+
+1671
+01:23:31,679 --> 01:23:36,080
+Sì,
+però se M PCP, cioè l'unica
+
+1672
+01:23:36,080 --> 01:23:37,800
+differenza che deve partire dalla prima
+
+1673
+01:23:37,800 --> 01:23:40,719
+coppia e noi forziamo TCP a partire
+
+1674
+01:23:40,719 --> 01:23:42,760
+dalla
+
+1675
+01:23:42,760 --> 01:23:47,400
+nostra non il suo senso.
+M no, la
+
+1676
+01:23:47,400 --> 01:23:50,199
+questione è che quando noi domanda molto
+
+1677
+01:23:50,199 --> 01:23:52,120
+interessante, cioè quando noi prendiamo
+
+1678
+01:23:52,120 --> 01:23:54,199
+le istanze di un problema e le
+
+1679
+01:23:54,199 --> 01:23:56,480
+trasformiamo in istanze di un altro
+
+1680
+01:23:56,480 --> 01:24:00,000
+problema, ok? Non è che noi stiamo
+
+1681
+01:24:00,000 --> 01:24:05,040
+coprendo. E faccio un esempio.
+
+1682
+01:24:08,000 --> 01:24:11,800
+C'abbiamo tempo più o meno. Allora,
+
+1683
+01:24:11,800 --> 01:24:16,120
+sì, no.
+
+1684
+01:24:16,239 --> 01:24:20,480
+Sì, no. Allora,
+
+1685
+01:24:20,480 --> 01:24:22,920
+queste sono è il dominio delle istanze
+
+1686
+01:24:22,920 --> 01:24:24,840
+del problema di partenza e questo è il
+
+1687
+01:24:24,840 --> 01:24:26,520
+dominio delle stanze del problema di
+
+1688
+01:24:26,520 --> 01:24:31,560
+arrivo, ok? Che sono divise in s e. Ok?
+
+1689
+01:24:31,560 --> 01:24:34,360
+Vi ricordo che c'è un'istanza è di per
+
+1690
+01:24:34,360 --> 01:24:37,199
+sé sì, no? Non è che un'istanza è
+
+1691
+01:24:37,199 --> 01:24:39,840
+indeterminata.
+
+1692
+01:24:39,840 --> 01:24:42,040
+La questione è una macchina è in grado
+
+1693
+01:24:42,040 --> 01:24:43,960
+di stabilire si no. Ok? Quindi noi
+
+1694
+01:24:43,960 --> 01:24:45,520
+possiamo prendere l'insieme delle
+
+1695
+01:24:45,520 --> 01:24:47,440
+stringhe e lo partizioniamo in due. Da
+
+1696
+01:24:47,440 --> 01:24:49,119
+un lato ci stanno le s, dall'altro ci
+
+1697
+01:24:49,119 --> 01:24:51,440
+stanno le no. Ok?
+
+1698
+01:24:51,440 --> 01:24:53,000
+Allora, cosa fa la funzione di
+
+1699
+01:24:53,000 --> 01:24:55,239
+trasformazione? La funzione di riduzione
+
+1700
+01:24:55,239 --> 01:24:57,280
+La funzione di riduzione praticamente
+
+1701
+01:24:57,280 --> 01:25:02,920
+prende una qualsiasi stringa da qui e la
+
+1702
+01:25:02,920 --> 01:25:06,760
+trasforma in un set
+
+1703
+01:25:06,760 --> 01:25:09,760
+non necessariamente esaustivo di istanze
+
+1704
+01:25:09,760 --> 01:25:13,199
+sie del problema di arrivo. Poi prende
+
+1705
+01:25:13,199 --> 01:25:16,520
+le istanze, una qualsiasi stanza, no, e
+
+1706
+01:25:16,520 --> 01:25:19,199
+la trasforma in un set non
+
+1707
+01:25:19,199 --> 01:25:21,600
+necessariamente esaustivo di istanze,
+
+1708
+01:25:21,600 --> 01:25:25,159
+no, dell'altro problema perché F non è
+
+1709
+01:25:25,159 --> 01:25:27,560
+che sputa fuori una qualsiasi stanza no,
+
+1710
+01:25:27,560 --> 01:25:29,280
+o una qualsiasi stanza sì del problema
+
+1711
+01:25:29,280 --> 01:25:31,920
+di arrivo, no, le fa secondo una certa
+
+1712
+01:25:31,920 --> 01:25:34,159
+logica. per esempio in PCP che abbiamo
+
+1713
+01:25:34,159 --> 01:25:37,600
+visto prima, cioè prende la macchina la
+
+1714
+01:25:37,600 --> 01:25:40,000
+l'insieme di stringhe che produce la
+
+1715
+01:25:40,000 --> 01:25:42,239
+trasformazione dell'EPCP
+
+1716
+01:25:42,239 --> 01:25:44,600
+produce un'istanza di MPCP che è molto
+
+1717
+01:25:44,600 --> 01:25:46,760
+specifica a quella forma. Poi ce ne
+
+1718
+01:25:46,760 --> 01:25:48,920
+stanno una marea di altre stanze di
+
+1719
+01:25:48,920 --> 01:25:51,880
+MPCP. Ok? Quindi quello che noi facciamo
+
+1720
+01:25:51,880 --> 01:25:54,239
+prendere tutte le stanze del problema di
+
+1721
+01:25:54,239 --> 01:25:56,719
+partenza e in linea di principio
+
+1722
+01:25:56,719 --> 01:25:59,400
+trasformarle in una sottoclasse, un
+
+1723
+01:25:59,400 --> 01:26:02,840
+sottoinsieme di stanze sì e no. Ok?
+
+1724
+01:26:02,840 --> 01:26:04,800
+Allora, lei diceva giustamente, "Ma se
+
+1725
+01:26:04,800 --> 01:26:07,760
+facciamo questa cosa qui non ci stiamo
+
+1726
+01:26:07,760 --> 01:26:10,679
+andando a ridurre, a rendere più piccolo
+
+1727
+01:26:10,679 --> 01:26:12,560
+il problema di arrivo?" Allora, la
+
+1728
+01:26:12,560 --> 01:26:15,880
+questione è che è questa. Praticamente
+
+1729
+01:26:15,880 --> 01:26:18,119
+se noi riusciamo a fare un mapping di
+
+1730
+01:26:18,119 --> 01:26:20,520
+questo tipo verso un sottoinsieme delle
+
+1731
+01:26:20,520 --> 01:26:23,080
+istanze e noi sappiamo che questo
+
+1732
+01:26:23,080 --> 01:26:25,600
+problema qui è indecidibile, allora
+
+1733
+01:26:25,600 --> 01:26:28,159
+avremo che questa porzione piccolina è
+
+1734
+01:26:28,159 --> 01:26:30,199
+già indecidibile. Di conseguenza,
+
+1735
+01:26:30,199 --> 01:26:32,719
+siccome loro fanno parte delle possibili
+
+1736
+01:26:32,719 --> 01:26:34,760
+istanze del problema di arrivo, il
+
+1737
+01:26:34,760 --> 01:26:36,719
+problema di arrivo sarà indecidibile
+
+1738
+01:26:36,719 --> 01:26:38,800
+anche solo se consideriamo quelle stanze
+
+1739
+01:26:38,800 --> 01:26:42,639
+là. Ok? Quindi in realtà sì, sembra una
+
+1740
+01:26:42,639 --> 01:26:44,600
+cosa dire, ma è un po' strano perché gli
+
+1741
+01:26:44,600 --> 01:26:46,360
+stiamo dando una forma particolare. In
+
+1742
+01:26:46,360 --> 01:26:49,760
+realtà stiamo selezionando del sul
+
+1743
+01:26:49,760 --> 01:26:51,600
+dominio delle istanze del problema di
+
+1744
+01:26:51,600 --> 01:26:54,400
+arrivo un sottodominio che di per sé è
+
+1745
+01:26:54,400 --> 01:26:57,440
+indecidibile. Quindi in generale il
+
+1746
+01:26:57,440 --> 01:26:59,239
+problema, siccome gli possono arrivare,
+
+1747
+01:26:59,239 --> 01:27:01,320
+se è disgraziato e gli arrivano un po'
+
+1748
+01:27:01,320 --> 01:27:03,600
+di istanze strambe, gli arrivano queste
+
+1749
+01:27:03,600 --> 01:27:05,840
+e queste, su quello non sa rispondere.
+
+1750
+01:27:05,840 --> 01:27:07,600
+Ok? Quindi quello è sufficienza a dire
+
+1751
+01:27:07,600 --> 01:27:09,000
+che il problema di arrivo è
+
+1752
+01:27:09,000 --> 01:27:12,040
+indecidibile. Ok?
+
+1753
+01:27:12,040 --> 01:27:15,280
+Grazie per la domanda. Alright. In
+
+1754
+01:27:15,280 --> 01:27:19,159
+questi 7 minuti dobbiamo dimostrare che
+
+1755
+01:27:19,159 --> 01:27:20,800
+MPCP
+
+1756
+01:27:20,800 --> 01:27:25,960
+si riduce a PCP. Ok?
+
+1757
+01:27:26,000 --> 01:27:29,000
+dimostrazione.
+
+1758
+01:27:31,119 --> 01:27:34,960
+Supponiamo che partiamo
+
+1759
+01:27:34,960 --> 01:27:38,920
+da una coppia di liste AB che sia
+
+1760
+01:27:38,920 --> 01:27:43,480
+un'istanza Sì di MPCP.
+
+1761
+01:27:43,480 --> 01:27:45,600
+Ok?
+
+1762
+01:27:45,600 --> 01:27:51,520
+Se è un'istanza Sì di MPCP,
+
+1763
+01:27:51,520 --> 01:27:53,159
+ci siamo? Cosa stiamo dimostrando?
+
+1764
+01:27:53,159 --> 01:27:54,920
+Stiamo dimostrando che se partiamo da
+
+1765
+01:27:54,920 --> 01:27:58,159
+un'istanza S di MPCP, allora la nostra
+
+1766
+01:27:58,159 --> 01:28:01,080
+funzione di trasformazione ha sputato
+
+1767
+01:28:01,080 --> 01:28:04,320
+fuori un'istanza Sì di PCP.
+
+1768
+01:28:04,320 --> 01:28:07,440
+Supponiamo di star partendo da
+
+1769
+01:28:07,440 --> 01:28:11,280
+un'istanza Sì di MPCP.
+
+1770
+01:28:11,280 --> 01:28:14,159
+Che vuol dire? Vuol dire che esiste una
+
+1771
+01:28:14,159 --> 01:28:17,600
+sequenza di indici tale per cui
+
+1772
+01:28:17,600 --> 01:28:19,719
+costruiamo le stesse stringhe. Adesso
+
+1773
+01:28:19,719 --> 01:28:22,760
+queste per convenienza le chiamiamo R
+
+1774
+01:28:22,760 --> 01:28:27,080
+con I questa qua, S con I questa qua, X
+
+1775
+01:28:27,080 --> 01:28:30,480
+con I sono queste di C e Y con i sono
+
+1776
+01:28:30,480 --> 01:28:32,560
+quelle di D. Ok? Vi diamo giusto dei
+
+1777
+01:28:32,560 --> 01:28:36,239
+nomi per orientarci. Allora, se A e B è
+
+1778
+01:28:36,239 --> 01:28:38,639
+un'istanza s di MPCP, abbiamo una
+
+1779
+01:28:38,639 --> 01:28:41,159
+sequenza di indici particolari, è una
+
+1780
+01:28:41,159 --> 01:28:43,719
+sequenza di indici che parte con uno,
+
+1781
+01:28:43,719 --> 01:28:47,679
+quindi abbiamo 1,
+
+1782
+01:28:47,679 --> 01:28:52,320
+I2, I3, bla bla bla
+
+1783
+01:28:52,320 --> 01:28:55,960
+I M.
+
+1784
+01:28:55,960 --> 01:29:01,239
+Ok? Tale per cui avremo che cosa? che R1
+
+1785
+01:29:01,239 --> 01:29:05,400
+concatenato a R2 concatenato a R3 bla
+
+1786
+01:29:05,400 --> 01:29:10,000
+bla bla concatenato a Rim è uguale a S1
+
+1787
+01:29:10,000 --> 01:29:13,679
+concateno, SI2 concatenata si bla bla
+
+1788
+01:29:13,679 --> 01:29:17,719
+bla concatenato Sim.
+
+1789
+01:29:17,719 --> 01:29:21,239
+Il
+proprio primo un R. Come
+il primo è
+
+1790
+01:29:21,239 --> 01:29:25,440
+un R I R
+1
+R1
+
+1791
+01:29:25,440 --> 01:29:28,719
+R1 secondo
+R I2
+
+1792
+01:29:28,719 --> 01:29:31,400
+R I3 bla bla questo lo abbiamo perché
+
+1793
+01:29:31,400 --> 01:29:36,639
+stiamo partendo da un istanza sì. Ok?
+
+1794
+01:29:36,639 --> 01:29:38,119
+Allora, noi potremmo fare questa cosa
+
+1795
+01:29:38,119 --> 01:29:40,400
+qua partendo da questa che è una
+
+1796
+01:29:40,400 --> 01:29:43,679
+soluzione per l'istanza di MPCP
+
+1797
+01:29:43,679 --> 01:29:45,800
+mostriamo che esiste una soluzione anche
+
+1798
+01:29:45,800 --> 01:29:49,560
+per l'istanza di PCP, no?
+
+1799
+01:29:49,560 --> 01:29:52,320
+E facciamo così. Invece di R1
+
+1800
+01:29:52,320 --> 01:29:55,320
+consideriamo X1, invece di R2
+
+1801
+01:29:55,320 --> 01:30:00,800
+consideriamo Xi2, XI3 bla bla bla X.
+
+1802
+01:30:00,800 --> 01:30:06,960
+Dall'altro lato avremo Y1, Y2, Y3,
+
+1803
+01:30:06,960 --> 01:30:09,600
+YM.
+
+1804
+01:30:09,600 --> 01:30:11,440
+Adesso questa sequenza di stringhe
+
+1805
+01:30:11,440 --> 01:30:13,639
+costruite con questi pezzi è quasi
+
+1806
+01:30:13,639 --> 01:30:18,320
+uguale perché le stringhe x1 x2 bla bla
+
+1807
+01:30:18,320 --> 01:30:20,920
+hanno gli asterischi dopo. Invece quella
+
+1808
+01:30:20,920 --> 01:30:24,040
+y1 y i2 bla bla hanno gli asterischi
+
+1809
+01:30:24,040 --> 01:30:27,119
+dopo. Di conseguenza, se io ci piazzo un
+
+1810
+01:30:27,119 --> 01:30:30,760
+asterisco qua,
+
+1811
+01:30:32,159 --> 01:30:35,320
+mi risolvo un pezzo del problema.
+
+1812
+01:30:35,320 --> 01:30:39,960
+L'unica questione è che questa stringa X
+
+1813
+01:30:39,960 --> 01:30:42,960
+finisce con un asterisco, mentre la
+
+1814
+01:30:42,960 --> 01:30:45,880
+stringa Yim finisce con un singolo
+
+1815
+01:30:45,880 --> 01:30:48,040
+standard. Allora, che cosa posso fare?
+
+1816
+01:30:48,040 --> 01:30:51,480
+Posso lì metterci la coppia, asterisco
+
+1817
+01:30:51,480 --> 01:30:55,239
+dollaro e qui dollaro. Queste due
+
+1818
+01:30:55,239 --> 01:30:57,960
+stringhe sono uguali,
+
+1819
+01:30:57,960 --> 01:31:01,040
+ok? Cioè la soluzione sarebbe questo qui
+
+1820
+01:31:01,040 --> 01:31:06,040
+è x0 e questa qui è è
+
+1821
+01:31:06,040 --> 01:31:09,800
+l'ultima, come lo chiamiamo? X k + 1. X
+
+1822
+01:31:09,800 --> 01:31:14,760
++ 1. Ok? E questo qua, questo qui è Y
+
+1823
+01:31:14,760 --> 01:31:18,360
+per definizione, questo è Y k +. Ok?
+
+1824
+01:31:18,360 --> 01:31:21,760
+Semplicemente è questo qua. È chiaro?
+
+1825
+01:31:21,760 --> 01:31:24,239
+Una cosa molto semplice. Sì. Ma quindi
+
+1826
+01:31:24,239 --> 01:31:28,760
+le liste in TCP sono finite per
+
+1827
+01:31:28,760 --> 01:31:30,840
+definizione?
+Sì, sì, sì, sì, sì, sì, sì,
+
+1828
+01:31:30,840 --> 01:31:34,000
+sì, sì.
+Sia la lunghezza di ogni singola
+
+1829
+01:31:34,000 --> 01:31:36,560
+stringa che la lunghezza della lista è
+
+1830
+01:31:36,560 --> 01:31:39,080
+finita. Ok.
+Le stringhe possono essere
+
+1831
+01:31:39,080 --> 01:31:41,920
+buone? No,
+no, cioè no, in linea di
+
+1832
+01:31:41,920 --> 01:31:43,360
+principio sì, puoi avere una stringa
+
+1833
+01:31:43,360 --> 01:31:45,560
+vuota. Sì, sì, sì, sì.
+
+1834
+01:31:45,560 --> 01:31:47,239
+Ma se poteva una stringa vuota, allora
+
+1835
+01:31:47,239 --> 01:31:51,440
+non bastava mettere come primo e prima
+
+1836
+01:31:51,440 --> 01:31:56,840
+coppia C asterisco blank.
+
+1837
+01:31:56,840 --> 01:31:59,080
+Ah, il mio principio sì. Ok, allora in
+
+1838
+01:31:59,080 --> 01:32:00,639
+realtà non lo so se può essere vuoto.
+
+1839
+01:32:00,639 --> 01:32:02,280
+Secondo me potrebbe essere vuoto, non
+
+1840
+01:32:02,280 --> 01:32:03,560
+cambia il problema, però mi sa che la
+
+1841
+01:32:03,560 --> 01:32:05,679
+definizione del libro dice che debba
+
+1842
+01:32:05,679 --> 01:32:09,360
+esserci qualcosa per forza.
+
+1843
+01:32:09,360 --> 01:32:11,320
+Allora, questo dimostra che quindi se
+
+1844
+01:32:11,320 --> 01:32:13,719
+partiamo da un'istanza Sì MPCP, siamo
+
+1845
+01:32:13,719 --> 01:32:17,600
+arrivati a un'istanza sì di eh PCP.
+
+1846
+01:32:17,600 --> 01:32:19,800
+Dobbiamo ora dimostrare che se siamo
+
+1847
+01:32:19,800 --> 01:32:22,400
+arrivati a un'istanza SìP, il secondo
+
+1848
+01:32:22,400 --> 01:32:24,320
+pezzo della dimostrazione era perché
+
+1849
+01:32:24,320 --> 01:32:27,719
+partivamo da un'istanza sì di PCP. Ok?
+
+1850
+01:32:27,719 --> 01:32:31,159
+Supponiamo di NPCP, supponiamo di essere
+
+1851
+01:32:31,159 --> 01:32:35,719
+arrivati a un'istanza sì di PCP, ok?
+
+1852
+01:32:35,719 --> 01:32:39,000
+Quindi avremo una sequenza di indici
+
+1853
+01:32:39,000 --> 01:32:41,639
+tale per cui se concateniamo le stringhe
+
+1854
+01:32:41,639 --> 01:32:45,280
+costruiamo la stessa cosa. Adesso,
+
+1855
+01:32:45,280 --> 01:32:48,440
+per come è stata costruita
+
+1856
+01:32:48,440 --> 01:32:52,400
+nello specifico l'istanza di PCP, la
+
+1857
+01:32:52,400 --> 01:32:55,880
+soluzione deve per forza partire da
+
+1858
+01:32:55,880 --> 01:33:00,040
+indice zero e finire sull'ultima coppia
+
+1859
+01:33:00,040 --> 01:33:01,800
+perché perché così abbiamo costruito
+
+1860
+01:33:01,800 --> 01:33:04,320
+l'istanza. Ok? Perché la questione è
+
+1861
+01:33:04,320 --> 01:33:06,840
+supponiamo di essere, sentite la parola,
+
+1862
+01:33:06,840 --> 01:33:09,840
+supponiamo di essere arrivati
+
+1863
+01:33:09,840 --> 01:33:13,920
+a un'istanza C di MPCP. Siamo arrivati a
+
+1864
+01:33:13,920 --> 01:33:16,560
+un'istanza di PCP, il che significa che
+
+1865
+01:33:16,560 --> 01:33:18,880
+questa istanza che stiamo analizzando è
+
+1866
+01:33:18,880 --> 01:33:22,520
+il frutto della funzione di riduzione,
+
+1867
+01:33:22,520 --> 01:33:25,040
+non è unistanza a caso. Quindi
+
+1868
+01:33:25,040 --> 01:33:27,159
+supponiamo di essere arrivati a
+
+1869
+01:33:27,159 --> 01:33:30,800
+un'istanza sì di PCP. La sua soluzione
+
+1870
+01:33:30,800 --> 01:33:34,440
+deve per forza partire dalla coppia di
+
+1871
+01:33:34,440 --> 01:33:38,280
+indice zero perché è l'unica coppia che
+
+1872
+01:33:38,280 --> 01:33:42,280
+ha lo stesso simbolo all'inizio.
+
+1873
+01:33:42,280 --> 01:33:45,920
+Quindi noi potremmo trasformare una
+
+1874
+01:33:45,920 --> 01:33:49,520
+soluzione dell'istanza di arrivo di PCP
+
+1875
+01:33:49,520 --> 01:33:51,480
+in una soluzione per l'istanza di
+
+1876
+01:33:51,480 --> 01:33:54,719
+partenza di MPCP. Perché? Perché abbiamo
+
+1877
+01:33:54,719 --> 01:33:57,440
+forzato tramite una costruzione
+
+1878
+01:33:57,440 --> 01:33:59,679
+opportuna che tutte le possibili
+
+1879
+01:33:59,679 --> 01:34:02,440
+soluzioni sull'istanza di arrivo
+
+1880
+01:34:02,440 --> 01:34:05,520
+contemplino solamente come partenza la
+
+1881
+01:34:05,520 --> 01:34:08,600
+primissima coppia. Ok? Quindi, se siamo
+
+1882
+01:34:08,600 --> 01:34:12,560
+arrivati a un'istanza sì di M di PCP era
+
+1883
+01:34:12,560 --> 01:34:15,119
+perché stavamo partendo da un'istanza Sì
+
+1884
+01:34:15,119 --> 01:34:17,960
+di PCP da cui
+
+1885
+01:34:17,960 --> 01:34:23,600
+MPCP si riduce a PCP e quindi PCP è
+
+1886
+01:34:23,600 --> 01:34:25,560
+indecidibile.
+
+1887
+01:34:25,560 --> 01:34:27,679
+Ok,
+
+1888
+01:34:27,679 --> 01:34:30,800
+ci abbiamo messo 2 ore, pensavo sarebbe
+
+1889
+01:34:30,800 --> 01:34:34,000
+stata più corta. Ok, è chiaro?
+Non ho
+
+1890
+01:34:34,000 --> 01:34:37,639
+capito l'ultimissima parte. Eh, allora
+
+1891
+01:34:37,639 --> 01:34:40,880
+noi ci siamo giunti a unistanza sì,
+
+1892
+01:34:40,880 --> 01:34:42,600
+quindi vuol dire che possiamo costruire
+
+1893
+01:34:42,600 --> 01:34:45,400
+istanze sì di partenza e dare in qua.
+
+1894
+01:34:45,400 --> 01:34:47,400
+Attenzione,
+
+1895
+01:34:47,400 --> 01:34:50,119
+se siamo arrivati o se ho capito bene il
+
+1896
+01:34:50,119 --> 01:34:52,840
+il punto, se siamo arrivati a un'istanza
+
+1897
+01:34:52,840 --> 01:34:54,800
+di MCP
+
+1898
+01:34:54,800 --> 01:34:56,560
+e ci siamo arrivati tramite quella
+
+1899
+01:34:56,560 --> 01:34:59,560
+costruzione che ci siamo inventati,
+
+1900
+01:34:59,560 --> 01:35:02,840
+allora le la soluzione per questa
+
+1901
+01:35:02,840 --> 01:35:05,199
+istanza che abbiamo prodotto contempla
+
+1902
+01:35:05,199 --> 01:35:08,880
+per forza il partire con la coppia di
+
+1903
+01:35:08,880 --> 01:35:11,360
+indice zero.
+
+1904
+01:35:11,360 --> 01:35:14,280
+Quindi quella soluzione io la posso
+
+1905
+01:35:14,280 --> 01:35:16,360
+usare per costruire una soluzione
+
+1906
+01:35:16,360 --> 01:35:19,199
+sull'istanza di partenza,
+
+1907
+01:35:19,199 --> 01:35:21,080
+quindi anche l'istanza di partenza era
+
+1908
+01:35:21,080 --> 01:35:24,719
+un'istanza simile,
+
+1909
+01:35:28,119 --> 01:35:31,760
+quindi M PCP si riduce a PCP che risulta
+
+1910
+01:35:31,760 --> 01:35:34,159
+indecidibile. Il concetto di riduzione è
+
+1911
+01:35:34,159 --> 01:35:36,920
+una cosa importantissima perché cioè da
+
+1912
+01:35:36,920 --> 01:35:39,199
+adesso in poi lo useremo quasi in ogni
+
+1913
+01:35:39,199 --> 01:35:40,840
+lezione, eh, quindi è una cosa che
+
+1914
+01:35:40,840 --> 01:35:43,040
+dovete proprio cogliere, senò vi perdete
+
+1915
+01:35:43,040 --> 01:35:46,440
+pezzi pezzi importanti perché da adesso
+
+1916
+01:35:46,440 --> 01:35:50,800
+in poi è quasi tutto riduzioni. Ok?
+
+1917
+01:35:50,800 --> 01:35:53,679
+E vabbò. Buona serata. Grazie per essere
+
+1918
+01:35:53,679 --> 01:35:55,800
+venuti

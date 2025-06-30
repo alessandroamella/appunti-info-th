@@ -1,0 +1,7727 @@
+1
+00:00:00,320 --> 00:00:04,120
+mi ha detto, cioè sempre
+
+2
+00:00:05,600 --> 00:00:08,720
+No, no,
+
+3
+00:00:14,150 --> 00:00:17,630
+[Musica]
+
+4
+00:00:18,359 --> 00:00:21,680
+ok, iniziamo.
+
+5
+00:00:24,279 --> 00:00:26,119
+Ok, veloce quello che abbiamo fatto
+
+6
+00:00:26,119 --> 00:00:29,119
+ieri.
+
+7
+00:00:39,710 --> 00:00:42,880
+[Musica]
+
+8
+00:00:51,800 --> 00:00:54,080
+Ok. Ok,
+
+9
+00:00:54,080 --> 00:00:55,600
+[Musica]
+
+10
+00:00:55,600 --> 00:00:57,239
+recap quello che abbiamo fatto ieri e
+
+11
+00:00:57,239 --> 00:01:01,079
+poi iniziamo gli argomenti per oggi che
+
+12
+00:01:01,079 --> 00:01:03,800
+continua a essere un recap.
+
+13
+00:01:03,800 --> 00:01:07,439
+Ehm, allora, velocissimo.
+
+14
+00:01:07,439 --> 00:01:09,360
+Problemi di ricerca. Noi siamo
+
+15
+00:01:09,360 --> 00:01:11,040
+interessati ai problemi di ricerca che
+
+16
+00:01:11,040 --> 00:01:14,040
+sono quelli più generici, ok? Problemi
+
+17
+00:01:14,040 --> 00:01:15,799
+di ricerca sono quei problemi in quali
+
+18
+00:01:15,799 --> 00:01:18,000
+la risposta può essere valida. Qual è il
+
+19
+00:01:18,000 --> 00:01:20,079
+prodotto tra questi due numeri? Qual è
+
+20
+00:01:20,079 --> 00:01:22,360
+l'idea la derivata di questa funzione?
+
+21
+00:01:22,360 --> 00:01:24,840
+Qual è il percorso minimo fra B? Ok,
+
+22
+00:01:24,840 --> 00:01:27,640
+problemi di
+
+23
+00:01:27,640 --> 00:01:29,560
+affiancate a questi problemi ci stanno i
+
+24
+00:01:29,560 --> 00:01:31,159
+problemi di decisione che sono quei
+
+25
+00:01:31,159 --> 00:01:33,360
+problemi nei quali la possibile risposta
+
+26
+00:01:33,360 --> 00:01:37,439
+sono solo due, sì o no? Ok?
+
+27
+00:01:37,439 --> 00:01:41,040
+I problemi di decisione sono anche dei
+
+28
+00:01:41,040 --> 00:01:43,960
+problemi di ricerca, ma non mi cioè i
+
+29
+00:01:43,960 --> 00:01:45,439
+problemi di decisione sono risolti
+
+30
+00:01:45,439 --> 00:01:48,040
+insieme. Abbiamo visto che c'è una certa
+
+31
+00:01:48,040 --> 00:01:50,159
+relazione fra problemi di decisione e
+
+32
+00:01:50,159 --> 00:01:51,799
+problemi di ricerca perché dato un
+
+33
+00:01:51,799 --> 00:01:53,240
+problema di ricerca ci possiamo
+
+34
+00:01:53,240 --> 00:01:54,960
+diventare un problema di decisione che è
+
+35
+00:01:54,960 --> 00:01:57,200
+molto simile tale per cui essere capaci
+
+36
+00:01:57,200 --> 00:01:59,920
+di risolvere uno ci dà sostanzialmente
+
+37
+00:01:59,920 --> 00:02:02,159
+la difficoltà
+
+38
+00:02:02,159 --> 00:02:04,520
+eh ci dà informazioni sulla difficoltà
+
+39
+00:02:04,520 --> 00:02:07,000
+di risolvere il problema di che cosa
+
+40
+00:02:07,000 --> 00:02:08,640
+facciamo? Quindi ci focalizziamo sui
+
+41
+00:02:08,640 --> 00:02:09,879
+problemi di decisione perché è più
+
+42
+00:02:09,879 --> 00:02:11,920
+semplice per noi da un punto di vista di
+
+43
+00:02:11,920 --> 00:02:14,360
+analisi. Ok? Quindi problemi di
+
+44
+00:02:14,360 --> 00:02:16,640
+decisione. Dopodiché abbiamo fatto un un
+
+45
+00:02:16,640 --> 00:02:19,840
+salto extra, abbiamo detto: "Ok, c'è un
+
+46
+00:02:19,840 --> 00:02:22,120
+problema abbastanza studiato in in
+
+47
+00:02:22,120 --> 00:02:24,519
+formatica teorica che è un problema di
+
+48
+00:02:24,519 --> 00:02:26,120
+decisione che sono i problemi di
+
+49
+00:02:26,120 --> 00:02:29,640
+decidere i linguaggi." Ok? Che cos'è un
+
+50
+00:02:29,640 --> 00:02:30,840
+linguaggio? Abbiamo detto che un
+
+51
+00:02:30,840 --> 00:02:33,120
+linguaggio è semplicemente un insieme di
+
+52
+00:02:33,120 --> 00:02:34,640
+stringhe.
+
+53
+00:02:34,640 --> 00:02:36,599
+Cosa significa decidere un linguaggio?
+
+54
+00:02:36,599 --> 00:02:39,760
+Significa data una stringa, stabilire se
+
+55
+00:02:39,760 --> 00:02:41,280
+quella stringa appartiene all'insieme
+
+56
+00:02:41,280 --> 00:02:44,560
+del linguaggio o meno. Le risposte sui
+
+57
+00:02:44,560 --> 00:02:46,599
+sui linguaggi, sul problema di decidere
+
+58
+00:02:46,599 --> 00:02:48,800
+un linguaggio sono due, sì, no? Quindi è
+
+59
+00:02:48,800 --> 00:02:51,239
+un problema di decisione. Noi leghiamo i
+
+60
+00:02:51,239 --> 00:02:53,519
+problemi di decisione a opportuni
+
+61
+00:02:53,519 --> 00:02:56,800
+linguaggi in maniera tale che risolvere
+
+62
+00:02:56,800 --> 00:02:59,800
+un problema di decisione è equivalente a
+
+63
+00:02:59,800 --> 00:03:02,560
+decidere uno specifico linguaggio.
+
+64
+00:03:02,560 --> 00:03:04,840
+Chiaro per tutti? Perché ci spostiamo
+
+65
+00:03:04,840 --> 00:03:09,040
+sui linguaggi? Perché i meccanismi, cioè
+
+66
+00:03:09,040 --> 00:03:11,720
+il formalismo che possiamo usare per
+
+67
+00:03:11,720 --> 00:03:14,080
+stabilire se linguaggio de cilber o
+
+68
+00:03:14,080 --> 00:03:17,599
+meno, invece che avere algoritmi asti,
+
+69
+00:03:17,599 --> 00:03:20,519
+scritti in Java, Python whatever, noi
+
+70
+00:03:20,519 --> 00:03:23,000
+utilizziamo il concetto di automa che è
+
+71
+00:03:23,000 --> 00:03:26,239
+più semplice e più formalmente
+
+72
+00:03:26,239 --> 00:03:28,280
+definibile e di questo e per questa
+
+73
+00:03:28,280 --> 00:03:31,720
+ragione ci focalizziamo su questo. Ok?
+
+74
+00:03:31,720 --> 00:03:34,239
+Domanda per voi. Supponiamo di avere un
+
+75
+00:03:34,239 --> 00:03:40,799
+linguaggio L, ok? Un linguaggio L e noi
+
+76
+00:03:40,799 --> 00:03:43,560
+ci vogliamo focalizzare sul problema di
+
+77
+00:03:43,560 --> 00:03:47,400
+decidere L. Ok?
+
+78
+00:03:47,400 --> 00:03:51,799
+Qual è l'input, qual è l'output?
+
+79
+00:03:52,799 --> 00:03:55,799
+L'input
+
+80
+00:03:56,840 --> 00:03:59,720
+è una stringa e l'output è un
+
+81
+00:03:59,720 --> 00:04:02,879
+alta.
+E l'input è una stringa e l'input
+
+82
+00:04:02,879 --> 00:04:06,680
+è volata.
+L'input è una stringa. Ok.
+
+83
+00:04:06,680 --> 00:04:09,560
+Decidere il linguaggio L. Il linguaggio
+
+84
+00:04:09,560 --> 00:04:12,879
+L non è input. È chiaro per tutti questo
+
+85
+00:04:12,879 --> 00:04:14,560
+passaggio? Cioè, stiamo attenti a non
+
+86
+00:04:14,560 --> 00:04:17,919
+confonderci qua. Decidere un linguaggio
+
+87
+00:04:17,919 --> 00:04:22,199
+L. L'input di questo problema è una
+
+88
+00:04:22,199 --> 00:04:25,720
+stringa, non gliaggio L. E dove compare
+
+89
+00:04:25,720 --> 00:04:30,759
+il linguaggio L in questo problema?
+
+90
+00:04:31,080 --> 00:04:33,759
+Nella relazione.
+Nella relazione, nella
+
+91
+00:04:33,759 --> 00:04:35,880
+definizione. Ok? Dobbiamo stare molto
+
+92
+00:04:35,880 --> 00:04:38,240
+attenti perché a un certo punto vedremo
+
+93
+00:04:38,240 --> 00:04:42,160
+problemi in cui avremo linguaggi input.
+
+94
+00:04:42,160 --> 00:04:46,080
+Ok? Quindi qua dobbiamo stare attenti.
+
+95
+00:04:46,080 --> 00:04:49,639
+Dato fissato un linguaggio L, il
+
+96
+00:04:49,639 --> 00:04:52,600
+problema di decidere il linguaggio L è,
+
+97
+00:04:52,600 --> 00:04:55,639
+data una stringa, stabilire se questa
+
+98
+00:04:55,639 --> 00:04:58,320
+stringa appartiene a L o meno. Ed L è
+
+99
+00:04:58,320 --> 00:05:00,960
+una cosa data, cioè fa parte della
+
+100
+00:05:00,960 --> 00:05:03,199
+definizione del problema, non sta
+
+101
+00:05:03,199 --> 00:05:06,080
+nell'input di questo problema, ok? non
+
+102
+00:05:06,080 --> 00:05:08,000
+abbiamo una rappresentazione del
+
+103
+00:05:08,000 --> 00:05:10,600
+linguaggio in ingresso, almeno per il
+
+104
+00:05:10,600 --> 00:05:13,360
+momento. Poi nelle lezioni future
+
+105
+00:05:13,360 --> 00:05:15,440
+vedremo problemi che prendono input,
+
+106
+00:05:15,440 --> 00:05:17,880
+linguaggi e fanno cosa sui linguaggi.
+
+107
+00:05:17,880 --> 00:05:20,800
+Ok? Però argomento ci focalizziamo su
+
+108
+00:05:20,800 --> 00:05:24,120
+questa cosa basica, cioè dato
+
+109
+00:05:24,120 --> 00:05:26,720
+fissato un linguaggio, prendiamo una
+
+110
+00:05:26,720 --> 00:05:29,000
+stringa, ci viene data una stringa, noi
+
+111
+00:05:29,000 --> 00:05:30,840
+dobbiamo essere in grado di stabilire se
+
+112
+00:05:30,840 --> 00:05:32,400
+quella stringa appartene al linguaggio o
+
+113
+00:05:32,400 --> 00:05:38,000
+meno. Ok? E poi ci siamo focalizzati
+
+114
+00:05:39,600 --> 00:05:43,600
+su questa cosa ieri
+
+115
+00:05:44,440 --> 00:05:47,720
+in cui praticamente volevamo riconoscere
+
+116
+00:05:47,720 --> 00:05:49,440
+l'insieme
+
+117
+00:05:49,440 --> 00:05:51,680
+delle stringhe binarie che quizano
+
+118
+00:05:51,680 --> 00:05:54,039
+numeri dispari. C'eravamo detti
+
+119
+00:05:54,039 --> 00:05:57,039
+praticamente che un semplicissimo Sì,
+ma
+
+120
+00:05:57,039 --> 00:05:59,039
+la stringa in input è la descrizione del
+
+121
+00:05:59,039 --> 00:06:00,960
+linguag
+
+122
+00:06:00,960 --> 00:06:04,360
+input, ok? Dipende dal problema. Se il
+
+123
+00:06:04,360 --> 00:06:09,120
+tuo problema è fisso L, devo decidere L,
+
+124
+00:06:09,120 --> 00:06:12,880
+la stringa input è una stringa
+
+125
+00:06:12,880 --> 00:06:16,720
+sull'alfabeto su cui LSO stesso è
+
+126
+00:06:16,720 --> 00:06:19,720
+definito. Ok? E di questa stringa io
+
+127
+00:06:19,720 --> 00:06:22,360
+devo dire se questa qua sta dentro
+
+128
+00:06:22,360 --> 00:06:25,360
+questo insieme o no.
+Ah, ok. Sì, sì,
+ok.
+
+129
+00:06:25,360 --> 00:06:28,199
+Sì, sì, sì.
+Nelle prossime lezioni
+
+130
+00:06:28,199 --> 00:06:30,919
+vedremo, però è inutile andarci ora, dei
+
+131
+00:06:30,919 --> 00:06:32,720
+problemi un po' più sofisticati nel
+
+132
+00:06:32,720 --> 00:06:35,360
+quale in input avremo stringhe che
+
+133
+00:06:35,360 --> 00:06:38,080
+descrivono linguaggi e ci chiederemo ah,
+
+134
+00:06:38,080 --> 00:06:39,919
+ma questo linguaggio ha questa proprietà
+
+135
+00:06:39,919 --> 00:06:42,319
+o cose di questo tipo? Ok? Però è quello
+
+136
+00:06:42,319 --> 00:06:43,880
+è proprio un altro livello semantico.
+
+137
+00:06:43,880 --> 00:06:45,840
+Qua siamo fissato un linguaggio, dato
+
+138
+00:06:45,840 --> 00:06:48,800
+una stringa, devo decidere se questa
+
+139
+00:06:48,800 --> 00:06:50,720
+stringa sta qua dentro o sta qua fuori.
+
+140
+00:06:50,720 --> 00:06:53,479
+Ok? Allora, ieri abbiamo visto questo
+
+141
+00:06:53,479 --> 00:06:56,120
+esempio della
+
+142
+00:06:56,120 --> 00:06:58,479
+del linguaggio delle stringhe binarie
+
+143
+00:06:58,479 --> 00:07:00,599
+che codificano numeri dispari e ci siamo
+
+144
+00:07:00,599 --> 00:07:01,680
+detti che praticamente quello che
+
+145
+00:07:01,680 --> 00:07:03,360
+dobbiamo andare a fare è andare a
+
+146
+00:07:03,360 --> 00:07:07,759
+guardare l'ultimo bit. Ok?
+
+147
+00:07:08,440 --> 00:07:10,520
+Ieri abbiamo usato questa metafora dei
+
+148
+00:07:10,520 --> 00:07:12,720
+segnali in ingresso all'automa. Una
+
+149
+00:07:12,720 --> 00:07:14,759
+cosa, un passaggio extra che possiamo
+
+150
+00:07:14,759 --> 00:07:20,280
+fare è questo qua. Pensare
+
+151
+00:07:20,280 --> 00:07:22,639
+che così ci iniziamo a poco a poco a
+
+152
+00:07:22,639 --> 00:07:25,599
+spostare verso le Turing machines che un
+
+153
+00:07:25,599 --> 00:07:28,160
+automa è un computer molto semplice che
+
+154
+00:07:28,160 --> 00:07:31,000
+ha input un nastro.
+
+155
+00:07:31,000 --> 00:07:33,440
+Ok? Vedete presenti gli scontrini? Ok,
+
+156
+00:07:33,440 --> 00:07:35,039
+abbiamo in input uno di questi
+
+157
+00:07:35,039 --> 00:07:38,639
+scontrini. Bello lungo. Ok. E su questo
+
+158
+00:07:38,639 --> 00:07:44,639
+scontrino ci stanno i simboli 0 1 0 1.
+
+159
+00:07:44,639 --> 00:07:47,440
+Quindi questa cosa qui, questa stringa
+
+160
+00:07:47,440 --> 00:07:50,919
+in input abbiamo che è codificata su uno
+
+161
+00:07:50,919 --> 00:07:53,199
+scontrino, su questo lungo nastro di
+
+162
+00:07:53,199 --> 00:07:56,759
+carta. l'automa o gli premiamo i
+
+163
+00:07:56,759 --> 00:07:58,759
+bottoni, come abbiamo detto ieri, oppure
+
+164
+00:07:58,759 --> 00:08:00,800
+un'altra metafora, perché di metafore
+
+165
+00:08:00,800 --> 00:08:03,360
+stiamo parlando, è che questo automa
+
+166
+00:08:03,360 --> 00:08:07,599
+abbia la capacità di leggere un simbolo
+
+167
+00:08:07,599 --> 00:08:10,199
+per volta da questo scontrino. Guarda
+
+168
+00:08:10,199 --> 00:08:12,360
+sullo scontrino, dice ah c'è un uno, ah,
+
+169
+00:08:12,360 --> 00:08:14,840
+c'è zero, eccetera. e la sua
+
+170
+00:08:14,840 --> 00:08:16,720
+computazione praticamente abbiamo visto
+
+171
+00:08:16,720 --> 00:08:18,960
+ieri che è oscillare fra questi due
+
+172
+00:08:18,960 --> 00:08:24,039
+stati. Lo stato Q1 che ha il significato
+
+173
+00:08:24,039 --> 00:08:28,560
+di l'ultimo simbolo che ho visto è un 1
+
+174
+00:08:28,560 --> 00:08:31,520
+e lo stato Q0 che significa l'ultimo
+
+175
+00:08:31,520 --> 00:08:35,399
+simbolo che ho visto non è uno. Ok?
+
+176
+00:08:35,399 --> 00:08:38,360
+Allora, come serve a niente questo coso?
+
+177
+00:08:38,360 --> 00:08:41,080
+Come funziona questa macchina?
+
+178
+00:08:41,080 --> 00:08:44,800
+Quando su nastro leggo uno, mi sposto
+
+179
+00:08:44,800 --> 00:08:46,760
+nello stato che significa l'ultima cosa
+
+180
+00:08:46,760 --> 00:08:49,839
+che ho visto è un uno quando io leggo su
+
+181
+00:08:49,839 --> 00:08:53,399
+nastro zero, mi sposto nello stato in
+
+182
+00:08:53,399 --> 00:08:55,760
+cui significa io l'ultima cosa che ho
+
+183
+00:08:55,760 --> 00:08:57,959
+visto è zero. Adesso se l'ultima cosa
+
+184
+00:08:57,959 --> 00:09:00,279
+che ho visto è zero e rileggo nuovamente
+
+185
+00:09:00,279 --> 00:09:02,720
+zero, rimango dove sono. Se l'ultima
+
+186
+00:09:02,720 --> 00:09:05,880
+cosa che ho visto è uno e eh leggo
+
+187
+00:09:05,880 --> 00:09:08,079
+nuovamente uno, rimango in quello stato
+
+188
+00:09:08,079 --> 00:09:10,800
+di esecuzione. Ok? Questa è una macchina
+
+189
+00:09:10,800 --> 00:09:13,160
+semplicissima, però è in grado di
+
+190
+00:09:13,160 --> 00:09:15,200
+svolgere questo compito. Date una
+
+191
+00:09:15,200 --> 00:09:20,760
+stringa binaria, è in grado di stabilire
+
+192
+00:09:21,600 --> 00:09:23,519
+se questa stringa rappresenta un numero
+
+193
+00:09:23,519 --> 00:09:26,600
+binario dispari. Ok? La cosa
+
+194
+00:09:26,600 --> 00:09:28,880
+interessante di questa macchina è che è
+
+195
+00:09:28,880 --> 00:09:30,760
+la caratteristica di questi atomi, come
+
+196
+00:09:30,760 --> 00:09:34,880
+sapete, è che la lettura dei simboli sul
+
+197
+00:09:34,880 --> 00:09:37,839
+nastro avviene un simbolo dopo l'altro,
+
+198
+00:09:37,839 --> 00:09:40,320
+cioè questo scontrino lo iniziamo a
+
+199
+00:09:40,320 --> 00:09:43,320
+tirare e una volta letto lo buttiamo,
+
+200
+00:09:43,320 --> 00:09:46,200
+ok? Non andiamo mai dietro. C'è questa
+
+201
+00:09:46,200 --> 00:09:48,200
+testina sullo scontrino che legge un
+
+202
+00:09:48,200 --> 00:09:50,360
+simbolo e va avanti, un altro simbolo e
+
+203
+00:09:50,360 --> 00:09:52,360
+va avanti e va avanti e va avanti.
+
+204
+00:09:52,360 --> 00:09:55,360
+Quello che è letto è perso, non si torna
+
+205
+00:09:55,360 --> 00:09:58,680
+indietro. Ok? Quindi questa macchina
+
+206
+00:09:58,680 --> 00:10:01,519
+deve in qualche modo fare la mossa
+
+207
+00:10:01,519 --> 00:10:03,399
+giusta nel momento in cui vede il
+
+208
+00:10:03,399 --> 00:10:06,000
+simbolo. Non ci può ripensare.
+
+209
+00:10:06,000 --> 00:10:08,560
+Ok? Questa è la caratteristica di questi
+
+210
+00:10:08,560 --> 00:10:12,200
+automi. Ok? Si legge, si butta. si
+
+211
+00:10:12,200 --> 00:10:14,640
+legge, si butta. Vedremo automi più
+
+212
+00:10:14,640 --> 00:10:16,200
+sofisticati in cui questa cosa non
+
+213
+00:10:16,200 --> 00:10:18,959
+avviene. Ok.
+
+214
+00:10:18,959 --> 00:10:21,040
+Allora, ovviamente noi abbiamo fatto una
+
+215
+00:10:21,040 --> 00:10:22,560
+descrizione
+
+216
+00:10:22,560 --> 00:10:25,040
+di eh
+
+217
+00:10:25,040 --> 00:10:27,640
+di queste macchine in maniera un po'
+
+218
+00:10:27,640 --> 00:10:29,880
+così chiacchiereccia. Quello che adesso
+
+219
+00:10:29,880 --> 00:10:32,720
+noi vogliamo fare è guardare una
+
+220
+00:10:32,720 --> 00:10:35,880
+definizione formale di queste macchine,
+
+221
+00:10:35,880 --> 00:10:39,279
+del loro della loro computazione,
+
+222
+00:10:39,279 --> 00:10:42,399
+del loro nozione di accettazione di
+
+223
+00:10:42,399 --> 00:10:44,320
+stringa, in maniera tale che su questo
+
+224
+00:10:44,320 --> 00:10:46,880
+iniziamo ad agganciarci i pezzi e
+
+225
+00:10:46,880 --> 00:10:48,720
+vedremo che la definizione di touring
+
+226
+00:10:48,720 --> 00:10:51,440
+machine non sarà molto simile da quello
+
+227
+00:10:51,440 --> 00:10:53,600
+che vediamo da queste macchine, cioè le
+
+228
+00:10:53,600 --> 00:10:56,279
+touring machines, come vedremo, saranno
+
+229
+00:10:56,279 --> 00:10:58,120
+automi come quelli che stiamo vedendo
+
+230
+00:10:58,120 --> 00:10:59,920
+ora, solo che riescono a fare qualcosina
+
+231
+00:10:59,920 --> 00:11:02,920
+in più. Quindi iniziamo a vedere le
+
+232
+00:11:02,920 --> 00:11:05,519
+definizioni formali di queste macchine
+
+233
+00:11:05,519 --> 00:11:07,399
+in maniera tale che a poco a poco ci
+
+234
+00:11:07,399 --> 00:11:09,200
+aggiungiamo pezzi fino a quando
+
+235
+00:11:09,200 --> 00:11:11,000
+arriveremo a costruire la definizione
+
+236
+00:11:11,000 --> 00:11:14,959
+formale di cos'è una machine. Ok?
+
+237
+00:11:14,959 --> 00:11:17,959
+Alrght.
+
+238
+00:11:19,639 --> 00:11:23,040
+Come si farà?
+
+239
+00:11:24,399 --> 00:11:27,399
+Ok.
+
+240
+00:11:40,079 --> 00:11:42,560
+Ok. Allora,
+
+241
+00:11:42,560 --> 00:11:45,120
+ragioniamo insieme come si possa fare
+
+242
+00:11:45,120 --> 00:11:47,720
+questa cosa. Allora, noi abbiamo detto
+
+243
+00:11:47,720 --> 00:11:49,959
+che un autonoma stati definiti
+
+244
+00:11:49,959 --> 00:11:53,240
+sostanzialmente ha varie modalità di
+
+245
+00:11:53,240 --> 00:11:55,600
+funzionamento
+
+246
+00:11:55,600 --> 00:11:58,240
+e graficamente noi le rappresentavamo
+
+247
+00:11:58,240 --> 00:12:01,800
+con quei nodi nel grafo. Ok?
+
+248
+00:12:01,800 --> 00:12:06,040
+Quindi per modellare un automa ci
+
+249
+00:12:06,040 --> 00:12:09,320
+servirà qualcosa per descrivere il la
+
+250
+00:12:09,320 --> 00:12:12,360
+modalità di funzionamento. Ok? Queste
+
+251
+00:12:12,360 --> 00:12:14,079
+modalità di funzionamento le chiamiamo
+
+252
+00:12:14,079 --> 00:12:17,199
+stati, quindi avremo necessità da
+
+253
+00:12:17,199 --> 00:12:19,079
+qualche parte di infilare degli stati.
+
+254
+00:12:19,079 --> 00:12:22,639
+Cioè una un autroma stati finiti è
+
+255
+00:12:22,639 --> 00:12:25,040
+caratterizzato da un certo numero di
+
+256
+00:12:25,040 --> 00:12:28,079
+stati. Ok? Stiamo modellando assieme
+
+257
+00:12:28,079 --> 00:12:29,720
+questa cosa. Se voi andate sui libri
+
+258
+00:12:29,720 --> 00:12:32,720
+trovate 1000 definizioni differenti. Io
+
+259
+00:12:32,720 --> 00:12:35,600
+ve ne propongo una e una che ragionevole
+
+260
+00:12:35,600 --> 00:12:38,839
+che ci stiamo inventando assieme. Ok?
+
+261
+00:12:38,839 --> 00:12:41,360
+Non è oro colato, si possono definire in
+
+262
+00:12:41,360 --> 00:12:44,079
+mille modi. Facciamo questa cosa assieme
+
+263
+00:12:44,079 --> 00:12:46,279
+per mostrarvi che il processo di
+
+264
+00:12:46,279 --> 00:12:48,279
+definire queste cose è una cosa che
+
+265
+00:12:48,279 --> 00:12:50,240
+possiamo fare anche noi. Pensiamo al
+
+266
+00:12:50,240 --> 00:12:52,079
+problema che stiamo modellando e ci
+
+267
+00:12:52,079 --> 00:12:54,199
+inventiamo così. Ok? è tutto inventato,
+
+268
+00:12:54,199 --> 00:12:56,519
+eh, niente scolpito nella pietra, poi ci
+
+269
+00:12:56,519 --> 00:12:58,639
+stanno cose inventate che funzionano
+
+270
+00:12:58,639 --> 00:13:00,399
+meglio di altre e quindi le
+
+271
+00:13:00,399 --> 00:13:02,399
+selezioniamo. Ok? Quindi noi abbiamo
+
+272
+00:13:02,399 --> 00:13:05,360
+queste macchine, hanno degli stati che
+
+273
+00:13:05,360 --> 00:13:07,839
+processano, quindi da qualche parte
+
+274
+00:13:07,839 --> 00:13:09,760
+nella formalizzazione di queste modelle
+
+275
+00:13:09,760 --> 00:13:11,920
+ci deve essere sto stato, devono esserci
+
+276
+00:13:11,920 --> 00:13:15,560
+stati. Ok? Poi abbiamo detto che la
+
+277
+00:13:15,560 --> 00:13:20,120
+macchina che fa? Legge che cosa?
+
+278
+00:13:20,120 --> 00:13:23,320
+simbol
+legge il nastro legge simboli sul
+
+279
+00:13:23,320 --> 00:13:25,839
+nastro, quindi questa macchina dovrà
+
+280
+00:13:25,839 --> 00:13:27,839
+avere associato un insieme di simboli
+
+281
+00:13:27,839 --> 00:13:32,160
+che è in grado di di distinguere. Ok?
+
+282
+00:13:32,160 --> 00:13:33,920
+Dopodiché che di che cosa è
+
+283
+00:13:33,920 --> 00:13:38,639
+caratterizzata la la macchina?
+
+284
+00:13:43,560 --> 00:13:46,199
+Da che cosa passa con adess? Ok? Quindi
+
+285
+00:13:46,199 --> 00:13:48,760
+c'è un pezzo proprio un pezzo della
+
+286
+00:13:48,760 --> 00:13:50,800
+definizione è cosa fa questa macchina,
+
+287
+00:13:50,800 --> 00:13:53,880
+cioè quindi il programma e il programma
+
+288
+00:13:53,880 --> 00:13:57,680
+qua dentro che cos'è?
+
+289
+00:13:57,680 --> 00:14:00,160
+Un grafo.
+È un grafo. Ma che cosa ci
+
+290
+00:14:00,160 --> 00:14:01,959
+dice questo grafo? Che genere di
+
+291
+00:14:01,959 --> 00:14:05,639
+informazioni ci dà?
+
+292
+00:14:06,040 --> 00:14:08,279
+Sulle stringhe accettate?
+
+293
+00:14:08,279 --> 00:14:10,440
+Come? Scusami?
+Cioè sulle stringhe
+
+294
+00:14:10,440 --> 00:14:13,839
+accettate dice
+eh ok. Però qua dentro
+
+295
+00:14:13,839 --> 00:14:16,040
+questo grafo che stiamo codificando
+
+296
+00:14:16,040 --> 00:14:17,560
+intuitivamente
+
+297
+00:14:17,560 --> 00:14:18,880
+il linguaggio è quello che noi
+
+298
+00:14:18,880 --> 00:14:20,639
+decidiamo. Però questo grafo che
+
+299
+00:14:20,639 --> 00:14:22,839
+informazione ci dà? Passaggio tra gli
+
+300
+00:14:22,839 --> 00:14:25,800
+stati.
+Come?
+Il passaggio tra gli stati.
+
+301
+00:14:25,800 --> 00:14:27,320
+Che
+il passaggio tra gli stati?
+Il
+
+302
+00:14:27,320 --> 00:14:29,360
+passaggio tra gli stati, cioè il
+
+303
+00:14:29,360 --> 00:14:31,199
+funzionamento. Cioè questo grafo ci sta
+
+304
+00:14:31,199 --> 00:14:32,680
+dicendo se siamo in questo stato e se
+
+305
+00:14:32,680 --> 00:14:34,320
+leggiamo questo simbolo ce ne andiamo di
+
+306
+00:14:34,320 --> 00:14:36,240
+là. Se siamo in quest'altro stato e
+
+307
+00:14:36,240 --> 00:14:37,720
+leggiamo quest'altro simbolo, facciamo
+
+308
+00:14:37,720 --> 00:14:39,079
+quest'altra cosa. Cioè, quindi il
+
+309
+00:14:39,079 --> 00:14:43,440
+programma è sostanzialmente codificato
+
+310
+00:14:43,440 --> 00:14:46,880
+negli negli edges che collegano le cose.
+
+311
+00:14:46,880 --> 00:14:49,639
+Quindi dentro la definizione di automa
+
+312
+00:14:49,639 --> 00:14:52,880
+ci andrà infilata pure questa cosa.
+
+313
+00:14:52,880 --> 00:14:55,199
+Quale altra caratteristica vediamo qua
+
+314
+00:14:55,199 --> 00:14:57,320
+dentro che potrebbe essere utile nella
+
+315
+00:14:57,320 --> 00:15:00,320
+definizione
+
+316
+00:15:01,040 --> 00:15:03,880
+di un automa?
+Stati iniziali, stati
+
+317
+00:15:03,880 --> 00:15:06,079
+finali? stado iniziale e stato finale.
+
+318
+00:15:06,079 --> 00:15:07,959
+Dobbiamo sapere quando accendiamo sta
+
+319
+00:15:07,959 --> 00:15:10,600
+macchinina dove si trova. Ok, quindi
+
+320
+00:15:10,600 --> 00:15:13,519
+andrà definito quello e ma la macchinina
+
+321
+00:15:13,519 --> 00:15:15,000
+quando si arresta come facciamo a
+
+322
+00:15:15,000 --> 00:15:18,639
+stabilire se dice sì o no? Ok. E quindi
+
+323
+00:15:18,639 --> 00:15:20,800
+ci serve quest'altra cosa. Quindi queste
+
+324
+00:15:20,800 --> 00:15:23,199
+sono tutte informazioni che abbiamo dato
+
+325
+00:15:23,199 --> 00:15:25,199
+qui intuitivamente. Adesso le dobbiamo
+
+326
+00:15:25,199 --> 00:15:30,880
+infilare in una definizione formale. Ok.
+
+327
+00:15:33,279 --> 00:15:35,839
+Alright.
+
+328
+00:15:36,800 --> 00:15:40,279
+avremo che
+
+329
+00:15:40,319 --> 00:15:42,880
+no
+
+330
+00:15:42,880 --> 00:15:47,600
+un automa stati finiti D
+
+331
+00:15:48,319 --> 00:15:51,440
+è caratterizzato da Abbiamo detto che
+
+332
+00:15:51,440 --> 00:15:54,399
+questo automa legge simboli da un
+
+333
+00:15:54,399 --> 00:15:57,759
+nastro. Di conseguenza ci serve
+
+334
+00:15:57,759 --> 00:16:00,560
+l'alfabeto sul quale questa macchina
+
+335
+00:16:00,560 --> 00:16:03,880
+lavora, quindi è caratterizzato da
+
+336
+00:16:03,880 --> 00:16:05,399
+sigma.
+
+337
+00:16:05,399 --> 00:16:10,639
+Sigma che cos'è? Sigma è un alfabeto.
+
+338
+00:16:15,000 --> 00:16:17,600
+Di cos'altro era fatto questo automa? Se
+
+339
+00:16:17,600 --> 00:16:20,000
+ripensiamo al grafo, riguardatelo nella
+
+340
+00:16:20,000 --> 00:16:21,600
+vostra vente. Che ci sta in questo
+
+341
+00:16:21,600 --> 00:16:23,199
+grafo.
+
+342
+00:16:23,199 --> 00:16:25,199
+Gli stati, le pallette. Ok. Quindi
+
+343
+00:16:25,199 --> 00:16:30,120
+abbiamo un insieme Q di stati.
+
+344
+00:16:39,720 --> 00:16:42,040
+Riguardate nella vostra mente o nei
+
+345
+00:16:42,040 --> 00:16:45,079
+vostri appunti quel grafo. C'erano stati
+
+346
+00:16:45,079 --> 00:16:49,920
+diversi dagli altri. Che cosa abbiamo?
+
+347
+00:16:50,160 --> 00:16:54,839
+lo stato iniziale. Quindi Q0
+
+348
+00:16:54,839 --> 00:17:02,279
+Q0 appartenente a Q è lo stato iniziale.
+
+349
+00:17:05,760 --> 00:17:08,959
+Poi abbiamo l'insieme F, che è un
+
+350
+00:17:08,959 --> 00:17:12,039
+sottoinsieme di tutti gli stati Q che
+
+351
+00:17:12,039 --> 00:17:16,959
+sono gli stati finali.
+
+352
+00:17:18,520 --> 00:17:20,520
+Riguardiamo nella nostra mente il grafo
+
+353
+00:17:20,520 --> 00:17:23,520
+che ci sta in questo grafo.
+
+354
+00:17:23,520 --> 00:17:25,839
+Ci stanno gli archi che è la codifica
+
+355
+00:17:25,839 --> 00:17:27,959
+del programma, ok? Che ci dicono come
+
+356
+00:17:27,959 --> 00:17:31,120
+sta macchina balla fra uno stato e
+
+357
+00:17:31,120 --> 00:17:33,400
+l'altro, ok?
+
+358
+00:17:33,400 --> 00:17:37,280
+La chiamiamo delta.
+
+359
+00:17:37,400 --> 00:17:43,280
+Delta è la funzione di transizione, ok?
+
+360
+00:17:43,280 --> 00:17:45,919
+Cioè, si chiama così perché ci dice come
+
+361
+00:17:45,919 --> 00:17:48,679
+la macchina transisce da uno stato
+
+362
+00:17:48,679 --> 00:17:52,080
+all'altro. Ok? Comeè definita questa
+
+363
+00:17:52,080 --> 00:17:54,320
+funzione? Qual è l'inputs di questa
+
+364
+00:17:54,320 --> 00:17:57,320
+funzione?
+
+365
+00:17:57,400 --> 00:18:00,600
+Stato è un simbolo.
+È un simbol. Questa
+
+366
+00:18:00,600 --> 00:18:02,600
+funzione ci dice se siamo in questo
+
+367
+00:18:02,600 --> 00:18:04,799
+stato e stiamo leggendo questa cosa,
+
+368
+00:18:04,799 --> 00:18:08,640
+quindi input della funzione
+
+369
+00:18:08,640 --> 00:18:12,679
+è una funzione che va dagli stati per i
+
+370
+00:18:12,679 --> 00:18:16,120
+simboli, quindi il prodotto cartesiano
+
+371
+00:18:16,120 --> 00:18:19,799
+degli stati e dei simboli. Quindi questa
+
+372
+00:18:19,799 --> 00:18:21,760
+cosa significa la funzione di
+
+373
+00:18:21,760 --> 00:18:24,679
+transizione. Se siamo in uno stato e
+
+374
+00:18:24,679 --> 00:18:27,360
+leggiamo un certo simbolo,
+
+375
+00:18:27,360 --> 00:18:29,919
+allora che informazione ci dà questa
+
+376
+00:18:29,919 --> 00:18:31,520
+funzione?
+
+377
+00:18:31,520 --> 00:18:33,880
+Lo stato successivo, cioè dove ci
+
+378
+00:18:33,880 --> 00:18:35,440
+spostiamo.
+
+379
+00:18:35,440 --> 00:18:39,159
+Q. Quindi delta
+
+380
+00:18:39,159 --> 00:18:42,559
+è una funzione
+
+381
+00:18:42,559 --> 00:18:47,000
+che va mappa coppie stato simbolo verso
+
+382
+00:18:47,000 --> 00:18:49,280
+il prossimo stato. Ok? Così si leggono
+
+383
+00:18:49,280 --> 00:18:54,360
+le funzioni. Ok? Questa è una funzione,
+
+384
+00:18:54,360 --> 00:18:57,960
+il che significa che per ogni
+
+385
+00:18:57,960 --> 00:18:59,760
+coppia
+
+386
+00:18:59,760 --> 00:19:02,000
+stato corrente
+
+387
+00:19:02,000 --> 00:19:04,679
+simbolo letto,
+
+388
+00:19:04,679 --> 00:19:09,159
+il prossimo stato è uno solo. Ok? Quindi
+
+389
+00:19:09,159 --> 00:19:11,720
+per questo è una funzione perché mappa
+
+390
+00:19:11,720 --> 00:19:15,640
+ogni singola coppia, ok?
+
+391
+00:19:15,640 --> 00:19:17,280
+Verso
+
+392
+00:19:17,280 --> 00:19:21,120
+un un solo stato successivo. Ok? Quindi
+
+393
+00:19:21,120 --> 00:19:24,200
+questa è la definizione
+
+394
+00:19:24,200 --> 00:19:29,000
+formale di automa stati finiti. Ok?
+
+395
+00:19:29,000 --> 00:19:31,200
+Questo è un automa stati finiti perché
+
+396
+00:19:31,200 --> 00:19:35,159
+l'insieme Q degli stati è un insieme a
+
+397
+00:19:35,159 --> 00:19:40,080
+cardinalità finita. Ok? Cioè quando noi
+
+398
+00:19:40,080 --> 00:19:45,000
+progettiamo un automa, ok?
+
+399
+00:19:45,000 --> 00:19:48,480
+questo automa Q
+
+400
+00:19:48,480 --> 00:19:51,200
+questo automa in cui decidiamo quali
+
+401
+00:19:51,200 --> 00:19:54,679
+sono gli stati, gli stati non possono
+
+402
+00:19:54,679 --> 00:19:57,480
+cambiare mentre la macchina esegue.
+
+403
+00:19:57,480 --> 00:20:00,559
+Cioè, non è che la macchina gira, vede
+
+404
+00:20:00,559 --> 00:20:04,080
+un simbolo e m qua mi aspettavo altro e
+
+405
+00:20:04,080 --> 00:20:06,640
+e tira fuori uno stato aggiuntivo, cioè
+
+406
+00:20:06,640 --> 00:20:09,080
+mi cresce una palletta extra nel grafo,
+
+407
+00:20:09,080 --> 00:20:12,039
+ok? Cioè il grafo è il programma della
+
+408
+00:20:12,039 --> 00:20:15,159
+macchina. La macchina segue per vedisse
+
+409
+00:20:15,159 --> 00:20:16,880
+nuovamente quello che c'è scritto nel
+
+410
+00:20:16,880 --> 00:20:20,679
+grafo. Il grafo non cambia
+
+411
+00:20:20,679 --> 00:20:24,000
+mentre la macchina esegue.
+
+412
+00:20:24,000 --> 00:20:26,919
+Ok?
+
+413
+00:20:26,919 --> 00:20:29,039
+Questo è importantissimo, eh, perché vi
+
+414
+00:20:29,039 --> 00:20:32,760
+dovrebbe già fare iniziare a pensare che
+
+415
+00:20:32,760 --> 00:20:34,840
+i computer sono un aggeggio un po'
+
+416
+00:20:34,840 --> 00:20:36,640
+strano
+
+417
+00:20:36,640 --> 00:20:39,880
+perché eseguono programmi differenti.
+
+418
+00:20:39,880 --> 00:20:42,080
+Ok, poi vedremo come questa cosa è
+
+419
+00:20:42,080 --> 00:20:45,440
+possibile, però ok, ma un automa ha un
+
+420
+00:20:45,440 --> 00:20:47,000
+programma fissato, ma io sul mio
+
+421
+00:20:47,000 --> 00:20:48,559
+computer ci riesco a mettere giochi
+
+422
+00:20:48,559 --> 00:20:52,440
+diversi, com'è che fa cose diverse? Ok,
+
+423
+00:20:52,440 --> 00:20:55,039
+vedremo
+
+424
+00:20:55,039 --> 00:20:57,799
+formalmente questa cosa come si ottiene.
+
+425
+00:20:57,799 --> 00:20:59,480
+Ok.
+
+426
+00:20:59,480 --> 00:21:04,520
+Alri. Questa è la definizione di
+
+427
+00:21:04,520 --> 00:21:08,520
+automa. Però ancora non abbiamo definito
+
+428
+00:21:08,520 --> 00:21:10,400
+formalmente come questo automa
+
+429
+00:21:10,400 --> 00:21:13,120
+computare. Ok?
+
+430
+00:21:13,120 --> 00:21:15,240
+Perché qua ancora non abbiamo letto come
+
+431
+00:21:15,240 --> 00:21:19,400
+avvengono i passaggi e che cos'è una
+
+432
+00:21:19,400 --> 00:21:21,720
+computazione accettante per l'automa.
+
+433
+00:21:21,720 --> 00:21:25,360
+Ok, qua vi viito un po' io perché è un
+
+434
+00:21:25,360 --> 00:21:29,120
+po' più tricky. Allora, pensiamo assieme
+
+435
+00:21:29,120 --> 00:21:32,120
+questa cosa qua.
+
+436
+00:21:32,120 --> 00:21:34,799
+Se noi vogliamo
+
+437
+00:21:34,799 --> 00:21:36,320
+catturare
+
+438
+00:21:36,320 --> 00:21:38,720
+il funzionamento di un automa stati
+
+439
+00:21:38,720 --> 00:21:41,360
+finiti, sostanzialmente noi dobbiamo in
+
+440
+00:21:41,360 --> 00:21:44,120
+qualche modo modellare
+
+441
+00:21:44,120 --> 00:21:48,159
+i passi che quest'utoma fa su una certa
+
+442
+00:21:48,159 --> 00:21:50,320
+stellino.
+
+443
+00:21:50,320 --> 00:21:52,159
+È chiaro per tutti? Cioè, se io devo
+
+444
+00:21:52,159 --> 00:21:53,919
+modellare il funzionamento della
+
+445
+00:21:53,919 --> 00:21:56,720
+macchina su una certa stringa input, io
+
+446
+00:21:56,720 --> 00:21:59,720
+devo in qualche modo catturare la
+
+447
+00:21:59,720 --> 00:22:02,480
+sequenza delle cose che succedono mentre
+
+448
+00:22:02,480 --> 00:22:04,840
+questa macchina gira sulla stringa
+
+449
+00:22:04,840 --> 00:22:07,679
+input. Ok?
+
+450
+00:22:07,679 --> 00:22:10,320
+Adesso, secondo voi, supponiamo che
+
+451
+00:22:10,320 --> 00:22:11,960
+stiamo studiando il funzionamento di
+
+452
+00:22:11,960 --> 00:22:14,520
+questa macchina su una string input e
+
+453
+00:22:14,520 --> 00:22:16,760
+che questa macchina staia già girando,
+
+454
+00:22:16,760 --> 00:22:20,640
+ok? e vogliamo catturare
+
+455
+00:22:20,640 --> 00:22:23,400
+lo stato di avanzamento dei lavori di
+
+456
+00:22:23,400 --> 00:22:25,039
+questa macchina a un certo punto in
+
+457
+00:22:25,039 --> 00:22:27,039
+mezzo alla computazione. Ok? Quindi è
+
+458
+00:22:27,039 --> 00:22:29,240
+chiaro, abbiamo questa macchina ha
+
+459
+00:22:29,240 --> 00:22:31,039
+ricevuto input, una stringa, questa
+
+460
+00:22:31,039 --> 00:22:33,600
+macchina sta iniziando a girare, legge
+
+461
+00:22:33,600 --> 00:22:35,279
+caratteri, abbiamo detto che questa
+
+462
+00:22:35,279 --> 00:22:38,480
+macchina che fa? Legge simboli, si muove
+
+463
+00:22:38,480 --> 00:22:40,440
+in un altro stato, butta quello che ha
+
+464
+00:22:40,440 --> 00:22:42,520
+detto. Ok? Questo è importante. Leggo un
+
+465
+00:22:42,520 --> 00:22:45,320
+simbolo, cambio stato, butto. Leggo
+
+466
+00:22:45,320 --> 00:22:49,240
+simbolo, cambio stato, butto. Ok?
+
+467
+00:22:49,240 --> 00:22:51,919
+Questa macchina processa passo dopo
+
+468
+00:22:51,919 --> 00:22:54,799
+passo in questo modo,
+
+469
+00:22:54,799 --> 00:22:56,760
+a un certo punto arriva a metà. Ma noi
+
+470
+00:22:56,760 --> 00:22:58,840
+vorremmo essere in grado di
+
+471
+00:22:58,840 --> 00:23:01,400
+caratterizzare lo stato di avanzamento
+
+472
+00:23:01,400 --> 00:23:04,480
+dei lavori questa macchina in mezzo alla
+
+473
+00:23:04,480 --> 00:23:06,440
+computazione. Di quale informazione
+
+474
+00:23:06,440 --> 00:23:09,159
+abbiamo bisogno per essere in grado di
+
+475
+00:23:09,159 --> 00:23:12,919
+stabilire cosa a che punto è la macchina
+
+476
+00:23:12,919 --> 00:23:16,600
+del del suo calcolo?
+
+477
+00:23:18,520 --> 00:23:20,279
+Ecco, non ho capito. Vogliamo capire se
+
+478
+00:23:20,279 --> 00:23:23,279
+la macchina si trova del Q0 Q1. Allora,
+
+479
+00:23:23,279 --> 00:23:25,039
+è una cosa che ci stiamo inventando. Noi
+
+480
+00:23:25,039 --> 00:23:27,440
+vogliamo modellare i passaggi della
+
+481
+00:23:27,440 --> 00:23:29,640
+macchina.
+
+482
+00:23:29,640 --> 00:23:32,240
+La mia domanda è: siccome noi vogliamo
+
+483
+00:23:32,240 --> 00:23:34,720
+capire i passi che la macchina fa per
+
+484
+00:23:34,720 --> 00:23:37,159
+arrivare fino a accettare o rifiutare,
+
+485
+00:23:37,159 --> 00:23:41,159
+noi dobbiamo inventarci delle, cioè ci
+
+486
+00:23:41,159 --> 00:23:43,159
+chiediamo quali sono le informazioni che
+
+487
+00:23:43,159 --> 00:23:45,840
+ci servono per stabilire in mezzo al
+
+488
+00:23:45,840 --> 00:23:48,400
+calcolo a che punto la macchina si
+
+489
+00:23:48,400 --> 00:23:51,400
+trova.
+
+490
+00:23:52,919 --> 00:23:56,640
+La fun, usiamo la funzione del tipo io
+
+491
+00:23:56,640 --> 00:24:00,240
+so la sfinga di input,
+quindi eh car,
+
+492
+00:24:00,240 --> 00:24:02,039
+cioè simbolo per simbolo, prendo poi
+
+493
+00:24:02,039 --> 00:24:05,600
+prendo l'output,
+sì. e lo uso come input
+
+494
+00:24:05,600 --> 00:24:07,760
+per il successivo simbolo.
+Sì, l'idea
+
+495
+00:24:07,760 --> 00:24:12,039
+c'è più semplice. Io voglio sapere in
+
+496
+00:24:12,039 --> 00:24:14,679
+mezzo al guado, stiamo attraversando
+
+497
+00:24:14,679 --> 00:24:16,320
+questo fiume da un arrivo all'altra,
+
+498
+00:24:16,320 --> 00:24:18,279
+dalla partenza all'arrivo, noi siamo in
+
+499
+00:24:18,279 --> 00:24:20,840
+mezzo all'acqua. Come Quali sono le
+
+500
+00:24:20,840 --> 00:24:23,240
+informazioni che mi servono per sapere
+
+501
+00:24:23,240 --> 00:24:26,840
+da lì in poi come la macchina procederà?
+
+502
+00:24:26,840 --> 00:24:29,880
+Stato corrente
+
+503
+00:24:29,880 --> 00:24:31,880
+input
+
+504
+00:24:31,880 --> 00:24:34,240
+un po' di più.
+
+505
+00:24:34,240 --> 00:24:36,840
+Allora, per sapere, stiamo attraversando
+
+506
+00:24:36,840 --> 00:24:39,520
+il fiume da una riva all'altra. Ok? La
+
+507
+00:24:39,520 --> 00:24:41,679
+macchina si trova in mezzo al guado.
+
+508
+00:24:41,679 --> 00:24:43,840
+Come faccio a sapere di quali
+
+509
+00:24:43,840 --> 00:24:46,720
+informazioni necessito per sapere come
+
+510
+00:24:46,720 --> 00:24:48,600
+evolverà la sua computazione da metà
+
+511
+00:24:48,600 --> 00:24:50,440
+verso la fine?
+
+512
+00:24:50,440 --> 00:24:53,120
+corrente, stringa rimesse,
+mi serve lo
+
+513
+00:24:53,120 --> 00:24:56,440
+stato corrente e il pezzo di stringa che
+
+514
+00:24:56,440 --> 00:24:59,120
+rimane. Quello è tutto ciò che mi serve
+
+515
+00:24:59,120 --> 00:25:01,360
+perché la funzione delta noi la
+
+516
+00:25:01,360 --> 00:25:03,440
+conosciamo dalla macchina. Quindi se io
+
+517
+00:25:03,440 --> 00:25:06,960
+so in quale stato sono e qual è la parte
+
+518
+00:25:06,960 --> 00:25:09,919
+rimanente di stringa, io posso stabilire
+
+519
+00:25:09,919 --> 00:25:11,720
+quali saranno tutti i passaggi
+
+520
+00:25:11,720 --> 00:25:15,000
+successivi della macchina. Ok? string e
+
+521
+00:25:15,000 --> 00:25:17,840
+non si
+perché se io voglio sapere quale
+
+522
+00:25:17,840 --> 00:25:20,240
+sarà il resto della computazione devo
+
+523
+00:25:20,240 --> 00:25:23,720
+sapere cosa mi rimane la leggere
+
+524
+00:25:23,720 --> 00:25:27,640
+però stato si bassa si bassa simili
+ma
+
+525
+00:25:27,640 --> 00:25:30,279
+se un conto è che io sono in uno stato e
+
+526
+00:25:30,279 --> 00:25:32,440
+una c'ho una sequenza di 3A un conto è
+
+527
+00:25:32,440 --> 00:25:35,360
+che c'ho uno stato, una a e una sequenza
+
+528
+00:25:35,360 --> 00:25:38,279
+di 3B, cioè cosa farà la macchina?
+
+529
+00:25:38,279 --> 00:25:40,960
+dipende da quello che leggo ora, ma i
+
+530
+00:25:40,960 --> 00:25:43,320
+suoi passi successivi dipende da quello
+
+531
+00:25:43,320 --> 00:25:45,919
+che leggerò poi.
+
+532
+00:25:45,919 --> 00:25:48,919
+Ok?
+
+533
+00:25:49,559 --> 00:25:52,480
+Questo non è oroato, ce lo stiamo
+
+534
+00:25:52,480 --> 00:25:56,120
+modellando come vogliamo noi.
+
+535
+00:25:56,120 --> 00:25:58,039
+Potete inventarvi altri modi,
+
+536
+00:25:58,039 --> 00:25:59,880
+l'importante è che funziona. Perché
+
+537
+00:25:59,880 --> 00:26:01,799
+facciamo così? Perché in questo modo
+
+538
+00:26:01,799 --> 00:26:03,559
+introduco un concetto che poi ci serve
+
+539
+00:26:03,559 --> 00:26:06,120
+per le macchine di ting. Ok?
+
+540
+00:26:06,120 --> 00:26:07,480
+Ecco perché ce la stiamo un po'
+
+541
+00:26:07,480 --> 00:26:09,679
+complicando, perché poi estendiamo sta
+
+542
+00:26:09,679 --> 00:26:11,720
+cosa le macchine during e siamo belli
+
+543
+00:26:11,720 --> 00:26:14,760
+rilassati. Ok? Allora, ci siamo detti
+
+544
+00:26:14,760 --> 00:26:16,840
+quindi che uno snapshot, cioè una
+
+545
+00:26:16,840 --> 00:26:19,720
+fotografia che ci permette di capire da
+
+546
+00:26:19,720 --> 00:26:21,720
+qui in avanti come la macchina si
+
+547
+00:26:21,720 --> 00:26:24,159
+comporterà sono due generi di
+
+548
+00:26:24,159 --> 00:26:28,159
+informazioni: lo stato corrente e la
+
+549
+00:26:28,159 --> 00:26:31,559
+parte di stringa residua. Ok? Noi a
+
+550
+00:26:31,559 --> 00:26:33,679
+questa informazione gli diamo il nome,
+
+551
+00:26:33,679 --> 00:26:38,520
+così lo possiamo utilizzare.
+
+552
+00:26:41,120 --> 00:26:45,240
+Una configurazione
+
+553
+00:26:49,159 --> 00:26:53,640
+per una macchina D.
+
+554
+00:26:56,320 --> 00:27:00,799
+intuitivamente è semplicemente
+
+555
+00:27:00,799 --> 00:27:04,399
+una sequenza di simboli il cui primo
+
+556
+00:27:04,399 --> 00:27:09,480
+simbolo è un certo stato Q, ok? E gli
+
+557
+00:27:09,480 --> 00:27:13,320
+altri simboli sono tipo C, bla bla bla e
+
+558
+00:27:13,320 --> 00:27:16,000
+il resto della stringa che deve leggere.
+
+559
+00:27:16,000 --> 00:27:20,360
+Ok? Adesso facciamo un esempino.
+
+560
+00:27:22,200 --> 00:27:24,520
+Ah! Ah! Voi i vostri appunti li avete
+
+561
+00:27:24,520 --> 00:27:26,720
+sott'occhio, più o meno, perché no, mi
+
+562
+00:27:26,720 --> 00:27:29,919
+servirebbe più roba.
+
+563
+00:27:29,919 --> 00:27:32,919
+Alright,
+
+564
+00:27:34,240 --> 00:27:36,600
+ripensiamo alla macchina precedente, la
+
+565
+00:27:36,600 --> 00:27:40,360
+macchina che è in grado di distinguere
+
+566
+00:27:40,360 --> 00:27:45,440
+stringhe dispari da stringhe pari, ok?
+
+567
+00:27:45,440 --> 00:27:50,679
+E vogliamo capire come funziona
+
+568
+00:27:50,679 --> 00:27:54,159
+la macchina sulla stringa
+
+569
+00:27:54,159 --> 00:27:56,120
+01.
+
+570
+00:27:56,120 --> 00:27:59,120
+Ok.
+
+571
+00:28:01,880 --> 00:28:05,360
+No, non mi piace.
+
+572
+00:28:06,679 --> 00:28:10,360
+Facciamo 001 001.
+
+573
+00:28:10,360 --> 00:28:13,399
+Ok, quindi abbiamo la macchina di prima
+
+574
+00:28:13,399 --> 00:28:16,240
+e input riceve
+
+575
+00:28:16,240 --> 00:28:19,600
+la stringa 001. Ok? Adesso noi vogliamo
+
+576
+00:28:19,600 --> 00:28:21,760
+per impratichirci con questa nozione di
+
+577
+00:28:21,760 --> 00:28:23,679
+configurazione vogliamo capire qual è la
+
+578
+00:28:23,679 --> 00:28:25,760
+sequenza delle configurazioni che la
+
+579
+00:28:25,760 --> 00:28:28,559
+macchina attraversa prima di arrivare a
+
+580
+00:28:28,559 --> 00:28:31,799
+dire sì o no. Ok?
+
+581
+00:28:31,799 --> 00:28:35,559
+Allora, la macchina parte in Q0 e
+
+582
+00:28:35,559 --> 00:28:39,360
+all'inizio ha su sul nastro 001. Ok?
+
+583
+00:28:39,360 --> 00:28:41,799
+Quindi la prima configurazione della
+
+584
+00:28:41,799 --> 00:28:43,919
+macchina è stato iniziale tutta la
+
+585
+00:28:43,919 --> 00:28:45,559
+stringa.
+
+586
+00:28:45,559 --> 00:28:48,320
+Ok?
+
+587
+00:28:48,320 --> 00:28:51,240
+Questa configurazione
+
+588
+00:28:51,240 --> 00:28:55,120
+è seguita da un'altra configurazione che
+
+589
+00:28:55,120 --> 00:28:58,200
+sostanzialmente è quella che la macchina
+
+590
+00:28:58,200 --> 00:29:00,279
+raggiunge una volta che legge il primo
+
+591
+00:29:00,279 --> 00:29:02,760
+simbolo. Ok? Vi ricordate? Quindi siamo
+
+592
+00:29:02,760 --> 00:29:05,159
+in Q0,
+
+593
+00:29:05,159 --> 00:29:10,760
+leggiamo questo 0 qui, ok? Che cosa
+
+594
+00:29:10,760 --> 00:29:15,080
+succede alla macchina? Siamo in Q0,
+
+595
+00:29:15,080 --> 00:29:18,000
+leggiamo 0,
+
+596
+00:29:18,000 --> 00:29:20,159
+rimaniamo in Q0 perché c'era
+
+597
+00:29:20,159 --> 00:29:22,600
+quell'anellino, quindi il nuovo stato
+
+598
+00:29:22,600 --> 00:29:26,120
+sarà Q0.
+
+599
+00:29:26,519 --> 00:29:28,679
+Ci siamo detti che il simbolo appena
+
+600
+00:29:28,679 --> 00:29:31,679
+letto è stracciato va a finire
+
+601
+00:29:31,679 --> 00:29:33,880
+nell'immondizia e quindi quello che
+
+602
+00:29:33,880 --> 00:29:40,039
+rimane in input è 01. Ok? Quindi questa
+
+603
+00:29:40,039 --> 00:29:43,039
+configurazione,
+
+604
+00:29:44,240 --> 00:29:48,039
+questa configurazione qui è la next
+
+605
+00:29:48,039 --> 00:29:50,960
+legal, la configurazione legale
+
+606
+00:29:50,960 --> 00:29:54,080
+successiva rispetto a questo e alla
+
+607
+00:29:54,080 --> 00:29:57,720
+funzione di transizione di D. Ok? Cioè,
+
+608
+00:29:57,720 --> 00:30:01,519
+quindi questa segue questa secondo
+
+609
+00:30:01,519 --> 00:30:04,640
+delta, ok? La delta della macchina che
+
+610
+00:30:04,640 --> 00:30:06,240
+stiamo considerando non una delta
+
+611
+00:30:06,240 --> 00:30:08,720
+generica, ok?
+
+612
+00:30:08,720 --> 00:30:11,679
+Alri,
+
+613
+00:30:11,679 --> 00:30:14,760
+siamo in Q0, leggiamo zero. Che fa con
+
+614
+00:30:14,760 --> 00:30:17,880
+la macchina?
+
+615
+00:30:18,279 --> 00:30:21,799
+Rimane in Q0 e all'input che succede?
+
+616
+00:30:21,799 --> 00:30:27,360
+diventa uno
+uno. Ok, questo è l'altro
+
+617
+00:30:27,360 --> 00:30:30,720
+stato, l'altra configurazione. Ok, sto
+
+618
+00:30:30,720 --> 00:30:32,440
+andando lento perché poi quando faremo
+
+619
+00:30:32,440 --> 00:30:34,240
+Turing machines queste cose le facciamo
+
+620
+00:30:34,240 --> 00:30:38,720
+più astratte e andiamo più veloci. Ok.
+
+621
+00:30:38,720 --> 00:30:41,360
+Alright. Quindi adesso siamo in Q0. La
+
+622
+00:30:41,360 --> 00:30:45,120
+macchina legge uno. Che cosa succede?
+La
+
+623
+00:30:45,120 --> 00:30:48,480
+macchina va in Q1. Che succede
+
+624
+00:30:48,480 --> 00:30:50,880
+all'input?
+
+625
+00:30:50,880 --> 00:30:53,640
+si svuota.
+
+626
+00:30:53,640 --> 00:30:56,559
+Segniamo epil. Ok.
+
+627
+00:30:56,559 --> 00:31:00,600
+E questa è l'ultima configurazione. Ok.
+
+628
+00:31:00,600 --> 00:31:03,399
+Che peculiarità ha l'ultima
+
+629
+00:31:03,399 --> 00:31:06,399
+configurazione
+
+630
+00:31:06,399 --> 00:31:09,000
+che non ha nessun cioè nessuna funzione
+
+631
+00:31:09,000 --> 00:31:11,279
+associata, cioè non ha nessuno scambio
+
+632
+00:31:11,279 --> 00:31:13,279
+di stato in questo
+non c'è nessuno
+
+633
+00:31:13,279 --> 00:31:16,720
+scambio di stato. Ok.
+
+634
+00:31:16,720 --> 00:31:18,760
+Poi c'è un'altra caratteristica. Cos'è
+
+635
+00:31:18,760 --> 00:31:20,000
+lo Stato?
+
+636
+00:31:20,000 --> 00:31:22,639
+stato accettando
+e lo state accettando.
+
+637
+00:31:22,639 --> 00:31:26,480
+Quanta parte di stringa è rimasta?
+
+638
+00:31:26,480 --> 00:31:29,159
+Nessuna. Ok, la stringa si è svuotata.
+
+639
+00:31:29,159 --> 00:31:31,360
+Ah, ok. Perché ci stiamo focalizzando su
+
+640
+00:31:31,360 --> 00:31:34,519
+questo? Perché la condizione di accept
+
+641
+00:31:34,519 --> 00:31:37,039
+reject di una macchina la possiamo
+
+642
+00:31:37,039 --> 00:31:40,880
+definire in tanti modi, ok? Basta che è
+
+643
+00:31:40,880 --> 00:31:43,799
+coerente. Su alcuni libri troverete un
+
+644
+00:31:43,799 --> 00:31:45,760
+modo, su altri libri troverete altro.
+
+645
+00:31:45,760 --> 00:31:48,600
+Questo è il modo che in genere uso io.
+
+646
+00:31:48,600 --> 00:31:52,240
+La macchina accetta
+
+647
+00:31:52,240 --> 00:31:56,120
+se e solo se
+
+648
+00:31:56,159 --> 00:31:59,000
+a fine computazione si trova in uno
+
+649
+00:31:59,000 --> 00:32:01,600
+stato accettante
+
+650
+00:32:01,600 --> 00:32:06,200
+e sul nastro non è rimasto niente.
+
+651
+00:32:06,559 --> 00:32:11,039
+Ok? M questa informazione ovviamente
+
+652
+00:32:11,039 --> 00:32:13,880
+adesso formalizzeremo il tutto, ok? Però
+
+653
+00:32:13,880 --> 00:32:16,720
+questa informazione, questa definizione
+
+654
+00:32:16,720 --> 00:32:19,720
+ci dà un'informazione importante.
+
+655
+00:32:19,720 --> 00:32:22,240
+La macchina per dire sì devono succedere
+
+656
+00:32:22,240 --> 00:32:24,279
+due cose.
+
+657
+00:32:24,279 --> 00:32:26,360
+Deve consumare l'input, cioè deve
+
+658
+00:32:26,360 --> 00:32:28,120
+arrivare che dell'input non ci rimane
+
+659
+00:32:28,120 --> 00:32:31,159
+niente e lo stato in cui si trova alla
+
+660
+00:32:31,159 --> 00:32:32,799
+fine deve essere uno stato accettabile.
+
+661
+00:32:32,799 --> 00:32:35,000
+Quindi due cose devono accaderebbe, non
+
+662
+00:32:35,000 --> 00:32:39,559
+una solo input finish, stato finale è
+
+663
+00:32:39,559 --> 00:32:42,799
+uno stato accettante. Ok?
+
+664
+00:32:42,799 --> 00:32:46,120
+La macchina accetta solo in presenza di
+
+665
+00:32:46,120 --> 00:32:49,000
+queste due condizioni. Di conseguenza,
+
+666
+00:32:49,000 --> 00:32:52,240
+quand'è che la macchina rifiuta?
+
+667
+00:32:52,240 --> 00:32:53,919
+quando ha finito di leggere non è un
+
+668
+00:32:53,919 --> 00:32:57,600
+stato finale.
+Una condizione è che
+
+669
+00:32:57,600 --> 00:33:00,399
+abbiamo finito di leggere e non siamo in
+
+670
+00:33:00,399 --> 00:33:02,799
+uno stato accettante
+
+671
+00:33:02,799 --> 00:33:05,039
+oppure
+
+672
+00:33:05,039 --> 00:33:08,039
+oppure
+
+673
+00:33:08,080 --> 00:33:09,760
+perché io a differenza di altre
+
+674
+00:33:09,760 --> 00:33:12,080
+definizioni non uso gli stati di
+
+675
+00:33:12,080 --> 00:33:14,039
+rifiuto. Ok? Quindi abbiamo una
+
+676
+00:33:14,039 --> 00:33:16,000
+definizione un po' più sofisticata.
+
+677
+00:33:16,000 --> 00:33:17,639
+Quindi
+
+678
+00:33:17,639 --> 00:33:20,960
+la macchina accetta se leggo tutto e
+
+679
+00:33:20,960 --> 00:33:23,760
+quando arriva alla fine e c sta cadiamo
+
+680
+00:33:23,760 --> 00:33:26,360
+in uno stato accettante. Ok? Due cose
+
+681
+00:33:26,360 --> 00:33:28,600
+devono succedere, basta che una delle
+
+682
+00:33:28,600 --> 00:33:31,440
+due non accade e quindi sto rifiutando.
+
+683
+00:33:31,440 --> 00:33:34,200
+Quindi la macchina rifiuta quando?
+
+684
+00:33:34,200 --> 00:33:37,399
+O arriviamo in fondo
+
+685
+00:33:37,399 --> 00:33:40,279
+e siamo piombati in uno stato non
+
+686
+00:33:40,279 --> 00:33:42,600
+categorizzato come accettante, cioè uno
+
+687
+00:33:42,600 --> 00:33:47,240
+degli altri stati oppure
+
+688
+00:33:47,320 --> 00:33:50,279
+finale completamente
+
+689
+00:33:50,279 --> 00:33:52,399
+oppure la macchina è arrivata a un punto
+
+690
+00:33:52,399 --> 00:33:54,960
+della computazione per le quali l'input
+
+691
+00:33:54,960 --> 00:33:57,120
+non è finito e la funzione di
+
+692
+00:33:57,120 --> 00:34:00,000
+transizione non stabilisce due prossime
+
+693
+00:34:00,000 --> 00:34:01,679
+mosse, quindi la macchina si va a
+
+694
+00:34:01,679 --> 00:34:06,600
+bloccare in un punto, ok? Nel quale
+
+695
+00:34:06,600 --> 00:34:10,159
+ah da lì non si schioda. Ok? Quindi un
+
+696
+00:34:10,159 --> 00:34:12,839
+automa stati finiti accetta perché
+
+697
+00:34:12,839 --> 00:34:15,119
+almeno nella definizione che usiamo qua,
+
+698
+00:34:15,119 --> 00:34:17,639
+ma vi ripeto ce ne sono 1000
+
+699
+00:34:17,639 --> 00:34:20,040
+equivalenti. Se andate a leggere in giro
+
+700
+00:34:20,040 --> 00:34:21,879
+ci saranno le definizioni che parlano
+
+701
+00:34:21,879 --> 00:34:24,679
+degli stati di reject, ok? io non lo
+
+702
+00:34:24,679 --> 00:34:27,560
+trovo particolarmente utile per le cose
+
+703
+00:34:27,560 --> 00:34:29,399
+che dovremmo fare poi. Quindi la
+
+704
+00:34:29,399 --> 00:34:32,000
+definizione che è che un automa stati
+
+705
+00:34:32,000 --> 00:34:34,359
+finiti accetta se consume il suo input e
+
+706
+00:34:34,359 --> 00:34:36,720
+termina in uno stato accettato. Quindi
+
+707
+00:34:36,720 --> 00:34:39,639
+se non consume il suo input o lo consuma
+
+708
+00:34:39,639 --> 00:34:41,839
+e va a finire in uno stato non tra
+
+709
+00:34:41,839 --> 00:34:44,119
+quelli accettanti, la macchina rifiuta.
+
+710
+00:34:44,119 --> 00:34:45,720
+Ok? E questa cosa adesso la
+
+711
+00:34:45,720 --> 00:34:47,560
+formalizziamo.
+
+712
+00:34:47,560 --> 00:34:49,159
+Quindi
+
+713
+00:34:49,159 --> 00:34:51,320
+partiamo, per definire questa cosa,
+
+714
+00:34:51,320 --> 00:34:55,679
+partiamo dal concetto di
+
+715
+00:34:55,679 --> 00:34:57,800
+ehm
+
+716
+00:34:57,800 --> 00:35:00,680
+configurazione. Ok?
+
+717
+00:35:00,680 --> 00:35:01,599
+Quindi è chiaro cos'è una
+
+718
+00:35:01,599 --> 00:35:03,200
+configurazione? è una sequenza di
+
+719
+00:35:03,200 --> 00:35:06,359
+simboli il cui il primo è lo stato in
+
+720
+00:35:06,359 --> 00:35:09,640
+cui la macchina si trova, l'automa si
+
+721
+00:35:09,640 --> 00:35:12,359
+trova e gli altri simboli sono la parte
+
+722
+00:35:12,359 --> 00:35:19,200
+residua della stringa da processare. Ok?
+
+723
+00:35:19,200 --> 00:35:20,800
+una
+
+724
+00:35:20,800 --> 00:35:25,040
+computazione parziale
+
+725
+00:35:30,960 --> 00:35:32,760
+per
+
+726
+00:35:32,760 --> 00:35:34,640
+per
+
+727
+00:35:34,640 --> 00:35:38,359
+un automa D
+
+728
+00:35:38,920 --> 00:35:43,880
+su una stringa
+
+729
+00:35:44,320 --> 00:35:50,240
+W caratterizzata dai simboli V1 1 VN
+
+730
+00:35:50,240 --> 00:35:51,880
+è
+
+731
+00:35:51,880 --> 00:35:56,119
+una sequenza
+
+732
+00:35:57,720 --> 00:36:00,720
+di
+
+733
+00:36:03,040 --> 00:36:09,000
+m + 1 via m + 1
+
+734
+00:36:09,000 --> 00:36:12,000
+configurazioni
+
+735
+00:36:16,800 --> 00:36:19,280
+con mug
+
+736
+00:36:19,280 --> 00:36:21,800
+n
+
+737
+00:36:21,800 --> 00:36:26,960
+e le configurazioni sono R0 V1 bla bla
+
+738
+00:36:26,960 --> 00:36:29,960
+VN
+
+739
+00:36:32,680 --> 00:36:36,079
+R1 V2
+
+740
+00:36:36,079 --> 00:36:39,079
+VN
+
+741
+00:36:39,920 --> 00:36:44,319
+bla bla bla R
+
+742
+00:36:44,319 --> 00:36:49,040
++ 1 1 N.
+
+743
+00:36:49,040 --> 00:36:53,200
+Quindi cos'è una computazione parziale
+
+744
+00:36:53,200 --> 00:36:55,160
+per un automa stati finiti? È
+
+745
+00:36:55,160 --> 00:36:58,640
+semplicemente per noi una sequenza.
+
+746
+00:36:58,640 --> 00:37:00,160
+Ancora non ho finito la definizione, eh,
+
+747
+00:37:00,160 --> 00:37:02,599
+la sto solo ripetendo. Cos'è una
+
+748
+00:37:02,599 --> 00:37:05,280
+computazione parziale? Poi diremo cos'è
+
+749
+00:37:05,280 --> 00:37:07,520
+una computazione completa. Una
+
+750
+00:37:07,520 --> 00:37:10,800
+computazione parziale di un automa a
+
+751
+00:37:10,800 --> 00:37:14,160
+stati finiti
+
+752
+00:37:14,319 --> 00:37:18,640
+è semplicemente una sequenza di
+
+753
+00:37:18,640 --> 00:37:21,079
+configurazioni,
+
+754
+00:37:21,079 --> 00:37:23,960
+la zeresima, l'unesima, la seconda,
+
+755
+00:37:23,960 --> 00:37:28,040
+l'emmesima, ok?
+
+756
+00:37:28,119 --> 00:37:31,960
+in cui m
+
+757
+00:37:33,599 --> 00:37:35,560
+non è più grosso di n. Ovviamente non
+
+758
+00:37:35,560 --> 00:37:38,440
+possiamo fare un numero di passi più
+
+759
+00:37:38,440 --> 00:37:40,240
+grande dei simboli presenti sullo
+
+760
+00:37:40,240 --> 00:37:46,240
+scontrino, sul nastro, tale per cui
+
+761
+00:37:46,760 --> 00:37:49,760
+R0
+
+762
+00:37:50,440 --> 00:37:54,520
+è uguale a Q0, cioè quindi la prima
+
+763
+00:37:54,520 --> 00:37:58,240
+configurazione deve avere come stato lo
+
+764
+00:37:58,240 --> 00:38:01,359
+stato iniziale della macchina. Ok?
+
+765
+00:38:01,359 --> 00:38:04,800
+Quindi questo partenza corretta, start
+
+766
+00:38:04,800 --> 00:38:07,800
+correct.
+
+767
+00:38:10,800 --> 00:38:12,839
+Ok? E poi semplicemente dobbiamo dire
+
+768
+00:38:12,839 --> 00:38:15,400
+che da un passaggio all'altro
+
+769
+00:38:15,400 --> 00:38:19,480
+questa sequenza caratterizza mosse leite
+
+770
+00:38:19,480 --> 00:38:22,240
+per la macchina D. Come lo facciamo a
+
+771
+00:38:22,240 --> 00:38:26,040
+dire? semplicemente che lo stato al
+
+772
+00:38:26,040 --> 00:38:29,040
+passo i + 1 è quello che si ottiene
+
+773
+00:38:29,040 --> 00:38:31,079
+andando a guardare la funzione di
+
+774
+00:38:31,079 --> 00:38:33,680
+transizione
+
+775
+00:38:33,680 --> 00:38:39,800
+in cui lo stato la coppia R v + 1 viene
+
+776
+00:38:39,800 --> 00:38:42,960
+letta, ok? E questo deve essere vero per
+
+777
+00:38:42,960 --> 00:38:48,599
+tutti gli indici tra 0 e m - 1. Ok?
+
+778
+00:38:48,599 --> 00:38:49,839
+Allora, cosa abbiamo scritto
+
+779
+00:38:49,839 --> 00:38:52,400
+formalmente? Questo è un modo difficile
+
+780
+00:38:52,400 --> 00:38:54,079
+per
+
+781
+00:38:54,079 --> 00:38:55,680
+formalizzare quello che abbiamo detto
+
+782
+00:38:55,680 --> 00:38:57,800
+prima, cioè che una computazione di una
+
+783
+00:38:57,800 --> 00:39:01,400
+macchina è caratterizzata
+
+784
+00:39:01,400 --> 00:39:06,000
+da una sequenza di configurazioni
+
+785
+00:39:06,000 --> 00:39:09,040
+la cui prima configurazione ha com'è
+
+786
+00:39:09,040 --> 00:39:11,119
+stato lo stato iniziale della macchina,
+
+787
+00:39:11,119 --> 00:39:12,920
+cioè la prima configurazione della lista
+
+788
+00:39:12,920 --> 00:39:15,200
+deve rispecchiare il fatto che la
+
+789
+00:39:15,200 --> 00:39:17,599
+macchina viene accesa e c'è l'input.
+
+790
+00:39:17,599 --> 00:39:19,200
+Quindi la prima configurazione deve
+
+791
+00:39:19,200 --> 00:39:21,440
+essere stato iniziale
+
+792
+00:39:21,440 --> 00:39:24,160
+e poi tutti i simboli della stringa
+
+793
+00:39:24,160 --> 00:39:27,680
+tutti. Ok? Dopodiché la computazione noi
+
+794
+00:39:27,680 --> 00:39:29,760
+la modelliamo come una sequenza di
+
+795
+00:39:29,760 --> 00:39:31,800
+fotografie
+
+796
+00:39:31,800 --> 00:39:36,720
+in cui lo stato della fotografia al
+
+797
+00:39:36,720 --> 00:39:43,240
+passo i + 1 deve essere quello ottenuto
+
+798
+00:39:43,240 --> 00:39:45,359
+dall'applicazione della funzione di
+
+799
+00:39:45,359 --> 00:39:47,640
+transizione dello stato al passo
+
+800
+00:39:47,640 --> 00:39:50,200
+precedente e del simbolo letto in quel
+
+801
+00:39:50,200 --> 00:39:52,880
+momento. Ok? Cioè, noi asbiamo
+
+802
+00:39:52,880 --> 00:39:54,560
+semplicemente scritto in un modo
+
+803
+00:39:54,560 --> 00:39:56,880
+complicato che cosa? Che una
+
+804
+00:39:56,880 --> 00:39:59,520
+computazione parziale è una sequenza di
+
+805
+00:39:59,520 --> 00:40:02,520
+foto in cui la prima deve rispecchiare
+
+806
+00:40:02,520 --> 00:40:04,599
+la partenza della macchina e la sequenza
+
+807
+00:40:04,599 --> 00:40:06,520
+deve essere sensata.
+
+808
+00:40:06,520 --> 00:40:10,480
+Quindi a ogni passaggio, come vedete, 1
+
+809
+00:40:10,480 --> 00:40:13,280
+qua, qua partiamo da V1, qua c'è V2,
+
+810
+00:40:13,280 --> 00:40:16,280
+quindi a ogni passaggio un simbolo dallo
+
+811
+00:40:16,280 --> 00:40:21,240
+scontrino sparisce e R1 è ottenuto da R0
+
+812
+00:40:21,240 --> 00:40:23,200
+tramite l'applicazione della funzione di
+
+813
+00:40:23,200 --> 00:40:26,440
+transizione. Ok?
+
+814
+00:40:26,440 --> 00:40:28,560
+Chiaro per tutti?
+
+815
+00:40:28,560 --> 00:40:33,280
+Prof? Ma perché m - 1 e non è? Perché?
+
+816
+00:40:33,280 --> 00:40:36,119
+Perché l'ultimo stato è RM e quindi tu
+
+817
+00:40:36,119 --> 00:40:40,240
+lo applichi al passaggio N - 1.
+
+818
+00:40:40,240 --> 00:40:44,319
+Ah, ok.
+Sì, sì, sì, sì.
+
+819
+00:40:44,319 --> 00:40:45,839
+Ah,
+
+820
+00:40:45,839 --> 00:40:48,160
+alright. Stiamo andando più lento del
+
+821
+00:40:48,160 --> 00:40:53,200
+previsto. Ehm. Ok?
+
+822
+00:40:53,839 --> 00:40:56,160
+Quindi questa è la definizione di
+
+823
+00:40:56,160 --> 00:41:00,520
+computazione parziale.
+
+824
+00:41:00,520 --> 00:41:03,280
+Da questa deriviamo la definizione di
+
+825
+00:41:03,280 --> 00:41:05,440
+computazione, cioè la computazione
+
+826
+00:41:05,440 --> 00:41:08,440
+totale. Ok?
+
+827
+00:41:08,440 --> 00:41:12,319
+Cos'è una computazione?
+
+828
+00:41:13,560 --> 00:41:16,079
+una computazione,
+
+829
+00:41:16,079 --> 00:41:18,720
+dobbiamo semplicemente dire, adesso
+
+830
+00:41:18,720 --> 00:41:21,079
+facciamolo assieme,
+
+831
+00:41:21,079 --> 00:41:23,079
+dobbiamo una computazione sarà una
+
+832
+00:41:23,079 --> 00:41:24,839
+computazione parziale che non possiamo
+
+833
+00:41:24,839 --> 00:41:27,359
+estendere di più, ok? Questo è è il
+
+834
+00:41:27,359 --> 00:41:29,280
+senso che che non c'ha altri passi, cioè
+
+835
+00:41:29,280 --> 00:41:31,000
+è una lista completa, è una lista
+
+836
+00:41:31,000 --> 00:41:33,000
+massimale che altra roba in coda non si
+
+837
+00:41:33,000 --> 00:41:35,200
+ci può infilare. Allora, una
+
+838
+00:41:35,200 --> 00:41:38,680
+computazione è una computazione
+
+839
+00:41:38,680 --> 00:41:41,720
+parziale, quindi è una computazione è
+
+840
+00:41:41,720 --> 00:41:45,800
+una sequenza di di configurazioni che
+
+841
+00:41:45,800 --> 00:41:49,560
+rispetta queste proprietà che però ha
+
+842
+00:41:49,560 --> 00:41:53,040
+una proprietà aggiuntiva.
+
+843
+00:41:53,040 --> 00:41:57,319
+l'ultima configurazione della lista
+
+844
+00:41:57,319 --> 00:41:59,160
+o
+
+845
+00:41:59,160 --> 00:42:02,520
+non ammette passi successivi, cioè la
+
+846
+00:42:02,520 --> 00:42:05,640
+funzione di transizione applicata allo
+
+847
+00:42:05,640 --> 00:42:08,640
+stato dell'ultima configurazione,
+
+848
+00:42:08,640 --> 00:42:11,520
+mentre legge il simbolo che c'ha di
+
+849
+00:42:11,520 --> 00:42:14,280
+fronte, non c'è uno stato successivo,
+
+850
+00:42:14,280 --> 00:42:19,280
+quindi lì la macchina si impalla. Oppure
+
+851
+00:42:19,280 --> 00:42:21,520
+l'ultima configurazione
+
+852
+00:42:21,520 --> 00:42:25,119
+ha come stringa residua la stringa
+
+853
+00:42:25,119 --> 00:42:26,960
+vuota.
+
+854
+00:42:26,960 --> 00:42:28,640
+Ripeto,
+
+855
+00:42:28,640 --> 00:42:31,040
+una computazione. L'intuizione è questa.
+
+856
+00:42:31,040 --> 00:42:32,680
+Come otteniamo la definizione di
+
+857
+00:42:32,680 --> 00:42:35,000
+computazione dal dalla definizione di
+
+858
+00:42:35,000 --> 00:42:37,559
+computazione parziale? Una computazione
+
+859
+00:42:37,559 --> 00:42:39,480
+intuitivamente è una computazione
+
+860
+00:42:39,480 --> 00:42:41,599
+parziale che non possiamo tirare di più,
+
+861
+00:42:41,599 --> 00:42:43,839
+che non ci ci si può aggiungere roba.
+
+862
+00:42:43,839 --> 00:42:45,160
+Ok?
+
+863
+00:42:45,160 --> 00:42:47,520
+Quali sono le condizioni per le quali a
+
+864
+00:42:47,520 --> 00:42:49,680
+una computazione parziale non possiamo
+
+865
+00:42:49,680 --> 00:42:52,800
+aggiungere roba? Sono due: o l'ultima
+
+866
+00:42:52,800 --> 00:42:55,280
+configurazione non ammette una prossima
+
+867
+00:42:55,280 --> 00:42:58,680
+mossa perché non è definita, oppure la
+
+868
+00:42:58,680 --> 00:43:03,119
+stita. Ok, è chiaro?
+
+869
+00:43:03,119 --> 00:43:05,839
+Ci siamo quasi, dai.
+
+870
+00:43:05,839 --> 00:43:08,480
+Ok.
+
+871
+00:43:08,480 --> 00:43:12,240
+una computazione.
+
+872
+00:43:12,400 --> 00:43:13,920
+È chiaro per tutti come si definisce una
+
+873
+00:43:13,920 --> 00:43:15,680
+computazione partendo dalla computazione
+
+874
+00:43:15,680 --> 00:43:18,040
+parziale? Ok? Qua ovviamente la
+
+875
+00:43:18,040 --> 00:43:20,520
+computazione parziale su una stringa, la
+
+876
+00:43:20,520 --> 00:43:22,119
+computazione su una stringa non è che
+
+877
+00:43:22,119 --> 00:43:24,800
+esiste la computazione, ok? Una
+
+878
+00:43:24,800 --> 00:43:27,200
+computazione su una stringa w cos'è una
+
+879
+00:43:27,200 --> 00:43:29,720
+computazione parziale su W massimale?
+
+880
+00:43:29,720 --> 00:43:33,040
+Cioè che non ci appiccichiamo altre, ok?
+
+881
+00:43:33,040 --> 00:43:36,520
+una computazione,
+
+882
+00:43:42,119 --> 00:43:46,319
+una computazione su una stringa W
+
+883
+00:43:46,319 --> 00:43:50,280
+la chiamiamo accettante
+
+884
+00:43:50,280 --> 00:43:54,160
+se nella sua ultima configurazione
+
+885
+00:43:54,160 --> 00:43:57,040
+lo stato è accettante
+
+886
+00:43:57,040 --> 00:44:01,960
+e la stringa residua è vuota. Dopo Ok?
+
+887
+00:44:01,960 --> 00:44:05,800
+Scusate la sua
+configurazione,
+
+888
+00:44:05,800 --> 00:44:07,559
+cioè quindi se noi abbiamo tutta sta
+
+889
+00:44:07,559 --> 00:44:09,800
+lista di foto
+
+890
+00:44:09,800 --> 00:44:11,599
+è una computazione, quindi non una
+
+891
+00:44:11,599 --> 00:44:13,400
+computazione parziale, perché significa
+
+892
+00:44:13,400 --> 00:44:15,240
+che questa è una lista massimale, non
+
+893
+00:44:15,240 --> 00:44:17,920
+possiamo, cioè non succede altro, lì
+
+894
+00:44:17,920 --> 00:44:20,520
+arriva e lì si ferma. Andiamo a guardare
+
+895
+00:44:20,520 --> 00:44:22,559
+l'ultima foto. Se nell'ultima foto
+
+896
+00:44:22,559 --> 00:44:25,000
+abbiamo che lo Stato è accettante e di
+
+897
+00:44:25,000 --> 00:44:27,000
+stringa non c'è rimasta niente, allora
+
+898
+00:44:27,000 --> 00:44:30,280
+vuol dire che quella è ci sta
+
+899
+00:44:30,280 --> 00:44:33,920
+raccontando la storia di una
+
+900
+00:44:33,920 --> 00:44:37,559
+computazione che alla fine dice sì. Ok,
+
+901
+00:44:37,559 --> 00:44:40,119
+questo è il senso. Capito? Spiega nella
+
+902
+00:44:40,119 --> 00:44:43,200
+soluta configurazione quella di
+
+903
+00:44:43,200 --> 00:44:45,400
+Nell'ultima configurazione lo stato è
+
+904
+00:44:45,400 --> 00:44:49,119
+accettante, è uno degli stati accettanti
+
+905
+00:44:49,119 --> 00:44:54,319
+e il la stringa residua è ep è vuota.
+
+906
+00:44:54,319 --> 00:44:57,319
+Ok?
+
+907
+00:44:57,559 --> 00:44:59,760
+Ragazzi, vorrei solo sottolinearvi che
+
+908
+00:44:59,760 --> 00:45:03,040
+stiamo formalizzando cose di cui dovete
+
+909
+00:45:03,040 --> 00:45:05,400
+avere un'intuizione. Cioè, cos'è una
+
+910
+00:45:05,400 --> 00:45:07,400
+computazione? intuitivamente nella mia
+
+911
+00:45:07,400 --> 00:45:09,839
+testa cos'è una computazione? Perché se
+
+912
+00:45:09,839 --> 00:45:12,280
+iniziate a vedere i simboli impazziti,
+
+913
+00:45:12,280 --> 00:45:14,240
+cos'è nella mia testa una una
+
+914
+00:45:14,240 --> 00:45:18,359
+computazione? È una sequenza di foto di
+
+915
+00:45:18,359 --> 00:45:19,920
+foto che mi dicono lo stato di
+
+916
+00:45:19,920 --> 00:45:22,079
+avanzamento dei lavori della macchina.
+
+917
+00:45:22,079 --> 00:45:24,680
+Una computazione è una lista di foto che
+
+918
+00:45:24,680 --> 00:45:27,760
+non ci posso appiccicare niente dopo.
+
+919
+00:45:27,760 --> 00:45:29,960
+Ok?
+
+920
+00:45:29,960 --> 00:45:32,280
+Come faccio a stabilire se questa lista
+
+921
+00:45:32,280 --> 00:45:34,920
+di foto mi sta raccontando la storia di
+
+922
+00:45:34,920 --> 00:45:37,280
+una computazione accettante? E vado a
+
+923
+00:45:37,280 --> 00:45:38,920
+guardare l'ultima. Vado a guardare
+
+924
+00:45:38,920 --> 00:45:40,800
+l'ultima foto. Se la macchina ha finito
+
+925
+00:45:40,800 --> 00:45:43,040
+il suo input e si è fermata e non state
+
+926
+00:45:43,040 --> 00:45:44,760
+accettato, allora vuol dire che quella è
+
+927
+00:45:44,760 --> 00:45:46,720
+una computazione accettabile. Adesso
+
+928
+00:45:46,720 --> 00:45:48,839
+tutta sta simbologia che usiamo è solo
+
+929
+00:45:48,839 --> 00:45:50,880
+per formalizzare dell'intuizione che
+
+930
+00:45:50,880 --> 00:45:53,760
+abbiamo. Però dovete partire dallle
+
+931
+00:45:53,760 --> 00:45:56,640
+intuizione, senò è impossibile da capire
+
+932
+00:45:56,640 --> 00:45:58,359
+sta cosa. Cioè manipolare simboli in
+
+933
+00:45:58,359 --> 00:46:01,000
+testa senza avere un'intuizione viene
+
+934
+00:46:01,000 --> 00:46:03,240
+difficilissimo. Come faccio io, io vi
+
+935
+00:46:03,240 --> 00:46:05,319
+faccio queste immagini. Cos'è una
+
+936
+00:46:05,319 --> 00:46:08,240
+configurazione? una storia di foto. Ta
+
+937
+00:46:08,240 --> 00:46:11,559
+ta ta. Ok, cioè questa è la metafora che
+
+938
+00:46:11,559 --> 00:46:15,599
+uso. Prego. Potrei definire unazione una
+
+939
+00:46:15,599 --> 00:46:19,400
+conazione parziale in cui n uguale m
+Sì,
+
+940
+00:46:19,400 --> 00:46:23,359
+sì, sì, sì, sì, sì.
+
+941
+00:46:24,480 --> 00:46:27,680
+Eh, non sempre, perché tu pu potresti
+
+942
+00:46:27,680 --> 00:46:30,319
+avere si potrebbe avere il caso in cui
+
+943
+00:46:30,319 --> 00:46:33,520
+la macchina si arresta prima.
+
+944
+00:46:33,520 --> 00:46:36,720
+Allora, nell'esempio visto ieri nella
+
+945
+00:46:36,720 --> 00:46:39,240
+macchina di prima, quella macchina ha
+
+946
+00:46:39,240 --> 00:46:41,440
+una funzione che la funzione di
+
+947
+00:46:41,440 --> 00:46:43,000
+transizione ha la caratteristica di
+
+948
+00:46:43,000 --> 00:46:44,800
+essere una funzione totale, cioè per
+
+949
+00:46:44,800 --> 00:46:48,079
+ogni coppia stato simbolo so cosa fare.
+
+950
+00:46:48,079 --> 00:46:50,319
+Altre macchine e avrei voluto avere il
+
+951
+00:46:50,319 --> 00:46:52,240
+tempo di farvele vedere. La funzione è
+
+952
+00:46:52,240 --> 00:46:55,119
+parziale, cioè arrivo in uno stato e io
+
+953
+00:46:55,119 --> 00:46:58,160
+mi aspetto di leggere un certo simbolo.
+
+954
+00:46:58,160 --> 00:47:00,720
+Se leggo altro la macchina si ferma là,
+
+955
+00:47:00,720 --> 00:47:02,280
+non fa nient'altro. Quindi la sua
+
+956
+00:47:02,280 --> 00:47:04,240
+computazione potrebbe avere una
+
+957
+00:47:04,240 --> 00:47:07,160
+lunghezza inferiore se si è bloccata
+
+958
+00:47:07,160 --> 00:47:11,079
+prima. In quel caso non potremmo eh
+
+959
+00:47:11,079 --> 00:47:16,160
+distendere la funzione con dei cicli
+
+960
+00:47:16,160 --> 00:47:20,839
+o la fai la butti verso degli stati
+
+961
+00:47:20,839 --> 00:47:23,400
+spazzatura. Ognuno se la può definire
+
+962
+00:47:23,400 --> 00:47:25,720
+come vuole, ok? Cioè sono tutte
+
+963
+00:47:25,720 --> 00:47:27,920
+equivalenti, uno la definisce come
+
+964
+00:47:27,920 --> 00:47:30,400
+vuole. Di nuovo non è orocolato, cioè
+
+965
+00:47:30,400 --> 00:47:32,680
+noi abbiamo questa intuizione di come
+
+966
+00:47:32,680 --> 00:47:34,160
+funziona una macchina. La sua
+
+967
+00:47:34,160 --> 00:47:36,119
+formalizzazione può avvenire in tanti
+
+968
+00:47:36,119 --> 00:47:39,440
+modi. L'importante è che sia. Ok? le
+
+969
+00:47:39,440 --> 00:47:40,920
+ultime cose, quindi abbiamo detto che
+
+970
+00:47:40,920 --> 00:47:43,079
+una computazione accettante è una
+
+971
+00:47:43,079 --> 00:47:45,920
+computazione che termina di cui l'ultima
+
+972
+00:47:45,920 --> 00:47:48,200
+configurazione ci sta raccontando la
+
+973
+00:47:48,200 --> 00:47:51,960
+storia di una macchina che si è letta
+
+974
+00:47:51,960 --> 00:47:53,920
+tutto lì ed è finita nello stato
+
+975
+00:47:53,920 --> 00:47:57,760
+accettato. Ok?
+
+976
+00:48:02,319 --> 00:48:05,440
+Una macchina, un automa sta definita
+
+977
+00:48:05,440 --> 00:48:10,559
+accetta una stringa W.
+
+978
+00:48:11,559 --> 00:48:14,720
+Se la computazione
+
+979
+00:48:14,720 --> 00:48:18,340
+che parte dalla configurazione Q0W
+
+980
+00:48:18,340 --> 00:48:19,680
+[Musica]
+
+981
+00:48:19,680 --> 00:48:24,160
+termina in uno stato accettato.
+
+982
+00:48:24,160 --> 00:48:29,920
+che una macchina accetta una stringa W
+
+983
+00:48:29,920 --> 00:48:35,319
+se la configur se la computazione
+
+984
+00:48:35,319 --> 00:48:38,079
+la cui prima foto è quella della
+
+985
+00:48:38,079 --> 00:48:39,960
+macchina che parte nello stato iniziale
+
+986
+00:48:39,960 --> 00:48:43,160
+e legge tutta l'astenita W
+
+987
+00:48:43,160 --> 00:48:45,240
+è la prima foto di una sequenza che
+
+988
+00:48:45,240 --> 00:48:47,960
+arriverà a quella in cui la macchina si
+
+989
+00:48:47,960 --> 00:48:51,839
+è letto tutto e sta accettando. Ok?
+
+990
+00:48:51,839 --> 00:48:54,480
+Quindi la macchina accetta W. Se la
+
+991
+00:48:54,480 --> 00:48:56,680
+computazione che parte con la
+
+992
+00:48:56,680 --> 00:48:58,920
+configurazione in cui la macchina sta
+
+993
+00:48:58,920 --> 00:49:01,960
+leggendo W andrà a terminare in una
+
+994
+00:49:01,960 --> 00:49:05,119
+configurazione accettante.
+
+995
+00:49:05,119 --> 00:49:07,559
+È chiaro?
+
+996
+00:49:07,559 --> 00:49:10,160
+Scusi, ma le varie definizioni che
+
+997
+00:49:10,160 --> 00:49:12,720
+stiamo dando si intercambano tra di loro
+
+998
+00:49:12,720 --> 00:49:15,359
+oppure sono scresse? No, si costruiscono
+
+999
+00:49:15,359 --> 00:49:18,319
+una sull'altra perché quindi abbiamo al
+
+1000
+00:49:18,319 --> 00:49:20,000
+piano al piano terra abbiamo
+
+1001
+00:49:20,000 --> 00:49:22,880
+computazione parziale, poi computazione
+
+1002
+00:49:22,880 --> 00:49:26,319
+che è costruita sopra una computazione
+
+1003
+00:49:26,319 --> 00:49:28,599
+parziale. Poi abbiamo dato la
+
+1004
+00:49:28,599 --> 00:49:31,839
+definizione di computazione accettante,
+
+1005
+00:49:31,839 --> 00:49:34,760
+che è un sotto caso delle computazioni.
+
+1006
+00:49:34,760 --> 00:49:36,839
+E che cosa diciamo? una macchina accetta
+
+1007
+00:49:36,839 --> 00:49:39,480
+una stringa W se la computazione che
+
+1008
+00:49:39,480 --> 00:49:42,480
+inizia con la lettura di W è una
+
+1009
+00:49:42,480 --> 00:49:44,280
+computazione accettante, cioè arrivo in
+
+1010
+00:49:44,280 --> 00:49:46,680
+fondo e accettiamo.
+Ma quella che
+
+1011
+00:49:46,680 --> 00:49:48,200
+definiamo per ultimo che quindi tra
+
+1012
+00:49:48,200 --> 00:49:51,920
+virgolette è solo stack nel primo punto
+
+1013
+00:49:51,920 --> 00:49:53,200
+non si può definire se non abbiamo
+
+1014
+00:49:53,200 --> 00:49:57,000
+definito i teatre
+no perché sono tuttef
+
+1015
+00:49:57,000 --> 00:49:59,480
+specificazioni delle precedenti una
+
+1016
+00:49:59,480 --> 00:50:02,119
+comput una computazione accettante è una
+
+1017
+00:50:02,119 --> 00:50:04,079
+computazione. una computazione è una
+
+1018
+00:50:04,079 --> 00:50:06,240
+computazione parziale, cioè perché noi
+
+1019
+00:50:06,240 --> 00:50:07,680
+stiamo intuitivamente che stiamo
+
+1020
+00:50:07,680 --> 00:50:09,920
+facendo? Stiamo aggiungendo aggettivi,
+
+1021
+00:50:09,920 --> 00:50:12,599
+no? Quindi l'oggetto di analisi è sempre
+
+1022
+00:50:12,599 --> 00:50:14,680
+lo stesso.
+
+1023
+00:50:14,680 --> 00:50:16,440
+Ok? Stiamo restringendo l'insieme,
+
+1024
+00:50:16,440 --> 00:50:18,000
+abbiamo l'insieme di tutte le
+
+1025
+00:50:18,000 --> 00:50:20,440
+computazioni parziali. Tra tutte le
+
+1026
+00:50:20,440 --> 00:50:22,599
+computazioni parziali ci sono quelle di
+
+1027
+00:50:22,599 --> 00:50:24,680
+lunghezza massimale e quelle per noi le
+
+1028
+00:50:24,680 --> 00:50:26,480
+chiamiamo computazioni, puoi chiamarle
+
+1029
+00:50:26,480 --> 00:50:29,040
+totali? Computazioni totali. Tra tutte
+
+1030
+00:50:29,040 --> 00:50:30,960
+le computazioni totali ci sono quelle
+
+1031
+00:50:30,960 --> 00:50:32,440
+che vanno a finire in uno stato
+
+1032
+00:50:32,440 --> 00:50:33,960
+accettante. Quelle per noi sono le
+
+1033
+00:50:33,960 --> 00:50:37,079
+computazioni accettate parziali totali
+
+1034
+00:50:37,079 --> 00:50:40,720
+computazioni accettiremo
+
+1035
+00:50:40,880 --> 00:50:45,599
+quando un automa potrà eh risolvere o
+
+1036
+00:50:45,599 --> 00:50:48,839
+meno un problema decidibile.
+Ci siamo.
+
+1037
+00:50:48,839 --> 00:50:50,839
+L'ultimo passaggio.
+
+1038
+00:50:50,839 --> 00:50:53,160
+Un automa. Sì.
+No, no. Volevo chiedere
+
+1039
+00:50:53,160 --> 00:50:56,680
+di riprendere un attimo
+la definizione
+
+1040
+00:50:56,680 --> 00:50:58,040
+di accettazione.
+No, ha detto un
+
+1041
+00:50:58,040 --> 00:51:00,240
+automast accetta una stringa W se la
+
+1042
+00:51:00,240 --> 00:51:02,319
+computazione la cui prima configurazione
+
+1043
+00:51:02,319 --> 00:51:06,760
+è Q0 W va a terminare in una una
+
+1044
+00:51:06,760 --> 00:51:08,720
+computazione in una configurazione
+
+1045
+00:51:08,720 --> 00:51:13,319
+accettata. Ok?
+Cioè accetta W, cioè la
+
+1046
+00:51:13,319 --> 00:51:15,640
+storia delle foto in cui la prima foto è
+
+1047
+00:51:15,640 --> 00:51:18,920
+quella in cui la macchina sta leggendo W
+
+1048
+00:51:18,920 --> 00:51:22,079
+va a finire
+Sì, sì, sì. con quella e
+
+1049
+00:51:22,079 --> 00:51:24,599
+accetto. Ok? Cioè, poi ovviamente uno si
+
+1050
+00:51:24,599 --> 00:51:26,440
+può dare anche altre cose, eh? Un
+
+1051
+00:51:26,440 --> 00:51:28,839
+attimo, un attimo che sennò non
+
+1052
+00:51:28,839 --> 00:51:30,799
+terminiamo. Quindi questa è la
+
+1053
+00:51:30,799 --> 00:51:33,680
+definizione di accettazione.
+
+1054
+00:51:33,680 --> 00:51:35,880
+La macchina rifiuta una stringa quando
+
+1055
+00:51:35,880 --> 00:51:38,000
+questa cosa non è vera. Intuitivamente
+
+1056
+00:51:38,000 --> 00:51:40,359
+la macchina rifiuta la stringa quando o
+
+1057
+00:51:40,359 --> 00:51:43,720
+si impalla mentre la sta processando in
+
+1058
+00:51:43,720 --> 00:51:46,240
+uno stato non accettante oppure arriva
+
+1059
+00:51:46,240 --> 00:51:49,799
+alla fine, ma si è fermata in uno stato
+
+1060
+00:51:49,799 --> 00:51:52,599
+non accettante. Ok?
+
+1061
+00:51:52,599 --> 00:51:57,000
+E adesso la definizione che ci serve è
+
+1062
+00:51:57,000 --> 00:51:58,000
+quella che ci chiedeva il nostro
+
+1063
+00:51:58,000 --> 00:52:01,440
+collega, una macchina D.
+
+1064
+00:52:01,440 --> 00:52:04,000
+Ho visto, ho visto. Stava registrando
+
+1065
+00:52:04,000 --> 00:52:09,960
+l'audio. Questo I guess so. I hope so.
+
+1066
+00:52:10,960 --> 00:52:12,520
+Ah,
+
+1067
+00:52:12,520 --> 00:52:15,599
+dice che se
+
+1068
+00:52:15,599 --> 00:52:20,599
+Ah, sì, penso di sì.
+
+1069
+00:52:21,240 --> 00:52:26,119
+Ultimo passaggio. Un automa D
+
+1070
+00:52:26,119 --> 00:52:28,520
+decide
+
+1071
+00:52:28,520 --> 00:52:32,799
+un linguaggio L.
+
+1072
+00:52:34,680 --> 00:52:37,680
+Se
+
+1073
+00:52:37,720 --> 00:52:43,640
+ogni stringa W che appartiene ad L
+
+1074
+00:52:43,640 --> 00:52:47,720
+è accettata da D?
+
+1075
+00:52:47,799 --> 00:52:50,640
+E
+
+1076
+00:52:50,640 --> 00:52:53,960
+ogni stringa W
+
+1077
+00:52:53,960 --> 00:52:58,160
+che non appartiene ad L
+
+1078
+00:52:58,160 --> 00:53:01,839
+è rifiutata da D.
+
+1079
+00:53:01,839 --> 00:53:04,680
+Ok?
+
+1080
+00:53:04,680 --> 00:53:07,280
+Chiaro per tutti questa definizione.
+
+1081
+00:53:07,280 --> 00:53:10,119
+Quindi un auto, una macchina decide un
+
+1082
+00:53:10,119 --> 00:53:12,559
+linguaggio. Qual è l'intuizione? Cioè,
+
+1083
+00:53:12,559 --> 00:53:14,520
+ogni volta che gli diamo una stringa che
+
+1084
+00:53:14,520 --> 00:53:17,240
+appartiene a L, quella ci dice sì. Ogni
+
+1085
+00:53:17,240 --> 00:53:18,960
+volta che gli diamo input una stringa
+
+1086
+00:53:18,960 --> 00:53:21,000
+che non appartiene a L, la macchina ci
+
+1087
+00:53:21,000 --> 00:53:25,040
+dice no. Ok, chiaro per tutti? Vi ho
+
+1088
+00:53:25,040 --> 00:53:26,880
+fracassato bene la testa. Facciamo un
+
+1089
+00:53:26,880 --> 00:53:30,680
+po' di pausa 10
+
+1090
+00:53:34,799 --> 00:53:39,440
+meno poi ho visto.
+
+1091
+00:53:41,880 --> 00:53:43,839
+Ok, ripartiamo.
+
+1092
+00:53:43,839 --> 00:53:45,680
+Avevo messo di far tutta una serie di
+
+1093
+00:53:45,680 --> 00:53:48,520
+cose, vabboh, sono il minimo
+
+1094
+00:53:48,520 --> 00:53:50,359
+indispensabile.
+
+1095
+00:53:50,359 --> 00:53:52,559
+Ok, abbiamo visto cos'è un automa.
+
+1096
+00:53:52,559 --> 00:53:54,520
+Abbiamo visto che ha stati infiniti,
+
+1097
+00:53:54,520 --> 00:53:56,400
+significa che il numero delle pallette è
+
+1098
+00:53:56,400 --> 00:53:58,079
+finito e non può crescere durante il
+
+1099
+00:53:58,079 --> 00:53:59,599
+calcolo.
+
+1100
+00:53:59,599 --> 00:54:02,839
+Ci sta lui.
+
+1101
+00:54:02,839 --> 00:54:05,040
+What else? Abbiamo dato la definizione
+
+1102
+00:54:05,040 --> 00:54:10,200
+formale, bla bla. Facciamo un salto.
+
+1103
+00:54:10,960 --> 00:54:13,400
+Facciamo un salto verso un'altra cosa,
+
+1104
+00:54:13,400 --> 00:54:15,440
+ok? Che ci introduce questo concetto che
+
+1105
+00:54:15,440 --> 00:54:17,880
+poi ci serve per touring machines più
+
+1106
+00:54:17,880 --> 00:54:20,799
+sofisticate per chi non avesse questi
+
+1107
+00:54:20,799 --> 00:54:22,760
+concetti. Ok? Supponiamo di voler
+
+1108
+00:54:22,760 --> 00:54:26,440
+riconoscere questo linguaggio.
+
+1109
+00:54:26,440 --> 00:54:29,760
+Eh, certo,
+
+1110
+00:54:32,350 --> 00:54:34,200
+[Musica]
+
+1111
+00:54:34,200 --> 00:54:36,480
+lo scriviamo con un'espressione
+
+1112
+00:54:36,480 --> 00:54:39,000
+regolare, così vediamo pure questo. La
+
+1113
+00:54:39,000 --> 00:54:42,640
+spieghiamo senza.
+
+1114
+00:54:50,359 --> 00:54:51,880
+Allora, vogliamo riconoscere questo
+
+1115
+00:54:51,880 --> 00:54:54,319
+linguaggio. Il linguaggio delle stringhe
+
+1116
+00:54:54,319 --> 00:54:57,760
+binarie in cui abbiamo una sequenza di
+
+1117
+00:54:57,760 --> 00:55:00,480
+zeri o uni. All'inizio,
+
+1118
+00:55:00,480 --> 00:55:02,359
+spiego un po' a chi non l'ha mai visto
+
+1119
+00:55:02,359 --> 00:55:04,359
+prima.
+
+1120
+00:55:04,359 --> 00:55:06,079
+Questa cosa qua significa che all'inizio
+
+1121
+00:55:06,079 --> 00:55:10,640
+abbiamo una sequenza di 0 o questa linea
+
+1122
+00:55:10,640 --> 00:55:14,640
+verticale dice o una sequenza di 0 o 1
+
+1123
+00:55:14,640 --> 00:55:16,839
+ripetuta 0 o più volte, quindi può
+
+1124
+00:55:16,839 --> 00:55:19,040
+essere 00
+
+1125
+00:55:19,040 --> 00:55:23,160
+101 10 bla bla bla che potrebbe non
+
+1126
+00:55:23,160 --> 00:55:26,920
+esserci perché c'è l'asterisco
+
+1127
+00:55:26,920 --> 00:55:28,960
+e però si deve concludere con tre zeri
+
+1128
+00:55:28,960 --> 00:55:32,760
+di fila. Ok?
+
+1129
+00:55:33,400 --> 00:55:37,559
+Consideriamo questa macchina.
+
+1130
+00:55:43,039 --> 00:55:45,520
+Siamo in Q0 è lo stato iniziale. Noi
+
+1131
+00:55:45,520 --> 00:55:48,359
+partiamo da qua
+
+1132
+00:55:48,359 --> 00:55:50,559
+e facciamo questo.
+
+1133
+00:55:50,559 --> 00:55:55,680
+Se leggiamo 0 rimaniamo in Q0.
+
+1134
+00:55:57,079 --> 00:56:02,000
+Se leggiamo 1 rimaniamo in Q0.
+
+1135
+00:56:05,079 --> 00:56:08,520
+Se leggo 0 vado in Q1, leggo un altro 0
+
+1136
+00:56:08,520 --> 00:56:13,200
+vado in Q2, leggo un altro 0 vado in Q3.
+
+1137
+00:56:13,200 --> 00:56:15,760
+È intuitiva questa macchina, no? Cioè
+
+1138
+00:56:15,760 --> 00:56:18,520
+l'intuizione di questa macchina è in Q0
+
+1139
+00:56:18,520 --> 00:56:21,680
+salto una sequenza di zeri e uni bla bla
+
+1140
+00:56:21,680 --> 00:56:23,680
+bla bla bla bla bla, poi a un certo
+
+1141
+00:56:23,680 --> 00:56:26,799
+punto leggo gli ultimi tre zeri.
+
+1142
+00:56:26,799 --> 00:56:28,280
+È chiaro il significato? C'è una
+
+1143
+00:56:28,280 --> 00:56:31,039
+semantica di questa cosa?
+
+1144
+00:56:31,039 --> 00:56:33,520
+Cioè, che cosa mi piacerebbe che questa
+
+1145
+00:56:33,520 --> 00:56:38,359
+macchina facesse? Chiaro per tutti?
+
+1146
+00:56:38,720 --> 00:56:41,599
+Che problema ha questa macchina?
+
+1147
+00:56:41,599 --> 00:56:44,119
+Un attimo. Hai seguito linguaggi?
+
+1148
+00:56:44,119 --> 00:56:47,240
+Non ho
+
+1149
+00:56:47,520 --> 00:56:52,000
+no più una domanda. Se io sono in Q2 Q2
+
+1150
+00:56:52,000 --> 00:56:53,680
+con uno io devo tornare indietro? No, se
+
+1151
+00:56:53,680 --> 00:56:56,680
+vecchio rimare bloccato là perché la
+
+1152
+00:56:56,680 --> 00:56:59,000
+funzione di transizione la definita così
+
+1153
+00:56:59,000 --> 00:57:02,119
+come è scritto questo grafo. Ok? Allora,
+
+1154
+00:57:02,119 --> 00:57:04,200
+dove aspetta che chi ha seguito
+
+1155
+00:57:04,200 --> 00:57:06,480
+linguaggi? La risposta la sapete, voglio
+
+1156
+00:57:06,480 --> 00:57:08,880
+sentire gli altri. Che problema c'ha
+
+1157
+00:57:08,880 --> 00:57:10,880
+questa macchina? Guardate che è
+
+1158
+00:57:10,880 --> 00:57:13,720
+intuitiva. A morì sta macchina salta un
+
+1159
+00:57:13,720 --> 00:57:16,319
+po' di zeri e un bla bla bla. A un certo
+
+1160
+00:57:16,319 --> 00:57:20,280
+punto mi leggo gli ultimi tre zeri. Ok.
+
+1161
+00:57:20,280 --> 00:57:24,799
+Lei non ha seguito linguaggi? No. Ok.
+
+1162
+00:57:27,400 --> 00:57:30,920
+Esattamente. Questa macchina ha questo
+
+1163
+00:57:30,920 --> 00:57:34,359
+piccolissimo problema. In Q0
+
+1164
+00:57:34,359 --> 00:57:38,480
+se legge zero non sa che fare, cioè fa
+
+1165
+00:57:38,480 --> 00:57:41,599
+rimango in V0, vado in Q1.
+
+1166
+00:57:41,599 --> 00:57:43,960
+Ok?
+
+1167
+00:57:43,960 --> 00:57:47,599
+Però siccome
+
+1168
+00:57:47,599 --> 00:57:52,039
+siccome queste macchine, no, da un punto
+
+1169
+00:57:52,039 --> 00:57:54,039
+di vista intuitivo sono fantastiche
+
+1170
+00:57:54,039 --> 00:57:55,880
+perché ci permettono di programmare in
+
+1171
+00:57:55,880 --> 00:57:59,359
+maniera molto semplice delle cose, noi
+
+1172
+00:57:59,359 --> 00:58:03,240
+ok, le consideriamo lo stesso. Ok? Una
+
+1173
+00:58:03,240 --> 00:58:06,079
+macchina di questo tipo noi la chiamiamo
+
+1174
+00:58:06,079 --> 00:58:08,680
+non deterministica.
+
+1175
+00:58:08,680 --> 00:58:11,160
+e non deterministica
+
+1176
+00:58:11,160 --> 00:58:14,160
+perché
+
+1177
+00:58:16,480 --> 00:58:20,079
+ci sono delle configurazioni,
+
+1178
+00:58:20,079 --> 00:58:23,240
+cioè quindi delle foto, degli snapshot,
+
+1179
+00:58:23,240 --> 00:58:25,079
+del funzionamento corrente della
+
+1180
+00:58:25,079 --> 00:58:26,680
+macchina,
+
+1181
+00:58:26,680 --> 00:58:28,680
+delle configurazioni,
+
+1182
+00:58:28,680 --> 00:58:30,880
+le cui configurazioni
+
+1183
+00:58:30,880 --> 00:58:34,200
+legali successive
+
+1184
+00:58:34,200 --> 00:58:38,359
+possono essere più di una.
+
+1185
+00:58:38,359 --> 00:58:40,760
+È chiaro? Cioè, questo è il senso di
+
+1186
+00:58:40,760 --> 00:58:42,640
+macchina non deterministica. Questa è
+
+1187
+00:58:42,640 --> 00:58:45,640
+una macchina un pochino strana perché è
+
+1188
+00:58:45,640 --> 00:58:49,760
+una macchina che durante il suo calcolo
+
+1189
+00:58:49,760 --> 00:58:53,319
+ha dei punti di scelta
+
+1190
+00:58:53,319 --> 00:58:55,640
+non determinati. Cioè, non è che noi gli
+
+1191
+00:58:55,640 --> 00:58:58,480
+stiamo dicendo che fare in presenza
+
+1192
+00:58:58,480 --> 00:59:00,839
+nello stato Q0 quando legge zero. Noi
+
+1193
+00:59:00,839 --> 00:59:02,760
+non gli stiamo dicendo niente, gli
+
+1194
+00:59:02,760 --> 00:59:04,559
+stiamo dicendo queste sono le tue
+
+1195
+00:59:04,559 --> 00:59:06,359
+possibilità.
+
+1196
+00:59:06,359 --> 00:59:09,640
+Puoi rimanere il Q0, puoi transire il
+
+1197
+00:59:09,640 --> 00:59:15,559
+Q1. Ok? E questo è
+
+1198
+00:59:15,559 --> 00:59:17,400
+una
+
+1199
+00:59:17,400 --> 00:59:19,599
+è alla base del concetto di non
+
+1200
+00:59:19,599 --> 00:59:22,599
+determinismo.
+
+1201
+00:59:25,119 --> 00:59:28,319
+Definizione formale di macchina non
+
+1202
+00:59:28,319 --> 00:59:31,319
+deterministica.
+
+1203
+00:59:32,480 --> 00:59:35,480
+Allora,
+
+1204
+00:59:35,920 --> 00:59:40,520
+where is it? Questo qua N è automa stati
+
+1205
+00:59:40,520 --> 00:59:43,760
+finito non deterministico.
+
+1206
+00:59:43,760 --> 00:59:47,240
+Si definisce in maniera veramente
+
+1207
+00:59:47,240 --> 00:59:49,240
+similare a quello che abbiamo visto
+
+1208
+00:59:49,240 --> 00:59:53,480
+prima. Quindi rivediamola assieme.
+
+1209
+00:59:53,480 --> 00:59:56,480
+Da che cosa è caratterizzato un automa?
+
+1210
+00:59:56,480 --> 00:59:59,880
+Dagli stati.
+Dall'alfabeto. Ok. Quindi è
+
+1211
+00:59:59,880 --> 01:00:02,559
+pure una macchina non deterministica, è
+
+1212
+01:00:02,559 --> 01:00:06,799
+caratterizzata da un alfabeto
+
+1213
+01:00:08,119 --> 01:00:10,079
+e
+
+1214
+01:00:10,079 --> 01:00:13,000
+poi è caratterizzato da stati
+dagli
+
+1215
+01:00:13,000 --> 01:00:16,000
+stati,
+
+1216
+01:00:16,720 --> 01:00:20,319
+poi è caratterizzato da
+iniziale
+lo
+
+1217
+01:00:20,319 --> 01:00:23,640
+stato iniziale,
+
+1218
+01:00:24,359 --> 01:00:27,960
+poi è caratterizzato da gli stati
+
+1219
+01:00:27,960 --> 01:00:31,640
+accettanti E fino a qui la definizione è
+
+1220
+01:00:31,640 --> 01:00:34,480
+identica, ok?
+
+1221
+01:00:34,480 --> 01:00:37,000
+Dopodiché dobbiamo definire il suo
+
+1222
+01:00:37,000 --> 01:00:39,000
+programma, che è un pochino strano
+
+1223
+01:00:39,000 --> 01:00:43,760
+rispetto ai programmi della
+
+1224
+01:00:43,760 --> 01:00:46,280
+delle macchine deterministiche. Quindi
+
+1225
+01:00:46,280 --> 01:00:49,680
+avremo delta che è il programma di una
+
+1226
+01:00:49,680 --> 01:00:53,640
+macchina non deterministica. Ok? Poi
+
+1227
+01:00:53,640 --> 01:00:56,440
+faremo un po' di esempi e definiamo
+
+1228
+01:00:56,440 --> 01:00:58,640
+cos'è l'accettazione, trucchi di
+
+1229
+01:00:58,640 --> 01:01:00,640
+programmazione, perché qua si deve un
+
+1230
+01:01:00,640 --> 01:01:03,599
+po' giocare.
+
+1231
+01:01:03,599 --> 01:01:06,400
+Il programma che nelle macchine
+
+1232
+01:01:06,400 --> 01:01:09,799
+deterministiche era
+
+1233
+01:01:09,799 --> 01:01:11,760
+una funzione
+
+1234
+01:01:11,760 --> 01:01:14,039
+macchine deterministiche abbiamo che
+
+1235
+01:01:14,039 --> 01:01:16,960
+delta è una funzione che dato uno stato
+
+1236
+01:01:16,960 --> 01:01:19,720
+è un simbolo corrente andiamo in uno
+
+1237
+01:01:19,720 --> 01:01:21,960
+stato successivo.
+
+1238
+01:01:21,960 --> 01:01:26,960
+Nelle macchine non deterministiche
+
+1239
+01:01:27,200 --> 01:01:33,280
+delta è una la chiamiamo relazione.
+
+1240
+01:01:33,280 --> 01:01:35,200
+Possiamo definirla come funzione, però a
+
+1241
+01:01:35,200 --> 01:01:37,319
+volte la chiamiamo relazione di
+
+1242
+01:01:37,319 --> 01:01:39,880
+transizione
+
+1243
+01:01:39,880 --> 01:01:42,599
+perché
+
+1244
+01:01:42,599 --> 01:01:46,000
+dato lo stato corrente Q, vedete, fin
+
+1245
+01:01:46,000 --> 01:01:49,200
+qui è tutto uguale, è il simbolo che
+
+1246
+01:01:49,200 --> 01:01:52,880
+leggiamo scritto proprio da me
+
+1247
+01:01:52,880 --> 01:01:56,520
+dove sta? Qua è sigma. Ok, vedete? Cioè,
+
+1248
+01:01:56,520 --> 01:01:59,799
+la parte iniziale è uguale. Cambia
+
+1249
+01:01:59,799 --> 01:02:03,520
+l'output. L'output di questa funzione è
+
+1250
+01:02:03,520 --> 01:02:07,039
+invece di dirci qual è lo stato
+
+1251
+01:02:07,039 --> 01:02:08,799
+successivo
+
+1252
+01:02:08,799 --> 01:02:11,680
+ci dà un insieme di stati successivi,
+
+1253
+01:02:11,680 --> 01:02:15,119
+cioè mappiamo verso l'insieme delle
+
+1254
+01:02:15,119 --> 01:02:19,359
+parti, il powers set di Q. Ok? Quindi
+
+1255
+01:02:19,359 --> 01:02:22,279
+la funzione di relazione, quindi una
+
+1256
+01:02:22,279 --> 01:02:24,480
+macchina non deterministica, la sua
+
+1257
+01:02:24,480 --> 01:02:27,480
+definizione è quasi uguale a quella
+
+1258
+01:02:27,480 --> 01:02:30,319
+deterministica. Abbiamo i simboli,
+
+1259
+01:02:30,319 --> 01:02:32,680
+abbiamo gli stati, abbiamo lo stato
+
+1260
+01:02:32,680 --> 01:02:34,799
+iniziale, abbiamo lo stato accettante e
+
+1261
+01:02:34,799 --> 01:02:37,760
+fino a lì è la stessissima cosa. Quello
+
+1262
+01:02:37,760 --> 01:02:40,599
+che cambia è il suo programma. Il
+
+1263
+01:02:40,599 --> 01:02:42,760
+programma di una macchina deterministica
+
+1264
+01:02:42,760 --> 01:02:45,480
+è dato uno stato e un simbolo so che
+
+1265
+01:02:45,480 --> 01:02:47,680
+fare dopo per una macchina non
+
+1266
+01:02:47,680 --> 01:02:49,880
+deterministica e dato uno stato e un
+
+1267
+01:02:49,880 --> 01:02:52,760
+simbolo o una serie di posso avere una
+
+1268
+01:02:52,760 --> 01:02:54,920
+serie di scel. Come vedete non è che è
+
+1269
+01:02:54,920 --> 01:02:57,039
+sempre così. Nella macchina che abbiamo
+
+1270
+01:02:57,039 --> 01:03:00,440
+visto qua,
+
+1271
+01:03:01,119 --> 01:03:03,000
+il neterminismo
+
+1272
+01:03:03,000 --> 01:03:05,799
+avviene qua, ma il resto della macchina
+
+1273
+01:03:05,799 --> 01:03:09,599
+è deterministica, ok? Cioè, non è che
+
+1274
+01:03:09,599 --> 01:03:12,039
+una macchina non deterministica deve
+
+1275
+01:03:12,039 --> 01:03:14,720
+essere non deterministica in tutta la
+
+1276
+01:03:14,720 --> 01:03:17,640
+sua fase di esecuzione, cioè può avere
+
+1277
+01:03:17,640 --> 01:03:21,720
+del non determinismo. Ok? Quindi la
+
+1278
+01:03:21,720 --> 01:03:24,359
+differenza nella definizione di funzione
+
+1279
+01:03:24,359 --> 01:03:28,440
+di transizione che è una relazione
+
+1280
+01:03:28,440 --> 01:03:31,319
+dato lo stato corrente e il singolo
+
+1281
+01:03:31,319 --> 01:03:33,440
+letto correntemente.
+
+1282
+01:03:33,440 --> 01:03:36,520
+Non ho soltanto qual è il prossimo
+
+1283
+01:03:36,520 --> 01:03:39,079
+passo, ma ho un insieme di prossimi
+
+1284
+01:03:39,079 --> 01:03:41,279
+passi.
+
+1285
+01:03:41,279 --> 01:03:44,279
+Ok?
+
+1286
+01:03:45,520 --> 01:03:50,520
+Cos'è a questo punto una
+
+1287
+01:03:50,520 --> 01:03:53,640
+computazione parziale
+
+1288
+01:03:53,640 --> 01:03:58,160
+per una macchina non deterministica?
+
+1289
+01:03:59,440 --> 01:04:03,079
+Allora, se guardate i vostri appunti
+
+1290
+01:04:03,079 --> 01:04:04,520
+intuitivamente, che cos'era una
+
+1291
+01:04:04,520 --> 01:04:07,000
+computazione parziale? una computazione
+
+1292
+01:04:07,000 --> 01:04:10,760
+parziale è
+
+1293
+01:04:10,760 --> 01:04:13,960
+una sequenza di foto in cui la prima
+
+1294
+01:04:13,960 --> 01:04:16,480
+foto ci dice come la macchina svavia. La
+
+1295
+01:04:16,480 --> 01:04:18,279
+macchina si avvia nello stato iniziale
+
+1296
+01:04:18,279 --> 01:04:21,359
+con tutta la stend.
+
+1297
+01:04:21,359 --> 01:04:23,760
+Quindi è una sequenza di foto in cui
+
+1298
+01:04:23,760 --> 01:04:27,079
+avevamo detto che ogni foto deve essere
+
+1299
+01:04:27,079 --> 01:04:29,640
+il legal successor della sua precedente,
+
+1300
+01:04:29,640 --> 01:04:33,440
+cioè ogni foto deve essere la prossima
+
+1301
+01:04:33,440 --> 01:04:36,119
+configurazione legale
+
+1302
+01:04:36,119 --> 01:04:39,240
+secondo la funzione di transizione.
+
+1303
+01:04:39,240 --> 01:04:42,079
+Per le macchine non deterministiche è la
+
+1304
+01:04:42,079 --> 01:04:44,559
+stessima cosa,
+
+1305
+01:04:44,559 --> 01:04:49,240
+cioè una foto può seguire un'altra se lo
+
+1306
+01:04:49,240 --> 01:04:53,400
+stato nella seconda configurazione
+
+1307
+01:04:53,400 --> 01:04:57,359
+appartiene fra quelli disponibili che si
+
+1308
+01:04:57,359 --> 01:05:00,559
+possono raggiungere secondo la funzione,
+
+1309
+01:05:00,559 --> 01:05:02,559
+la relazione di transizione nella
+
+1310
+01:05:02,559 --> 01:05:04,799
+configurazione precedente. Tutto qua.
+
+1311
+01:05:04,799 --> 01:05:07,640
+Allora, nelle macchine deterministiche
+
+1312
+01:05:07,640 --> 01:05:10,520
+noi abbiamo che ogni configurazione
+
+1313
+01:05:10,520 --> 01:05:12,960
+determina qual è la sua successiva,
+
+1314
+01:05:12,960 --> 01:05:14,520
+perché sappiamo questo è lo stato,
+
+1315
+01:05:14,520 --> 01:05:16,680
+questo è il simbolo, la funzione ci dà
+
+1316
+01:05:16,680 --> 01:05:18,920
+un solo next step. Quindi date una
+
+1317
+01:05:18,920 --> 01:05:20,359
+configurazione, date una foto, noi
+
+1318
+01:05:20,359 --> 01:05:23,240
+sappiamo che è quella di do qual è. Lo
+
+1319
+01:05:23,240 --> 01:05:25,720
+stato è quello dato dalla funzione di
+
+1320
+01:05:25,720 --> 01:05:27,400
+transizione.
+
+1321
+01:05:27,400 --> 01:05:29,079
+La striga è che noi gli togliamo un
+
+1322
+01:05:29,079 --> 01:05:31,359
+singolo che è facilissimo. Nelle
+
+1323
+01:05:31,359 --> 01:05:33,720
+macchine non deterministiche una foto
+
+1324
+01:05:33,720 --> 01:05:36,000
+può seguirne un'altra.
+
+1325
+01:05:36,000 --> 01:05:39,000
+Basta che lo stato nella seconda foto è
+
+1326
+01:05:39,000 --> 01:05:42,599
+uno di quelli ammessi dalla dalla
+
+1327
+01:05:42,599 --> 01:05:45,079
+relazione di transizione a partire dallo
+
+1328
+01:05:45,079 --> 01:05:47,720
+stato e simbolo. Ok?
+
+1329
+01:05:47,720 --> 01:05:51,760
+Quindi in realtà adesso
+
+1330
+01:05:51,760 --> 01:05:55,079
+e potete capire che un automa non
+
+1331
+01:05:55,079 --> 01:05:56,960
+deterministico
+
+1332
+01:05:56,960 --> 01:05:58,720
+quando
+
+1333
+01:05:58,720 --> 01:06:03,319
+eh computa su una stringa può avere più
+
+1334
+01:06:03,319 --> 01:06:07,559
+computazioni differenti. Ad esempio,
+
+1335
+01:06:07,559 --> 01:06:12,640
+nell'esempio che abbiamo visto prima,
+
+1336
+01:06:13,599 --> 01:06:15,319
+questo qua, eh voi voi l'avete
+
+1337
+01:06:15,319 --> 01:06:19,599
+l'appunto. Ok? Supponiamo,
+
+1338
+01:06:19,839 --> 01:06:23,480
+ok, che vogliamo riconoscere
+
+1339
+01:06:23,480 --> 01:06:27,599
+questa stringa qua, 0.
+
+1340
+01:06:27,599 --> 01:06:30,599
+Ok?
+
+1341
+01:06:30,720 --> 01:06:33,720
+Allora, una computazione potrebbe essere
+
+1342
+01:06:33,720 --> 01:06:36,720
+Q00
+
+1343
+01:06:38,319 --> 01:06:41,240
+seguito da
+
+1344
+01:06:41,240 --> 01:06:44,240
+Q0
+
+1345
+01:06:45,079 --> 01:06:49,559
+seguito da Q 00
+
+1346
+01:06:49,559 --> 01:06:52,160
+seguito da Q100
+
+1347
+01:06:52,160 --> 01:06:55,240
+seguito da Q20
+
+1348
+01:06:55,240 --> 01:07:01,559
+seguito da E seguito da Q3 vuoto. È
+
+1349
+01:07:01,559 --> 01:07:03,799
+chiaro? Cioè quella macchina quando
+
+1350
+01:07:03,799 --> 01:07:08,319
+legge abbiamo detto 01
+
+1351
+01:07:08,319 --> 01:07:10,400
+che cosa fa?
+
+1352
+01:07:10,400 --> 01:07:14,240
+Legge il primo 0 e rimane qua.
+
+1353
+01:07:14,240 --> 01:07:19,599
+Legge 1 e rimane qua. Poi legge 0 0 e
+
+1354
+01:07:19,599 --> 01:07:23,680
+accetta. Questa cosa è
+
+1355
+01:07:23,680 --> 01:07:27,039
+fotografata da questa sequenza qui.
+
+1356
+01:07:27,039 --> 01:07:28,960
+Però questa macchina potrebbe fare pure
+
+1357
+01:07:28,960 --> 01:07:31,319
+un'altra cosa. Al primo zero, invece di
+
+1358
+01:07:31,319 --> 01:07:34,359
+rimanere qua, se ne va avanti. Quindi
+
+1359
+01:07:34,359 --> 01:07:36,760
+un'altra questa è una computazione
+
+1360
+01:07:36,760 --> 01:07:40,640
+legale su 0100
+
+1361
+01:07:40,640 --> 01:07:43,760
+per la macchina N. Però un'altra è
+
+1362
+01:07:43,760 --> 01:07:45,839
+questa qui.
+
+1363
+01:07:45,839 --> 01:07:48,760
+Partiamo sempre da Q0. Ok? Vedete? La
+
+1364
+01:07:48,760 --> 01:07:52,720
+prima foto è sempre la stessa, Q0.
+
+1365
+01:07:52,720 --> 01:07:57,359
+Poi andiamo avanti e facciamo Q1.
+
+1366
+01:07:58,319 --> 01:08:00,839
+Dopodiché la macchina si blocca perché
+
+1367
+01:08:00,839 --> 01:08:06,200
+in Q1 non abbiamo Ei,
+
+1368
+01:08:06,279 --> 01:08:09,440
+in Q1 non abbiamo la definizione di
+
+1369
+01:08:09,440 --> 01:08:13,200
+lettura del simbolo 1. Ok? E quindi
+
+1370
+01:08:13,200 --> 01:08:16,920
+questa è una computazione
+
+1371
+01:08:16,920 --> 01:08:19,400
+e questa è un'altra computazione. Tutte
+
+1372
+01:08:19,400 --> 01:08:22,640
+e due sono legali, ok? Perché rispettano
+
+1373
+01:08:22,640 --> 01:08:27,560
+il fatto che le foto in sequenza
+
+1374
+01:08:27,560 --> 01:08:30,920
+aderiscono al alle regole dettate dalla
+
+1375
+01:08:30,920 --> 01:08:34,040
+relazione di transizione. Ok?
+
+1376
+01:08:34,040 --> 01:08:37,040
+Però che cosa abbiamo? che questa qui,
+
+1377
+01:08:37,040 --> 01:08:40,199
+la prima, è una computazione
+
+1378
+01:08:40,199 --> 01:08:43,159
+accettante perché andiamo a finire in
+
+1379
+01:08:43,159 --> 01:08:47,480
+una configurazione accettante.
+
+1380
+01:08:47,480 --> 01:08:50,199
+Mentre la seconda, sebbene sia una
+
+1381
+01:08:50,199 --> 01:08:56,040
+computazione legale, è una computazione
+
+1382
+01:08:56,520 --> 01:08:58,279
+rigettante, come si dice in italiano,
+
+1383
+01:08:58,279 --> 01:09:02,279
+rejecting rifiutante. Ok,
+
+1384
+01:09:02,279 --> 01:09:04,279
+è chiaro dov'è qua il bous della
+
+1385
+01:09:04,279 --> 01:09:05,960
+questione? Noi abbiamo questa macchina
+
+1386
+01:09:05,960 --> 01:09:09,600
+che riceve input su, una stringa, ha due
+
+1387
+01:09:09,600 --> 01:09:12,120
+computazioni legali,
+
+1388
+01:09:12,120 --> 01:09:14,560
+ok? In una accetta e in un'altra
+
+1389
+01:09:14,560 --> 01:09:20,080
+rifiuta. Allora, la questione qui è
+
+1390
+01:09:21,400 --> 01:09:25,480
+ma questa macchina la stringa 0100
+
+1391
+01:09:25,480 --> 01:09:29,359
+l'accetta o la rifiuta?
+
+1392
+01:09:29,480 --> 01:09:31,239
+L'accetta.
+
+1393
+01:09:31,239 --> 01:09:34,759
+Come? Perché noi cambiamo la definizione
+
+1394
+01:09:34,759 --> 01:09:37,199
+di accettazione
+
+1395
+01:09:37,199 --> 01:09:41,600
+per una un'automa a stati finiti non
+
+1396
+01:09:41,600 --> 01:09:44,600
+deterministico
+
+1397
+01:09:44,679 --> 01:09:47,679
+N
+
+1398
+01:09:49,480 --> 01:09:52,640
+accetta una stringa
+
+1399
+01:09:52,640 --> 01:09:55,640
+W
+
+1400
+01:09:58,760 --> 01:10:00,030
+se esiste
+
+1401
+01:10:00,030 --> 01:10:02,159
+[Musica]
+
+1402
+01:10:02,159 --> 01:10:05,640
+una computazione
+
+1403
+01:10:06,600 --> 01:10:09,640
+di n
+
+1404
+01:10:09,640 --> 01:10:11,679
+su w
+
+1405
+01:10:11,679 --> 01:10:15,159
+che sia accettabile.
+
+1406
+01:10:16,000 --> 01:10:19,239
+L'intuizione qual è?
+
+1407
+01:10:19,239 --> 01:10:22,120
+Una macchina non deterministica
+
+1408
+01:10:22,120 --> 01:10:25,400
+accetta una stringa se esiste un modo
+
+1409
+01:10:25,400 --> 01:10:27,360
+per accettarlo.
+
+1410
+01:10:27,360 --> 01:10:31,040
+Questo è Ok.
+
+1411
+01:10:33,159 --> 01:10:36,520
+E siccome la esiste un modo per la
+
+1412
+01:10:36,520 --> 01:10:39,080
+stringa 0100
+
+1413
+01:10:39,080 --> 01:10:41,159
+di essere accettata da questa macchina
+
+1414
+01:10:41,159 --> 01:10:42,679
+qua, allora vuol dire che quella
+
+1415
+01:10:42,679 --> 01:10:46,480
+macchina la stringa l'accetta. Ok?
+
+1416
+01:10:46,480 --> 01:10:48,920
+Ok. Questo è il passaggio importante,
+
+1417
+01:10:48,920 --> 01:10:53,560
+eh, una macchina non deterministica
+
+1418
+01:10:53,560 --> 01:10:57,320
+accetta una stringa input
+
+1419
+01:10:57,320 --> 01:11:01,199
+se esiste un modo per accettarla.
+
+1420
+01:11:01,199 --> 01:11:03,159
+Ok,
+
+1421
+01:11:03,159 --> 01:11:04,760
+prego.
+Scusi, l'automa che ha disegnato
+
+1422
+01:11:04,760 --> 01:11:08,400
+lei è un è un automa D errato e un
+
+1423
+01:11:08,400 --> 01:11:10,800
+mentre un automa N corretto. Sì, è un
+
+1424
+01:11:10,800 --> 01:11:14,600
+automa non deterministico. Sì,
+
+1425
+01:11:14,600 --> 01:11:16,520
+una macchina non deterministico. accetto
+
+1426
+01:11:16,520 --> 01:11:20,159
+una stringa input
+
+1427
+01:11:23,120 --> 01:11:28,880
+se esiste un modo per la macchina
+
+1428
+01:11:28,880 --> 01:11:32,760
+di accettare la stringa.
+
+1429
+01:11:32,880 --> 01:11:35,080
+Quindi proprio quando per capire se
+
+1430
+01:11:35,080 --> 01:11:37,120
+effettivamente una stringa do W è
+
+1431
+01:11:37,120 --> 01:11:39,719
+accettata dovrà provare tutte le
+
+1432
+01:11:39,719 --> 01:11:42,400
+possibili combinazioni. Sì, adesso
+
+1433
+01:11:42,400 --> 01:11:46,199
+adesso vi spiego un po' sta faccendata.
+
+1434
+01:11:46,199 --> 01:11:48,600
+Allora, è interessante questa domanda
+
+1435
+01:11:48,600 --> 01:11:50,560
+qui
+
+1436
+01:11:50,560 --> 01:11:52,400
+che ci ha fatto la nostra collega. Ho
+
+1437
+01:11:52,400 --> 01:11:53,920
+detto "Ma allora una macchina non
+
+1438
+01:11:53,920 --> 01:11:56,040
+deterministica per accettare la propria
+
+1439
+01:11:56,040 --> 01:11:59,760
+stringa prova tutte le strade?" Oppure
+
+1440
+01:11:59,760 --> 01:12:01,360
+la domanda che ci ha fatto il nostro
+
+1441
+01:12:01,360 --> 01:12:04,400
+collega, ma se una una macchina non
+
+1442
+01:12:04,400 --> 01:12:07,400
+deterministica,
+
+1443
+01:12:07,400 --> 01:12:09,880
+mentre nel calcolo a un certo punto si
+
+1444
+01:12:09,880 --> 01:12:11,880
+accorge che ha sbagliato, che fa? Torna
+
+1445
+01:12:11,880 --> 01:12:13,920
+indietro?
+
+1446
+01:12:13,920 --> 01:12:15,679
+Ok?
+
+1447
+01:12:15,679 --> 01:12:18,960
+Oppure altri dicono "No, non fa questa
+
+1448
+01:12:18,960 --> 01:12:20,360
+cosa qua." Una macchina non
+
+1449
+01:12:20,360 --> 01:12:22,719
+deterministica prova tutte le strade
+
+1450
+01:12:22,719 --> 01:12:24,800
+contemporaneamente. Questa è un'altra
+
+1451
+01:12:24,800 --> 01:12:27,480
+metafora. Ok? Adesso, seconda volta, una
+
+1452
+01:12:27,480 --> 01:12:29,719
+macchina non deterministica che fa? Le
+
+1453
+01:12:29,719 --> 01:12:31,800
+prova tutti assieme, le prova una dopo
+
+1454
+01:12:31,800 --> 01:12:34,840
+l'altra, torna indietro, fa backtracking
+
+1455
+01:12:34,840 --> 01:12:37,679
+quando sbaglia, che fa una macchina non
+
+1456
+01:12:37,679 --> 01:12:39,880
+deterministica?
+
+1457
+01:12:39,880 --> 01:12:42,199
+Non è il path problem, cioè non è il
+
+1458
+01:12:42,199 --> 01:12:44,159
+problem,
+è anche un path problem, però
+
+1459
+01:12:44,159 --> 01:12:46,480
+supponiamo di avere questa macchina, ok?
+
+1460
+01:12:46,480 --> 01:12:49,120
+Ma una bellissima automa stati finiti
+
+1461
+01:12:49,120 --> 01:12:52,320
+non deterministico. Eh, gli infiliamo un
+
+1462
+01:12:52,320 --> 01:12:54,960
+input come quello là, quindi sul quale
+
+1463
+01:12:54,960 --> 01:12:58,000
+la scelta che fa sul primo zero fa la
+
+1464
+01:12:58,000 --> 01:13:01,600
+differenza. È chiaro per tutti?
+
+1465
+01:13:01,600 --> 01:13:04,040
+Quindi se la macchina sul primo zero
+
+1466
+01:13:04,040 --> 01:13:06,280
+rimane in q0
+
+1467
+01:13:06,280 --> 01:13:08,960
+alla fine accetterà. Se la macchina sul
+
+1468
+01:13:08,960 --> 01:13:13,679
+primo 0 si sposta in Q1 rifiuterà. Ok?
+
+1469
+01:13:13,679 --> 01:13:16,199
+Ma allora sta macchina che fa?
+
+1470
+01:13:16,199 --> 01:13:18,639
+li prova tutti contemporaneamente,
+
+1471
+01:13:18,639 --> 01:13:21,000
+li prova uno dopo l'altro, fa
+
+1472
+01:13:21,000 --> 01:13:24,520
+backtracking. Che fa sta macchina?
+
+1473
+01:13:24,520 --> 01:13:26,600
+Essendo un deterministic prova
+
+1474
+01:13:26,600 --> 01:13:30,159
+casualmente la prima strada che
+Ok,
+
+1475
+01:13:30,159 --> 01:13:32,760
+questa è un'altra metafora. La macchina
+
+1476
+01:13:32,760 --> 01:13:36,120
+tira un bel dado e cerca di stabilire da
+
+1477
+01:13:36,120 --> 01:13:39,199
+che lato andare. E se il dado, se la
+
+1478
+01:13:39,199 --> 01:13:41,760
+Flipcoin non funziona,
+si impalla e
+
+1479
+01:13:41,760 --> 01:13:43,880
+muore.
+Si impalla e muore. Questa è una
+
+1480
+01:13:43,880 --> 01:13:46,960
+possibilità. Eh sì. un'altra possibilità
+
+1481
+01:13:46,960 --> 01:13:50,480
+se fisse dal fondo, cioè nel senso parte
+
+1482
+01:13:50,480 --> 01:13:53,800
+da uno stato da uno stato accettante e
+
+1483
+01:13:53,800 --> 01:13:58,159
+poi va
+e ok, però ci sono quelle che per
+
+1484
+01:13:58,159 --> 01:14:00,120
+esempio avresti
+
+1485
+01:14:00,120 --> 01:14:03,520
+non determinismo a tornare indietro, ok?
+
+1486
+01:14:03,520 --> 01:14:05,360
+Che fa sta macchina? le fai in
+
+1487
+01:14:05,360 --> 01:14:08,400
+parallelo, tira la monetina,
+
+1488
+01:14:08,400 --> 01:14:12,360
+usa la palla di cristallo.
+
+1489
+01:14:12,840 --> 01:14:14,520
+Eh, non abbiamo definito un algoritmo,
+
+1490
+01:14:14,520 --> 01:14:18,080
+quindi, cioè, io immagino prova a fare a
+
+1491
+01:14:18,080 --> 01:14:21,040
+eseguire, cioè a leggere la stringa e se
+
+1492
+01:14:21,040 --> 01:14:22,320
+sarà stata accettata sarà stata
+
+1493
+01:14:22,320 --> 01:14:24,280
+accettata, altrimenti se sarà stata
+
+1494
+01:14:24,280 --> 01:14:26,760
+riata,
+cioè perché non abbiamo definito
+
+1495
+01:14:26,760 --> 01:14:29,440
+un algoritmo,
+l'algoritmo è quello,
+eh
+
+1496
+01:14:29,440 --> 01:14:31,199
+però
+ed è dato dalla relazione di
+
+1497
+01:14:31,199 --> 01:14:33,040
+transizione. Eh, però siccome non è
+
+1498
+01:14:33,040 --> 01:14:35,360
+deterministico, allora quello che farà
+
+1499
+01:14:35,360 --> 01:14:37,199
+fare una volta e basta.
+Ma lo fa una
+
+1500
+01:14:37,199 --> 01:14:38,920
+volta e basta e se prende la strada
+
+1501
+01:14:38,920 --> 01:14:41,520
+sbagliata e la B andiamo a sbattere al
+
+1502
+01:14:41,520 --> 01:14:43,400
+muro. Eccolo
+
+1503
+01:14:43,400 --> 01:14:45,679
+e questa è anche una possibilità. Prego.
+
+1504
+01:14:45,679 --> 01:14:48,320
+Può guardare più simboli?
+Può guardare
+
+1505
+01:14:48,320 --> 01:14:50,080
+più simboli? No, la macchina ne guarda
+
+1506
+01:14:50,080 --> 01:14:52,760
+uno solo,
+
+1507
+01:14:52,760 --> 01:14:55,679
+guys. Oh, prego.
+Io penso che faccio un
+
+1508
+01:14:55,679 --> 01:15:01,199
+backing.
+Back tracking. Ok. Allora,
+
+1509
+01:15:01,199 --> 01:15:03,920
+volete una soluzione?
+
+1510
+01:15:03,920 --> 01:15:07,320
+La domanda è mal posta.
+
+1511
+01:15:07,320 --> 01:15:08,960
+Questa macchina non fa niente perché
+
+1512
+01:15:08,960 --> 01:15:12,840
+questa macchina non esiste.
+
+1513
+01:15:13,080 --> 01:15:17,239
+Non esiste un una macchina fisica in
+
+1514
+01:15:17,239 --> 01:15:19,239
+grado di fare una cosa di questo tipo.
+
+1515
+01:15:19,239 --> 01:15:22,239
+Questo è un modello astratto. Punto.
+
+1516
+01:15:22,239 --> 01:15:26,320
+Quindi non va né in parallelo, non falli
+
+1517
+01:15:26,320 --> 01:15:29,000
+tentativi, non usa la palla di
+
+1518
+01:15:29,000 --> 01:15:32,400
+cristallo, non tira la monetina. Questa
+
+1519
+01:15:32,400 --> 01:15:35,400
+macchina non esiste.
+
+1520
+01:15:35,400 --> 01:15:38,639
+Questo è solamente un modello astratto
+
+1521
+01:15:38,639 --> 01:15:43,040
+di calcolo che ci siamo inventati
+
+1522
+01:15:43,040 --> 01:15:45,040
+per semplificarci
+
+1523
+01:15:45,040 --> 01:15:49,360
+lo studio dei linguaggi. Tutto qua. Però
+
+1524
+01:15:49,360 --> 01:15:51,199
+ovviamente quando noi poi dobbiamo
+
+1525
+01:15:51,199 --> 01:15:54,760
+andarle a programmare queste strade non
+
+1526
+01:15:54,760 --> 01:15:56,719
+queste macchine non deterministiche una
+
+1527
+01:15:56,719 --> 01:15:59,000
+metafora in testa la dovremmo avere.
+
+1528
+01:15:59,000 --> 01:16:00,920
+Questa è la metafora che uso io e in
+
+1529
+01:16:00,920 --> 01:16:05,159
+genere mi ci trovo bene.
+
+1530
+01:16:05,159 --> 01:16:07,840
+La macchina quando arriva un punto di
+
+1531
+01:16:07,840 --> 01:16:09,880
+scelta
+
+1532
+01:16:09,880 --> 01:16:12,000
+se c'è un punto corretto, se c'è una
+
+1533
+01:16:12,000 --> 01:16:16,880
+scelta corretta la prende bene
+come
+
+1534
+01:16:16,880 --> 01:16:18,960
+Eh, certo. Non esiste, me la invento
+
+1535
+01:16:18,960 --> 01:16:21,560
+come voglio.
+
+1536
+01:16:22,080 --> 01:16:24,480
+Devo stare attento però che poi io
+
+1537
+01:16:24,480 --> 01:16:26,080
+verifichi,
+
+1538
+01:16:26,080 --> 01:16:27,960
+poi questo lo vedremo di più sulle sulle
+
+1539
+01:16:27,960 --> 01:16:29,719
+macchine di Touring, faremo degli esempi
+
+1540
+01:16:29,719 --> 01:16:31,560
+più specifici perché là poi dobbiamo
+
+1541
+01:16:31,560 --> 01:16:34,000
+stare attenti, eh, ci inventiamo, cioè
+
+1542
+01:16:34,000 --> 01:16:36,080
+dobbiamo stare attenti, vi faccio vedere
+
+1543
+01:16:36,080 --> 01:16:39,080
+velocemente
+
+1544
+01:16:40,040 --> 01:16:44,440
+questo qua. Voi state
+
+1545
+01:16:44,920 --> 01:16:46,400
+voglio far notare una cosa su questa
+
+1546
+01:16:46,400 --> 01:16:49,840
+macchina qui. La macchina sta facendo il
+
+1547
+01:16:49,840 --> 01:16:52,480
+guess, cioè sta indovinando che fare.
+
+1548
+01:16:52,480 --> 01:16:55,440
+Ok? Però una volta che la macchina ha
+
+1549
+01:16:55,440 --> 01:16:58,239
+risolto la questione su un certo zero,
+
+1550
+01:16:58,239 --> 01:17:00,480
+se andare avanti verso Q1, rimanere in
+
+1551
+01:17:00,480 --> 01:17:03,120
+Q0, come vedete questa macchina fa un
+
+1552
+01:17:03,120 --> 01:17:05,159
+controllo deterministico, cioè io poi
+
+1553
+01:17:05,159 --> 01:17:07,360
+alla fine devo verificare che non ho
+
+1554
+01:17:07,360 --> 01:17:10,480
+preso una cantonata perché perché questa
+
+1555
+01:17:10,480 --> 01:17:12,960
+macchina non esiste, quindi non è che è
+
+1556
+01:17:12,960 --> 01:17:15,360
+una macchina che veramente
+
+1557
+01:17:15,360 --> 01:17:17,159
+ha la palla di cristallo ed è in grado
+
+1558
+01:17:17,159 --> 01:17:19,400
+di fare questa cosa. La condizione di
+
+1559
+01:17:19,400 --> 01:17:22,080
+accettazione di questa macchina è la
+
+1560
+01:17:22,080 --> 01:17:24,400
+macchina accetta se esiste un modo per
+
+1561
+01:17:24,400 --> 01:17:26,800
+accettare. Ma quindi allora dobbiamo
+
+1562
+01:17:26,800 --> 01:17:28,800
+definire la sua relazione di transizione
+
+1563
+01:17:28,800 --> 01:17:30,719
+in maniera tale che se la stringa va
+
+1564
+01:17:30,719 --> 01:17:32,840
+rifiutata non ci siano modi per
+
+1565
+01:17:32,840 --> 01:17:36,120
+accettare. Ecco perché intuitivamente,
+
+1566
+01:17:36,120 --> 01:17:38,400
+poi vedremo più nel dettaglio, io metto
+
+1567
+01:17:38,400 --> 01:17:41,480
+questo controllo finale.
+
+1568
+01:17:41,480 --> 01:17:45,360
+È chiaro? Allora, perché perché ci siamo
+
+1569
+01:17:45,360 --> 01:17:49,679
+quasi, dai. Perché?
+
+1570
+01:17:49,679 --> 01:17:52,760
+Scusi.
+Sì,
+ma quindi la definizione la
+
+1571
+01:17:52,760 --> 01:17:57,880
+relazione del dell'emn
+Sì.
+Eh,
+
+1572
+01:17:57,880 --> 01:18:01,159
+dobbiamo formalizzare meglio oppure
+
+1573
+01:18:01,159 --> 01:18:02,760
+basta quello che abbiamo già dato?
+Ah,
+
+1574
+01:18:02,760 --> 01:18:04,360
+basta quello che abbiamo già dato. Ok.
+
+1575
+01:18:04,360 --> 01:18:07,159
+La ripeto, la definizione di macchina di
+
+1576
+01:18:07,159 --> 01:18:10,040
+automa non deterministico a che delta è
+
+1577
+01:18:10,040 --> 01:18:13,120
+una relazione di transizione invece che
+
+1578
+01:18:13,120 --> 01:18:16,280
+di una funzione di transizione. Ok?
+
+1579
+01:18:16,280 --> 01:18:18,639
+Questa è la differenza. Cos'è una
+
+1580
+01:18:18,639 --> 01:18:22,639
+computazione? Va semplicemente cambiata.
+
+1581
+01:18:22,639 --> 01:18:26,400
+Eh, qui,
+
+1582
+01:18:28,080 --> 01:18:30,480
+vedete qua
+
+1583
+01:18:30,480 --> 01:18:33,920
+nella definizione di computazione noi
+
+1584
+01:18:33,920 --> 01:18:37,360
+abbiamo che lo stato al passo i + 1 è
+
+1585
+01:18:37,360 --> 01:18:39,960
+dato dal risultato dell'applicazione
+
+1586
+01:18:39,960 --> 01:18:41,920
+della funzione di transizione sulla
+
+1587
+01:18:41,920 --> 01:18:45,719
+coppia stato al passo i simbolo che mi
+
+1588
+01:18:45,719 --> 01:18:47,400
+devo leggere.
+
+1589
+01:18:47,400 --> 01:18:50,480
+Nel caso di macchina non deterministica,
+
+1590
+01:18:50,480 --> 01:18:52,840
+questo pezzo qua è semplicemente
+
+1591
+01:18:52,840 --> 01:18:55,679
+sostituito che invece dell'uguale
+
+1592
+01:18:55,679 --> 01:18:59,440
+ciò appartiene,
+
+1593
+01:18:59,440 --> 01:19:02,239
+capito? Tutto qua. Quindi questo è il
+
+1594
+01:19:02,239 --> 01:19:05,480
+pezzettino che dobbiamo cambiare. Poi
+
+1595
+01:19:05,480 --> 01:19:07,920
+una computazione accettante si definisce
+
+1596
+01:19:07,920 --> 01:19:09,239
+allo stesso modo, quindi è una
+
+1597
+01:19:09,239 --> 01:19:11,880
+computazione legale la cui ultima foto è
+
+1598
+01:19:11,880 --> 01:19:14,800
+una configurazione accettante. Cambia la
+
+1599
+01:19:14,800 --> 01:19:17,280
+definizione di accettazione. Una
+
+1600
+01:19:17,280 --> 01:19:20,480
+macchina non deterministica accetta una
+
+1601
+01:19:20,480 --> 01:19:25,440
+stringa W se esiste una computazione
+
+1602
+01:19:25,440 --> 01:19:28,520
+accettante della macchina su doppia B.
+
+1603
+01:19:28,520 --> 01:19:30,159
+Questa è l'unica differenza per le
+
+1604
+01:19:30,159 --> 01:19:33,440
+macchine deterministiche dalta W c'è
+
+1605
+01:19:33,440 --> 01:19:35,520
+un'unica computazione, quindi quella o è
+
+1606
+01:19:35,520 --> 01:19:38,199
+accettante o non accettante. Sulle
+
+1607
+01:19:38,199 --> 01:19:40,719
+macchine non deterministiche, siccome
+
+1608
+01:19:40,719 --> 01:19:43,040
+possono esserci più computazioni sulla
+
+1609
+01:19:43,040 --> 01:19:45,480
+stessa W, allora noi diciamo che la
+
+1610
+01:19:45,480 --> 01:19:48,120
+macchina accetta W se fra tutte le
+
+1611
+01:19:48,120 --> 01:19:51,159
+computazioni che può fare sul W almeno
+
+1612
+01:19:51,159 --> 01:19:53,560
+una è accettabile. Questa è la
+
+1613
+01:19:53,560 --> 01:19:56,199
+differenza di
+
+1614
+01:19:56,199 --> 01:19:57,760
+definizione.
+
+1615
+01:19:57,760 --> 01:19:59,360
+Una macchina, un automa non
+
+1616
+01:19:59,360 --> 01:20:01,639
+deterministico decide un certo
+
+1617
+01:20:01,639 --> 01:20:04,639
+linguaggio L se accetta tutte le
+
+1618
+01:20:04,639 --> 01:20:07,120
+stringhe che appartengono a L e rifiuta
+
+1619
+01:20:07,120 --> 01:20:08,760
+tutte le stringhe che non appartengono a
+
+1620
+01:20:08,760 --> 01:20:11,840
+L. Ok? Quindi cambia giusto la
+
+1621
+01:20:11,840 --> 01:20:14,360
+definizione di computazione,
+
+1622
+01:20:14,360 --> 01:20:17,040
+relazione di transizione e la condizione
+
+1623
+01:20:17,040 --> 01:20:21,080
+di accettamento accettazione.
+
+1624
+01:20:21,080 --> 01:20:23,239
+Chiaro? Ok.
+
+1625
+01:20:23,239 --> 01:20:24,639
+Allora, le stiamo facendo perché poi le
+
+1626
+01:20:24,639 --> 01:20:26,719
+rivedremo su tuning machines. Su tuning
+
+1627
+01:20:26,719 --> 01:20:30,040
+machines rivedremo queste definizioni
+
+1628
+01:20:30,040 --> 01:20:32,080
+con dei pezzi in più. Ok? Son voluto
+
+1629
+01:20:32,080 --> 01:20:34,440
+partire da qua perché sono proprio base,
+
+1630
+01:20:34,440 --> 01:20:36,199
+poi ci aggiungiamo dei pezzi e qua
+
+1631
+01:20:36,199 --> 01:20:38,320
+magicamente abbiamo delle definizioni di
+
+1632
+01:20:38,320 --> 01:20:41,080
+teorie di machine. Ok? Perché la gente
+
+1633
+01:20:41,080 --> 01:20:45,360
+si è rotta la testa a
+
+1634
+01:20:45,360 --> 01:20:47,520
+studiare questo tipo di di automi?
+
+1635
+01:20:47,520 --> 01:20:50,560
+Perché, come avete visto, sebbene siano
+
+1636
+01:20:50,560 --> 01:20:53,520
+strani, hanno una certa semplicità di
+
+1637
+01:20:53,520 --> 01:20:55,639
+programmazione perché dici "Oh, cavolo,
+
+1638
+01:20:55,639 --> 01:20:57,880
+la macchina indovina"
+
+1639
+01:20:57,880 --> 01:21:01,639
+è è facile. Ok, esiste un risultato che
+
+1640
+01:21:01,639 --> 01:21:03,199
+chi ha fatto il corso di linguaggi
+
+1641
+01:21:03,199 --> 01:21:05,719
+conosce, però non rivediamo qui, che
+
+1642
+01:21:05,719 --> 01:21:08,520
+dimostra che tutto ciò che è decidibile
+
+1643
+01:21:08,520 --> 01:21:12,320
+da un automa non deterministico
+
+1644
+01:21:12,320 --> 01:21:14,920
+è decidibile anche da un automa
+
+1645
+01:21:14,920 --> 01:21:17,800
+deterministico. Ok? esiste un modo per
+
+1646
+01:21:17,800 --> 01:21:19,400
+convertire uno nell'altro, non lo
+
+1647
+01:21:19,400 --> 01:21:21,440
+vediamo, se ne andrebbero due lezioni, è
+
+1648
+01:21:21,440 --> 01:21:23,280
+una cosa che non abbiamo il tempo di
+
+1649
+01:21:23,280 --> 01:21:27,320
+fare. Ok, quindi perché si fa? Perché
+
+1650
+01:21:27,320 --> 01:21:29,880
+programmare un automa non deterministico
+
+1651
+01:21:29,880 --> 01:21:32,120
+è intuitivamente più semplice e poi lo
+
+1652
+01:21:32,120 --> 01:21:34,600
+do in pasta un traduttore. Il traduttore
+
+1653
+01:21:34,600 --> 01:21:36,440
+prende la macchina non deterministica,
+
+1654
+01:21:36,440 --> 01:21:38,320
+tira fuori la macchina deterministica e
+
+1655
+01:21:38,320 --> 01:21:41,520
+abbiamo quello che ci serve. Perché se
+
+1656
+01:21:41,520 --> 01:21:43,840
+vogliamo eseguirlo
+
+1657
+01:21:43,840 --> 01:21:45,840
+su una macchina fisica ci serve un
+
+1658
+01:21:45,840 --> 01:21:50,639
+programma deterministico. Ok.
+
+1659
+01:21:51,040 --> 01:21:53,040
+Ultimo pezzo.
+
+1660
+01:21:53,040 --> 01:21:55,320
+Eh eh eh eh eh.
+
+1661
+01:21:55,320 --> 01:21:58,320
+Ultimo pezzo, vediamo di fare tutto in
+
+1662
+01:21:58,320 --> 01:22:01,639
+10 minuti.
+
+1663
+01:22:02,440 --> 01:22:06,520
+Do un'intuizione di un risultato che
+
+1664
+01:22:06,520 --> 01:22:08,600
+non dimostreremo
+
+1665
+01:22:08,600 --> 01:22:10,760
+in tutti i dettagli perché non c'è
+
+1666
+01:22:10,760 --> 01:22:13,000
+tempo, però giusto per farvi vedere che
+
+1667
+01:22:13,000 --> 01:22:14,719
+insomma
+
+1668
+01:22:14,719 --> 01:22:16,280
+con queste macchine non è che possiamo
+
+1669
+01:22:16,280 --> 01:22:18,800
+fare quello che vogliamo. sono macchine
+
+1670
+01:22:18,800 --> 01:22:22,600
+semplici che riconoscono
+
+1671
+01:22:22,600 --> 01:22:26,199
+linguaggi semplici sostanzialmente. Ok?
+
+1672
+01:22:26,199 --> 01:22:30,120
+Allora, supponiamo di voler riconoscere
+
+1673
+01:22:30,120 --> 01:22:32,800
+questo linguaggio qui. Abbiamo
+
+1674
+01:22:32,800 --> 01:22:37,080
+l'alfabeto dei simboli AB
+
+1675
+01:22:37,080 --> 01:22:39,159
+e il linguaggio
+
+1676
+01:22:39,159 --> 01:22:42,480
+è questo,
+
+1677
+01:22:43,679 --> 01:22:48,480
+l'insieme delle stringhe ammale
+
+1678
+01:22:48,480 --> 01:22:51,000
+che M è un intero maggiore o uguale di
+
+1679
+01:22:51,000 --> 01:22:53,719
+0. Che cosa significa? Questo è il
+
+1680
+01:22:53,719 --> 01:22:55,239
+linguaggio,
+
+1681
+01:22:55,239 --> 01:22:58,080
+un linguaggio sull'alfabeto dei simboli
+
+1682
+01:22:58,080 --> 01:23:00,560
+A e B che contiene tutte le stringhe
+
+1683
+01:23:00,560 --> 01:23:04,719
+formate da un primo gruppo di ma, quindi
+
+1684
+01:23:04,719 --> 01:23:07,000
+a elevato M per noi significa che ci
+
+1685
+01:23:07,000 --> 01:23:10,560
+sono m simboli a
+
+1686
+01:23:10,560 --> 01:23:15,560
+seguito da un gruppo di Moli B. Devono
+
+1687
+01:23:15,560 --> 01:23:17,679
+essere M. Se ce ne stanno 3A ci devono
+
+1688
+01:23:17,679 --> 01:23:19,840
+essere 3B. Se ci stanno 4 A ci devono
+
+1689
+01:23:19,840 --> 01:23:22,480
+essere 4B. Ok?
+
+1690
+01:23:22,480 --> 01:23:24,960
+È chiaro questo linguaggio? Che cos'è?
+
+1691
+01:23:24,960 --> 01:23:27,520
+Adesso questo linguaggio che è
+
+1692
+01:23:27,520 --> 01:23:29,560
+semplicissimo. In Python sapreste
+
+1693
+01:23:29,560 --> 01:23:32,360
+scrivere un programmino che date in
+
+1694
+01:23:32,360 --> 01:23:34,719
+input una stringa di A e di B è in grado
+
+1695
+01:23:34,719 --> 01:23:36,960
+di dire sì. C'è la stringa ha quella
+
+1696
+01:23:36,960 --> 01:23:39,320
+forma.
+
+1697
+01:23:39,320 --> 01:23:44,520
+Sì,
+in fondo sì. Ok.
+
+1698
+01:23:44,520 --> 01:23:46,639
+è un linguaggio riconoscibile, cioè un
+
+1699
+01:23:46,639 --> 01:23:48,880
+computer standard per noi è in grado di
+
+1700
+01:23:48,880 --> 01:23:53,360
+farlo. Però un automa stati definiti
+
+1701
+01:23:53,360 --> 01:23:55,360
+deterministico
+
+1702
+01:23:55,360 --> 01:23:57,719
+e non deterministico perché vi ho detto
+
+1703
+01:23:57,719 --> 01:24:00,080
+che hanno lo stesso potere espressivo,
+
+1704
+01:24:00,080 --> 01:24:03,199
+non è in grado di farlo. Ok? E adesso
+
+1705
+01:24:03,199 --> 01:24:05,040
+cerchiamo di dare solamente un
+
+1706
+01:24:05,040 --> 01:24:06,760
+velocissimo perché in 10 minuti non ce
+
+1707
+01:24:06,760 --> 01:24:08,960
+la facciamo, un'intuizione del perché
+
+1708
+01:24:08,960 --> 01:24:10,719
+non può esistere un automa stati
+
+1709
+01:24:10,719 --> 01:24:13,199
+definiti che è in grado di riconoscere
+
+1710
+01:24:13,199 --> 01:24:15,520
+questo linguaggio.
+
+1711
+01:24:15,520 --> 01:24:17,280
+Mi ero preparato pure delle slide,
+
+1712
+01:24:17,280 --> 01:24:20,719
+vediamo un po'.
+
+1713
+01:24:21,719 --> 01:24:23,320
+E mi sono dimenticato di prendere
+
+1714
+01:24:23,320 --> 01:24:28,280
+giustamente. Allora, vediamo un po'.
+
+1715
+01:24:50,320 --> 01:24:53,320
+Alri,
+
+1716
+01:24:54,679 --> 01:24:58,080
+me lo fa scaricare sta Geg?
+
+1717
+01:25:06,880 --> 01:25:09,199
+Eh, poi poi non funziona perché non si
+
+1718
+01:25:09,199 --> 01:25:15,000
+vede bene. Ok, zoomiamo qua. Alrgri.
+
+1719
+01:25:19,960 --> 01:25:22,679
+Ok.
+
+1720
+01:25:22,679 --> 01:25:24,840
+Allora, che problema ha sto cavolo di
+
+1721
+01:25:24,840 --> 01:25:26,960
+linguaggio? Allora, il problema di
+
+1722
+01:25:26,960 --> 01:25:29,280
+questo di questo linguaggio è, come
+
+1723
+01:25:29,280 --> 01:25:31,719
+abbiamo detto amm
+
+1724
+01:25:31,719 --> 01:25:34,360
+in cui m è maggiore o uguale di 0. Il
+
+1725
+01:25:34,360 --> 01:25:36,719
+ciò significa che la stringa vuota
+
+1726
+01:25:36,719 --> 01:25:38,760
+dobbiamo essere in grado di accettarlo.
+
+1727
+01:25:38,760 --> 01:25:41,320
+Quindi un primo automa, un primo pezzo
+
+1728
+01:25:41,320 --> 01:25:43,520
+di questo automa potrebbe essere uno
+
+1729
+01:25:43,520 --> 01:25:46,360
+stato iniziale che è anche accettante
+
+1730
+01:25:46,360 --> 01:25:48,360
+perché se non leggiamo niente dobbiamo
+
+1731
+01:25:48,360 --> 01:25:51,440
+rispondere sì. Ok? Quindi quest'automa
+
+1732
+01:25:51,440 --> 01:25:54,760
+qua è in grado di accettare la stringa
+
+1733
+01:25:54,760 --> 01:25:57,040
+vuota.
+
+1734
+01:25:57,040 --> 01:26:00,360
+è in grado di accettare la stringa AB?
+
+1735
+01:26:00,360 --> 01:26:02,840
+No, ci serve un pezzo aggiuntivo e
+
+1736
+01:26:02,840 --> 01:26:05,760
+andiamo qua. Ok? Questo automa è in
+
+1737
+01:26:05,760 --> 01:26:09,159
+grado di riconoscere EP, è in grado di
+
+1738
+01:26:09,159 --> 01:26:12,119
+conoscere AB perché che legge A e va su,
+
+1739
+01:26:12,119 --> 01:26:15,760
+legge B scende giù e accetta. Ok?
+
+1740
+01:26:15,760 --> 01:26:19,040
+Ma questo automa è in grado di accettare
+
+1741
+01:26:19,040 --> 01:26:23,280
+A BB?
+
+1742
+01:26:27,600 --> 01:26:32,840
+Sì. No,
+no,
+no, perché
+A
+perché una
+
+1743
+01:26:32,840 --> 01:26:35,920
+volta che è arrivato qua
+
+1744
+01:26:35,920 --> 01:26:38,320
+non c'è la seconda a, no? Ok, ci
+
+1745
+01:26:38,320 --> 01:26:40,840
+aggiungiamo un pezzo.
+
+1746
+01:26:40,840 --> 01:26:42,400
+Ok.
+
+1747
+01:26:42,400 --> 01:26:46,840
+A A B. Ok. Adesso saremmo in grado di
+
+1748
+01:26:46,840 --> 01:26:48,639
+riconoscer
+
+1749
+01:26:48,639 --> 01:26:50,520
+è sufficiente? No, perché non saremmo in
+
+1750
+01:26:50,520 --> 01:26:54,560
+grado di conoscere nemmeno a A a A B b.
+
+1751
+01:26:54,560 --> 01:26:57,520
+Ok? Allora, ci serve un altro pezzo,
+
+1752
+01:26:57,520 --> 01:26:59,239
+ma questo non riconoscerebbe stringhe
+
+1753
+01:26:59,239 --> 01:27:00,760
+più lunghe, ci servirebbe un pezzo
+
+1754
+01:27:00,760 --> 01:27:02,840
+ancora più lungo, ma questo non
+
+1755
+01:27:02,840 --> 01:27:04,719
+riconoscerebbe stringhe ancora più
+
+1756
+01:27:04,719 --> 01:27:06,800
+lunghe, ci servirebbe qualcosa di ancora
+
+1757
+01:27:06,800 --> 01:27:10,600
+più lungo. Allora, l'intuizione
+
+1758
+01:27:10,600 --> 01:27:14,280
+è che un autonoma stati finiti,
+
+1759
+01:27:14,280 --> 01:27:16,800
+come in questo caso, non è in grado di
+
+1760
+01:27:16,800 --> 01:27:19,320
+contare
+
+1761
+01:27:19,320 --> 01:27:22,040
+perché non ha, poiché il suo numero di
+
+1762
+01:27:22,040 --> 01:27:26,520
+stati è finito, non è in grado di tenere
+
+1763
+01:27:26,520 --> 01:27:29,560
+traccia di una storia di computazione di
+
+1764
+01:27:29,560 --> 01:27:32,000
+lunghezza.
+
+1765
+01:27:32,000 --> 01:27:35,320
+Cioè non è in grado di fare 1 2 3 4 e
+
+1766
+01:27:35,320 --> 01:27:37,480
+poi di nuovo 1 2 3 4. Questa cosa un
+
+1767
+01:27:37,480 --> 01:27:40,040
+automa stati finiti non lo sa fare, cioè
+
+1768
+01:27:40,040 --> 01:27:42,800
+non sa contare le cose e ricordarsi il
+
+1769
+01:27:42,800 --> 01:27:46,159
+conteggio. Se deve sapere che se deve,
+
+1770
+01:27:46,159 --> 01:27:48,280
+come abbiamo visto prima, vedere tre
+
+1771
+01:27:48,280 --> 01:27:50,679
+zeri di fila e sa fin da subito che
+
+1772
+01:27:50,679 --> 01:27:52,760
+devono essere tre, allora si fa tre
+
+1773
+01:27:52,760 --> 01:27:55,119
+passaggi di stato. Ma se io devo
+
+1774
+01:27:55,119 --> 01:27:58,239
+contare, ricordarmi sto numero e poi
+
+1775
+01:27:58,239 --> 01:28:00,159
+ricontare di nuovo per vedere che i miei
+
+1776
+01:28:00,159 --> 01:28:04,119
+numeri sono uguali, allora questa cosa
+
+1777
+01:28:04,119 --> 01:28:07,800
+non è in grado di farla. Ok? Questa
+
+1778
+01:28:07,800 --> 01:28:10,719
+ovviamente è un'intuizione,
+
+1779
+01:28:10,719 --> 01:28:13,159
+esiste una dimostrazione formale che mi
+
+1780
+01:28:13,159 --> 01:28:15,560
+sa che il tempo non l'abbiamo, però
+
+1781
+01:28:15,560 --> 01:28:18,880
+cerco di darvi un'intuizione su come si
+
+1782
+01:28:18,880 --> 01:28:21,480
+mostra. Ok?
+
+1783
+01:28:21,480 --> 01:28:24,360
+Supponiamo supponiamo che invece siamo
+
+1784
+01:28:24,360 --> 01:28:27,679
+in grado di costruire un automa a stati
+
+1785
+01:28:27,679 --> 01:28:30,119
+finiti, no? Che in grado di riconoscere
+
+1786
+01:28:30,119 --> 01:28:35,000
+queste stringhe a a b. Ok?
+
+1787
+01:28:35,000 --> 01:28:36,880
+Supponiamo noi lo assumiamo
+
+1788
+01:28:36,880 --> 01:28:39,840
+deterministico perché sappiamo che non è
+
+1789
+01:28:39,840 --> 01:28:41,840
+meno potente di un non deterministico.
+
+1790
+01:28:41,840 --> 01:28:44,320
+Ok? Quindi supponiamo che esista un
+
+1791
+01:28:44,320 --> 01:28:47,800
+automa stati finiti deterministico in
+
+1792
+01:28:47,800 --> 01:28:50,880
+grado di riconoscere questa questo
+
+1793
+01:28:50,880 --> 01:28:54,159
+linguaggio strano. Ok?
+
+1794
+01:28:54,159 --> 01:28:58,679
+E siccome un automa stati finiti
+
+1795
+01:28:58,679 --> 01:29:03,000
+avrà un numero finito di stati.
+
+1796
+01:29:03,000 --> 01:29:08,199
+Diciamo che sono P, sono 5 10 18 32 P
+
+1797
+01:29:08,199 --> 01:29:10,880
+gli diamo un nome, ok? Quindi questa
+
+1798
+01:29:10,880 --> 01:29:15,719
+automa ha un numero P di stati. Ok?
+
+1799
+01:29:15,719 --> 01:29:18,360
+Allora, noi che cosa facciamo?
+
+1800
+01:29:18,360 --> 01:29:20,560
+Se questo automa riconosce questo
+
+1801
+01:29:20,560 --> 01:29:22,400
+linguaggio, deve essere in grado di
+
+1802
+01:29:22,400 --> 01:29:24,280
+decidere tutte le stringhe di questo
+
+1803
+01:29:24,280 --> 01:29:26,239
+linguaggio, non solo quelle piccole,
+
+1804
+01:29:26,239 --> 01:29:28,679
+anche quelle grandi. E allora gliene
+
+1805
+01:29:28,679 --> 01:29:32,639
+diamo in input un enorme. Ok? Che ne so?
+
+1806
+01:29:32,639 --> 01:29:36,800
+L'automa c'ha 18 stati, gli diamo in
+
+1807
+01:29:36,800 --> 01:29:40,080
+input una stringa di 2000 caratteri. Ci
+
+1808
+01:29:40,080 --> 01:29:44,360
+sono 1000 A e 1000 B. Ok, chiaro che
+
+1809
+01:29:44,360 --> 01:29:47,320
+cosa stiamo facendo? Alr, proviamo a
+
+1810
+01:29:47,320 --> 01:29:50,000
+visualizzare un po' nella nostra mente
+
+1811
+01:29:50,000 --> 01:29:52,159
+che cosa fa questa macchina mentre
+
+1812
+01:29:52,159 --> 01:29:56,360
+calcola questa macchina di solo 18 stati
+
+1813
+01:29:56,360 --> 01:30:00,159
+mentre processa questa stringona, ok?
+
+1814
+01:30:00,159 --> 01:30:02,280
+2000 caratteri.
+
+1815
+01:30:02,280 --> 01:30:05,119
+Quindi partiamo e la macchinia sarà in
+
+1816
+01:30:05,119 --> 01:30:08,880
+un primo stato. Poi andrà leggerà una a
+
+1817
+01:30:08,880 --> 01:30:12,400
+una a e andrà
+
+1818
+01:30:13,800 --> 01:30:16,719
+non sia meglio. Yes. Legge una A e andrà
+
+1819
+01:30:16,719 --> 01:30:18,840
+in un secondo stato. Poi legge un'altra
+
+1820
+01:30:18,840 --> 01:30:20,600
+A, andrà in un terzo stato. Legge
+
+1821
+01:30:20,600 --> 01:30:22,239
+un'altra a, andrà in un quarto stato, in
+
+1822
+01:30:22,239 --> 01:30:24,239
+un quinto, in un sesto, bla, bla bla
+
+1823
+01:30:24,239 --> 01:30:27,080
+bla, fino a quando arriva alla lunghezza
+
+1824
+01:30:27,080 --> 01:30:31,560
+2m che per noi è 2000. Ok?
+
+1825
+01:30:33,639 --> 01:30:36,800
+Cosa sta facendo questa macchina? Sta,
+
+1826
+01:30:36,800 --> 01:30:39,679
+come abbiamo visto, transendo
+
+1827
+01:30:39,679 --> 01:30:43,520
+da uno stato all'altro mentre si sta
+
+1828
+01:30:43,520 --> 01:30:47,280
+guardando questi caratteri. Ok?
+
+1829
+01:30:47,280 --> 01:30:51,080
+Allora, noi abbiamo una sequenza di 2000
+
+1830
+01:30:51,080 --> 01:30:52,600
+passi,
+
+1831
+01:30:52,600 --> 01:30:55,480
+ma la macchina ne ha, diciamo, solo 18,
+
+1832
+01:30:55,480 --> 01:30:57,560
+come dicevamo prima. Sto dicendo 18,
+
+1833
+01:30:57,560 --> 01:31:00,480
+potrebbe essere 172. Ok? È un numero
+
+1834
+01:31:00,480 --> 01:31:02,800
+piccolo,
+
+1835
+01:31:02,800 --> 01:31:06,159
+quindi facciamo 2000 passi, ma la
+
+1836
+01:31:06,159 --> 01:31:08,800
+macchina ha un numero di stati molto
+
+1837
+01:31:08,800 --> 01:31:11,840
+piccolo. Che cosa possiamo dire su
+
+1838
+01:31:11,840 --> 01:31:14,210
+questa sequenza di stati?
+
+1839
+01:31:14,210 --> 01:31:17,289
+[Musica]
+
+1840
+01:31:17,719 --> 01:31:20,280
+Sì,
+
+1841
+01:31:20,280 --> 01:31:21,560
+qualcuno di quegli stati si deve
+
+1842
+01:31:21,560 --> 01:31:23,520
+ripetere, no? Per il pigon all
+
+1843
+01:31:23,520 --> 01:31:28,320
+principle, se io vado avanti 2000 stati
+
+1844
+01:31:28,320 --> 01:31:31,520
+e ne devo pescare da un insieme di 18, a
+
+1845
+01:31:31,520 --> 01:31:33,400
+un certo punto sti stati si devono
+
+1846
+01:31:33,400 --> 01:31:37,280
+ripetere, ok? Cioè non è possibile che
+
+1847
+01:31:37,280 --> 01:31:39,600
+siano tutte e 2000 differenti. Vuol dire
+
+1848
+01:31:39,600 --> 01:31:42,440
+che la macchina mentre sta girando a un
+
+1849
+01:31:42,440 --> 01:31:44,920
+certo punto deve per forza rivedere uno
+
+1850
+01:31:44,920 --> 01:31:47,119
+stato da cui c'era stata prima, ok?
+
+1851
+01:31:47,119 --> 01:31:49,480
+perché il suo numero di stati è limitato
+
+1852
+01:31:49,480 --> 01:31:51,600
+e la stringa che sta processando è
+
+1853
+01:31:51,600 --> 01:31:55,040
+catastroficamente enorme. Ok? Quindi la
+
+1854
+01:31:55,040 --> 01:31:59,159
+sequenza di passi che la macchina fa non
+
+1855
+01:31:59,159 --> 01:32:02,920
+è tanto lineare, ma è più qualcosa di
+
+1856
+01:32:02,920 --> 01:32:05,040
+questo tipo. Cioè a un certo punto la
+
+1857
+01:32:05,040 --> 01:32:06,960
+macchina deve tornare su una cosa da cui
+
+1858
+01:32:06,960 --> 01:32:10,280
+è già passata.
+
+1859
+01:32:10,880 --> 01:32:12,600
+Ok?
+
+1860
+01:32:12,600 --> 01:32:14,320
+Adesso
+
+1861
+01:32:14,320 --> 01:32:16,280
+poi se volete vi leggete il commentino,
+
+1862
+01:32:16,280 --> 01:32:17,840
+visto che ho 2 minuti e non posso andare
+
+1863
+01:32:17,840 --> 01:32:19,920
+oltre. L'unica cosa a cui dobbiamo stare
+
+1864
+01:32:19,920 --> 01:32:23,760
+attento è siccome stiamo assumendo
+
+1865
+01:32:23,760 --> 01:32:28,880
+che la macchina è deterministica,
+
+1866
+01:32:29,360 --> 01:32:33,400
+qui in questo stato qua, non posso avere
+
+1867
+01:32:33,400 --> 01:32:36,679
+A qui e A qui, altrimenti sarebbe non
+
+1868
+01:32:36,679 --> 01:32:39,199
+deterministica. Quindi questo anello si
+
+1869
+01:32:39,199 --> 01:32:43,440
+deve appendere alla fine delle A.
+
+1870
+01:32:43,920 --> 01:32:46,639
+per forza. Di conseguenza, questa
+
+1871
+01:32:46,639 --> 01:32:50,080
+macchina che cosa riconosce? Legge A a A
+
+1872
+01:32:50,080 --> 01:32:52,840
+a A, poi legge a A a A a A a A, poi ci
+
+1873
+01:32:52,840 --> 01:32:56,159
+stanno le B. Quindi questo qui potrebbe
+
+1874
+01:32:56,159 --> 01:32:59,840
+essere un giro di MA e poi seguito da
+
+1875
+01:32:59,840 --> 01:33:01,920
+MB.
+
+1876
+01:33:01,920 --> 01:33:04,440
+Però se la macchina ha questa forma, in
+
+1877
+01:33:04,440 --> 01:33:08,199
+realtà accetta anche a a a ah tutte
+
+1878
+01:33:08,199 --> 01:33:10,520
+queste, poi si fanno un altro giro,
+
+1879
+01:33:10,520 --> 01:33:13,199
+un'altra ancora, un altro ancora e poi
+
+1880
+01:33:13,199 --> 01:33:15,560
+si legge le B. Di conseguenza questa
+
+1881
+01:33:15,560 --> 01:33:19,040
+macchina non ha il vincolo di vedere
+
+1882
+01:33:19,040 --> 01:33:22,320
+tante B quante A. Può vedere più A di B
+
+1883
+01:33:22,320 --> 01:33:24,719
+per la sua struttura di com'è fatto,
+
+1884
+01:33:24,719 --> 01:33:26,719
+perché perché questa macchina non sa
+
+1885
+01:33:26,719 --> 01:33:28,880
+contare.
+
+1886
+01:33:28,880 --> 01:33:30,360
+Ok.
+
+1887
+01:33:30,360 --> 01:33:34,440
+Cosa tiriamo fuori da ciò? Che ci sono
+
+1888
+01:33:34,440 --> 01:33:38,520
+linguaggi e problemi, no? Questo qua è
+
+1889
+01:33:38,520 --> 01:33:42,880
+leggere se ci sono tante AT B. È come
+
+1890
+01:33:42,880 --> 01:33:45,440
+avere un problema del tipo conta gli
+
+1891
+01:33:45,440 --> 01:33:47,040
+elementi di questi due insieme e dimmi
+
+1892
+01:33:47,040 --> 01:33:49,480
+che è lo stesso numero, ok? È lo stesso
+
+1893
+01:33:49,480 --> 01:33:51,800
+identico problema. Allora, questo
+
+1894
+01:33:51,800 --> 01:33:53,639
+problema che noi sappiamo essere
+
+1895
+01:33:53,639 --> 01:33:55,440
+risolvibile tramite un semplicissimo
+
+1896
+01:33:55,440 --> 01:33:57,520
+programma Python in realtà non è
+
+1897
+01:33:57,520 --> 01:34:01,199
+risolvibile su un automa stati finiti
+
+1898
+01:34:01,199 --> 01:34:03,679
+e infatti gli automi a Stati Uniti non
+
+1899
+01:34:03,679 --> 01:34:06,400
+sono un formalismo sufficiente
+
+1900
+01:34:06,400 --> 01:34:09,400
+sufficientemente potente da permetterci
+
+1901
+01:34:09,400 --> 01:34:13,639
+di dire cosa è decidibile e cosa non è
+
+1902
+01:34:13,639 --> 01:34:16,560
+decidibile. Questi automi dobbiamo
+
+1903
+01:34:16,560 --> 01:34:19,000
+arricchire in qualcosa di più
+
+1904
+01:34:19,000 --> 01:34:21,000
+sofisticato che siano in grado di
+
+1905
+01:34:21,000 --> 01:34:24,920
+riconoscere i linguaggi più tosti e
+
+1906
+01:34:24,920 --> 01:34:26,719
+otterremo il modello che è il modello
+
+1907
+01:34:26,719 --> 01:34:29,080
+della macchina di touring, che è un
+
+1908
+01:34:29,080 --> 01:34:31,560
+automa più potente di quello che abbiamo
+
+1909
+01:34:31,560 --> 01:34:34,440
+visto e mostreremo che ha la potenza di
+
+1910
+01:34:34,440 --> 01:34:36,960
+tutti i computer. Questa cosa la vedremo
+
+1911
+01:34:36,960 --> 01:34:39,840
+dalla prossima settimana, ok? Chiaro per
+
+1912
+01:34:39,840 --> 01:34:41,760
+tutti?
+
+1913
+01:34:41,760 --> 01:34:46,199
+Ok. Grazie mille. Buona giornata.
+
+1914
+01:34:47,580 --> 01:34:50,199
+[Musica]
+
+1915
+01:34:50,199 --> 01:34:52,280
+Eh

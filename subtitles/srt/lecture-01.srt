@@ -1,0 +1,7450 @@
+1
+00:00:04,900 --> 00:00:08,119
+[Musica]
+
+2
+00:00:10,360 --> 00:00:13,920
+Eh, ok, ok. Salve a tutti, sono il
+
+3
+00:00:13,920 --> 00:00:16,320
+professor Enrico Malizia, sarò il vostro
+
+4
+00:00:16,320 --> 00:00:19,680
+docente di informatica teorica.
+
+5
+00:00:19,680 --> 00:00:22,000
+Iniziamo questo corso, non so se strano
+
+6
+00:00:22,000 --> 00:00:24,279
+o usuale per voi, per è un corso un po'
+
+7
+00:00:24,279 --> 00:00:26,359
+teorico rispetto, non so a cos'altro
+
+8
+00:00:26,359 --> 00:00:29,080
+avete visto. Prima domanda in fondo, mi
+
+9
+00:00:29,080 --> 00:00:31,240
+sentite? Perché vorrei evitare di usare
+
+10
+00:00:31,240 --> 00:00:33,920
+il microfono, ok? Perché gestitolo,
+
+11
+00:00:33,920 --> 00:00:35,600
+quindi avere un microfono in mano mi dà
+
+12
+00:00:35,600 --> 00:00:41,320
+fastidio, eh. Ok. Allora, come vedete da
+
+13
+00:00:41,320 --> 00:00:44,320
+questo numero bassissimo qua, abbiamo
+
+14
+00:00:44,320 --> 00:00:46,399
+tre slide, chiudiamo la lezione, poi ce
+
+15
+00:00:46,399 --> 00:00:49,120
+ne andiamo tutti quanti. In realtà sono
+
+16
+00:00:49,120 --> 00:00:51,199
+le uniche slides che vedrete, perché
+
+17
+00:00:51,199 --> 00:00:54,559
+slides non ne voglio usare. Ok?
+
+18
+00:00:54,559 --> 00:00:56,680
+Ho insegnato questo corso in Inghilterra
+
+19
+00:00:56,680 --> 00:00:59,199
+per un po' di anni e quello che ho in
+
+20
+00:00:59,199 --> 00:01:02,680
+genere visto è che a scrivere,
+
+21
+00:01:02,680 --> 00:01:04,640
+innanzitutto in Inghilterra lo
+
+22
+00:01:04,640 --> 00:01:06,760
+chiamavano diporama, cioè gli studenti
+
+23
+00:01:06,760 --> 00:01:09,640
+dicevano che quando fai slide su slide
+
+24
+00:01:09,640 --> 00:01:11,560
+poi non si capisce niente perché insomma
+
+25
+00:01:11,560 --> 00:01:13,280
+una dopo l'altra stiamo semplicemente a
+
+26
+00:01:13,280 --> 00:01:14,920
+rincorrere quello che ci sta scritto,
+
+27
+00:01:14,920 --> 00:01:19,080
+no? Quindi io preferisco evitare perché
+
+28
+00:01:19,080 --> 00:01:21,960
+la lezione io la voglio calibrare su di
+
+29
+00:01:21,960 --> 00:01:23,600
+voi.
+
+30
+00:01:23,600 --> 00:01:27,520
+Che significa? che io ho
+
+31
+00:01:27,520 --> 00:01:29,759
+una scaletta di cose da fare, cioè ho in
+
+32
+00:01:29,759 --> 00:01:32,920
+mente che cosa dobbiamo trattare,
+
+33
+00:01:32,920 --> 00:01:35,680
+però non mi voglio legare non mi voglio
+
+34
+00:01:35,680 --> 00:01:37,880
+legare a delle cose scritte, a delle
+
+35
+00:01:37,880 --> 00:01:40,799
+slide perché potrebbe essere necessario
+
+36
+00:01:40,799 --> 00:01:42,920
+cambiarle sul momento perché me ne posso
+
+37
+00:01:42,920 --> 00:01:44,600
+accorgere da voi se avete gli occhi
+
+38
+00:01:44,600 --> 00:01:47,560
+persi o cose del genere. Quindi
+
+39
+00:01:47,560 --> 00:01:50,960
+questo questo qua. Ok, allora facciamo
+
+40
+00:01:50,960 --> 00:01:54,680
+un'introduzione veloce al corso,
+
+41
+00:01:54,680 --> 00:01:58,039
+eh. Ok. Le nostre lezioni ce l'hanno
+
+42
+00:01:58,039 --> 00:02:01,200
+messe a degli orari disgraziati.
+
+43
+00:02:01,200 --> 00:02:04,759
+Oggi fino alle 6:00 e venerdì, no?
+
+44
+00:02:04,759 --> 00:02:07,360
+Questo è giovedì. Giovedì all'ora di
+
+45
+00:02:07,360 --> 00:02:08,679
+pranzo, quindi quando proprio siamo
+
+46
+00:02:08,679 --> 00:02:10,119
+affamati e non ci capiamo proprio
+
+47
+00:02:10,119 --> 00:02:12,520
+niente. E poi venerdì mattina
+
+48
+00:02:12,520 --> 00:02:14,120
+prestissimo, così ci siamo andati a
+
+49
+00:02:14,120 --> 00:02:16,560
+darci qualcosa. La sera prima non non
+
+50
+00:02:16,560 --> 00:02:19,959
+capiamo una mazzature lì. Ok, vabbò. A
+
+51
+00:02:19,959 --> 00:02:22,120
+parte gli scherzi, allora cercherò per
+
+52
+00:02:22,120 --> 00:02:23,959
+quanto possibile di trasmettervi alcune
+
+53
+00:02:23,959 --> 00:02:26,160
+cose in questo corso che adesso adesso
+
+54
+00:02:26,160 --> 00:02:28,239
+vi dirò,
+
+55
+00:02:28,239 --> 00:02:32,840
+alcune alcune notizie prima di prima di
+
+56
+00:02:32,840 --> 00:02:35,080
+iniziare. A me il corso l'hanno dato in
+
+57
+00:02:35,080 --> 00:02:38,120
+corso d'opera tipo un due mesi fa, una
+
+58
+00:02:38,120 --> 00:02:40,480
+cosa del genere, è stato formalizzato,
+
+59
+00:02:40,480 --> 00:02:42,760
+quindi non ho potuto cambiare la pagina
+
+60
+00:02:42,760 --> 00:02:44,519
+online perché quella va fatta l'anno
+
+61
+00:02:44,519 --> 00:02:46,920
+prima. I libri di testo che che vi
+
+62
+00:02:46,920 --> 00:02:50,159
+consiglio, allora, sono innanzitutto
+
+63
+00:02:50,159 --> 00:02:52,720
+questo qua, Calautti, sono le sue
+
+64
+00:02:52,720 --> 00:02:55,319
+lezioni del corso di calcolabilità e
+
+65
+00:02:55,319 --> 00:02:57,840
+complessità. Lo trovate disponibile il
+
+66
+00:02:57,840 --> 00:03:00,480
+link, se andate su virtuale, ok? C'è
+
+67
+00:03:00,480 --> 00:03:02,519
+proprio il link alla pagina su Gitlab,
+
+68
+00:03:02,519 --> 00:03:06,080
+da lì prendete ve le scaricate. Ok,
+
+69
+00:03:06,080 --> 00:03:08,599
+preso le slide di Marco, perché Marco è
+
+70
+00:03:08,599 --> 00:03:10,360
+stato un mio studente tanti anni fa che
+
+71
+00:03:10,360 --> 00:03:11,840
+mi hanno dato il corso di informatica
+
+72
+00:03:11,840 --> 00:03:14,360
+teorica qualche anno fa a Trento e a
+
+73
+00:03:14,360 --> 00:03:16,400
+Milano. Lui si è messo giuste note ha
+
+74
+00:03:16,400 --> 00:03:17,920
+detto "Sai che me le riutilizzo". Mi ha
+
+75
+00:03:17,920 --> 00:03:20,319
+detto non c'è problema. Quindi seguirò
+
+76
+00:03:20,319 --> 00:03:23,799
+le per gran parte delle cose, seguirò le
+
+77
+00:03:23,799 --> 00:03:27,560
+sue le sue le sue note.
+
+78
+00:03:27,560 --> 00:03:30,120
+Ok, abbiamo stili differenti io e Marco,
+
+79
+00:03:30,120 --> 00:03:32,000
+cioè alcune cose io le definisco un po'
+
+80
+00:03:32,000 --> 00:03:34,280
+differenti, vabbò, eh, ve ne farete una
+
+81
+00:03:34,280 --> 00:03:37,840
+ragione, però è abbastanza preciso e ci
+
+82
+00:03:37,840 --> 00:03:40,040
+dà più o meno un'idea di tutto quello
+
+83
+00:03:40,040 --> 00:03:42,840
+che vorrei fare durante il corso. Alcune
+
+84
+00:03:42,840 --> 00:03:45,000
+cose cambierò l'ordine, altre cose le
+
+85
+00:03:45,000 --> 00:03:47,120
+taglio, altre cose le aggiungo, insomma
+
+86
+00:03:47,120 --> 00:03:50,239
+è un po' a gusto, però secondo me quelle
+
+87
+00:03:50,239 --> 00:03:54,000
+note sono abbastanza
+
+88
+00:03:54,000 --> 00:03:56,280
+compatte e contengono tutto quello che
+
+89
+00:03:56,280 --> 00:03:59,959
+ci serve. Allora, quelle note
+
+90
+00:03:59,959 --> 00:04:02,760
+sono basate su questo libro
+
+91
+00:04:02,760 --> 00:04:05,360
+prevalentemente, Introduction toata
+
+92
+00:04:05,360 --> 00:04:08,879
+Theory, Languages and Computation.
+
+93
+00:04:08,879 --> 00:04:11,720
+È un testo classico. Classico significa
+
+94
+00:04:11,720 --> 00:04:13,480
+che la prima edizione risarà agli anni
+
+95
+00:04:13,480 --> 00:04:17,160
+70, il che significa che un testo molto
+
+96
+00:04:17,160 --> 00:04:19,639
+revisionato nella sua terza edizione,
+
+97
+00:04:19,639 --> 00:04:22,560
+molto semplificato. La prima edizione di
+
+98
+00:04:22,560 --> 00:04:25,160
+quel testo era sostanzialmente
+
+99
+00:04:25,160 --> 00:04:27,160
+sofisticata. dalla seconda edizione in
+
+100
+00:04:27,160 --> 00:04:29,080
+poi l'hanno semplificata parecchio.
+
+101
+00:04:29,080 --> 00:04:33,680
+Allora, io ho guardato le eh le lecture
+
+102
+00:04:33,680 --> 00:04:37,000
+notes di di Marco e sostanzialmente
+
+103
+00:04:37,000 --> 00:04:38,600
+segue quel libro, anche perché era il
+
+104
+00:04:38,600 --> 00:04:41,440
+corso che seguivano noi tanti anni fa.
+
+105
+00:04:41,440 --> 00:04:43,919
+Quindi quello è il vostro
+
+106
+00:04:43,919 --> 00:04:48,440
+riferimento primario. Secondo me il
+
+107
+00:04:48,440 --> 00:04:52,520
+essendo un testo classico
+
+108
+00:04:52,520 --> 00:04:57,199
+è facile da trovare. Ok?
+
+109
+00:04:57,199 --> 00:04:59,680
+Avete capito? Insomma,
+
+110
+00:04:59,680 --> 00:05:01,960
+siccome è un testo che è stato in giro
+
+111
+00:05:01,960 --> 00:05:05,800
+per tantissimo tempo, se lo cercate lo
+
+112
+00:05:05,800 --> 00:05:09,039
+trovate, esattamente come quello. Questo
+
+113
+00:05:09,039 --> 00:05:11,039
+qua sono additional reading che io vi
+
+114
+00:05:11,039 --> 00:05:13,080
+consiglio in caso vogliate approfondire
+
+115
+00:05:13,080 --> 00:05:14,680
+cose.
+
+116
+00:05:14,680 --> 00:05:16,680
+Zipser Introduction to the theory of
+
+117
+00:05:16,680 --> 00:05:20,240
+computation. Pure questo testo classico,
+
+118
+00:05:20,240 --> 00:05:23,960
+cioè che significa che si trova, ok?
+
+119
+00:05:23,960 --> 00:05:25,560
+Beh, è tutta roba che si trova questa,
+
+120
+00:05:25,560 --> 00:05:28,039
+eh? E quest'altro, se proprio volete
+
+121
+00:05:28,039 --> 00:05:30,240
+approfondire, Computational Complexity,
+
+122
+00:05:30,240 --> 00:05:33,560
+questo è un libro un po' piuttosto che
+
+123
+00:05:33,560 --> 00:05:35,680
+ah si focalizza più sulla complessità
+
+124
+00:05:35,680 --> 00:05:37,720
+computazionale che non sulla sulla
+
+125
+00:05:37,720 --> 00:05:40,360
+calcolabilità. Ok? Questi questo corso
+
+126
+00:05:40,360 --> 00:05:42,039
+noi lo chiamiamo informatica teorica, in
+
+127
+00:05:42,039 --> 00:05:44,000
+tante altre università lo chiamano
+
+128
+00:05:44,000 --> 00:05:46,280
+calcolabilità e complessità. Adesso
+
+129
+00:05:46,280 --> 00:05:48,520
+vedremo un po' che cos'è questa cosa.
+
+130
+00:05:48,520 --> 00:05:51,479
+Oggi faremo più che altro una lezione
+
+131
+00:05:51,479 --> 00:05:53,240
+introduttiva. Voglio interagire con voi,
+
+132
+00:05:53,240 --> 00:05:54,520
+voglio capire qual è il vostro
+
+133
+00:05:54,520 --> 00:05:56,759
+background, così insomma un po' da
+
+134
+00:05:56,759 --> 00:06:01,759
+calibrare il eh la lezione. Ok?
+
+135
+00:06:01,759 --> 00:06:06,520
+Sulla pagina virtuale m metterò, almeno
+
+136
+00:06:06,520 --> 00:06:09,520
+ci tengo la prima volta che lo faccio,
+
+137
+00:06:09,520 --> 00:06:12,440
+userò delle note che io scrivo sul
+
+138
+00:06:12,440 --> 00:06:16,039
+tablet, quelle là. Poi preparo dei PDF,
+
+139
+00:06:16,039 --> 00:06:18,280
+li metto su virtuale e voi ve li potete
+
+140
+00:06:18,280 --> 00:06:21,919
+prendere. Guardate che io uso adesso vi
+
+141
+00:06:21,919 --> 00:06:25,120
+spiego come uso io la scrittura su su
+
+142
+00:06:25,120 --> 00:06:27,319
+queste note che prendo. È come se stessi
+
+143
+00:06:27,319 --> 00:06:29,880
+scrivendo alla lavagna, nel senso che
+
+144
+00:06:29,880 --> 00:06:32,319
+cioè non è che andrete e troverete cose
+
+145
+00:06:32,319 --> 00:06:34,599
+scritte, ci stanno. Cioè, invece di
+
+146
+00:06:34,599 --> 00:06:37,520
+buttarlo qua e dover fare le foto, lo
+
+147
+00:06:37,520 --> 00:06:39,880
+scriviamo là e così abbiamo abbiamo
+
+148
+00:06:39,880 --> 00:06:41,560
+tutto. Però saranno più che altro
+
+149
+00:06:41,560 --> 00:06:45,400
+schizzi, disegni, cose del genere, ok?
+
+150
+00:06:45,400 --> 00:06:48,599
+Cioè, sarà difficile studiare da quello
+
+151
+00:06:48,599 --> 00:06:50,520
+che io scrivo su quelle su quelle note.
+
+152
+00:06:50,520 --> 00:06:52,680
+Ok? Quello che io vi consiglio sono le
+
+153
+00:06:52,680 --> 00:06:55,479
+lecture notes di Marco Calauti,
+
+154
+00:06:55,479 --> 00:06:58,360
+il libro di Opcroft, quello là, perché è
+
+155
+00:06:58,360 --> 00:07:01,759
+molto semplice, poi l'altro agli
+
+156
+00:07:01,759 --> 00:07:03,199
+additional readings, se proprio ne
+
+157
+00:07:03,199 --> 00:07:05,080
+volete scegliere uno, io vi consiglio
+
+158
+00:07:05,080 --> 00:07:08,160
+Sipser perché è più semplice da capire,
+
+159
+00:07:08,160 --> 00:07:10,560
+ok? rispetto a computational complexity.
+
+160
+00:07:10,560 --> 00:07:11,840
+Per esempio, su computational
+
+161
+00:07:11,840 --> 00:07:13,400
+complexity, come dice il titolo, tutta
+
+162
+00:07:13,400 --> 00:07:15,840
+la parte di calcolabilità non c'è perché
+
+163
+00:07:15,840 --> 00:07:17,879
+è un corso mirante alla complessità,
+
+164
+00:07:17,879 --> 00:07:20,960
+molto sofisticato, cioè si capisce, però
+
+165
+00:07:20,960 --> 00:07:22,720
+vi prende tempo, non so quanto tempo
+
+166
+00:07:22,720 --> 00:07:25,680
+abbiate, ok? Quindi se proprio volete
+
+167
+00:07:25,680 --> 00:07:28,319
+stringere al massimo lecture notes di
+
+168
+00:07:28,319 --> 00:07:32,479
+Calauti, Opcroft e Zipser, ok? ci sarà
+
+169
+00:07:32,479 --> 00:07:34,160
+più o meno tutto. Se poi io mi rendo
+
+170
+00:07:34,160 --> 00:07:38,000
+conto che tra le cose che facciamo c'è
+
+171
+00:07:38,000 --> 00:07:40,000
+spiegheremo cose che non sta su nessuno
+
+172
+00:07:40,000 --> 00:07:42,199
+di di tutte queste sorgenti, scrivo giù
+
+173
+00:07:42,199 --> 00:07:46,440
+due note e ve le e ve le giro. Ok?
+
+174
+00:07:46,440 --> 00:07:51,080
+Eh? Ok. Allora,
+
+175
+00:07:51,120 --> 00:07:52,759
+m
+
+176
+00:07:52,759 --> 00:07:55,280
+risorse, ok, sono queste, l'abbiamo
+
+177
+00:07:55,280 --> 00:07:56,800
+l'abbiamo detto. Un'altra risorse,
+
+178
+00:07:56,800 --> 00:07:59,599
+ovviamente, venire a lezione, appunti,
+
+179
+00:07:59,599 --> 00:08:02,039
+libri, eccetera. Un'altra risorsa sono
+
+180
+00:08:02,039 --> 00:08:05,479
+io, ovviamente mi fate domande. Ok?
+
+181
+00:08:05,479 --> 00:08:07,800
+Allora, una cosa che è importante che ce
+
+182
+00:08:07,800 --> 00:08:10,240
+lo diciamo, a me piace interagire
+
+183
+00:08:10,240 --> 00:08:13,000
+durante la lezione. Uno perché mi aiuta
+
+184
+00:08:13,000 --> 00:08:17,039
+a capire se vi siete fermati da qualche
+
+185
+00:08:17,039 --> 00:08:19,159
+parte a recuperare, no? E poi per fare
+
+186
+00:08:19,159 --> 00:08:21,639
+la cosa un po' cocreativa, perché sennò
+
+187
+00:08:21,639 --> 00:08:23,520
+alla fine sentite la mia voce che un po'
+
+188
+00:08:23,520 --> 00:08:25,599
+rompiballe, no? E andare avanti per due
+
+189
+00:08:25,599 --> 00:08:27,520
+ore così potrebbe essere un po'
+
+190
+00:08:27,520 --> 00:08:31,240
+scocciante per voi e anche per me, eh.
+
+191
+00:08:31,240 --> 00:08:34,479
+Quindi quando farò domande
+
+192
+00:08:34,479 --> 00:08:37,399
+sto facendo una domanda, cioè non la sto
+
+193
+00:08:37,399 --> 00:08:39,719
+buttando là a caso, mi aspetto, cioè
+
+194
+00:08:39,719 --> 00:08:41,440
+sarebbe carino che in qualche modo
+
+195
+00:08:41,440 --> 00:08:43,279
+riusciamo a interagire, ok? È una cosa
+
+196
+00:08:43,279 --> 00:08:44,279
+che in Inghilterra dovevo dire
+
+197
+00:08:44,279 --> 00:08:47,399
+esplicitamente perché lì proprio niente,
+
+198
+00:08:47,399 --> 00:08:50,480
+la gente ti guardava, no, così, ma aveva
+
+199
+00:08:50,480 --> 00:08:53,000
+la bocca sigillata. Quindi dovevo dire,
+
+200
+00:08:53,000 --> 00:08:54,880
+ragazzi miei, mi serve una risposta che
+
+201
+00:08:54,880 --> 00:08:58,600
+sono è un po' un problema. Ok. Allora,
+
+202
+00:08:58,600 --> 00:09:02,320
+quello con cui iniziamo oggi,
+
+203
+00:09:02,320 --> 00:09:06,560
+la prima cosa che facciamo oggi è
+
+204
+00:09:06,560 --> 00:09:08,440
+questo, dare la parola a voi. C'ho
+
+205
+00:09:08,440 --> 00:09:10,519
+quattro domande là, vorrei sentire
+
+206
+00:09:10,519 --> 00:09:13,480
+qualcuno di voi per capire un po' che
+
+207
+00:09:13,480 --> 00:09:16,920
+idea c'avete in testa. Ok, allora le
+
+208
+00:09:16,920 --> 00:09:19,279
+quattro domande su cui vorrei
+
+209
+00:09:19,279 --> 00:09:21,040
+focalizzarmi per un po', ok? izzata
+
+210
+00:09:21,040 --> 00:09:24,600
+tutta la lezione su questa.
+
+211
+00:09:24,600 --> 00:09:29,040
+Cosa pensate che questo corso tratti?
+
+212
+00:09:29,040 --> 00:09:32,279
+Come pensate che tratteremo queste cose?
+
+213
+00:09:32,279 --> 00:09:34,519
+Quali difficoltà pensate che andremo a
+
+214
+00:09:34,519 --> 00:09:36,519
+incontrare? Cosa pensate di fare per
+
+215
+00:09:36,519 --> 00:09:38,760
+superare quelle difficoltà? Ok? Questa è
+
+216
+00:09:38,760 --> 00:09:40,880
+una cosa prevalentemente metodologica
+
+217
+00:09:40,880 --> 00:09:45,279
+per capire se avete in testa un modo
+
+218
+00:09:45,279 --> 00:09:48,279
+esplicito per
+
+219
+00:09:48,279 --> 00:09:50,760
+affrontare eventuali difficoltà. che si
+
+220
+00:09:50,760 --> 00:09:53,040
+potrebbero manifestare.
+
+221
+00:09:53,040 --> 00:09:54,560
+Ok.
+
+222
+00:09:54,560 --> 00:09:56,920
+Ovviamente non c'è il voto
+
+223
+00:09:56,920 --> 00:09:58,720
+a caso.
+
+224
+00:09:58,720 --> 00:10:01,360
+Uno di voi
+
+225
+00:10:01,360 --> 00:10:03,240
+devo essereissimo.
+
+226
+00:10:03,240 --> 00:10:06,640
+Vai. Certo.
+È tipo Corrieri due.
+Come
+è
+
+227
+00:10:06,640 --> 00:10:09,200
+tipo Corrieri due.
+Ok. Io non conosco il
+
+228
+00:10:09,200 --> 00:10:11,720
+colleghi
+
+229
+00:10:11,720 --> 00:10:15,079
+che vuol dire
+
+230
+00:10:15,160 --> 00:10:19,240
+c'ha prodotto autonomo.
+Ah ah. E quindi
+
+231
+00:10:19,240 --> 00:10:21,839
+e sfruttando quella conoscenza già
+
+232
+00:10:21,839 --> 00:10:25,079
+pregressa introduciamo di tuning e
+
+233
+00:10:25,079 --> 00:10:28,079
+introduciamo risultati.
+Ok. Ok. Quindi
+
+234
+00:10:28,079 --> 00:10:30,279
+posso assumere che voi automi stati
+
+235
+00:10:30,279 --> 00:10:33,160
+finiti sapere cos'è linguaggi, queste
+
+236
+00:10:33,160 --> 00:10:36,920
+robe qua. Ok. Boh, meglio. Ok. E secondo
+
+237
+00:10:36,920 --> 00:10:38,720
+te che cosa facciamo? Secondo lei cosa
+
+238
+00:10:38,720 --> 00:10:40,320
+facciamo?
+
+239
+00:10:40,320 --> 00:10:42,639
+Venendo dall'Inghilterra do lo you a
+
+240
+00:10:42,639 --> 00:10:45,680
+chiunque. Quindi cosa faremo in questo
+
+241
+00:10:45,680 --> 00:10:47,920
+corso? Buttala là. Cioè il corso si
+
+242
+00:10:47,920 --> 00:10:49,680
+divide in due parti abbastanza piccola.
+
+243
+00:10:49,680 --> 00:10:53,120
+Ah
+ah lo sentite?
+No.
+Il corso si divide
+
+244
+00:10:53,120 --> 00:10:56,959
+con due parti piccole perché sono 6 CPU.
+
+245
+00:10:56,959 --> 00:10:59,480
+Una parte è di complessità e invece
+
+246
+00:10:59,480 --> 00:11:02,600
+l'altra è di computabilità.
+Sì.
+E
+
+247
+00:11:02,600 --> 00:11:05,480
+casomai e se riesci a sostanziare questa
+
+248
+00:11:05,480 --> 00:11:07,079
+cosa. Cioè quando parliamo di
+
+249
+00:11:07,079 --> 00:11:09,839
+calcolabilità secondo lei che cos'è?
+
+250
+00:11:09,839 --> 00:11:12,040
+Il film bisogna definire e anzi
+
+251
+00:11:12,040 --> 00:11:15,399
+riprendere cosa significa computare. M
+m
+
+252
+00:11:15,399 --> 00:11:18,839
+e ci hanno accennato che può computare e
+
+253
+00:11:18,839 --> 00:11:20,959
+cioè la la definizione di computare
+
+254
+00:11:20,959 --> 00:11:24,880
+viene da un paper di Touring.
+Ah, ok. E
+
+255
+00:11:24,880 --> 00:11:28,680
+siete più preparati dell'Ingilterra.
+
+256
+00:11:28,720 --> 00:11:31,760
+Ok. Ok. E dopodiché si analizza la parte
+
+257
+00:11:31,760 --> 00:11:36,680
+di complessità m
+e immagino che eh
+
+258
+00:11:36,680 --> 00:11:38,560
+verranno mostrati dei regeni che
+
+259
+00:11:38,560 --> 00:11:41,800
+dimostrano che casomai un problema è
+
+260
+00:11:41,800 --> 00:11:44,800
+intrinsecamente
+
+261
+00:11:44,880 --> 00:11:46,920
+riuscite a sentire un problema
+
+262
+00:11:46,920 --> 00:11:49,600
+intrinsecamente
+un problema appartiene
+
+263
+00:11:49,600 --> 00:11:52,839
+intrinsicamente a una classe di problemi
+
+264
+00:11:52,839 --> 00:11:55,680
+sì sì sì sì sì
+poi avere vari tecnic
+non
+
+265
+00:11:55,680 --> 00:11:57,279
+deve non deve dare la risposta giusta
+
+266
+00:11:57,279 --> 00:11:59,360
+quello che crede che questo corso
+
+267
+00:11:59,360 --> 00:12:01,760
+Sì, sì. Poi varie tecniche.
+Sì, secondo
+
+268
+00:12:01,760 --> 00:12:04,800
+lei come faremo questa roba?
+
+269
+00:12:04,800 --> 00:12:08,120
+Eh, dimostreremo teoremi.
+Dimostreremo
+
+270
+00:12:08,120 --> 00:12:11,040
+teoremi. Ok. Quindi saremo formali?
+
+271
+00:12:11,040 --> 00:12:15,320
+Spero di sì.
+Ah, spero di sì. Ok.
+
+272
+00:12:15,320 --> 00:12:17,000
+Secondo lei, quali difficoltà potremmo
+
+273
+00:12:17,000 --> 00:12:21,240
+incontrare durante questo corso?
+
+274
+00:12:27,360 --> 00:12:29,279
+è una domanda una domanda è una domanda
+
+275
+00:12:29,279 --> 00:12:31,800
+un po' particolare. Questo proviene da
+
+276
+00:12:31,800 --> 00:12:33,399
+dagli studi del funzionamento della
+
+277
+00:12:33,399 --> 00:12:36,839
+mente. Se noi sappiamo quale genere di
+
+278
+00:12:36,839 --> 00:12:39,120
+difficoltà potremmo affrontare, le
+
+279
+00:12:39,120 --> 00:12:41,040
+riconosceremo nel momento in cui si
+
+280
+00:12:41,040 --> 00:12:44,079
+manifestano e se abbiamo una strategia
+
+281
+00:12:44,079 --> 00:12:47,000
+possiamo
+casomai preso un problema
+
+282
+00:12:47,000 --> 00:12:49,040
+dimostrare che quel problema lì non è
+
+283
+00:12:49,040 --> 00:12:52,079
+risolutibile.
+Ok. Ma quale difficoltà
+
+284
+00:12:52,079 --> 00:12:54,040
+avremo nello svolgimento del corso?
+
+285
+00:12:54,040 --> 00:12:56,680
+Intendo,
+
+286
+00:12:56,680 --> 00:12:58,360
+cioè nello studio, nell'approccio di
+
+287
+00:12:58,360 --> 00:13:01,040
+questo corso individua delle possibili
+
+288
+00:13:01,040 --> 00:13:02,519
+difficoltà che potremmo incontrare. Poi
+
+289
+00:13:02,519 --> 00:13:05,079
+magari non incontriamo niente. No, ok,
+
+290
+00:13:05,079 --> 00:13:07,839
+andrà liscio. Benissimo.
+Cioè è più
+
+291
+00:13:07,839 --> 00:13:09,800
+complicato il dopo, ovvero prendere un
+
+292
+00:13:09,800 --> 00:13:12,760
+problema che ci viene posto che stare
+
+293
+00:13:12,760 --> 00:13:15,000
+che usciamo
+che non è possibile
+
+294
+00:13:15,000 --> 00:13:18,480
+risolver. Ok. Ok. Ah. Ok. Tià. Sì,
+
+295
+00:13:18,480 --> 00:13:22,079
+l'esame se sarà la parte di Ok? No,
+
+296
+00:13:22,079 --> 00:13:24,760
+speriamo di arrivare assieme all'esame
+
+297
+00:13:24,760 --> 00:13:27,600
+in modo che che siamo pronti, eh, cioè
+
+298
+00:13:27,600 --> 00:13:30,079
+non voglio fare nulla che vi devasti o
+
+299
+00:13:30,079 --> 00:13:33,480
+cose del genere, eh, però essendo Vabbò,
+
+300
+00:13:33,480 --> 00:13:37,600
+poi ve lo dico. Ok, un altro eh, lei
+no,
+
+301
+00:13:37,600 --> 00:13:39,240
+sulle difficoltà volevo dire che
+No,
+
+302
+00:13:39,240 --> 00:13:42,399
+partiamo dalla prima.
+
+303
+00:13:42,399 --> 00:13:45,399
+Anche se magari ripeto
+second Sì, perché
+
+304
+00:13:45,399 --> 00:13:47,279
+voglio capire qual è il sentimento
+
+305
+00:13:47,279 --> 00:13:50,440
+dell'aula. No, vabbè, per quello mi
+
+306
+00:13:50,440 --> 00:13:54,000
+aspetto sì teorica, quindi unità
+
+307
+00:13:54,000 --> 00:13:56,800
+principalmente. Sì. M
+mi aspetto tanti
+
+308
+00:13:56,800 --> 00:13:59,880
+teorie anch'io, non aspettative se non
+
+309
+00:13:59,880 --> 00:14:02,759
+quelle di teorie.
+Ok. Ok. Ok. No,
+e
+
+310
+00:14:02,759 --> 00:14:05,160
+questo per lei o per la classe, secondo
+
+311
+00:14:05,160 --> 00:14:07,440
+lei questo è un problema. Cioè io non ho
+
+312
+00:14:07,440 --> 00:14:09,759
+idea di quanto è sia stato formale il
+
+313
+00:14:09,759 --> 00:14:12,240
+vostro corso di laurea finora.
+
+314
+00:14:12,240 --> 00:14:15,079
+Finora direi che abbiamo avuto l'esame
+
+315
+00:14:15,079 --> 00:14:16,399
+di equipaggi di programmazione al
+
+316
+00:14:16,399 --> 00:14:20,120
+secondo anno. Una parte di un po'
+
+317
+00:14:20,120 --> 00:14:23,279
+decorare.
+Ah, ho capito. Sì.
+E poi
+Ma
+
+318
+00:14:23,279 --> 00:14:27,360
+quindi finite state automating
+
+319
+00:14:27,360 --> 00:14:29,000
+glam, questi teoremi li avete proprio
+
+320
+00:14:29,000 --> 00:14:32,360
+dimostrati come le hanno Ok. Ok.
+Poi al
+
+321
+00:14:32,360 --> 00:14:35,839
+primo anno. Logica.
+Logica. Ok. Quindi,
+
+322
+00:14:35,839 --> 00:14:37,240
+insomma, un po' di sta roba l'avete
+
+323
+00:14:37,240 --> 00:14:40,360
+vista. Ok. Ok. Buono. Buono.
+No, come
+
+324
+00:14:40,360 --> 00:14:43,279
+difficoltà. Appunto, è avendo tutte le
+
+325
+00:14:43,279 --> 00:14:44,959
+cose,
+
+326
+00:14:44,959 --> 00:14:48,240
+cioè essendo essendo in un così teorico,
+
+327
+00:14:48,240 --> 00:14:50,320
+ah
+a volte le cose possono essere troppo
+
+328
+00:14:50,320 --> 00:14:53,720
+teoriche, cioè
+ok,
+almeno può diventare
+
+329
+00:14:53,720 --> 00:14:55,600
+difficile capire poi per bene cosa
+
+330
+00:14:55,600 --> 00:14:57,800
+stiamo facendo.
+Sì, interessante. Eh,
+
+331
+00:14:57,800 --> 00:15:00,360
+come pensa che potrà superare questa
+
+332
+00:15:00,360 --> 00:15:03,160
+difesa? Eh, non so se ci sono dei casi
+
+333
+00:15:03,160 --> 00:15:05,040
+pratici rispetto a tutto quello che
+
+334
+00:15:05,040 --> 00:15:06,399
+vediamo, perché alcune cose a volte
+
+335
+00:15:06,399 --> 00:15:09,920
+rimangono sempre
+Sì.
+un po' fumose, però
+
+336
+00:15:09,920 --> 00:15:11,800
+ho capito. Quando dice fumose intende
+
+337
+00:15:11,800 --> 00:15:13,920
+poco chiaro che non le può applicare o
+
+338
+00:15:13,920 --> 00:15:16,160
+che non vede un'applicazione
+
+339
+00:15:16,160 --> 00:15:18,000
+che non de propria applicazione, cioè
+
+340
+00:15:18,000 --> 00:15:20,680
+nel senso
+Ok, ho capito. Sì, sì, sì.
+Ok,
+
+341
+00:15:20,680 --> 00:15:23,880
+ok, ok, ci sta, ci sta. Grazie. Qualcun
+
+342
+00:15:23,880 --> 00:15:26,440
+altro?
+Sì,
+
+343
+00:15:26,440 --> 00:15:28,360
+vai.
+
+344
+00:15:28,360 --> 00:15:30,360
+Io
+Sì, sì. Allora, io in realtà
+
+345
+00:15:30,360 --> 00:15:32,480
+programma diversi perché matematica.
+
+346
+00:15:32,480 --> 00:15:34,399
+Matematica. Ok. Quante di matematica ci
+
+347
+00:15:34,399 --> 00:15:37,720
+stanno qua?
+
+348
+00:15:37,720 --> 00:15:40,160
+Eh, quindi voiete
+
+349
+00:15:40,160 --> 00:15:44,560
+a fondo. Ok.
+
+350
+00:15:44,560 --> 00:15:46,839
+Alr,
+quindi in realtà sono state le
+
+351
+00:15:46,839 --> 00:15:48,920
+risposte che dato dei due ragazzi, cioè
+
+352
+00:15:48,920 --> 00:15:54,199
+io non non ho conoscenza queste, cioè
+
+353
+00:15:54,199 --> 00:15:56,880
+non c'ho nemmeno a capire in particolare
+
+354
+00:15:56,880 --> 00:15:59,199
+cosè un linguaggio questa cosa qua ad
+
+355
+00:15:59,199 --> 00:16:01,759
+esempio
+quell di auto
+auto. Vabbè,
+
+356
+00:16:01,759 --> 00:16:03,759
+riprendiamo velocemente tutte in queste
+
+357
+00:16:03,759 --> 00:16:06,759
+primissime che una domanda a lei che
+
+358
+00:16:06,759 --> 00:16:09,560
+secondo lei è sono in grado di seguire
+
+359
+00:16:09,560 --> 00:16:11,600
+questo corso?
+Allora, io direi di sì.
+
+360
+00:16:11,600 --> 00:16:14,440
+Allora, domanda per i matematici.
+
+361
+00:16:14,440 --> 00:16:16,759
+Avete programmato in vita vostra? Cioè,
+
+362
+00:16:16,759 --> 00:16:18,920
+sapete cos'è un programma? Un
+po' di
+
+363
+00:16:18,920 --> 00:16:21,959
+Pyon.
+Un po' di Python. Ok,
+va
+
+364
+00:16:21,959 --> 00:16:24,720
+benissimo. Sapete pensare
+
+365
+00:16:24,720 --> 00:16:26,959
+algoritmicamente? C'è dato un problema
+
+366
+00:16:26,959 --> 00:16:29,399
+pensare un algoritmo e un po' di codice?
+
+367
+00:16:29,399 --> 00:16:32,600
+Certo, anche pseudocodice, cioè sapere
+
+368
+00:16:32,600 --> 00:16:35,600
+come si fa a mettere assieme dei passi
+
+369
+00:16:35,600 --> 00:16:37,920
+algoritmici. Quello lo sapete fare?
+
+370
+00:16:37,920 --> 00:16:40,880
+Sapete che da un programma noi possiamo
+
+371
+00:16:40,880 --> 00:16:43,279
+chiamare una funzione?
+
+372
+00:16:43,279 --> 00:16:45,199
+Ok, questo è quello che ci serve. Vabbè,
+
+373
+00:16:45,199 --> 00:16:48,160
+proprio basico. Basico. Poi cos'è un
+
+374
+00:16:48,160 --> 00:16:51,720
+automa? Questa rompetta qua voi non
+
+375
+00:16:51,720 --> 00:16:53,519
+l'avete mai visto questo concetto di
+
+376
+00:16:53,519 --> 00:16:56,160
+automa? Cioè prossima lezione partiamo
+
+377
+00:16:56,160 --> 00:16:59,680
+proprio dagli autom così
+
+378
+00:16:59,680 --> 00:17:01,440
+facciamo un passo pregresso rispetto
+
+379
+00:17:01,440 --> 00:17:03,040
+alla martina di Touring, dedichiamo un
+
+380
+00:17:03,040 --> 00:17:05,720
+po' di tempo al concetto di automa e poi
+
+381
+00:17:05,720 --> 00:17:08,240
+passiamo a Theory Machines che sono
+
+382
+00:17:08,240 --> 00:17:10,400
+automi un po' più sofisticati. Ok.
+
+383
+00:17:10,400 --> 00:17:14,000
+Secondo lei di cosa ci occuperemo?
+
+384
+00:17:14,000 --> 00:17:16,079
+Ma eh le poche cose di cui abbiamo
+
+385
+00:17:16,079 --> 00:17:17,799
+sentito parlare anche noi matematici
+
+386
+00:17:17,799 --> 00:17:20,799
+sono contestato computazionale.
+
+387
+00:17:20,799 --> 00:17:26,120
+Che cos'è secondo lei?
+Eh cercare di
+
+388
+00:17:26,120 --> 00:17:29,760
+quantificare in variabili eh le
+
+389
+00:17:29,760 --> 00:17:31,240
+variabili che scegliamo all'inizio
+
+390
+00:17:31,240 --> 00:17:35,400
+quanto un algoritmo eh
+
+391
+00:17:35,400 --> 00:17:38,799
+cioè come questo algoritmo dipende dal
+
+392
+00:17:38,799 --> 00:17:41,960
+dato che camo inizialmente.
+Ok. Ok. Ok.
+
+393
+00:17:41,960 --> 00:17:44,120
+No. E secondo lei come affronteremo
+
+394
+00:17:44,120 --> 00:17:48,520
+queste topics? Io mi aspetto molto
+molto
+
+395
+00:17:48,520 --> 00:17:52,600
+diciamo come fa matematici adi problemi
+
+396
+00:17:52,600 --> 00:17:55,039
+forse non sarò così teorico come dei
+
+397
+00:17:55,039 --> 00:18:00,440
+aspetti o così formale per per per
+
+398
+00:18:00,440 --> 00:18:04,280
+grande rf degli altri studenti. Però
+
+399
+00:18:04,280 --> 00:18:06,720
+però cercheremo di essere formali.
+
+400
+00:18:06,720 --> 00:18:08,880
+Questo sì. Cercherò per quanto possibile
+
+401
+00:18:08,880 --> 00:18:11,440
+di essere formale. Ok. Secondo lei quali
+
+402
+00:18:11,440 --> 00:18:13,480
+difficoltà ci potrebbero essere? Però
+
+403
+00:18:13,480 --> 00:18:15,720
+capisco che il background per voi è
+
+404
+00:18:15,720 --> 00:18:17,919
+sostanzialmente differente, quindi per
+
+405
+00:18:17,919 --> 00:18:19,840
+voi l'approccio di secondo lei quali
+
+406
+00:18:19,840 --> 00:18:21,400
+difficoltà potrebbero esserci
+
+407
+00:18:21,400 --> 00:18:24,559
+nell'approccio di questa materia?
+
+408
+00:18:24,559 --> 00:18:26,520
+Certo, dal punto di vista penso che
+
+409
+00:18:26,520 --> 00:18:28,039
+grand
+
+410
+00:18:28,039 --> 00:18:29,880
+non mi spaventa la teorica, mi
+
+411
+00:18:29,880 --> 00:18:32,280
+spaventano avere magari tutte le
+
+412
+00:18:32,280 --> 00:18:34,760
+conoscenze, alcune conoscenze che mi
+
+413
+00:18:34,760 --> 00:18:37,240
+servono per sapere.
+Sì, sì, sì, sì, sì,
+
+414
+00:18:37,240 --> 00:18:39,919
+sì. Ok, giusto per per ricapitolare,
+
+415
+00:18:39,919 --> 00:18:42,880
+così io sono sicuro che poi ci mettiamo
+
+416
+00:18:42,880 --> 00:18:45,400
+in linea. L'importante è che chi
+
+417
+00:18:45,400 --> 00:18:47,280
+proviene da matematica abbia
+
+418
+00:18:47,280 --> 00:18:48,799
+programmato,
+
+419
+00:18:48,799 --> 00:18:51,360
+cioè quindi no, non è necessario
+
+420
+00:18:51,360 --> 00:18:53,240
+conoscere uno specifico linguaggio di
+
+421
+00:18:53,240 --> 00:18:55,760
+programmazione, cioè l'importante è
+
+422
+00:18:55,760 --> 00:19:00,240
+avere lo skill che dato un problema io
+
+423
+00:19:00,240 --> 00:19:02,600
+riesco a pensare a una soluzione
+
+424
+00:19:02,600 --> 00:19:04,840
+algoritmica. Questo è quello che ci
+
+425
+00:19:04,840 --> 00:19:06,320
+serve. ci serve uno skill, non la
+
+426
+00:19:06,320 --> 00:19:09,280
+conoscenza di un linguaggio e questo è
+
+427
+00:19:09,280 --> 00:19:11,440
+un primo pezzo e poi aver verificato con
+
+428
+00:19:11,440 --> 00:19:12,960
+mano che da un programma io ne posso
+
+429
+00:19:12,960 --> 00:19:14,679
+chiamare altri. Questi sono i due
+
+430
+00:19:14,679 --> 00:19:16,440
+concetti che utilizzeremo forse proprio
+
+431
+00:19:16,440 --> 00:19:19,320
+alla fine quando parliamo di oracoli.
+
+432
+00:19:19,320 --> 00:19:21,039
+Ci serve giusto questa cosa qua. Per il
+
+433
+00:19:21,039 --> 00:19:23,799
+resto vi introduco tutto io. Alcune cose
+
+434
+00:19:23,799 --> 00:19:29,440
+potrebbero risultarvi già note, però
+
+435
+00:19:29,440 --> 00:19:31,400
+per gli altri studenti no. Quindi,
+
+436
+00:19:31,400 --> 00:19:33,640
+insomma, alcune cose da voi saranno
+
+437
+00:19:33,640 --> 00:19:35,760
+viste, magari spiegate male da me
+
+438
+00:19:35,760 --> 00:19:38,559
+rispetto ad altro modo migliore di cui
+
+439
+00:19:38,559 --> 00:19:42,679
+avete visto. Ok. Ok. Vabbè, grazie mille
+
+440
+00:19:42,679 --> 00:19:45,720
+così c'ho questa idea in mente, quindi
+
+441
+00:19:45,720 --> 00:19:48,559
+prossima volta auton. Alright, qualcun
+
+442
+00:19:48,559 --> 00:19:50,720
+altro
+
+443
+00:19:50,720 --> 00:19:55,440
+e poi rispondo io alle domande.
+
+444
+00:20:00,760 --> 00:20:04,840
+Someone else noi.
+
+445
+00:20:08,360 --> 00:20:11,240
+Ok, cool. Adesso rispondo io alle
+
+446
+00:20:11,240 --> 00:20:13,720
+domande
+
+447
+00:20:13,720 --> 00:20:15,679
+per spiegarvi un po' il taglio che
+
+448
+00:20:15,679 --> 00:20:20,280
+voglio dare a questo corso, ok?
+
+449
+00:20:20,280 --> 00:20:23,000
+Di cosa di cosa ci occupiamo in questo
+
+450
+00:20:23,000 --> 00:20:27,360
+corso? Ok, noi ci occuperemo, come ho
+
+451
+00:20:27,360 --> 00:20:30,159
+già mezzo accennato all'inizio, di
+
+452
+00:20:30,159 --> 00:20:33,440
+essenzialmente due topic
+
+453
+00:20:33,440 --> 00:20:35,280
+della dell'informatica teorica.
+
+454
+00:20:35,280 --> 00:20:39,760
+L'informatica teorica è un è un
+
+455
+00:20:39,760 --> 00:20:43,480
+è un'area vastissima, ok? Però noi di
+
+456
+00:20:43,480 --> 00:20:46,240
+quello che di cui ci occuperemo sono due
+
+457
+00:20:46,240 --> 00:20:48,640
+arie e sarà anche non troppo
+
+458
+00:20:48,640 --> 00:20:52,520
+approfondito, ok? Vedremo da un lato la
+
+459
+00:20:52,520 --> 00:20:54,440
+calcolabilità,
+
+460
+00:20:54,440 --> 00:20:59,440
+ok? E dall'altro la complessità, ok? In
+
+461
+00:20:59,440 --> 00:21:01,880
+genere queste cose vengono insegnate
+
+462
+00:21:01,880 --> 00:21:05,039
+assieme perché sono più o meno legate e
+
+463
+00:21:05,039 --> 00:21:08,520
+perché alla base del loro studio hanno
+
+464
+00:21:08,520 --> 00:21:11,039
+questa nozione di macchina di Touring
+
+465
+00:21:11,039 --> 00:21:13,320
+che è una cosa che non introdurremo fino
+
+466
+00:21:13,320 --> 00:21:16,159
+a prossima lezione. Ok? Come ho
+
+467
+00:21:16,159 --> 00:21:17,760
+accennato prima, la macchina di Touring
+
+468
+00:21:17,760 --> 00:21:20,200
+è un autonoma, quindi per voi che avete
+
+469
+00:21:20,200 --> 00:21:23,039
+già visto il corso di linguaggi sapete
+
+470
+00:21:23,039 --> 00:21:25,600
+cos'è un automa. Per voi che non avete
+
+471
+00:21:25,600 --> 00:21:27,600
+visto cos'è un automa lo spieghiamo la
+
+472
+00:21:27,600 --> 00:21:30,640
+prossima la prossima volta. Ok? Quindi
+
+473
+00:21:30,640 --> 00:21:32,840
+quello che mi preme è che questo corso
+
+474
+00:21:32,840 --> 00:21:35,520
+sia sostanzialmente autocenuto. Cioè
+
+475
+00:21:35,520 --> 00:21:37,320
+ovviamente non vi posso spiegare come si
+
+476
+00:21:37,320 --> 00:21:40,559
+fanno le addizioni, però tutto quello
+
+477
+00:21:40,559 --> 00:21:43,000
+che è relativo a questa materia spero di
+
+478
+00:21:43,000 --> 00:21:44,960
+riuscire a concentrarlo in maniera tale
+
+479
+00:21:44,960 --> 00:21:47,799
+che insomma ci sia quanto minimo
+
+480
+00:21:47,799 --> 00:21:49,840
+possibile la necessità di conoscenze tra
+
+481
+00:21:49,840 --> 00:21:52,200
+ingressi. Ok?
+
+482
+00:21:52,200 --> 00:21:55,600
+Ok. Alrgri. Quindi, da un lato abbiamo
+
+483
+00:21:55,600 --> 00:21:58,919
+la calcolabilità dei problemi e
+
+484
+00:21:58,919 --> 00:22:01,960
+dall'altro abbiamo la complessità dei
+
+485
+00:22:01,960 --> 00:22:04,240
+problemi. La prima cosa su cui voglio
+
+486
+00:22:04,240 --> 00:22:07,200
+che voi facciate attenzione è le parole
+
+487
+00:22:07,200 --> 00:22:09,799
+che ho usato adesso:
+
+488
+00:22:09,799 --> 00:22:11,640
+calcolabilità
+
+489
+00:22:11,640 --> 00:22:14,679
+dei problemi
+
+490
+00:22:14,679 --> 00:22:21,120
+e complessità dei problemi. Ok? Qui
+
+491
+00:22:21,120 --> 00:22:23,120
+magari per voi che siete informatici che
+
+492
+00:22:23,120 --> 00:22:24,840
+siete più abituati allo studio di
+
+493
+00:22:24,840 --> 00:22:27,880
+algoritmi eccetera, avete magari spesso
+
+494
+00:22:27,880 --> 00:22:30,400
+sentito parlare della complessità degli
+
+495
+00:22:30,400 --> 00:22:31,960
+algoritmi,
+
+496
+00:22:31,960 --> 00:22:34,279
+ma non della complessità dei problemi.
+
+497
+00:22:34,279 --> 00:22:36,360
+Ok? Il nostro focus in questo corso non
+
+498
+00:22:36,360 --> 00:22:38,400
+saranno tanto gli algoritmi, cioè ne
+
+499
+00:22:38,400 --> 00:22:41,440
+vedremo tantissimi di algoritmi, ok? più
+
+500
+00:22:41,440 --> 00:22:43,640
+che altro idee algoritmiche, perché non
+
+501
+00:22:43,640 --> 00:22:46,679
+ci fracasseremo guardando alberi, ste
+
+502
+00:22:46,679 --> 00:22:48,400
+cose qua, magari le useremo perché ci
+
+503
+00:22:48,400 --> 00:22:51,919
+servono, però cioè il nostro focus
+
+504
+00:22:51,919 --> 00:22:54,279
+principale in questo corso non sarà
+
+505
+00:22:54,279 --> 00:22:56,640
+tanto studiare proprietà degli
+
+506
+00:22:56,640 --> 00:22:59,480
+algoritmi. Io assumo che voi gli
+
+507
+00:22:59,480 --> 00:23:02,480
+algoritmi sappiate gestirli, ok?
+
+508
+00:23:02,480 --> 00:23:04,480
+Adesso non è necessario una conoscenza
+
+509
+00:23:04,480 --> 00:23:07,400
+super approfondita, ma sapere come
+
+510
+00:23:07,400 --> 00:23:09,840
+risolvere, come istruire una macchina
+
+511
+00:23:09,840 --> 00:23:11,640
+per risolvere in maniera automatica è un
+
+512
+00:23:11,640 --> 00:23:13,679
+problema. Ok? Questo questo è uno sill
+
+513
+00:23:13,679 --> 00:23:16,440
+che mi aspetto che voi abbiate. Ok?
+
+514
+00:23:16,440 --> 00:23:18,440
+Allora, da un lato, quindi, abbiamo
+
+515
+00:23:18,440 --> 00:23:22,480
+calcolabilità dei problemi e complessità
+
+516
+00:23:22,480 --> 00:23:26,000
+degli algoritmi, dei problemi, sorry,
+
+517
+00:23:26,000 --> 00:23:28,080
+dei problemi. Ok? Quindi il nostro focus
+
+518
+00:23:28,080 --> 00:23:30,720
+non sarà tanto gli algoritmi, ma saranno
+
+519
+00:23:30,720 --> 00:23:33,400
+i problemi, perché noi dei problemi
+
+520
+00:23:33,400 --> 00:23:35,799
+vogliamo capire quali problemi si
+
+521
+00:23:35,799 --> 00:23:37,919
+possono risolvere con un computer e
+
+522
+00:23:37,919 --> 00:23:40,000
+quali problemi non si possono risolvere
+
+523
+00:23:40,000 --> 00:23:44,240
+con un computer. Ok? Adesso
+
+524
+00:23:44,240 --> 00:23:45,840
+riferisco soprattutto agli informatici
+
+525
+00:23:45,840 --> 00:23:47,159
+che ne avrete visti molti di più
+
+526
+00:23:47,159 --> 00:23:48,760
+rispetto ai vostri colleghi di
+
+527
+00:23:48,760 --> 00:23:51,240
+matematica, ok? avrete fatto progetti,
+
+528
+00:23:51,240 --> 00:23:54,480
+seguito corsi, tesine, cose varie e
+
+529
+00:23:54,480 --> 00:23:57,520
+insomma vi avranno riempito di ste cose.
+
+530
+00:23:57,520 --> 00:24:00,480
+Voi vi siete mai scontrati con un
+
+531
+00:24:00,480 --> 00:24:04,159
+problema che è irrisolvibile, ma non
+
+532
+00:24:04,159 --> 00:24:06,120
+perché non ci siete riusciti voi o
+
+533
+00:24:06,120 --> 00:24:08,120
+perché non ci sono riuscito io, ma che è
+
+534
+00:24:08,120 --> 00:24:10,360
+un problema che cioè possiamo sbatterci
+
+535
+00:24:10,360 --> 00:24:12,120
+la testa?
+
+536
+00:24:12,120 --> 00:24:15,880
+Non se fa, non si fa. Ti è mai capitato?
+
+537
+00:24:15,880 --> 00:24:17,960
+Vabbè, ci sono quelli che ci hanno
+
+538
+00:24:17,960 --> 00:24:20,279
+disegnato qua.
+Ah, ok. che conoscete,
+
+539
+00:24:20,279 --> 00:24:23,120
+ok?
+Sì, sì. La terminazione di un
+
+540
+00:24:23,120 --> 00:24:25,679
+programma, per esempio, equivalenza fra
+
+541
+00:24:25,679 --> 00:24:28,399
+programmi sopra un certo livello dià.
+
+542
+00:24:28,399 --> 00:24:32,840
+Sì, sì.
+Eh, poi vabbè, il fatto che un
+
+543
+00:24:32,840 --> 00:24:34,640
+programma calcolo via costante, una
+
+544
+00:24:34,640 --> 00:24:37,399
+funzione costante
+Sì. Sì. E cose del
+
+545
+00:24:37,399 --> 00:24:41,080
+genere.
+Ok. Ma voi mentre dovevate fare
+
+546
+00:24:41,080 --> 00:24:44,159
+i vostri progettini eccetera, vi siete
+
+547
+00:24:44,159 --> 00:24:46,760
+mai scontrati con un problema che cavolo
+
+548
+00:24:46,760 --> 00:24:48,919
+questo non si fa?
+
+549
+00:24:48,919 --> 00:24:51,240
+Io no,
+
+550
+00:24:51,240 --> 00:24:53,080
+ok.
+
+551
+00:24:53,080 --> 00:24:55,559
+È abbastanza naturale perché perché la
+
+552
+00:24:55,559 --> 00:24:59,440
+nostra testa, la nostra mente lavora su
+
+553
+00:24:59,440 --> 00:25:01,760
+cose che siamo in grado di risolvere.
+
+554
+00:25:01,760 --> 00:25:04,240
+Cioè i problemi, vedremo che i problemi
+
+555
+00:25:04,240 --> 00:25:07,520
+irrisolvibili sono molto di più dei
+
+556
+00:25:07,520 --> 00:25:09,960
+problemi irrisolvibili, ma sono proprio
+
+557
+00:25:09,960 --> 00:25:12,480
+tanti di più. Solo che noi ne conosciamo
+
+558
+00:25:12,480 --> 00:25:14,279
+molto pochi perché il nostro modo di
+
+559
+00:25:14,279 --> 00:25:16,320
+ragionare sulle cose fa sì che la nostra
+
+560
+00:25:16,320 --> 00:25:18,039
+testa vada su cose che riusciamo a
+
+561
+00:25:18,039 --> 00:25:20,120
+gestire. Per quello in genere ci
+
+562
+00:25:20,120 --> 00:25:21,919
+focalizziamo su problemi che siamo in
+
+563
+00:25:21,919 --> 00:25:24,399
+grado di risolvere perché è così che li
+
+564
+00:25:24,399 --> 00:25:28,080
+approcciamo. Ok?
+
+565
+00:25:28,080 --> 00:25:32,399
+Adesso voi tutti avete un computer,
+
+566
+00:25:34,919 --> 00:25:36,720
+voi tutti avete un computer, voi tutti
+
+567
+00:25:36,720 --> 00:25:39,200
+vi sarete, immagino, scontrati con il
+
+568
+00:25:39,200 --> 00:25:40,799
+problema
+
+569
+00:25:40,799 --> 00:25:42,840
+di dover scegliere un antivirus o
+
+570
+00:25:42,840 --> 00:25:45,360
+qualcosa del genere, ok? Non lo so, ce
+
+571
+00:25:45,360 --> 00:25:47,240
+l'avete un antivirus? Io non ce l'ho.
+
+572
+00:25:47,240 --> 00:25:51,600
+Ok, ce l'avete un antivirus? Ok?
+
+573
+00:25:51,600 --> 00:25:53,520
+Come avrete notato, magari scegliendo
+
+574
+00:25:53,520 --> 00:25:57,559
+l'antivirus, no? Avrete notato,
+
+575
+00:25:57,559 --> 00:25:59,679
+magari che ci sono le comparazioni,
+
+576
+00:25:59,679 --> 00:26:03,760
+fanno dei test bla bla e così, eh no,
+
+577
+00:26:03,760 --> 00:26:05,520
+avrete notato che non ci stanno
+
+578
+00:26:05,520 --> 00:26:07,880
+antivirus perfetti.
+
+579
+00:26:07,880 --> 00:26:10,360
+L'avete notato questa cosa?
+
+580
+00:26:10,360 --> 00:26:12,880
+Cioè io non posso andare, che ne so, da
+
+581
+00:26:12,880 --> 00:26:14,600
+Microsoft, da chi altro. Scusa, me lo
+
+582
+00:26:14,600 --> 00:26:16,320
+fai un antivirus perfetto? C'è un
+
+583
+00:26:16,320 --> 00:26:18,880
+antivirus, no, che ogni volta che ricevi
+
+584
+00:26:18,880 --> 00:26:21,240
+in input un pezzo di codice è in grado
+
+585
+00:26:21,240 --> 00:26:23,399
+di stabilire se quel codice è malevolo o
+
+586
+00:26:23,399 --> 00:26:25,960
+meno. Ok? Questo dovrebbe saper fare un
+
+587
+00:26:25,960 --> 00:26:29,320
+antivirus perfetto, no? Che visto un
+
+588
+00:26:29,320 --> 00:26:31,799
+pezzo di codice qualsiasi, magari pure
+
+589
+00:26:31,799 --> 00:26:33,840
+compilato, che ne so, quindi un pezzo di
+
+590
+00:26:33,840 --> 00:26:36,120
+codice macchina che alla fine comunque
+
+591
+00:26:36,120 --> 00:26:38,440
+se noi lo disassembliamo
+
+592
+00:26:38,440 --> 00:26:39,880
+possiamo tirare fuori il codice
+
+593
+00:26:39,880 --> 00:26:42,360
+assembler, alla fine è un programma, no?
+
+594
+00:26:42,360 --> 00:26:44,480
+Allora, il nostro il nostro problema
+
+595
+00:26:44,480 --> 00:26:47,600
+potrebbe essere dato un pezzo di codice
+
+596
+00:26:47,600 --> 00:26:49,960
+in input, noi vogliamo stabilire se quel
+
+597
+00:26:49,960 --> 00:26:54,760
+pezzo di codice è malevolo o meno. Ok?
+
+598
+00:26:54,760 --> 00:26:59,320
+Questo è un problema irrisolvibile.
+
+599
+00:26:59,320 --> 00:27:02,279
+Si può dimostrare che fare l'antivirus
+
+600
+00:27:02,279 --> 00:27:05,120
+perfetto non si può fare. Ha detto, ma
+
+601
+00:27:05,120 --> 00:27:07,200
+noi li compriamo, cioè che stiamo
+
+602
+00:27:07,200 --> 00:27:10,320
+pagando? Allora, come potete notare, gli
+
+603
+00:27:10,320 --> 00:27:12,919
+antivirus che noi compriamo sono tutti
+
+604
+00:27:12,919 --> 00:27:15,240
+approssimati, sono tutti programmi che
+
+605
+00:27:15,240 --> 00:27:17,279
+danno una risposta approssimata, hanno
+
+606
+00:27:17,279 --> 00:27:19,320
+falsi positivi, hanno falsi negativi,
+
+607
+00:27:19,320 --> 00:27:21,600
+eccetera. Perché? Perché si può
+
+608
+00:27:21,600 --> 00:27:23,880
+dimostrare, e magari in una delle
+
+609
+00:27:23,880 --> 00:27:27,279
+esercitazioni lo faremo, che scrivere
+
+610
+00:27:27,279 --> 00:27:30,039
+l'antivirus perfetto, quando io dico
+
+611
+00:27:30,039 --> 00:27:31,960
+perfetto intendo che è un pezzo di
+
+612
+00:27:31,960 --> 00:27:34,000
+programma che è in grado di ricevere in
+
+613
+00:27:34,000 --> 00:27:38,240
+input pezzi di codice ed è sempre,
+
+614
+00:27:38,240 --> 00:27:41,159
+questo è la chiave del tutto, no? ed è
+
+615
+00:27:41,159 --> 00:27:43,000
+sempre in grado di rispondere
+
+616
+00:27:43,000 --> 00:27:46,559
+correttamente se l'input in l'input,
+
+617
+00:27:46,559 --> 00:27:49,720
+cioè il programma che riceviamo input è
+
+618
+00:27:49,720 --> 00:27:52,519
+male o meno. Questa cosa non si può
+
+619
+00:27:52,519 --> 00:27:54,120
+fare, cioè non si può fare in maniera
+
+620
+00:27:54,120 --> 00:27:58,559
+automatica. Ok? Qualsiasi programma che
+
+621
+00:27:58,559 --> 00:28:01,440
+noi scriviamo, che noi potremmo scrivere
+
+622
+00:28:01,440 --> 00:28:04,159
+per la risoluzione di questo tipo di
+
+623
+00:28:04,159 --> 00:28:07,279
+problema, sarà sempre un programma
+
+624
+00:28:07,279 --> 00:28:10,559
+approssimato, cioè un programma che o ci
+
+625
+00:28:10,559 --> 00:28:13,320
+darà ci darà risposte sbagliate in
+
+626
+00:28:13,320 --> 00:28:15,440
+alcune circostanze, falsi positivi,
+
+627
+00:28:15,440 --> 00:28:17,679
+falsi negativi, eccetera. Infatti loro
+
+628
+00:28:17,679 --> 00:28:19,399
+si erano inventati, chi ha lavorato sul
+
+629
+00:28:19,399 --> 00:28:20,799
+mondo degli antivirus, si erano
+
+630
+00:28:20,799 --> 00:28:23,360
+inventati sta cosa delle firme che
+
+631
+00:28:23,360 --> 00:28:25,559
+andavano sempre aggiornate, no? Perché?
+
+632
+00:28:25,559 --> 00:28:27,480
+Perché io devo avere un database di
+
+633
+00:28:27,480 --> 00:28:30,000
+virus che ho visto in giro e quindi li
+
+634
+00:28:30,000 --> 00:28:32,159
+riesco a riconoscere. Ok? Perché in
+
+635
+00:28:32,159 --> 00:28:35,200
+linea di principio, se io vedo un pezzo
+
+636
+00:28:35,200 --> 00:28:38,760
+di codice che non ho mai visto prima, è
+
+637
+00:28:38,760 --> 00:28:40,519
+impossibile
+
+638
+00:28:40,519 --> 00:28:44,480
+è impossibile per una macchina riuscire
+
+639
+00:28:44,480 --> 00:28:47,720
+con certezza a discriminare pezzi di
+
+640
+00:28:47,720 --> 00:28:49,919
+codice malevoli da pezzi di codice non
+
+641
+00:28:49,919 --> 00:28:52,360
+malevoli. Ok? si può dimostrare, è una
+
+642
+00:28:52,360 --> 00:28:54,279
+cosa abbastanza semplice, si parte dal
+
+643
+00:28:54,279 --> 00:28:56,159
+problema della terminazione che è
+
+644
+00:28:56,159 --> 00:28:58,000
+qualcosa che voi avete visto, e si fa
+
+645
+00:28:58,000 --> 00:29:00,440
+vedere che quel problema si può mappare
+
+646
+00:29:00,440 --> 00:29:02,559
+sul problema di risolvere il problema
+
+647
+00:29:02,559 --> 00:29:04,679
+del virus, no? E si fa vedere, siccome
+
+648
+00:29:04,679 --> 00:29:06,519
+questi due problemi, l'intuizione,
+
+649
+00:29:06,519 --> 00:29:08,240
+siccome questi due problemi sono
+
+650
+00:29:08,240 --> 00:29:11,200
+isomorfi, se fossi in grado di risolvere
+
+651
+00:29:11,200 --> 00:29:12,919
+il problema dell'antivirus, allora sarei
+
+652
+00:29:12,919 --> 00:29:14,399
+in grado di risolvere il problema della
+
+653
+00:29:14,399 --> 00:29:16,799
+terminazione. Ok? Questa è la la
+
+654
+00:29:16,799 --> 00:29:19,559
+dimostrazione, molto semplice. Ok? Ok.
+
+655
+00:29:19,559 --> 00:29:23,159
+Quindi ci occupiamo, abbiamo detto di
+
+656
+00:29:23,159 --> 00:29:27,519
+calcolabilità e complessità di problemi.
+
+657
+00:29:27,519 --> 00:29:29,320
+Di cosa si occupa la calcolabilità?
+
+658
+00:29:29,320 --> 00:29:32,279
+l'abbiamo già detto, la calcolabilità di
+
+659
+00:29:32,279 --> 00:29:36,919
+un problema è dato un problema,
+
+660
+00:29:36,919 --> 00:29:40,200
+quello che noi vogliamo stabilire è ma
+
+661
+00:29:40,200 --> 00:29:44,159
+esiste o no un algoritmo
+
+662
+00:29:44,159 --> 00:29:46,880
+che gira su una macchina costruibile,
+
+663
+00:29:46,880 --> 00:29:48,320
+perché ovviamente se gira su una
+
+664
+00:29:48,320 --> 00:29:50,840
+macchina fantascientifica magari ne
+
+665
+00:29:50,840 --> 00:29:53,360
+troviamo, no? Allora, esiste un
+
+666
+00:29:53,360 --> 00:29:56,519
+algoritmo che gira su una macchina
+
+667
+00:29:56,519 --> 00:29:59,440
+realizzabile fisicamente
+
+668
+00:29:59,440 --> 00:30:01,440
+che è in grado di risolvere questo
+
+669
+00:30:01,440 --> 00:30:04,000
+problema. Quando diciamo è in grado di
+
+670
+00:30:04,000 --> 00:30:05,960
+risolvere questo problema, noi
+
+671
+00:30:05,960 --> 00:30:07,519
+intendiamo
+
+672
+00:30:07,519 --> 00:30:11,679
+noi intendiamo che dato un input o che
+
+673
+00:30:11,679 --> 00:30:14,200
+noi chiamiamo anche istanza di un
+
+674
+00:30:14,200 --> 00:30:16,120
+problema,
+
+675
+00:30:16,120 --> 00:30:18,440
+vogliamo essere sempre in grado di dare
+
+676
+00:30:18,440 --> 00:30:22,399
+la soluzione corretta. Ok? Questa èal la
+
+677
+00:30:22,399 --> 00:30:25,720
+calcolabilità dei problemi. Ok?
+
+678
+00:30:25,720 --> 00:30:28,200
+Noi non ovviamente ci dobbiamo
+
+679
+00:30:28,200 --> 00:30:30,440
+interessare della parte algoritmica per
+
+680
+00:30:30,440 --> 00:30:32,720
+risolvere queste cose bla bla, però
+
+681
+00:30:32,720 --> 00:30:34,320
+ovviamente noi la guarderemo da un
+
+682
+00:30:34,320 --> 00:30:36,080
+livello molto più astratto. Ecco perché,
+
+683
+00:30:36,080 --> 00:30:38,159
+come dicevo ai nostri colleghi da
+
+684
+00:30:38,159 --> 00:30:40,799
+matematica, non ci serve una conoscenza
+
+685
+00:30:40,799 --> 00:30:42,919
+approfondita di un linguaggio, ci serve
+
+686
+00:30:42,919 --> 00:30:46,440
+solo lo skill della capacità di pensare
+
+687
+00:30:46,440 --> 00:30:50,200
+a modi automatici e descrivibili in
+
+688
+00:30:50,200 --> 00:30:53,320
+qualche linguaggio di riuscire a
+
+689
+00:30:53,320 --> 00:30:55,880
+ottenere un risultato partendo da un
+
+690
+00:30:55,880 --> 00:30:58,080
+input. Ok?
+
+691
+00:30:58,080 --> 00:31:00,240
+Allora,
+
+692
+00:31:00,240 --> 00:31:02,919
+qua magari
+
+693
+00:31:02,919 --> 00:31:06,960
+posso pure scrivere qua.
+
+694
+00:31:09,919 --> 00:31:11,840
+Alri, quindi la nostra prima distinzione
+
+695
+00:31:11,840 --> 00:31:16,600
+che faremo nella prima parte del corso,
+
+696
+00:31:21,639 --> 00:31:23,880
+quello che saremo interessati è andare a
+
+697
+00:31:23,880 --> 00:31:26,279
+capire quali sono i problemi risolvibili
+
+698
+00:31:26,279 --> 00:31:29,440
+o decidibili. Sono tutte sinomini,
+
+699
+00:31:29,440 --> 00:31:32,760
+sinonimi, vi spiegherò perché, no? è il
+
+700
+00:31:32,760 --> 00:31:35,399
+nostro è il nostro primo task, no, della
+
+701
+00:31:35,399 --> 00:31:37,960
+prima parte del corso. Ci occuperemo di
+
+702
+00:31:37,960 --> 00:31:40,159
+capire se un dato problema si colloca
+
+703
+00:31:40,159 --> 00:31:43,399
+qua dentro o si colloca qua fuori. Ok?
+
+704
+00:31:43,399 --> 00:31:46,720
+Tutto quello. Quindi ci occuperemo di
+
+705
+00:31:46,720 --> 00:31:49,440
+capire ma io come faccio a capire se un
+
+706
+00:31:49,440 --> 00:31:52,440
+problema è irrisolvibile?
+
+707
+00:31:52,440 --> 00:31:56,639
+Ok? e quindi studieremo tutta una serie
+
+708
+00:31:56,639 --> 00:31:59,039
+di tecniche eccetera che ci permettono
+
+709
+00:31:59,039 --> 00:32:02,679
+di stabilire se un problema sta qua o un
+
+710
+00:32:02,679 --> 00:32:05,760
+problema sta qua. Ok? A intuito, secondo
+
+711
+00:32:05,760 --> 00:32:08,600
+voi come facciamo a stabilire che un
+
+712
+00:32:08,600 --> 00:32:12,440
+problema sta qua dentro?
+
+713
+00:32:14,480 --> 00:32:16,720
+Il modo più semplice è che esprimiamo un
+
+714
+00:32:16,720 --> 00:32:18,559
+gruppo che che lo risolve
+che lo
+
+715
+00:32:18,559 --> 00:32:21,200
+risolve. Ok? Cioè, siccome la per
+
+716
+00:32:21,200 --> 00:32:23,760
+definizione un problema è risolvibile se
+
+717
+00:32:23,760 --> 00:32:26,399
+esiste un algoritmo che lo risolve, se
+
+718
+00:32:26,399 --> 00:32:28,760
+dato un problema siamo in grado di tirar
+
+719
+00:32:28,760 --> 00:32:30,360
+fuori un algoritmo che lo risolve,
+
+720
+00:32:30,360 --> 00:32:34,600
+allora sta qua. Ok?
+
+721
+00:32:34,600 --> 00:32:37,320
+Come faremo a dimostr a mostrare che un
+
+722
+00:32:37,320 --> 00:32:42,080
+algoritmo che un problema sta qua?
+
+723
+00:32:43,559 --> 00:32:45,240
+Per assurdo.
+
+724
+00:32:45,240 --> 00:32:50,279
+Ok. Sì. Oppure
+per assurdo, cioè
+per
+
+725
+00:32:50,279 --> 00:32:52,919
+assurdo, ok? Oppure
+di solito si
+
+726
+00:32:52,919 --> 00:32:55,200
+riconuce al problema della fermata che
+
+727
+00:32:55,200 --> 00:32:57,320
+si dimostra in maniera abbastanza facile
+
+728
+00:32:57,320 --> 00:32:59,039
+per assunto che
+Sì. Ok. Quindi questo
+
+729
+00:32:59,039 --> 00:33:00,440
+problema della schermata lo conoscete
+
+730
+00:33:00,440 --> 00:33:02,159
+proprio bene, quindi siccome avevo in
+
+731
+00:33:02,159 --> 00:33:05,279
+mente di farlo dopo mi avete tagliato
+
+732
+00:33:05,279 --> 00:33:07,919
+metà della lezione. Ok? Allora, qual è
+
+733
+00:33:07,919 --> 00:33:11,440
+la parte qual è la parte comune alle
+
+734
+00:33:11,440 --> 00:33:13,200
+cose che avete detto? La parte comune è
+
+735
+00:33:13,200 --> 00:33:16,480
+che serve una dimostrazione formale, ok?
+
+736
+00:33:16,480 --> 00:33:20,320
+Perché secondo voi a intuito, no?
+
+737
+00:33:20,320 --> 00:33:21,720
+Supponiamo che stiamo lavorando per
+
+738
+00:33:21,720 --> 00:33:25,679
+un'azienda, no? E il nostro gran capo
+
+739
+00:33:25,679 --> 00:33:29,919
+ci dice m voglio battere la concorrenza,
+
+740
+00:33:29,919 --> 00:33:32,799
+ora scriviamo l'antivirus perfetto. Ok?
+
+741
+00:33:32,799 --> 00:33:35,799
+E ci molla questo problema da risolvere,
+
+742
+00:33:35,799 --> 00:33:38,279
+ok? Ci lavoriamo un mese, niente, due
+
+743
+00:33:38,279 --> 00:33:40,240
+mesi nulla,
+
+744
+00:33:40,240 --> 00:33:43,360
+ci sbatchiamo la testa per 6 mesi, va
+
+745
+00:33:43,360 --> 00:33:45,880
+avanti così abbiamo sempre risposte
+
+746
+00:33:45,880 --> 00:33:49,639
+approssimate. Ok, andiamo dal capo. Ci
+
+747
+00:33:49,639 --> 00:33:51,639
+siamo riusciti. Sei tu che non sei in
+
+748
+00:33:51,639 --> 00:33:54,399
+grado? Come? Ma io c' ho lavorato
+
+749
+00:33:54,399 --> 00:33:55,880
+tantissimo. No, sei tu che non sei in
+
+750
+00:33:55,880 --> 00:33:58,080
+grado. Allora, noi dovremmo in qualche
+
+751
+00:33:58,080 --> 00:33:59,880
+modo riuscire a argomentare questa cosa,
+
+752
+00:33:59,880 --> 00:34:01,080
+no?
+
+753
+00:34:01,080 --> 00:34:02,639
+Allora,
+
+754
+00:34:02,639 --> 00:34:05,760
+il fatto che
+
+755
+00:34:05,760 --> 00:34:09,159
+ci abbiamo lavorato sopra per mesi, no?
+
+756
+00:34:09,159 --> 00:34:11,399
+E abbiamo provato, che ne so, un
+
+757
+00:34:11,399 --> 00:34:14,440
+centinaio di soluzioni e nessuna di
+
+758
+00:34:14,440 --> 00:34:16,440
+quelle funzionava.
+
+759
+00:34:16,440 --> 00:34:18,520
+È sufficiente a dire che il problema è
+
+760
+00:34:18,520 --> 00:34:20,079
+risolvibile?
+
+761
+00:34:20,079 --> 00:34:23,399
+No. Che cosa dimostra?
+
+762
+00:34:23,399 --> 00:34:25,240
+Che quelle 100 soluzioni non andavano
+
+763
+00:34:25,240 --> 00:34:27,200
+bene? Tutto qua. Questo è quello che
+
+764
+00:34:27,200 --> 00:34:28,760
+arriviamo. Noi ci possiamo provare
+
+765
+00:34:28,760 --> 00:34:32,040
+100000 volte. Ok? Se tutti i nostri
+
+766
+00:34:32,040 --> 00:34:35,280
+tentativi non risolvono il problema, non
+
+767
+00:34:35,280 --> 00:34:37,359
+ci stanno dicendo che il problema è
+
+768
+00:34:37,359 --> 00:34:40,040
+irrisolvibile, sebbene ci possano dare
+
+769
+00:34:40,040 --> 00:34:42,639
+un'intuizione a riguardo, ok? Ci stanno
+
+770
+00:34:42,639 --> 00:34:45,119
+solo dicendo che i tentativi fatti non
+
+771
+00:34:45,119 --> 00:34:48,879
+vanno bene. Ok?
+
+772
+00:34:48,879 --> 00:34:50,760
+Supponiamo di essere ancora al lavoro su
+
+773
+00:34:50,760 --> 00:34:53,040
+questa problema dell'algoritmo bla bla.
+
+774
+00:34:53,040 --> 00:34:55,040
+Ok?
+
+775
+00:34:55,040 --> 00:34:58,920
+Secondo voi quanti supponiamo di star
+
+776
+00:34:58,920 --> 00:35:00,720
+programmando in Python? Python lo
+
+777
+00:35:00,720 --> 00:35:03,280
+conoscete tutti?
+
+778
+00:35:03,280 --> 00:35:05,400
+Quanti programmi si possono scrivere in
+
+779
+00:35:05,400 --> 00:35:08,400
+Python?
+
+780
+00:35:08,880 --> 00:35:11,000
+Quanti?
+
+781
+00:35:11,000 --> 00:35:14,119
+Infiniti.
+Infiniti. Ok. In Pyon possiamo
+
+782
+00:35:14,119 --> 00:35:17,440
+scrivere infiniti programmi. Ok. Come
+
+783
+00:35:17,440 --> 00:35:19,880
+facciamo a essere sicuri che nessuno di
+
+784
+00:35:19,880 --> 00:35:21,160
+quelli risolve il problema
+
+785
+00:35:21,160 --> 00:35:24,160
+dell'antivirus?
+
+786
+00:35:25,800 --> 00:35:27,880
+Una soluzione è che li proviamo tutti,
+
+787
+00:35:27,880 --> 00:35:32,320
+no? Mettiamo tra uno dopo l'altro.
+
+788
+00:35:32,320 --> 00:35:35,200
+Ecco, pure che ciamo che un minuto ad
+
+789
+00:35:35,200 --> 00:35:37,040
+algoritmo, quanto tempo ci serve a
+
+790
+00:35:37,040 --> 00:35:39,440
+provarli tutti?
+Abbastanza.
+Abbastanza.
+
+791
+00:35:39,440 --> 00:35:42,320
+Abbastanza. Saremo un po' invecchiati
+
+792
+00:35:42,320 --> 00:35:44,200
+quando saremo arrivati al milionesimo
+
+793
+00:35:44,200 --> 00:35:47,400
+algoritmo. Ok? Il provarli tutti non è
+
+794
+00:35:47,400 --> 00:35:50,200
+una strategia, cioè è una strategia, ma
+
+795
+00:35:50,200 --> 00:35:52,720
+è una strategia per impazzire, cosa che
+
+796
+00:35:52,720 --> 00:35:55,760
+vorremmo evitare. Allora, vieni già
+
+797
+00:35:55,760 --> 00:35:59,119
+un'altra cosa, ok? Dobbiamo dimostrare
+
+798
+00:35:59,119 --> 00:36:02,160
+che nessuno di quegli algoritmi è in
+
+799
+00:36:02,160 --> 00:36:05,400
+grado di risolverlo. Ok? Per far questo
+
+800
+00:36:05,400 --> 00:36:09,040
+ci serve una dimostrazione formale, cioè
+
+801
+00:36:09,040 --> 00:36:12,200
+noi dobbiamo entrare nella struttura del
+
+802
+00:36:12,200 --> 00:36:13,760
+problema
+
+803
+00:36:13,760 --> 00:36:16,560
+e far vedere che per come è strutturato
+
+804
+00:36:16,560 --> 00:36:19,440
+il problema possiamo sbattere la testa
+
+805
+00:36:19,440 --> 00:36:23,400
+quanto vogliamo, non avremo mai un
+
+806
+00:36:23,400 --> 00:36:26,680
+algoritmo che è in grado di risolverlo.
+
+807
+00:36:26,680 --> 00:36:29,480
+Ok? Cioè, quindi questa è la differenza
+
+808
+00:36:29,480 --> 00:36:33,720
+sostanziale fra provare che un problema
+
+809
+00:36:33,720 --> 00:36:36,160
+sta fuori l'insieme e provare che un
+
+810
+00:36:36,160 --> 00:36:38,200
+insieme sta che un problema sta dentro
+
+811
+00:36:38,200 --> 00:36:41,040
+l'insieme, ok? Qui ci basta un solo
+
+812
+00:36:41,040 --> 00:36:44,880
+algoritmo, ok? per dimostrare
+
+813
+00:36:44,880 --> 00:36:48,839
+che eh il problema è risolubile, qui ci
+
+814
+00:36:48,839 --> 00:36:50,599
+serve una dimostrazione formale, cioè
+
+815
+00:36:50,599 --> 00:36:52,480
+qui noi dobbiamo andare sulla struttura
+
+816
+00:36:52,480 --> 00:36:55,319
+del problema per mostrare che il
+
+817
+00:36:55,319 --> 00:36:59,960
+problema non si risolve. Ok? Quindi il
+
+818
+00:36:59,960 --> 00:37:03,359
+la questione della complessità sarà
+
+819
+00:37:03,359 --> 00:37:05,520
+essenzialmente, dato un problema,
+
+820
+00:37:05,520 --> 00:37:07,599
+riuscire a collocarlo qua dentro o qua
+
+821
+00:37:07,599 --> 00:37:10,760
+fuori. Tutto qua. Ok? ci inventeremo dei
+
+822
+00:37:10,760 --> 00:37:12,920
+modi, vi spiegherò delle tecniche
+
+823
+00:37:12,920 --> 00:37:15,280
+eccetera. Prego.
+Dimostrando che un
+
+824
+00:37:15,280 --> 00:37:17,240
+problema non è risolvibile, posso
+
+825
+00:37:17,240 --> 00:37:21,319
+dimostrare che anche che è risolvibile,
+
+826
+00:37:21,319 --> 00:37:24,640
+cioè
+cioè piuttosto che andare, diciamo,
+
+827
+00:37:24,640 --> 00:37:27,319
+forza a cercare un algoritmo che me lo
+
+828
+00:37:27,319 --> 00:37:30,720
+dimostra, io parto dalla dimostrazione e
+
+829
+00:37:30,720 --> 00:37:32,119
+da questa dimostrazione, cioè la mia
+
+830
+00:37:32,119 --> 00:37:34,200
+domanda è scopro solo che non è
+
+831
+00:37:34,200 --> 00:37:36,760
+risolvibile o di conseguenza scopro
+
+832
+00:37:36,760 --> 00:37:38,599
+anche che è risolvibile, quindi mi metto
+
+833
+00:37:38,599 --> 00:37:40,800
+a 50.
+
+834
+00:37:40,800 --> 00:37:42,839
+Allora, la questione è che ovviamente se
+
+835
+00:37:42,839 --> 00:37:45,480
+io devo dimostrare che un certo problema
+
+836
+00:37:45,480 --> 00:37:47,880
+è risolvibile, io devo arrivare a un
+
+837
+00:37:47,880 --> 00:37:49,520
+algoritmo che sia in grado di
+
+838
+00:37:49,520 --> 00:37:54,319
+risolverlo. Ok? Adesso
+
+839
+00:37:54,319 --> 00:37:57,359
+provare tutti gli algoritmi per vedere
+
+840
+00:37:57,359 --> 00:38:00,000
+se arriviamo a qualcosa che risolva un
+
+841
+00:38:00,000 --> 00:38:04,040
+problema è è impegnativo, cioè come
+
+842
+00:38:04,040 --> 00:38:06,400
+strategia per dimostrare che qualcosa è
+
+843
+00:38:06,400 --> 00:38:09,760
+risolvibile. Ok? Però è interessante,
+
+844
+00:38:09,760 --> 00:38:13,960
+nel senso io posso pure,
+
+845
+00:38:15,880 --> 00:38:18,800
+ad esempio, parliamo dai, dei programmi
+
+846
+00:38:18,800 --> 00:38:21,760
+Python, no? I programmi Python noi li
+
+847
+00:38:21,760 --> 00:38:23,880
+possiamo codificare in delle stringhe,
+
+848
+00:38:23,880 --> 00:38:25,680
+alla fine un programma Python e una
+
+849
+00:38:25,680 --> 00:38:27,480
+stringa. Le stringhe le possiamo
+
+850
+00:38:27,480 --> 00:38:31,000
+ordinare, no? Per lunghezza quelle che
+
+851
+00:38:31,000 --> 00:38:33,400
+sono lunghe uguali le ordiniamo in
+
+852
+00:38:33,400 --> 00:38:35,640
+maniera alfabetica. Ok? Quindi in linea
+
+853
+00:38:35,640 --> 00:38:37,359
+di principio io mi posso costruire un
+
+854
+00:38:37,359 --> 00:38:40,160
+while talmente grosso che mi gira su
+
+855
+00:38:40,160 --> 00:38:43,240
+tutti i programmi Python risolvibili ma
+
+856
+00:38:43,240 --> 00:38:46,280
+scrivibili. A un certo punto se un
+
+857
+00:38:46,280 --> 00:38:48,280
+tentativo di quello mi risolve il
+
+858
+00:38:48,280 --> 00:38:51,040
+problema, potrei dire sì, questo
+
+859
+00:38:51,040 --> 00:38:53,839
+problema è risolvibile. Il la questione
+
+860
+00:38:53,839 --> 00:38:55,560
+di questo approccio è che prende una
+
+861
+00:38:55,560 --> 00:38:58,680
+marea di tempo e se il problema non è
+
+862
+00:38:58,680 --> 00:39:00,960
+risolvibile io non lo saprò mai perché
+
+863
+00:39:00,960 --> 00:39:03,599
+quel guai mi girerà all'infinito. Ok?
+
+864
+00:39:03,599 --> 00:39:05,200
+Quindi, però in linea di principio uno
+
+865
+00:39:05,200 --> 00:39:07,359
+lo potrebbe fare. La questione è che non
+
+866
+00:39:07,359 --> 00:39:11,240
+mi dà garanzia di uscita. Ok, prego.
+
+867
+00:39:11,240 --> 00:39:14,240
+Sempre su questo tema, cioè, quindi noi
+
+868
+00:39:14,240 --> 00:39:16,079
+l'unico modo che abbiamo di dimostrare
+
+869
+00:39:16,079 --> 00:39:19,160
+labilità è la cioè non possiamo
+
+870
+00:39:19,160 --> 00:39:21,119
+dimostrare laità senza creare un
+
+871
+00:39:21,119 --> 00:39:23,520
+algoritmica.
+
+872
+00:39:23,520 --> 00:39:26,839
+Questo lo vedremo. Allora, quello che si
+
+873
+00:39:26,839 --> 00:39:28,920
+può fare, questo lo vedremo. C'è una
+
+874
+00:39:28,920 --> 00:39:30,480
+tecnica particolare che si chiama
+
+875
+00:39:30,480 --> 00:39:34,200
+riduzione, la vedremo poi come dimostro
+
+876
+00:39:34,200 --> 00:39:36,640
+che l'antivirus è isomorfo al problema
+
+877
+00:39:36,640 --> 00:39:38,400
+della fermata e che quindi quel
+
+878
+00:39:38,400 --> 00:39:40,240
+problema, siccome il problema della
+
+879
+00:39:40,240 --> 00:39:42,359
+fermata è irrisolvibile, allora l' il
+
+880
+00:39:42,359 --> 00:39:44,400
+problema dell'antivirus è irrisolvibile
+
+881
+00:39:44,400 --> 00:39:46,880
+perché i due problemi sono isomorfi. Se
+
+882
+00:39:46,880 --> 00:39:48,920
+io dimostro che un certo problema è
+
+883
+00:39:48,920 --> 00:39:52,640
+isomorfo a un altro che so risolvere,
+
+884
+00:39:52,640 --> 00:39:55,079
+allora io ottengo la decidibilità di
+
+885
+00:39:55,079 --> 00:39:57,200
+quell'altro. Ok? Però questa è una cosa
+
+886
+00:39:57,200 --> 00:39:59,960
+che vedremo tra qualche lezione, ok?
+
+887
+00:39:59,960 --> 00:40:02,920
+Però sì, è un approccio. Poi c'ho un
+
+888
+00:40:02,920 --> 00:40:04,760
+aneddoto di quando ero studente di come
+
+889
+00:40:04,760 --> 00:40:06,960
+abbiamo risolto delle cose e vi farò
+
+890
+00:40:06,960 --> 00:40:09,640
+vedere, però sì, in linea di principio
+
+891
+00:40:09,640 --> 00:40:11,880
+uno può fare questa cosa qua, ok?
+
+892
+00:40:11,880 --> 00:40:14,440
+mostrare che due problemi sono isomorfi.
+
+893
+00:40:14,440 --> 00:40:16,160
+Se uno dei due lo conosco essere
+
+894
+00:40:16,160 --> 00:40:17,720
+decidibile lo deve essere per forza
+
+895
+00:40:17,720 --> 00:40:21,160
+l'altro. Ok?
+
+896
+00:40:21,160 --> 00:40:22,760
+Quindi per rispondere alla seconda
+
+897
+00:40:22,760 --> 00:40:25,160
+domanda, how are we going to achieve
+
+898
+00:40:25,160 --> 00:40:27,560
+that?
+
+899
+00:40:27,560 --> 00:40:30,000
+Siccome noi dobbiamo dimostrare,
+
+900
+00:40:30,000 --> 00:40:31,920
+dobbiamo dimostrare che un problema sta
+
+901
+00:40:31,920 --> 00:40:34,200
+qua, dovremmo essere formali, ok? Quindi
+
+902
+00:40:34,200 --> 00:40:37,560
+avremo teoremi, eccetera, ok? Però mi
+
+903
+00:40:37,560 --> 00:40:39,200
+sembra di capire, e questa è una cosa
+
+904
+00:40:39,200 --> 00:40:41,119
+buona, che voi ne avete già visti un
+
+905
+00:40:41,119 --> 00:40:42,839
+po', quindi un'infarinatura di
+
+906
+00:40:42,839 --> 00:40:47,760
+formalismo ne avete, ok?
+
+907
+00:40:47,760 --> 00:40:49,880
+Mi sembra mi sembra di capire che vi
+
+908
+00:40:49,880 --> 00:40:52,000
+metto in una posizione molto migliore
+
+909
+00:40:52,000 --> 00:40:53,640
+rispetto agli studenti che avevo in
+
+910
+00:40:53,640 --> 00:40:55,079
+Inghilterra dove era il primo corso
+
+911
+00:40:55,079 --> 00:40:57,480
+formale che vedevano li vedevo un attimo
+
+912
+00:40:57,480 --> 00:41:00,640
+spaesati, era da inventarsi un po' la
+
+913
+00:41:00,640 --> 00:41:03,560
+cosa. Prego.
+Quindi il problema di
+
+914
+00:41:03,560 --> 00:41:06,119
+classificare un problema come decidibile
+
+915
+00:41:06,119 --> 00:41:07,520
+indecidibile non è un problema
+
+916
+00:41:07,520 --> 00:41:09,800
+decidibile,
+è indecidibile.
+
+917
+00:41:09,800 --> 00:41:11,359
+Quindi anche noi faremo delle
+
+918
+00:41:11,359 --> 00:41:14,440
+approssimazioni, cioè capiamo in un
+
+919
+00:41:14,440 --> 00:41:17,240
+programma un programma specifico magari
+
+920
+00:41:17,240 --> 00:41:19,040
+si può sapere se è decidibile o no,
+
+921
+00:41:19,040 --> 00:41:21,760
+mentre
+un problema non un
+un problema,
+
+922
+00:41:21,760 --> 00:41:24,520
+mentre tutti i problemi, cioè capirlo su
+
+923
+00:41:24,520 --> 00:41:26,280
+tutti i problemi è indeciso,
+non lo non
+
+924
+00:41:26,280 --> 00:41:28,640
+lo si può automatizzare, no? Cioè è una
+
+925
+00:41:28,640 --> 00:41:30,720
+questione di inventiva,
+quindi quello
+
+926
+00:41:30,720 --> 00:41:33,240
+che facciamo noi
+è indecibile. Cioè
+
+927
+00:41:33,240 --> 00:41:35,960
+quello che noi umani facciamo, cioè
+
+928
+00:41:35,960 --> 00:41:38,280
+stabilire se un problema è decidibile o
+
+929
+00:41:38,280 --> 00:41:40,839
+meno è di per sé una questione
+
+930
+00:41:40,839 --> 00:41:42,720
+indecidibile, cioè una questione che non
+
+931
+00:41:42,720 --> 00:41:45,359
+può essere automatizzata. Ok? Quindi
+
+932
+00:41:45,359 --> 00:41:47,319
+ovviamente ci stiamo buttando in un'area
+
+933
+00:41:47,319 --> 00:41:49,960
+abbastanza, cioè dove la creatività
+
+934
+00:41:49,960 --> 00:41:51,880
+nostra fa la differenza. Il computer non
+
+935
+00:41:51,880 --> 00:41:55,040
+sarebbe in grado di farlo. Ok?
+
+936
+00:41:55,040 --> 00:41:57,119
+Alright. Finisco di rispondere alle
+
+937
+00:41:57,119 --> 00:42:00,160
+domande e poi facciamo pausa. Ah, quindi
+
+938
+00:42:00,160 --> 00:42:03,440
+vedremo cose formali, bla bla eccetera
+
+939
+00:42:03,440 --> 00:42:05,520
+che però, insomma,
+
+940
+00:42:05,520 --> 00:42:07,240
+sono confident a questo punto che siete
+
+941
+00:42:07,240 --> 00:42:09,839
+in grado di di seguire perché ne avete
+
+942
+00:42:09,839 --> 00:42:12,359
+già fatte. Ok?
+
+943
+00:42:12,359 --> 00:42:16,440
+Che difficoltà andremo a incontrare?
+
+944
+00:42:16,440 --> 00:42:19,240
+Ovviamente la difficoltà di approcciare
+
+945
+00:42:19,240 --> 00:42:20,599
+le questioni da un punto di vista
+
+946
+00:42:20,599 --> 00:42:22,880
+formale. Questa è la cosa che renderà il
+
+947
+00:42:22,880 --> 00:42:24,800
+tutto un po' più complicato, ok? Perché
+
+948
+00:42:24,800 --> 00:42:26,440
+dobbiamo sviluppare un linguaggio
+
+949
+00:42:26,440 --> 00:42:29,359
+formale. Quello che veramente mi preme
+
+950
+00:42:29,359 --> 00:42:31,440
+da questo corso
+
+951
+00:42:31,440 --> 00:42:33,520
+è questa cosa qua, più che trasferirvi
+
+952
+00:42:33,520 --> 00:42:35,440
+contenuti, perché quelli vabbò so cose
+
+953
+00:42:35,440 --> 00:42:38,280
+che aprire i libri e si fa. Quello che
+
+954
+00:42:38,280 --> 00:42:40,760
+mi preme
+
+955
+00:42:40,760 --> 00:42:44,599
+è trasferirvi degli skill, ok? La
+
+956
+00:42:44,599 --> 00:42:48,280
+capacità di formalizzare problemi, la
+
+957
+00:42:48,280 --> 00:42:51,000
+capacità di pensare in maniera precisa.
+
+958
+00:42:51,000 --> 00:42:55,200
+Ok, è chiara. Quello è lo skill che mi
+
+959
+00:42:55,200 --> 00:42:59,119
+mi preme trasmettervi, perché tra
+
+960
+00:42:59,119 --> 00:43:01,160
+qualche non dico nemmeno fra qualche
+
+961
+00:43:01,160 --> 00:43:03,800
+anno, fra dopo due settimane che avete
+
+962
+00:43:03,800 --> 00:43:06,599
+passato l'esame di sta roba ve la sarete
+
+963
+00:43:06,599 --> 00:43:09,240
+dimenticata con buona probabilità e con
+
+964
+00:43:09,240 --> 00:43:11,200
+altissima probabilità non la rivedrete
+
+965
+00:43:11,200 --> 00:43:13,160
+più in vita vostra, ok? Perché è una
+
+966
+00:43:13,160 --> 00:43:15,400
+cosa talmente settoriale
+
+967
+00:43:15,400 --> 00:43:16,920
+dell'informatica, cioè che quando
+
+968
+00:43:16,920 --> 00:43:19,119
+andrete a lavorare nessuno vi chiederà
+
+969
+00:43:19,119 --> 00:43:21,520
+il teorema di Rise o come fai a
+
+970
+00:43:21,520 --> 00:43:23,480
+dimostrare che il problema dell'arresto
+
+971
+00:43:23,480 --> 00:43:26,960
+è indecidibile. Ok? Però quello che mi
+
+972
+00:43:26,960 --> 00:43:31,359
+preme che rimanga a voi è la capacità di
+
+973
+00:43:31,359 --> 00:43:34,720
+formalizzare. Ok?
+
+974
+00:43:34,720 --> 00:43:36,400
+Questo è veramente importante perché
+
+975
+00:43:36,400 --> 00:43:38,520
+questo lo potrete riutilizzare nel mondo
+
+976
+00:43:38,520 --> 00:43:41,280
+del lavoro. Cioè io non assumo che molti
+
+977
+00:43:41,280 --> 00:43:45,480
+di voi perseguiranno una carriera nella
+
+978
+00:43:45,480 --> 00:43:48,000
+ricerca né accademica né industriale.
+
+979
+00:43:48,000 --> 00:43:50,160
+Molti di noi alla fine fanno altri
+
+980
+00:43:50,160 --> 00:43:54,000
+lavori, ok? Però in tutti questi lavori
+
+981
+00:43:54,000 --> 00:43:56,000
+essere precisi, cioè viene il
+
+982
+00:43:56,000 --> 00:43:59,119
+committente, mi chiede di progettare
+
+983
+00:43:59,119 --> 00:44:01,760
+qualcosa, no? E inizia a parlare di aria
+
+984
+00:44:01,760 --> 00:44:04,079
+frutta, ok?
+
+985
+00:44:04,079 --> 00:44:05,720
+Allora, qual è il problema di un
+
+986
+00:44:05,720 --> 00:44:10,559
+committente che ci chiede aria fritta?
+
+987
+00:44:11,880 --> 00:44:14,800
+Ambiguo e quindi
+è difficile capire cosa
+
+988
+00:44:14,800 --> 00:44:16,880
+vuole.
+È cap è difficile capire cosa
+
+989
+00:44:16,880 --> 00:44:19,000
+vuole e quindi
+
+990
+00:44:19,000 --> 00:44:21,200
+fa capire cosa vuole possibilità
+e
+
+991
+00:44:21,200 --> 00:44:24,119
+quindi e quindi lui si può lamentare
+
+992
+00:44:24,119 --> 00:44:26,599
+sempre.
+
+993
+00:44:26,599 --> 00:44:28,640
+Sapete dove sta l'inghitto. Se uno viene
+
+994
+00:44:28,640 --> 00:44:31,079
+e vi fa richieste che non sono precise,
+
+995
+00:44:31,079 --> 00:44:32,960
+quello vi può armare questioni dalla
+
+996
+00:44:32,960 --> 00:44:35,680
+mattina alla sera perché eh, ma io non
+
+997
+00:44:35,680 --> 00:44:37,319
+volevo questo. Eh, ma tu non me l'hai
+
+998
+00:44:37,319 --> 00:44:39,760
+detto, eh, ma tu non me l'hai chiesto.
+
+999
+00:44:39,760 --> 00:44:42,760
+Ok? Cioè, quindi la capacità di
+
+1000
+00:44:42,760 --> 00:44:44,800
+formalizzare in realtà è di essere
+
+1001
+00:44:44,800 --> 00:44:47,280
+precisi e è questo è il mio scopo in
+
+1002
+00:44:47,280 --> 00:44:50,400
+questo corso, ok? sfruttare
+
+1003
+00:44:50,400 --> 00:44:53,040
+il topic dell'informatica teorica bla
+
+1004
+00:44:53,040 --> 00:44:56,200
+bla, ma più che altro per imparare ad
+
+1005
+00:44:56,200 --> 00:44:59,440
+organizzare il pensiero in maniera un
+
+1006
+00:44:59,440 --> 00:45:02,040
+po' più precisa, ok? In maniera
+
+1007
+00:45:02,040 --> 00:45:03,960
+puntuale,
+
+1008
+00:45:03,960 --> 00:45:06,720
+come supereremo la problematica,
+
+1009
+00:45:06,720 --> 00:45:08,280
+appunto, della formalizzazione? Quindi
+
+1010
+00:45:08,280 --> 00:45:10,520
+il formalizzare per noi sarà solamente
+
+1011
+00:45:10,520 --> 00:45:14,520
+una scusa, ok? per impratirci nel
+
+1012
+00:45:14,520 --> 00:45:18,040
+diventare più precisi e nel diventare
+
+1013
+00:45:18,040 --> 00:45:21,680
+abili a gestire, no, le ambiguità, ok?
+
+1014
+00:45:21,680 --> 00:45:23,839
+Che quello nel mondo del lavoro ci
+
+1015
+00:45:23,839 --> 00:45:27,240
+serve. Come lo faremo? Ok? Ovviamente il
+
+1016
+00:45:27,240 --> 00:45:30,839
+modo usuale, vi spiegherò le cose,
+
+1017
+00:45:30,839 --> 00:45:34,079
+interagiremo perché vorrò vedere un po'
+
+1018
+00:45:34,079 --> 00:45:36,480
+come mi state appresso. Cercheremo di
+
+1019
+00:45:36,480 --> 00:45:39,680
+inventarci cose assieme.
+
+1020
+00:45:39,680 --> 00:45:41,520
+Per quanto mi è possibile, una cosa che
+
+1021
+00:45:41,520 --> 00:45:43,599
+io ho imparato durante la mia carriera,
+
+1022
+00:45:43,599 --> 00:45:47,280
+quello che cercherò di fare è spiegarvi
+
+1023
+00:45:47,280 --> 00:45:49,760
+cosa faccio io nella mia testa, perché
+
+1024
+00:45:49,760 --> 00:45:51,480
+io vi posso pure scrivere le cose alla
+
+1025
+00:45:51,480 --> 00:45:54,240
+lavagna, però vedete il prodotto di
+
+1026
+00:45:54,240 --> 00:45:55,760
+quello che faccio io nella mia testa,
+
+1027
+00:45:55,760 --> 00:45:58,640
+no? In genere questo non viene spiegato
+
+1028
+00:45:58,640 --> 00:46:01,160
+il processo interno. Ok? Allora, uno dei
+
+1029
+00:46:01,160 --> 00:46:02,760
+miei obiettivi sarà, per quanto
+
+1030
+00:46:02,760 --> 00:46:04,280
+possibile spiegarvi, guardate che io
+
+1031
+00:46:04,280 --> 00:46:05,760
+nella mia testa faccio questo per
+
+1032
+00:46:05,760 --> 00:46:07,960
+arrivare a questa cosa qua, ok? in
+
+1033
+00:46:07,960 --> 00:46:11,319
+maniera tale da trasferirvi lo skill mio
+
+1034
+00:46:11,319 --> 00:46:13,520
+che quello sui libri non ci sta scritto.
+
+1035
+00:46:13,520 --> 00:46:15,680
+Ok?
+
+1036
+00:46:15,680 --> 00:46:18,640
+Quindi, come potete vedere stiamo
+
+1037
+00:46:18,640 --> 00:46:20,720
+registrando la lezione. Quelle le
+
+1038
+00:46:20,720 --> 00:46:22,520
+metterò disponibili, una cosa che ci
+
+1039
+00:46:22,520 --> 00:46:23,839
+sono abituato da tanti anni in
+
+1040
+00:46:23,839 --> 00:46:26,280
+Inghilterra era proprio così di default.
+
+1041
+00:46:26,280 --> 00:46:29,200
+C'era un tasto enorme sul
+
+1042
+00:46:29,200 --> 00:46:31,160
+tavolo, premevi, partiva la
+
+1043
+00:46:31,160 --> 00:46:33,160
+videoregistrazione. Ok? Quindi era
+
+1044
+00:46:33,160 --> 00:46:35,319
+proprio di default la cosa, tutto che mi
+
+1045
+00:46:35,319 --> 00:46:37,240
+ha registrato, quindi ci sono abituato
+
+1046
+00:46:37,240 --> 00:46:40,480
+per me farmi registrare, ok? So che è
+
+1047
+00:46:40,480 --> 00:46:42,200
+importante per voi per riuscire a
+
+1048
+00:46:42,200 --> 00:46:44,680
+riguardare le lezioni eccetera. È
+
+1049
+00:46:44,680 --> 00:46:46,119
+importante per me perché io l'anno
+
+1050
+00:46:46,119 --> 00:46:48,480
+prossimo mi riguardo le registrazioni e
+
+1051
+00:46:48,480 --> 00:46:51,200
+ehm
+
+1052
+00:46:51,200 --> 00:46:53,200
+e poi mi serve per riorganizzarmi perché
+
+1053
+00:46:53,200 --> 00:46:54,599
+insomma questa è la prima volta che lo
+
+1054
+00:46:54,599 --> 00:46:56,119
+faccio dopo tanti anni perché lo
+
+1055
+00:46:56,119 --> 00:46:57,680
+insegnavo in Inghilterra. Mi devo un
+
+1056
+00:46:57,680 --> 00:46:59,920
+attimo organizzare gli argomenti, quindi
+
+1057
+00:46:59,920 --> 00:47:02,200
+voi purtroppo siete un pochino cavi, eh.
+
+1058
+00:47:02,200 --> 00:47:04,000
+Però mi serve a me per spostare
+
+1059
+00:47:04,000 --> 00:47:05,680
+argomenti, ma cosa faccio fino alla
+
+1060
+00:47:05,680 --> 00:47:07,400
+pausa? Cosa faccio dopo pausa? Io sono
+
+1061
+00:47:07,400 --> 00:47:09,079
+questi appunti che mi prendo alla fine
+
+1062
+00:47:09,079 --> 00:47:11,160
+della lezione e me la devo riguardare,
+
+1063
+00:47:11,160 --> 00:47:14,200
+ok? Quindi mi serve a me,
+
+1064
+00:47:14,200 --> 00:47:16,599
+quindi voi potrete riutilizzarlo. Quello
+
+1065
+00:47:16,599 --> 00:47:19,359
+che ho visto in Inghilterra spesso è che
+
+1066
+00:47:19,359 --> 00:47:21,800
+dopo qualche settimana l'attendance
+
+1067
+00:47:21,800 --> 00:47:24,520
+delle lezioni precipita perché se è
+
+1068
+00:47:24,520 --> 00:47:26,040
+disponibile registrarlo, per quindi
+
+1069
+00:47:26,040 --> 00:47:27,440
+dovrei andare a seguire la lezione alle
+
+1070
+00:47:27,440 --> 00:47:30,720
+8:30, lo capisco, farei la stessa cosa.
+
+1071
+00:47:30,720 --> 00:47:32,599
+Ragazzi miei, fate un po' come volete.
+
+1072
+00:47:32,599 --> 00:47:36,160
+La questione è che se siete qua
+
+1073
+00:47:36,160 --> 00:47:40,960
+ci sono due ordini di cose positive. Da
+
+1074
+00:47:40,960 --> 00:47:43,599
+un lato voi essendo qua avete la
+
+1075
+00:47:43,599 --> 00:47:48,119
+possibilità di farmi domande, ok? Eh, su
+
+1076
+00:47:48,119 --> 00:47:50,520
+su come sto ragionando, eccetera. Se ve
+
+1077
+00:47:50,520 --> 00:47:53,559
+la guardate in televisione e dovete
+
+1078
+00:47:53,559 --> 00:47:55,040
+limitarvi alle domande che faranno i
+
+1079
+00:47:55,040 --> 00:47:57,359
+vostri colleghi. Alle volte ci
+
+1080
+00:47:57,359 --> 00:47:58,920
+acchiappano, fanno le stesse domande
+
+1081
+00:47:58,920 --> 00:48:01,040
+vostre, altre volte no. Quindi vedete un
+
+1082
+00:48:01,040 --> 00:48:02,839
+po' voi
+
+1083
+00:48:02,839 --> 00:48:07,880
+la vostra presenza qua serve a me perché
+
+1084
+00:48:07,880 --> 00:48:11,720
+gradirei l'interagire e perché io
+
+1085
+00:48:11,720 --> 00:48:17,079
+calibro la lezione sulle vostre risposte
+
+1086
+00:48:17,079 --> 00:48:20,440
+non verbali
+
+1087
+00:48:20,720 --> 00:48:22,079
+perché cioè voi tutti avete
+
+1088
+00:48:22,079 --> 00:48:23,880
+un'espressione in volta, insomma riesco
+
+1089
+00:48:23,880 --> 00:48:25,559
+a capire se mi state seguendo o meno,
+
+1090
+00:48:25,559 --> 00:48:27,559
+no? Se siete dietro una telecamera io
+
+1091
+00:48:27,559 --> 00:48:29,160
+questo non lo riesco a fare perché non
+
+1092
+00:48:29,160 --> 00:48:31,040
+vi riesco a guardare in faccia, ok?
+
+1093
+00:48:31,040 --> 00:48:33,079
+Quindi la calibrazione sul non verbale,
+
+1094
+00:48:33,079 --> 00:48:35,599
+quella la riesco a fare solo se siete
+
+1095
+00:48:35,599 --> 00:48:40,680
+presenti in aula. Eh, per il resto
+
+1096
+00:48:40,680 --> 00:48:42,400
+mi sa che abbiamo detto tutto, giusto?
+
+1097
+00:48:42,400 --> 00:48:44,880
+Mi guardo gli appunti, se mi ero segnato
+
+1098
+00:48:44,880 --> 00:48:47,640
+altro.
+
+1099
+00:48:47,640 --> 00:48:49,520
+Una domanda.
+Sì,
+queste registrazioni
+
+1100
+00:48:49,520 --> 00:48:52,720
+per caricar su virtuale sono forno?
+
+1101
+00:48:52,720 --> 00:48:54,319
+Come? Scusa,
+queste registrazioni
+
+1102
+00:48:54,319 --> 00:48:55,920
+verranno caricate su virtuale o su
+
+1103
+00:48:55,920 --> 00:48:58,520
+unaltra piattaforma?
+Verranno carite car
+
+1104
+00:48:58,520 --> 00:49:00,799
+virtuale. Sì, le registro con Panopto e
+
+1105
+00:49:00,799 --> 00:49:03,119
+le metto là sopra il link subirtuale.
+
+1106
+00:49:03,119 --> 00:49:05,000
+Metto tutti i link da lì potete
+
+1107
+00:49:05,000 --> 00:49:06,480
+accedere.
+
+1108
+00:49:06,480 --> 00:49:09,799
+Structure of problems.
+
+1109
+00:49:09,799 --> 00:49:11,599
+Yes. Penso che ci possiamo fare una
+
+1110
+00:49:11,599 --> 00:49:14,400
+bella pausa.
+
+1111
+00:49:14,400 --> 00:49:17,400
+Alr,
+
+1112
+00:49:17,840 --> 00:49:20,160
+[Musica]
+
+1113
+00:49:20,160 --> 00:49:25,720
+facciamo 10 minuti di pausa. 10-12.
+
+1114
+00:49:26,040 --> 00:49:28,880
+Ok,
+
+1115
+00:49:28,880 --> 00:49:32,160
+cool. Mi sono dimenticato ovviamente di
+
+1116
+00:49:32,160 --> 00:49:33,839
+prima una cosa su questo perché abbiamo
+
+1117
+00:49:33,839 --> 00:49:36,480
+parlato solo di calcolabilità, ok? Cioè,
+
+1118
+00:49:36,480 --> 00:49:38,200
+dato un problema, noi ci vogliamo
+
+1119
+00:49:38,200 --> 00:49:41,040
+vogliamo capire se esiste un algoritmo,
+
+1120
+00:49:41,040 --> 00:49:43,280
+esisterà mai un algoritmo che risolve
+
+1121
+00:49:43,280 --> 00:49:45,040
+questo problema con me. Ok? Questa è la
+
+1122
+00:49:45,040 --> 00:49:50,400
+questione della decidibilità, ok?
+
+1123
+00:49:50,400 --> 00:49:53,839
+Questo task, decidere se un arrivare a
+
+1124
+00:49:53,839 --> 00:49:56,280
+capire se un problema è decidibile o
+
+1125
+00:49:56,280 --> 00:49:58,000
+meno è esso stesso una questione
+
+1126
+00:49:58,000 --> 00:50:00,200
+indecidibile, cioè una cosa che ci
+
+1127
+00:50:00,200 --> 00:50:03,040
+arriviamo se ce la inventiamo noi. Ok?
+
+1128
+00:50:03,040 --> 00:50:04,559
+Interessante. Non ci avevo mai pensato a
+
+1129
+00:50:04,559 --> 00:50:08,000
+questo. E questa è la calcolabilità. Ok?
+
+1130
+00:50:08,000 --> 00:50:11,880
+Prima parte sarà P 3 4 settimane, una
+
+1131
+00:50:11,880 --> 00:50:13,960
+cosa del genere. Dopodiché abbiamo
+
+1132
+00:50:13,960 --> 00:50:17,240
+dall'altro lato complessità.
+
+1133
+00:50:17,240 --> 00:50:19,640
+Cos'è la complessità?
+
+1134
+00:50:19,640 --> 00:50:23,480
+fra tutti i problemi decidibili.
+
+1135
+00:50:23,480 --> 00:50:27,799
+Ok? Quindi ora stiamo portando il focus
+
+1136
+00:50:27,799 --> 00:50:29,359
+dell'attenzione
+
+1137
+00:50:29,359 --> 00:50:33,920
+a questo insieme qua, no? Quindi fra
+
+1138
+00:50:33,920 --> 00:50:39,040
+tutto quello che c'è qua dentro,
+
+1139
+00:50:40,400 --> 00:50:42,799
+dai, se è una cosa ovviamente che non vi
+
+1140
+00:50:42,799 --> 00:50:45,640
+ho sottolineato, ma è semplice. Se non
+
+1141
+00:50:45,640 --> 00:50:48,640
+capite mi fermate, eh.
+
+1142
+00:50:48,640 --> 00:50:50,359
+Sono ben contento di ripetere e
+
+1143
+00:50:50,359 --> 00:50:52,359
+inventarmi modi diversi di spiegare le
+
+1144
+00:50:52,359 --> 00:50:55,200
+cose per farvi capire. Poi un'altra
+
+1145
+00:50:55,200 --> 00:50:56,839
+cosa,
+
+1146
+00:50:56,839 --> 00:51:00,200
+tendo a parlare veloce.
+
+1147
+00:51:00,200 --> 00:51:03,359
+Se vado troppo veloce mi dite di
+
+1148
+00:51:03,359 --> 00:51:06,480
+rallentare, ok? Perché io poi a un certo
+
+1149
+00:51:06,480 --> 00:51:09,079
+punto non ci penso più. Questione della
+
+1150
+00:51:09,079 --> 00:51:12,079
+decidibilità dentro fuori, decidibile,
+
+1151
+00:51:12,079 --> 00:51:14,000
+non decidibile. Poi c'è la questione
+
+1152
+00:51:14,000 --> 00:51:15,839
+della complessità. la questione della
+
+1153
+00:51:15,839 --> 00:51:18,079
+complessità, la complessità di un
+
+1154
+00:51:18,079 --> 00:51:20,599
+problema. Eh, ok, questa è la parte
+
+1155
+00:51:20,599 --> 00:51:23,000
+importante di tutto ciò. Non siamo più
+
+1156
+00:51:23,000 --> 00:51:24,839
+all'interno del corso di algoritmi e
+
+1157
+00:51:24,839 --> 00:51:27,520
+strutture dati nella quale per la gran
+
+1158
+00:51:27,520 --> 00:51:29,319
+parte immagino, vi siete occupati di
+
+1159
+00:51:29,319 --> 00:51:31,040
+stabilire "Ma questo algoritmo è
+
+1160
+00:51:31,040 --> 00:51:32,799
+efficiente o questo algoritmo è lento?",
+
+1161
+00:51:32,799 --> 00:51:35,040
+cioè quanto è complesso l'algoritmo? Qui
+
+1162
+00:51:35,040 --> 00:51:36,799
+stiamo passando ad un livello. Quello
+
+1163
+00:51:36,799 --> 00:51:39,319
+che noi ci stiamo chiedendo qui non è
+
+1164
+00:51:39,319 --> 00:51:41,880
+quanto complesso è un algoritmo, ma
+
+1165
+00:51:41,880 --> 00:51:44,319
+quanto complesso è un problema, che è
+
+1166
+00:51:44,319 --> 00:51:47,720
+un'altra cosa. Ok? Quindi, fra tutti i
+
+1167
+00:51:47,720 --> 00:51:51,559
+problemi che stanno qua dentro,
+
+1168
+00:51:51,559 --> 00:51:53,680
+noi ci
+
+1169
+00:51:53,680 --> 00:51:55,480
+premerà
+
+1170
+00:51:55,480 --> 00:52:00,799
+capire quali sono quelli facili
+
+1171
+00:52:01,359 --> 00:52:03,400
+e quelli difficili.
+
+1172
+00:52:03,400 --> 00:52:06,720
+Ok? Quindi in una prima parte noi ci
+
+1173
+00:52:06,720 --> 00:52:10,240
+occupiamo, dato un problema, stabilire
+
+1174
+00:52:10,240 --> 00:52:12,880
+se sto coso riusciremo a mai a
+
+1175
+00:52:12,880 --> 00:52:14,760
+risolverlo, ok? Quella è la questione
+
+1176
+00:52:14,760 --> 00:52:17,000
+della calcolabilità. Dopodiché l'altro
+
+1177
+00:52:17,000 --> 00:52:19,640
+focus attentivo sarà: "Ok, ma fra tutto
+
+1178
+00:52:19,640 --> 00:52:22,319
+ciò che è risolvibile
+
+1179
+00:52:22,319 --> 00:52:25,000
+ci sono cose facilmente risolvibili e
+
+1180
+00:52:25,000 --> 00:52:27,920
+cose difficilmente risolvibili, ok?
+
+1181
+00:52:27,920 --> 00:52:30,280
+Quindi noi ci occuperemo di studiare la
+
+1182
+00:52:30,280 --> 00:52:32,480
+complessità di un problema. dici "Ok,
+
+1183
+00:52:32,480 --> 00:52:34,119
+questo problema si risolve. Ho un
+
+1184
+00:52:34,119 --> 00:52:36,119
+bell'algoritmo che ci mette un'eternità
+
+1185
+00:52:36,119 --> 00:52:40,359
+a risolverlo, ma lo risolve. Ok,
+
+1186
+00:52:40,359 --> 00:52:42,760
+ma questo algoritmo ci mette un'eternità
+
+1187
+00:52:42,760 --> 00:52:44,839
+perché non siamo stati intelligenti noi
+
+1188
+00:52:44,839 --> 00:52:47,240
+a trovarne uno migliore o perché il
+
+1189
+00:52:47,240 --> 00:52:49,280
+problema è talmente complicato che noi
+
+1190
+00:52:49,280 --> 00:52:51,040
+non possiamo sperare di avere un
+
+1191
+00:52:51,040 --> 00:52:54,280
+algoritmo efficiente. Cioè, quello sarà
+
+1192
+00:52:54,280 --> 00:52:57,640
+il piano su cui ragioneremo.
+
+1193
+00:52:57,640 --> 00:52:59,680
+stabilire se un problema ha una
+
+1194
+00:52:59,680 --> 00:53:02,240
+struttura che ammetta un algoritmo che
+
+1195
+00:53:02,240 --> 00:53:05,280
+lo risolva in poco tempo o un problema o
+
+1196
+00:53:05,280 --> 00:53:07,520
+una struttura per i quali qualsiasi
+
+1197
+00:53:07,520 --> 00:53:09,440
+algoritmo che lo risolve richiederà
+
+1198
+00:53:09,440 --> 00:53:11,680
+comunque tanto tempo. Ok? Quindi la
+
+1199
+00:53:11,680 --> 00:53:13,920
+complessità sarà sostanzialmente
+
+1200
+00:53:13,920 --> 00:53:17,839
+studiare se un problema che è decidibile
+
+1201
+00:53:17,839 --> 00:53:21,040
+stabilire se è facile o è difficile. Ok?
+
+1202
+00:53:21,040 --> 00:53:23,079
+Tutto qua.
+
+1203
+00:53:23,079 --> 00:53:24,760
+Magari, no, questa cosa potrebbe
+
+1204
+00:53:24,760 --> 00:53:27,079
+tornarvi utile, che ne so, quando
+
+1205
+00:53:27,079 --> 00:53:29,200
+andiate a lavorare vi danno un problema
+
+1206
+00:53:29,200 --> 00:53:32,119
+tosto da da risolvere, quelli vi rompono
+
+1207
+00:53:32,119 --> 00:53:33,799
+le balle, dice "No, sto algoritmo ci
+
+1208
+00:53:33,799 --> 00:53:37,119
+mette troppo e
+
+1209
+00:53:37,119 --> 00:53:39,359
+c prende un sacco di tempo e voi siete
+
+1210
+00:53:39,359 --> 00:53:41,000
+in grado di dimostrare che il problema è
+
+1211
+00:53:41,000 --> 00:53:43,079
+difficile", no?
+
+1212
+00:53:43,079 --> 00:53:45,280
+A quel punto sapete che se il problema è
+
+1213
+00:53:45,280 --> 00:53:47,440
+intrinsecamente difficile, se volete una
+
+1214
+00:53:47,440 --> 00:53:49,520
+soluzione veloce
+
+1215
+00:53:49,520 --> 00:53:52,440
+vi serve un algoritmo approssimato. Ok?
+
+1216
+00:53:52,440 --> 00:53:54,760
+Quindi questo è un genere di skill che
+
+1217
+00:53:54,760 --> 00:53:56,720
+potrebbe tornarvi utile una volta che
+
+1218
+00:53:56,720 --> 00:53:58,160
+andrete a lavorare in azienda, cioè
+
+1219
+00:53:58,160 --> 00:54:00,799
+poter riconoscere che vi girano da
+
+1220
+00:54:00,799 --> 00:54:02,799
+risolvere problemi che siete in grado di
+
+1221
+00:54:02,799 --> 00:54:05,240
+dimostrare essere tosti. A quel punto è
+
+1222
+00:54:05,240 --> 00:54:07,079
+inutile che ci sbattete la testa a
+
+1223
+00:54:07,079 --> 00:54:09,160
+cercare un algoritmo polinomiale. Non lo
+
+1224
+00:54:09,160 --> 00:54:11,319
+troverete. Allora, quello che potrete
+
+1225
+00:54:11,319 --> 00:54:13,760
+fare è inventarvi delle soluzioni
+
+1226
+00:54:13,760 --> 00:54:16,319
+approssimate, cioè, ok, vogliamo una
+
+1227
+00:54:16,319 --> 00:54:19,240
+soluzione veloce, benissimo, dobbiamo
+
+1228
+00:54:19,240 --> 00:54:21,119
+usare delle oristiche, usare altri
+
+1229
+00:54:21,119 --> 00:54:22,559
+approcci che ci permettono di avere una
+
+1230
+00:54:22,559 --> 00:54:25,200
+soluzione velocemente, però a scapito
+
+1231
+00:54:25,200 --> 00:54:27,520
+magari dell'ottimalità, ok? Magari non
+
+1232
+00:54:27,520 --> 00:54:30,240
+troviamo la soluzione migliore, capito?
+
+1233
+00:54:30,240 --> 00:54:33,839
+Che ne so, eh. Ok, facciamo qualche
+
+1234
+00:54:33,839 --> 00:54:36,520
+esempio,
+
+1235
+00:54:36,520 --> 00:54:39,319
+ok? Qualche definizione.
+
+1236
+00:54:39,319 --> 00:54:41,359
+Cos'è
+
+1237
+00:54:41,359 --> 00:54:44,480
+formalmente per noi un problema? Qua
+
+1238
+00:54:44,480 --> 00:54:46,280
+iniziamo.
+
+1239
+00:54:46,280 --> 00:54:49,720
+Complexity bla.
+
+1240
+00:54:49,720 --> 00:54:52,520
+Definizione di problema, ved. Allora,
+
+1241
+00:54:52,520 --> 00:54:56,079
+cos'è un problema?
+
+1242
+00:54:56,079 --> 00:55:00,760
+Un problema è una relazione
+
+1243
+00:55:00,760 --> 00:55:03,760
+che associa al momento non saremo
+
+1244
+00:55:03,760 --> 00:55:05,599
+estremamente formali perché ci serve un
+
+1245
+00:55:05,599 --> 00:55:07,440
+concetto che introduciamo la prossima
+
+1246
+00:55:07,440 --> 00:55:10,319
+lezione, però per avere un'idea, un
+
+1247
+00:55:10,319 --> 00:55:14,520
+problema è per noi una relazione
+
+1248
+00:55:14,520 --> 00:55:16,960
+che associa
+
+1249
+00:55:16,960 --> 00:55:20,640
+stringhe di input a stringhe di output.
+
+1250
+00:55:20,640 --> 00:55:24,280
+Ok? Questo per noi è un problema. che ne
+
+1251
+00:55:24,280 --> 00:55:27,799
+so il problema
+
+1252
+00:55:28,720 --> 00:55:30,960
+della somma. Facciamo che gli appunti li
+
+1253
+00:55:30,960 --> 00:55:33,880
+la prossima volta. Problema della somma,
+
+1254
+00:55:33,880 --> 00:55:37,359
+ok? Un problema banalissimo, ok? per noi
+
+1255
+00:55:37,359 --> 00:55:41,079
+è una relazione, quindi sono coppie, è
+
+1256
+00:55:41,079 --> 00:55:43,400
+una lista di coppie in cui in prima
+
+1257
+00:55:43,400 --> 00:55:47,440
+posizione abbiamo una stringa che è
+
+1258
+00:55:47,440 --> 00:55:49,760
+l'input, per esempio, somma di due
+
+1259
+00:55:49,760 --> 00:55:52,760
+numeri.
+
+1260
+00:55:54,359 --> 00:55:58,319
+Ok? Quindi questo è l'input
+
+1261
+00:55:58,319 --> 00:56:00,520
+e l'output è una stringa che è il
+
+1262
+00:56:00,520 --> 00:56:04,240
+risultato che noi gradiamo,
+
+1263
+00:56:04,240 --> 00:56:06,359
+ok?
+
+1264
+00:56:06,359 --> 00:56:09,359
+Quindi
+
+1265
+00:56:16,039 --> 00:56:19,640
+bla bla bla bla. Ok? Quindi noi possiamo
+
+1266
+00:56:19,640 --> 00:56:21,079
+pensare a un problema come
+
+1267
+00:56:21,079 --> 00:56:22,680
+essenzialmente una relazione, una
+
+1268
+00:56:22,680 --> 00:56:25,400
+relazione tra stringhe. La stringa in
+
+1269
+00:56:25,400 --> 00:56:29,880
+queste sono coppie, ok?
+
+1270
+00:56:29,880 --> 00:56:32,520
+La stringa in prima posizione è l'input,
+
+1271
+00:56:32,520 --> 00:56:34,400
+la stringa in seconda posizione è
+
+1272
+00:56:34,400 --> 00:56:37,079
+l'output. Ok? Un problema viene
+
+1273
+00:56:37,079 --> 00:56:39,640
+caratterizzato da questa relazione input
+
+1274
+00:56:39,640 --> 00:56:42,240
+output. Ok?
+
+1275
+00:56:42,240 --> 00:56:44,480
+Supponiamo di voler descrivere questo
+
+1276
+00:56:44,480 --> 00:56:46,400
+semplicissimo problema che è il problema
+
+1277
+00:56:46,400 --> 00:56:50,160
+della somma. Ok? Quanti di questi
+
+1278
+00:56:50,160 --> 00:56:54,200
+elementi in lista dobbiamo mettere?
+
+1279
+00:56:54,200 --> 00:56:56,200
+Infiniti. Ok? Quindi questa non è una
+
+1280
+00:56:56,200 --> 00:56:58,640
+rappresentazione per noi funzionale, ok?
+
+1281
+00:56:58,640 --> 00:57:01,599
+Perché non abbiamo spazio infinito. Che
+
+1282
+00:57:01,599 --> 00:57:05,000
+cosa facciamo? Allora, noi invece di
+
+1283
+00:57:05,000 --> 00:57:09,880
+dare una lista infinita, no, che è la
+
+1284
+00:57:09,880 --> 00:57:12,839
+nostra relazione, la relazione noi la
+
+1285
+00:57:12,839 --> 00:57:14,440
+descriviamo
+
+1286
+00:57:14,440 --> 00:57:17,200
+a parole, ok? Quindi questo è il salto
+
+1287
+00:57:17,200 --> 00:57:19,319
+che noi facciamo. Un problema
+
+1288
+00:57:19,319 --> 00:57:23,000
+formalmente per noi sono coppie, ok? È
+
+1289
+00:57:23,000 --> 00:57:25,160
+una relazione.
+
+1290
+00:57:25,160 --> 00:57:29,480
+Siccome noi non possiamo descrivere
+
+1291
+00:57:29,480 --> 00:57:32,280
+roba infinita, no? Ok. Quello che noi
+
+1292
+00:57:32,280 --> 00:57:36,000
+facciamo è che la corrispondenza fra
+
+1293
+00:57:36,000 --> 00:57:39,240
+input e output la descriviamo a parole.
+
+1294
+00:57:39,240 --> 00:57:41,520
+Il problema di questa soluzione però,
+
+1295
+00:57:41,520 --> 00:57:43,760
+cioè il descrivere questa relazione a
+
+1296
+00:57:43,760 --> 00:57:46,720
+parole è che noi il potenzialmente
+
+1297
+00:57:46,720 --> 00:57:49,839
+introduciamo della vagzza, ok? Perché la
+
+1298
+00:57:49,839 --> 00:57:52,680
+descriviamo a parole,
+
+1299
+00:57:52,680 --> 00:57:55,520
+possiamo risolverla in maniera completa
+
+1300
+00:57:55,520 --> 00:57:58,720
+e totale? No, sta a noi riuscire a
+
+1301
+00:57:58,720 --> 00:58:00,760
+utilizzare una descrizione abbastanza
+
+1302
+00:58:00,760 --> 00:58:03,359
+precisa, ok? Quando descriviamo i
+
+1303
+00:58:03,359 --> 00:58:07,240
+problemi, ok? Nella descrizione del
+
+1304
+00:58:07,240 --> 00:58:10,079
+problema, allora noi tre elementi,
+
+1305
+00:58:10,079 --> 00:58:11,839
+quando descriviamo a parola un problema,
+
+1306
+00:58:11,839 --> 00:58:14,599
+noi tre elementi andiamo a cercare sui
+
+1307
+00:58:14,599 --> 00:58:16,960
+quali noi dobbiamo sempre essere chiari,
+
+1308
+00:58:16,960 --> 00:58:19,319
+ok? in maniera tale che per noi, nel
+
+1309
+00:58:19,319 --> 00:58:20,839
+momento in cui andiamo a pensare un
+
+1310
+00:58:20,839 --> 00:58:22,480
+algoritmo che risolve un problema,
+
+1311
+00:58:22,480 --> 00:58:24,720
+possiamo stabilire se l'algoritmo è
+
+1312
+00:58:24,720 --> 00:58:26,799
+corretto o non corretto, perché non so
+
+1313
+00:58:26,799 --> 00:58:29,559
+se ve l'hanno mai detto, ma la proprietà
+
+1314
+00:58:29,559 --> 00:58:32,240
+di correttezza degli algoritmi non è
+
+1315
+00:58:32,240 --> 00:58:35,480
+intrinseca all'algoritmo stesso.
+
+1316
+00:58:35,480 --> 00:58:37,839
+Cioè è come se io andassi all'uscita
+
+1317
+00:58:37,839 --> 00:58:39,640
+dell'autostrada in Bologna, è corretto
+
+1318
+00:58:39,640 --> 00:58:43,599
+andare a sud o andare a nord?
+
+1319
+00:58:44,440 --> 00:58:46,119
+Dipende dove voglio andare.
+Dipende dove
+
+1320
+00:58:46,119 --> 00:58:48,000
+voglio andare. Quindi un algoritmo non è
+
+1321
+00:58:48,000 --> 00:58:49,599
+corretto di per sé. Un algoritmo è
+
+1322
+00:58:49,599 --> 00:58:51,480
+corretto rispetto a un problema che deve
+
+1323
+00:58:51,480 --> 00:58:53,280
+risolvere. Se risolvere quel problema,
+
+1324
+00:58:53,280 --> 00:58:55,079
+allora è corretto per quel problema, seò
+
+1325
+00:58:55,079 --> 00:58:57,520
+no no. Ok?
+
+1326
+00:58:57,520 --> 00:58:59,839
+Per riuscire a risolvere questa
+
+1327
+00:58:59,839 --> 00:59:02,760
+questione, allora noi quando descriviamo
+
+1328
+00:59:02,760 --> 00:59:04,440
+un problema dobbiamo fare una
+
+1329
+00:59:04,440 --> 00:59:06,720
+descrizione di tre elementi molto
+
+1330
+00:59:06,720 --> 00:59:10,880
+semplice. Input. Che cos'è l'input del
+
+1331
+00:59:10,880 --> 00:59:13,160
+problema? Cioè la string input che
+
+1332
+00:59:13,160 --> 00:59:15,720
+cos'è? Cosa rappresenta? In questo caso
+
+1333
+00:59:15,720 --> 00:59:19,839
+abbiamo cifre, solo numeri. Ok?
+
+1334
+00:59:19,839 --> 00:59:23,880
+Quindi uno serve sapere cos'è l'input.
+
+1335
+00:59:23,880 --> 00:59:25,480
+Quello che io vi invito, quando pensate
+
+1336
+00:59:25,480 --> 00:59:28,520
+ai problemi, andateci proprio con questa
+
+1337
+00:59:28,520 --> 00:59:32,079
+meticolosità, nel senso cos'è l'input,
+
+1338
+00:59:32,079 --> 00:59:34,200
+come è rappresentato l'input, perché a
+
+1339
+00:59:34,200 --> 00:59:36,920
+un certo punto inizieremo a usare roba
+
+1340
+00:59:36,920 --> 00:59:39,760
+un po' strana tale per cui, cioè capire
+
+1341
+00:59:39,760 --> 00:59:42,559
+che cos'è un problema, quali sono, cos'è
+
+1342
+00:59:42,559 --> 00:59:45,000
+l'input, cos'è l'output, ci permetterà
+
+1343
+00:59:45,000 --> 00:59:46,920
+di mettere ordine in una cosa che
+
+1344
+00:59:46,920 --> 00:59:50,000
+altrimenti è un caos. Ok? Quindi il
+
+1345
+00:59:50,000 --> 00:59:52,119
+primo strumento da imparare, secondo me,
+
+1346
+00:59:52,119 --> 00:59:54,720
+qui è avere precisione nella descrizione
+
+1347
+00:59:54,720 --> 00:59:58,839
+dei problemi. Quindi cos'è l'input, che
+
+1348
+00:59:58,839 --> 01:00:01,200
+cosa rappresenta, com'è rappresentato.
+
+1349
+01:00:01,200 --> 01:00:02,799
+Ok? Quindi dobbiamo sapere questa cosa
+
+1350
+01:00:02,799 --> 01:00:04,760
+qua.
+
+1351
+01:00:04,760 --> 01:00:07,400
+Ovviamente secondo pezzo della relazione
+
+1352
+01:00:07,400 --> 01:00:09,319
+cos'è l'output?
+
+1353
+01:00:09,319 --> 01:00:11,599
+Comeè rappresentato l'? Che cos'è? È una
+
+1354
+01:00:11,599 --> 01:00:15,240
+stringa, no? È un insieme di cifre bla.
+
+1355
+01:00:15,240 --> 01:00:19,319
+Ok? Che cos'è? Come è rappresentato?
+
+1356
+01:00:19,319 --> 01:00:22,599
+input, output, verzo elemento è la
+
+1357
+01:00:22,599 --> 01:00:25,280
+relazione, cioè l'output come dipende
+
+1358
+01:00:25,280 --> 01:00:29,760
+dall'input, ok?
+
+1359
+01:00:29,839 --> 01:00:33,039
+Dico, in questo caso,
+
+1360
+01:00:33,039 --> 01:00:36,720
+problema della somma. Cos'è l'input? Due
+
+1361
+01:00:36,720 --> 01:00:40,039
+numeri. Cos'è l'output? Un numero. Che
+
+1362
+01:00:40,039 --> 01:00:42,240
+relazione c'è fra l'output e l'input?
+
+1363
+01:00:42,240 --> 01:00:44,559
+L'output è il numero che è la somma dei
+
+1364
+01:00:44,559 --> 01:00:47,039
+due numeri input. Ok?
+
+1365
+01:00:47,039 --> 01:00:49,520
+Adesso, giusto un attimo, adesso voglio
+
+1366
+01:00:49,520 --> 01:00:52,920
+sottolineare qui che questo problema è
+
+1367
+01:00:52,920 --> 01:00:54,720
+di una banalità sconcertante. Quindi,
+
+1368
+01:00:54,720 --> 01:00:56,640
+nel momento in cui stiamo descrivendo
+
+1369
+01:00:56,640 --> 01:00:59,200
+cos'è l'output, stiamo anche dicendo
+
+1370
+01:00:59,200 --> 01:01:02,000
+come si ottiene l'output dall'input. Ma
+
+1371
+01:01:02,000 --> 01:01:04,039
+in linea di principio, su problemi più
+
+1372
+01:01:04,039 --> 01:01:07,240
+sofisticati, questo non è detto che
+
+1373
+01:01:07,240 --> 01:01:09,200
+nella descrizione dell'output noi siamo
+
+1374
+01:01:09,200 --> 01:01:11,000
+in grado di dire come si ottiene
+
+1375
+01:01:11,000 --> 01:01:14,200
+l'output dall'input. Anzi, per la gran
+
+1376
+01:01:14,200 --> 01:01:16,440
+parte delle volte noi non lo diciamo,
+
+1377
+01:01:16,440 --> 01:01:19,359
+non lo sapremo. Teorema del problema
+
+1378
+01:01:19,359 --> 01:01:22,640
+della fermata.
+
+1379
+01:01:23,480 --> 01:01:25,799
+Ok.
+
+1380
+01:01:25,799 --> 01:01:27,640
+Problema della fermata, poi lo vedremo,
+
+1381
+01:01:27,640 --> 01:01:30,079
+eh ce la dobbiamo fare. Problema della
+
+1382
+01:01:30,079 --> 01:01:32,760
+fermata. Cos'è l'input del problema
+
+1383
+01:01:32,760 --> 01:01:37,240
+della fermata? L'input è una stringa
+
+1384
+01:01:37,240 --> 01:01:40,559
+che rappresenta un programma.
+
+1385
+01:01:40,559 --> 01:01:42,920
+Ok? No, facciamo così, facciamo una
+
+1386
+01:01:42,920 --> 01:01:45,920
+coppia.
+
+1387
+01:01:49,000 --> 01:01:51,279
+Ok?
+
+1388
+01:01:51,279 --> 01:01:54,359
+Così è simile a quello che c'è noi.
+
+1389
+01:01:54,359 --> 01:01:57,160
+Cos'è l'input per il problema della
+
+1390
+01:01:57,160 --> 01:01:59,760
+fermata? È una coppia in cui la prima
+
+1391
+01:01:59,760 --> 01:02:02,839
+stringa è il codice di un programma, se
+
+1392
+01:02:02,839 --> 01:02:06,000
+p Java, quello che vogliamo. E poi c'è
+
+1393
+01:02:06,000 --> 01:02:09,720
+una seconda stringa che è l'input che
+
+1394
+01:02:09,720 --> 01:02:12,000
+noi diamo a quel programma che riceve
+
+1395
+01:02:12,000 --> 01:02:15,200
+una string input. Ok?
+
+1396
+01:02:15,200 --> 01:02:18,720
+Cos'è l'output? L'output
+
+1397
+01:02:18,720 --> 01:02:21,599
+è una risposta
+
+1398
+01:02:21,599 --> 01:02:24,240
+y no.
+
+1399
+01:02:24,240 --> 01:02:30,319
+Sì, no. Quindi è un puleano la risposta.
+
+1400
+01:02:30,640 --> 01:02:33,599
+Che relazione c'è? Quindi l'input è una
+
+1401
+01:02:33,599 --> 01:02:35,400
+coppia di stringhe in cui la prima
+
+1402
+01:02:35,400 --> 01:02:37,520
+stringa è un programma, la seconda è una
+
+1403
+01:02:37,520 --> 01:02:39,160
+stringa data in input a questo
+
+1404
+01:02:39,160 --> 01:02:44,440
+programma. Ok? La risposta è un buleano,
+
+1405
+01:02:44,440 --> 01:02:47,400
+cioè sì, no? Che relazione c'è sta fra
+
+1406
+01:02:47,400 --> 01:02:49,279
+questi due?
+
+1407
+01:02:49,279 --> 01:02:52,680
+Rispondiamo. Noi ci aspettiamo sì quando
+
+1408
+01:02:52,680 --> 01:02:56,039
+il programma P ricevendo la stringa I in
+
+1409
+01:02:56,039 --> 01:02:58,799
+input a un certo punto si ferma.
+
+1410
+01:02:58,799 --> 01:03:02,520
+Rispondiamo o no? Se il programma P
+
+1411
+01:03:02,520 --> 01:03:05,200
+ricevendo input la stringa I non si
+
+1412
+01:03:05,200 --> 01:03:09,480
+ferma mai. Ok? Va il loop. Ok? Quindi
+
+1413
+01:03:09,480 --> 01:03:11,480
+nella descrizione, questa è una cosa
+
+1414
+01:03:11,480 --> 01:03:13,720
+importante, nella descrizione che
+
+1415
+01:03:13,720 --> 01:03:15,200
+abbiamo fatto del problema, abbiamo
+
+1416
+01:03:15,200 --> 01:03:17,160
+detto che queste sono stringhe, abbiamo
+
+1417
+01:03:17,160 --> 01:03:19,079
+detto che questo è un bule a questo
+
+1418
+01:03:19,079 --> 01:03:22,359
+sostanzialmente è come dare la firma di
+
+1419
+01:03:22,359 --> 01:03:25,720
+una funzione, no? Questo è quello sono i
+
+1420
+01:03:25,720 --> 01:03:28,200
+parametri in input e questo è il tipo
+
+1421
+01:03:28,200 --> 01:03:31,000
+del del risultato in output. Ok?
+
+1422
+01:03:31,000 --> 01:03:32,880
+Dopodiché la relazione l'abbiamo
+
+1423
+01:03:32,880 --> 01:03:34,640
+descritta a parole in quel modo, cioè
+
+1424
+01:03:34,640 --> 01:03:36,720
+noi vogliamo dire, vogliamo rispondere
+
+1425
+01:03:36,720 --> 01:03:40,279
+se il programma P processando la stringa
+
+1426
+01:03:40,279 --> 01:03:42,880
+in input si ferma o meno. Adesso in
+
+1427
+01:03:42,880 --> 01:03:44,880
+questa descrizione che stiamo facendo,
+
+1428
+01:03:44,880 --> 01:03:47,160
+come potete notare,
+
+1429
+01:03:47,160 --> 01:03:51,279
+non stiamo in alcun modo dicendo
+
+1430
+01:03:51,279 --> 01:03:54,440
+come si ottiene questa risposta.
+
+1431
+01:03:54,440 --> 01:03:56,279
+Partendo da questo punto, stiamo solo
+
+1432
+01:03:56,279 --> 01:03:58,880
+descrivendo che relazione c'è fra. Di
+
+1433
+01:03:58,880 --> 01:04:02,400
+fatto, come voi sapete già da dai vostri
+
+1434
+01:04:02,400 --> 01:04:05,520
+studi, un algoritmo del genere non
+
+1435
+01:04:05,520 --> 01:04:08,319
+esiste. Ok? Dovrei riuscire a farvelo
+
+1436
+01:04:08,319 --> 01:04:11,440
+vedere anche oggi, ok? È chiaro? Quindi,
+
+1437
+01:04:11,440 --> 01:04:14,000
+primo concetto che è importante, cos'è
+
+1438
+01:04:14,000 --> 01:04:16,480
+un problema? Un problema è una relazione
+
+1439
+01:04:16,480 --> 01:04:19,400
+input output fra string.
+
+1440
+01:04:19,400 --> 01:04:22,359
+Lo descriviamo a parole e per questa
+
+1441
+01:04:22,359 --> 01:04:24,319
+ragione dobbiamo essere il più precisi
+
+1442
+01:04:24,319 --> 01:04:26,520
+possibili. Che cosa ci richiede a
+
+1443
+01:04:26,520 --> 01:04:28,400
+descrivere un problema? mi chiede
+
+1444
+01:04:28,400 --> 01:04:31,359
+descrivere cos'è l'input codificato, che
+
+1445
+01:04:31,359 --> 01:04:34,200
+significato ha, cos'è l'output, come
+
+1446
+01:04:34,200 --> 01:04:37,400
+codificato, che significato ha. Terzo,
+
+1447
+01:04:37,400 --> 01:04:40,039
+qual è la relazione dell'output rispetto
+
+1448
+01:04:40,039 --> 01:04:42,359
+all'input, cioè che cosa ci aspettiamo
+
+1449
+01:04:42,359 --> 01:04:46,839
+di vedere qua nella seconda colonna? Ok?
+
+1450
+01:04:46,839 --> 01:04:49,200
+Noi non siamo tenuti nel momento in cui
+
+1451
+01:04:49,200 --> 01:04:51,520
+descriviamo il problema a stabilire come
+
+1452
+01:04:51,520 --> 01:04:53,640
+l'input, come l'output viene calcolato
+
+1453
+01:04:53,640 --> 01:04:55,920
+dall'input. Ok? Quello è il problema di
+
+1454
+01:04:55,920 --> 01:04:58,799
+è una questione che si di cui si occupa
+
+1455
+01:04:58,799 --> 01:05:02,400
+colui che scriverà semmai esiste un
+
+1456
+01:05:02,400 --> 01:05:04,520
+algoritmo per risolvere quel problema.
+
+1457
+01:05:04,520 --> 01:05:08,440
+Ok? Chiaro per tutti? Alri. Prego.
+La
+
+1458
+01:05:08,440 --> 01:05:11,279
+definizione di problema non collassa al
+
+1459
+01:05:11,279 --> 01:05:13,640
+sulla definizione di funzione?
+Non
+
+1460
+01:05:13,640 --> 01:05:16,480
+sempre perché
+
+1461
+01:05:16,480 --> 01:05:18,200
+eh
+
+1462
+01:05:18,200 --> 01:05:20,599
+tu si può avere un input su cui si hanno
+
+1463
+01:05:20,599 --> 01:05:25,640
+più risultati. Più risultati. Sì.
+
+1464
+01:05:32,039 --> 01:05:33,720
+Algoritmi istruttori dati l'avete fatto?
+
+1465
+01:05:33,720 --> 01:05:36,279
+Cos'è un grafo, un albero? Questo è i
+
+1466
+01:05:36,279 --> 01:05:40,799
+matematici. Cos'è un grafo? Pallini e
+
+1467
+01:05:40,799 --> 01:05:46,200
+ges. Ok. Pallette e archi. Ok? È una
+
+1468
+01:05:46,200 --> 01:05:48,359
+sorta di mappa in cui abbiamo i pallini
+
+1469
+01:05:48,359 --> 01:05:50,599
+che sono i nodi, ne vedremo tanti di ste
+
+1470
+01:05:50,599 --> 01:05:53,720
+cose, eh? e gli archi che le collegano.
+
+1471
+01:05:53,720 --> 01:05:57,839
+Ok, problema.
+
+1472
+01:05:58,640 --> 01:06:02,079
+M pa
+
+1473
+01:06:03,760 --> 01:06:05,720
+del percorso,
+
+1474
+01:06:05,720 --> 01:06:08,400
+dato in input un grafo,
+
+1475
+01:06:08,400 --> 01:06:12,520
+un nodo sorgente e un nodo destinazione.
+
+1476
+01:06:12,520 --> 01:06:14,839
+Ok? Quindi sto descrivendo
+
+1477
+01:06:14,839 --> 01:06:17,400
+l'input che è una tripla, un grafo, un
+
+1478
+01:06:17,400 --> 01:06:20,760
+nodo sorgente e un nodo destinazione. Io
+
+1479
+01:06:20,760 --> 01:06:24,400
+voglio in output un percorso, se esiste
+
+1480
+01:06:24,400 --> 01:06:27,880
+dal nodo sorgente al nodo destinazione.
+
+1481
+01:06:27,880 --> 01:06:30,440
+Tipo voglio andare
+
+1482
+01:06:30,440 --> 01:06:34,400
+da qui a qui,
+
+1483
+01:06:34,400 --> 01:06:38,960
+uno è questo, l'altro è questo, un altro
+
+1484
+01:06:38,960 --> 01:06:41,119
+è questo qua, ad esempio. Quindi cosa
+
+1485
+01:06:41,119 --> 01:06:44,440
+abbiamo? che l'input è lo stesso.
+
+1486
+01:06:44,440 --> 01:06:46,200
+Abbiamo lo stesso grafo, lo stesso nodo
+
+1487
+01:06:46,200 --> 01:06:49,119
+sorgente, lo stesso nodo destinazione.
+
+1488
+01:06:49,119 --> 01:06:52,000
+L'output sono tre percorsi distinti,
+
+1489
+01:06:52,000 --> 01:06:55,359
+quindi una funzione, sebbene uno può
+
+1490
+01:06:55,359 --> 01:06:57,720
+scegliere di modellarlo in quell in quel
+
+1491
+01:06:57,720 --> 01:06:59,839
+modo, in questo modo un po' ci salta, ci
+
+1492
+01:06:59,839 --> 01:07:01,760
+perdiamo il fatto che possiamo avere più
+
+1493
+01:07:01,760 --> 01:07:03,599
+risposte. Ok? E questa è la ragione per
+
+1494
+01:07:03,599 --> 01:07:07,000
+cui preferisco definirla come relazione.
+
+1495
+01:07:07,000 --> 01:07:08,880
+Se guardate le lecture notes di di
+
+1496
+01:07:08,880 --> 01:07:11,599
+Calauti per lui un un problema è una
+
+1497
+01:07:11,599 --> 01:07:15,440
+funzione. Ok? Però per me lo trovo
+
+1498
+01:07:15,440 --> 01:07:17,559
+meglio descriverlo come una relazione.
+
+1499
+01:07:17,559 --> 01:07:20,920
+Ok?
+Quindi eh la definizione di problema
+
+1500
+01:07:20,920 --> 01:07:22,640
+collassa alla definizione di funzione
+
+1501
+01:07:22,640 --> 01:07:24,920
+non deterministica.
+
+1502
+01:07:24,920 --> 01:07:27,240
+Sì, però quello che noi vorremmo avere è
+
+1503
+01:07:27,240 --> 01:07:29,960
+che le funzioni siano relazioni nel
+
+1504
+01:07:29,960 --> 01:07:33,319
+quale però per ogni pezzo, per ogni
+
+1505
+01:07:33,319 --> 01:07:35,839
+stringa specifica in prima posizione c'è
+
+1506
+01:07:35,839 --> 01:07:37,720
+una sola stringa specifica in seconda
+
+1507
+01:07:37,720 --> 01:07:41,119
+posizione. Ok? E questa è la ragione per
+
+1508
+01:07:41,119 --> 01:07:43,920
+cui la definisco come relazione. Poi,
+
+1509
+01:07:43,920 --> 01:07:46,240
+insomma, non è che sto concetto di
+
+1510
+01:07:46,240 --> 01:07:48,599
+relazione la la useremo spesso. Era
+
+1511
+01:07:48,599 --> 01:07:52,720
+giusto per farvi vedere che, insomma,
+
+1512
+01:07:52,720 --> 01:07:55,720
+per farvi vedere che
+
+1513
+01:07:55,720 --> 01:07:57,319
+serve formalità nel momento in cui
+
+1514
+01:07:57,319 --> 01:07:59,319
+descriviamo i problemi, ok? Ci serve
+
+1515
+01:07:59,319 --> 01:08:01,200
+descrivere l'input, l'output e la
+
+1516
+01:08:01,200 --> 01:08:04,119
+relazione fra i due, ok?
+
+1517
+01:08:04,119 --> 01:08:06,359
+Allora,
+
+1518
+01:08:06,359 --> 01:08:08,520
+uno dei problemi, per esempio, è dato un
+
+1519
+01:08:08,520 --> 01:08:12,480
+grafo, problema della connzione o del
+
+1520
+01:08:12,480 --> 01:08:15,839
+percorso, no? Dato un grafo e un nodo
+
+1521
+01:08:15,839 --> 01:08:20,719
+sorgente S è un nodo target T, noi
+
+1522
+01:08:20,719 --> 01:08:25,000
+vogliamo dare in output un percorso. Ok?
+
+1523
+01:08:25,000 --> 01:08:28,920
+Questa cosa accade comunemente, non sui
+
+1524
+01:08:28,920 --> 01:08:30,759
+nostri cellulari. Io voglio andare da
+
+1525
+01:08:30,759 --> 01:08:33,520
+qui a Portafatello. Vediamo un po' che
+
+1526
+01:08:33,520 --> 01:08:37,799
+suonano stasera. Google Maps mi dà la il
+
+1527
+01:08:37,799 --> 01:08:39,600
+percorso. In genere quando voi fate
+
+1528
+01:08:39,600 --> 01:08:41,679
+questa ricerca quanto tempo ci mette a
+
+1529
+01:08:41,679 --> 01:08:44,679
+rispondere?
+
+1530
+01:08:45,000 --> 01:08:47,799
+Pochissimo. Il problema è facile. Questo
+
+1531
+01:08:47,799 --> 01:08:51,000
+problema è un problema che ricade qua
+
+1532
+01:08:51,000 --> 01:08:52,880
+dentro.
+
+1533
+01:08:52,880 --> 01:08:56,520
+P sta qua.
+
+1534
+01:08:57,759 --> 01:09:00,480
+È un problema facile per noi. I problemi
+
+1535
+01:09:00,480 --> 01:09:02,520
+facili sono, vedremo, i problemi che si
+
+1536
+01:09:02,520 --> 01:09:04,600
+risolvono in tempo polinomiale. Esiste
+
+1537
+01:09:04,600 --> 01:09:06,799
+un algoritmo che risolve PA in tempo
+
+1538
+01:09:06,799 --> 01:09:10,400
+polinomiale, quindi Path sta qua dentro.
+
+1539
+01:09:10,400 --> 01:09:15,359
+Problema simile su un
+
+1540
+01:09:15,359 --> 01:09:19,000
+sempre su un grafo.
+
+1541
+01:09:20,080 --> 01:09:22,520
+Dato un grafo
+
+1542
+01:09:22,520 --> 01:09:24,960
+input, quindi l'input è veramente
+
+1543
+01:09:24,960 --> 01:09:28,080
+simile, eh? Dato un grafo,
+
+1544
+01:09:28,080 --> 01:09:32,319
+vogliamo in output un Hamiltonian Cycle.
+
+1545
+01:09:32,319 --> 01:09:34,319
+Sapete tutti cos'è un Hamiltonian Cycle
+
+1546
+01:09:34,319 --> 01:09:38,159
+su un su un grafo? No. Ok. È quel
+
+1547
+01:09:38,159 --> 01:09:39,880
+giochino che facevamo quando er quando
+
+1548
+01:09:39,880 --> 01:09:43,880
+eravamo bambini, no?
+
+1549
+01:09:43,920 --> 01:09:47,480
+Su questo grafo noi vogliamo un percorso
+
+1550
+01:09:47,480 --> 01:09:50,239
+cycle, quindi è un percorso che parte da
+
+1551
+01:09:50,239 --> 01:09:53,040
+un nodo, gira e ritorna allo stesso
+
+1552
+01:09:53,040 --> 01:09:55,120
+nodo, quindi per questo lo chiamiamo
+
+1553
+01:09:55,120 --> 01:09:58,120
+cycle perché è un ciclo.
+
+1554
+01:09:58,120 --> 01:10:01,159
+Un ciclooniano. S è un ciclo, quindi è
+
+1555
+01:10:01,159 --> 01:10:04,960
+un percorso che parte da un nodo, li
+
+1556
+01:10:04,960 --> 01:10:09,480
+attraversa tutti esattamente una volta
+
+1557
+01:10:09,480 --> 01:10:11,159
+senza passare due volte per lo stesso
+
+1558
+01:10:11,159 --> 01:10:13,679
+nodo. Quello è la parte importante. Ok?
+
+1559
+01:10:13,679 --> 01:10:16,239
+Noi facciamo la casetta, c'era quel giro
+
+1560
+01:10:16,239 --> 01:10:18,360
+strano e facciamo l'emiltone cycle sulla
+
+1561
+01:10:18,360 --> 01:10:21,520
+casetta. Ok? Allora, si può dimostrare e
+
+1562
+01:10:21,520 --> 01:10:24,040
+dimostreremo che il problema di dato un
+
+1563
+01:10:24,040 --> 01:10:26,159
+grafo, quindi l'input è veramente molto
+
+1564
+01:10:26,159 --> 01:10:28,120
+simile rispetto al problema del fatto,
+
+1565
+01:10:28,120 --> 01:10:29,760
+ok? Là abbiamo un grafo, qua abbiamo un
+
+1566
+01:10:29,760 --> 01:10:33,360
+grafo. Calcolare un evintonian cycle è
+
+1567
+01:10:33,360 --> 01:10:35,840
+un problema molto più complicato. È un
+
+1568
+01:10:35,840 --> 01:10:38,159
+problema che sta qua,
+
+1569
+01:10:38,159 --> 01:10:40,640
+un problema di quelli tosti, non
+
+1570
+01:10:40,640 --> 01:10:43,480
+estremamente tosto, ma tosto. Ok? Poi ci
+
+1571
+01:10:43,480 --> 01:10:47,360
+stanno i tosti, i tostissimi, insomma,
+
+1572
+01:10:47,360 --> 01:10:49,840
+andando sempre più verso il bordo. Ok?
+
+1573
+01:10:49,840 --> 01:10:52,679
+Hemonian è un problema di quelli
+
+1574
+01:10:52,679 --> 01:10:54,800
+difficili, cioè quello che si possiamo
+
+1575
+01:10:54,800 --> 01:10:58,560
+dimostrare a un certo punto è che
+
+1576
+01:10:58,560 --> 01:11:01,360
+Hamiltonian cycle, cioè riuscire a
+
+1577
+01:11:01,360 --> 01:11:05,800
+stabilire se c'è esiste uniltonian cycle
+
+1578
+01:11:05,800 --> 01:11:10,199
+su un grafo, non abbiamo modo migliore
+
+1579
+01:11:10,199 --> 01:11:12,679
+che non generare tutti i possibili
+
+1580
+01:11:12,679 --> 01:11:14,880
+percorsi. Cioè quello che si può
+
+1581
+01:11:14,880 --> 01:11:17,600
+dimostrare lo vedremo che è un problema
+
+1582
+01:11:17,600 --> 01:11:20,199
+inerentemente combinatorico, cioè non
+
+1583
+01:11:20,199 --> 01:11:23,159
+possiamo fare meglio di così, possiamo
+
+1584
+01:11:23,159 --> 01:11:25,880
+inventarci dei trucchi, delle uristiche
+
+1585
+01:11:25,880 --> 01:11:28,400
+per velocizzare la cosa, però se
+
+1586
+01:11:28,400 --> 01:11:30,520
+vogliamo un algoritmo corretto non ci
+
+1587
+01:11:30,520 --> 01:11:32,480
+possiamo esimere da testare tutte le
+
+1588
+01:11:32,480 --> 01:11:34,600
+possibilità sostanzialmente. Ok? Quindi
+
+1589
+01:11:34,600 --> 01:11:37,040
+questa è la ragione per cui Emiltonyle è
+
+1590
+01:11:37,040 --> 01:11:41,120
+difficile rispetto a path. Perché path
+
+1591
+01:11:41,120 --> 01:11:44,080
+vi do giusto un'intuizione
+
+1592
+01:11:44,080 --> 01:11:47,679
+per il percorso è come se per vedere se
+
+1593
+01:11:47,679 --> 01:11:51,679
+possiamo andare da qui a qui è come se
+
+1594
+01:11:51,679 --> 01:11:54,600
+potessimo dirigere la nostra attenzione
+
+1595
+01:11:54,600 --> 01:11:56,320
+verso la destinazione. Dice ok,
+
+1596
+01:11:56,320 --> 01:11:58,920
+guardiamo solo verso là. Emiltoan con
+
+1597
+01:11:58,920 --> 01:12:00,400
+l'intuitivamente sta cosa non si può
+
+1598
+01:12:00,400 --> 01:12:02,600
+fare, dobbiamo provare tutto. E siccome
+
+1599
+01:12:02,600 --> 01:12:05,600
+tutti i possibili percorsi dentro un
+
+1600
+01:12:05,600 --> 01:12:08,960
+grafo in numero esponenziale, sono
+
+1601
+01:12:08,960 --> 01:12:12,320
+tanti, allora esplorarli tutti richiede
+
+1602
+01:12:12,320 --> 01:12:15,920
+tanto tempo. Ok? Quindi puff è un
+
+1603
+01:12:15,920 --> 01:12:19,679
+problema facile e Miltonian Cycle è un
+
+1604
+01:12:19,679 --> 01:12:23,120
+problema difficile, ok? È un problema
+
+1605
+01:12:23,120 --> 01:12:25,000
+difficile,
+
+1606
+01:12:25,000 --> 01:12:27,520
+spiegheremo perché.
+
+1607
+01:12:27,520 --> 01:12:29,280
+La definizione è un po' strana. È un
+
+1608
+01:12:29,280 --> 01:12:31,840
+problema difficile perché non esiste un
+
+1609
+01:12:31,840 --> 01:12:34,480
+algoritmo efficiente. Cioè questa sarà
+
+1610
+01:12:34,480 --> 01:12:36,520
+la nostra distinzione fra problemi
+
+1611
+01:12:36,520 --> 01:12:38,679
+facili e problemi difficili. Problema
+
+1612
+01:12:38,679 --> 01:12:40,480
+facile è se esiste un algoritmo
+
+1613
+01:12:40,480 --> 01:12:42,040
+polinomiale. Il problema è difficile se
+
+1614
+01:12:42,040 --> 01:12:44,040
+non ci sta un algoritmo polinomiale. Ok?
+
+1615
+01:12:44,040 --> 01:12:46,239
+Siamo molto rough su questi qua. Ok? un
+
+1616
+01:12:46,239 --> 01:12:48,600
+attimo. Prego.
+E io ho una domanda che
+
+1617
+01:12:48,600 --> 01:12:51,719
+praticamente due insieme e cioè la
+
+1618
+01:12:51,719 --> 01:12:53,560
+distinzione tra decidibile e non
+
+1619
+01:12:53,560 --> 01:12:57,000
+decidibili è una cosa
+
+1620
+01:12:57,000 --> 01:12:59,920
+oggettiva e atemporale, nel senso che
+
+1621
+01:12:59,920 --> 01:13:02,080
+con l'avanzare delle tecnologie delle
+
+1622
+01:13:02,080 --> 01:13:04,679
+sospette di magari nuove strutture dati
+
+1623
+01:13:04,679 --> 01:13:07,199
+usate non cambia.
+
+1624
+01:13:07,199 --> 01:13:10,320
+Una domanda e seconda domanda. Invece la
+
+1625
+01:13:10,320 --> 01:13:12,400
+differenza tra problemi facili e
+
+1626
+01:13:12,400 --> 01:13:15,320
+problemi complessi non è così perché più
+
+1627
+01:13:15,320 --> 01:13:18,600
+vado avanti più scopro. Cioè
+
+1628
+01:13:18,600 --> 01:13:20,679
+se magari è un problema recidibile ma
+
+1629
+01:13:20,679 --> 01:13:22,000
+con le conoscenze che abbiamo
+
+1630
+01:13:22,000 --> 01:13:24,719
+attualmente ancora non c'è stato un
+
+1631
+01:13:24,719 --> 01:13:27,520
+algoritmo che lo risolve, però io so che
+
+1632
+01:13:27,520 --> 01:13:30,600
+prima o poi potrà trovarlo. Idem un
+
+1633
+01:13:30,600 --> 01:13:32,719
+problema che adesso magari è complesso,
+
+1634
+01:13:32,719 --> 01:13:36,120
+so che cioè posso sapere che poi
+Sì, sì.
+
+1635
+01:13:36,120 --> 01:13:39,159
+Avete sentito tutti? Chiara per tutti la
+
+1636
+01:13:39,159 --> 01:13:41,880
+domanda? Domanda molto interessante. Poi
+
+1637
+01:13:41,880 --> 01:13:43,360
+vedremo i dettagli, però vi do
+
+1638
+01:13:43,360 --> 01:13:45,920
+un'intuizione. Mi sa che halt problem
+
+1639
+01:13:45,920 --> 01:13:49,320
+per oggi salda. Allora,
+
+1640
+01:13:49,320 --> 01:13:53,120
+problema decidibile indecidibile?
+
+1641
+01:13:53,120 --> 01:13:55,080
+La questione è una volta che un problema
+
+1642
+01:13:55,080 --> 01:13:56,960
+è indecidibile, questa cosa è scolpita
+
+1643
+01:13:56,960 --> 01:13:59,760
+nella pietra o no? Cioè, una volta che
+
+1644
+01:13:59,760 --> 01:14:01,639
+stabiliamo che qualcosa è indecidibile,
+
+1645
+01:14:01,639 --> 01:14:03,800
+è indecibile per la tecnologia che
+
+1646
+01:14:03,800 --> 01:14:06,520
+abbiamo ora o lo sarà da ora per il
+
+1647
+01:14:06,520 --> 01:14:08,520
+resto dell'eternità? Prima domanda.
+
+1648
+01:14:08,520 --> 01:14:10,280
+Seconda, se un problema ora lo
+
+1649
+01:14:10,280 --> 01:14:13,199
+classifichiamo come difficile, rimarrà
+
+1650
+01:14:13,199 --> 01:14:15,880
+difficile per sempre o no? Ok, quindi
+
+1651
+01:14:15,880 --> 01:14:18,840
+riguarda proprio la complessità
+
+1652
+01:14:18,840 --> 01:14:20,639
+strutturale dei problemi, cioè che
+
+1653
+01:14:20,639 --> 01:14:22,679
+riguarda la struttura del problema.
+
+1654
+01:14:22,679 --> 01:14:25,280
+Allora,
+
+1655
+01:14:25,280 --> 01:14:27,480
+quando un problema noi lo
+
+1656
+01:14:27,480 --> 01:14:31,760
+classificheremo qui, sarà un risultato
+
+1657
+01:14:31,760 --> 01:14:34,679
+scolpito nella pietra. Cioè, una volta
+
+1658
+01:14:34,679 --> 01:14:37,199
+che noi siamo in grado di dimostrare che
+
+1659
+01:14:37,199 --> 01:14:38,880
+un problema, almeno per la
+
+1660
+01:14:38,880 --> 01:14:40,400
+formalizzazione che stiamo dando
+
+1661
+01:14:40,400 --> 01:14:43,239
+correntemente, che un problema è
+
+1662
+01:14:43,239 --> 01:14:48,120
+indecidibile, significa che non esiste
+
+1663
+01:14:48,120 --> 01:14:50,080
+e non esisterà
+
+1664
+01:14:50,080 --> 01:14:52,639
+in questo universo
+
+1665
+01:14:52,639 --> 01:14:56,520
+un qualsiasi dispositivo fisico in grado
+
+1666
+01:14:56,520 --> 01:15:00,360
+di risolvere il problema in questione.
+
+1667
+01:15:00,360 --> 01:15:02,719
+Ok? Quindi è un'assunzione molto forte.
+
+1668
+01:15:02,719 --> 01:15:04,840
+Nel momento in cui noi dimostriamo che
+
+1669
+01:15:04,840 --> 01:15:07,679
+una cosa non è risolvibile,
+
+1670
+01:15:07,679 --> 01:15:11,000
+non è che l'iPhone 15 non ci riesce, ma
+
+1671
+01:15:11,000 --> 01:15:14,400
+l'iPhone 16 ci riuscirà. Non si fa.
+
+1672
+01:15:14,400 --> 01:15:16,080
+Non esisterà
+
+1673
+01:15:16,080 --> 01:15:19,000
+intelligenza in questo universo in grado
+
+1674
+01:15:19,000 --> 01:15:23,520
+di produrre un dispositivo nella fisica
+
+1675
+01:15:23,520 --> 01:15:26,040
+che conosciamo al momento che sia in
+
+1676
+01:15:26,040 --> 01:15:29,480
+grado di risolvere una cosa che sta qua.
+
+1677
+01:15:29,480 --> 01:15:31,920
+Cioè il problema dell'alting è
+
+1678
+01:15:31,920 --> 01:15:34,960
+irrisolvibile per noi ed è irrisolvibile
+
+1679
+01:15:34,960 --> 01:15:38,000
+per i marziani.
+
+1680
+01:15:38,000 --> 01:15:41,639
+Non non esiste dispositivo fisico in
+
+1681
+01:15:41,639 --> 01:15:43,840
+grado di fare questa cosa. Ok? Quindi
+
+1682
+01:15:43,840 --> 01:15:45,880
+alla tua domanda, una volta che noi
+
+1683
+01:15:45,880 --> 01:15:47,760
+stabiliamo che un problema è
+
+1684
+01:15:47,760 --> 01:15:52,560
+irrisolvibile, questa irrisolvibilità è
+
+1685
+01:15:52,560 --> 01:15:54,639
+un risultato stabile o dipende dalla
+
+1686
+01:15:54,639 --> 01:15:58,080
+tecnologia? No, è un risultato stabile.
+
+1687
+01:15:58,080 --> 01:16:01,600
+La cosa interessante è che il i primi
+
+1688
+01:16:01,600 --> 01:16:03,920
+risultati di indecidibilità
+
+1689
+01:16:03,920 --> 01:16:07,800
+che furono che furono
+
+1690
+01:16:07,800 --> 01:16:11,280
+individuati da Alan Turing
+
+1691
+01:16:11,280 --> 01:16:13,800
+furono dati in un in un'epoca storica,
+
+1692
+01:16:13,800 --> 01:16:16,120
+gli anni 30, nel quale i computer
+
+1693
+01:16:16,120 --> 01:16:19,000
+nemmeno esistevano. Ok? Quindi non era
+
+1694
+01:16:19,000 --> 01:16:22,199
+una questione di "Ma quale tecnologia è
+
+1695
+01:16:22,199 --> 01:16:26,040
+in grado di risolvere questa cosa?
+
+1696
+01:16:26,040 --> 01:16:28,440
+La questione che Turing fu in grado di
+
+1697
+01:16:28,440 --> 01:16:31,800
+risolvere fu molto più profonda, fu del
+
+1698
+01:16:31,800 --> 01:16:34,520
+tipo "Ma se io ho un dispositivo
+
+1699
+01:16:34,520 --> 01:16:36,480
+automatico che è in grado di seguire
+
+1700
+01:16:36,480 --> 01:16:38,520
+delle istruzioni,
+
+1701
+01:16:38,520 --> 01:16:40,560
+questo dispositivo sarà in grado di
+
+1702
+01:16:40,560 --> 01:16:43,120
+risolvere qualsiasi cosa".
+
+1703
+01:16:43,120 --> 01:16:46,400
+In quel momento lui dimostrò, sebbene
+
+1704
+01:16:46,400 --> 01:16:48,320
+non esistessero fisicamente dei
+
+1705
+01:16:48,320 --> 01:16:50,159
+computer, perché stiamo parlando degli
+
+1706
+01:16:50,159 --> 01:16:53,400
+anni 30, non ci stavano le
+
+1707
+01:16:53,400 --> 01:16:56,639
+le calcolatrici a macchinetta, eh quello
+
+1708
+01:16:56,639 --> 01:16:59,080
+quello era il computer del tempo, ok? Ci
+
+1709
+01:16:59,080 --> 01:17:01,719
+stava la però quella per esempio non era
+
+1710
+01:17:01,719 --> 01:17:04,360
+ancora stata costruita la differenzial
+
+1711
+01:17:04,360 --> 01:17:06,639
+engine di Babbag. Quello era un computer
+
+1712
+01:17:06,639 --> 01:17:10,560
+che ora sappiamo essere avere avere la
+
+1713
+01:17:10,560 --> 01:17:12,440
+potenza di calcolo dei computer moderni.
+
+1714
+01:17:12,440 --> 01:17:14,679
+Cioè se avessimo una differenza all
+
+1715
+01:17:14,679 --> 01:17:16,440
+engine enorme avrebbe il potere di
+
+1716
+01:17:16,440 --> 01:17:18,000
+quello che sappiamo fare. Ora magari
+
+1717
+01:17:18,000 --> 01:17:19,520
+sarebbe più lento, però sarebbe in grado
+
+1718
+01:17:19,520 --> 01:17:22,080
+di calcolare tutto. Quindi non c non
+
+1719
+01:17:22,080 --> 01:17:23,840
+c'avevano
+
+1720
+01:17:23,840 --> 01:17:26,159
+dei computer fattivi. I primi computer
+
+1721
+01:17:26,159 --> 01:17:28,760
+fattivi sono degli anni 40 che furono
+
+1722
+01:17:28,760 --> 01:17:31,320
+sviluppati per il calcolo dei missili,
+
+1723
+01:17:31,320 --> 01:17:33,800
+no? Le traiettorie balistiche eccetera.
+
+1724
+01:17:33,800 --> 01:17:36,480
+Ok? Quindi i risultati di di
+
+1725
+01:17:36,480 --> 01:17:39,440
+calcolabilità precedono la tecnologia.
+
+1726
+01:17:39,440 --> 01:17:42,520
+Noi sapevamo già negli anni 30 che sem
+
+1727
+01:17:42,520 --> 01:17:45,239
+mai fossimo stati in grado di costruire
+
+1728
+01:17:45,239 --> 01:17:47,320
+delle macchine
+
+1729
+01:17:47,320 --> 01:17:49,000
+programmabili,
+
+1730
+01:17:49,000 --> 01:17:51,080
+quelle macchine non sarebbero state in
+
+1731
+01:17:51,080 --> 01:17:53,040
+grado di risolvere alcune questioni che
+
+1732
+01:17:53,040 --> 01:17:55,000
+Turing individuò. Tipo il problema
+
+1733
+01:17:55,000 --> 01:18:00,400
+dell'arresto lo individuo lui. Ok?
+
+1734
+01:18:00,400 --> 01:18:03,280
+Eh, questione complessità.
+
+1735
+01:18:03,280 --> 01:18:05,960
+Ma se noi piazziamo qualcosa fra i
+
+1736
+01:18:05,960 --> 01:18:09,840
+problemi facili o difficili, quella cosa
+
+1737
+01:18:09,840 --> 01:18:13,280
+tenderà a a rimanere così com'è. Allora,
+
+1738
+01:18:13,280 --> 01:18:15,400
+qui la questione e direi chiudiamo con
+
+1739
+01:18:15,400 --> 01:18:19,400
+questo. Oggi la questione è un po' è un
+
+1740
+01:18:19,400 --> 01:18:23,400
+po' più sofisticata perché in quel caso
+
+1741
+01:18:23,400 --> 01:18:25,400
+da un certo punto di vista dipende dalla
+
+1742
+01:18:25,400 --> 01:18:29,080
+tecnologia disponibile. Allora,
+
+1743
+01:18:29,080 --> 01:18:34,480
+nel momento in cui noi dimostriamo, no,
+
+1744
+01:18:34,480 --> 01:18:38,360
+vi faccio un anticipo
+
+1745
+01:18:46,360 --> 01:18:48,600
+e che
+
+1746
+01:18:48,600 --> 01:18:51,600
+facili
+
+1747
+01:18:53,320 --> 01:18:56,000
+esponenza
+
+1748
+01:18:56,000 --> 01:18:58,159
+sperabilmente. ente le riusciremo a
+
+1749
+01:18:58,159 --> 01:19:02,199
+vedere a fine a fine corso. Ok? Allora,
+
+1750
+01:19:02,199 --> 01:19:04,159
+noi abbiamo all'interno della classe dei
+
+1751
+01:19:04,159 --> 01:19:06,600
+problemi decidibili problemi per i quali
+
+1752
+01:19:06,600 --> 01:19:09,960
+esistono algoritmi che li risolvono in
+
+1753
+01:19:09,960 --> 01:19:13,520
+tempo polinomiale
+
+1754
+01:19:13,520 --> 01:19:17,239
+e problemi per i quali noi sappiamo che
+
+1755
+01:19:17,239 --> 01:19:19,400
+l'algoritmo più efficiente richiede
+
+1756
+01:19:19,400 --> 01:19:21,600
+tempo esponenziale.
+
+1757
+01:19:21,600 --> 01:19:24,080
+Vi ricordo che poi rivedremo tutte
+
+1758
+01:19:24,080 --> 01:19:25,639
+queste cose, quindi anche per i colleghi
+
+1759
+01:19:25,639 --> 01:19:27,040
+matematici tutti i concetti che
+
+1760
+01:19:27,040 --> 01:19:29,800
+rivedremo. Quando parliamo di algoritmi
+
+1761
+01:19:29,800 --> 01:19:31,639
+esponenziali significa che il tempo
+
+1762
+01:19:31,639 --> 01:19:34,000
+richiesto, il numero di passi che
+
+1763
+01:19:34,000 --> 01:19:36,199
+l'algoritmo deve fare per prima di
+
+1764
+01:19:36,199 --> 01:19:39,080
+arrivare a soluzione è esponenziale
+
+1765
+01:19:39,080 --> 01:19:42,600
+nella grandezza della rappresentazione
+
+1766
+01:19:42,600 --> 01:19:45,920
+dell'input. Ok?
+
+1767
+01:19:45,920 --> 01:19:47,520
+Allora,
+
+1768
+01:19:47,520 --> 01:19:50,480
+nel momento in cui noi dimostriamo che
+
+1769
+01:19:50,480 --> 01:19:53,320
+un un problema
+
+1770
+01:19:53,320 --> 01:19:55,639
+appartiene alla classe dei problemi
+
+1771
+01:19:55,639 --> 01:19:58,520
+esponenziali, eh per voi informatici che
+
+1772
+01:19:58,520 --> 01:20:01,320
+magari avete già visto alcune classi di
+
+1773
+01:20:01,320 --> 01:20:05,400
+complessità, exp non è NP. NP è una cosa
+
+1774
+01:20:05,400 --> 01:20:08,120
+che sta qua dentro, è più piccolina. Eh,
+
+1775
+01:20:08,120 --> 01:20:11,120
+qua parliamo di exponential time, sono
+
+1776
+01:20:11,120 --> 01:20:14,040
+cioè problemi talmente tosti di cui
+
+1777
+01:20:14,040 --> 01:20:17,360
+abbiamo la certezza che serva tempo
+
+1778
+01:20:17,360 --> 01:20:19,760
+esponenziale per risolverle, ok? Cioè
+
+1779
+01:20:19,760 --> 01:20:21,960
+che l'algoritmo più efficiente non può
+
+1780
+01:20:21,960 --> 01:20:23,840
+fare meno di un numero esponenziale di
+
+1781
+01:20:23,840 --> 01:20:25,880
+passi.
+
+1782
+01:20:25,880 --> 01:20:28,360
+Questo risultato
+
+1783
+01:20:28,360 --> 01:20:31,400
+è stabile o non stabile? Questo
+
+1784
+01:20:31,400 --> 01:20:34,440
+risultato è stabile, cioè una volta,
+
+1785
+01:20:34,440 --> 01:20:37,360
+però ora dovremmo introdurre una piccola
+
+1786
+01:20:37,360 --> 01:20:39,239
+differenzia,
+
+1787
+01:20:39,239 --> 01:20:41,800
+questo risultato è stabile nel senso che
+
+1788
+01:20:41,800 --> 01:20:43,679
+una volta che noi sappiamo che il
+
+1789
+01:20:43,679 --> 01:20:45,600
+problema richiede tempo esponenziale per
+
+1790
+01:20:45,600 --> 01:20:48,360
+la sua soluzione, non si scappa, serve
+
+1791
+01:20:48,360 --> 01:20:51,080
+tempo esponenziale. Ok?
+
+1792
+01:20:51,080 --> 01:20:53,440
+Però qui c'è una questione di tecnologia
+
+1793
+01:20:53,440 --> 01:20:56,320
+dietro perché magari riusciremo a
+
+1794
+01:20:56,320 --> 01:20:59,480
+sviluppare dei manufatti, no, che
+
+1795
+01:20:59,480 --> 01:21:02,639
+computano talmente velocemente che
+
+1796
+01:21:02,639 --> 01:21:05,480
+aspettare tempo esponenziale diventerà
+
+1797
+01:21:05,480 --> 01:21:08,800
+pollerabile, ma il problema avrà sempre
+
+1798
+01:21:08,800 --> 01:21:10,679
+quella complessità. Ok? Quindi quando
+
+1799
+01:21:10,679 --> 01:21:12,600
+poi alla fine si parla di quando si
+
+1800
+01:21:12,600 --> 01:21:14,840
+parla di calcolabilità, quello è proprio
+
+1801
+01:21:14,840 --> 01:21:16,600
+un territorio in cui non si non si può
+
+1802
+01:21:16,600 --> 01:21:18,400
+arrivare, cioè il problema non si
+
+1803
+01:21:18,400 --> 01:21:20,639
+risolve in maniera automatica, ti puoi
+
+1804
+01:21:20,639 --> 01:21:22,880
+inventare il cavolo che vuoi, non
+
+1805
+01:21:22,880 --> 01:21:25,400
+funziona.
+
+1806
+01:21:25,400 --> 01:21:27,480
+Quando si parla di complessità, quello
+
+1807
+01:21:27,480 --> 01:21:30,560
+che noi andiamo a a mostrare è che il
+
+1808
+01:21:30,560 --> 01:21:33,400
+problema richiede una certa quantità di
+
+1809
+01:21:33,400 --> 01:21:36,840
+tempo per essere risolto rispetto alla a
+
+1810
+01:21:36,840 --> 01:21:40,400
+quanto grande è l'input. Ok?
+
+1811
+01:21:40,400 --> 01:21:43,040
+Però qui è la questione, una volta che
+
+1812
+01:21:43,040 --> 01:21:44,760
+noi sappiamo che strutturalmente il
+
+1813
+01:21:44,760 --> 01:21:47,120
+problema richiede tempo esponenziale, la
+
+1814
+01:21:47,120 --> 01:21:51,600
+questione è ok, ma questi passi
+
+1815
+01:21:51,600 --> 01:21:54,400
+esponenziali quanto velocemente siamo in
+
+1816
+01:21:54,400 --> 01:21:56,840
+grado di eseguirli? A quel punto fa la
+
+1817
+01:21:56,840 --> 01:21:58,960
+differenza la tecnologia.
+
+1818
+01:21:58,960 --> 01:22:01,400
+Quindi il fatto che un problema sia
+
+1819
+01:22:01,400 --> 01:22:03,080
+risolvibile, cioè noi lo abbiamo
+
+1820
+01:22:03,080 --> 01:22:06,440
+collocato nella classe expiolibili
+
+1821
+01:22:06,440 --> 01:22:07,920
+in tempo esponenziale, quello è un
+
+1822
+01:22:07,920 --> 01:22:11,040
+risultato che non cambia, però la
+
+1823
+01:22:11,040 --> 01:22:13,040
+disponibilità di tecnologie che ci
+
+1824
+01:22:13,040 --> 01:22:14,679
+permettono di processare ad altissima
+
+1825
+01:22:14,679 --> 01:22:17,199
+velocità fa sì che quel problema
+
+1826
+01:22:17,199 --> 01:22:19,920
+potrebbe diventare tollerabile
+
+1827
+01:22:19,920 --> 01:22:23,639
+risolverlo, ok? però sempre esponenziale
+
+1828
+01:22:23,639 --> 01:22:25,800
+rimane. Per quanti di voi stanno
+
+1829
+01:22:25,800 --> 01:22:28,360
+pensando "Ah, ma il quantum computer?"
+
+1830
+01:22:28,360 --> 01:22:30,400
+Quantum computer riescono a risolvere
+
+1831
+01:22:30,400 --> 01:22:33,719
+una cosa che sta qua in mezzo, eh?
+
+1832
+01:22:33,719 --> 01:22:35,719
+Nemmeno ANP riescono ad arrivare in
+
+1833
+01:22:35,719 --> 01:22:39,080
+quantum computer. Questo qua. Ok, ultima
+
+1834
+01:22:39,080 --> 01:22:41,239
+domanda. E qui si chiude? Ho visto una
+
+1835
+01:22:41,239 --> 01:22:45,639
+mano alzata.
+Quantum computer. No,
+come
+
+1836
+01:22:45,639 --> 01:22:48,800
+ha già risposto?
+Quantum computer. Ok. E
+
+1837
+01:22:48,800 --> 01:22:51,360
+per oggi chiudiamo qua. Grazie mille.
+
+1838
+01:22:51,360 --> 01:22:54,600
+Buona serata.
+
+1839
+01:22:58,310 --> 01:23:01,639
+[Musica]

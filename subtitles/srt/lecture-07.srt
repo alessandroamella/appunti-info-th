@@ -1,0 +1,6829 @@
+1
+00:00:00,000 --> 00:00:03,000
+Ok
+
+2
+00:00:06,390 --> 00:00:08,280
+[Musica]
+
+3
+00:00:08,280 --> 00:00:11,840
+guys, let's start.
+
+4
+00:00:18,279 --> 00:00:21,640
+Ok, quello che vediamo oggi sono un po'
+
+5
+00:00:21,640 --> 00:00:23,920
+di esercizi su macchine di touring
+
+6
+00:00:23,920 --> 00:00:25,680
+Montinasto. Abbiamo introdotto la
+
+7
+00:00:25,680 --> 00:00:28,519
+nozione la scorsa volta, ci esercitiamo
+
+8
+00:00:28,519 --> 00:00:31,080
+ora un po'. Vediamo un po' di roba così
+
+9
+00:00:31,080 --> 00:00:34,280
+vediamo come come si programma questo
+
+10
+00:00:34,280 --> 00:00:37,399
+aggeggio. Ok? M è chiaro per tutti la
+
+11
+00:00:37,399 --> 00:00:39,200
+definizione di multinastro? La
+
+12
+00:00:39,200 --> 00:00:40,680
+differenza di multinastro con
+
+13
+00:00:40,680 --> 00:00:43,680
+multitraccia?
+
+14
+00:00:45,559 --> 00:00:48,879
+Yeah! No,
+
+15
+00:00:48,879 --> 00:00:51,199
+ok, multinastro. Vi ricordo che sono
+
+16
+00:00:51,199 --> 00:00:53,840
+quelle macchine di touring che hanno più
+
+17
+00:00:53,840 --> 00:00:57,800
+nastri e ogni nastro ha una testina
+
+18
+00:00:57,800 --> 00:01:01,600
+indipendente. Ok. Multitracco,
+
+19
+00:01:01,600 --> 00:01:03,920
+testini macchine Turing che hanno un
+
+20
+00:01:03,920 --> 00:01:07,759
+solo nastro diviso in più tracce e c'è
+
+21
+00:01:07,759 --> 00:01:09,560
+una testina gigante che se la legge
+
+22
+00:01:09,560 --> 00:01:12,040
+tutto e se le legge tutti assieme. Ok?
+
+23
+00:01:12,040 --> 00:01:13,960
+Abbiamo mostrato che le multinastro sono
+
+24
+00:01:13,960 --> 00:01:16,000
+equivalenti alle multitraccia. Abbiamo
+
+25
+00:01:16,000 --> 00:01:17,680
+mostrato che le multitraccia sono
+
+26
+00:01:17,680 --> 00:01:19,799
+equivalenti a quelle standard. Di
+
+27
+00:01:19,799 --> 00:01:22,600
+conseguenza tutte queste macchine sono
+
+28
+00:01:22,600 --> 00:01:25,320
+equivalenti alle macchine standard. Per
+
+29
+00:01:25,320 --> 00:01:30,119
+equivalenti intendo che se c'è se una
+
+30
+00:01:30,119 --> 00:01:33,520
+macchina multinastro decide o accetta un
+
+31
+00:01:33,520 --> 00:01:36,439
+certo linguaggio L, allora esisterà
+
+32
+00:01:36,439 --> 00:01:38,560
+anche una macchina mononastro standard
+
+33
+00:01:38,560 --> 00:01:41,000
+che decide o accetta lo stesso identico
+
+34
+00:01:41,000 --> 00:01:42,960
+linguaggio. Abbiamo visto che una
+
+35
+00:01:42,960 --> 00:01:45,200
+macchina multinastro
+
+36
+00:01:45,200 --> 00:01:47,719
+può essere un po' più veloce di una
+
+37
+00:01:47,719 --> 00:01:50,159
+macchina mononastro perché perché avendo
+
+38
+00:01:50,159 --> 00:01:52,000
+più testine può usare la memoria in un
+
+39
+00:01:52,000 --> 00:01:54,600
+modo migliore, però questo non gli dà un
+
+40
+00:01:54,600 --> 00:01:56,960
+potere di calcolo maggiore. Cioè quello
+
+41
+00:01:56,960 --> 00:01:58,840
+che sappiamo fare su macchine di Touring
+
+42
+00:01:58,840 --> 00:02:01,200
+multinastro, lo sappiamo fare su
+
+43
+00:02:01,200 --> 00:02:04,320
+macchine di Touring mononastro,
+
+44
+00:02:04,320 --> 00:02:06,479
+eh, e quindi non aggiunge niente
+
+45
+00:02:06,479 --> 00:02:08,119
+all'espressività di questo tipo di
+
+46
+00:02:08,119 --> 00:02:10,280
+automi, semplicemente ci vengono più
+
+47
+00:02:10,280 --> 00:02:12,360
+facili da programmare.
+
+48
+00:02:12,360 --> 00:02:15,800
+Eh, quindi oggi vedremo
+
+49
+00:02:15,800 --> 00:02:19,280
+un po' di di esempi di linguaggi che
+
+50
+00:02:19,280 --> 00:02:20,840
+riconosciamo con macchine di Touring
+
+51
+00:02:20,840 --> 00:02:22,599
+Multinastro, così ci esercitiamo un
+
+52
+00:02:22,599 --> 00:02:24,560
+pochettino. Questa cosa ci servirà
+
+53
+00:02:24,560 --> 00:02:26,840
+perché quando poi andiamo su macchine
+
+54
+00:02:26,840 --> 00:02:28,800
+non deterministiche
+
+55
+00:02:28,800 --> 00:02:30,760
+a quel punto diventa più divertente se
+
+56
+00:02:30,760 --> 00:02:34,360
+abbiamo più nastri e quindi è meglio
+
+57
+00:02:34,360 --> 00:02:38,480
+impratichirci ora. Ok.
+
+58
+00:02:38,680 --> 00:02:41,480
+Alright. Qui c'ho un po' di esempi.
+
+59
+00:02:41,480 --> 00:02:44,480
+Iniziamo.
+
+60
+00:02:45,640 --> 00:02:47,680
+Ah, così vedo,
+
+61
+00:02:47,680 --> 00:02:51,560
+così vedo che vedete.
+
+62
+00:02:59,120 --> 00:03:02,120
+Allora,
+
+63
+00:03:05,760 --> 00:03:10,000
+vogliamo riconoscere il linguaggio L
+
+64
+00:03:10,000 --> 00:03:14,640
+fatto così, A B
+
+65
+00:03:15,720 --> 00:03:18,720
+AB
+
+66
+00:03:21,360 --> 00:03:24,760
+tale che A e B
+
+67
+00:03:24,760 --> 00:03:30,599
+sono stringhe provenienti da 0
+
+68
+00:03:31,680 --> 00:03:32,799
+Chiaro il significato di questo
+
+69
+00:03:32,799 --> 00:03:35,799
+linguaggio?
+
+70
+00:03:51,000 --> 00:03:53,599
+Ci siete? Quindi il linguaggio di triple
+
+71
+00:03:53,599 --> 00:03:56,560
+divise da due cancelletti. Qui abbiamo
+
+72
+00:03:56,560 --> 00:03:58,239
+un primo pezzo che chiamiamo A, un
+
+73
+00:03:58,239 --> 00:04:00,360
+secondo pezzo che chiamiamo B e poi il
+
+74
+00:04:00,360 --> 00:04:02,959
+terzo pezzo deve essere pari ad A
+
+75
+00:04:02,959 --> 00:04:06,239
+concatenato B. Ok? Quindi molto
+
+76
+00:04:06,239 --> 00:04:08,519
+semplice. Il solito trucco per risolvere
+
+77
+00:04:08,519 --> 00:04:10,959
+queste cose è visualizzare il
+
+78
+00:04:10,959 --> 00:04:13,680
+funzionamento della macchina. Ok?
+
+79
+00:04:13,680 --> 00:04:17,079
+Facciamolo un po' assieme. Come possiamo
+
+80
+00:04:17,079 --> 00:04:21,199
+risolvere questo coso?
+
+81
+00:04:32,120 --> 00:04:36,400
+Potremmo tre nastri. Quello degli
+
+82
+00:04:36,400 --> 00:04:38,840
+sul primo scriviamo tutta A. Al primo
+
+83
+00:04:38,840 --> 00:04:41,639
+cancelletto scriviamo B sulla
+
+84
+00:04:41,639 --> 00:04:43,560
+sull'ultimo nastro. Al secondo
+
+85
+00:04:43,560 --> 00:04:45,360
+cancelletto riavvolgiamo tutto e vediamo
+
+86
+00:04:45,360 --> 00:04:47,720
+se prima si legge tutto a si legge tutto
+
+87
+00:04:47,720 --> 00:04:49,800
+B.
+Ok. Sì. Praticamente noi possiamo
+
+88
+00:04:49,800 --> 00:04:51,880
+utilizzare dei nastri di memoria
+
+89
+00:04:51,880 --> 00:04:55,080
+temporanea. Ci ricopiamo A B, li
+
+90
+00:04:55,080 --> 00:04:57,400
+possiamo ricopiare in sequenza, no?
+
+91
+00:04:57,400 --> 00:04:59,199
+Sullo stesso nastro. E poi andiamo a
+
+92
+00:04:59,199 --> 00:05:02,000
+vedere se AB sta in fondo dopo il
+
+93
+00:05:02,000 --> 00:05:04,280
+secondo cancelletto. Ok? Ovviamente ci
+
+94
+00:05:04,280 --> 00:05:07,680
+sono tanti modi di fare questa cosa, non
+
+95
+00:05:07,680 --> 00:05:10,039
+mi interesserà vedere il modo più
+
+96
+00:05:10,039 --> 00:05:11,919
+efficiente, basta che funziona, cioè
+
+97
+00:05:11,919 --> 00:05:13,919
+qualsiasi cosa che funziona per me va
+
+98
+00:05:13,919 --> 00:05:16,800
+bene, però deve funzionare. Ok?
+
+99
+00:05:16,800 --> 00:05:21,080
+Allora, questo è uno che vi propongo io.
+
+100
+00:05:21,080 --> 00:05:25,199
+Allora, m abbiamo che alfa è un simbolo
+
+101
+00:05:25,199 --> 00:05:29,160
+che appartiene all'insieme 01.
+
+102
+00:05:29,160 --> 00:05:31,520
+Leggete? Sì.
+
+103
+00:05:31,520 --> 00:05:35,520
+Allora, siccome noi abbiamo che A e B
+
+104
+00:05:35,520 --> 00:05:38,680
+devono avere almeno un carattere,
+
+105
+00:05:38,680 --> 00:05:41,479
+iniziamo per esempio leggendo un
+
+106
+00:05:41,479 --> 00:05:43,840
+carattere. Quindi, sul primo nastro
+
+107
+00:05:43,840 --> 00:05:46,080
+leggiamo un simbolo alfa, lo lasciamo lì
+
+108
+00:05:46,080 --> 00:05:48,520
+dov'è e andiamo avanti. Sul secondo che
+
+109
+00:05:48,520 --> 00:05:51,520
+facciamo?
+
+110
+00:05:54,400 --> 00:05:59,400
+Sì, non c'è niente. Scriviamo alfa. Eh,
+
+111
+00:05:59,400 --> 00:06:01,280
+eh,
+e andiamo avanti.
+E andiamo avanti.
+
+112
+00:06:01,280 --> 00:06:03,280
+Ok.
+
+113
+00:06:03,280 --> 00:06:05,440
+Questa cosa ovviamente va fatta per
+
+114
+00:06:05,440 --> 00:06:07,840
+tutti i simboli di quello che noi
+
+115
+00:06:07,840 --> 00:06:11,240
+chiamiamo a e quindi cicliamo su questa
+
+116
+00:06:11,240 --> 00:06:13,120
+cosa, no? Spostiamo le testine. Tutto
+
+117
+00:06:13,120 --> 00:06:15,720
+quello che stava in A. Fatemelo scrivere
+
+118
+00:06:15,720 --> 00:06:19,000
+a sto punto.
+
+119
+00:06:21,919 --> 00:06:25,520
+Quindi che cosa abbiamo? Tipo 0 1 0
+
+120
+00:06:25,520 --> 00:06:27,960
+cancelletto
+
+121
+00:06:27,960 --> 00:06:30,960
+1
+
+122
+00:06:32,680 --> 00:06:38,520
+0. Ok. E poi abbiamo 0 1
+
+123
+00:06:38,520 --> 00:06:42,240
+1 0. Ok? Quindi l'idea è praticamente
+
+124
+00:06:42,240 --> 00:06:45,000
+questo è il primo nastro di input, sul
+
+125
+00:06:45,000 --> 00:06:46,560
+secondo nastro di input andiamo a
+
+126
+00:06:46,560 --> 00:06:51,000
+piazzare questi qua, quindi 0 1 0,
+
+127
+00:06:51,000 --> 00:06:53,199
+superiamo il cancelletto e poi andiamo a
+
+128
+00:06:53,199 --> 00:06:56,680
+copiare questi 1 1 1 e sono quando è
+
+129
+00:06:56,680 --> 00:06:59,199
+pronto andiamo a verificare che è uguale
+
+130
+00:06:59,199 --> 00:07:04,800
+a questa cosa qui. Ok, tutto qua.
+
+131
+00:07:05,759 --> 00:07:10,879
+So tagliare così si fa così.
+
+132
+00:07:12,360 --> 00:07:16,240
+No, ciao. Ok,
+
+133
+00:07:16,240 --> 00:07:18,000
+allora facciamo. Quindi stiamo
+
+134
+00:07:18,000 --> 00:07:21,280
+ricopiendo a quindi sul primo nastro c'è
+
+135
+00:07:21,280 --> 00:07:24,080
+alfa, scrivo alfa e vado avanti. Sul
+
+136
+00:07:24,080 --> 00:07:26,759
+secondo nastro c'è blank, scrivo alfa e
+
+137
+00:07:26,759 --> 00:07:31,319
+vado avanti. Ok? Fino a quando becchiamo
+
+138
+00:07:31,319 --> 00:07:34,400
+il cancelletto sul primo nastro. Sul
+
+139
+00:07:34,400 --> 00:07:36,360
+primo nastro c'è cancelletto. Lascio
+
+140
+00:07:36,360 --> 00:07:38,800
+cancelletto e vado avanti. Sul secondo
+
+141
+00:07:38,800 --> 00:07:42,280
+nastro che faccio?
+
+142
+00:07:43,120 --> 00:07:45,720
+C'è blank, lascio blank, sto fer
+Sì,
+
+143
+00:07:45,720 --> 00:07:47,639
+quindi c'è Blank, lascio blank e sto
+
+144
+00:07:47,639 --> 00:07:51,120
+fermo. Posso anche non scrivere niente,
+
+145
+00:07:51,120 --> 00:07:53,400
+che significa? in qualsiasi condizione è
+
+146
+00:07:53,400 --> 00:07:56,199
+il secondo nastro, lo lascio lì com'è e
+
+147
+00:07:56,199 --> 00:07:59,479
+lo lascio fermo. Ok, però si instanzia
+
+148
+00:07:59,479 --> 00:08:02,000
+in c'è blank, lascio blank e sto fermo.
+
+149
+00:08:02,000 --> 00:08:06,520
+Ok, andiamo in Q2.
+
+150
+00:08:06,520 --> 00:08:08,560
+A questo punto dobbiamo fare una cosa
+
+151
+00:08:08,560 --> 00:08:12,400
+simile, quindi
+
+152
+00:08:13,280 --> 00:08:16,039
+sul primo nastro c'è alfa, lascio alfa e
+
+153
+00:08:16,039 --> 00:08:20,800
+vado avanti. Sul secondo nastro c'è.
+
+154
+00:08:22,159 --> 00:08:25,919
+Blank. Alri, scrivo alfa e vado avanti.
+
+155
+00:08:25,919 --> 00:08:27,560
+Domanda:
+
+156
+00:08:27,560 --> 00:08:30,599
+questo alfa qua e questo alfa qua sono
+
+157
+00:08:30,599 --> 00:08:33,240
+relati in qualche modo?
+
+158
+00:08:33,240 --> 00:08:35,919
+No, sono la stessa etichetta che sta in
+
+159
+00:08:35,919 --> 00:08:38,640
+due edge diversi. Sì,
+non dovremmo
+
+160
+00:08:38,640 --> 00:08:41,399
+scrivere sul nastro tre.
+
+161
+00:08:41,399 --> 00:08:43,599
+Non non è indispensabile. Un attimo, qua
+
+162
+00:08:43,599 --> 00:08:45,959
+serve
+
+163
+00:08:45,959 --> 00:08:47,800
+questo qua.
+
+164
+00:08:47,800 --> 00:08:49,640
+Si potrebbe scrivere sul nastro tre e
+
+165
+00:08:49,640 --> 00:08:53,399
+poi andiamo a leggere dal due, no?
+
+166
+00:08:53,399 --> 00:08:56,160
+Perché guarda la la mia idea è questa.
+
+167
+00:08:56,160 --> 00:09:01,120
+Scrivo A sul 2 e poi scrivo B sul 2. Li
+
+168
+00:09:01,120 --> 00:09:02,720
+metto uno appresso all'altro in maniera
+
+169
+00:09:02,720 --> 00:09:04,640
+tale che poi tutta questa la prendo e la
+
+170
+00:09:04,640 --> 00:09:07,000
+confronto con C.
+
+171
+00:09:07,000 --> 00:09:08,880
+Si può anche scrivere sul terzo, eh,
+
+172
+00:09:08,880 --> 00:09:12,279
+cioè non è oro colato. Questo è un modo
+
+173
+00:09:12,279 --> 00:09:14,839
+per farlo. Ok? Qualsiasi modo che va
+
+174
+00:09:14,839 --> 00:09:17,880
+bene, va bene.
+
+175
+00:09:17,880 --> 00:09:20,839
+Ok, siamo in Q2,
+
+176
+00:09:20,839 --> 00:09:23,839
+andiamo in Q3.
+
+177
+00:09:23,839 --> 00:09:26,920
+Qui facciamo sul primo nastro c'è alfa,
+
+178
+00:09:26,920 --> 00:09:29,560
+lascio alfa e vado avanti. Sul secondo
+
+179
+00:09:29,560 --> 00:09:32,720
+nastro c'è blank, las scrivo alfa e vado
+
+180
+00:09:32,720 --> 00:09:35,720
+avanti. Ok.
+
+181
+00:09:35,720 --> 00:09:39,560
+Ma non si può ciclare direttamente Q2 o
+
+182
+00:09:39,560 --> 00:09:42,920
+c'è bisogno di fare un passaggio
+
+183
+00:09:42,920 --> 00:09:46,480
+in Q2 dobbiamo essere sicuri che B abbia
+
+184
+00:09:46,480 --> 00:09:49,200
+almeno un carattere, un simbolo. Quindi
+
+185
+00:09:49,200 --> 00:09:53,959
+io in questo modo impongo che su B leggo
+
+186
+00:09:53,959 --> 00:09:57,480
+almeno una cosa. Ok?
+
+187
+00:09:57,480 --> 00:09:59,480
+Poi andiamo avanti.
+
+188
+00:09:59,480 --> 00:10:02,360
+Sul primo nastro c'è cancelletto. Lascio
+
+189
+00:10:02,360 --> 00:10:05,560
+cancelletto e vado avanti sul secondo
+
+190
+00:10:05,560 --> 00:10:08,600
+nastro che facciamo?
+
+191
+00:10:08,600 --> 00:10:11,600
+Ok.
+
+192
+00:10:11,720 --> 00:10:16,160
+Allora, ci sono vari modi per risolvere
+
+193
+00:10:16,160 --> 00:10:18,680
+questa cosa. Qualsiasi modo che funziona
+
+194
+00:10:18,680 --> 00:10:23,000
+va bene. Ok. Allora,
+
+195
+00:10:23,000 --> 00:10:26,880
+uno che potrebbe
+
+196
+00:10:26,920 --> 00:10:31,040
+essere utile per noi, c sono vari, è che
+
+197
+00:10:31,040 --> 00:10:32,640
+una volta che abbiamo scritto l'intero
+
+198
+00:10:32,640 --> 00:10:34,760
+contenuto del secondo nastro e che
+
+199
+00:10:34,760 --> 00:10:37,120
+quindi sul nastro abbiamo A seguito da
+
+200
+00:10:37,120 --> 00:10:40,079
+B, una cosa che potremmo fare è vado
+
+201
+00:10:40,079 --> 00:10:42,519
+indietro all'inizio di quello che ho
+
+202
+00:10:42,519 --> 00:10:44,320
+scritto sul secondo nastro e poi
+
+203
+00:10:44,320 --> 00:10:49,399
+verifico che il
+
+204
+00:10:49,399 --> 00:10:50,680
+quello Quello che ci sta sul primo
+
+205
+00:10:50,680 --> 00:10:52,560
+nastro e quello che ci sta sul secondo
+
+206
+00:10:52,560 --> 00:10:56,120
+nastro sono la stessa cosa.
+
+207
+00:10:56,120 --> 00:10:58,839
+Un altro modo che è perfettamente
+
+208
+00:10:58,839 --> 00:11:00,480
+equivalente
+
+209
+00:11:00,480 --> 00:11:04,399
+è che mando in fondo il primo nastro e
+
+210
+00:11:04,399 --> 00:11:08,399
+dopodiché li indietreggio assieme. Ok?
+
+211
+00:11:08,399 --> 00:11:11,680
+Uno vale l'altro. Eh, sono entrambi.
+
+212
+00:11:11,680 --> 00:11:14,120
+Funzionano entrambi. Ok, magari
+
+213
+00:11:14,120 --> 00:11:18,480
+riavvolgiamo il secondo nastro.
+
+214
+00:11:18,480 --> 00:11:20,399
+Allora, che abbiamo sul secondo nastro?
+
+215
+00:11:20,399 --> 00:11:23,760
+C'è Blank, scrivo blank e
+
+216
+00:11:23,760 --> 00:11:28,120
+B. Andiamo indietro. Ok, Q4. Vediamo che
+
+217
+00:11:28,120 --> 00:11:32,519
+leggete. Mh, più o meno.
+
+218
+00:11:32,519 --> 00:11:37,720
+Ok, ci sta. Ok, dobbiamo riavvolgere ora
+
+219
+00:11:37,720 --> 00:11:42,680
+l'intero secondo nastro. Come facciamo?
+
+220
+00:11:44,600 --> 00:11:47,079
+Primo nastro. Sul primo nastro non
+
+221
+00:11:47,079 --> 00:11:48,760
+facciamo niente, quindi non scriviamo
+
+222
+00:11:48,760 --> 00:11:52,360
+niente. Sì.
+E sul secondo,
+
+223
+00:11:52,360 --> 00:11:55,639
+cioè qualsiasi cosa leggo
+Sì, sì.
+Eh,
+
+224
+00:11:55,639 --> 00:11:58,240
+leggo alfa, non scrivo niente. Cioè,
+
+225
+00:11:58,240 --> 00:12:00,880
+scrivo alfa,
+riscriviamo alfa e torniamo
+
+226
+00:12:00,880 --> 00:12:03,440
+indietro. Sì, quindi sul secondo c'è
+
+227
+00:12:03,440 --> 00:12:06,959
+alfa, riscrivo alfa e vado dietro. Ok,
+
+228
+00:12:06,959 --> 00:12:08,760
+quindi a questo punto stiamo
+
+229
+00:12:08,760 --> 00:12:12,399
+indietreggiando sul secondo nastro fino
+
+230
+00:12:12,399 --> 00:12:15,040
+a quando? Come ci accorgiamo di aver
+
+231
+00:12:15,040 --> 00:12:17,279
+riavvolto tutto?
+
+232
+00:12:17,279 --> 00:12:20,639
+Blank. Qui ci sta niente. Appena vediamo
+
+233
+00:12:20,639 --> 00:12:22,399
+quello sul secondo nastro sappiamo che
+
+234
+00:12:22,399 --> 00:12:26,120
+siamo arrivati. Ok. Ok. Allora, sul
+
+235
+00:12:26,120 --> 00:12:30,959
+secondo nastro c'è blank. Scrivo blank e
+
+236
+00:12:30,959 --> 00:12:33,079
+vado avanti.
+
+237
+00:12:33,079 --> 00:12:36,079
+Q5.
+
+238
+00:12:36,800 --> 00:12:39,120
+Adesso in che condizioni siamo? Cioè in
+
+239
+00:12:39,120 --> 00:12:41,959
+che stato di in che configurazione si
+
+240
+00:12:41,959 --> 00:12:44,880
+trova la macchina? Dov'è la testina del
+
+241
+00:12:44,880 --> 00:12:46,920
+primo nastro? Dov'è la testina del
+
+242
+00:12:46,920 --> 00:12:49,639
+secondo nastro?
+
+243
+00:12:49,639 --> 00:12:51,320
+Allora, la testina del primo e dopo il
+
+244
+00:12:51,320 --> 00:12:53,240
+secondo asterisco.
+Sì. Eh, sì.
+
+245
+00:12:53,240 --> 00:12:56,000
+Cancelletto.
+E mentre invece Ah, sì, è
+
+246
+00:12:56,000 --> 00:12:58,440
+cancelletto.
+Eh, mentre invece la
+
+247
+00:12:58,440 --> 00:13:01,720
+testina del secondo nastro è eh sul
+
+248
+00:13:01,720 --> 00:13:04,360
+primo alfa, diciamo,
+sul primo carattere
+
+249
+00:13:04,360 --> 00:13:07,040
+non blank, quello più a sinistra. Ok.
+
+250
+00:13:07,040 --> 00:13:08,320
+Benissimo. Quindi, che cosa dobbiamo
+
+251
+00:13:08,320 --> 00:13:11,079
+fare? li guardiamo contemporaneamente,
+
+252
+00:13:11,079 --> 00:13:13,959
+li spostiamo assieme, deve esserci
+
+253
+00:13:13,959 --> 00:13:16,880
+sempre la stessa cosa e devono finire
+
+254
+00:13:16,880 --> 00:13:19,600
+assieme. Ok?
+
+255
+00:13:19,600 --> 00:13:22,040
+Quindi semplicemente
+
+256
+00:13:22,040 --> 00:13:24,519
+sul primo nastro c'è alfa, lascio alfa e
+
+257
+00:13:24,519 --> 00:13:26,760
+vado avanti. Sul secondo nastro cosa
+
+258
+00:13:26,760 --> 00:13:29,920
+devo trovare?
+Alfa.
+Alfa. Lascio alfa e
+
+259
+00:13:29,920 --> 00:13:31,839
+vado avanti.
+
+260
+00:13:31,839 --> 00:13:35,440
+Quand'è che mi fermo?
+
+261
+00:13:38,399 --> 00:13:40,680
+Blank dove?
+
+262
+00:13:40,680 --> 00:13:43,680
+A entrambi. Ok, quindi sul primo ci sta
+
+263
+00:13:43,680 --> 00:13:46,440
+blank, lascio blank e sto fermo. Sul
+
+264
+00:13:46,440 --> 00:13:49,079
+secondo c'è blank, lascio blank e sto
+
+265
+00:13:49,079 --> 00:13:54,720
+fermo. Andiamo in Q6 e aspettiamo.
+
+266
+00:13:58,079 --> 00:13:59,440
+Chiaro? Per tutti come funziona sta
+
+267
+00:13:59,440 --> 00:14:01,440
+macchina? Molto semplice, ok? Gli
+
+268
+00:14:01,440 --> 00:14:03,040
+esercizi, quelli un po' più trichi, li
+
+269
+00:14:03,040 --> 00:14:08,519
+vediamo dopo la pausa, ok? Prossimo.
+
+270
+00:14:09,560 --> 00:14:13,920
+Se vado troppo veloce fermatemi.
+
+271
+00:14:16,759 --> 00:14:19,519
+Alright.
+
+272
+00:14:19,519 --> 00:14:23,000
+Scusi.
+Sì,
+ma per noi il confronto tra
+
+273
+00:14:23,000 --> 00:14:25,360
+string effettivamente sull'automa non lo
+
+274
+00:14:25,360 --> 00:14:28,440
+spieghiamo, ma avviene in maniera
+
+275
+00:14:28,440 --> 00:14:32,040
+implicita qual dello stato Q5 +6, cioè
+
+276
+00:14:32,040 --> 00:14:34,560
+non c'è ver proprio medi di struttura
+
+277
+00:14:34,560 --> 00:14:36,920
+dove diciamo confrontiamo la parte di
+
+278
+00:14:36,920 --> 00:14:42,279
+stringa. in Q5 si confronta in Q5 la eh
+
+279
+00:14:42,279 --> 00:14:45,759
+l'etichetta qui ci sta dicendo che
+
+280
+00:14:45,759 --> 00:14:48,000
+qualsiasi carattere leggo su primo
+
+281
+00:14:48,000 --> 00:14:50,360
+nastro e sul primo nastro mi trovo nella
+
+282
+00:14:50,360 --> 00:14:52,759
+porzione di input che è questa qua,
+
+283
+00:14:52,759 --> 00:14:55,920
+quella che chiamiamo C. Quindi qualsiasi
+
+284
+00:14:55,920 --> 00:14:58,279
+cosa leggo su primo nastro, quella
+
+285
+00:14:58,279 --> 00:15:00,320
+stessa cosa deve stare sul secondo
+
+286
+00:15:00,320 --> 00:15:02,040
+nastro. È lì che stiamo facendo il la
+
+287
+00:15:02,040 --> 00:15:03,959
+verifica.
+
+288
+00:15:03,959 --> 00:15:05,360
+Però questo per voi, cioè non è che
+
+289
+00:15:05,360 --> 00:15:07,800
+l'abbiamo
+In che senso? C'abbiamo dei
+
+290
+00:15:07,800 --> 00:15:10,480
+singoli che indicano non avere propria
+
+291
+00:15:10,480 --> 00:15:13,320
+del vita. Cioè se avessi un'altra
+
+292
+00:15:13,320 --> 00:15:17,040
+transizione da stato qui a cui + 1 dove
+
+293
+00:15:17,040 --> 00:15:19,079
+la transizione appunto viene come su un
+
+294
+00:15:19,079 --> 00:15:21,480
+altro uno o alfa scrivo alfa e passo
+
+295
+00:15:21,480 --> 00:15:23,759
+avanti e su nastro due o alfa scrivo
+
+296
+00:15:23,759 --> 00:15:26,519
+alfa passo avanti. Sto intendere sempre
+
+297
+00:15:26,519 --> 00:15:29,839
+che abbiano un confronto oppure no.
+
+298
+00:15:29,839 --> 00:15:32,560
+Il fatto che queste due cose sono
+
+299
+00:15:32,560 --> 00:15:35,639
+scritte assieme significa che percorrere
+
+300
+00:15:35,639 --> 00:15:38,600
+questo edge si devono verificare due
+
+301
+00:15:38,600 --> 00:15:42,160
+condizioni. O su primo nastro c'è zero e
+
+302
+00:15:42,160 --> 00:15:45,560
+su secondo nastro c'è zero.
+
+303
+00:15:45,560 --> 00:15:48,800
+Allo stesso momento, eh, e a quel punto
+
+304
+00:15:48,800 --> 00:15:52,519
+lì avanzo entrambi. Oppure su primo
+
+305
+00:15:52,519 --> 00:15:55,120
+nastro c'è uno, su secondo nastro c'è
+
+306
+00:15:55,120 --> 00:15:58,639
+uno e li avanzo entrambi. Non può
+
+307
+00:15:58,639 --> 00:16:00,639
+accadere che sul primo nastro c'è zero e
+
+308
+00:16:00,639 --> 00:16:02,959
+sul secondo nastro c'è uno. L'etichetta
+
+309
+00:16:02,959 --> 00:16:06,319
+com'è definit.
+
+310
+00:16:06,759 --> 00:16:09,639
+Quindi la combinazione delle etichette
+
+311
+00:16:09,639 --> 00:16:12,360
+crea una condizione
+Sì. Perché lì in
+
+312
+00:16:12,360 --> 00:16:14,680
+quel modo, siccome stiamo usando alfa
+
+313
+00:16:14,680 --> 00:16:17,319
+qui e alfa qui, stiamo usando lo stesso
+
+314
+00:16:17,319 --> 00:16:20,759
+simbolo lì, sto intendendo che questo
+
+315
+00:16:20,759 --> 00:16:22,680
+Ok,
+
+316
+00:16:22,680 --> 00:16:26,000
+cambiamo colore.
+
+317
+00:16:26,000 --> 00:16:28,360
+Questa qui è un'etichetta da sola, eh,
+
+318
+00:16:28,360 --> 00:16:30,519
+cioè la condizione deve avvenire su
+
+319
+00:16:30,519 --> 00:16:33,079
+primo nastro e sul secondo nastro.
+
+320
+00:16:33,079 --> 00:16:38,120
+Questa cosa qua è il riassunto di queste
+
+321
+00:16:38,120 --> 00:16:40,759
+etichette. Su primo nastro c'è zero,
+
+322
+00:16:40,759 --> 00:16:43,920
+scrivo 0 e vado avanti. Su secondo
+
+323
+00:16:43,920 --> 00:16:46,120
+nastro c'è zero, lascio zero e vado
+
+324
+00:16:46,120 --> 00:16:50,240
+avanti. Oppure sul primo nastro c'è uno,
+
+325
+00:16:50,240 --> 00:16:52,319
+lascio uno e vado avanti. E sul secondo
+
+326
+00:16:52,319 --> 00:16:54,040
+nastro c'è uno, lascio uno e vado
+
+327
+00:16:54,040 --> 00:16:56,720
+avanti. È solo un modo compatto di
+
+328
+00:16:56,720 --> 00:16:59,319
+scriverlo. Ok? In realtà lì è come se
+
+329
+00:16:59,319 --> 00:17:01,160
+intendessi queste due condizioni. O
+
+330
+00:17:01,160 --> 00:17:03,519
+leggo su entrambi zero e li avanzo
+
+331
+00:17:03,519 --> 00:17:06,880
+entrambi. O leggo entrambi 1 e li avanzo
+
+332
+00:17:06,880 --> 00:17:09,480
+entrambi.
+
+333
+00:17:09,480 --> 00:17:12,039
+Però quando succede che sul primo c'è
+
+334
+00:17:12,039 --> 00:17:14,520
+zero e sul secondo c'è uno o viceversa,
+
+335
+00:17:14,520 --> 00:17:16,360
+che sul primo c'è uno e il secondo c'è
+
+336
+00:17:16,360 --> 00:17:19,640
+zero, nessuna di quelle due etichette è
+
+337
+00:17:19,640 --> 00:17:21,679
+valida e quindi noi quell'arco non
+
+338
+00:17:21,679 --> 00:17:24,160
+possiamo percorrerlo. Ci bloccheremo e
+
+339
+00:17:24,160 --> 00:17:26,400
+la macchina si blocca là. Siccome si
+
+340
+00:17:26,400 --> 00:17:28,799
+blocca in uno stato che non è
+
+341
+00:17:28,799 --> 00:17:30,640
+accettante, allora per noi, per la
+
+342
+00:17:30,640 --> 00:17:32,440
+nostra definizione la macchina sta
+
+343
+00:17:32,440 --> 00:17:35,480
+rifiutando, perché se si arresta in uno
+
+344
+00:17:35,480 --> 00:17:37,640
+stato che non è in quelli della lista
+
+345
+00:17:37,640 --> 00:17:40,039
+degli accettanti per noi la macchina sta
+
+346
+00:17:40,039 --> 00:17:42,720
+dicendo di no. Ok,
+
+347
+00:17:42,720 --> 00:17:44,640
+preferisco questa definizione perché
+
+348
+00:17:44,640 --> 00:17:47,160
+sennò dovremmo avere uno stato apposta
+
+349
+00:17:47,160 --> 00:17:50,200
+per il rifiuto e tutti gli errori devono
+
+350
+00:17:50,200 --> 00:17:53,240
+puntare là e ci sono dei grafi
+
+351
+00:17:53,240 --> 00:17:55,880
+fantasmagorici. Così è più semplice,
+
+352
+00:17:55,880 --> 00:17:57,480
+mettiamo solo la condizione di
+
+353
+00:17:57,480 --> 00:17:59,360
+accettazione. Whenever la macchina si
+
+354
+00:17:59,360 --> 00:18:00,880
+ferma da qualche parte che non è
+
+355
+00:18:00,880 --> 00:18:03,240
+accettante, allora la macchina rifiuta.
+
+356
+00:18:03,240 --> 00:18:05,000
+Però è chiaro che lì avviene il
+
+357
+00:18:05,000 --> 00:18:07,000
+confronto. Il confronto avviene nella
+
+358
+00:18:07,000 --> 00:18:08,960
+modalità in cui è scritta l'etichetta.
+
+359
+00:18:08,960 --> 00:18:11,919
+L'etichetta non permette cose strane.
+
+360
+00:18:11,919 --> 00:18:13,760
+Questo è perché uso lo stesso simbolo
+
+361
+00:18:13,760 --> 00:18:16,200
+alfa alfa. Se io lì avessi scritto alfa
+
+362
+00:18:16,200 --> 00:18:19,679
+beta, no, e alfa e beta non sono
+
+363
+00:18:19,679 --> 00:18:21,520
+vincolati in alcun modo, quindi possono
+
+364
+00:18:21,520 --> 00:18:23,679
+essere lo stesso diversi, lì a quel
+
+365
+00:18:23,679 --> 00:18:25,360
+punto la macchina può avanzare su tutto
+
+366
+00:18:25,360 --> 00:18:27,320
+quello che c'è. Lì non starei
+
+367
+00:18:27,320 --> 00:18:29,559
+controllando effettivamente niente.
+
+368
+00:18:29,559 --> 00:18:32,760
+Quindi se avessi scritto per esempio eh
+
+369
+00:18:32,760 --> 00:18:35,760
+beta e alfa dove beta controlla B. Eh,
+
+370
+00:18:35,760 --> 00:18:38,960
+mi dici più mi di eh più di preciso che
+
+371
+00:18:38,960 --> 00:18:41,400
+etichetta intende.
+Allora, eh
+
+372
+00:18:41,400 --> 00:18:42,559
+inizialmente noi abbiamo appunto
+
+373
+00:18:42,559 --> 00:18:44,520
+definito il linguaggio da cittare e
+
+374
+00:18:44,520 --> 00:18:47,200
+inoltre abbiamo definito alfa casina 01.
+
+375
+00:18:47,200 --> 00:18:50,320
+Yeah.
+Se io avessi scritto
+
+376
+00:18:50,320 --> 00:18:54,200
+virgola, casina 01 e poi avessi risosto
+
+377
+00:18:54,200 --> 00:18:56,679
+le etichette che abbiamo posto lì, però
+
+378
+00:18:56,679 --> 00:19:02,559
+eh
+esempio
+metto eh
+
+379
+00:19:03,720 --> 00:19:06,760
+quando passo eh la stringa B appunto
+
+380
+00:19:06,760 --> 00:19:08,480
+utilizzo beta, mentre quando passo la
+
+381
+00:19:08,480 --> 00:19:12,480
+stringa A utilizzo alfa.
+
+382
+00:19:12,480 --> 00:19:14,360
+Toniamo per astratto che noi ci
+
+383
+00:19:14,360 --> 00:19:17,600
+ritroviamo eh in una condizione in cui
+
+384
+00:19:17,600 --> 00:19:19,600
+le due etichette
+
+385
+00:19:19,600 --> 00:19:21,320
+che andiamo a analizzare utilizano sia
+
+386
+00:19:21,320 --> 00:19:24,400
+alfa che beta. Eh sarebbe stato un
+
+387
+00:19:24,400 --> 00:19:27,320
+errore perché appunto
+alfa e beta sono
+
+388
+00:19:27,320 --> 00:19:30,200
+solo dei nomi che diamo ai simboli che
+
+389
+00:19:30,200 --> 00:19:32,919
+possono apparire su un nastro. Cioè il
+
+390
+00:19:32,919 --> 00:19:37,919
+fatto che io chiami beta i simboli
+
+391
+00:19:37,919 --> 00:19:39,960
+ehm
+
+392
+00:19:39,960 --> 00:19:43,280
+che io usi meglio il fatto che io usi il
+
+393
+00:19:43,280 --> 00:19:46,760
+simbolo beta mentre ricopio su un nastro
+
+394
+00:19:46,760 --> 00:19:48,559
+i simboli di B. Mi sembra di aver
+
+395
+00:19:48,559 --> 00:19:51,400
+capito, non fa nessuna differenza se io
+
+396
+00:19:51,400 --> 00:19:53,720
+quei simboli li avessi chiamati alfa.
+
+397
+00:19:53,720 --> 00:19:57,960
+Cioè è solo un modo per compattare una
+
+398
+00:19:57,960 --> 00:20:00,039
+cosa che senò sarebbe più lunga da
+
+399
+00:20:00,039 --> 00:20:02,640
+scrivere. Tutto qua. Siccome io non
+
+400
+00:20:02,640 --> 00:20:05,200
+voglio scrivere tutta la casistica, io
+
+401
+00:20:05,200 --> 00:20:08,200
+uso questo simbolo alfa e dico, guarda,
+
+402
+00:20:08,200 --> 00:20:10,520
+siccome sto usando alfa qui e alfa in
+
+403
+00:20:10,520 --> 00:20:13,000
+questa posizione, in realtà io quello
+
+404
+00:20:13,000 --> 00:20:16,280
+che ti sto dicendo che sul primo e sul
+
+405
+00:20:16,280 --> 00:20:18,159
+secondo nastro ci deve essere lo stesso
+
+406
+00:20:18,159 --> 00:20:20,360
+simbolo. può essere 0, può essere 1, può
+
+407
+00:20:20,360 --> 00:20:22,559
+essere du, dipende un po' dall'alfabeto,
+
+408
+00:20:22,559 --> 00:20:24,640
+però quello che intendo è che questo è
+
+409
+00:20:24,640 --> 00:20:28,200
+un modo short, compatto, di
+
+410
+00:20:28,200 --> 00:20:30,880
+rappresentare in realtà un insieme di
+
+411
+00:20:30,880 --> 00:20:33,919
+etichette. Ok? il fatto che io in
+
+412
+00:20:33,919 --> 00:20:35,960
+passato, no, nella nei passaggi
+
+413
+00:20:35,960 --> 00:20:38,280
+precedenti i simboli che provenivano da
+
+414
+00:20:38,280 --> 00:20:41,919
+beta in quel momento li stavo chiamando
+
+415
+00:20:41,919 --> 00:20:45,760
+beta, non influisce in alcun modo sui
+
+416
+00:20:45,760 --> 00:20:48,480
+passaggi successivi del fatto che quei
+
+417
+00:20:48,480 --> 00:20:51,080
+simboli prima li avevo chiamati beta,
+
+418
+00:20:51,080 --> 00:20:54,760
+perché a me il simbolo alfa beta ha un
+
+419
+00:20:54,760 --> 00:20:57,559
+significato solamente
+
+420
+00:20:57,559 --> 00:21:01,720
+quando usato nella stessa label, cioè il
+
+421
+00:21:01,720 --> 00:21:04,400
+fatto che questo qua sia alfa e questo
+
+422
+00:21:04,400 --> 00:21:06,799
+sia alfa non cambia, non significa
+
+423
+00:21:06,799 --> 00:21:09,919
+niente, è solo un modo, cioè quel
+
+424
+00:21:09,919 --> 00:21:13,000
+simbolo ha il significato solamente in
+
+425
+00:21:13,000 --> 00:21:14,919
+quella etichetta.
+
+426
+00:21:14,919 --> 00:21:18,679
+Tutto qui.
+Ultima domanda.
+Eh, ma se io
+
+427
+00:21:18,679 --> 00:21:22,880
+è chiaro
+Sì, così però eh appunto sempre
+
+428
+00:21:22,880 --> 00:21:26,880
+sia alfa che beta.
+Sì. Eh, se io avessi
+
+429
+00:21:26,880 --> 00:21:28,880
+l'etichetta, appunto, sul nastro uno,
+
+430
+00:21:28,880 --> 00:21:30,520
+utilizzo beta, scrivo beta e passo
+
+431
+00:21:30,520 --> 00:21:32,919
+avanti. Sul nastro due, invece alfa,
+
+432
+00:21:32,919 --> 00:21:34,880
+scrivo alfa, passo avanti. È corretto?
+
+433
+00:21:34,880 --> 00:21:36,480
+Perché sia alfa che beta partendo nello
+
+434
+00:21:36,480 --> 00:21:39,080
+stesso lumino, no?
+No, perché nel
+
+435
+00:21:39,080 --> 00:21:44,200
+momento in cui allora lo scriviamo qua,
+
+436
+00:21:44,559 --> 00:21:49,679
+lo distinguiamo con un colore, senò
+
+437
+00:21:49,679 --> 00:21:51,960
+Ok? Allora, l'esempio che lei mi stava
+
+438
+00:21:51,960 --> 00:21:56,440
+proponendo, se ricordo bene, è sul primo
+
+439
+00:21:56,440 --> 00:21:59,720
+nastro c'è beta, lascio beta e vado
+
+440
+00:21:59,720 --> 00:22:03,159
+avanti. Sul secondo nastro c'è alfa,
+
+441
+00:22:03,159 --> 00:22:05,960
+lascio alfa e vado avanti. Corretto? Ok.
+
+442
+00:22:05,960 --> 00:22:08,240
+Prendendo quello che succede in cucina.
+
+443
+00:22:08,240 --> 00:22:09,360
+Sì.
+
+444
+00:22:09,360 --> 00:22:12,039
+e alfa e beta sono simboli che
+
+445
+00:22:12,039 --> 00:22:15,320
+provengono da 0 1.
+
+446
+00:22:15,320 --> 00:22:19,600
+Questa cosa qui è un modo compatto di
+
+447
+00:22:19,600 --> 00:22:22,400
+scrivere questo. Adesso i simboli alfa e
+
+448
+00:22:22,400 --> 00:22:24,919
+beta sono
+
+449
+00:22:24,919 --> 00:22:26,760
+nomenclatura che diamo a simboli che
+
+450
+00:22:26,760 --> 00:22:32,000
+possono essere 0 o 1. Ok?
+
+451
+00:22:32,000 --> 00:22:34,039
+il
+
+452
+00:22:34,039 --> 00:22:37,200
+il fatto che alfa e beta in questa
+
+453
+00:22:37,200 --> 00:22:39,080
+notazione specifica, poi negli esercizi
+
+454
+00:22:39,080 --> 00:22:40,679
+successivi vediamo che noi possiamo
+
+455
+00:22:40,679 --> 00:22:44,200
+legare cose. Se noi diciamo che alfa e
+
+456
+00:22:44,200 --> 00:22:47,120
+beta non sono legati in alcun modo,
+
+457
+00:22:47,120 --> 00:22:49,640
+questo qui
+
+458
+00:22:49,640 --> 00:22:54,679
+è un modo compatto di scrivere questo.
+
+459
+00:22:54,679 --> 00:22:57,480
+Sul primo nastro c'è zero, scrivo zero e
+
+460
+00:22:57,480 --> 00:22:59,400
+vado avanti. Sul secondo nastro c'è
+
+461
+00:22:59,400 --> 00:23:02,840
+zero, scrivo zero e vado avanti. Oppure
+
+462
+00:23:02,840 --> 00:23:04,840
+sul primo nastro c'è zero, scrivo zero e
+
+463
+00:23:04,840 --> 00:23:06,640
+vado avanti. Sul secondo nastro c'è uno,
+
+464
+00:23:06,640 --> 00:23:08,960
+scrivo uno e vado avanti. Oppure sul
+
+465
+00:23:08,960 --> 00:23:11,159
+primo nastro c'è uno, scrivo uno e vado
+
+466
+00:23:11,159 --> 00:23:13,000
+avanti. Sul secondo nastro c'è zero,
+
+467
+00:23:13,000 --> 00:23:15,720
+scrivo zero e vado avanti. Oppure sul
+
+468
+00:23:15,720 --> 00:23:17,760
+primo nastro c'è uno, lascio uno e vado
+
+469
+00:23:17,760 --> 00:23:19,559
+avanti. E sul secondo nastro c'è uno,
+
+470
+00:23:19,559 --> 00:23:22,679
+lascio uno e vado avanti.
+
+471
+00:23:22,679 --> 00:23:24,880
+In questo caso, se io avessi usato
+
+472
+00:23:24,880 --> 00:23:26,960
+questa
+
+473
+00:23:26,960 --> 00:23:29,960
+etichetta qui in Q5, sarebbe stato un
+
+474
+00:23:29,960 --> 00:23:31,640
+problema perché a quel punto ci
+
+475
+00:23:31,640 --> 00:23:34,720
+sarebbero stati questo qua e questo qua
+
+476
+00:23:34,720 --> 00:23:37,200
+che erano fonte di errore. Ok? Ecco
+
+477
+00:23:37,200 --> 00:23:38,960
+perché uso lo stesso simbolo, perché io
+
+478
+00:23:38,960 --> 00:23:41,279
+voglio escludere la possibilità che la
+
+479
+00:23:41,279 --> 00:23:42,840
+macchina possa computare su quei
+
+480
+00:23:42,840 --> 00:23:45,559
+passaggi.
+
+481
+00:23:45,559 --> 00:23:48,400
+Chiaro?
+È più chiaro? Ok. Chiaro per
+
+482
+00:23:48,400 --> 00:23:52,559
+tutti? Ok. Così sappiamo che linguaggio
+
+483
+00:23:52,559 --> 00:23:54,080
+stiamo
+
+484
+00:23:54,080 --> 00:23:57,080
+parlando.
+
+485
+00:23:58,320 --> 00:24:00,799
+Altro
+
+486
+00:24:00,799 --> 00:24:03,679
+linguaggio, il linguaggio delle stringhe
+
+487
+00:24:03,679 --> 00:24:07,919
+A, B, C,
+
+488
+00:24:07,919 --> 00:24:16,039
+tali che A, B e C sono stringhe su 0 1+
+
+489
+00:24:16,039 --> 00:24:17,760
+and
+
+490
+00:24:17,760 --> 00:24:20,039
+la lunghezza di A è maggiore della
+
+491
+00:24:20,039 --> 00:24:21,960
+lunghezza di B che è maggiore della
+
+492
+00:24:21,960 --> 00:24:24,880
+lunghezza di C. Ed inoltre la lunghezza
+
+493
+00:24:24,880 --> 00:24:26,760
+di C è uguale alla lunghezza di
+
+494
+00:24:26,760 --> 00:24:28,279
+Aunghezza
+
+495
+00:24:28,279 --> 00:24:31,440
+di B.
+
+496
+00:24:33,240 --> 00:24:35,399
+Ok? Quella cosa tipo valore assoluto
+
+497
+00:24:35,399 --> 00:24:37,440
+quando lo facciamo su stringhe è la
+
+498
+00:24:37,440 --> 00:24:40,840
+lunghezza della stringa. Ok? Questo alle
+
+499
+00:24:40,840 --> 00:24:42,799
+volte sui libri potreste trovare questa.
+
+500
+00:24:42,799 --> 00:24:45,320
+Date una stringa V. La sua lunghezza è
+
+501
+00:24:45,320 --> 00:24:48,399
+questa. Ok? O l'uno o l'altro per noi va
+
+502
+00:24:48,399 --> 00:24:50,880
+bene.
+
+503
+00:24:50,880 --> 00:24:52,520
+Alrght. Quindi noi mo ci dobbiamo
+
+504
+00:24:52,520 --> 00:24:55,480
+inventare un modo per riuscire a
+
+505
+00:24:55,480 --> 00:24:58,840
+risolvere questa cosa qua.
+
+506
+00:24:58,840 --> 00:25:02,279
+prossimo com'è. Ok, vi do qualche minuto
+
+507
+00:25:02,279 --> 00:25:04,600
+per pensare
+
+508
+00:25:04,600 --> 00:25:09,039
+come si può organizzare. Ja.
+
+509
+00:25:53,799 --> 00:25:56,159
+Attimo, un attimo, lasciamo pensare un
+
+510
+00:25:56,159 --> 00:25:58,120
+po' le persone. Un secondo, un secondo.
+
+511
+00:25:58,120 --> 00:26:00,960
+Sì,
+sono minori stretti.
+Sì, sì, minori
+
+512
+00:26:00,960 --> 00:26:03,320
+stretti. Cioè la stringa A deve essere
+
+513
+00:26:03,320 --> 00:26:05,559
+strettamente più lunga della stringa B e
+
+514
+00:26:05,559 --> 00:26:07,480
+la stringa B deve essere strettamente
+
+515
+00:26:07,480 --> 00:26:10,360
+più lunga della la stringa C. Sono
+
+516
+00:26:10,360 --> 00:26:12,679
+esercizi del cavolo, ma per
+
+517
+00:26:12,679 --> 00:26:15,080
+impratichirci un po' con conteggi,
+
+518
+00:26:15,080 --> 00:26:17,279
+verifiche di stringhe, eccetera, perché
+
+519
+00:26:17,279 --> 00:26:18,840
+poi quando facciamo macchine non
+
+520
+00:26:18,840 --> 00:26:20,640
+deterministiche facciamo roba un po' più
+
+521
+00:26:20,640 --> 00:26:23,640
+sofisticata.
+
+522
+00:26:30,360 --> 00:26:33,360
+Ok,
+
+523
+00:26:41,360 --> 00:26:44,360
+lei vuole intervenire? Eh,
+yes, prego.
+
+524
+00:26:44,360 --> 00:26:47,360
+Eh, potrei ricopiarmi il B su un secondo
+
+525
+00:26:47,360 --> 00:26:50,720
+nastro e poi scorrere il primo su A e il
+
+526
+00:26:50,720 --> 00:26:53,480
+secondo con 10 copiati e verificare che
+
+527
+00:26:53,480 --> 00:26:55,320
+sul primo trovo cancello.
+
+528
+00:26:55,320 --> 00:26:58,320
+controlla
+
+529
+00:26:59,880 --> 00:27:02,120
+più o meno,
+
+530
+00:27:02,120 --> 00:27:04,840
+perché se finiscono assieme, cioè vuol
+
+531
+00:27:04,840 --> 00:27:07,080
+dire che la lunghezza è la stessa,
+eh,
+
+532
+00:27:07,080 --> 00:27:11,240
+cioè p + c è a
+
+533
+00:27:11,960 --> 00:27:14,039
+quindi sono sicuramente più piccoli.
+Ah
+
+534
+00:27:14,039 --> 00:27:16,919
+ah ok, ok. Vedi se vuole andare dalla
+
+535
+00:27:16,919 --> 00:27:19,520
+dall'altro lato su sulla lunghezza. Ok.
+
+536
+00:27:19,520 --> 00:27:22,760
+Ok. E per controllare che le stringhe
+
+537
+00:27:22,760 --> 00:27:24,360
+sono una strettamente più lunga
+
+538
+00:27:24,360 --> 00:27:26,720
+dell'altra.
+Eh beh, se B C fa A
+
+539
+00:27:26,720 --> 00:27:28,679
+sicuramente sono se vi sono delle due
+
+540
+00:27:28,679 --> 00:27:30,919
+nulle sono più forte gli altri,
+però B e
+
+541
+00:27:30,919 --> 00:27:33,600
+C potrebbero avere la stessa lunghezza.
+
+542
+00:27:33,600 --> 00:27:37,840
+Ah
+ah però ci sta eh una una cosa una
+
+543
+00:27:37,840 --> 00:27:41,480
+cosa che è un trucco è un trucco di
+
+544
+00:27:41,480 --> 00:27:44,039
+ragionamento
+
+545
+00:27:44,039 --> 00:27:46,360
+che ovviamente sui libri e sugli
+
+546
+00:27:46,360 --> 00:27:49,720
+eserciziari non vi dicono mai, eh.
+
+547
+00:27:49,720 --> 00:27:52,000
+Però immagino che ci avrete pensato a
+
+548
+00:27:52,000 --> 00:27:55,600
+questa cosa, cioè non è che la soluzione
+
+549
+00:27:55,600 --> 00:27:58,760
+del vostro collega non vada bene. La
+
+550
+00:27:58,760 --> 00:28:00,840
+soluzione del vostro collega è un primo
+
+551
+00:28:00,840 --> 00:28:03,880
+passo verso una soluzione corretta, cioè
+
+552
+00:28:03,880 --> 00:28:07,039
+raramente si arriva a una soluzione alla
+
+553
+00:28:07,039 --> 00:28:09,960
+prima botta. Quando leggete i libri, no?
+
+554
+00:28:09,960 --> 00:28:13,200
+Poi soprattutto sulle dimostrazioni,
+
+555
+00:28:13,200 --> 00:28:14,880
+vi accorgerete, dice "Ah, teorema,
+
+556
+00:28:14,880 --> 00:28:17,480
+questo è lo statement, bla bla prova". E
+
+557
+00:28:17,480 --> 00:28:19,559
+ve la leggete là, no? Cioè, chi è
+
+558
+00:28:19,559 --> 00:28:22,760
+arrivato a dimostrare quella cosa non si
+
+559
+00:28:22,760 --> 00:28:25,799
+è svegliato una mattina e ha detto si fa
+
+560
+00:28:25,799 --> 00:28:31,440
+così. È generalmente frutto di prove, di
+
+561
+00:28:31,440 --> 00:28:34,200
+trialsr,
+
+562
+00:28:34,200 --> 00:28:38,039
+si vede se funziona, se funziona, ok, se
+
+563
+00:28:38,039 --> 00:28:40,320
+non funziona si si capisce un po' dov'è
+
+564
+00:28:40,320 --> 00:28:43,240
+la magagna, aggiustiamo e andiamo a
+
+565
+00:28:43,240 --> 00:28:44,799
+bloccare. Per esempio, la soluzione del
+
+566
+00:28:44,799 --> 00:28:46,960
+vostro collega è sostanzialmente
+
+567
+00:28:46,960 --> 00:28:48,880
+corretta. ci dobbiamo semplicemente
+
+568
+00:28:48,880 --> 00:28:50,880
+andare a inventare un modo per
+
+569
+00:28:50,880 --> 00:28:55,320
+verificare che B sia più lunga di C. Ok?
+
+570
+00:28:55,320 --> 00:28:58,480
+Sì. Eh, si risolve con un cazzo in cui
+
+571
+00:28:58,480 --> 00:29:01,679
+copio anche C proprio Core e dopo aver
+
+572
+00:29:01,679 --> 00:29:04,760
+letto A e secondo un altro inizio a
+
+573
+00:29:04,760 --> 00:29:06,480
+leggere B e verifico che quando leggo in
+
+574
+00:29:06,480 --> 00:29:10,799
+B alfa e arrivo alfa. Sì, sì. Qualsiasi
+
+575
+00:29:10,799 --> 00:29:12,279
+cosa che funzioni. Adesso vi propongo
+
+576
+00:29:12,279 --> 00:29:14,120
+una che ho io sottomano in maniera tale
+
+577
+00:29:14,120 --> 00:29:15,760
+che sono sicuro che funzioni che ho
+
+578
+00:29:15,760 --> 00:29:17,919
+verificato prima. Però il principio è lo
+
+579
+00:29:17,919 --> 00:29:20,600
+stesso. Cioè cosa dobbiamo fare? Mi
+
+580
+00:29:20,600 --> 00:29:22,640
+segno la lunghezza di A da una certa
+
+581
+00:29:22,640 --> 00:29:25,120
+parte, mi segno la lunghezza di B da
+
+582
+00:29:25,120 --> 00:29:27,000
+un'altra parte, verifico che la
+
+583
+00:29:27,000 --> 00:29:29,000
+lunghezza di A è strettamente maggiore
+
+584
+00:29:29,000 --> 00:29:31,360
+di quella di B. Poi verifico che la
+
+585
+00:29:31,360 --> 00:29:34,880
+lunghezza di C è uguale alla differenza
+
+586
+00:29:34,880 --> 00:29:37,399
+fra le due e poi verifico che C è più
+
+587
+00:29:37,399 --> 00:29:40,360
+piccolo di B. Tutto qua. Ok. L'ordine in
+
+588
+00:29:40,360 --> 00:29:42,000
+cui si fanno queste cose può essere
+
+589
+00:29:42,000 --> 00:29:43,279
+vario, si può fare all'inizio, si può
+
+590
+00:29:43,279 --> 00:29:45,600
+fare alla fine. L'importante è che la
+
+591
+00:29:45,600 --> 00:29:48,039
+sequenza di tutte queste cose venga
+
+592
+00:29:48,039 --> 00:29:51,559
+fatta in un qualche ordine. Ok? Pure i
+
+593
+00:29:51,559 --> 00:29:54,760
+miei esercizi,
+
+594
+00:29:54,960 --> 00:29:59,320
+eh. Allora, questi era vecchia roba.
+
+595
+00:29:59,320 --> 00:30:01,080
+Allora, questi erano roba nuova che
+
+596
+00:30:01,080 --> 00:30:02,880
+avevo preparato per oggi. Come vedete è
+
+597
+00:30:02,880 --> 00:30:04,760
+pieno il cancellatore perché perché ci
+
+598
+00:30:04,760 --> 00:30:07,399
+stavo provando e a quel Ah, ok, non
+
+599
+00:30:07,399 --> 00:30:09,840
+funziona, cancello, si ripete. Ok, cioè,
+
+600
+00:30:09,840 --> 00:30:14,080
+quindi non vi
+
+601
+00:30:14,080 --> 00:30:16,159
+consiglio metodologico, non vi
+
+602
+00:30:16,159 --> 00:30:18,039
+scoraggiate se al primo tentativo non ci
+
+603
+00:30:18,039 --> 00:30:21,279
+riuscite, cioè si giusta. Ok? Sul libro,
+
+604
+00:30:21,279 --> 00:30:22,640
+quando andrate a vedere le
+
+605
+00:30:22,640 --> 00:30:25,120
+dimostrazioni, nessuno mai vi dirà
+
+606
+00:30:25,120 --> 00:30:26,799
+quante volte ci ha provato prima di
+
+607
+00:30:26,799 --> 00:30:28,760
+arrivare alla soluzione. Quando scrivi
+
+608
+00:30:28,760 --> 00:30:31,640
+papers, no, e magari per fare un pezzo
+
+609
+00:30:31,640 --> 00:30:34,080
+di una dimostrazione mi serve un mese,
+
+610
+00:30:34,080 --> 00:30:36,600
+non ci scrivo lì, ci ho messo un
+
+611
+00:30:36,600 --> 00:30:40,039
+dannatissimo mese per arrivare fin
+
+612
+00:30:40,039 --> 00:30:43,039
+scrive direttamente la soluzione e la
+
+613
+00:30:43,039 --> 00:30:46,000
+gente pensa "Wow! Chissà come l'ha
+
+614
+00:30:46,000 --> 00:30:47,960
+pensata sta cosa. I che c'ho sbattuto la
+
+615
+00:30:47,960 --> 00:30:50,240
+testa per settimane, quello è la cosa.
+
+616
+00:30:50,240 --> 00:30:53,799
+Ok, quindi voglio è proprio tranquillo
+
+617
+00:30:53,799 --> 00:30:56,039
+sbagliare, eh? Si aggiusta, si va
+
+618
+00:30:56,039 --> 00:30:58,399
+avanti. Ok.
+
+619
+00:30:58,399 --> 00:31:01,559
+Allora, la mia idea che vi propongo è
+
+620
+00:31:01,559 --> 00:31:05,519
+sostanzialmente questa.
+
+621
+00:31:09,200 --> 00:31:11,799
+Questo è il nostro mastro di input.
+
+622
+00:31:11,799 --> 00:31:16,000
+C'abbiamo 00 1
+
+623
+00:31:16,000 --> 00:31:17,679
+cancelletto
+
+624
+00:31:17,679 --> 00:31:20,880
+0 1
+
+625
+00:31:20,880 --> 00:31:23,279
+cancelletto
+
+627
+00:31:24,880 --> 00:31:27,840
+1.
+
+628
+00:31:27,840 --> 00:31:32,440
+Allora, tra i tantissimi modi
+
+629
+00:31:32,440 --> 00:31:36,399
+per far funzionare le cose
+
+630
+00:31:36,399 --> 00:31:40,480
+è che io su secondo nastro mi vado a
+
+631
+00:31:40,480 --> 00:31:42,159
+piazzare
+
+632
+00:31:42,159 --> 00:31:46,039
+la lunghezza di A. Quindi io metto tante
+
+633
+00:31:46,039 --> 00:31:49,720
+X quanti sono i simboli di A.
+
+634
+00:31:49,720 --> 00:31:52,159
+Su terzo nastro
+
+635
+00:31:52,159 --> 00:31:56,559
+vado a piazzare la lunghezza di B. Ok?
+
+636
+00:31:56,559 --> 00:31:58,519
+Questa cosa mi permetterà di fare un po'
+
+637
+00:31:58,519 --> 00:32:00,639
+di verifiche, fare somme, differenze,
+
+638
+00:32:00,639 --> 00:32:04,120
+eccetera. Tutto qua. Ci sono 1000 modi
+
+639
+00:32:04,120 --> 00:32:06,720
+per fare questa cosa. Un qualsiasi modo
+
+640
+00:32:06,720 --> 00:32:09,480
+che funziona va bene.
+
+641
+00:32:09,480 --> 00:32:11,919
+Ok.
+
+642
+00:32:11,919 --> 00:32:15,559
+Alright. Partiamo da
+
+643
+00:32:15,559 --> 00:32:18,000
+Q0.
+
+644
+00:32:18,000 --> 00:32:21,360
+Siamo in Q0.
+
+645
+00:32:21,720 --> 00:32:26,200
+Allora, abbiamo che alfa appartiene a 0
+
+646
+00:32:26,200 --> 00:32:29,200
+1.
+
+647
+00:32:30,519 --> 00:32:33,799
+Quindi sul primo nastro trovo alfa,
+
+648
+00:32:33,799 --> 00:32:36,080
+lascio alfa e vado avanti. Sul secondo
+
+649
+00:32:36,080 --> 00:32:39,639
+nastro trovo
+
+650
+00:32:40,559 --> 00:32:42,440
+blank. Secondo nastro è vuoto
+
+651
+00:32:42,440 --> 00:32:45,600
+all'inizio. Scrivo X e vado avanti. Vado
+
+652
+00:32:45,600 --> 00:32:49,200
+in Q1 e faccio lo stesso lavoro. Trovo
+
+653
+00:32:49,200 --> 00:32:50,720
+alfa, lascio alfa e vado avanti sul
+
+654
+00:32:50,720 --> 00:32:53,960
+primo nastro. Sul secondo nastro
+
+655
+00:32:53,960 --> 00:32:59,200
+trovo blank, scrivo X e vado avanti. Ok?
+
+656
+00:32:59,200 --> 00:33:03,760
+Quando sappiamo che ci possiamo fermare?
+
+657
+00:33:08,440 --> 00:33:10,519
+Quando troviamo un cancelletto. Quindi
+
+658
+00:33:10,519 --> 00:33:13,360
+sul primo nastro c'è cancelletto, lascio
+
+659
+00:33:13,360 --> 00:33:15,360
+cancelletto e vado avanti. E sul secondo
+
+660
+00:33:15,360 --> 00:33:18,960
+nastro che facciamo?
+
+661
+00:33:20,480 --> 00:33:22,399
+Cerano con nastro. Ok? In linea di
+
+662
+00:33:22,399 --> 00:33:24,080
+principio potremmo fare quello che ci
+
+663
+00:33:24,080 --> 00:33:27,840
+diceva, però siccome ci serve poi
+
+664
+00:33:27,840 --> 00:33:31,279
+calcolare la differenza fra la lunghezza
+
+665
+00:33:31,279 --> 00:33:33,639
+di A e la lunghezza di B in maniera tale
+
+666
+00:33:33,639 --> 00:33:36,519
+che otteniamo la lunghezza di C, allora
+
+667
+00:33:36,519 --> 00:33:38,720
+inizio a spostarmi la testina del
+
+668
+00:33:38,720 --> 00:33:41,480
+secondo nastro sull'ultima X scritta,
+
+669
+00:33:41,480 --> 00:33:43,519
+così posso iniziare a fare questa
+
+670
+00:33:43,519 --> 00:33:45,639
+differenza.
+
+671
+00:33:45,639 --> 00:33:48,639
+Ehm,
+
+672
+00:33:48,960 --> 00:33:52,120
+senò, cioè, stavo pensando riscrivere
+
+673
+00:33:52,120 --> 00:33:57,080
+sul primo nastro e tante C
+sul primo
+sul
+
+674
+00:33:57,080 --> 00:33:59,279
+primo in modo tale che così se finché
+
+675
+00:33:59,279 --> 00:34:02,639
+leggo X, se poi back che finisce C e
+
+676
+00:34:02,639 --> 00:34:04,840
+trovo blank, allora per forza mi
+
+677
+00:34:04,840 --> 00:34:07,440
+interessa. Partentemente dalla dalla
+
+678
+00:34:07,440 --> 00:34:11,040
+lunghezza di B.
+
+679
+00:34:12,119 --> 00:34:14,480
+Ah, ok. Sì, quello è un altro modo per
+
+680
+00:34:14,480 --> 00:34:16,359
+farlo. Sì, sì, sì, sì. Ovviamente si può
+
+681
+00:34:16,359 --> 00:34:20,919
+fare, eh. Ok, quindi eh perseguo in
+
+682
+00:34:20,919 --> 00:34:23,000
+questo. Sul secondo nastro c'è blank,
+
+683
+00:34:23,000 --> 00:34:27,879
+lascio blank e vado dietro. Ok, Q2.
+
+684
+00:34:27,879 --> 00:34:31,720
+In Q2 iniziamo a leggere la stringa
+
+685
+00:34:31,720 --> 00:34:33,480
+B.
+
+686
+00:34:33,480 --> 00:34:35,079
+Ci aspettiamo almeno un carattere.
+
+687
+00:34:35,079 --> 00:34:36,919
+Quindi, sul primo nastro c'è alfa,
+
+688
+00:34:36,919 --> 00:34:39,560
+lascio alfa e vado avanti. Sul secondo
+
+689
+00:34:39,560 --> 00:34:42,839
+nastro inizio a cancellare le X.
+
+690
+00:34:42,839 --> 00:34:47,159
+per poter eh fare questa differenza. Ok.
+
+691
+00:34:47,159 --> 00:34:50,040
+Sì.
+Ah, invece di fare il ciclo da
+
+692
+00:34:50,040 --> 00:34:51,839
+subito, ha detto aggiunge questo
+
+693
+00:34:51,839 --> 00:34:53,639
+passaggio in più perché ci aspettiamo
+
+694
+00:34:53,639 --> 00:34:56,560
+almeno un carattere. Avendo noi le
+
+695
+00:34:56,560 --> 00:35:01,920
+definito A, B e C.
+Sì, sì, sì.
+
+696
+00:35:01,920 --> 00:35:03,920
+Sì, sì, sì, sì. Quello giustamente si
+
+697
+00:35:03,920 --> 00:35:05,560
+può fare, giustamente il vostro collega
+
+698
+00:35:05,560 --> 00:35:07,240
+dice: "Nel momento in cui verifichiamo
+
+699
+00:35:07,240 --> 00:35:09,640
+che A è più lungo di B e B è più lungo
+
+700
+00:35:09,640 --> 00:35:12,599
+di C, se ho la certezza che questa
+
+701
+00:35:12,599 --> 00:35:16,720
+relazione di lunghezza è valida e C ha
+
+702
+00:35:16,720 --> 00:35:18,320
+almeno un carattere, ovviamente tutto il
+
+703
+00:35:18,320 --> 00:35:21,200
+resto deve funzionare", giusto? Va bene?
+
+704
+00:35:21,200 --> 00:35:24,720
+Eh, ok, ormai ci siamo. Secondo c'è X,
+
+705
+00:35:24,720 --> 00:35:29,880
+scrivo blank e vado dietro e andiamo in
+
+706
+00:35:29,880 --> 00:35:32,079
+Q3.
+
+707
+00:35:32,079 --> 00:35:33,839
+Arrivato qua, facciamo la stessa cosa.
+
+708
+00:35:33,839 --> 00:35:36,079
+Primo nastro c'è alfa, lascio alfa e
+
+709
+00:35:36,079 --> 00:35:39,680
+vado avanti. Sul secondo c'è X, scrivo
+
+710
+00:35:39,680 --> 00:35:42,960
+blank e vado dietro. Ok,
+
+711
+00:35:42,960 --> 00:35:46,520
+quando ci fermiamo
+
+712
+00:35:47,839 --> 00:35:50,680
+a Ah, un attimo, un secondo, un secondo.
+
+713
+00:35:50,680 --> 00:35:52,920
+Qua dobbiamo iniziare a scrivere la
+
+714
+00:35:52,920 --> 00:35:55,760
+lunghezza del DB. Quindi, sul terzo
+
+715
+00:35:55,760 --> 00:35:57,880
+nastro c'è blank, scrivo X e vado
+
+716
+00:35:57,880 --> 00:36:01,599
+avanti. Qui c'è blank, scrivo X e vado
+
+717
+00:36:01,599 --> 00:36:05,319
+avanti. Ok,
+
+718
+00:36:05,800 --> 00:36:07,760
+quand'è che ci fermiamo?
+
+719
+00:36:07,760 --> 00:36:10,319
+Eh, ok. Fammelo.
+
+720
+00:36:10,319 --> 00:36:15,920
+Questi qua vanno con questo. No,
+
+721
+00:36:15,920 --> 00:36:19,359
+vabbò. Questi vanno su e questi vanno
+
+722
+00:36:19,359 --> 00:36:25,560
+qua. Ok. Eh, quand'è che ci fermiamo?
+
+723
+00:36:31,400 --> 00:36:32,800
+quando troviamo sul primo nastro
+
+724
+00:36:32,800 --> 00:36:34,920
+cancelletto. Ok, quindi sicuramente è
+
+725
+00:36:34,920 --> 00:36:37,000
+una prima condizione. Sul primo nastro
+
+726
+00:36:37,000 --> 00:36:39,040
+trovo cancelletto, lascio cancelletto e
+
+727
+00:36:39,040 --> 00:36:41,240
+vado avanti. Sul secondo che deve
+
+728
+00:36:41,240 --> 00:36:44,240
+succedere?
+
+729
+00:36:45,359 --> 00:36:51,040
+X potesse cioè
+sì, sul secondo nastro.
+
+730
+00:36:51,040 --> 00:36:52,839
+Allora, sul secondo nastro c'era la
+
+731
+00:36:52,839 --> 00:36:55,480
+lunghezza di A.
+
+732
+00:36:55,480 --> 00:36:57,280
+Noi stiamo indietreggiando sulla
+
+733
+00:36:57,280 --> 00:37:00,240
+lunghezza di A togliendo la lunghezza di
+
+734
+00:37:00,240 --> 00:37:04,040
+B. Ok? Quindi a fine di questo giro sul
+
+735
+00:37:04,040 --> 00:37:10,200
+secondo nastro ci sarà a - b.
+
+736
+00:37:10,200 --> 00:37:13,200
+Ok?
+
+737
+00:37:13,680 --> 00:37:18,079
+Però, siccome A deve essere più lungo di
+
+738
+00:37:18,079 --> 00:37:22,280
+B, nel momento in cui finisce B, deve
+
+739
+00:37:22,280 --> 00:37:24,359
+esserci una X residua sul secondo
+
+740
+00:37:24,359 --> 00:37:27,319
+nastro. Quindi noi andiamo a verificare
+
+741
+00:37:27,319 --> 00:37:29,359
+che sul secondo nastro ci sia rimasto
+
+742
+00:37:29,359 --> 00:37:33,319
+qualcosa. Quindi c'è X, lascio X e sto
+
+743
+00:37:33,319 --> 00:37:36,319
+fermo.
+
+744
+00:37:37,640 --> 00:37:40,560
+Ok.
+
+745
+00:37:40,560 --> 00:37:44,000
+Sul terzo nastro c'è blank. Lascio Blank
+
+746
+00:37:44,000 --> 00:37:47,640
+e vado dietro. Mamma mia.
+
+747
+00:37:47,640 --> 00:37:50,640
+Ok.
+
+748
+00:37:50,960 --> 00:37:54,160
+Alright. Adesso ci manca da verificare
+
+749
+00:37:54,160 --> 00:37:57,160
+C. Cosa dobbiamo fare per C? Dobbiamo
+
+750
+00:37:57,160 --> 00:38:01,960
+semplicemente verificare che C è lungo
+
+751
+00:38:01,960 --> 00:38:05,960
+tanto quanto le X del secondo nastro,
+
+752
+00:38:05,960 --> 00:38:08,520
+perché sul secondo nastro è rimasto a -
+
+753
+00:38:08,520 --> 00:38:10,640
+b.
+
+754
+00:38:10,640 --> 00:38:13,640
+E
+
+755
+00:38:13,800 --> 00:38:17,720
+il terzo nastro che contiene le B deve
+
+756
+00:38:17,720 --> 00:38:21,359
+essere più lungo della lunghezza di C.
+
+757
+00:38:21,359 --> 00:38:24,240
+Tutto qua. Ok?
+
+758
+00:38:24,240 --> 00:38:26,920
+Quindi facciamo un passaggio sul primo
+
+759
+00:38:26,920 --> 00:38:30,359
+nastro. Leggiamo il primo simbolo di C.
+
+760
+00:38:30,359 --> 00:38:33,480
+Leggo alfa, lascio alfa e vado avanti.
+
+761
+00:38:33,480 --> 00:38:36,800
+Sul secondo nastro c'è X,
+
+762
+00:38:36,800 --> 00:38:40,560
+lascio X e torno indietro. Sul terzo
+
+763
+00:38:40,560 --> 00:38:47,240
+nastro c'è X, lascio X e torno indietro.
+
+764
+00:38:47,240 --> 00:38:49,640
+Andiamo in Q5.
+
+765
+00:38:49,640 --> 00:38:52,640
+Questo va fatto, ok, per tutti i
+
+766
+00:38:52,640 --> 00:38:55,839
+caratteri di C. Quindi, sul primo nastro
+
+767
+00:38:55,839 --> 00:38:58,079
+c'è alfa, lascio alfa e vado avanti. Sul
+
+768
+00:38:58,079 --> 00:39:00,319
+secondo nastro c'è X, lascio X e vado
+
+769
+00:39:00,319 --> 00:39:03,920
+avanti. Sul terzo nastro c'è X, lascio X
+
+770
+00:39:03,920 --> 00:39:08,599
+e No, non è avanti quello, eh.
+
+771
+00:39:08,599 --> 00:39:10,520
+Oplà,
+
+772
+00:39:10,520 --> 00:39:15,640
+vado dietro. E qua vado dietro. Ok.
+
+773
+00:39:15,640 --> 00:39:19,040
+Quando ci fermiamo?
+
+774
+00:39:20,680 --> 00:39:24,560
+Quando uno blank.
+Sì. Quindi c'è blank,
+
+775
+00:39:24,560 --> 00:39:28,160
+lascio blank e sto fermo. In due,
+in due
+
+776
+00:39:28,160 --> 00:39:30,720
+ho blank,
+c'è blank, lascio blank e sto
+
+777
+00:39:30,720 --> 00:39:33,400
+fermo. E su tre
+devo avere X,
+c'è X,
+
+778
+00:39:33,400 --> 00:39:36,400
+lascio X e sto fermo.
+
+779
+00:39:36,400 --> 00:39:39,560
+E accettiamo.
+
+780
+00:39:44,200 --> 00:39:47,200
+Ok,
+
+781
+00:39:49,680 --> 00:39:51,839
+abbiamo tempo. Altro esercizio e poi
+
+782
+00:39:51,839 --> 00:39:54,680
+facciamo la pausa che più ne vediamo
+
+783
+00:39:54,680 --> 00:39:58,040
+meglio è.
+
+784
+00:39:58,480 --> 00:40:02,720
+In caso ce ne andiamo prima.
+
+785
+00:40:05,359 --> 00:40:08,240
+Ok. Riconoscere il linguaggio L tale per
+
+786
+00:40:08,240 --> 00:40:14,160
+cui abbiamo V w
+
+787
+00:40:14,839 --> 00:40:19,560
+tale che W appartiene a 01.
+
+788
+00:40:19,560 --> 00:40:22,560
+Ok,
+
+789
+00:40:25,520 --> 00:40:28,200
+roba abbastanza semplice.
+
+790
+00:40:28,200 --> 00:40:31,880
+Come possiamo farlo?
+
+791
+00:40:47,640 --> 00:40:51,839
+Sì. Posso scrivere le tre WW sui tre
+
+792
+00:40:51,839 --> 00:40:55,319
+nastri e faccio controllo se sono uguali
+
+793
+00:40:55,319 --> 00:40:59,640
+e quando arriviamo al
+Sì, sì. Ok, quindi
+
+794
+00:40:59,640 --> 00:41:03,520
+possiamo scrivere W su una su un nastro
+
+795
+00:41:03,520 --> 00:41:06,800
+di appoggio. Potremmo utilizzarlo due
+
+796
+00:41:06,800 --> 00:41:09,079
+volte così non dobbiamo riavvolgerlo.
+
+797
+00:41:09,079 --> 00:41:12,599
+Quindi scriviamo w succ nastro.
+
+798
+00:41:12,599 --> 00:41:14,200
+Dopodiché, superate il primo
+
+799
+00:41:14,200 --> 00:41:16,200
+cancelletto, verifichiamo che su primo
+
+800
+00:41:16,200 --> 00:41:17,880
+nastro e secondo nastro c'è la stessa
+
+801
+00:41:17,880 --> 00:41:20,359
+cosa fino al cancelletto e poi dopo il
+
+802
+00:41:20,359 --> 00:41:21,960
+secondo cancelletto verifichiamo che sul
+
+803
+00:41:21,960 --> 00:41:23,599
+primo nastro e sul terzo nastro c'è la
+
+804
+00:41:23,599 --> 00:41:29,160
+stessa cosa. Ok? Quindi molto semplice.
+
+805
+00:41:32,800 --> 00:41:38,079
+Qualsiasi cosa che funziona va bene.
+
+806
+00:41:38,760 --> 00:41:40,920
+Generalmente generalmente nessuno
+
+807
+00:41:40,920 --> 00:41:42,599
+programma,
+
+808
+00:41:42,599 --> 00:41:45,400
+cioè questa è la cioè quindi non è che
+
+809
+00:41:45,400 --> 00:41:47,960
+c'è un modo migliore perché è un
+
+810
+00:41:47,960 --> 00:41:50,400
+formalismo che noi utilizziamo adesso
+
+811
+00:41:50,400 --> 00:41:52,319
+per praticirci su alcune cose e per
+
+812
+00:41:52,319 --> 00:41:55,040
+iniziare a dimostrare alcuni risultati
+
+813
+00:41:55,040 --> 00:41:57,800
+tipo la macchina universale,
+
+814
+00:41:57,800 --> 00:41:59,920
+l'indecidibilità del linguaggio vuoto,
+
+815
+00:41:59,920 --> 00:42:01,599
+ste cose così. Quindi ci serve una
+
+816
+00:42:01,599 --> 00:42:04,640
+macchina di tuning. Di fatto nessuno
+
+817
+00:42:04,640 --> 00:42:07,200
+programma mai macchine di tuning. Quindi
+
+818
+00:42:07,200 --> 00:42:09,119
+per quanto concerne l'esame, visto che
+
+819
+00:42:09,119 --> 00:42:11,400
+per noi è semplicemente un tour per
+
+820
+00:42:11,400 --> 00:42:14,599
+studiare cose, la mia il mio criterio è
+
+821
+00:42:14,599 --> 00:42:17,839
+qualsiasi cosa che funziona va bene, ok?
+
+822
+00:42:17,839 --> 00:42:22,079
+Quindi 2 3 eh per me è la stessa cosa,
+
+823
+00:42:22,079 --> 00:42:24,720
+cioè si prende se è corretto uno ed è
+
+824
+00:42:24,720 --> 00:42:26,920
+corretto l'altro, si prende il massimo
+
+825
+00:42:26,920 --> 00:42:28,800
+dei punti con uno, il massimo dei punti
+
+826
+00:42:28,800 --> 00:42:30,920
+con l'altro. Ok?
+
+827
+00:42:30,920 --> 00:42:33,440
+lineare.
+
+828
+00:42:33,440 --> 00:42:35,839
+Ok.
+
+829
+00:42:35,839 --> 00:42:38,920
+Co zero.
+
+830
+00:42:38,920 --> 00:42:40,760
+Alri.
+
+831
+00:42:40,760 --> 00:42:43,839
+Cosa facciamo? Quindi sul primo nastro
+
+832
+00:42:43,839 --> 00:42:45,800
+c'è alfa, lascio alfa e vado avanti. Sul
+
+833
+00:42:45,800 --> 00:42:48,559
+secondo nastro
+
+834
+00:42:48,559 --> 00:42:51,680
+alfa e avanti.
+Ok.
+
+835
+00:42:51,680 --> 00:42:54,040
+Blank alfa e vado avanti. Su terzo
+
+836
+00:42:54,040 --> 00:42:55,680
+nastro
+
+837
+00:42:55,680 --> 00:42:58,920
+uguale
+uguale blank alfa e vado avanti.
+
+838
+00:42:58,920 --> 00:43:00,880
+Ok.
+
+839
+00:43:00,880 --> 00:43:05,119
+Quand'è che andiamo oltre?
+
+840
+00:43:06,280 --> 00:43:08,160
+In questo caso abbiamo che W appartiene
+
+841
+00:43:08,160 --> 00:43:10,880
+a 01 star e di conseguenza potrebbe
+
+842
+00:43:10,880 --> 00:43:14,280
+essere vuoto. Ok?
+
+843
+00:43:14,280 --> 00:43:17,720
+Quand'è che usciamo?
+
+844
+00:43:19,480 --> 00:43:21,800
+Quando mettiamo? Quando incontriamo
+
+845
+00:43:21,800 --> 00:43:23,359
+cancelletto, sul primo nastro c'è un
+
+846
+00:43:23,359 --> 00:43:26,119
+cancelletto, lascio cancelletto e vado
+
+847
+00:43:26,119 --> 00:43:29,520
+avanti. Secondo e terzo nastro dobbiamo
+
+848
+00:43:29,520 --> 00:43:31,520
+prepararli per la computazione
+
+849
+00:43:31,520 --> 00:43:35,040
+successiva, ok? Quindi abbiamo necessità
+
+850
+00:43:35,040 --> 00:43:38,520
+di riavvolgere i nastri secondo e terzo.
+
+851
+00:43:38,520 --> 00:43:40,839
+Quindi, nel momento in cui stiamo
+
+852
+00:43:40,839 --> 00:43:42,960
+processando la prima stringa, arriviamo
+
+853
+00:43:42,960 --> 00:43:45,920
+al cancelletto. Che facciamo? Dove si
+
+854
+00:43:45,920 --> 00:43:48,200
+troveranno il secondo e il terzo nastro
+
+855
+00:43:48,200 --> 00:43:51,160
+in quel momento?
+
+856
+00:43:51,160 --> 00:43:53,160
+Sì,
+
+857
+00:43:53,160 --> 00:43:56,040
+a terra alla fine di W.
+Alla fine delle
+
+858
+00:43:56,040 --> 00:43:58,400
+copie di W sul secondo e su terzo
+
+859
+00:43:58,400 --> 00:44:00,880
+nastro. Ma dove? Sull'ultimo simbolo di
+
+860
+00:44:00,880 --> 00:44:04,000
+W o sul primo blank?
+
+861
+00:44:04,000 --> 00:44:05,720
+Sul primo blank.
+Sul primo blank.
+
+862
+00:44:05,720 --> 00:44:07,640
+Quindi, nel momento in cui incontriamo
+
+863
+00:44:07,640 --> 00:44:10,040
+il cancelletto lì, che facciamo sul
+
+864
+00:44:10,040 --> 00:44:13,480
+secondo e terzo nastro? Andiamo dietro.
+
+865
+00:44:13,480 --> 00:44:16,559
+Quindi c'è blank, lascio blank e torno
+
+866
+00:44:16,559 --> 00:44:19,680
+indietro. C'è blank, lascio blank. e
+
+867
+00:44:19,680 --> 00:44:24,599
+torno indietro e andiamo in cuno.
+
+868
+00:44:25,839 --> 00:44:27,440
+Ok,
+
+869
+00:44:27,440 --> 00:44:29,240
+quindi qua completiamo il
+
+870
+00:44:29,240 --> 00:44:31,200
+riavvolgimento.
+
+871
+00:44:31,200 --> 00:44:35,599
+Sul secondo nastro c'è
+
+872
+00:44:36,599 --> 00:44:39,440
+che c'è sul secondo nastro.
+
+873
+00:44:39,440 --> 00:44:41,480
+Alfa. Vado alfa e torno indietro. E sul
+
+874
+00:44:41,480 --> 00:44:44,520
+terzo?
+Uguale
+uguale perché c'è la
+
+875
+00:44:44,520 --> 00:44:47,359
+stessa stringa. Ok.
+
+876
+00:44:47,359 --> 00:44:50,400
+Qui avremmo pure potuto scrivere beta,
+
+877
+00:44:50,400 --> 00:44:52,960
+tanto ce l'abbiamo scritto noi su un
+
+878
+00:44:52,960 --> 00:44:55,599
+secondo nastro la stessa cosa. Cose
+
+879
+00:44:55,599 --> 00:44:57,800
+strane non ne possono accadere, ok? Però
+
+880
+00:44:57,800 --> 00:44:59,240
+siccome sappiamo che è la stessa
+
+881
+00:44:59,240 --> 00:45:02,160
+stringa, li riavvolgiamo assieme, ok?
+
+882
+00:45:02,160 --> 00:45:05,720
+Quand'è che ci fermiamo?
+
+883
+00:45:06,839 --> 00:45:09,839
+Blank.
+Blank dove?
+Sul secondo e sul
+
+884
+00:45:09,839 --> 00:45:11,599
+terzo.
+Sul secondo e sul terzo. Sul
+
+885
+00:45:11,599 --> 00:45:14,079
+secondo c'è blank. Lascio blank e vado
+
+886
+00:45:14,079 --> 00:45:16,440
+avanti. Sul terzo c'è blank, lascio
+
+887
+00:45:16,440 --> 00:45:18,920
+blank e vado avanti.
+
+888
+00:45:18,920 --> 00:45:23,160
+Guardate questa cosa qua. Ok? In tutto
+
+889
+00:45:23,160 --> 00:45:26,720
+questo pezzo di computazione
+
+890
+00:45:26,720 --> 00:45:29,119
+qui,
+
+891
+00:45:29,119 --> 00:45:31,559
+il primo nastro non viene proprio
+
+892
+00:45:31,559 --> 00:45:33,880
+menzionato. Che succede al primo nastro
+
+893
+00:45:33,880 --> 00:45:36,760
+mentre siamo qua dentro?
+
+894
+00:45:36,760 --> 00:45:39,240
+Niente, sta fermo perché non lo
+
+895
+00:45:39,240 --> 00:45:43,079
+menzioniamo. Quindi l'implicito è che in
+
+896
+00:45:43,079 --> 00:45:46,200
+tutte queste label qui e qui il primo
+
+897
+00:45:46,200 --> 00:45:49,040
+nastro è leggo qualsiasi cosa, riscrivo
+
+898
+00:45:49,040 --> 00:45:51,800
+quella stessa cosa e sto fermo. Ok? Come
+
+899
+00:45:51,800 --> 00:45:55,079
+lo otteniamo? Non scrivendo niente.
+
+900
+00:45:55,079 --> 00:45:59,520
+Alri? Quindi andiamo in Q2.
+
+901
+00:45:59,520 --> 00:46:03,160
+Che dobbiamo fare qua?
+
+902
+00:46:03,359 --> 00:46:05,319
+Cioè, continuiamo a leggere sul primo
+
+903
+00:46:05,319 --> 00:46:07,800
+nastro.
+Yeah.
+E poi dobbiamo leggere la
+
+904
+00:46:07,800 --> 00:46:09,119
+stessa cosa sul secondo. Ma andiamo
+
+905
+00:46:09,119 --> 00:46:12,640
+avanti solo sul secondo, però o no?
+
+906
+00:46:12,640 --> 00:46:15,359
+Attenzione, eh,
+
+907
+00:46:15,359 --> 00:46:19,079
+il terzo
+Ah, ok. Ok. Perché detto vado
+
+908
+00:46:19,079 --> 00:46:20,800
+avanti solo sul secondo, ma sul primo
+
+909
+00:46:20,800 --> 00:46:23,000
+che fa? Ah, ok. Pensavo che il primo
+
+910
+00:46:23,000 --> 00:46:25,839
+rimane fermo.
+No, no, no, no. A
+ah
+
+911
+00:46:25,839 --> 00:46:28,800
+domanda per voi. Supponiamo di avere una
+
+912
+00:46:28,800 --> 00:46:30,880
+etichetta così. Sul primo nastro c'è
+
+913
+00:46:30,880 --> 00:46:35,359
+alfa, lascio alfa e vado e sto fermo.
+
+914
+00:46:35,359 --> 00:46:38,119
+Sul secondo nastro c'è alfa, lascio alfa
+
+915
+00:46:38,119 --> 00:46:42,640
+e vado avanti. Che significherebbe?
+
+916
+00:46:42,960 --> 00:46:46,520
+due essere una ripetizione del simbolo
+
+917
+00:46:46,520 --> 00:46:50,280
+dovrebbe potrebbe essere una ripetizione
+
+918
+00:46:50,280 --> 00:46:53,400
+sempre lo stesso simbolo, sì, cioè sul
+
+919
+00:46:53,400 --> 00:46:55,319
+secondo nastro quello che noi stiamo
+
+920
+00:46:55,319 --> 00:46:57,000
+essenzialmente andando a verificare è
+
+921
+00:46:57,000 --> 00:46:58,800
+che c'è sempre lo stesso simbolo, quello
+
+922
+00:46:58,800 --> 00:47:01,599
+su cui ci siamo appiccicati sul primo
+
+923
+00:47:01,599 --> 00:47:03,800
+nastro. Ok? In questo caso non è quello
+
+924
+00:47:03,800 --> 00:47:05,800
+che vogliamo, quindi dobbiamo stare
+
+925
+00:47:05,800 --> 00:47:09,599
+attenti a questa cosa. Ok?
+
+926
+00:47:09,599 --> 00:47:11,319
+Ok.
+
+927
+00:47:11,319 --> 00:47:13,040
+Quindi sul primo nastro c'è alfa, lascio
+
+928
+00:47:13,040 --> 00:47:14,800
+alfa e vado avanti. Sul secondo nastro
+
+929
+00:47:14,800 --> 00:47:18,559
+c'è alfa, lascio alfa e vado avanti.
+
+930
+00:47:18,559 --> 00:47:22,160
+Quand'è che ci fermiamo?
+
+931
+00:47:26,319 --> 00:47:30,119
+Cancelletto e due.
+Primo nastro
+
+932
+00:47:30,119 --> 00:47:32,559
+cancelletto. Trovo, lascio cancelletto e
+
+933
+00:47:32,559 --> 00:47:34,280
+vado avanti. Sul secondo c'è blank,
+
+934
+00:47:34,280 --> 00:47:37,319
+lascio blank e sto fermo. Andiamo in Q3.
+
+935
+00:47:37,319 --> 00:47:41,520
+Dopodiché che dobbiamo fare?
+
+936
+00:47:45,000 --> 00:47:49,000
+Stessa cosa. Primo nastro alfa alfa
+
+937
+00:47:49,000 --> 00:47:50,839
+avanti.
+
+938
+00:47:50,839 --> 00:47:55,079
+Terzo nastro alfa alfa avanti. Ci
+
+939
+00:47:55,079 --> 00:47:57,480
+fermiamo. Quando sul primo nastro c'è
+
+940
+00:47:57,480 --> 00:47:59,400
+cancelletto lasciamo cancelletto e
+
+941
+00:47:59,400 --> 00:48:01,359
+stiamo fermi. Sul terzo nastro c'è
+
+942
+00:48:01,359 --> 00:48:04,280
+blank. Lascio blank e sto fermo. Andiamo
+
+943
+00:48:04,280 --> 00:48:08,720
+in Q4 e accettiamo.
+
+944
+00:48:08,880 --> 00:48:11,800
+Ok. E
+
+945
+00:48:11,800 --> 00:48:13,680
+scusi, non abbiamo cancell terza
+
+946
+00:48:13,680 --> 00:48:19,040
+stringa?
+Eh sì, giusto.
+
+947
+00:48:19,040 --> 00:48:22,400
+Qua è blank.
+
+948
+00:48:22,400 --> 00:48:25,800
+Oplà. Blank. Blank. Ok.
+
+949
+00:48:25,800 --> 00:48:28,280
+Chiaro per tutti? Che cosa succede al
+
+950
+00:48:28,280 --> 00:48:30,280
+funzionamento di questa macchina? Se per
+
+951
+00:48:30,280 --> 00:48:34,040
+esempio nell'ultimo pezzo di stringa in
+
+952
+00:48:34,040 --> 00:48:38,440
+input, in questo qua,
+
+953
+00:48:39,200 --> 00:48:43,640
+abbiamo che quella non è la stringa w ma
+
+954
+00:48:43,640 --> 00:48:46,079
+è un VO differente. Che succede durante
+
+955
+00:48:46,079 --> 00:48:49,280
+la computazione?
+
+956
+00:48:50,960 --> 00:48:53,920
+Ferma contratto.
+Come
+si ferma in
+
+957
+00:48:53,920 --> 00:48:55,960
+contratto.
+La macchina si inceppa qua a
+
+958
+00:48:55,960 --> 00:48:58,599
+un certo punto si arresta in uno stato
+
+959
+00:48:58,599 --> 00:49:00,920
+non accettante e quindi rifiuta. Ok,
+
+960
+00:49:00,920 --> 00:49:03,160
+chiaro per tutti?
+
+961
+00:49:03,160 --> 00:49:07,280
+Alright. 10 minuti di pausa.
+
+962
+00:49:10,820 --> 00:49:13,949
+[Musica]
+
+963
+00:49:33,319 --> 00:49:36,319
+Ok,
+
+964
+00:49:53,200 --> 00:49:55,680
+vogliamo riconoscere
+
+965
+00:49:55,680 --> 00:50:02,319
+A B a cancelletto B tale che A e B sono
+
+966
+00:50:02,319 --> 00:50:09,119
+provengono da AB star e A è una
+
+967
+00:50:09,119 --> 00:50:12,839
+sottostringa di B.
+
+968
+00:50:12,839 --> 00:50:14,040
+Ok?
+
+969
+00:50:14,040 --> 00:50:19,240
+Quindi l'insieme delle stringhe
+
+970
+00:50:19,240 --> 00:50:23,599
+A B
+
+971
+00:50:26,200 --> 00:50:28,640
+separate da un cancelletto tale per cui
+
+972
+00:50:28,640 --> 00:50:32,440
+la stringa A sono entrambe definite su
+
+973
+00:50:32,440 --> 00:50:34,960
+AT, quindi possono essere eventualmente
+
+974
+00:50:34,960 --> 00:50:37,400
+vuote.
+
+975
+00:50:37,400 --> 00:50:41,920
+La stringa A deve essere una
+
+976
+00:50:41,920 --> 00:50:44,000
+sottostringa
+
+977
+00:50:44,000 --> 00:50:45,960
+di B.
+
+978
+00:50:45,960 --> 00:50:48,119
+Per sottostringa
+
+979
+00:50:48,119 --> 00:50:53,520
+intendiamo che A può apparire dentro B
+
+980
+00:50:53,520 --> 00:50:55,960
+in qualunque posizione, ok? Non
+
+981
+00:50:55,960 --> 00:50:57,880
+all'inizio, non necessariamente
+
+982
+00:50:57,880 --> 00:51:00,559
+all'inizio o alla fine. Queste può
+
+983
+00:51:00,559 --> 00:51:02,280
+essere dopo un simbolo, può essere dopo
+
+984
+00:51:02,280 --> 00:51:04,880
+tre simboli, dopo 10, eccetera, da
+
+985
+00:51:04,880 --> 00:51:07,799
+qualche parte. Ok? Quindi, ad esempio,
+
+986
+00:51:07,799 --> 00:51:11,000
+se abbiamo
+
+987
+00:51:16,280 --> 00:51:21,280
+quindi è per esempio A B cancelletto
+
+988
+00:51:21,280 --> 00:51:23,960
+B A
+
+989
+00:51:23,960 --> 00:51:26,960
+B
+
+990
+00:51:28,280 --> 00:51:32,480
+Noi abbiamo che questa è la porzione in
+
+991
+00:51:32,480 --> 00:51:35,880
+cui appare la stringa. A, ok? E noi
+
+992
+00:51:35,880 --> 00:51:40,040
+quella ce la dobbiamo andare a cercare.
+
+993
+00:51:40,119 --> 00:51:46,720
+Ok. Sì.
+No, dire come
+Sì. Ah, ok. Ok.
+
+994
+00:51:46,720 --> 00:51:49,040
+No, no, it's al
+
+995
+00:51:49,040 --> 00:51:50,960
+Ok. È chiaro per tutti? La difficoltà di
+
+996
+00:51:50,960 --> 00:51:54,240
+questo esercizio è che la stringa A
+
+997
+00:51:54,240 --> 00:51:59,000
+all'interno della stringa B può apparire
+
+998
+00:51:59,000 --> 00:52:01,359
+ovunque. Ok? Noi non lo sappiamo
+
+999
+00:52:01,359 --> 00:52:04,400
+dall'inizio dove
+
+1000
+00:52:04,400 --> 00:52:06,920
+appare. Ok,
+
+1001
+00:52:06,920 --> 00:52:10,359
+prendetevi 20 secondi per pensarci, 30
+
+1002
+00:52:10,359 --> 00:52:15,040
+secondi e poi studiamo.
+
+1003
+00:52:24,680 --> 00:52:27,040
+C'è qualche trucco? Non c'è nessun
+
+1004
+00:52:27,040 --> 00:52:30,040
+trucco,
+
+1005
+00:52:39,240 --> 00:52:41,200
+perché se si risolvesse con un trucco
+
+1006
+00:52:41,200 --> 00:52:44,040
+sarebbe una gran cosa, no?
+
+1007
+00:52:44,040 --> 00:52:45,920
+Quindi la prima domanda che ci possiamo
+
+1008
+00:52:45,920 --> 00:52:50,359
+porre è: "Ma esiste o no un trucco che
+
+1009
+00:52:50,359 --> 00:52:54,559
+ci semplifica la vita?
+
+1010
+00:52:56,559 --> 00:52:58,720
+questo.
+
+1011
+00:52:58,720 --> 00:53:05,280
+Ok. Il trucco c'è o il trucco non c'è?
+
+1012
+00:53:08,559 --> 00:53:11,319
+C'è un barbatrucco
+
+1013
+00:53:11,319 --> 00:53:15,520
+che ci risolve la questione.
+
+1014
+00:53:21,480 --> 00:53:25,440
+Sì.
+Ah! Ah! Eh, ipotizio io ricopio A e
+
+1015
+00:53:25,440 --> 00:53:27,319
+poi inizio a leggere B.
+Eh, ok. No, la
+
+1016
+00:53:27,319 --> 00:53:29,440
+mia domanda è
+
+1017
+00:53:29,440 --> 00:53:33,040
+io posso identificare a colpo sicuro la
+
+1018
+00:53:33,040 --> 00:53:36,000
+posizione di A in B con qualche trucco
+
+1019
+00:53:36,000 --> 00:53:39,040
+del cavolo? Dice Milla come ci risolve
+
+1020
+00:53:39,040 --> 00:53:41,799
+la questione questa cosa qua? Esiste o
+
+1021
+00:53:41,799 --> 00:53:45,040
+non esiste?
+
+1022
+00:53:47,599 --> 00:53:50,119
+Perché ci toglierebbe un po' le parate
+
+1023
+00:53:50,119 --> 00:53:53,440
+dal fuoco, no?
+
+1024
+00:53:53,960 --> 00:53:55,520
+Lo riuscite a intravedere questo
+
+1025
+00:53:55,520 --> 00:53:59,079
+fantastico trucco?
+
+1026
+00:53:59,480 --> 00:54:02,319
+No, possibile?
+
+1027
+00:54:02,319 --> 00:54:04,000
+M
+
+1028
+00:54:04,000 --> 00:54:06,200
+No, no,
+lo sapete perché non lo
+
+1029
+00:54:06,200 --> 00:54:08,000
+intravedete?
+
+1030
+00:54:08,000 --> 00:54:11,200
+Perché non c sta. Ok,
+
+1031
+00:54:11,200 --> 00:54:14,319
+non c'è nessun trucco che ci ci risolve
+
+1032
+00:54:14,319 --> 00:54:16,160
+la questione.
+
+1033
+00:54:16,160 --> 00:54:17,760
+Qua dobbiamo fare una cosa molto
+
+1034
+00:54:17,760 --> 00:54:19,680
+semplice. La macchina che abbiamo a
+
+1035
+00:54:19,680 --> 00:54:21,920
+disposizione è una macchina scema, come
+
+1036
+00:54:21,920 --> 00:54:23,920
+tutti i computer.
+
+1037
+00:54:23,920 --> 00:54:26,119
+Che dobbiamo fare? Prendiamo A, ce lo
+
+1038
+00:54:26,119 --> 00:54:29,440
+ricopiamo sul secondo nastro. Dopodiché
+
+1039
+00:54:29,440 --> 00:54:31,520
+andiamo a verificare se A parte dalla
+
+1040
+00:54:31,520 --> 00:54:34,480
+prima posizione di B. Se va bene
+
+1041
+00:54:34,480 --> 00:54:36,760
+accettiamo. Seò proviamo dalla seconda
+
+1042
+00:54:36,760 --> 00:54:39,400
+posizione di B. Se va bene accettiamo,
+
+1043
+00:54:39,400 --> 00:54:41,319
+senò partiamo dalla terza posizione, poi
+
+1044
+00:54:41,319 --> 00:54:43,440
+dalla quarta, dalla quinta, eccetera,
+
+1045
+00:54:43,440 --> 00:54:46,760
+fino a quando troviamo se c'è un punto
+
+1046
+00:54:46,760 --> 00:54:49,680
+da cui parte A dentro B. Se lo troviamo
+
+1047
+00:54:49,680 --> 00:54:51,359
+a un certo punto transiamo verso la
+
+1048
+00:54:51,359 --> 00:54:53,880
+stato accettate e diciamo yes,
+
+1049
+00:54:53,880 --> 00:54:56,079
+altrimenti ci incertiamo da qualche
+
+1050
+00:54:56,079 --> 00:54:59,960
+parte. Ok.
+Sì.
+Ehm, cioè io comunque
+
+1051
+00:54:59,960 --> 00:55:02,720
+mentre che leggo a a una cer potrei non
+
+1052
+00:55:02,720 --> 00:55:06,240
+avere eh il match, no?
+Sì. A quel punto
+
+1053
+00:55:06,240 --> 00:55:09,720
+cosa cosa sa?
+Cioè devo riavvolgere
+
+1054
+00:55:09,720 --> 00:55:12,240
+deve riavvolgere cosa?
+Eh, devo
+
+1055
+00:55:12,240 --> 00:55:14,559
+riavvolgere A perché sarà andato avanti
+
+1056
+00:55:14,559 --> 00:55:17,400
+su A.
+Eh, attenzione
+
+1057
+00:55:17,400 --> 00:55:20,280
+perché Sì. deve riavvolgere B perché se
+
+1058
+00:55:20,280 --> 00:55:22,640
+lei
+
+1059
+00:55:22,640 --> 00:55:25,640
+Allora, ragioniamo assieme su questa
+
+1060
+00:55:25,640 --> 00:55:26,880
+cosa perché è un principio di
+
+1061
+00:55:26,880 --> 00:55:31,200
+funzionamento di questa macchina. Ok?
+
+1062
+00:55:38,880 --> 00:55:42,839
+Allora, devo trovare un controesempio.
+
+1063
+00:55:57,839 --> 00:56:00,200
+M non mi viene un controesempio, ci devo
+
+1064
+00:56:00,200 --> 00:56:01,599
+pensare più attentamente. Allora, la
+
+1065
+00:56:01,599 --> 00:56:04,200
+questione è questa.
+
+1066
+00:56:04,200 --> 00:56:06,880
+Qua abbiamo B
+
+1067
+00:56:06,880 --> 00:56:10,920
+e qui abbiamo A. Ok,
+
+1068
+00:56:10,920 --> 00:56:13,520
+adesso io potrei matchare, supponiamo
+
+1069
+00:56:13,520 --> 00:56:15,920
+che sto matchando A e B a questo
+
+1070
+00:56:15,920 --> 00:56:18,520
+livello. Ok, questi li ho già verificati
+
+1071
+00:56:18,520 --> 00:56:21,640
+e non vanno bene. Ok, supponiamo che sto
+
+1072
+00:56:21,640 --> 00:56:24,520
+matchando A e B partendo da questa
+
+1073
+00:56:24,520 --> 00:56:27,280
+posizione. Ok? Allora, quello che può
+
+1074
+00:56:27,280 --> 00:56:30,160
+accadere è che mentre sto matchando A e
+
+1075
+00:56:30,160 --> 00:56:33,280
+B, l'errore
+
+1076
+00:56:33,280 --> 00:56:37,160
+si verifichi qua. Ok?
+
+1077
+00:56:37,160 --> 00:56:39,680
+Quindi in corrispondenza l'errore su A
+
+1078
+00:56:39,680 --> 00:56:41,720
+sarebbe questo.
+
+1079
+00:56:41,720 --> 00:56:45,640
+Se noi riavvolgiamo A per ripartire
+
+1080
+00:56:45,640 --> 00:56:47,240
+dall'inizio,
+
+1081
+00:56:47,240 --> 00:56:48,480
+ok?
+
+1082
+00:56:48,480 --> 00:56:51,400
+Ma non riavvolgiamo B, cioè lasciamo la
+
+1083
+00:56:51,400 --> 00:56:55,039
+testina di B ferma qua, noi stiamo
+
+1084
+00:56:55,039 --> 00:56:59,319
+perdendo tutta questa zona qua e se la
+
+1085
+00:56:59,319 --> 00:57:01,200
+partenza di A è qua dentro, che
+
+1086
+00:57:01,200 --> 00:57:04,720
+facciamo? Ce la siamo persa. Quindi noi
+
+1087
+00:57:04,720 --> 00:57:08,640
+non dobbiamo riavvolgere B, ma di una
+
+1088
+00:57:08,640 --> 00:57:11,720
+posizione in meno in maniera tale che il
+
+1089
+00:57:11,720 --> 00:57:14,280
+check successivo avviene dalla cella
+
+1090
+00:57:14,280 --> 00:57:18,119
+successiva. Ok?
+
+1091
+00:57:18,119 --> 00:57:21,000
+È chiaro? Cioè, quindi nel momento in
+
+1092
+00:57:21,000 --> 00:57:24,079
+cui il principio sarà questo, prendo A
+
+1093
+00:57:24,079 --> 00:57:26,520
+dal primo nastro, la copio sul secondo
+
+1094
+00:57:26,520 --> 00:57:28,799
+nastro, dopodiché la provo ad
+
+1095
+00:57:28,799 --> 00:57:31,440
+appiccicare sotto B partendo, che ne so,
+
+1096
+00:57:31,440 --> 00:57:33,839
+dal primo simbolo. Che faranno le
+
+1097
+00:57:33,839 --> 00:57:36,640
+testine? Guarderanno B sul primo nastro,
+
+1098
+00:57:36,640 --> 00:57:38,359
+A sul secondo nastro. Sono uguali i
+
+1099
+00:57:38,359 --> 00:57:40,000
+simboli, andiamo avanti. Sono uguali i
+
+1100
+00:57:40,000 --> 00:57:41,599
+simboli, andiamo avanti. Sono uguali i
+
+1101
+00:57:41,599 --> 00:57:43,240
+simboli, andiamo avanti. Sono uguali i
+
+1102
+00:57:43,240 --> 00:57:45,559
+simboli, andiamo avanti. Sono uguali i
+
+1103
+00:57:45,559 --> 00:57:47,799
+simboli, no?
+
+1104
+00:57:47,799 --> 00:57:49,920
+Allora, noi che cosa sappiamo? Sappiamo
+
+1105
+00:57:49,920 --> 00:57:54,119
+che dobbiamo far ripartire il test su
+
+1106
+00:57:54,119 --> 00:57:56,960
+primo nastro da una casella successiva,
+
+1107
+00:57:56,960 --> 00:57:59,160
+cioè dalla seconda. Come lo possiamo
+
+1108
+00:57:59,160 --> 00:58:02,200
+fare? Ci sono 1000 modi. Un modo è
+
+1109
+00:58:02,200 --> 00:58:05,799
+questo. Nel momento in cui ci troviamo
+
+1110
+00:58:05,799 --> 00:58:08,079
+di fronte alla differenza dei due
+
+1111
+00:58:08,079 --> 00:58:10,280
+simboli,
+
+1112
+00:58:10,280 --> 00:58:12,240
+indietreggiamo
+
+1113
+00:58:12,240 --> 00:58:18,720
+il il primo nastro di uno. Ok? Poi li
+
+1114
+00:58:18,720 --> 00:58:20,319
+indietreggiamo
+
+1115
+00:58:20,319 --> 00:58:22,839
+assieme.
+
+1116
+00:58:22,839 --> 00:58:25,520
+Così che faccio? No, indietreggio. Il
+
+1117
+00:58:25,520 --> 00:58:27,920
+secondo. Infatti mi sembrava str.
+
+1118
+00:58:27,920 --> 00:58:30,400
+Allora, troviamo i due simboli che sono
+
+1119
+00:58:30,400 --> 00:58:32,960
+differenti. Indietreggio, il secondo di
+
+1120
+00:58:32,960 --> 00:58:36,799
+uno. Andiamo indietro assieme. Quando
+
+1121
+00:58:36,799 --> 00:58:38,760
+arriviamo al bordo, guardate la
+
+1122
+00:58:38,760 --> 00:58:41,079
+differenza. Ritorniamo avanti e
+
+1123
+00:58:41,079 --> 00:58:43,359
+c'abbiamo la testina sul primo nastro
+
+1124
+00:58:43,359 --> 00:58:45,280
+sfalzata di una posizione, che è quello
+
+1125
+00:58:45,280 --> 00:58:47,839
+che ci serve. Ok? Quindi adesso dobbiamo
+
+1126
+00:58:47,839 --> 00:58:50,359
+ricodificare questa strategia
+
+1127
+00:58:50,359 --> 00:58:52,240
+all'interno di una macchina di touring.
+
+1128
+00:58:52,240 --> 00:58:54,799
+Non è molto difficile, però è un
+
+1129
+00:58:54,799 --> 00:58:58,079
+esercizio importante perché dobbiamo
+
+1130
+00:58:58,079 --> 00:59:00,880
+prendere pratica col fatto che se la
+
+1131
+00:59:00,880 --> 00:59:03,839
+macchina di Turing sta computando e a un
+
+1132
+00:59:03,839 --> 00:59:05,960
+certo punto si accorge che c'è stato un
+
+1133
+00:59:05,960 --> 00:59:08,559
+errore, deve andare a provare un'altra
+
+1134
+00:59:08,559 --> 00:59:10,880
+cosa. Questo è un esercizio che ci serve
+
+1135
+00:59:10,880 --> 00:59:13,440
+perché quando introdurremo le macchine
+
+1136
+00:59:13,440 --> 00:59:16,720
+non deterministiche gli potremo fare
+
+1137
+00:59:16,720 --> 00:59:19,400
+vari trucchetti che ora non possiamo.
+
+1138
+00:59:19,400 --> 00:59:22,680
+Ok? Chiaro per tutti? Domanda? Avevo una
+
+1139
+00:59:22,680 --> 00:59:24,559
+domanda? No. Sì.
+Se una volta che
+
+1140
+00:59:24,559 --> 00:59:26,799
+abbiamo letto che A è detto B, ci
+
+1141
+00:59:26,799 --> 00:59:28,799
+interessa completare il controllo che B
+
+1142
+00:59:28,799 --> 00:59:31,480
+sia praticamente detto A
+
+1143
+00:59:31,480 --> 00:59:33,520
+una sequenza di A.
+Sì, sì, sì. Poi alla
+
+1144
+00:59:33,520 --> 00:59:35,319
+fine dobbiamo verificare che B non ci
+
+1145
+00:59:35,319 --> 00:59:37,599
+abbia spazzatura strana, tipo un
+
+1146
+00:59:37,599 --> 00:59:39,599
+cancelletto che ricompare eccetera.
+
+1147
+00:59:39,599 --> 00:59:40,880
+Questo è un controllo finale che
+
+1148
+00:59:40,880 --> 00:59:43,160
+facciamo. Però il nocciolo della
+
+1149
+00:59:43,160 --> 00:59:45,839
+questione qua è individuare dove inizia
+
+1150
+00:59:45,839 --> 00:59:51,520
+A dentro B. Se A inizia dentro B. Ok?
+
+1151
+00:59:51,520 --> 00:59:53,050
+Alrght.
+
+1152
+00:59:53,050 --> 00:59:55,559
+[Musica]
+
+1153
+00:59:55,559 --> 00:59:58,559
+Q0.
+
+1154
+00:59:59,440 --> 01:00:02,440
+Ok,
+
+1155
+01:00:09,720 --> 01:00:14,839
+quindi ricopiamo. L'idea è ricopiamo A
+
+1156
+01:00:14,839 --> 01:00:17,680
+sul secondo nastro. Quindi
+
+1157
+01:00:17,680 --> 01:00:20,520
+sul primo nastro c'è alfa, lascio alfa e
+
+1158
+01:00:20,520 --> 01:00:22,720
+vado avanti. Sul secondo nastro c'è
+
+1159
+01:00:22,720 --> 01:00:26,359
+blank, scrivo alfa e vado avanti.
+
+1160
+01:00:26,359 --> 01:00:30,480
+Facciamo questo fino a quando?
+
+1161
+01:00:30,680 --> 01:00:34,599
+cancelletto sul primo e sul secondo
+
+1162
+01:00:34,599 --> 01:00:37,400
+blank. Lascio blank e torno dietro.
+
+1163
+01:00:37,400 --> 01:00:39,760
+Riavvolgo il secondo nastro perché
+
+1164
+01:00:39,760 --> 01:00:42,640
+dobbiamo posizionarci con la testina
+
+1165
+01:00:42,640 --> 01:00:45,440
+all'inizio di a copiato sul secondo
+
+1166
+01:00:45,440 --> 01:00:48,200
+nastro. Ok? Quindi sul secondo nastro
+
+1167
+01:00:48,200 --> 01:00:50,359
+c'è alfa, lascio alfa e torno dietro. A
+
+1168
+01:00:50,359 --> 01:00:52,440
+un certo punto sul secondo nastro c'è
+
+1169
+01:00:52,440 --> 01:00:55,160
+blank, lascio blank e vado avanti e sono
+
+1170
+01:00:55,160 --> 01:00:57,680
+pronto a giocare.
+
+1171
+01:00:57,680 --> 01:01:00,079
+Ok.
+
+1172
+01:01:06,559 --> 01:01:10,119
+M ok, vi propongo
+
+1173
+01:01:10,119 --> 01:01:12,160
+un'altra soluzione invece perché ci
+
+1174
+01:01:12,160 --> 01:01:15,319
+serve per dopo. Ok,
+
+1175
+01:01:15,319 --> 01:01:16,960
+sorry.
+
+1176
+01:01:16,960 --> 01:01:19,839
+È molto simile, eh?
+
+1177
+01:01:19,839 --> 01:01:23,200
+Ok. Perché distingo due casi. Se ho
+
+1178
+01:01:23,200 --> 01:01:25,960
+letto qualcosa sul primo nastro o meno,
+
+1179
+01:01:25,960 --> 01:01:28,000
+quindi sul secondo c'è alfa, lascio
+
+1180
+01:01:28,000 --> 01:01:32,559
+alfa. Vi spiego dopo perché. Q2
+
+1181
+01:01:32,559 --> 01:01:35,760
+sul secondo c'è alfa.
+
+1182
+01:01:35,760 --> 01:01:39,160
+Ah, dov'è
+
+1183
+01:01:43,960 --> 01:01:45,680
+alfa? E torno dietro. A un certo punto
+
+1184
+01:01:45,680 --> 01:01:48,480
+mi fermo. Sul secondo c'è blank. Lascio
+
+1185
+01:01:48,480 --> 01:01:51,760
+blank e vado avanti. Q3. Ok. Mi serve
+
+1186
+01:01:51,760 --> 01:01:53,440
+questa cosa qua per una cosa che vediamo
+
+1187
+01:01:53,440 --> 01:01:55,960
+dopo, ok? Perché a potrebbe essere vuota
+
+1188
+01:01:55,960 --> 01:01:58,119
+e quindi devo
+
+1189
+01:01:58,119 --> 01:02:00,119
+poter distinguere
+
+1190
+01:02:00,119 --> 01:02:02,640
+se in A ho scritto qualcosa o in A non
+
+1191
+01:02:02,640 --> 01:02:04,599
+ho scritto niente mentre ricopiavo A.
+
+1192
+01:02:04,599 --> 01:02:07,119
+Quindi mi faccio dopo ramo. Questo primo
+
+1193
+01:02:07,119 --> 01:02:10,119
+ramo è in A. Ho scritto qualcosa. Ok?
+
+1194
+01:02:10,119 --> 01:02:12,640
+Poi ci sarà il caso che esce fuori da
+
+1195
+01:02:12,640 --> 01:02:14,920
+qua in A non ci stava niente e quindi
+
+1196
+01:02:14,920 --> 01:02:18,039
+poi ce la gestiamo. Ok? Era un pezzo che
+
+1197
+01:02:18,039 --> 01:02:22,039
+mi serviva. Ok.
+
+1198
+01:02:22,039 --> 01:02:25,319
+Quindi dobbiamo iniziare a verificare,
+
+1199
+01:02:25,319 --> 01:02:28,880
+no, che
+
+1200
+01:02:28,880 --> 01:02:32,079
+su primo e secondo nastro ci sia la
+
+1201
+01:02:32,079 --> 01:02:36,000
+stessa stringa. Ok? Quindi abbiamo la
+
+1202
+01:02:36,000 --> 01:02:38,000
+testina del primo nastro in posizione
+
+1203
+01:02:38,000 --> 01:02:40,200
+dopo il cancelletto, la testina sul
+
+1204
+01:02:40,200 --> 01:02:42,680
+secondo nastro in posizione sul primo
+
+1205
+01:02:42,680 --> 01:02:45,240
+simbolo della copia di A che sta sul
+
+1206
+01:02:45,240 --> 01:02:48,640
+secondo nastro. Ok? Allora, cosa
+
+1207
+01:02:48,640 --> 01:02:50,760
+c'eravamo inventati? Queste testine
+
+1208
+01:02:50,760 --> 01:02:53,480
+vanno spostate assieme e verificare che
+
+1209
+01:02:53,480 --> 01:02:59,279
+sia tutto ok. Ok. Alright. Quindi su
+
+1210
+01:02:59,279 --> 01:03:03,119
+primo nastro c'è alfa, lascio alfa e
+
+1211
+01:03:03,119 --> 01:03:07,000
+vado avanti. Sul
+
+1212
+01:03:07,000 --> 01:03:11,319
+secondo nastro che c'è?
+
+1213
+01:03:12,880 --> 01:03:16,400
+Alfa. C'è alfa. Lascio alfa e vado
+
+1214
+01:03:16,400 --> 01:03:18,839
+avanti. Ok.
+
+1215
+01:03:18,839 --> 01:03:23,760
+Supponiamo che fili tutto liscio. Ok,
+
+1216
+01:03:23,760 --> 01:03:26,599
+quindi adesso dovremo verificare un po'
+
+1217
+01:03:26,599 --> 01:03:28,720
+di cose. Fila tutto liscio, c'è un
+
+1218
+01:03:28,720 --> 01:03:30,319
+problema da qualche parte, quindi va
+
+1219
+01:03:30,319 --> 01:03:33,119
+analizzato un po' per caso supponiamo
+
+1220
+01:03:33,119 --> 01:03:35,839
+che fili tutto liscio. Che succederà se
+
+1221
+01:03:35,839 --> 01:03:38,760
+fila tutto liscio?
+
+1222
+01:03:38,760 --> 01:03:41,279
+Arrivo blank al secondo.
+Arrivo blank al
+
+1223
+01:03:41,279 --> 01:03:43,839
+secondo. Quindi qua condizione di
+
+1224
+01:03:43,839 --> 01:03:45,640
+uscita.
+
+1225
+01:03:45,640 --> 01:03:48,119
+Sul secondo nastro c'è blend. Lascio
+
+1226
+01:03:48,119 --> 01:03:51,359
+blank e sto fermo e vado per esempio in
+
+1227
+01:03:51,359 --> 01:03:54,480
+Q4. Ok? Dopodiché che dobbiamo
+
+1228
+01:03:54,480 --> 01:03:57,480
+verificare?
+
+1229
+01:03:57,680 --> 01:03:59,599
+Dobbiamo semplicemente vedere che non ci
+
+1230
+01:03:59,599 --> 01:04:02,240
+sia spazzatura sulla parte rimanente di
+
+1231
+01:04:02,240 --> 01:04:04,440
+B, cioè che non ci sia un cancelletto in
+
+1232
+01:04:04,440 --> 01:04:06,599
+fondo, per dire, nel senso, ci stanno
+
+1233
+01:04:06,599 --> 01:04:09,799
+solo simboli A e B e a un certo punto a
+
+1234
+01:04:09,799 --> 01:04:12,760
+un certo punto ci sarà
+blank e lì poi
+
+1235
+01:04:12,760 --> 01:04:16,079
+accettiamo. Quindi sul primo nastro c'è
+
+1236
+01:04:16,079 --> 01:04:19,599
+alfa. Lascio alfa e vado avanti. Poi sul
+
+1237
+01:04:19,599 --> 01:04:22,720
+primo nastro c'è blank, lascio blank e
+
+1238
+01:04:22,720 --> 01:04:26,559
+sto fermo e vado qui e5
+
+1239
+01:04:26,559 --> 01:04:32,640
+accetto. Ok, questa è la via. In caso
+
+1240
+01:04:33,200 --> 01:04:37,640
+Li vedete? Li vedete? Sì.
+
+1241
+01:04:37,640 --> 01:04:40,880
+Ok. Questo è il pezzo di computazione
+
+1242
+01:04:40,880 --> 01:04:45,680
+che si occupa di gestire il caso quando
+
+1243
+01:04:45,680 --> 01:04:48,920
+tutto fila liscio. Ok? Però qui noi
+
+1244
+01:04:48,920 --> 01:04:50,680
+abbiamo scritto che stiamo verificando
+
+1245
+01:04:50,680 --> 01:04:52,319
+il contenuto del primo nastro col
+
+1246
+01:04:52,319 --> 01:04:54,960
+contenuto del secondo nastro. Se abbiamo
+
+1247
+01:04:54,960 --> 01:04:58,359
+beccato il punto sbagliato di B, cosa
+
+1248
+01:04:58,359 --> 01:05:02,359
+succederà? A un certo punto
+
+1249
+01:05:03,680 --> 01:05:07,400
+si blocca. E quindi che dobbiamo fare?
+
+1250
+01:05:07,400 --> 01:05:09,520
+Dobbiamo tornare indietro. Come ci si
+
+1251
+01:05:09,520 --> 01:05:13,359
+accorgiamo che ci non ci va bene quel
+
+1252
+01:05:13,359 --> 01:05:16,079
+posto?
+
+1253
+01:05:16,079 --> 01:05:20,039
+Alfa, ma sotto alfa.
+Come? Scusi.
+Leggo
+
+1254
+01:05:20,039 --> 01:05:22,319
+alfa nel primo ma sotto non ho alfa.
+E
+
+1255
+01:05:22,319 --> 01:05:24,839
+sotto abbiamo qualcosa di diverso. Ok.
+
+1256
+01:05:24,839 --> 01:05:29,279
+Quindi la condizione è Sì, come no? La
+
+1257
+01:05:29,279 --> 01:05:32,240
+condizione è questa. Sul primo nastro
+
+1258
+01:05:32,240 --> 01:05:35,279
+leggo alfa, lascio alfa, poi vedremo la
+
+1259
+01:05:35,279 --> 01:05:38,039
+testina. sul secondo nastro c'è beta e
+
+1260
+01:05:38,039 --> 01:05:40,240
+lascio beta e poi vedremo la testina.
+
+1261
+01:05:40,240 --> 01:05:42,760
+Ok?
+
+1262
+01:05:42,760 --> 01:05:46,240
+In questo caso noi dobbiamo specificare
+
+1263
+01:05:46,240 --> 01:05:51,520
+che cosa sono alfa e beta. Ok?
+
+1264
+01:05:51,520 --> 01:05:57,880
+Alfa e beta appartengono all'insieme 0 1
+
+1265
+01:05:57,880 --> 01:06:00,960
+e in più abbiamo che alfa è diverso da
+
+1266
+01:06:00,960 --> 01:06:04,680
+beta. Ok?
+
+1267
+01:06:05,079 --> 01:06:10,400
+che era 01 o AB? AB.
+
+1268
+01:06:15,640 --> 01:06:18,760
+A B.
+
+1269
+01:06:18,760 --> 01:06:23,079
+Vedete? Sì, più o meno qua. Ah, bello
+
+1270
+01:06:23,079 --> 01:06:24,839
+basso.
+
+1271
+01:06:24,839 --> 01:06:28,520
+Ok. M
+
+1272
+01:06:29,279 --> 01:06:31,400
+Ok. E quindi a un certo punto abbiamo
+
+1273
+01:06:31,400 --> 01:06:34,160
+detto che stiamo avanzando le testine.
+
+1274
+01:06:34,160 --> 01:06:35,839
+Se fila tutto liscio, qui arriviamo al
+
+1275
+01:06:35,839 --> 01:06:38,480
+bianco e avanziamo questo e ciao. Se
+
+1276
+01:06:38,480 --> 01:06:40,119
+invece c'è un problema, li avanziamo
+
+1277
+01:06:40,119 --> 01:06:42,440
+assieme, arriviamo al punto di errore,
+
+1278
+01:06:42,440 --> 01:06:45,400
+avremo alfa su uno e beta sull'altro, il
+
+1279
+01:06:45,400 --> 01:06:47,680
+che significa che ci sta A sopra e B
+
+1280
+01:06:47,680 --> 01:06:51,920
+sotto oppure B sopra ed A sotto. Ok? Che
+
+1281
+01:06:51,920 --> 01:06:54,559
+facciamo? Abbiamo detto per creare lo
+
+1282
+01:06:54,559 --> 01:06:58,200
+sfalsamento di una cella teniamo questa
+
+1283
+01:06:58,200 --> 01:07:01,240
+testina ferma. Questa la spostiamo di
+
+1284
+01:07:01,240 --> 01:07:05,039
+uno, poi le indietreggiamo assieme, le
+
+1285
+01:07:05,039 --> 01:07:07,359
+avanziamo assieme e ci troveremo
+
+1286
+01:07:07,359 --> 01:07:08,799
+magicamente alla testina del primo
+
+1287
+01:07:08,799 --> 01:07:11,799
+nastro una posizione in avanti. Ok?
+
+1288
+01:07:11,799 --> 01:07:15,359
+Quindi sul primo nastro c'è alfa. Lascio
+
+1289
+01:07:15,359 --> 01:07:18,440
+alfa e sto fermo.
+
+1290
+01:07:18,440 --> 01:07:21,559
+Sul secondo nastro c'è beta. Lascio beta
+
+1291
+01:07:21,559 --> 01:07:26,680
+e vado indietro. Ok.
+
+1292
+01:07:26,680 --> 01:07:30,680
+Q3, Q4, Q5. Q6.
+
+1293
+01:07:30,680 --> 01:07:35,760
+Ok, dopodiché li dobbiamo avvolgere.
+
+1294
+01:07:35,760 --> 01:07:40,599
+Alri, cosa abbiamo sul primo nastro?
+
+1295
+01:07:40,599 --> 01:07:42,400
+Il nei principio può essere tutto
+
+1296
+01:07:42,400 --> 01:07:44,480
+scombinato ora, eh, perché li abbiamo
+
+1297
+01:07:44,480 --> 01:07:46,839
+sfalsati di uno. Erano la stessa cosa
+
+1298
+01:07:46,839 --> 01:07:49,720
+fino a quel punto, l'abbiamo sfalsato di
+
+1299
+01:07:49,720 --> 01:07:52,760
+uno. Ora che tornano indietro assieme ci
+
+1300
+01:07:52,760 --> 01:07:55,160
+può essere la qualunque. Ok? Come la
+
+1301
+01:07:55,160 --> 01:07:57,480
+scriviamo sta cosa? Quindi sul primo
+
+1302
+01:07:57,480 --> 01:07:59,559
+nastro troviamo
+
+1303
+01:07:59,559 --> 01:08:03,599
+alfa. Lasciamo alfa e torniamo dietro
+
+1304
+01:08:03,599 --> 01:08:06,240
+sul secondo nastro.
+
+1305
+01:08:06,240 --> 01:08:10,319
+Mh
+gamma. Ok. Ci serve un altro simbolo.
+
+1306
+01:08:10,319 --> 01:08:13,359
+C'è gamma, lascio gamma e torno dietro.
+
+1307
+01:08:13,359 --> 01:08:17,159
+E quindi insieme al resto c'è gamma.
+
+1308
+01:08:17,159 --> 01:08:20,960
+Gamma alfa e beta. Qua mo lo vedete l'ho
+
+1309
+01:08:20,960 --> 01:08:23,640
+aggiunto alla leggenda. Dal gamma alfa e
+
+1310
+01:08:23,640 --> 01:08:26,440
+beta sono simboli su AB. Abbiamo un
+
+1311
+01:08:26,440 --> 01:08:28,520
+vincolo fra alfa e beta che alfa è
+
+1312
+01:08:28,520 --> 01:08:31,279
+diverso da beta. Gamma non ha vincoli né
+
+1313
+01:08:31,279 --> 01:08:35,719
+su alfa né su beta. Ok? In questo modio,
+
+1314
+01:08:35,719 --> 01:08:42,359
+dov'è? Qua. Alright. In questo modo qui
+
+1315
+01:08:42,359 --> 01:08:45,359
+possiamo indietreggiare le due testine
+
+1316
+01:08:45,359 --> 01:08:47,880
+assieme. Come facciamo a sapere che
+
+1317
+01:08:47,880 --> 01:08:51,359
+siamo arrivati alla fine?
+
+1318
+01:08:51,359 --> 01:08:54,520
+Blank sul secondo.
+Blank sul secondo. E
+
+1319
+01:08:54,520 --> 01:08:57,839
+andiamo qua. Quindi sul primo lo
+
+1320
+01:08:57,839 --> 01:09:00,480
+vedremo. Sul secondo c'è blank. Lascio
+
+1321
+01:09:00,480 --> 01:09:05,400
+blank e vado avanti. E sul primo
+
+1322
+01:09:05,440 --> 01:09:07,839
+alfa, cioè alfa. Lascio alfa e vado
+
+1323
+01:09:07,839 --> 01:09:11,480
+avanti. Ok.
+
+1324
+01:09:13,759 --> 01:09:16,239
+Alright. Quindi questo pezzo di
+
+1325
+01:09:16,239 --> 01:09:20,120
+macchina, stiamo andando veloce. Questo
+
+1326
+01:09:20,120 --> 01:09:24,279
+pezzo di macchina si occupa da un lato
+
+1327
+01:09:24,279 --> 01:09:28,560
+di verificare che
+
+1328
+01:09:28,560 --> 01:09:31,480
+la stringa A appaia dentro la stringa B
+
+1329
+01:09:31,480 --> 01:09:35,000
+a un certo punto. Ok? Se ci fila tutto
+
+1330
+01:09:35,000 --> 01:09:38,480
+liscio prendiamo questo ramo. Se non
+
+1331
+01:09:38,480 --> 01:09:40,839
+fila tutto liscio prendiamo quest'altro.
+
+1332
+01:09:40,839 --> 01:09:43,359
+E il trucco lì è che dobbiamo provare
+
+1333
+01:09:43,359 --> 01:09:46,279
+tutte le possibili combinazioni. Non ci
+
+1334
+01:09:46,279 --> 01:09:49,719
+possiamo esigere da questa cosa. Ok?
+
+1335
+01:09:49,719 --> 01:09:51,880
+Chiaro come funziona?
+
+1336
+01:09:51,880 --> 01:09:54,679
+Ultima cosa,
+
+1337
+01:09:54,679 --> 01:09:57,920
+se A è vuota, se A è vuota, per
+
+1338
+01:09:57,920 --> 01:09:59,640
+definizione la stringa vuota è
+
+1339
+01:09:59,640 --> 01:10:01,960
+sottostringa di qualsiasi altra stringa.
+
+1340
+01:10:01,960 --> 01:10:06,280
+Quindi se A è vuota, dobbiamo accettare.
+
+1341
+01:10:06,280 --> 01:10:08,440
+Come lo facciamo? Come lo aggiungiamo a
+
+1342
+01:10:08,440 --> 01:10:12,199
+questo pezzo? Un attimo.
+
+1343
+01:10:14,239 --> 01:10:19,800
+Sì,
+finisci Q1 e Q4. Sì, la cera secondo
+
+1344
+01:10:19,800 --> 01:10:23,440
+nastro è vuoto.
+Yeah.
+Però, prof, da Q1
+
+1345
+01:10:23,440 --> 01:10:26,120
+noi abbiamo giicato che abbiamo letto un
+
+1346
+01:10:26,120 --> 01:10:29,719
+file oppure
+non necessariamente. Per
+
+1347
+01:10:29,719 --> 01:10:31,520
+uscire da Q1 l'unica garanzia che
+
+1348
+01:10:31,520 --> 01:10:32,600
+dobbiamo avere è che ci sia un
+
+1349
+01:10:32,600 --> 01:10:35,239
+cancelletto. Se non abbiamo letto niente
+
+1350
+01:10:35,239 --> 01:10:38,960
+lì all'uscita noi avremo che,
+
+1351
+01:10:38,960 --> 01:10:43,080
+cioè dopo questo passaggio qua,
+
+1352
+01:10:43,080 --> 01:10:44,719
+se non avevamo scritto niente sul
+
+1353
+01:10:44,719 --> 01:10:46,360
+secondo nastro, sul secondo nastro
+
+1354
+01:10:46,360 --> 01:10:48,600
+andando indietro ci sarà ancora niente,
+
+1355
+01:10:48,600 --> 01:10:51,280
+ok? Quello ci permette di stabilire che
+
+1356
+01:10:51,280 --> 01:10:54,080
+questa è la condizione di accettazione,
+
+1357
+01:10:54,080 --> 01:10:55,320
+ok?
+
+1358
+01:10:55,320 --> 01:10:59,840
+in caso di stringa a vuota,
+
+1359
+01:11:04,840 --> 01:11:07,760
+chiaro? Noi ci colleghiamo a Q4 perché
+
+1360
+01:11:07,760 --> 01:11:10,920
+in Q4
+
+1361
+01:11:10,960 --> 01:11:14,120
+in Q4 noi dobbiamo verificare che la
+
+1362
+01:11:14,120 --> 01:11:17,159
+stringa W sia qualcosa di no B la
+
+1363
+01:11:17,159 --> 01:11:19,400
+stringa B sia qualcosa di sensato e non
+
+1364
+01:11:19,400 --> 01:11:21,719
+ci siano cancelletti in fondo o cose
+
+1365
+01:11:21,719 --> 01:11:23,120
+strambe, tipo compare un altro
+
+1366
+01:11:23,120 --> 01:11:26,560
+cancelletto, altri caratteri eccetera.
+
+1367
+01:11:26,560 --> 01:11:30,400
+Ok? Chiaro? Quindi chiaro per tutti?
+
+1368
+01:11:30,400 --> 01:11:33,040
+A che ci servirà questo esercizio? a
+
+1369
+01:11:33,040 --> 01:11:35,640
+fare esperienza diretta che in queste
+
+1370
+01:11:35,640 --> 01:11:38,280
+circostanze quando noi non possiamo
+
+1371
+01:11:38,280 --> 01:11:41,440
+sapere da principio una certa cosa, noi
+
+1372
+01:11:41,440 --> 01:11:44,239
+la dobbiamo testare. In caso di errori
+
+1373
+01:11:44,239 --> 01:11:48,920
+torniamo indietro e via. Ok?
+
+1374
+01:11:48,920 --> 01:11:51,880
+Questo esercizio poi lo riprenderemo con
+
+1375
+01:11:51,880 --> 01:11:54,400
+macchine di touring non deterministiche
+
+1376
+01:11:54,400 --> 01:11:57,800
+dove scopriremo che insomma con il non
+
+1377
+01:11:57,800 --> 01:12:00,239
+determinismo si possono fare cose un po'
+
+1378
+01:12:00,239 --> 01:12:03,239
+più furbe. Ok?
+
+1379
+01:12:03,239 --> 01:12:06,520
+Altro esercizio.
+
+1380
+01:12:27,280 --> 01:12:29,400
+Facciamo
+
+1381
+01:12:29,400 --> 01:12:32,400
+questo.
+
+1382
+01:12:34,120 --> 01:12:36,760
+L =
+
+1383
+01:12:36,760 --> 01:12:39,760
+V
+
+1384
+01:12:40,520 --> 01:12:44,159
+tale che W appartiene
+
+1385
+01:12:44,159 --> 01:12:47,560
+a 01.
+
+1386
+01:12:50,520 --> 01:12:53,920
+01 Plus credo sia. Sì.
+
+1387
+01:12:53,920 --> 01:12:56,920
+Ok.
+
+1388
+01:12:59,480 --> 01:13:03,840
+Prendetevi qualche minuto per pensare,
+
+1389
+01:13:03,840 --> 01:13:05,679
+perché questo sembra un po' una gran
+
+1390
+01:13:05,679 --> 01:13:08,840
+rottura di balle, no? Come facciamo a
+
+1391
+01:13:08,840 --> 01:13:11,840
+sapere dov'è il bordo fra la fine della
+
+1392
+01:13:11,840 --> 01:13:16,600
+W e la ripetizione della doppia V?
+
+1393
+01:13:17,639 --> 01:13:19,560
+Non tirate a indovinare, pensateci un
+
+1394
+01:13:19,560 --> 01:13:22,560
+attimo,
+
+1395
+01:13:31,960 --> 01:13:34,360
+perché un modo a forza bruta sarebbe
+
+1396
+01:13:34,360 --> 01:13:38,120
+provare tutte un attimo tutte le
+
+1397
+01:13:38,120 --> 01:13:40,880
+possibili combinazioni, no? Dice magari
+
+1398
+01:13:40,880 --> 01:13:42,920
+allungo uno, magari allungo due, magari
+
+1399
+01:13:42,920 --> 01:13:47,320
+allungo tre. Ok,
+
+1400
+01:13:47,320 --> 01:13:49,280
+allora pensateci un pochino. Già un po'
+
+1401
+01:13:49,280 --> 01:13:52,880
+di persone in coda.
+
+1402
+01:13:55,600 --> 01:13:57,679
+2 + tre.
+
+1403
+01:13:57,679 --> 01:13:59,639
+Ok, non prendo più in coda un attimo.
+
+1404
+01:13:59,639 --> 01:14:02,880
+Lasciamo il tempo agli altri pensare. Ce
+
+1405
+01:14:02,880 --> 01:14:06,199
+facciamo tre.
+
+1406
+01:14:14,110 --> 01:14:17,290
+[Musica]
+
+1407
+01:14:38,639 --> 01:14:41,639
+Ok,
+
+1408
+01:14:45,639 --> 01:14:49,360
+più o meno avete un'idea. Ok, lei è il
+
+1409
+01:14:49,360 --> 01:14:51,719
+primo, mi ricordo.
+No, avevo sempre.
+Ah,
+
+1410
+01:14:51,719 --> 01:14:55,280
+ok. Sullo stesso nastro.
+Come
+posso
+
+1411
+01:14:55,280 --> 01:14:56,880
+avere due testini sullo stesso nastro?
+
+1412
+01:14:56,880 --> 01:14:59,960
+No,
+allora posso ricopiare la prima e
+
+1413
+01:14:59,960 --> 01:15:01,880
+poi
+
+1414
+01:15:01,880 --> 01:15:05,239
+ricomincio entr, cioè mi riporto. Eh,
+
+1415
+01:15:05,239 --> 01:15:08,600
+lei deve decidere quanto pezzo della
+
+1416
+01:15:08,600 --> 01:15:11,639
+stringa input è la prima doppia B. Lei
+
+1417
+01:15:11,639 --> 01:15:13,760
+non ha una separazione, non è B
+
+1418
+01:15:13,760 --> 01:15:17,280
+cancelletto B, non è W cancelletto B.
+
+1419
+01:15:17,280 --> 01:15:18,760
+Non abbiamo una separazione. Come
+
+1420
+01:15:18,760 --> 01:15:21,199
+facciamo a stabilire? Dopo nel secondo
+
+1421
+01:15:21,199 --> 01:15:24,080
+nastro contenitore del primo.
+Ah,
+poi mi
+
+1422
+01:15:24,080 --> 01:15:27,600
+riporto entrambi all'inizio.
+Sì.
+
+1423
+01:15:27,600 --> 01:15:29,679
+Il primo lo scorro di un di un
+
+1424
+01:15:29,679 --> 01:15:32,000
+carattere, il secondo di due ogni volta.
+
+1425
+01:15:32,000 --> 01:15:33,440
+Quando nel secondo sono arrivato al
+
+1426
+01:15:33,440 --> 01:15:36,000
+blank sono a metà.
+
+1427
+01:15:36,000 --> 01:15:39,800
+Ok. È un approacho. Lei cosa suggeriva?
+
+1428
+01:15:39,800 --> 01:15:43,400
+Eh, dobbiamo fare Allora, adesso proprio
+
+1429
+01:15:43,400 --> 01:15:44,840
+però dobbiamo fare un po' avanti e
+
+1430
+01:15:44,840 --> 01:15:46,800
+indietro per due stati, cioè noi
+
+1431
+01:15:46,800 --> 01:15:48,560
+facciamo
+al fine di fare cosa? Qual è
+
+1432
+01:15:48,560 --> 01:15:50,760
+l'obiettivo?
+Eh, l'idea è che io
+
+1433
+01:15:50,760 --> 01:15:54,800
+all'inizio magari fuori.
+Ok. Ma a parte
+
+1434
+01:15:54,800 --> 01:15:57,199
+la procedura nello specifico a lei che
+
+1435
+01:15:57,199 --> 01:15:59,080
+informazione serve? Cioè a noi serve una
+
+1436
+01:15:59,080 --> 01:16:01,840
+sola informazione la lunghezza
+
+1437
+01:16:01,840 --> 01:16:04,320
+a no a noi serve
+cioè devo sapere se lì
+
+1438
+01:16:04,320 --> 01:16:06,520
+tutta lunghezza pari che mi serve la
+
+1439
+01:16:06,520 --> 01:16:08,159
+metà della lunghezza.
+Ok? Questa è
+
+1440
+01:16:08,159 --> 01:16:10,159
+l'informazione che ci serve. Ci serve la
+
+1441
+01:16:10,159 --> 01:16:14,040
+metà della lunghezza dell'input. Ok?
+
+1442
+01:16:14,040 --> 01:16:17,920
+Una volta che conosciamo quant'è la metà
+
+1443
+01:16:17,920 --> 01:16:20,040
+della lunghezza dell'input, se l'input è
+
+1444
+01:16:20,040 --> 01:16:22,199
+di lunghezza dispari, rifiutiamo perché,
+
+1445
+01:16:22,199 --> 01:16:26,719
+insomma, non va. Ok? Noi dobbiamo sapere
+
+1446
+01:16:26,719 --> 01:16:28,760
+se siete in tanti un secondo, eh
+
+1447
+01:16:28,760 --> 01:16:30,480
+dobbiamo sapere quant'è la metà della
+
+1448
+01:16:30,480 --> 01:16:33,719
+lunghezza dell'input. Ok, c'era lei? Sì.
+
+1449
+01:16:33,719 --> 01:16:36,639
+Allora, appunto, in base a quello che
+
+1450
+01:16:36,639 --> 01:16:39,920
+collega lei, eh
+
+1451
+01:16:39,920 --> 01:16:42,639
+gioco sulla metà delle dell'input e per
+
+1452
+01:16:42,639 --> 01:16:45,600
+far ciò, personalmente eh giocherei
+
+1453
+01:16:45,600 --> 01:16:48,239
+sullo sfasamento delle destine, ovvero
+
+1454
+01:16:48,239 --> 01:16:50,679
+che eh inizialmente le due testine
+
+1455
+01:16:50,679 --> 01:16:56,239
+partono lo stesso punto, poi però su eh
+
+1456
+01:16:56,239 --> 01:16:58,880
+una delle due testine passo prima
+
+1457
+01:16:58,880 --> 01:17:01,480
+avanti. Ogni volta che faccio un passo
+
+1458
+01:17:01,480 --> 01:17:04,960
+avanti, la seconda testina si sposta
+
+1459
+01:17:04,960 --> 01:17:06,600
+esponenzialmente,
+
+1460
+01:17:06,600 --> 01:17:09,239
+quindi la prima assumo sfasamento di
+
+1461
+01:17:09,239 --> 01:17:12,560
+uno. Ah,
+già il secondo passo siamo al
+
+1462
+01:17:12,560 --> 01:17:14,480
+quarto spasamento.
+È difficile da
+
+1463
+01:17:14,480 --> 01:17:16,440
+calcolare,
+
+1464
+01:17:16,440 --> 01:17:18,000
+cioè c'è un modo più semplice. Lei poi
+
+1465
+01:17:18,000 --> 01:17:21,239
+c'è lei. Ok.
+Io farei che sul secondo
+
+1466
+01:17:21,239 --> 01:17:24,040
+nastro copio, cioè scrivo qualcosa in
+
+1467
+01:17:24,040 --> 01:17:26,320
+due letture.
+Sì.
+Alla prima nota così.
+
+1468
+01:17:26,320 --> 01:17:28,719
+La terza no.
+Sì. Facciamo così, ci
+
+1469
+01:17:28,719 --> 01:17:30,320
+leggiamo un simbolo sul primo nastro e
+
+1470
+01:17:30,320 --> 01:17:32,159
+scrivo x. Ci leggiamo un simbolo sul
+
+1471
+01:17:32,159 --> 01:17:33,840
+primo nastro e non scriviamo niente sul
+
+1472
+01:17:33,840 --> 01:17:36,440
+secondo. Un simbolo sul primo nastro
+
+1473
+01:17:36,440 --> 01:17:38,440
+scrivo x. Un simbolo sul primo nastro
+
+1474
+01:17:38,440 --> 01:17:41,080
+non scrivo niente. Quindi un simbolo sì,
+
+1475
+01:17:41,080 --> 01:17:44,360
+un simbolo no. Noi scriviamo qualcosa
+
+1476
+01:17:44,360 --> 01:17:46,880
+che deve affinire sul secondo nastro.
+
+1477
+01:17:46,880 --> 01:17:48,480
+Ok? In questo modo noi possiamo pure
+
+1478
+01:17:48,480 --> 01:17:51,080
+valutare al termine di questo cicletto
+
+1479
+01:17:51,080 --> 01:17:53,000
+se la lunghezza del primo nastro era
+
+1480
+01:17:53,000 --> 01:17:55,920
+pari o dispari. Se è pari continuiamo a
+
+1481
+01:17:55,920 --> 01:17:57,679
+fare quello che ci serve.
+
+1482
+01:17:57,679 --> 01:18:00,719
+Se è dispari ci blocchiamo da qualche
+
+1483
+01:18:00,719 --> 01:18:02,040
+parte e rifiutiamo e una volta che
+
+1484
+01:18:02,040 --> 01:18:04,040
+sappiamo quant'è la la metà della
+
+1485
+01:18:04,040 --> 01:18:07,480
+lunghezza dell'inputamo.
+
+1486
+01:18:08,880 --> 01:18:11,639
+Sì,
+eh.
+
+1487
+01:18:11,639 --> 01:18:14,239
+R rimpiazziamo tutte le x con le lettere
+
+1488
+01:18:14,239 --> 01:18:16,280
+della prima stringa.
+Sì, sì.
+Poi
+
+1489
+01:18:16,280 --> 01:18:18,960
+resettiamo la la seconda stringa a
+
+1490
+01:18:18,960 --> 01:18:21,080
+quando finiscono le x e vediamo se
+
+1491
+01:18:21,080 --> 01:18:23,440
+combatto.
+Sì. Ok. Cioè questa strategia
+
+1492
+01:18:23,440 --> 01:18:25,280
+ce ne stanno tante altre. Va benissimo.
+
+1493
+01:18:25,280 --> 01:18:27,880
+Ok. Verò il trucco qui è invece di
+
+1494
+01:18:27,880 --> 01:18:31,520
+andarsi a sbattere come nell'esercizio
+
+1495
+01:18:31,520 --> 01:18:35,679
+precedente, ok? A provare tutte le sante
+
+1496
+01:18:35,679 --> 01:18:37,360
+possibili
+
+1497
+01:18:37,360 --> 01:18:39,800
+combinazioni di quanto deve essere lunga
+
+1498
+01:18:39,800 --> 01:18:42,719
+questa w B. Quello che possiamo fare lì
+
+1499
+01:18:42,719 --> 01:18:45,159
+era l'intizione che dovevamo avere. Ok?
+
+1500
+01:18:45,159 --> 01:18:46,760
+È vero che abbiamo una macchina
+
+1501
+01:18:46,760 --> 01:18:49,159
+deterministica, però sappiamo dividere
+
+1502
+01:18:49,159 --> 01:18:52,080
+per due, quindi ci prendiamo la metà
+
+1503
+01:18:52,080 --> 01:18:55,920
+della lunghezza della stringa di input.
+
+1504
+01:18:55,920 --> 01:18:57,880
+E noi una volta che sappiamo quanto vale
+
+1505
+01:18:57,880 --> 01:19:00,560
+vale 5, vale 7, noi ci prendiamo i primi
+
+1506
+01:19:00,560 --> 01:19:03,120
+cinque o sette simboli sul nastro, noi
+
+1507
+01:19:03,120 --> 01:19:04,800
+sappiamo che quello è W e poi
+
+1508
+01:19:04,800 --> 01:19:06,400
+controlliamo che il resto sia uguale a
+
+1509
+01:19:06,400 --> 01:19:08,800
+quello che ci siamo selezionati. Chiaro
+
+1510
+01:19:08,800 --> 01:19:12,639
+per tutti? Avevo visto una mana sì che
+
+1511
+01:19:12,639 --> 01:19:15,280
+nel primo nastro sono già nel fondo, lo
+
+1512
+01:19:15,280 --> 01:19:17,719
+posso ricopiare doppio al contrario.
+
+1513
+01:19:17,719 --> 01:19:20,960
+Dici per risparmiare tempo
+
+1514
+01:19:20,960 --> 01:19:23,760
+puoi farlo. Sì, sì, sì. L'importante è
+
+1515
+01:19:23,760 --> 01:19:25,960
+che funzioni, perché se funziona va
+
+1516
+01:19:25,960 --> 01:19:28,520
+bene, ok? Sì, l'importante è non
+
+1517
+01:19:28,520 --> 01:19:30,639
+incasinarsi, ok? Tutto qua. Però va
+
+1518
+01:19:30,639 --> 01:19:34,159
+benissimo, eh, se riesce a a gestire la
+
+1519
+01:19:34,159 --> 01:19:38,320
+cosa, perché no? Alrght.
+
+1520
+01:19:40,960 --> 01:19:44,159
+Ok. Allora,
+
+1521
+01:19:44,159 --> 01:19:48,239
+quindi l'idea è
+
+1522
+01:19:49,159 --> 01:19:54,679
+che abbiamo 0 1 1. Ok?
+
+1523
+01:19:54,679 --> 01:19:56,639
+L'idea questo è il primo nastro. Sul
+
+1524
+01:19:56,639 --> 01:19:59,080
+secondo nastro quello che noi facciamo è
+
+1525
+01:19:59,080 --> 01:20:01,639
+che ci andiamo a scrivere la lunghezza,
+
+1526
+01:20:01,639 --> 01:20:03,960
+la metà della lunghezza
+
+1527
+01:20:03,960 --> 01:20:06,199
+dell'input e come suggeriva il vostro
+
+1528
+01:20:06,199 --> 01:20:08,760
+collega, un modo molto semplice è
+
+1529
+01:20:08,760 --> 01:20:12,040
+questo: leggo un carattere, scrivo una
+
+1530
+01:20:12,040 --> 01:20:14,080
+x, leggo un carattere, non scrivo
+
+1531
+01:20:14,080 --> 01:20:16,480
+niente. Leggo un carattere, scrivo x,
+
+1532
+01:20:16,480 --> 01:20:18,560
+leggo un carattere e non scrivo niente.
+
+1533
+01:20:18,560 --> 01:20:21,920
+E così vado avanti. Ok? Alla fine io sul
+
+1534
+01:20:21,920 --> 01:20:24,400
+secondo nastro avrò un numero di x pari
+
+1535
+01:20:24,400 --> 01:20:26,199
+alla metà della lunghezza della stringa
+
+1536
+01:20:26,199 --> 01:20:31,639
+di input. Ok? Questo è lo trucco
+
+1537
+01:20:31,639 --> 01:20:34,639
+Q0.
+
+1538
+01:20:38,040 --> 01:20:41,199
+Sul primo nastro leggo alfa, lascio alfa
+
+1539
+01:20:41,199 --> 01:20:43,400
+e vado avanti.
+
+1540
+01:20:43,400 --> 01:20:46,600
+Sul secondo nastro c'è blank, scrivo X e
+
+1541
+01:20:46,600 --> 01:20:48,440
+vado avanti.
+
+1542
+01:20:48,440 --> 01:20:51,960
+Vado in Q1. Dopodiché devo saltare un
+
+1543
+01:20:51,960 --> 01:20:54,400
+carattere su primo nastro senza fare
+
+1544
+01:20:54,400 --> 01:20:57,600
+niente sul secondo. Quindi
+
+1545
+01:20:57,600 --> 01:21:01,320
+su primo nastro c'è alfa, lascio alfa e
+
+1546
+01:21:01,320 --> 01:21:03,320
+vado avanti.
+
+1547
+01:21:03,320 --> 01:21:08,280
+Dopodiché, quindi questo qui è simbolo
+
+1548
+01:21:08,280 --> 01:21:10,920
+di posto dispari. Nel simbolo di posto
+
+1549
+01:21:10,920 --> 01:21:13,440
+dispari scrivo una X.
+
+1550
+01:21:13,440 --> 01:21:15,920
+simbolo di posto pari, non faccio
+
+1551
+01:21:15,920 --> 01:21:17,440
+niente.
+
+1552
+01:21:17,440 --> 01:21:20,400
+Al ritorno, questo è il simbolo di posto
+
+1553
+01:21:20,400 --> 01:21:24,320
+dispari. Quindi sul primo nastro c'è
+
+1554
+01:21:24,320 --> 01:21:27,280
+alfa, lascio alfa e vado avanti. Sul
+
+1555
+01:21:27,280 --> 01:21:30,239
+secondo nastro c'è blank, scrivo X e
+
+1556
+01:21:30,239 --> 01:21:32,639
+vado avanti.
+
+1557
+01:21:32,639 --> 01:21:35,760
+Ok? Quand'è che mi fermo? Sì,
+non
+
+1558
+01:21:35,760 --> 01:21:38,560
+possiamo farlo direttamente tra q0 e q1
+
+1559
+01:21:38,560 --> 01:21:40,560
+questo passaggio, visto che facciamo la
+
+1560
+01:21:40,560 --> 01:21:44,400
+q
+ci serve ci serve questo è più ci
+
+1561
+01:21:44,400 --> 01:21:46,719
+serve almeno una cosa senò sì si però si
+
+1562
+01:21:46,719 --> 01:21:50,280
+poteva fare là.
+
+1563
+01:21:54,120 --> 01:21:56,360
+Ok, quindi
+
+1564
+01:21:56,360 --> 01:21:57,960
+prendo un simbolo, lo marco, prendo un
+
+1565
+01:21:57,960 --> 01:21:59,679
+simbolo, lo smarco, non ci faccio
+
+1566
+01:21:59,679 --> 01:22:03,159
+niente. Uno sì, uno no, sì, uno no.
+
+1567
+01:22:03,159 --> 01:22:06,360
+Quant'è che ci fermiamo?
+
+1568
+01:22:11,199 --> 01:22:14,360
+Quindi sul primo nastro leggo blank,
+
+1569
+01:22:14,360 --> 01:22:16,760
+lascio blank e sto indietro e vado
+
+1570
+01:22:16,760 --> 01:22:20,120
+dietro. Sul secondo c'è blank, lascio
+
+1571
+01:22:20,120 --> 01:22:24,639
+blank e e vado dietro. Ok, a quel punto
+
+1572
+01:22:24,639 --> 01:22:28,000
+noi dobbiamo
+
+1573
+01:22:28,840 --> 01:22:30,600
+indietreggiare
+
+1574
+01:22:30,600 --> 01:22:32,440
+tutto.
+
+1575
+01:22:32,440 --> 01:22:36,040
+Ah, questo qua. Vado vado dietro.
+
+1576
+01:22:37,080 --> 01:22:40,480
+Questo è Q3, quindi mi riavvolgo, dovrò
+
+1577
+01:22:40,480 --> 01:22:42,600
+riavvolgermi il secondo e il primo
+
+1578
+01:22:42,600 --> 01:22:44,239
+nastro. Adesso in quale ordine lo
+
+1579
+01:22:44,239 --> 01:22:46,239
+faccio? Poco conta. Posso fare prima il
+
+1580
+01:22:46,239 --> 01:22:47,760
+primo e poi il secondo, prima il secondo
+
+1581
+01:22:47,760 --> 01:22:50,600
+e poi il primo. L'importante è farlo.
+
+1582
+01:22:50,600 --> 01:22:53,199
+Quindi sul secondo c'è x, lascio x e
+
+1583
+01:22:53,199 --> 01:22:55,920
+torno indietro. Fino a quando sul
+
+1584
+01:22:55,920 --> 01:22:58,880
+secondo c'è blank, lascio blank e vado
+
+1585
+01:22:58,880 --> 01:23:03,480
+avanti e vado in Q4.
+
+1586
+01:23:03,480 --> 01:23:06,280
+Dopodiché sul primo c'è alfa, lascio
+
+1587
+01:23:06,280 --> 01:23:09,120
+alfa e torno dietro
+
+1588
+01:23:09,120 --> 01:23:11,960
+fino a quando sul primo c'è blank.
+
+1589
+01:23:11,960 --> 01:23:17,000
+Lascio blank e vado avanti e sono in Q5.
+
+1590
+01:23:17,000 --> 01:23:18,760
+Ok.
+
+1591
+01:23:18,760 --> 01:23:21,719
+Alright. Adesso noi dobbiamo cosa cosa
+
+1592
+01:23:21,719 --> 01:23:25,320
+dobbiamo fare ora?
+
+1593
+01:23:33,560 --> 01:23:35,199
+Qual era la strategia che avevamo in
+
+1594
+01:23:35,199 --> 01:23:38,080
+mente? Sì,
+cioè adesso finché leggo
+
+1595
+01:23:38,080 --> 01:23:39,920
+delle
+Ok, un attimo, un attimo. In che
+
+1596
+01:23:39,920 --> 01:23:41,840
+condizioni siamo al momento?
+Adesso
+
+1597
+01:23:41,840 --> 01:23:44,040
+siamo all'inizio di tutti e due i
+di
+
+1598
+01:23:44,040 --> 01:23:47,199
+tutto il mondo. Ok.
+Sì. Quindi sul primo
+
+1599
+01:23:47,199 --> 01:23:49,719
+nastro il sim abbiamo la testina sul
+
+1600
+01:23:49,719 --> 01:23:52,120
+primissimo simbolo, sul secondo nastro
+
+1601
+01:23:52,120 --> 01:23:55,120
+abbiamo la testina sulla primissima X.
+
+1602
+01:23:55,120 --> 01:23:58,400
+Che facciamo? per quante sono le x.
+
+1603
+01:23:58,400 --> 01:24:00,960
+Ricop l'input per quante sono le x sul
+
+1604
+01:24:00,960 --> 01:24:02,880
+secondo nastro e ad esempio le mettiamo
+
+1605
+01:24:02,880 --> 01:24:04,840
+sul terzo nastro. Possiamo fare quello
+
+1606
+01:24:04,840 --> 01:24:11,040
+che vogliamo. Ok. Scusate Q3
+
+1607
+01:24:11,040 --> 01:24:15,520
+con
+Q3. Ah, sì, sì, sì, sì, sì. Questa
+
+1608
+01:24:15,520 --> 01:24:19,360
+qua. Yes. Grazie.
+
+1609
+01:24:19,360 --> 01:24:21,040
+Ok.
+
+1610
+01:24:21,040 --> 01:24:23,120
+Alright.
+
+1611
+01:24:23,120 --> 01:24:29,679
+Vediamo come vedete là. Vedete? Ok,
+
+1612
+01:24:29,679 --> 01:24:32,480
+quindi sul primo nastro c'è alfa, lascio
+
+1613
+01:24:32,480 --> 01:24:35,400
+alfa e vado avanti. Sul secondo nastro
+
+1614
+01:24:35,400 --> 01:24:38,960
+c'è X, scrivo X e vado avanti. Tu sul
+
+1615
+01:24:38,960 --> 01:24:41,560
+terzo nastro c'è blend, scrivo alfa e
+
+1616
+01:24:41,560 --> 01:24:43,400
+vado avanti.
+
+1617
+01:24:43,400 --> 01:24:45,800
+Ok.
+
+1618
+01:24:45,800 --> 01:24:48,840
+Quand'è che mi fermo?
+
+1619
+01:24:48,840 --> 01:24:50,960
+Arriva blank al secondo.
+Quando arriva
+
+1620
+01:24:50,960 --> 01:24:54,880
+blank al secondo. Sul secondo c'è blank,
+
+1621
+01:24:54,880 --> 01:24:58,000
+lascio blank e sto fermo. Sul terzo c'è
+
+1622
+01:24:58,000 --> 01:25:02,920
+blank, lascio blank e torno dietro.
+
+1623
+01:25:03,360 --> 01:25:06,920
+Siamo in Q6.
+
+1624
+01:25:06,920 --> 01:25:12,239
+E qui che facciamo? Sul primo nastro?
+
+1625
+01:25:14,239 --> 01:25:16,080
+Qua, qua, qua, in questa etichetta
+
+1626
+01:25:16,080 --> 01:25:17,920
+dobbiamo dire qualcosa su per il primo
+
+1627
+01:25:17,920 --> 01:25:19,679
+nastro,
+
+1628
+01:25:19,679 --> 01:25:21,960
+no? Primo nastro lo molliamo là dov'è,
+
+1629
+01:25:21,960 --> 01:25:23,960
+perché deve rimanere in mezzo al mare,
+
+1630
+01:25:23,960 --> 01:25:25,840
+in maniera tale che lo ripegliamo da là
+
+1631
+01:25:25,840 --> 01:25:31,239
+e vediamo che ci sia dopp. Ok,
+
+1632
+01:25:33,520 --> 01:25:36,119
+quindi sul terzo nastro c'è alfa, lascio
+
+1633
+01:25:36,119 --> 01:25:39,960
+alfa e torno dietro, mi fermo quando sul
+
+1634
+01:25:39,960 --> 01:25:42,760
+terzo nastro c'è blank, lascio blank e
+
+1635
+01:25:42,760 --> 01:25:45,000
+vado avanti.
+
+1636
+01:25:45,000 --> 01:25:50,480
+Q7. A quel punto che dobbiamo fare?
+
+1637
+01:25:55,560 --> 01:25:57,400
+Così vedete?
+
+1638
+01:25:57,400 --> 01:26:01,320
+Q7. Che facciamo in Q7?
+
+1639
+01:26:01,760 --> 01:26:04,800
+Come?
+Confrontare 1 e 3.
+Confrontiamo 1
+
+1640
+01:26:04,800 --> 01:26:08,119
+e 3. Quindi sul primo nastro c'è alfa,
+
+1641
+01:26:08,119 --> 01:26:10,080
+lascio alfa e vado avanti. Sul terzo
+
+1642
+01:26:10,080 --> 01:26:11,760
+nastro c'è alfa, lascio alfa e vado
+
+1643
+01:26:11,760 --> 01:26:16,320
+avanti. Quand'è che ci fermiamo?
+
+1644
+01:26:19,560 --> 01:26:23,040
+Blank di chi?
+Di entrambi.
+Di entrambi.
+
+1645
+01:26:23,040 --> 01:26:25,159
+Sul primo nastro c'è blank. Lascio blank
+
+1646
+01:26:25,159 --> 01:26:27,400
+e sto fermo. Su terzo nastro c'è blank,
+
+1647
+01:26:27,400 --> 01:26:31,199
+lascio blank e sto fermo. Andiamo in Q8
+
+1648
+01:26:31,199 --> 01:26:34,679
+e accettiamo.
+
+1649
+01:26:43,800 --> 01:26:47,239
+Chiaro per tutti?
+
+1650
+01:26:49,520 --> 01:26:52,639
+Chiaro come funziona? Ok. C'ho un
+
+1651
+01:26:52,639 --> 01:26:54,800
+esercizio carino, ma non abbiamo il
+
+1652
+01:26:54,800 --> 01:26:58,119
+tempo, quindi ve lo lascio e ci pensate
+
+1653
+01:26:58,119 --> 01:27:00,880
+da soli.
+
+1654
+01:27:00,880 --> 01:27:03,600
+il linguaggio delle stringhe W
+
+1655
+01:27:03,600 --> 01:27:05,199
+cancelletto
+
+1656
+01:27:05,199 --> 01:27:08,199
+A
+
+1657
+01:27:08,760 --> 01:27:12,679
+tale che W e A
+
+1658
+01:27:12,679 --> 01:27:17,040
+appartengono a 01+
+
+1659
+01:27:17,040 --> 01:27:19,800
+ed inoltre
+
+1660
+01:27:19,800 --> 01:27:24,320
+A è uguale a W
+
+1661
+01:27:24,320 --> 01:27:26,320
+oppure
+
+1662
+01:27:26,320 --> 01:27:30,119
+A è ugale.
+
+1663
+01:27:40,840 --> 01:27:42,560
+5 minuti non ci basterebbero per
+
+1664
+01:27:42,560 --> 01:27:44,600
+guardarlo assieme.
+
+1665
+01:27:44,600 --> 01:27:48,840
+Esercitatevi un po' a casa, ok?
+Se
+
+1666
+01:27:48,840 --> 01:27:52,400
+doppindromo è accettata.
+
+1667
+01:27:52,400 --> 01:27:55,679
+Se do V palindromi è accettata, però tu
+
+1668
+01:27:55,679 --> 01:27:57,520
+devi accettare, si deve accettare
+
+1669
+01:27:57,520 --> 01:27:59,239
+qualsiasi sia dalla doppia B, non solo
+
+1670
+01:27:59,239 --> 01:28:01,320
+se palindro.
+
+1671
+01:28:01,320 --> 01:28:06,360
+Sì,
+l'importante è che A sia o writta o
+
+1672
+01:28:06,360 --> 01:28:09,199
+dopp al rovescio. Però questo non lo si
+
+1673
+01:28:09,199 --> 01:28:11,800
+può sapere dall'inizio,
+
+1674
+01:28:11,800 --> 01:28:16,639
+così deve vedere in corso d'opera. Ok,
+
+1675
+01:28:16,639 --> 01:28:20,000
+grazie mille. Buona serata.
+
+1676
+01:28:20,000 --> 01:28:23,060
+[Musica]

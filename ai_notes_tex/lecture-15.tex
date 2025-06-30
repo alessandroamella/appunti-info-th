@@ -1,0 +1,465 @@
+\documentclass[a4paper]{article}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage[italian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[a4paper, total={6in, 8in}]{geometry}
+\usepackage{minted}
+\usepackage{mathpazo}
+\usepackage{fancyhdr}
+\usepackage{amsthm}
+\usepackage{tikz}
+\usetikzlibrary{automata,positioning}
+
+% Definizione degli ambienti
+\newtheorem{theorem}{Teorema}
+\newtheorem{definition}{Definizione}
+\newtheorem{example}{Esempio}
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}{Proposizione}
+\newtheorem{remark}{Nota}
+
+\hypersetup{
+    pdftitle={Lezione di Informatica Teorica - Problemi Indecidibili Avanzati},
+    pdfauthor={Appunti da Trascrizione AI}
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textit{Lezione di Informatica Teorica}}
+\fancyfoot[C]{\thepage}
+
+\title{Lezione di Informatica Teorica: \\ Problemi Indecidibili e Classi di Calcolabilit\`a}
+\author{Appunti da Trascrizione Automatica}
+\date{\today}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+
+\section{Il Problema del Tassellamento (Tiling Problem)}
+
+Il Tiling Problem è un problema indecidibile che, a prima vista, non sembra strettamente legato alle Macchine di Turing. La sua indecidibilità viene dimostrata tramite una riduzione da un problema di arresto.
+
+\subsection{Definizione Intuitiva del Tiling Problem}
+Si consideri il primo quadrante cartesiano (una superficie infinita divisa in celle unitarie) che si vuole ricoprire con piastrelle. Ogni piastrella ha la stessa dimensione di una cella.
+Le piastrelle non possono essere ruotate o stirate. Esistono un numero finito di \textbf{tipi} di piastrelle, ma un numero infinito di piastrelle per ogni tipo.
+
+Ogni piastrella è idealmente divisa in quattro porzioni, ciascuna con un colore. Le piastrelle possono essere affiancate (orizzontalmente o verticalmente) solo se i lati adiacenti hanno lo stesso colore.
+Una piastrella specifica, chiamata $D_0$, deve essere posizionata nella cella di origine $(0,0)$.
+
+Il problema è: dato un sistema di piastrelle (tipi e regole di affiancamento), è possibile ricoprire interamente il primo quadrante cartesiano?
+
+\subsection{Definizione Formale del Tiling Problem}
+\begin{definition}[Input del Tiling Problem]
+L'input per il problema del Tiling è un sistema di tiling $T = (D, D_0, H, V)$, dove:
+\begin{itemize}
+    \item $D$: un insieme finito di \textbf{tipi} di piastrella.
+    \item $D_0 \in D$: il tipo di piastrella che deve essere ammesso e posizionato nella cella di origine $(0,0)$.
+    \item $H \subseteq D \times D$: l'insieme delle \textbf{regole di affiancamento orizzontale}. Una coppia $(d_1, d_2) \in H$ indica che una piastrella di tipo $d_1$ può essere posizionata immediatamente a sinistra di una piastrella di tipo $d_2$.
+    \item $V \subseteq D \times D$: l'insieme delle \textbf{regole di affiancamento verticale}. Una coppia $(d_1, d_2) \in V$ indica che una piastrella di tipo $d_1$ può essere posizionata immediatamente sotto una piastrella di tipo $d_2$.
+\end{itemize}
+\end{definition}
+
+\begin{definition}[Tiling]
+Un \emph{tiling} (o tassellamento) per un sistema $T$ è una funzione $f: \mathbb{N} \times \mathbb{N} \to D$ tale che:
+\begin{itemize}
+    \item $f(0,0) = D_0$ (la piastrella iniziale è nel punto di origine).
+    \item Per ogni $m, n \in \mathbb{N}$: $(f(m,n), f(m+1,n)) \in H$ (rispetto delle regole di affiancamento orizzontale).
+    \item Per ogni $m, n \in \mathbb{N}$: $(f(m,n), f(m,n+1)) \in V$ (rispetto delle regole di affiancamento verticale).
+\end{itemize}
+Il problema del Tiling chiede se per un dato sistema $T$ esista una tale funzione $f$.
+\end{definition}
+
+\subsection{Indecidibilit\`a del Tiling Problem: Riduzione da $\text{HALT}_\epsilon^C$}
+Dimostriamo che il Tiling Problem è indecidibile, riducendo $\text{HALT}_\epsilon^C$ (il problema di determinare se una Macchina di Turing si \textbf{non} arresta sulla stringa vuota $\epsilon$) al Tiling Problem.
+
+\begin{theorem}
+$\text{HALT}_\epsilon^C \le_m \text{Tiling}$. Poiché $\text{HALT}_\epsilon^C$ è indecidibile, ne segue che anche $\text{Tiling}$ è indecidibile.
+\end{theorem}
+
+\subsubsection{Idea della Riduzione}
+L'idea è codificare le computazioni di una Macchina di Turing $M$ sul nastro semi-infinito (senza perdere generalità) utilizzando le piastrelle. Ogni "riga" di piastrelle nel tiling (ovvero, le piastrelle con lo stesso valore di $n$) rappresenterà una configurazione della macchina di Turing ad un determinato passo. I bordi orizzontali tra le righe di piastrelle codificheranno le configurazioni successive della MT.
+
+La MT $M$ non si arresta su $\epsilon$ se e solo se è possibile piastrellare l'intero quadrante.
+
+\subsubsection{Costruzione della Macchina di Turing $N$ (funzione $G$)}
+Sia $M = (Q, \Sigma, \Gamma, \delta, q_0, q_{acc}, q_{rej})$ una Macchina di Turing (MT) data in input a $G$. La funzione $G$ costruirà un sistema di tiling $T=(D, D_0, H, V)$.
+Useremo "etichette" per i colori delle porzioni di piastrella, che saranno simboli del nastro, stati della MT o combinazioni di essi. Il nastro è semi-infinito a destra.
+
+Le piastrelle avranno tipi $d \in D$ definiti per simulare il comportamento di $M$:
+
+\begin{enumerate}
+    \item \textbf{Piastrelle di Inerzia (Simboli del Nastro Lontani dalla Testina):}
+    Queste piastrelle rappresentano le porzioni del nastro in cui la testina non è presente e quindi il contenuto del nastro rimane invariato.
+    Per ogni simbolo $X \in \Gamma$, definiamo una piastrella del tipo:
+    \[
+    \begin{tikzpicture}[scale=0.8]
+    \draw (0,0) -- (1,0) -- (1,1) -- (0,1) -- cycle;
+    \draw (0,0) -- (1,1);
+    \draw (1,0) -- (0,1);
+    \node at (0.25, 0.75) {}; % Top-left
+    \node at (0.75, 0.75) {$X$}; % Top-right
+    \node at (0.25, 0.25) {$X$}; % Bottom-left
+    \node at (0.75, 0.25) {}; % Bottom-right
+    \end{tikzpicture}
+    \]
+    Queste piastrelle assicurano che un simbolo $X$ sul bordo inferiore venga replicato sul bordo superiore, simulando l'inerzia del nastro. Il "colore" del bordo superiore-destro deve combaciare con quello inferiore-sinistro della piastrella adiacente, e così via.
+
+    \item \textbf{Piastrelle di Transizione (Spostamento della Testina a Destra):}
+    Queste piastrelle simulano una transizione $\delta(q, X) = (p, Y, R)$. Una tale transizione significa che la MT, nello stato $q$ leggendo $X$, si sposta nello stato $p$, scrive $Y$ e sposta la testina a destra.
+    Queste transizioni coinvolgono due celle del nastro.
+    Per ogni $q, p \in Q \setminus \{q_{acc}, q_{rej}\}$ (stati non terminali) e per ogni $X, Y, Z \in \Gamma$:
+    \[
+    \begin{tikzpicture}[scale=0.8]
+    \draw (0,0) -- (1,0) -- (1,1) -- (0,1) -- cycle;
+    \draw (0,0) -- (1,1);
+    \draw (1,0) -- (0,1);
+    \node at (0.25, 0.75) {}; % Top-left
+    \node at (0.75, 0.75) {$Y$}; % Top-right
+    \node at (0.25, 0.25) {$qX$}; % Bottom-left
+    \node at (0.75, 0.25) {}; % Bottom-right
+    \end{tikzpicture}
+    \quad
+    \begin{tikzpicture}[scale=0.8]
+    \draw (0,0) -- (1,0) -- (1,1) -- (0,1) -- cycle;
+    \draw (0,0) -- (1,1);
+    \draw (1,0) -- (0,1);
+    \node at (0.25, 0.75) {}; % Top-left
+    \node at (0.75, 0.75) {$PZ$}; % Top-right
+    \node at (0.25, 0.25) {$Z$}; % Bottom-left
+    \node at (0.75, 0.25) {}; % Bottom-right
+    \end{tikzpicture}
+    \]
+    (Le etichette interne alle piastrelle sono per chiarezza espositiva; i "colori" effettivi sono sulle porzioni.)
+    Le etichette dei "colori" sui bordi saranno:
+    \begin{itemize}
+        \item Bordo inferiore della prima piastrella: $qX$ (stato $q$ e simbolo letto $X$).
+        \item Bordo superiore della prima piastrella: $Y$ (simbolo scritto $Y$).
+        \item Bordo inferiore della seconda piastrella: $Z$ (simbolo successivo $Z$).
+        \item Bordo superiore della seconda piastrella: $pZ$ (stato $p$ e testina su $Z$).
+        \item Bordo verticale tra le due piastrelle: $p \to R$ (simbola il movimento a destra dello stato $p$).
+    \end{itemize}
+
+    \item \textbf{Piastrelle di Transizione (Spostamento della Testina a Sinistra):}
+    Simulano una transizione $\delta(q, X) = (p, Y, L)$. La MT, nello stato $q$ leggendo $X$, si sposta nello stato $p$, scrive $Y$ e sposta la testina a sinistra.
+    Per ogni $q, p \in Q \setminus \{q_{acc}, q_{rej}\}$ e per ogni $X, Y, Z \in \Gamma$:
+    \[
+    \begin{tikzpicture}[scale=0.8]
+    \draw (0,0) -- (1,0) -- (1,1) -- (0,1) -- cycle;
+    \draw (0,0) -- (1,1);
+    \draw (1,0) -- (0,1);
+    \node at (0.25, 0.75) {}; % Top-left
+    \node at (0.75, 0.75) {$PZ$}; % Top-right
+    \node at (0.25, 0.25) {$Z$}; % Bottom-left
+    \node at (0.75, 0.25) {}; % Bottom-right
+    \end{tikzpicture}
+    \quad
+    \begin{tikzpicture}[scale=0.8]
+    \draw (0,0) -- (1,0) -- (1,1) -- (0,1) -- cycle;
+    \draw (0,0) -- (1,1);
+    \draw (1,0) -- (0,1);
+    \node at (0.25, 0.75) {}; % Top-left
+    \node at (0.75, 0.75) {$Y$}; % Top-right
+    \node at (0.25, 0.25) {$qX$}; % Bottom-left
+    \node at (0.75, 0.25) {}; % Bottom-right
+    \end{tikzpicture}
+    \]
+    Le etichette dei "colori" sui bordi saranno:
+    \begin{itemize}
+        \item Bordo inferiore della prima piastrella: $Z$ (simbolo precedente $Z$).
+        \item Bordo superiore della prima piastrella: $pZ$ (stato $p$ e testina su $Z$).
+        \item Bordo inferiore della seconda piastrella: $qX$ (stato $q$ e simbolo letto $X$).
+        \item Bordo superiore della seconda piastrella: $Y$ (simbolo scritto $Y$).
+        \item Bordo verticale tra le due piastrelle: $p \to L$ (simbola il movimento a sinistra dello stato $p$).
+    \end{itemize}
+
+    \item \textbf{Piastrella Iniziale ($D_0$):}
+    Questa piastrella forza la prima riga a codificare la configurazione iniziale di $M$ su $\epsilon$. $q_0$ è lo stato iniziale e $B$ è il simbolo di blank.
+    La piastrella $D_0$ è:
+    \[
+    \begin{tikzpicture}[scale=0.8]
+    \draw (0,0) -- (1,0) -- (1,1) -- (0,1) -- cycle;
+    \draw (0,0) -- (1,1);
+    \draw (1,0) -- (0,1);
+    \node at (0.25, 0.75) {}; % Top-left
+    \node at (0.75, 0.75) {$B$}; % Top-right
+    \node at (0.25, 0.25) {$q_0B$}; % Bottom-left
+    \node at (0.75, 0.25) {}; % Bottom-right
+    \end{tikzpicture}
+    \]
+    I colori sui bordi della piastrella $D_0$ impongono la configurazione iniziale. Le piastrelle adiacenti a destra saranno quelle di tipo 1 che codificano $B$ (blank).
+\end{enumerate}
+
+\subsubsection{Dimostrazione del Teorema}
+Dobbiamo dimostrare che $M \in \text{HALT}_\epsilon^C \iff T \text{ ammette un tiling}$.
+
+\textbf{Direzione 1: $M \in \text{HALT}_\epsilon^C \implies T \text{ ammette un tiling}$}
+Se $M$ non si arresta su $\epsilon$, significa che la sua computazione su $\epsilon$ è infinita, generando una sequenza infinita di configurazioni: $C_0, C_1, C_2, \dots$.
+Il sistema di tiling $T$ è stato costruito appositamente per simulare queste configurazioni.
+\begin{itemize}
+    \item La piastrella $D_0$ posizionata in $(0,0)$ forza il bordo superiore della prima riga a codificare la configurazione iniziale $C_0$.
+    \item Le piastrelle di tipo 1 (inerzia) coprono tutte le posizioni del nastro che non contengono la testina.
+    \item Le piastrelle di tipo 2 e 3 (transizione) replicano l'effetto della funzione di transizione di $M$. Per ogni passo di computazione di $M$, è possibile trovare una riga di piastrelle che codifica la configurazione successiva $C_{i+1}$ a partire dalla configurazione $C_i$ (codificata dalla riga inferiore).
+\end{itemize}
+Poiché $M$ non si arresta, genera infinite configurazioni. Grazie alla costruzione delle piastrelle, possiamo posizionare infinite righe di piastrelle, una per ogni configurazione, e ciascuna riga sufficientemente lunga per coprire le celle necessarie della configurazione. Di conseguenza, è possibile piastrellare l'intero quadrante.
+
+\textbf{Direzione 2: $T \text{ ammette un tiling} \implies M \in \text{HALT}_\epsilon^C$}
+Supponiamo che $T$ ammetta un tiling $f$.
+\begin{itemize}
+    \item Il tiling $f$ impone che la prima riga di piastrelle ($n=0$) rappresenti la configurazione iniziale $C_0$ di $M$ su $\epsilon$, grazie a $D_0$.
+    \item La costruzione delle piastrelle (tipi 1, 2, 3) è tale che ogni riga di piastrelle $f(m,n)$ può essere validamente posizionata sopra una riga $f(m,n-1)$ solo se $f(m,n)$ codifica una configurazione che è il risultato dell'applicazione di un passo di transizione di $M$ alla configurazione codificata da $f(m,n-1)$.
+    \item Crucialmente, le piastrelle di transizione sono state definite solo per stati \textbf{non terminali}. Non esistono piastrelle che possano simulare una transizione verso uno stato di accettazione o rifiuto, né che possano estendere una computazione che ha già raggiunto uno stato finale.
+\end{itemize}
+Se esiste un tiling che copre l'intero quadrante (infinitamente in alto), significa che $M$ può generare una sequenza infinita di configurazioni senza mai raggiungere uno stato terminale. Pertanto, $M$ non si arresta su $\epsilon$.
+
+\subsection{Posizionamento di Tiling nelle Classi di Calcolabilit\`a}
+Il problema del Tiling è indecidibile. In particolare, è un linguaggio in $\text{coRE}$.
+\begin{itemize}
+    \item \textbf{Perché non è in R?} L'abbiamo appena dimostrato tramite riduzione da $\text{HALT}_\epsilon^C$. Se Tiling fosse in R, allora $\text{HALT}_\epsilon^C$ sarebbe in R, il che è falso.
+    \item \textbf{Perché è in coRE?} Per dimostrare che Tiling è in coRE, dobbiamo mostrare che il suo complemento (cioè, il problema di determinare se un sistema di tiling \emph{non} ammette un tiling) è in R. Questo significa che se non è possibile piastrellare, dobbiamo essere in grado di dirlo in tempo finito.
+    Per un dato sistema di tiling, si può esplorare un numero finito di configurazioni di piastrellamento fino ad una certa profondità e larghezza. Se non si riesce a completare il piastrellamento entro un certo limite, o se si raggiunge una configurazione che blocca ulteriori estensioni, si può dire "no". Poiché il numero di tipi di piastrelle è finito, si può sistematicamente esplorare tutte le possibilità (ad esempio, con un algoritmo di backtracking). Se l'intero spazio di ricerca (finito) viene esplorato senza trovare un tiling completo, si può rispondere "no" in tempo finito.
+\end{itemize}
+
+\section{Classi di Calcolabilit\`a: R e coRE}
+Finora, i problemi indecidibili che abbiamo incontrato mostrano una certa "asimmetria".
+
+\subsection{Richiamo: R e RE}
+\begin{definition}[Classe R]
+Un linguaggio $L$ appartiene alla classe \textbf{R} (ricorsivo o decidibile) se esiste una Macchina di Turing che si arresta su ogni input e decide se l'input appartiene a $L$. In altre parole, possiamo rispondere "SÌ" in tempo finito se l'input è nel linguaggio, e "NO" in tempo finito se non lo è.
+\end{definition}
+
+\begin{definition}[Classe RE]
+Un linguaggio $L$ appartiene alla classe \textbf{RE} (ricorsivamente enumerabile) se esiste una Macchina di Turing che accetta tutti gli input in $L$ e può non arrestarsi per gli input non in $L$. In altre parole, possiamo rispondere "SÌ" in tempo finito se l'input è nel linguaggio, ma non abbiamo garanzie di risposta (potremmo loopare) se non lo è.
+\end{definition}
+
+\subsection{Introduzione: coRE}
+\begin{definition}[Classe coRE]
+Un linguaggio $L$ appartiene alla classe \textbf{coRE} se il suo complemento $\overline{L}$ appartiene a RE.
+Se $L \in \text{coRE}$, significa che esiste una Macchina di Turing che si arresta e rifiuta tutti gli input in $L$ (ovvero, accetta tutti gli input non in $L$). In altre parole, possiamo rispondere "NO" in tempo finito se l'input non è nel linguaggio, ma non abbiamo garanzie di risposta (potremmo loopare) se lo è.
+\end{definition}
+
+\begin{remark}
+Molti dei problemi indecidibili che abbiamo visto finora (ad esempio, $\overline{L_U}$, $\overline{L_{NE}}$, $\overline{\text{HALT}}$, $\overline{\text{HALT}_\epsilon}$, Tiling) si trovano in coRE ma non in RE.
+\begin{itemize}
+    \item $L_U \in \text{RE}$, $\overline{L_U} \in \text{coRE}$.
+    \item $L_{NE} \in \text{RE}$, $\overline{L_{NE}} \in \text{coRE}$.
+    \item $\text{HALT} \in \text{RE}$, $\overline{\text{HALT}} \in \text{coRE}$.
+    \item $\text{HALT}_\epsilon \in \text{RE}$, $\overline{\text{HALT}_\epsilon} \in \text{coRE}$.
+    \item $\text{Tiling} \in \text{coRE}$ (come discusso sopra).
+\end{itemize}
+Questi linguaggi sono "sbilanciati": hanno un "lato facile" (o il SÌ o il NO può essere confermato in tempo finito).
+\end{remark}
+
+\subsection{Relazioni tra le Classi}
+
+\begin{theorem}
+$\text{RE} \cap \text{coRE} = \text{R}$.
+\end{theorem}
+\begin{proof}
+\textbf{Parte 1: $\text{RE} \cap \text{coRE} \subseteq \text{R}$}
+Sia $L$ un linguaggio tale che $L \in \text{RE} \cap \text{coRE}$.
+Poiché $L \in \text{RE}$, esiste una MT $M_1$ che accetta $L$. Per ogni $w \in L$, $M_1(w)$ si arresta e accetta. Per $w \notin L$, $M_1(w)$ o si arresta e rifiuta o entra in loop.
+Poiché $L \in \text{coRE}$, per definizione $\overline{L} \in \text{RE}$. Quindi esiste una MT $M_2$ che accetta $\overline{L}$. Per ogni $w \notin L$ (cioè $w \in \overline{L}$), $M_2(w)$ si arresta e accetta. Per $w \in L$, $M_2(w)$ o si arresta e rifiuta o entra in loop.
+
+Per dimostrare che $L \in \text{R}$, costruiamo una nuova MT $M_{decider}$ che decide $L$:
+\begin{minted}[mathescape=true, framesep=2mm, breaklines, fontsize=\small]{text}
+M_decider(w):
+  Simula M_1(w) e M_2(w) in parallelo.
+  Se M_1(w) accetta, allora M_decider accetta.
+  Se M_2(w) accetta, allora M_decider rifiuta.
+\end{minted}
+Poiché $w$ deve essere o in $L$ o in $\overline{L}$, una delle due simulazioni si arresterà e accetterà. $M_{decider}$ si arresterà sempre e darà una risposta (accetta se $w \in L$, rifiuta se $w \notin L$). Dunque $L \in \text{R}$.
+
+\textbf{Parte 2: $\text{R} \subseteq \text{RE} \cap \text{coRE}$}
+Sia $L \in \text{R}$.
+Poiché $L \in \text{R}$, esiste una MT $M$ che decide $L$. Questa MT si arresta sempre. Dunque $M$ è anche una macchina che accetta $L$, quindi $L \in \text{RE}$.
+Inoltre, se $M$ decide $L$, possiamo costruire una macchina $M'$ che decide $\overline{L}$ semplicemente invertendo le risposte di $M$. Poiché $M'$ decide $\overline{L}$, $\overline{L} \in \text{R}$. E dato che $\text{R} \subseteq \text{RE}$, allora $\overline{L} \in \text{RE}$. Per definizione, questo significa che $L \in \text{coRE}$.
+Quindi, se $L \in \text{R}$, allora $L \in \text{RE}$ e $L \in \text{coRE}$, da cui $L \in \text{RE} \cap \text{coRE}$.
+\end{proof}
+
+\begin{theorem}
+$\text{R} \neq \text{RE}$ e $\text{R} \neq \text{coRE}$.
+\end{theorem}
+\begin{proof}
+Sappiamo che $\text{HALT} \in \text{RE}$ ma $\text{HALT} \notin \text{R}$. Questo dimostra che $\text{RE} \neq \text{R}$.
+Inoltre, sappiamo che $\overline{\text{HALT}} \in \text{coRE}$ ma $\overline{\text{HALT}} \notin \text{R}$. Questo dimostra che $\text{coRE} \neq \text{R}$.
+\end{proof}
+
+\begin{theorem}
+$\text{RE} \neq \text{coRE}$.
+\end{theorem}
+\begin{proof}
+Supponiamo per assurdo che $\text{RE} = \text{coRE}$.
+Allora, poiché $\text{HALT} \in \text{RE}$ (e per l'assunto $\text{RE} = \text{coRE}$), avremmo $\text{HALT} \in \text{coRE}$.
+Se $\text{HALT} \in \text{coRE}$, allora per definizione $\overline{\text{HALT}} \in \text{RE}$.
+Ma $\text{HALT} \in \text{RE}$ e $\overline{\text{HALT}} \in \text{RE}$ implica, per il teorema precedente, che $\text{HALT} \in \text{RE} \cap \text{coRE} = \text{R}$.
+Questo è una contraddizione, poiché sappiamo che $\text{HALT} \notin \text{R}$.
+Dunque, l'assunto $\text{RE} = \text{coRE}$ è falso, e $\text{RE} \neq \text{coRE}$.
+\end{proof}
+
+\begin{figure}[h]
+    \centering
+    \begin{tikzpicture}[node distance=2cm, auto, thick, scale=1.0]
+        % Disegna gli insiemi
+        \fill[blue!10, opacity=0.7] (0,0) ellipse (3.5cm and 2.5cm);
+        \fill[red!10, opacity=0.7] (2,0) ellipse (3.5cm and 2.5cm);
+        \node (RE) at (0.5, 2.2) {\textbf{RE}};
+        \node (coRE) at (3.5, 2.2) {\textbf{coRE}};
+
+        % Punti per i linguaggi
+        \node at (-1.5, 0.5) {$L_U$};
+        \node at (-1.5, -0.5) {$L_{NE}$};
+        \node at (-1.5, 1.5) {$\text{HALT}$};
+        \node at (-1.5, -1.5) {$\text{HALT}_\epsilon$};
+
+        \node at (5.5, 0.5) {$\overline{L_U}$};
+        \node at (5.5, -0.5) {$\overline{L_{NE}}$};
+        \node at (5.5, 1.5) {$\overline{\text{HALT}}$};
+        \node at (5.5, -1.5) {$\overline{\text{HALT}_\epsilon}$};
+        \node at (4.5, 0.0) {$\text{Tiling}$};
+
+        % Intersezione R
+        \node (R) at (2,0) {\textbf{R}};
+
+        % Problema fuori
+        \node (HALT_ALL) at (8,0) {$\text{HALT}_\forall$};
+        \node (HALT_ALL_COMPLEMENT) at (-4,0) {$\overline{\text{HALT}_\forall}$};
+    \end{tikzpicture}
+    \caption{Diagramma delle classi di calcolabilit\`a RE, coRE e R.}
+\end{figure}
+
+\section{Problemi Esterni a RE e coRE}
+I problemi indecidibili che abbiamo visto finora appartengono a RE o a coRE (ovvero, hanno un "lato facile" per cui si può dire SÌ o NO in tempo finito). La domanda è: esistono problemi che non appartengono né a RE né a coRE? Ovvero, problemi per i quali non siamo in grado di dare garanzie di risposta (SÌ o NO) in tempo finito?
+
+\begin{definition}[$\text{HALT}_\forall$]
+Sia $\text{HALT}_\forall = \{ \langle M \rangle \mid M \text{ si arresta su ogni input } w \}$.
+\end{definition}
+
+\begin{remark}
+Intuitivamente:
+\begin{itemize}
+    \item \textbf{Perché $\text{HALT}_\forall \notin \text{RE}$?} Per determinare se una macchina si arresta su *ogni* input, dovremmo simulare la macchina su tutti gli input possibili, che sono infiniti. Se la macchina si arresta su tutti, non potremmo mai finire di verificarlo.
+    \item \textbf{Perché $\text{HALT}_\forall \notin \text{coRE}$?} Se $\text{HALT}_\forall \in \text{coRE}$, allora $\overline{\text{HALT}_\forall} \in \text{RE}$. Ma $\overline{\text{HALT}_\forall} = \{ \langle M \rangle \mid M \text{ non si arresta su almeno un input } w \}$. Per determinare se $M$ non si arresta su *almeno un* input, dovremmo cercare questo input. Se $M$ non si arresta su un certo $w$, la simulazione di $M$ su $w$ non terminerebbe, e quindi non potremmo dire "SÌ" in tempo finito.
+\end{itemize}
+Quindi, $\text{HALT}_\forall$ sembra essere un candidato a non stare né in RE né in coRE.
+
+Per dimostrarlo formalmente, useremo il seguente Lemma sulle riduzioni:
+\end{remark}
+
+\begin{lemma}
+Siano $A$ e $B$ due linguaggi.
+\begin{itemize}
+    \item Se $A \le_m B$ e $B \in \text{R}$, allora $A \in \text{R}$. (Già dimostrato)
+    \item Se $A \le_m B$ e $A \notin \text{RE}$, allora $B \notin \text{RE}$. (Già dimostrato)
+    \item Se $A \le_m B$ e $A \notin \text{coRE}$, allora $B \notin \text{coRE}$.
+\end{itemize}
+\end{lemma}
+\begin{proof}[Dimostrazione (ultimo punto)]
+Supponiamo per assurdo che $A \le_m B$ e $B \in \text{coRE}$, ma $A \notin \text{coRE}$.
+Se $B \in \text{coRE}$, allora $\overline{B} \in \text{RE}$.
+Poiché $A \le_m B$, esiste una funzione calcolabile $f$ tale che $w \in A \iff f(w) \in B$.
+Questo implica che $w \notin A \iff f(w) \notin B$, ovvero $w \in \overline{A} \iff f(w) \in \overline{B}$.
+Quindi $\overline{A} \le_m \overline{B}$.
+Dato che $\overline{B} \in \text{RE}$ e $\overline{A} \le_m \overline{B}$, per la seconda parte del Lemma ($A \le_m B$ e $B \in \text{RE} \implies A \in \text{RE}$), ne segue che $\overline{A} \in \text{RE}$.
+Se $\overline{A} \in \text{RE}$, per definizione $A \in \text{coRE}$. Questo contraddice la nostra assunzione $A \notin \text{coRE}$.
+Quindi l'assunzione è falsa, e se $A \le_m B$ e $A \notin \text{coRE}$, allora $B \notin \text{coRE}$.
+\end{proof}
+
+\subsubsection{Dimostrare $\text{HALT}_\forall \notin \text{coRE}$}
+Per dimostrare $\text{HALT}_\forall \notin \text{coRE}$, useremo la riduzione $\text{HALT}_\epsilon \le_m \text{HALT}_\forall$.
+Sappiamo che $\text{HALT}_\epsilon \in \text{RE}$ ma $\text{HALT}_\epsilon \notin \text{coRE}$ (infatti $\overline{\text{HALT}_\epsilon} \in \text{RE}$).
+
+Sia $f$ la funzione di riduzione che prende una MT $M$ e produce una MT $N = f(M)$.
+\begin{minted}[mathescape=true, framesep=2mm, breaklines, fontsize=\small]{python}
+# Pseudocodice per la macchina N = f(M)
+def N(input_w):
+    # N ignora completamente il proprio input_w
+    # e si concentra solo sulla simulazione di M su stringa vuota.
+    
+    # Simula M sulla stringa vuota (epsilon)
+    # Si assume che una simulazione di M su epsilon possa essere eseguita
+    # e che N possa osservarne il comportamento.
+    if M.halts_on_epsilon():
+        # Se M si arresta su epsilon, N si arresta (ad esempio, accetta)
+        return "Accetta"
+    else:
+        # Se M non si arresta su epsilon, N non si arresta
+        # N entra in un loop infinito
+        while True:
+            pass # Loop infinito
+\end{minted}
+
+\begin{proof}
+Dobbiamo mostrare che $M \in \text{HALT}_\epsilon \iff N \in \text{HALT}_\forall$.
+
+\textbf{Direzione 1: $M \in \text{HALT}_\epsilon \implies N \in \text{HALT}_\forall$}
+Se $M \in \text{HALT}_\epsilon$, significa che $M$ si arresta sulla stringa vuota $\epsilon$.
+Per costruzione, la macchina $N$, indipendentemente dal suo input $w$, simula $M$ su $\epsilon$. Poiché $M$ si arresta su $\epsilon$, la simulazione di $M$ su $\epsilon$ termina in un numero finito di passi, e $N$ si arresta.
+Questo è vero per ogni $w$ dato a $N$. Dunque, $N$ si arresta su ogni input $w$. Per definizione, $N \in \text{HALT}_\forall$.
+
+\textbf{Direzione 2: $M \notin \text{HALT}_\epsilon \implies N \notin \text{HALT}_\forall$}
+Se $M \notin \text{HALT}_\epsilon$, significa che $M$ non si arresta sulla stringa vuota $\epsilon$.
+Per costruzione, la macchina $N$, indipendentemente dal suo input $w$, simula $M$ su $\epsilon$. Poiché $M$ non si arresta su $\epsilon$, la simulazione di $M$ su $\epsilon$ non termina mai, e $N$ entra in un loop infinito.
+Questo è vero per ogni $w$ dato a $N$. Dunque, $N$ non si arresta su nessun input $w$. Per definizione, $N \notin \text{HALT}_\forall$.
+
+La riduzione $\text{HALT}_\epsilon \le_m \text{HALT}_\forall$ è valida.
+Poiché $\text{HALT}_\epsilon \notin \text{coRE}$, per il Lemma, segue che $\text{HALT}_\forall \notin \text{coRE}$.
+\end{proof}
+
+\subsubsection{Dimostrare $\text{HALT}_\forall \notin \text{RE}$}
+Per dimostrare $\text{HALT}_\forall \notin \text{RE}$, useremo la riduzione $\overline{\text{HALT}_\epsilon} \le_m \text{HALT}_\forall$.
+Sappiamo che $\overline{\text{HALT}_\epsilon} \notin \text{RE}$.
+
+Sia $f$ la funzione di riduzione che prende una MT $M$ e produce una MT $N = f(M)$.
+\begin{minted}[mathescape=true, framesep=2mm, breaklines, fontsize=\small]{python}
+# Pseudocodice per la macchina N = f(M)
+def N(input_w):
+    # Usa la lunghezza di input_w come un contatore di passi.
+    t = len(input_w)
+    
+    # Simula M sulla stringa vuota (epsilon) per un massimo di t passi.
+    simulazione_m_terminata = M.simulate_on_epsilon(max_steps=t)
+    
+    if simulazione_m_terminata:
+        # Se M si arresta su epsilon entro t passi, N entra in un loop infinito.
+        while True:
+            pass # Loop infinito
+    else:
+        # Se M non si arresta su epsilon entro t passi, N si arresta (ad esempio, rifiuta).
+        return "Rifiuta"
+\end{minted}
+
+\begin{proof}
+Dobbiamo mostrare che $M \in \overline{\text{HALT}_\epsilon} \iff N \in \text{HALT}_\forall$.
+
+\textbf{Direzione 1: $M \in \overline{\text{HALT}_\epsilon} \implies N \in \text{HALT}_\forall$}
+Se $M \in \overline{\text{HALT}_\epsilon}$, significa che $M$ non si arresta sulla stringa vuota $\epsilon$.
+Poiché $M$ non si arresta mai su $\epsilon$, la simulazione di $M$ su $\epsilon$ per un numero finito di passi $t = |w|$ (la lunghezza dell'input di $N$) non raggiungerà mai uno stato di arresto.
+Di conseguenza, per qualsiasi input $w$ dato a $N$, la condizione `simulazione_m_terminata` sarà sempre falsa. Quindi $N$ si arresterà sempre (rifiutando).
+Dunque, $N$ si arresta su ogni input $w$. Per definizione, $N \in \text{HALT}_\forall$.
+
+\textbf{Direzione 2: $M \notin \overline{\text{HALT}_\epsilon} \implies N \notin \text{HALT}_\forall$}
+Se $M \notin \overline{\text{HALT}_\epsilon}$, significa che $M$ si arresta sulla stringa vuota $\epsilon$.
+Sia $k$ il numero di passi dopo i quali $M$ si arresta su $\epsilon$.
+\begin{itemize}
+    \item Se $N$ riceve un input $w$ tale che $|w| < k$:
+    $N$ simulerà $M$ su $\epsilon$ per $|w|$ passi. Poiché $|w| < k$, $M$ non si sarà ancora arrestata. La condizione `simulazione_m_terminata` sarà falsa, e $N$ si arresterà (rifiutando).
+    \item Se $N$ riceve un input $w$ tale che $|w| \ge k$:
+    $N$ simulerà $M$ su $\epsilon$ per $|w|$ passi. Poiché $|w| \ge k$, $M$ si arresterà entro $k$ passi. La condizione `simulazione_m_terminata` sarà vera, e $N$ entrerà in un loop infinito.
+\end{itemize}
+Poiché $N$ si arresta su alcuni input (quelli con lunghezza $< k$) e non si arresta su altri input (quelli con lunghezza $\ge k$), $N$ non si arresta su *ogni* input.
+Dunque, $N \notin \text{HALT}_\forall$.
+
+La riduzione $\overline{\text{HALT}_\epsilon} \le_m \text{HALT}_\forall$ è valida.
+Poiché $\overline{\text{HALT}_\epsilon} \notin \text{RE}$, per il Lemma, segue che $\text{HALT}_\forall \notin \text{RE}$.
+\end{proof}
+
+\subsection{Conclusione: $\text{HALT}_\forall$ è Esterno a RE e coRE}
+Abbiamo dimostrato che $\text{HALT}_\forall \notin \text{RE}$ e $\text{HALT}_\forall \notin \text{coRE}$.
+Ciò significa che $\text{HALT}_\forall$ è un problema ancora più "difficile" dei problemi indecidibili che abbiamo visto finora. Non esiste un algoritmo che possa confermare l'appartenenza di una macchina a $\text{HALT}_\forall$ in tempo finito (perché non sta in RE), né un algoritmo che possa confermare la non appartenenza in tempo finito (perché non sta in coRE).
+Il suo complemento $\overline{\text{HALT}_\forall}$ si trova anch'esso fuori da RE e coRE.
+
+\end{document}

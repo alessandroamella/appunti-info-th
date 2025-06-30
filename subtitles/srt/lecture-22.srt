@@ -1,0 +1,7408 @@
+1
+00:00:00,000 --> 00:00:03,000
+Ok.
+
+2
+00:00:15,360 --> 00:00:18,360
+Ok.
+
+3
+00:00:19,370 --> 00:00:20,920
+[Musica]
+
+4
+00:00:20,920 --> 00:00:23,599
+Quello che abbiamo fatto finora.
+
+5
+00:00:23,599 --> 00:00:26,760
+Chiaro, complicato, difficile.
+
+6
+00:00:26,760 --> 00:00:29,720
+Estremamente estremamente difficile. Di
+
+7
+00:00:29,720 --> 00:00:35,120
+più non si capisce un cavolo. Vabbè.
+
+8
+00:00:35,120 --> 00:00:39,079
+M Ok.
+
+9
+00:00:39,520 --> 00:00:40,680
+Mi hanno detto che vi piacciono le
+
+10
+00:00:40,680 --> 00:00:42,160
+riduzioni, quindi oggi ne facciamo
+
+11
+00:00:42,160 --> 00:00:45,800
+un'altra per cambiare.
+
+12
+00:00:45,800 --> 00:00:49,399
+Eh,
+lei lei lei non si pronuncia. Va
+
+13
+00:00:49,399 --> 00:00:51,480
+bene,
+
+14
+00:00:51,480 --> 00:00:55,120
+eh. Eh, ok. Con oggi chiudiamo la parte
+
+15
+00:00:55,120 --> 00:00:59,039
+più espressamente dedicata a NP.
+
+16
+00:00:59,039 --> 00:01:01,559
+Manca una sola cosa da vedere su NP,
+
+17
+00:01:01,559 --> 00:01:03,160
+dopodiché
+
+18
+00:01:03,160 --> 00:01:05,199
+ci sarebbero tante cose da vedere su NP,
+
+19
+00:01:05,199 --> 00:01:07,080
+ma manca una cosa fondamentale che non
+
+20
+00:01:07,080 --> 00:01:10,159
+abbiamo visto finora riguardo NP. Eh,
+
+21
+00:01:10,159 --> 00:01:12,920
+dopodiché il resto delle lezioni saranno
+
+22
+00:01:12,920 --> 00:01:15,600
+classi un po' più strane,
+
+23
+00:01:15,600 --> 00:01:19,200
+eh un'esercitazione finale facciamo e
+
+24
+00:01:19,200 --> 00:01:21,079
+quindi questo è quello che ho che ho più
+
+25
+00:01:21,079 --> 00:01:23,680
+o meno in mente.
+
+26
+00:01:23,680 --> 00:01:25,360
+Ok.
+
+27
+00:01:25,360 --> 00:01:28,720
+Allora, allora, allora qui recup che
+
+28
+00:01:28,720 --> 00:01:32,280
+cos'è? Che cos'è la classe
+
+29
+00:01:32,280 --> 00:01:37,680
+lezione 22? Sì. Che cos'è la classe NP?
+
+30
+00:01:41,759 --> 00:01:46,439
+Guys, che cos'è la classe NP?
+
+31
+00:01:50,200 --> 00:01:52,719
+Dei problemi come
+
+32
+00:01:52,719 --> 00:01:55,960
+decisione,
+decisione decisionali, perché
+
+33
+00:01:55,960 --> 00:01:58,439
+gli altri problemi, quelli di funzione,
+
+34
+00:01:58,439 --> 00:02:00,960
+non stanno in NP, hanno altre classi.
+
+35
+00:02:00,960 --> 00:02:02,960
+Vedremo qualcosa velocissimamente alla
+
+36
+00:02:02,960 --> 00:02:06,399
+fine, però in NP, come in P, come in R,
+
+37
+00:02:06,399 --> 00:02:09,039
+in re, eccetera, ci sono solo problemi
+
+38
+00:02:09,039 --> 00:02:11,360
+di decisione, ci stanno linguaggi, ok? E
+
+39
+00:02:11,360 --> 00:02:12,800
+siccome per i linguaggi quello che
+
+40
+00:02:12,800 --> 00:02:15,879
+possiamo dire è s No, ci stanno problemi
+
+41
+00:02:15,879 --> 00:02:19,160
+di ok? Questa è la definizione precisa,
+
+42
+00:02:19,160 --> 00:02:21,400
+l'insieme dei linguaggi decidibili
+
+43
+00:02:21,400 --> 00:02:23,120
+macchine di Touring non deterministiche
+
+44
+00:02:23,120 --> 00:02:25,400
+in tempo polinomiale.
+
+45
+00:02:25,400 --> 00:02:32,319
+Eh, ok. Cosa sono i problemi NPD?
+
+46
+00:02:35,360 --> 00:02:40,319
+Ve la ricordate la definizione? Sì.
+
+47
+00:02:41,760 --> 00:02:43,920
+Ok. Sì. Quindi intuitivamente sono i
+
+48
+00:02:43,920 --> 00:02:47,080
+problemi tra sono i problemi almeno
+
+49
+00:02:47,080 --> 00:02:49,959
+difficili quanto tutti i problemi di NP.
+
+50
+00:02:49,959 --> 00:02:53,280
+I problemi di P si possono ridurre a un
+
+51
+00:02:53,280 --> 00:02:57,840
+problema NP arduo. Sì, perché
+
+52
+00:02:57,840 --> 00:03:01,000
+perché i problemi in P sono anche in NP.
+
+53
+00:03:01,000 --> 00:03:03,799
+Ok? Vi ricordate come si chiamano i
+
+54
+00:03:03,799 --> 00:03:06,120
+problemi che sono sia in NP che NP
+
+55
+00:03:06,120 --> 00:03:08,319
+hardue?
+
+56
+00:03:08,319 --> 00:03:12,360
+NP completi. Alri guys, avete studiato?
+
+57
+00:03:12,360 --> 00:03:14,000
+Buono.
+
+58
+00:03:14,000 --> 00:03:18,200
+Comp complete. Ok. Dopodiché quello che
+
+59
+00:03:18,200 --> 00:03:20,000
+abbiamo visto ora, la definizione che
+
+60
+00:03:20,000 --> 00:03:23,840
+noi abbiamo fatto, quindi
+
+61
+00:03:23,840 --> 00:03:29,000
+ah noi abbiamo detto che un linguaggio
+
+62
+00:03:30,040 --> 00:03:35,280
+L e NP hard
+
+63
+00:03:35,280 --> 00:03:36,799
+se
+
+64
+00:03:36,799 --> 00:03:39,680
+per ogni linguaggio L'O appartenente a
+
+65
+00:03:39,680 --> 00:03:43,680
+NP, L'O si riduce polinomialmente a L.
+
+66
+00:03:43,680 --> 00:03:45,200
+Ok? Questa era la definizione di
+
+67
+00:03:45,200 --> 00:03:48,159
+hardness, però non è quello che abbiamo
+
+68
+00:03:48,159 --> 00:03:52,079
+fatto finora, no? Finora per dimostrare
+
+69
+00:03:52,079 --> 00:03:55,360
+che Napsa era NP completo, exact cover,
+
+70
+00:03:55,360 --> 00:03:59,319
+NP completo, colorabilità, vertex cover,
+
+71
+00:03:59,319 --> 00:04:02,000
+click, tressat, bla bla tutte quelle
+
+72
+00:04:02,000 --> 00:04:04,000
+cose là. Noi abbiamo usato un'altra
+
+73
+00:04:04,000 --> 00:04:06,000
+definizione, abbiamo usato una proprietà
+
+74
+00:04:06,000 --> 00:04:08,519
+delle riduzioni che è la transitività
+
+75
+00:04:08,519 --> 00:04:10,640
+delle riduzioni polinomiali che ci
+
+76
+00:04:10,640 --> 00:04:13,439
+diceva che
+
+77
+00:04:13,439 --> 00:04:22,560
+se A e B sono due problemi
+
+78
+00:04:24,040 --> 00:04:26,720
+con A
+
+79
+00:04:26,720 --> 00:04:30,280
+np arduo
+
+80
+00:04:30,280 --> 00:04:32,840
+e inoltre
+
+81
+00:04:33,800 --> 00:04:38,759
+A si riduce polinomialmente a B, allora
+
+82
+00:04:38,759 --> 00:04:43,400
+B è NP arduo. Ok? Questa è la proprietà
+
+83
+00:04:43,400 --> 00:04:45,360
+che noi abbiamo utilizzato in tutte le
+
+84
+00:04:45,360 --> 00:04:49,280
+nostre riduzioni eccetera. Adesso
+
+85
+00:04:49,280 --> 00:04:51,440
+l'inghippo di questa proprietà che ci
+
+86
+00:04:51,440 --> 00:04:53,039
+viene comodissima perché è stata alla
+
+87
+00:04:53,039 --> 00:04:54,720
+base di tutte le dimostrazioni di
+
+88
+00:04:54,720 --> 00:04:56,960
+complessità che abbiamo visto finora. Il
+
+89
+00:04:56,960 --> 00:05:00,479
+problema di questa di questa definizione
+
+90
+00:05:00,479 --> 00:05:02,520
+è che noi abbiamo bisogno di un problema
+
+91
+00:05:02,520 --> 00:05:05,199
+a NP arduo per dimostrare che B NP
+
+92
+00:05:05,199 --> 00:05:07,320
+arduo. Quindi come abbiamo dimostrato
+
+93
+00:05:07,320 --> 00:05:09,840
+che Napsack era NP arduo, riduzione da
+
+94
+00:05:09,840 --> 00:05:12,800
+exact. Come abbiamo dimostrato che exact
+
+95
+00:05:12,800 --> 00:05:15,560
+cover era NP hard riduzione da 3 SAT.
+
+96
+00:05:15,560 --> 00:05:18,000
+Come abbiamo dimostrato che 3 SAT è NP
+
+97
+00:05:18,000 --> 00:05:20,479
+ardo, riduzione da SAT. E come abbiamo
+
+98
+00:05:20,479 --> 00:05:22,720
+dimostrato che SAT NP arduo non
+
+99
+00:05:22,720 --> 00:05:25,360
+l'abbiamo dimostrato. Ok? Quindi tutto
+
+100
+00:05:25,360 --> 00:05:27,319
+quello che abbiamo fatto finora si
+
+101
+00:05:27,319 --> 00:05:31,680
+fondava su questa assunzione che esiste
+
+102
+00:05:31,680 --> 00:05:34,160
+almeno un problema in neppiardo, cioè
+
+103
+00:05:34,160 --> 00:05:37,720
+esiste un problema che è almeno
+
+104
+00:05:37,720 --> 00:05:40,440
+difficile quanto
+
+105
+00:05:40,440 --> 00:05:43,600
+tutti i problemi della classe NP. Ok?
+
+106
+00:05:43,600 --> 00:05:47,160
+Adesso per dimostrare che NP arduo non
+
+107
+00:05:47,160 --> 00:05:49,720
+possiamo sfruttare questo trucco perché
+
+108
+00:05:49,720 --> 00:05:52,600
+non abbiamo altri linguaggi NPD. Ok?
+
+109
+00:05:52,600 --> 00:05:57,560
+Potremmo pure ridurre Napsa a SAT e
+
+110
+00:05:57,560 --> 00:05:59,759
+mostrare che SAT è almeno difficile
+
+111
+00:05:59,759 --> 00:06:02,039
+quanto Napsak, però il problema è che
+
+112
+00:06:02,039 --> 00:06:04,720
+poi avremo una riduzione circolare. SAT
+
+113
+00:06:04,720 --> 00:06:06,880
+che si riduce a Napsak, Napsac che si
+
+114
+00:06:06,880 --> 00:06:09,759
+riduce a SAT. Che cosa avremmo? Avremmo
+
+115
+00:06:09,759 --> 00:06:12,000
+che la complessità di questi due
+
+116
+00:06:12,000 --> 00:06:15,280
+problemi è equivalente, ma niente più di
+
+117
+00:06:15,280 --> 00:06:17,160
+quello, cioè non avremmo la proprietà
+
+118
+00:06:17,160 --> 00:06:19,160
+che NP, ok?
+
+119
+00:06:19,160 --> 00:06:21,800
+Ci serve quindi usare la definizione
+
+120
+00:06:21,800 --> 00:06:24,840
+iniziale, cioè per dimostrare che SAT è
+
+121
+00:06:24,840 --> 00:06:29,240
+NP argo, noi dobbiamo dimostrare che
+
+122
+00:06:29,240 --> 00:06:30,800
+ogni
+
+123
+00:06:30,800 --> 00:06:36,759
+linguaggio L di NP si riduce a SAT, che
+
+124
+00:06:36,759 --> 00:06:39,639
+è una bella rogna perché ci dobbiamo
+
+125
+00:06:39,639 --> 00:06:42,720
+inventare una riduzione da tutti i
+
+126
+00:06:42,720 --> 00:06:47,240
+linguaggi in NP che mappino su SAT. Ok?
+
+127
+00:06:47,240 --> 00:06:49,120
+Adesso a occhi e croce, secondo voi
+
+128
+00:06:49,120 --> 00:06:52,280
+quanti sono i linguaggi in NP?
+
+129
+00:06:52,280 --> 00:06:56,599
+Tanti, pochi? Pochini?
+
+130
+00:06:57,080 --> 00:07:00,720
+Troppi, troppi. Quanti?
+
+131
+00:07:00,720 --> 00:07:05,199
+1000, 2000, quanti saranno?
+
+132
+00:07:05,199 --> 00:07:08,199
+Avete un'intuizione?
+Infini.
+Infiniti.
+
+133
+00:07:08,199 --> 00:07:10,039
+Sono infiniti i linguaggi dentro NP.
+
+134
+00:07:10,039 --> 00:07:12,400
+Perché noi basta che ne prendiamo uno,
+
+135
+00:07:12,400 --> 00:07:14,319
+lo modifichiamo leggermente, abbiamo una
+
+136
+00:07:14,319 --> 00:07:16,960
+variante, ne abbiamo un altro in NP. Ok?
+
+137
+00:07:16,960 --> 00:07:19,280
+Cioè i linguaggi dentro NP, tanto per
+
+138
+00:07:19,280 --> 00:07:22,680
+cambiare sono infiniti. Quindi eh
+
+139
+00:07:22,680 --> 00:07:26,560
+trovare una riduzione, trovare infinite
+
+140
+00:07:26,560 --> 00:07:29,840
+riduzioni da ogni linguaggio
+
+141
+00:07:29,840 --> 00:07:34,080
+L in NP a SAT e insomma è non è una cosa
+
+142
+00:07:34,080 --> 00:07:36,479
+banalissima, ok? Cioè, ci dobbiamo
+
+143
+00:07:36,479 --> 00:07:38,080
+inventare un trucco. Questa è la
+
+144
+00:07:38,080 --> 00:07:39,960
+questione, perché noi dobbiamo mostrare
+
+145
+00:07:39,960 --> 00:07:44,840
+che esiste una riduzione polinomiale da
+
+146
+00:07:44,840 --> 00:07:49,879
+ogni linguaggio in NP verso SAT. Ok?
+
+147
+00:07:49,879 --> 00:07:52,159
+È chiaro? Quindi quello che ci
+
+148
+00:07:52,159 --> 00:07:56,960
+proponiamo oggi è far vedere che preso
+
+149
+00:07:56,960 --> 00:08:01,000
+un qualsiasi linguaggio in NP noi lo
+
+150
+00:08:01,000 --> 00:08:04,159
+possiamo e e può essere qualsiasi eh,
+
+151
+00:08:04,159 --> 00:08:07,759
+può essere click, vertex cover, napsak,
+
+152
+00:08:07,759 --> 00:08:10,080
+exact cover,
+
+153
+00:08:10,080 --> 00:08:11,840
+problemi su teoria dei giochi. Può
+
+154
+00:08:11,840 --> 00:08:14,639
+essere la qualsiasi, un qualsiasi
+
+155
+00:08:14,639 --> 00:08:18,599
+linguaggio di NP si può mappare su su,
+
+156
+00:08:18,599 --> 00:08:21,120
+ok?
+
+157
+00:08:21,120 --> 00:08:24,800
+Questo risultato è dovuto a Cook e lo
+
+158
+00:08:24,800 --> 00:08:28,599
+chiamiamo il teorema di Cook.
+
+159
+00:08:28,599 --> 00:08:31,599
+Teorema
+
+160
+00:08:32,360 --> 00:08:34,560
+di Cook,
+
+161
+00:08:34,560 --> 00:08:36,519
+ok? È colui che ha inventato la
+
+162
+00:08:36,519 --> 00:08:39,599
+definizione di NP hardness, NP
+
+163
+00:08:39,599 --> 00:08:41,959
+completezza, riduzioni polinomiali.
+
+164
+00:08:41,959 --> 00:08:44,440
+Questi sono tutti i concetti che
+
+165
+00:08:44,440 --> 00:08:46,480
+dobbiamo a Stephen Cook e lui in quel
+
+166
+00:08:46,480 --> 00:08:50,360
+paper mostrò che SAT è anche un problema
+
+167
+00:08:50,360 --> 00:08:52,240
+NP completo, quindi si era inventato la
+
+168
+00:08:52,240 --> 00:08:54,959
+nozione e ha dimostrato che SAT è NP
+
+169
+00:08:54,959 --> 00:08:57,640
+completo. Ok?
+
+170
+00:08:57,640 --> 00:08:59,640
+Allora,
+
+171
+00:08:59,640 --> 00:09:02,040
+andiamo prima intuitivamente cerchiamo
+
+172
+00:09:02,040 --> 00:09:04,440
+prima di focalizzare la nostra
+
+173
+00:09:04,440 --> 00:09:06,680
+attenzione su come debba essere
+
+174
+00:09:06,680 --> 00:09:08,279
+organizzata questa riduzione perché è
+
+175
+00:09:08,279 --> 00:09:11,480
+una riduzione un po' problematica. Ok?
+
+176
+00:09:11,480 --> 00:09:16,240
+Allora, abbiamo L che è un linguaggio di
+
+177
+00:09:16,240 --> 00:09:18,880
+NP, lo dobbiamo, come al solito, lo
+
+178
+00:09:18,880 --> 00:09:20,800
+scriviamo
+
+179
+00:09:20,800 --> 00:09:25,200
+nel nostro modo usuale, no? Abbiamo L,
+
+180
+00:09:25,200 --> 00:09:28,240
+che è un linguaggio generico di NP e lo
+
+181
+00:09:28,240 --> 00:09:32,640
+vogliamo ridurre polinomialmente a SAT.
+
+182
+00:09:32,640 --> 00:09:34,880
+Ok?
+
+183
+00:09:34,880 --> 00:09:37,839
+Benissimo. In genere ci poniamo delle
+
+184
+00:09:37,839 --> 00:09:40,560
+domande quando facciamo le riduzioni,
+
+185
+00:09:40,560 --> 00:09:43,079
+no? Ve le ricordate che domanda ci
+
+186
+00:09:43,079 --> 00:09:45,720
+poniamo in genere quando facciamo una
+
+187
+00:09:45,720 --> 00:09:47,399
+riduzione da un linguaggio verso un
+
+188
+00:09:47,399 --> 00:09:49,560
+altro?
+
+189
+00:09:49,560 --> 00:09:52,720
+Cos'è unanza?
+Che cos'è un'istanza? Che
+
+190
+00:09:52,720 --> 00:09:57,079
+cos'è un'istanza di L?
+
+191
+00:10:02,000 --> 00:10:05,839
+Attenzione, che cos'è un L? Che cos'è?
+
+192
+00:10:05,839 --> 00:10:08,240
+Un linguaggio. Che cosa sono le istanze
+
+193
+00:10:08,240 --> 00:10:10,600
+dei linguaggi?
+Stringhe.
+Stringhe. Che
+
+194
+00:10:10,600 --> 00:10:13,680
+cos'è un'istanza di L?
+Una stringa.
+Una
+
+195
+00:10:13,680 --> 00:10:18,000
+stringa. Quindi è W. Ok.
+
+196
+00:10:18,000 --> 00:10:19,880
+Possiamo dire qualcosa di questa
+
+197
+00:10:19,880 --> 00:10:24,320
+stringa? È un grafo.
+
+198
+00:10:24,399 --> 00:10:27,640
+È un'istanza di Napsac. Possibile,
+
+199
+00:10:27,640 --> 00:10:30,040
+potrebbe essere qualsiasi cosa, non lo
+
+200
+00:10:30,040 --> 00:10:33,640
+sappiamo. È è una stringa, ok? Su dei
+
+201
+00:10:33,640 --> 00:10:35,920
+simboli, i simboli del linguaggio,
+
+202
+00:10:35,920 --> 00:10:38,920
+quindi è uno sconosciuto, è una stringa.
+
+203
+00:10:38,920 --> 00:10:44,160
+B è una stringa. Ok? Questa cosa va
+
+204
+00:10:44,160 --> 00:10:48,800
+tradotta in una istanza di SAT. Che è?
+
+205
+00:10:48,800 --> 00:10:51,440
+Cos'è? Un'istanza di SAT?
+
+206
+00:10:51,440 --> 00:10:55,600
+formula
+è una formula
+
+207
+00:10:55,600 --> 00:10:58,480
+una formula
+
+208
+00:10:58,480 --> 00:11:00,959
+è
+una formula
+
+209
+00:11:00,959 --> 00:11:03,040
+una formula buleana
+è una formula
+
+210
+00:11:03,040 --> 00:11:07,120
+buleana in formato CNF. Ok? Quindi noi
+
+211
+00:11:07,120 --> 00:11:09,800
+abbiamo che dall'altro lato abbiamo f di
+
+212
+00:11:09,800 --> 00:11:14,040
+W la chiamiamo è una formula
+
+213
+00:11:14,040 --> 00:11:20,800
+in CNF. Ce lo segniamo qua. Ok?
+
+214
+00:11:22,800 --> 00:11:26,480
+è una formula buleana. Ok,
+
+215
+00:11:26,480 --> 00:11:28,760
+benissimo. Poi le domande successive
+
+216
+00:11:28,760 --> 00:11:30,639
+quando facevamo, perché adesso quello
+
+217
+00:11:30,639 --> 00:11:33,480
+che dobbiamo fare è inventarci
+
+218
+00:11:33,480 --> 00:11:37,600
+una funzione f calcolabile in tempo
+
+219
+00:11:37,600 --> 00:11:39,680
+polinomiale
+
+220
+00:11:39,680 --> 00:11:43,480
+che trasforma questa stringa W di natura
+
+221
+00:11:43,480 --> 00:11:45,720
+sconosciuta,
+
+222
+00:11:45,720 --> 00:11:49,959
+ok? in una formula F che dipende da W.
+
+223
+00:11:49,959 --> 00:11:53,560
+Ok? Poi, qual erano in genere le domande
+
+224
+00:11:53,560 --> 00:11:55,480
+che ci poniamo quando facciamo le
+
+225
+00:11:55,480 --> 00:11:58,000
+riduzioni?
+
+226
+00:11:58,000 --> 00:12:00,000
+Sì, istanze no.
+Instanze sì, istanze no.
+
+227
+00:12:00,000 --> 00:12:02,760
+Che cos'è un'istanza sì del linguaggio?
+
+228
+00:12:02,760 --> 00:12:05,760
+L
+
+229
+00:12:05,959 --> 00:12:07,240
+è una stringa di caratteri che
+
+230
+00:12:07,240 --> 00:12:09,160
+appartiene al linguaggio.
+È una stringa
+
+231
+00:12:09,160 --> 00:12:11,360
+di simboli che appartiene al linguaggio.
+
+232
+00:12:11,360 --> 00:12:15,160
+Possiamo dire altro?
+
+233
+00:12:17,350 --> 00:12:18,880
+[Musica]
+
+234
+00:12:18,880 --> 00:12:21,560
+No, se non conosciamo L non possiamo
+
+235
+00:12:21,560 --> 00:12:23,639
+dire un granché. Ok? Sappiamo che
+
+236
+00:12:23,639 --> 00:12:26,240
+un'istanza sì per L, attenzione qua che
+
+237
+00:12:26,240 --> 00:12:27,160
+qua stiamo andando proprio
+
+238
+00:12:27,160 --> 00:12:29,519
+sull'astratto, eh? Qui se vi perdete
+
+239
+00:12:29,519 --> 00:12:31,959
+ditemelo che io ripeto e mi invento un
+
+240
+00:12:31,959 --> 00:12:35,040
+modo diverso. Ok? Allora, qual è il
+
+241
+00:12:35,040 --> 00:12:37,320
+problema qua? Qual è il nocciolo della
+
+242
+00:12:37,320 --> 00:12:39,240
+questione? Noi dobbiamo mostrare che
+
+243
+00:12:39,240 --> 00:12:41,360
+preso un linguaggio L a caso che
+
+244
+00:12:41,360 --> 00:12:44,199
+proviene da NP, un linguaggio di cui non
+
+245
+00:12:44,199 --> 00:12:47,079
+sappiamo niente se non che L appartiene
+
+246
+00:12:47,079 --> 00:12:50,440
+a NP, esiste un modo di trasformare le
+
+247
+00:12:50,440 --> 00:12:55,839
+istanze di L qualsiasi in formule. Ok?
+
+248
+00:12:55,839 --> 00:12:58,079
+E noi non è che questa trasformazione la
+
+249
+00:12:58,079 --> 00:13:00,639
+facciamo a buffo, prendiamo delle
+
+250
+00:13:00,639 --> 00:13:05,240
+stringhe W di cui non sappiamo niente
+
+251
+00:13:05,240 --> 00:13:07,279
+perché sono definite su un certo
+
+252
+00:13:07,279 --> 00:13:10,880
+alfabeto bla, ok?
+
+253
+00:13:10,880 --> 00:13:16,320
+Tale per cui se W appartiene ad Lula
+
+254
+00:13:16,320 --> 00:13:19,560
+file di W che proprietà deve avere?
+
+255
+00:13:19,560 --> 00:13:21,079
+è soddisfacile.
+Deve essere
+
+256
+00:13:21,079 --> 00:13:25,560
+soddisfacile. E se la stringa W non
+
+257
+00:13:25,560 --> 00:13:30,199
+appartiene ad L, la formula F di W che
+
+258
+00:13:30,199 --> 00:13:33,360
+proprietà deve avere?
+
+259
+00:13:33,360 --> 00:13:36,720
+Deve essere non soddisfacile. Ok? Cioè
+
+260
+00:13:36,720 --> 00:13:39,079
+fino a mo ci stiamo muovendo nell'ambito
+
+261
+00:13:39,079 --> 00:13:41,079
+delle cose che abbiamo sempre visto. Ok?
+
+262
+00:13:41,079 --> 00:13:43,560
+C'è un pezzo strano in questa riduzione
+
+263
+00:13:43,560 --> 00:13:45,800
+è che noi non sappiamo che cosa sia l
+
+264
+00:13:45,800 --> 00:13:48,279
+quella è la questione. Ok? Perché fino a
+
+265
+00:13:48,279 --> 00:13:52,240
+quando avevamo grafi,
+
+266
+00:13:52,240 --> 00:13:54,800
+altre formule buuleane,
+
+267
+00:13:54,800 --> 00:13:57,240
+il gioco degli scacchi, qualsiasi cosa
+
+268
+00:13:57,240 --> 00:13:58,880
+vi possa venire in mente, cioè noi
+
+269
+00:13:58,880 --> 00:14:01,680
+sappiamo cos'è un'istanza e la
+
+270
+00:14:01,680 --> 00:14:04,639
+trasformiamo in un'altra. Qui abbiamo il
+
+271
+00:14:04,639 --> 00:14:06,959
+non trascurabile problema di star
+
+272
+00:14:06,959 --> 00:14:10,320
+trasformando un'istanza di un linguaggio
+
+273
+00:14:10,320 --> 00:14:13,160
+sconosciuto, perché L è un linguaggio
+
+274
+00:14:13,160 --> 00:14:16,440
+generico. Stiamo trasformando un'istanza
+
+275
+00:14:16,440 --> 00:14:19,639
+W di un linguaggio che non sappiamo che
+
+276
+00:14:19,639 --> 00:14:22,480
+cos'è, eh perché può essere qualsiasi
+
+277
+00:14:22,480 --> 00:14:24,600
+roba di NP, può essere pure un
+
+278
+00:14:24,600 --> 00:14:26,320
+linguaggio di P, non lo sappiamo che
+
+279
+00:14:26,320 --> 00:14:29,519
+cos'è. Ok? Dobbiamo trasformare però
+
+280
+00:14:29,519 --> 00:14:34,040
+questa istanza w di l in maniera sensata
+
+281
+00:14:34,040 --> 00:14:36,079
+in una formula file di W che sia
+
+282
+00:14:36,079 --> 00:14:40,040
+soddisfa se è solo se W appartiene al
+
+283
+00:14:40,040 --> 00:14:45,880
+linguaggio L e DL non sappiamo niente.
+
+284
+00:14:45,880 --> 00:14:48,880
+Ok? Questo è il problema di questa
+
+285
+00:14:48,880 --> 00:14:51,199
+trasformazione. Ok?
+
+286
+00:14:51,199 --> 00:14:52,920
+Allora, quello che noi ci proponiamo di
+
+287
+00:14:52,920 --> 00:14:59,079
+far vedere è che se L è un qualsiasi
+
+288
+00:14:59,079 --> 00:15:04,959
+linguaggio di NP, allora esiste
+
+289
+00:15:04,959 --> 00:15:08,240
+una riduzione. Ok?
+
+290
+00:15:08,240 --> 00:15:11,279
+Non saremo in grado di dare il dettaglio
+
+291
+00:15:11,279 --> 00:15:15,279
+della riduzione perché non sappiamo chi
+
+292
+00:15:15,279 --> 00:15:18,920
+è L, però siamo in grado di mostrare che
+
+293
+00:15:18,920 --> 00:15:22,320
+una tale riduzione c'è. Ok? Questo è il
+
+294
+00:15:22,320 --> 00:15:24,480
+nostro principio.
+
+295
+00:15:24,480 --> 00:15:27,639
+Ripeto, siccome noi non sappiamo chi è
+
+296
+00:15:27,639 --> 00:15:29,560
+L,
+
+297
+00:15:29,560 --> 00:15:32,440
+noi non possiamo
+
+298
+00:15:32,440 --> 00:15:36,160
+dare una riduzione precisa.
+
+299
+00:15:36,160 --> 00:15:38,959
+daremo uno scheletro di riduzione
+
+300
+00:15:38,959 --> 00:15:41,959
+abbastanza preciso che ci mostra che
+
+301
+00:15:41,959 --> 00:15:45,440
+qualsiasi L, basta che LP,
+
+302
+00:15:45,440 --> 00:15:48,560
+allora L si può ridurre a SAT. Ok?
+
+303
+00:15:48,560 --> 00:15:50,720
+Questa è l'idea. Noi L non lo
+
+304
+00:15:50,720 --> 00:15:53,199
+conosciamo, quindi una riduzione esatta
+
+305
+00:15:53,199 --> 00:15:55,199
+non la possiamo fornire. Quello che
+
+306
+00:15:55,199 --> 00:15:57,759
+possiamo fornire però è uno scheletro di
+
+307
+00:15:57,759 --> 00:15:59,519
+riduzione
+
+308
+00:15:59,519 --> 00:16:02,639
+abbastanza preciso che ci permetta di
+
+309
+00:16:02,639 --> 00:16:05,279
+trasformare una qualsiasi istanza di un
+
+310
+00:16:05,279 --> 00:16:08,519
+qualsiasi linguaggio in NP verso SAT.
+
+311
+00:16:08,519 --> 00:16:10,600
+Ok? Questa è l'idea. Questo è quello che
+
+312
+00:16:10,600 --> 00:16:13,720
+sei inventato tu. Ok?
+
+313
+00:16:13,720 --> 00:16:15,480
+Allora,
+
+314
+00:16:15,480 --> 00:16:18,839
+per riuscire a vedere
+
+315
+00:16:18,839 --> 00:16:21,160
+come fare,
+
+316
+00:16:21,160 --> 00:16:24,319
+ragioniamo prima su una cosa. Adesso il
+
+317
+00:16:24,319 --> 00:16:26,639
+formato di questa dimostrazione che vi
+
+318
+00:16:26,639 --> 00:16:30,240
+do è un mix di varie dimostrazioni che
+
+319
+00:16:30,240 --> 00:16:33,120
+ho visto in giro, ok? Non è né quella
+
+320
+00:16:33,120 --> 00:16:35,319
+che trovate su Opcft né quella che
+
+321
+00:16:35,319 --> 00:16:38,000
+trovate sugli appunti di Calauti.
+
+322
+00:16:38,000 --> 00:16:42,319
+È un mix di quella roba che ho fatto io
+
+323
+00:16:42,319 --> 00:16:44,800
+per semplificarla. Ok? Cioè è ancora
+
+324
+00:16:44,800 --> 00:16:46,959
+precisa. Non sto togliendo rigore alla
+
+325
+00:16:46,959 --> 00:16:49,800
+dimostrazione, però l'ho rimodulata,
+
+326
+00:16:49,800 --> 00:16:52,160
+ispirata dalla riduzione che appare sul
+
+327
+00:16:52,160 --> 00:16:55,360
+libro di Gerin Johnson, rimodulata in
+
+328
+00:16:55,360 --> 00:16:57,160
+quel modo in maniera tale da rendere
+
+329
+00:16:57,160 --> 00:17:00,199
+digeribile. Ok? Allora, cercherò di
+
+330
+00:17:00,199 --> 00:17:02,600
+guidarvi in maniera tale che capiamo
+
+331
+00:17:02,600 --> 00:17:04,880
+come cavolo si fa sta cosa, perché se
+
+332
+00:17:04,880 --> 00:17:07,000
+guardate per esempio sull'opcocroft è
+
+333
+00:17:07,000 --> 00:17:09,520
+una cosa impossibile da cioè ci si deve
+
+334
+00:17:09,520 --> 00:17:11,439
+mettere cercare di capire. Io ho cercato
+
+335
+00:17:11,439 --> 00:17:14,319
+di ristrutturarvela in maniera
+
+336
+00:17:14,319 --> 00:17:16,720
+comprensibile, ok? In maniera intuibile,
+
+337
+00:17:16,720 --> 00:17:19,679
+che c'è almeno un'intuizione dietro,
+
+338
+00:17:19,679 --> 00:17:22,559
+ok? Allora, cerco di guidarvi in maniera
+
+339
+00:17:22,559 --> 00:17:24,959
+tale da avere il razionale che ci sta
+
+340
+00:17:24,959 --> 00:17:27,039
+dietro, cioè perché ci inviamo questo e
+
+341
+00:17:27,039 --> 00:17:29,840
+non altro. Ok?
+
+342
+00:17:29,840 --> 00:17:32,760
+Quindi noi dobbiamo ridurre, noi
+
+343
+00:17:32,760 --> 00:17:35,039
+dobbiamo mostrare che esiste una
+
+344
+00:17:35,039 --> 00:17:38,679
+riduzione da L sconosciuto verso SAT. ci
+
+345
+00:17:38,679 --> 00:17:41,039
+dobbiamo inventare qualcosa. Quindi noi
+
+346
+00:17:41,039 --> 00:17:43,120
+di questo L non sappiamo assolutamente
+
+347
+00:17:43,120 --> 00:17:45,640
+niente, quindi non possiamo fidamento
+
+348
+00:17:45,640 --> 00:17:47,720
+che stiamo trasformando grafica, non
+
+349
+00:17:47,720 --> 00:17:49,600
+possiamo assumere che stiamo
+
+350
+00:17:49,600 --> 00:17:53,080
+trasformando altre formule o giochi o
+
+351
+00:17:53,080 --> 00:17:55,280
+qualsiasi altra cosa vi venga in mente.
+
+352
+00:17:55,280 --> 00:17:56,880
+Non possiamo fare nessuna di queste
+
+353
+00:17:56,880 --> 00:17:59,520
+assunzioni, ma noi possiamo fare
+
+354
+00:17:59,520 --> 00:18:04,679
+un'assunzione su L che è
+
+355
+00:18:06,760 --> 00:18:10,360
+esiste una macchina.
+
+356
+00:18:11,480 --> 00:18:14,000
+Esattamente. L'unica cosa che siamo in
+
+357
+00:18:14,000 --> 00:18:15,960
+grado di dire di L non sappiamo dire
+
+358
+00:18:15,960 --> 00:18:18,760
+niente, sappiamo dire una cosa sola per
+
+359
+00:18:18,760 --> 00:18:21,360
+il fatto che L è assunto appartenere ad
+
+360
+00:18:21,360 --> 00:18:25,520
+NP. esiste,
+
+361
+00:18:26,159 --> 00:18:28,919
+esiste una macchina. Allora, quindi
+
+362
+00:18:28,919 --> 00:18:31,919
+siccome
+
+363
+00:18:32,200 --> 00:18:38,200
+L appartiene a NP, esiste
+
+364
+00:18:38,280 --> 00:18:42,000
+una macchina
+
+365
+00:18:43,039 --> 00:18:46,440
+non deterministica
+
+366
+00:18:51,919 --> 00:18:54,919
+M
+
+367
+00:18:56,039 --> 00:18:59,960
+che in tempo
+
+368
+00:18:59,960 --> 00:19:02,960
+polinomiale
+
+369
+00:19:06,760 --> 00:19:08,919
+decide
+
+370
+00:19:08,919 --> 00:19:12,320
+L. Ok? Questa è l'unica cosa che siamo
+
+371
+00:19:12,320 --> 00:19:14,840
+in grado di dire su L.
+
+372
+00:19:14,840 --> 00:19:18,120
+L è un linguaggio generico di NP. Da ciò
+
+373
+00:19:18,120 --> 00:19:19,440
+esiste una macchina di Touring non
+
+374
+00:19:19,440 --> 00:19:21,400
+deterministica che in tempo polinomiale
+
+375
+00:19:21,400 --> 00:19:25,320
+lo decide. Ok?
+
+376
+00:19:25,320 --> 00:19:28,320
+Assumiamo
+
+377
+00:19:29,320 --> 00:19:34,000
+che il running time
+
+378
+00:19:36,720 --> 00:19:39,960
+dim sia
+
+379
+00:19:39,960 --> 00:19:43,960
+PDN, ok? Sia polinomio qua, ok? Questa è
+
+380
+00:19:43,960 --> 00:19:46,000
+un'assunzione su running time. Sappiamo
+
+381
+00:19:46,000 --> 00:19:47,679
+che deve essere un polinomio, lo
+
+382
+00:19:47,679 --> 00:19:49,240
+chiamiamo
+
+383
+00:19:49,240 --> 00:19:53,360
+PDN, ok?
+
+384
+00:19:54,600 --> 00:19:58,480
+Alri. Allora,
+
+385
+00:20:00,799 --> 00:20:05,520
+siccome noi sappiamo che L
+
+386
+00:20:05,520 --> 00:20:08,440
+è un linguaggio in NP, L può essere
+
+387
+00:20:08,440 --> 00:20:11,400
+qualsiasi ed è un linguaggio in NP e per
+
+388
+00:20:11,400 --> 00:20:12,720
+questa ragione esiste una macchina di
+
+389
+00:20:12,720 --> 00:20:14,760
+Touring non deterministica che lo decide
+
+390
+00:20:14,760 --> 00:20:17,080
+in tempo polinomiale,
+
+391
+00:20:17,080 --> 00:20:20,600
+la nostra riduzione si fonderà
+
+392
+00:20:20,600 --> 00:20:24,559
+esattamente su questo
+
+393
+00:20:24,559 --> 00:20:26,240
+perché che è un tipo di riduzione che a
+
+394
+00:20:26,240 --> 00:20:28,080
+questo punto può valere per qualsiasi
+
+395
+00:20:28,080 --> 00:20:31,520
+linguaggio L. La riduzione
+
+396
+00:20:31,520 --> 00:20:34,280
+mirerà, questa è l'intuizione, poi
+
+397
+00:20:34,280 --> 00:20:37,400
+vediamo il dettaglio di come si faccia.
+
+398
+00:20:37,400 --> 00:20:42,520
+La nostra riduzione mirerà a trasformare
+
+399
+00:20:42,520 --> 00:20:45,159
+W
+
+400
+00:20:45,159 --> 00:20:47,840
+perché vi ricordo che F prende in input
+
+401
+00:20:47,840 --> 00:20:51,000
+w e tira fuori file di W. Quindi deve
+
+402
+00:20:51,000 --> 00:20:53,679
+prendere W in input, deve sputare fuori
+
+403
+00:20:53,679 --> 00:20:56,120
+una formula buleana. Questa formula
+
+404
+00:20:56,120 --> 00:21:00,520
+buleana fai di W che caratteristiche ha?
+
+405
+00:21:00,520 --> 00:21:04,320
+Avrà la caratteristica di simulare
+
+406
+00:21:04,320 --> 00:21:09,320
+il comportamento della macchina M su W
+
+407
+00:21:09,320 --> 00:21:13,360
+e la formula sarà soddisfacbile
+
+408
+00:21:13,360 --> 00:21:17,000
+se solo se la macchina M accetta W.
+
+409
+00:21:17,000 --> 00:21:20,559
+Questa è l'idea. Ok?
+
+410
+00:21:20,559 --> 00:21:23,640
+Recup. Siccome L è un linguaggio
+
+411
+00:21:23,640 --> 00:21:26,159
+sconosciuto e non possiamo fare una
+
+412
+00:21:26,159 --> 00:21:28,440
+riduzione diretta perché non sappiamo
+
+413
+00:21:28,440 --> 00:21:30,880
+che faccia abbiano le istanze di L, se
+
+414
+00:21:30,880 --> 00:21:33,640
+non che siano sequenze di simboli, noi
+
+415
+00:21:33,640 --> 00:21:34,919
+dobbiamo sfruttare l'unica
+
+416
+00:21:34,919 --> 00:21:37,159
+caratteristica che sappiamo di L e cioè
+
+417
+00:21:37,159 --> 00:21:39,840
+la sua appartenenza alla classe NP.
+
+418
+00:21:39,840 --> 00:21:42,840
+Poiché appartiene a NP, per definizione
+
+419
+00:21:42,840 --> 00:21:44,960
+L ammette una macchina non
+
+420
+00:21:44,960 --> 00:21:48,080
+deterministica M, che decide L in tempo
+
+421
+00:21:48,080 --> 00:21:50,760
+polinomiale e lo chiamiamo PDM questo
+
+422
+00:21:50,760 --> 00:21:54,600
+PDN, questo polinomio, ok?
+
+423
+00:21:54,600 --> 00:21:58,039
+La riduzione può fondarsi su questa
+
+424
+00:21:58,039 --> 00:22:00,279
+unica cosa che sappiamo di L perché
+
+425
+00:22:00,279 --> 00:22:02,600
+altro di Lppiamo.
+
+426
+00:22:02,600 --> 00:22:05,880
+Ok? Quindi cosa fa questa funzione di
+
+427
+00:22:05,880 --> 00:22:08,240
+riduzione fare?
+
+428
+00:22:08,240 --> 00:22:11,039
+prende m e
+
+429
+00:22:11,039 --> 00:22:13,880
+prende w
+
+430
+00:22:13,880 --> 00:22:18,480
+e la trasforma in una formula
+
+431
+00:22:18,480 --> 00:22:20,679
+che mima
+
+432
+00:22:20,679 --> 00:22:26,840
+il comportamento della macchina M su w.
+
+433
+00:22:26,840 --> 00:22:31,240
+Ok? Questo la formula F di W sarà una
+
+434
+00:22:31,240 --> 00:22:34,640
+formula che mima il comportamento della
+
+435
+00:22:34,640 --> 00:22:38,400
+macchina M su W e la formula F di W sarà
+
+436
+00:22:38,400 --> 00:22:42,080
+soddisfacibile se la macchina M accetta
+
+437
+00:22:42,080 --> 00:22:44,840
+B. Sarà insoddisfacibile se la macchina
+
+438
+00:22:44,840 --> 00:22:47,640
+M non accetta W. Ok? È chiaro il
+
+439
+00:22:47,640 --> 00:22:50,159
+principio? Adesso questa riduzione che
+
+440
+00:22:50,159 --> 00:22:53,039
+vediamo è una riduzione generica
+
+441
+00:22:53,039 --> 00:22:56,000
+perché è parametrica nella nella
+
+442
+00:22:56,000 --> 00:22:58,320
+macchina M. Ok? Perché noi dobbiamo
+
+443
+00:22:58,320 --> 00:23:00,279
+trasformare in file di W il
+
+444
+00:23:00,279 --> 00:23:04,200
+funzionamento di M su w. Quindi
+
+445
+00:23:04,200 --> 00:23:09,640
+la funzione f in input la macchina M. La
+
+446
+00:23:09,640 --> 00:23:14,080
+funzione f è progettata su M. Prende in
+
+447
+00:23:14,080 --> 00:23:19,000
+input w e sputa fuori una funzione
+
+448
+00:23:19,000 --> 00:23:22,159
+buleana fai di W che mima il
+
+449
+00:23:22,159 --> 00:23:26,760
+comportamento di m su w. Ma m in input
+
+450
+00:23:26,760 --> 00:23:28,960
+di f, è chiaro? Perché f deve
+
+451
+00:23:28,960 --> 00:23:32,120
+trasformare istanze di L in istanze di
+
+452
+00:23:32,120 --> 00:23:36,760
+sat e le istanze di L sono
+
+453
+00:23:36,840 --> 00:23:41,840
+string. Ok? Quindi F non può prendere
+
+454
+00:23:41,840 --> 00:23:46,200
+in input M. M è una conoscenza che F ha,
+
+455
+00:23:46,200 --> 00:23:49,080
+ok? È una conoscenza che F sfrutta per
+
+456
+00:23:49,080 --> 00:23:50,960
+sputare fuori i file di doppia D.
+
+457
+00:23:50,960 --> 00:23:52,320
+Chiaro?
+
+458
+00:23:52,320 --> 00:23:54,520
+Alri,
+
+459
+00:23:54,520 --> 00:23:57,480
+quindi sostanzialmente
+
+460
+00:23:57,480 --> 00:24:01,520
+quello che dovremo fare
+
+461
+00:24:01,520 --> 00:24:04,520
+è
+
+462
+00:24:04,760 --> 00:24:09,760
+c'abbiamo spazio più o meno 1 2 3 4
+
+463
+00:24:09,760 --> 00:24:11,440
+Facciamolo qua. Quello che dovremmo
+
+464
+00:24:11,440 --> 00:24:14,440
+fare, quindi, è mostrare che questa
+
+465
+00:24:14,440 --> 00:24:16,840
+funzione
+
+466
+00:24:16,840 --> 00:24:20,600
+prende in input solo w V.
+
+467
+00:24:20,600 --> 00:24:25,640
+Questa funzione si basa su M, però come
+
+468
+00:24:25,640 --> 00:24:28,120
+potete notare M non fa parte dell'input,
+
+469
+00:24:28,120 --> 00:24:31,679
+f è basata su M. Questa funzione f
+
+470
+00:24:31,679 --> 00:24:36,039
+prende w, sputa fuori file di w. Adesso
+
+471
+00:24:36,039 --> 00:24:38,919
+s la funzione che noi dobbiamo tirare
+
+472
+00:24:38,919 --> 00:24:41,840
+fuori è una funzione in CNF, quindi non
+
+473
+00:24:41,840 --> 00:24:43,559
+deve essere una funzione buleana
+
+474
+00:24:43,559 --> 00:24:45,279
+qualsiasi.
+
+475
+00:24:45,279 --> 00:24:49,039
+Quindi, per esempio, sull'oproftano
+
+476
+00:24:49,039 --> 00:24:51,000
+fuori una funzione buleana qualsiasi e
+
+477
+00:24:51,000 --> 00:24:52,679
+poi fanno vedere che si può trasformare
+
+478
+00:24:52,679 --> 00:24:54,919
+in CNF e quello secondo me è un po' più
+
+479
+00:24:54,919 --> 00:24:57,279
+intricato. Noi non lo vediamo. Si
+
+480
+00:24:57,279 --> 00:24:59,440
+possono trasformare, però questo
+
+481
+00:24:59,440 --> 00:25:01,399
+dettaglio non lo vediamo. Noi ci
+
+482
+00:25:01,399 --> 00:25:03,760
+inventiamo una formula che si ha
+
+483
+00:25:03,760 --> 00:25:06,399
+direttamente in CNF, ok? in maniera tale
+
+484
+00:25:06,399 --> 00:25:08,360
+che non ci dobbiamo curare del fatto se
+
+485
+00:25:08,360 --> 00:25:11,919
+si possa trasformare o meno. Però per
+
+486
+00:25:11,919 --> 00:25:14,120
+semplificarci il compito a noi, siccome
+
+487
+00:25:14,120 --> 00:25:16,919
+le formule in CNF hanno una struttura
+
+488
+00:25:16,919 --> 00:25:19,559
+abbastanza limitata, ci servono un po'
+
+489
+00:25:19,559 --> 00:25:21,760
+di regole di trasformazione di funzioni
+
+490
+00:25:21,760 --> 00:25:23,760
+buleane, in maniera tale che sappiamo
+
+491
+00:25:23,760 --> 00:25:26,520
+che quel tipo di funzione può essere
+
+492
+00:25:26,520 --> 00:25:29,039
+facilmente trasformata in CNF. Dopodiché
+
+493
+00:25:29,039 --> 00:25:31,240
+noi usiamo una sintassi un po' più ricca
+
+494
+00:25:31,240 --> 00:25:34,760
+in maniera tale che non usciamo pazzi.
+
+495
+00:25:34,760 --> 00:25:37,840
+Ok? Allora, noi sfruttiamo una serie di
+
+496
+00:25:37,840 --> 00:25:39,679
+proprietà
+
+497
+00:25:39,679 --> 00:25:42,000
+delle formule buleane sulla base delle
+
+498
+00:25:42,000 --> 00:25:45,159
+quali poi costruiamo in questa funzione
+
+499
+00:25:45,159 --> 00:25:47,760
+FM. Ok?
+
+500
+00:25:47,760 --> 00:25:50,159
+Distributività ci servirà.
+
+501
+00:25:50,159 --> 00:25:51,340
+distributività.
+
+502
+00:25:51,340 --> 00:25:54,460
+[Musica]
+
+503
+00:25:54,960 --> 00:25:58,760
+Per esempio, se abbiamo A1
+
+504
+00:25:58,760 --> 00:26:03,360
+and bla bla bla and
+
+505
+00:26:03,360 --> 00:26:06,360
+am
+
+506
+00:26:17,760 --> 00:26:21,640
+Where is it? Questo qua è N.
+
+507
+00:26:22,960 --> 00:26:26,600
+Allora, questa cosa è equivalente a
+
+508
+00:26:26,600 --> 00:26:29,159
+basta fare tutte le possibili coppie e
+
+509
+00:26:29,159 --> 00:26:32,159
+riscriviamo la cosa, ok? Quindi questa
+
+510
+00:26:32,159 --> 00:26:36,200
+cosa si ritrasforma in per esempio A1 or
+
+511
+00:26:36,200 --> 00:26:38,679
+B1
+
+512
+00:26:38,679 --> 00:26:42,799
+and A1 or B2
+
+513
+00:26:42,799 --> 00:26:47,440
+and bla bla bla and
+
+514
+00:26:47,440 --> 00:26:50,440
+a
+
+515
+00:26:50,559 --> 00:26:53,320
+1 or
+
+516
+00:26:53,320 --> 00:26:55,440
+BM
+
+517
+00:26:55,440 --> 00:27:00,799
+and A2 or B1 bla bla bla fino
+
+518
+00:27:00,799 --> 00:27:06,640
+and a n or bm.
+
+519
+00:27:06,919 --> 00:27:08,320
+Vi è chiara questa trasformazione? La
+
+520
+00:27:08,320 --> 00:27:10,000
+trasformazione, se noi abbiamo l'ord di
+
+521
+00:27:10,000 --> 00:27:12,919
+quegli elementi, l'endgli elementi in or
+
+522
+00:27:12,919 --> 00:27:14,559
+a quegli altri, si prendono tutte le
+
+523
+00:27:14,559 --> 00:27:17,120
+coppie e si ritrasforma in questo modo.
+
+524
+00:27:17,120 --> 00:27:20,399
+Come potete notare questa formula qua è
+
+525
+00:27:20,399 --> 00:27:28,039
+in CNF, ok? Poi ci serve de Morgan.
+
+526
+00:27:31,880 --> 00:27:34,720
+Per the Morgan utilizzeremo questa not
+
+527
+00:27:34,720 --> 00:27:40,919
+a1 and bla bla bla and A n.
+
+528
+00:27:40,919 --> 00:27:45,120
+Questo è equivalente a not a1
+
+529
+00:27:45,120 --> 00:27:54,320
+or not A2 or bla bla bla or not A n.
+
+530
+00:27:55,760 --> 00:28:00,360
+Ok. Poi proprietà delle implicazioni.
+
+531
+00:28:00,360 --> 00:28:04,000
+F implica psi
+
+532
+00:28:04,000 --> 00:28:06,360
+è equivalente dove f e psi possono
+
+533
+00:28:06,360 --> 00:28:08,760
+essere formule buleane qualsiasi. Questa
+
+534
+00:28:08,760 --> 00:28:12,039
+è not
+
+535
+00:28:12,039 --> 00:28:15,039
+psiché
+
+536
+00:28:18,080 --> 00:28:21,120
+noi scriveremo tutte le nostre formule
+
+537
+00:28:21,120 --> 00:28:22,960
+in forma implicativa, in maniera tale
+
+538
+00:28:22,960 --> 00:28:26,440
+che siano più facili da leggere. Ok?
+
+539
+00:28:26,440 --> 00:28:30,960
+E poi abbiamo che altra formula è f
+
+540
+00:28:30,960 --> 00:28:36,080
+implica psi 1 and psai 2. Questa cosa è
+
+541
+00:28:36,080 --> 00:28:43,240
+equivalente a f implica psi di 1 and
+
+542
+00:28:43,240 --> 00:28:48,200
+implica psi di 2.
+
+543
+00:28:48,200 --> 00:28:51,200
+Ok?
+
+544
+00:28:52,320 --> 00:28:56,120
+Facciamo un piccolo esempio
+
+545
+00:28:56,760 --> 00:29:00,480
+di riscrittura, così poi ci possiamo
+
+546
+00:29:00,480 --> 00:29:03,720
+concentrare su
+
+547
+00:29:03,720 --> 00:29:06,720
+la riduzione. Ok? Supponiamo di avere ad
+
+548
+00:29:06,720 --> 00:29:10,399
+esempio A and B
+
+549
+00:29:10,399 --> 00:29:12,440
+implica
+
+550
+00:29:12,440 --> 00:29:18,880
+C and D or E and F.
+
+551
+00:29:18,880 --> 00:29:21,880
+Ok.
+
+552
+00:29:22,200 --> 00:29:24,600
+Allora, che cosa abbiamo? Possiamo
+
+553
+00:29:24,600 --> 00:29:27,120
+applicare la distributività qua sopra.
+
+554
+00:29:27,120 --> 00:29:30,640
+Quindi, per esempio, avremo A and B
+
+555
+00:29:30,640 --> 00:29:42,480
+implica C o E and C or F and D or E
+
+556
+00:29:42,480 --> 00:29:44,200
+and
+
+557
+00:29:44,200 --> 00:29:48,399
+D or F.
+
+558
+00:29:48,480 --> 00:29:51,360
+Questa cosa qua è equivalente, possiamo
+
+559
+00:29:51,360 --> 00:29:53,960
+applicare la distributività sulla
+
+560
+00:29:53,960 --> 00:29:58,399
+implicazione e quindi avremo A and B
+
+561
+00:29:58,399 --> 00:30:03,200
+implica CR E.
+
+562
+00:30:03,200 --> 00:30:12,240
+And a and B implica C or F and A and B
+
+563
+00:30:12,240 --> 00:30:19,840
+implica D o E and A and B
+
+564
+00:30:19,840 --> 00:30:23,159
+where is it?
+
+565
+00:30:23,399 --> 00:30:28,679
+A and B implica D or F. Qua poi si può
+
+566
+00:30:28,679 --> 00:30:31,279
+per esempio riapplicare
+
+567
+00:30:31,279 --> 00:30:34,320
+l'altra storia e quindi avremo che cosa?
+
+568
+00:30:34,320 --> 00:30:43,279
+Not a or not B or C or E. And not A or
+
+569
+00:30:43,279 --> 00:30:50,720
+not B or C or F and not A or not B or D
+
+570
+00:30:50,720 --> 00:30:58,919
+or E. and not A or not B or D or F. Ok?
+
+571
+00:30:58,919 --> 00:31:00,039
+Quindi questa qua è tutta una
+
+572
+00:31:00,039 --> 00:31:01,559
+trasformazione, ad esempio, che ci
+
+573
+00:31:01,559 --> 00:31:04,080
+permette di poter listare le nostre
+
+574
+00:31:04,080 --> 00:31:07,720
+funzioni come implicazioni e quindi ci
+
+575
+00:31:07,720 --> 00:31:10,399
+occuperemo di trascrivere
+
+576
+00:31:10,399 --> 00:31:13,279
+la riduzione come implicazione. Ok?
+
+577
+00:31:13,279 --> 00:31:17,080
+Allora, abbiamo detto che dobbiamo
+
+578
+00:31:17,080 --> 00:31:21,000
+trasformare, lo riscriviamo qua, L va
+
+579
+00:31:21,000 --> 00:31:24,840
+ridotto polinomialmente a SAT. Abbiamo
+
+580
+00:31:24,840 --> 00:31:30,279
+la stringa W che va trasformata in file
+
+581
+00:31:30,279 --> 00:31:34,279
+di W tramite F. E quindi noi dobbiamo
+
+582
+00:31:34,279 --> 00:31:37,679
+andare a
+
+583
+00:31:37,679 --> 00:31:39,960
+trasformare, quindi andremo a
+
+584
+00:31:39,960 --> 00:31:42,799
+trasformare la stringa W in una formula
+
+585
+00:31:42,799 --> 00:31:45,480
+F di W
+
+586
+00:31:45,480 --> 00:31:49,320
+in cui noi andremo a mimare il
+
+587
+00:31:49,320 --> 00:31:51,480
+funzionamento della macchina M su W.
+
+588
+00:31:51,480 --> 00:31:53,320
+Quando diciamo che andiamo a mimare il
+
+589
+00:31:53,320 --> 00:31:55,440
+funzionamento della macchina M su W,
+
+590
+00:31:55,440 --> 00:31:58,480
+vuol dire che dentro file di W ci
+
+591
+00:31:58,480 --> 00:32:01,919
+saranno delle
+
+592
+00:32:01,919 --> 00:32:04,519
+proposizioni buleane, delle variabili
+
+593
+00:32:04,519 --> 00:32:08,519
+proposizionali che ci dicono cosa sta
+
+594
+00:32:08,519 --> 00:32:12,720
+succedendo nella computazione di m su w.
+
+595
+00:32:12,720 --> 00:32:15,960
+Ok? Quindi la formula deve mimare il
+
+596
+00:32:15,960 --> 00:32:19,279
+funzionamento di m su w. Come fa una
+
+597
+00:32:19,279 --> 00:32:21,159
+formula buleana a mimare il
+
+598
+00:32:21,159 --> 00:32:22,760
+funzionamento di una macchina su una
+
+599
+00:32:22,760 --> 00:32:26,039
+stringa? Sarà una formula che contienerà
+
+600
+00:32:26,039 --> 00:32:28,840
+conterrà delle
+
+601
+00:32:28,840 --> 00:32:31,559
+variabili proposizionali buleane che
+
+602
+00:32:31,559 --> 00:32:33,960
+indipendenza, se sono vero o falso, ci
+
+603
+00:32:33,960 --> 00:32:36,440
+diranno la macchina in questo stato o la
+
+604
+00:32:36,440 --> 00:32:38,559
+macchina in quest'altro stato, il
+
+605
+00:32:38,559 --> 00:32:40,720
+simbolo sul nastro in questa posizione,
+
+606
+00:32:40,720 --> 00:32:43,639
+questo qua o la testina sta su questa
+
+607
+00:32:43,639 --> 00:32:47,159
+cella qui. Ok? In questo modo noi saremo
+
+608
+00:32:47,159 --> 00:32:50,679
+in grado di mimare il funzionamento
+
+609
+00:32:50,679 --> 00:32:53,559
+della macchina, ok? Quindi la formula
+
+610
+00:32:53,559 --> 00:32:56,159
+files avrà tutta una serie di
+
+611
+00:32:56,159 --> 00:32:59,480
+sottoformule che ci diranno pezzetto per
+
+612
+00:32:59,480 --> 00:33:02,639
+pezzetto cosa sta facendo la macchina
+
+613
+00:33:02,639 --> 00:33:06,760
+Mentre processa la stringa W. Ok?
+
+614
+00:33:06,760 --> 00:33:11,039
+i risultati, cioè le variabili che al
+
+615
+00:33:11,039 --> 00:33:13,039
+nostro interno,
+
+616
+00:33:13,039 --> 00:33:16,639
+all'interno di f di w saranno queste.
+
+617
+00:33:16,639 --> 00:33:19,840
+Però prima di far questo ci concentriamo
+
+618
+00:33:19,840 --> 00:33:22,320
+un secondo sul funzionamento della
+
+619
+00:33:22,320 --> 00:33:25,399
+macchina, ok? Allora, la macchina M è
+
+620
+00:33:25,399 --> 00:33:28,000
+una macchina che lavora
+
+621
+00:33:28,000 --> 00:33:32,559
+in tempo polinomiale. Ok?
+
+622
+00:33:32,559 --> 00:33:35,760
+Quindi avremo che parte da un ID0, può
+
+623
+00:33:35,760 --> 00:33:41,000
+andare verso un ID1 o un ID2,
+
+624
+00:33:41,000 --> 00:33:43,000
+essendo non deterministica, eccetera.
+
+625
+00:33:43,000 --> 00:33:47,200
+Qua poi avremo ID3,
+
+626
+00:33:47,440 --> 00:33:50,440
+ID4,
+
+627
+00:33:50,679 --> 00:33:53,600
+ID5,
+
+628
+00:33:53,600 --> 00:33:56,960
+ID6. Ok?
+
+629
+00:33:56,960 --> 00:33:58,760
+In linea di principio, perché l'ho
+
+630
+00:33:58,760 --> 00:34:00,760
+disegnato così? Ho disegnato così il
+
+631
+00:34:00,760 --> 00:34:02,600
+computation brand, il computation 3
+
+632
+00:34:02,600 --> 00:34:03,919
+della macchina perché in linea di
+
+633
+00:34:03,919 --> 00:34:05,960
+principio i rami di computazione di
+
+634
+00:34:05,960 --> 00:34:07,919
+questa macchina possono avere lunghezza
+
+635
+00:34:07,919 --> 00:34:11,200
+differente, cioè per alcune scelte la
+
+636
+00:34:11,200 --> 00:34:13,320
+macchina potrebbe impiegare più tempo
+
+637
+00:34:13,320 --> 00:34:15,760
+che non su altre scelte. L'unico vincolo
+
+638
+00:34:15,760 --> 00:34:18,560
+che sappiamo è che la macchina ci mette
+
+639
+00:34:18,560 --> 00:34:23,639
+al più P di n passi, ok? Dove n è la
+
+640
+00:34:23,639 --> 00:34:27,919
+lunghezza della stringa w. Ok?
+
+641
+00:34:27,919 --> 00:34:31,320
+Una cosa che noi faremo, quindi, è
+
+642
+00:34:31,320 --> 00:34:34,240
+questo, faremo una serie di assunzioni
+
+643
+00:34:34,240 --> 00:34:37,320
+su questa macchina in maniera tale da
+
+644
+00:34:37,320 --> 00:34:40,639
+semplificare la traduzione del suo
+
+645
+00:34:40,639 --> 00:34:42,839
+funzionamento all'interno della formula
+
+646
+00:34:42,839 --> 00:34:45,040
+F di W.
+
+647
+00:34:45,040 --> 00:34:47,720
+Le assunzioni che faremo sono: "La
+
+648
+00:34:47,720 --> 00:34:51,280
+macchina non scrive mai bianco."
+
+649
+00:34:51,280 --> 00:34:54,560
+Questo si può facilmente assumere che
+
+650
+00:34:54,560 --> 00:34:56,040
+basta che la macchina usa un altro
+
+651
+00:34:56,040 --> 00:35:00,359
+simbolo e siamo tutti contenti.
+
+652
+00:35:00,359 --> 00:35:04,480
+La macchina ha un nastro semiinfinito,
+
+653
+00:35:04,480 --> 00:35:06,280
+che significa che il nastro ha un punto
+
+654
+00:35:06,280 --> 00:35:09,640
+di partenza, cioè c'è la cella numero
+
+655
+00:35:09,640 --> 00:35:12,040
+zero e a sinistra di quello la macchina
+
+656
+00:35:12,040 --> 00:35:14,480
+non sposta la testina. Ok? C'è una
+
+657
+00:35:14,480 --> 00:35:17,400
+dimostrazione sul testo di Opcroft è
+
+658
+00:35:17,400 --> 00:35:19,359
+riportata in cui si fa vedere che
+
+659
+00:35:19,359 --> 00:35:21,160
+qualsiasi
+
+660
+00:35:21,160 --> 00:35:23,839
+macchina può essere trasformata in una
+
+661
+00:35:23,839 --> 00:35:25,359
+macchina in cui il nastro è
+
+662
+00:35:25,359 --> 00:35:28,000
+semiinfinito. Quindi è un'assunzione che
+
+663
+00:35:28,000 --> 00:35:31,040
+possiamo fare. Questo ci semplificherà
+
+664
+00:35:31,040 --> 00:35:34,000
+un po' le cose. Perché ci conviene un
+
+665
+00:35:34,000 --> 00:35:36,040
+nastro semiinfinito rispetto a un nastro
+
+666
+00:35:36,040 --> 00:35:37,800
+infinito? Perché così sappiamo che
+
+667
+00:35:37,800 --> 00:35:39,839
+questo nastro ha la cella numero 0, la
+
+668
+00:35:39,839 --> 00:35:42,320
+cella numero 1, la cella numero 2, 3 4 e
+
+669
+00:35:42,320 --> 00:35:44,599
+5 e non dobbiamo gestirci la parte
+
+670
+00:35:44,599 --> 00:35:46,720
+negativa. Ok? Ecco perché facciamo
+
+671
+00:35:46,720 --> 00:35:50,079
+questa assunzione. L'altra assunzione di
+
+672
+00:35:50,079 --> 00:35:53,160
+semplificazione è che
+
+673
+00:35:53,160 --> 00:35:54,880
+però l'andremo a includere nella
+
+674
+00:35:54,880 --> 00:35:57,800
+riduzione è che questa macchina
+
+675
+00:35:57,800 --> 00:36:01,440
+ci mette esattamente PDN passi su tutti
+
+676
+00:36:01,440 --> 00:36:06,720
+i rami, ok? cioè che questo
+
+677
+00:36:06,720 --> 00:36:10,119
+albero qua
+
+678
+00:36:10,160 --> 00:36:13,160
+ha
+
+679
+00:36:16,640 --> 00:36:19,560
+delle ID extra
+
+680
+00:36:19,560 --> 00:36:22,200
+in maniera tale che tutti i branch
+
+681
+00:36:22,200 --> 00:36:27,079
+abbiano la stessa lunghezza. Ok?
+
+682
+00:36:29,359 --> 00:36:32,640
+Queste configurazioni aggiuntive della
+
+683
+00:36:32,640 --> 00:36:36,040
+macchina sono copie delle precedenti,
+
+684
+00:36:36,040 --> 00:36:37,880
+cioè questa qua è la stessa di questa,
+
+685
+00:36:37,880 --> 00:36:40,000
+questa è la stessa di questa e questa è
+
+686
+00:36:40,000 --> 00:36:41,880
+la stessa di quella di sopra. Cioè, noi
+
+687
+00:36:41,880 --> 00:36:44,200
+assumiamo che questa macchina abbia un
+
+688
+00:36:44,200 --> 00:36:46,319
+comportamento un po' particolare. Una
+
+689
+00:36:46,319 --> 00:36:50,040
+volta che entra in una configurazione
+
+690
+00:36:50,040 --> 00:36:53,200
+finale, che sia accettante o meno, la
+
+691
+00:36:53,200 --> 00:36:55,119
+macchina continua a ciclare là sopra
+
+692
+00:36:55,119 --> 00:36:57,640
+fino a quando fa esattamente PDN passi.
+
+693
+00:36:57,640 --> 00:36:59,119
+Ok?
+
+694
+00:36:59,119 --> 00:37:03,079
+Questo per semplificarci un po' le cose.
+
+695
+00:37:03,079 --> 00:37:06,079
+Alrght,
+
+696
+00:37:08,400 --> 00:37:12,560
+come vi dicevo, quindi noi dobbiamo
+
+697
+00:37:12,560 --> 00:37:14,359
+trasformare
+
+698
+00:37:14,359 --> 00:37:17,599
+aveviamo. Sì, introduco questo e poi
+
+699
+00:37:17,599 --> 00:37:19,800
+facciamo un po' di pausa. Dobbiamo
+
+700
+00:37:19,800 --> 00:37:22,560
+arrivare a trasformare questa stringa w
+
+701
+00:37:22,560 --> 00:37:25,119
+in questa formula file di W in cui
+
+702
+00:37:25,119 --> 00:37:26,800
+simuliamo il comportamento della
+
+703
+00:37:26,800 --> 00:37:29,000
+macchina M su W. Simulare il
+
+704
+00:37:29,000 --> 00:37:31,000
+comportamento, abbiamo detto, sarà
+
+705
+00:37:31,000 --> 00:37:33,680
+strutturare una formula con delle
+
+706
+00:37:33,680 --> 00:37:36,480
+variabili buleane opportune che
+
+707
+00:37:36,480 --> 00:37:38,839
+indipendenza, se sono ver o false ci
+
+708
+00:37:38,839 --> 00:37:41,119
+dicono cosa sta facendo la macchina in
+
+709
+00:37:41,119 --> 00:37:44,040
+un certo momento della sua computazione.
+
+710
+00:37:44,040 --> 00:37:45,560
+Le
+
+711
+00:37:45,560 --> 00:37:48,160
+variabili buleane che noi utilizzeremo
+
+712
+00:37:48,160 --> 00:37:53,319
+saranno queste qua. Q di I K
+
+713
+00:37:53,319 --> 00:37:56,000
+che vale
+
+714
+00:37:56,000 --> 00:37:59,000
+true
+
+715
+00:37:59,800 --> 00:38:01,440
+true
+
+716
+00:38:01,440 --> 00:38:03,720
+se solo se
+
+717
+00:38:03,720 --> 00:38:06,400
+al passo
+
+718
+00:38:06,400 --> 00:38:07,920
+i
+
+719
+00:38:07,920 --> 00:38:11,240
+di computazione
+
+720
+00:38:14,680 --> 00:38:18,200
+la macchina
+
+721
+00:38:18,359 --> 00:38:20,240
+M
+
+722
+00:38:20,240 --> 00:38:23,079
+si trova
+
+723
+00:38:23,079 --> 00:38:26,520
+nello stato
+
+724
+00:38:27,800 --> 00:38:30,800
+Q.
+
+725
+00:38:31,359 --> 00:38:33,960
+Ok? Quindi avremo, che ne so, la
+
+726
+00:38:33,960 --> 00:38:37,240
+variabile Q38
+
+727
+00:38:37,240 --> 00:38:40,560
+che varrà vero se al terzo passo la
+
+728
+00:38:40,560 --> 00:38:44,000
+macchina sarà nello stato 8.
+
+729
+00:38:44,000 --> 00:38:46,800
+Q1524
+
+730
+00:38:46,800 --> 00:38:51,680
+che varrà vero se solo se al 15º passo
+
+731
+00:38:51,680 --> 00:38:53,440
+la macchina si troverà nello stato
+
+732
+00:38:53,440 --> 00:38:56,040
+numero 24. Ok? Quindi ne abbiamo tante
+
+733
+00:38:56,040 --> 00:39:00,720
+di queste variabili Q00, Q01, Q02,
+
+734
+00:39:00,720 --> 00:39:03,480
+eccetera, per tutti i passi, per tutti
+
+735
+00:39:03,480 --> 00:39:06,040
+gli stati.
+
+736
+00:39:06,040 --> 00:39:08,200
+Poi avremo
+
+737
+00:39:08,200 --> 00:39:13,640
+le variabili H i J
+
+738
+00:39:13,640 --> 00:39:17,680
+che vale vero
+
+739
+00:39:17,680 --> 00:39:21,720
+se solo se al passo
+
+740
+00:39:21,720 --> 00:39:23,400
+i
+
+741
+00:39:23,400 --> 00:39:26,720
+la testina
+
+742
+00:39:27,160 --> 00:39:32,160
+di M si trova
+
+743
+00:39:32,160 --> 00:39:34,079
+sulla
+
+744
+00:39:34,079 --> 00:39:36,680
+cella.
+
+745
+00:39:37,200 --> 00:39:40,480
+del nastro.
+
+746
+00:39:42,520 --> 00:39:46,400
+Ok, quindi questa sarà un'altra famiglia
+
+747
+00:39:46,400 --> 00:39:51,520
+di variabili buleane. Saranno tante, H,
+
+748
+00:39:51,520 --> 00:39:57,720
+H01, H02 e così via, tipo H36.
+
+749
+00:39:57,720 --> 00:39:59,640
+H3,6
+
+750
+00:39:59,640 --> 00:40:03,359
+avrà questo significato.
+
+751
+00:40:05,440 --> 00:40:07,720
+Yes. Cosa ho scritto? Male, perché
+
+752
+00:40:07,720 --> 00:40:09,480
+sicuramente leggo la testina di M si
+
+753
+00:40:09,480 --> 00:40:11,400
+trova su
+
+754
+00:40:11,400 --> 00:40:14,400
+eh sulla cella
+
+755
+00:40:14,400 --> 00:40:18,160
+del nastro. Sì.
+
+756
+00:40:18,640 --> 00:40:20,880
+Ok.
+
+757
+00:40:20,880 --> 00:40:23,599
+Quindi avremo tante di queste variabili
+
+758
+00:40:23,599 --> 00:40:25,599
+buleane. Il significato che vorremmo
+
+759
+00:40:25,599 --> 00:40:29,079
+dare è che per esempio H36
+
+760
+00:40:29,079 --> 00:40:32,400
+varrà vero se al terzo passo di
+
+761
+00:40:32,400 --> 00:40:35,720
+computazione la macchina avrà la testina
+
+762
+00:40:35,720 --> 00:40:38,240
+alla cella numero 6. Sarà mai possibile
+
+763
+00:40:38,240 --> 00:40:41,599
+questa cosa?
+
+764
+00:40:47,000 --> 00:40:49,520
+No, perché perché in tre passi non
+
+765
+00:40:49,520 --> 00:40:52,520
+possiamo arrivare alla cella 6, però
+
+766
+00:40:52,520 --> 00:40:54,680
+diamo questa possibilità, ok? Ci sono
+
+767
+00:40:54,680 --> 00:40:56,960
+ste variabili che hanno sto significato.
+
+768
+00:40:56,960 --> 00:40:58,640
+Ok?
+
+769
+00:40:58,640 --> 00:41:02,720
+Qual è l'altra? Quindi abbiamo variabili
+
+770
+00:41:02,720 --> 00:41:05,880
+che ci dicono in che stato è la macchina
+
+771
+00:41:05,880 --> 00:41:09,000
+a un certo passo. Abbiamo variabili che
+
+772
+00:41:09,000 --> 00:41:11,599
+ci dicono dove sta la testina della
+
+773
+00:41:11,599 --> 00:41:13,760
+macchina a un certo passo. Quale altra
+
+774
+00:41:13,760 --> 00:41:17,640
+informazione ci serve?
+
+775
+00:41:17,640 --> 00:41:20,040
+Cosa c'è su un nastro? Quindi ci servono
+
+776
+00:41:20,040 --> 00:41:22,960
+delle variabili che ci servono a
+
+777
+00:41:22,960 --> 00:41:26,280
+codificare il contenuto del nastro della
+
+778
+00:41:26,280 --> 00:41:30,119
+macchina mentre la macchina processa. E
+
+779
+00:41:30,119 --> 00:41:35,480
+avremo le variabili T, I, J, L. Pure
+
+780
+00:41:35,480 --> 00:41:40,720
+queste son tante. Vale true.
+
+781
+00:41:40,720 --> 00:41:45,160
+E solo se al passo
+
+782
+00:41:45,160 --> 00:41:46,960
+i
+
+783
+00:41:46,960 --> 00:41:50,119
+la cella
+
+784
+00:41:50,119 --> 00:41:52,599
+geesima
+
+785
+00:41:52,599 --> 00:41:55,920
+del nastro
+
+786
+00:41:58,359 --> 00:42:01,359
+contiene
+
+787
+00:42:02,560 --> 00:42:05,839
+il simbolo
+
+788
+00:42:06,280 --> 00:42:10,319
+alfa L proveniente dal dall'alfabeto di
+
+789
+00:42:10,319 --> 00:42:12,119
+nastro della macchina M, proveniente da
+
+790
+00:42:12,119 --> 00:42:14,960
+gamma. Ok?
+
+791
+00:42:14,960 --> 00:42:19,520
+Quindi pure queste sono tantissime
+
+792
+00:42:19,520 --> 00:42:21,040
+tantissime
+
+793
+00:42:21,040 --> 00:42:26,920
+variabili. Per esempio T 3 6
+
+794
+00:42:26,920 --> 00:42:30,599
+2. Ad esempio, varrà vero quando al
+
+795
+00:42:30,599 --> 00:42:33,359
+terzo passo, in sesta posizione del
+
+796
+00:42:33,359 --> 00:42:37,160
+nastro ci sta il simbolo alfa 2 che
+
+797
+00:42:37,160 --> 00:42:38,920
+potrebbe essere un blank, che potrebbe
+
+798
+00:42:38,920 --> 00:42:41,119
+essere un quadratino, un alberello,
+
+799
+00:42:41,119 --> 00:42:43,359
+qualsiasi cosa. Ok?
+
+800
+00:42:43,359 --> 00:42:46,400
+È chiaro? Benissimo.
+
+801
+00:42:46,400 --> 00:42:48,040
+Quello che ci chiediamo prima della
+
+802
+00:42:48,040 --> 00:42:51,200
+pausa, quante sono queste variabili?
+
+803
+00:42:51,200 --> 00:42:54,160
+Sono tante, sono poche?
+
+804
+00:42:54,160 --> 00:42:57,440
+Focalizziamoci prima su Q i K. Quante
+
+805
+00:42:57,440 --> 00:43:00,440
+sono?
+
+806
+00:43:00,559 --> 00:43:03,359
+Perché se è una formula troppo grossa,
+
+807
+00:43:03,359 --> 00:43:05,880
+no, cioè no, il gioco non funziona
+
+808
+00:43:05,880 --> 00:43:07,760
+perché questa trasformazione deve
+
+809
+00:43:07,760 --> 00:43:09,520
+avvenire in tempo polinomiale, cioè non
+
+810
+00:43:09,520 --> 00:43:11,280
+è che possiamo generare una formula
+
+811
+00:43:11,280 --> 00:43:13,160
+fantevole.
+
+812
+00:43:13,160 --> 00:43:14,839
+Ok?
+
+813
+00:43:14,839 --> 00:43:18,960
+Quante sono queste Q?
+
+814
+00:43:23,280 --> 00:43:30,640
+Sì. Quindi I va da 0 a PDN e K va tra,
+
+815
+00:43:30,640 --> 00:43:33,760
+diciamo, 0 ed R, dove R è il numero
+
+816
+00:43:33,760 --> 00:43:36,240
+degli stati. E la cosa importante è che
+
+817
+00:43:36,240 --> 00:43:39,319
+questo R è fissato, cioè dipende dalla
+
+818
+00:43:39,319 --> 00:43:41,520
+macchina M, ok? Non dipende dalla doppia
+
+819
+00:43:41,520 --> 00:43:44,240
+V.
+
+820
+00:43:44,240 --> 00:43:51,119
+Eh, quante sono le variabili H?
+
+821
+00:44:00,559 --> 00:44:05,720
+sono gli indici i e j variano fra 0 e p
+
+822
+00:44:05,720 --> 00:44:08,119
+n entrambi, ok? Quindi sono il quadrato
+
+823
+00:44:08,119 --> 00:44:10,440
+di pn.
+
+824
+00:44:10,440 --> 00:44:15,200
+Quante sono le variabili t I j?
+
+825
+00:44:15,200 --> 00:44:19,119
+Abbiamo di nuovo I e j compreso fra 0 e
+
+826
+00:44:19,119 --> 00:44:23,720
+voi leggete sì PDN. ed è compreso fra 0
+
+827
+00:44:23,720 --> 00:44:27,040
+e diciamo Sissato.
+
+828
+00:44:27,040 --> 00:44:31,720
+Ok? Quindi abbiamo che le Q di Q di IQ
+
+829
+00:44:31,720 --> 00:44:36,440
+sono R * PN che è un polinomio. Le
+
+830
+00:44:36,440 --> 00:44:41,400
+variabili HD dijo, PN qu che è ancora un
+
+831
+00:44:41,400 --> 00:44:46,640
+polinomio. Le variabili T di i JL sono P
+
+832
+00:44:46,640 --> 00:44:49,680
+qu * S, che è ancora un polinomio perché
+
+833
+00:44:49,680 --> 00:44:53,280
+S è fissato. Ok, è chiaro il significato
+
+834
+00:44:53,280 --> 00:44:56,520
+di queste variabili?
+
+835
+00:44:56,520 --> 00:44:58,480
+Alri,
+
+836
+00:44:58,480 --> 00:45:02,079
+io direi 10 minuti di pausa e poi
+
+837
+00:45:02,079 --> 00:45:07,040
+riprendiamo assieme questa riduzione.
+
+838
+00:45:12,000 --> 00:45:14,599
+È il numero di simboli della
+Sì, sì, sì.
+
+839
+00:45:14,599 --> 00:45:16,079
+È un nome che gli diamo, può essere
+
+840
+00:45:16,079 --> 00:45:19,640
+qualsiasi. Ok.
+
+841
+00:45:21,820 --> 00:45:25,089
+[Musica]
+
+842
+00:45:30,020 --> 00:45:33,139
+[Musica]
+
+843
+00:45:34,920 --> 00:45:39,280
+Ho ripreso. Yes.
+
+844
+00:45:41,760 --> 00:45:44,240
+Ok. Allora, quindi siamo in mezzo a
+
+845
+00:45:44,240 --> 00:45:46,640
+questa riduzione. Abbiamo detto che
+
+846
+00:45:46,640 --> 00:45:49,160
+stiamo
+
+847
+00:45:49,160 --> 00:45:51,760
+riducendo in generico linguaggio L a
+
+848
+00:45:51,760 --> 00:45:54,720
+SAT. Di questo linguaggio L non sappiamo
+
+849
+00:45:54,720 --> 00:45:57,280
+nient'altro a parte che L sia decidibile
+
+850
+00:45:57,280 --> 00:46:00,000
+da una macchina M in tempo polinomiale,
+
+851
+00:46:00,000 --> 00:46:01,599
+M non deterministica in tempo
+
+852
+00:46:01,599 --> 00:46:03,920
+polinomiale PDN.
+
+853
+00:46:03,920 --> 00:46:07,920
+La trasformazione, abbiamo detto che
+
+854
+00:46:07,920 --> 00:46:10,800
+sostanzialmente mirerà a costruire una
+
+855
+00:46:10,800 --> 00:46:14,480
+formula puleana che descrive
+
+856
+00:46:14,480 --> 00:46:16,800
+il linguaggio delle tramite il
+
+857
+00:46:16,800 --> 00:46:18,880
+linguaggio delle formule buleane il
+
+858
+00:46:18,880 --> 00:46:20,800
+funzionamento
+
+859
+00:46:20,800 --> 00:46:25,400
+della macchina M sulla stringa w. Ok?
+
+860
+00:46:25,400 --> 00:46:28,040
+E quindi
+
+861
+00:46:28,040 --> 00:46:30,319
+questo funzionamento in questa formula
+
+862
+00:46:30,319 --> 00:46:33,119
+buleana verrà descritta tramite queste
+
+863
+00:46:33,119 --> 00:46:36,200
+variabili proposizionali che sono Q di I
+
+864
+00:46:36,200 --> 00:46:39,839
+K che vi ricordo varrà vero se la
+
+865
+00:46:39,839 --> 00:46:42,960
+macchina M al passo i sarà nello stato
+
+866
+00:46:42,960 --> 00:46:44,960
+Kesimo.
+
+867
+00:46:44,960 --> 00:46:49,160
+le variabili Hij J che varranno vero
+
+868
+00:46:49,160 --> 00:46:51,400
+solamente se al passo iesimo di
+
+869
+00:46:51,400 --> 00:46:54,880
+computazione la testina sarà sulla cella
+
+870
+00:46:54,880 --> 00:46:56,599
+Gesima
+
+871
+00:46:56,599 --> 00:47:00,240
+e le variabili t, quindi Q * Q degli
+
+872
+00:47:00,240 --> 00:47:03,640
+stati, H di head, T di tape. Le
+
+873
+00:47:03,640 --> 00:47:08,920
+variabili t varranno t i j varranno ovo,
+
+874
+00:47:08,920 --> 00:47:12,480
+se solo se al passo iesimo la cellaesima
+
+875
+00:47:12,480 --> 00:47:14,440
+contiene
+
+876
+00:47:14,440 --> 00:47:18,240
+il simbolo esimo. Ok? Quindi questo è il
+
+877
+00:47:18,240 --> 00:47:22,160
+significato che vorremmo utilizzeremo di
+
+878
+00:47:22,160 --> 00:47:25,240
+queste variabili. Il tutto sarà di
+
+879
+00:47:25,240 --> 00:47:28,160
+andare a
+
+880
+00:47:28,160 --> 00:47:33,079
+inventarci questa formula f di w.
+
+881
+00:47:33,079 --> 00:47:36,599
+Allora, questa formula F di W
+
+882
+00:47:36,599 --> 00:47:42,119
+avrà dei pezzi che vedremo assieme.
+
+883
+00:47:42,119 --> 00:47:44,800
+Cercherò di guidarvi sull'intuizione in
+
+884
+00:47:44,800 --> 00:47:47,000
+maniera tale nella speranza che,
+
+885
+00:47:47,000 --> 00:47:49,920
+insomma, questa riduzione vi rimanga più
+
+886
+00:47:49,920 --> 00:47:52,920
+in mente, ok? Cioè che ci sia una
+
+887
+00:47:52,920 --> 00:47:55,119
+ragione dietro del perché ce la stiamo
+
+888
+00:47:55,119 --> 00:47:57,359
+inventando così e non è una cosa buttata
+
+889
+00:47:57,359 --> 00:48:00,160
+là la riduzione funziona. Ok?
+
+890
+00:48:00,160 --> 00:48:04,000
+Allora, siccome file di W deve mimare il
+
+891
+00:48:04,000 --> 00:48:07,920
+funzionamento della macchina M su w
+
+892
+00:48:07,920 --> 00:48:10,720
+tramite quelle variabili proposizionali
+
+893
+00:48:10,720 --> 00:48:14,800
+sarà fatte da una serie di pezzi. Ok? Il
+
+894
+00:48:14,800 --> 00:48:18,400
+primo ve lo dico io, gli altri li
+
+895
+00:48:18,400 --> 00:48:20,720
+pensiamo assieme. Il primo pezzo che
+
+896
+00:48:20,720 --> 00:48:24,359
+chiameremo C si sarà un pezzo di formula
+
+897
+00:48:24,359 --> 00:48:27,680
+di f di W che si occupa della
+
+898
+00:48:27,680 --> 00:48:30,760
+consistenza dell'assegnamento di verità
+
+899
+00:48:30,760 --> 00:48:33,599
+a quelle variabili. Cioè, noi vorremmo
+
+900
+00:48:33,599 --> 00:48:38,160
+essere sicuri che non è che potrà essere
+
+901
+00:48:38,160 --> 00:48:43,920
+vero che Q23 è vero e Q24 è vero, che
+
+902
+00:48:43,920 --> 00:48:45,880
+starebbe a significare al secondo passo
+
+903
+00:48:45,880 --> 00:48:47,599
+la macchina sta nello stato 3 e nello
+
+904
+00:48:47,599 --> 00:48:50,599
+stato 4. Ci sarà quindi un pezzo di
+
+905
+00:48:50,599 --> 00:48:53,839
+formula che si dovrà occupare che
+
+906
+00:48:53,839 --> 00:48:56,359
+fissato il passo la macchina sta in un
+
+907
+00:48:56,359 --> 00:49:00,359
+solo stato. fissato il passo, la testina
+
+908
+00:49:00,359 --> 00:49:04,079
+sta in una sola cella e fissato passo e
+
+909
+00:49:04,079 --> 00:49:06,240
+numero di cella, sul nastro ci sta un
+
+910
+00:49:06,240 --> 00:49:09,079
+solo simbolo, ok? Quindi ci sarà un
+
+911
+00:49:09,079 --> 00:49:12,640
+pezzo della formula che
+
+912
+00:49:12,640 --> 00:49:16,240
+codificherà questo, cioè imporrà questi
+
+913
+00:49:16,240 --> 00:49:20,079
+vincoli alla soddisfacilità, a come
+
+914
+00:49:20,079 --> 00:49:21,720
+possono essere assegnati i valori di
+
+915
+00:49:21,720 --> 00:49:24,160
+verità a alle variabili, ok? Senò non
+
+916
+00:49:24,160 --> 00:49:26,000
+mimiamo assolutamente niente, le
+
+917
+00:49:26,000 --> 00:49:29,920
+buttiamo lì a caso. Dopodiché, siccome
+
+918
+00:49:29,920 --> 00:49:32,799
+file di W deve
+
+919
+00:49:32,799 --> 00:49:36,079
+mimare il funzionamento di m su W,
+
+920
+00:49:36,079 --> 00:49:39,599
+secondo voi in questa formula cos'altro
+
+921
+00:49:39,599 --> 00:49:42,319
+andremo a codificare?
+
+922
+00:49:42,319 --> 00:49:44,440
+Che cosa ci dobbiamo infilare là per
+
+923
+00:49:44,440 --> 00:49:48,359
+rendere le cose funzionanti?
+
+924
+00:49:49,280 --> 00:49:51,440
+La funzione di transizione in qualche
+
+925
+00:49:51,440 --> 00:49:54,240
+modo. Ok? E prima di quello cosa
+
+926
+00:49:54,240 --> 00:49:57,640
+dovremmo fare?
+
+927
+00:49:58,000 --> 00:50:00,280
+Gli stati finali in qualche modo.
+Gli
+
+928
+00:50:00,280 --> 00:50:03,599
+stati finali anche quello, perché noi
+
+929
+00:50:03,599 --> 00:50:06,799
+vorremo che la funzione codifichi il
+
+930
+00:50:06,799 --> 00:50:08,480
+fatto che la macchina accetti questa
+
+931
+00:50:08,480 --> 00:50:11,400
+stringa. Quindi questa formula dovrà
+
+932
+00:50:11,400 --> 00:50:14,240
+essere vera perché alla fine la macchina
+
+933
+00:50:14,240 --> 00:50:17,599
+transisce in uno stato accettante.
+
+934
+00:50:17,599 --> 00:50:20,599
+La prima cosa che questa funzione deve
+
+935
+00:50:20,599 --> 00:50:23,760
+codificare che cos'è?
+
+936
+00:50:23,760 --> 00:50:25,319
+Ah, il fatto che si trovi nello stato
+
+937
+00:50:25,319 --> 00:50:27,960
+iniziale all'inizio.
+Che si trovi nello
+
+938
+00:50:27,960 --> 00:50:30,359
+stato iniziale all'inizio e che sia
+
+939
+00:50:30,359 --> 00:50:33,559
+nella scelta iniziale all'inizio con la
+
+940
+00:50:33,559 --> 00:50:36,559
+string scritta. Sì. Cioè, quindi il un
+
+941
+00:50:36,559 --> 00:50:38,480
+pezzo di questa formula si deve
+
+942
+00:50:38,480 --> 00:50:41,720
+occupare, lo chiamiamo start, si deve
+
+943
+00:50:41,720 --> 00:50:44,480
+occupare di codificare il fatto che la
+
+944
+00:50:44,480 --> 00:50:47,559
+macchina viene accesa nello stato
+
+945
+00:50:47,559 --> 00:50:51,040
+iniziale e che sul nastro ci sia la
+
+946
+00:50:51,040 --> 00:50:54,280
+stringa doppia V. Ok? Quindi ci sarà un
+
+947
+00:50:54,280 --> 00:50:57,839
+pezzo di un pezzo di questa formula F W
+
+948
+00:50:57,839 --> 00:51:01,319
+in cui che chiameremo S e sarà un pezzo
+
+949
+00:51:01,319 --> 00:51:04,079
+di formula buleana che servirà a imporre
+
+950
+00:51:04,079 --> 00:51:07,040
+che al passo iniziale la macchina sta
+
+951
+00:51:07,040 --> 00:51:10,040
+nello stato iniziale e che sul nastro ci
+
+952
+00:51:10,040 --> 00:51:12,240
+sta la stringa iniziale e che sulle
+
+953
+00:51:12,240 --> 00:51:14,640
+celle residui ci sta blend. Ok?
+
+954
+00:51:14,640 --> 00:51:17,559
+Dopodiché che deve fare questa formula?
+
+955
+00:51:17,559 --> 00:51:21,520
+deve codificare che
+
+956
+00:51:26,640 --> 00:51:29,079
+avete detto eh
+
+957
+00:51:29,079 --> 00:51:32,480
+i passi, cioè che i passi codificati in
+
+958
+00:51:32,480 --> 00:51:36,119
+questa formula seguano la funzione di
+
+959
+00:51:36,119 --> 00:51:40,000
+transizione. Quindi avremo un pezzo n
+
+960
+00:51:40,000 --> 00:51:43,079
+next step della formula che si occuperà
+
+961
+00:51:43,079 --> 00:51:45,640
+di codificare
+
+962
+00:51:45,640 --> 00:51:49,839
+che la formula descrive dei passi
+
+963
+00:51:49,839 --> 00:51:51,400
+sensati,
+
+964
+00:51:51,400 --> 00:51:53,599
+ok? Quindi i valori di verità assegnati
+
+965
+00:51:53,599 --> 00:51:55,280
+a tutte quelle variabili che ci siamo
+
+966
+00:51:55,280 --> 00:51:57,680
+inventati servano a replicare che la
+
+967
+00:51:57,680 --> 00:52:00,160
+macchina veramente funziona come
+
+968
+00:52:00,160 --> 00:52:03,799
+dovrebbe funzionare e dopodiché l'abbia
+
+969
+00:52:03,799 --> 00:52:07,400
+l'avete già detto che
+
+970
+00:52:07,400 --> 00:52:11,000
+final la macchina alla fine transisce in
+
+971
+00:52:11,000 --> 00:52:13,760
+una configurazione accettante. Ok? Final
+
+972
+00:52:13,760 --> 00:52:17,599
+step. È chiaro? Quindi questa formula
+
+973
+00:52:17,599 --> 00:52:20,400
+avrà quattro pezzi. Sarà una formula
+
+974
+00:52:20,400 --> 00:52:22,680
+buleana enorme, però cercheremo di
+
+975
+00:52:22,680 --> 00:52:24,720
+dargli un significato, così riusciamo a
+
+976
+00:52:24,720 --> 00:52:27,520
+capire. Un pezzo che chiamiamo C che si
+
+977
+00:52:27,520 --> 00:52:29,599
+occuperà della consistenza
+
+978
+00:52:29,599 --> 00:52:31,359
+dell'assegnamento alle variabili
+
+979
+00:52:31,359 --> 00:52:34,480
+buleane, quindi che non possiamo dare
+
+980
+00:52:34,480 --> 00:52:38,520
+true a tutto, per esempio. Ok? un pezzo
+
+981
+00:52:38,520 --> 00:52:41,440
+che chiameremo S
+
+982
+00:52:41,440 --> 00:52:45,200
+che si occuperà di descrivere che la
+
+983
+00:52:45,200 --> 00:52:51,000
+macchina M parte su W da Q0.
+
+984
+00:52:51,000 --> 00:52:54,599
+un pezzo che chiameremo n in cui la
+
+985
+00:52:54,599 --> 00:52:57,319
+codificheremo nella formula che i passi
+
+986
+00:52:57,319 --> 00:53:00,640
+che questa macchina fa devono seguire la
+
+987
+00:53:00,640 --> 00:53:04,920
+funzione di transizione e un pezzo fà
+
+988
+00:53:04,920 --> 00:53:08,799
+verificare se all'ultimissimo passo, che
+
+989
+00:53:08,799 --> 00:53:11,119
+è il passo PDN, perché abbiamo assunto
+
+990
+00:53:11,119 --> 00:53:12,880
+che la nostra macchina fa sempre
+
+991
+00:53:12,880 --> 00:53:15,960
+esattamente PDN passi e all'ultimo passo
+
+992
+00:53:15,960 --> 00:53:17,880
+la macchina si trovi in una strada
+
+993
+00:53:17,880 --> 00:53:21,319
+accettante. Ok? Questi saranno i pezzi
+
+994
+00:53:21,319 --> 00:53:24,640
+delle nostre
+
+995
+00:53:24,640 --> 00:53:28,040
+delle nostre eh
+
+996
+00:53:28,040 --> 00:53:30,160
+formula. Ok,
+
+997
+00:53:30,160 --> 00:53:32,359
+partiamo da
+
+998
+00:53:32,359 --> 00:53:35,359
+consistency.
+
+999
+00:53:37,160 --> 00:53:40,160
+Ok.
+
+1000
+00:53:40,440 --> 00:53:44,040
+Come definiamo C?
+
+1001
+00:53:44,040 --> 00:53:45,640
+Ok.
+
+1002
+00:53:45,640 --> 00:53:47,720
+ci dobbiamo inventare adesso delle
+
+1003
+00:53:47,720 --> 00:53:50,000
+clausole che vi ricordo le clausole sono
+
+1004
+00:53:50,000 --> 00:53:53,280
+i pezzettini di una formula CNF che
+
+1005
+00:53:53,280 --> 00:53:57,119
+sostanzialmente ci vanno a dire
+
+1006
+00:53:57,119 --> 00:54:00,799
+che la macchina ha un dato passo non può
+
+1007
+00:54:00,799 --> 00:54:02,319
+stare
+
+1008
+00:54:02,319 --> 00:54:05,839
+in più di uno stato. La testina non può
+
+1009
+00:54:05,839 --> 00:54:09,200
+stare su più di una cella, una cella di
+
+1010
+00:54:09,200 --> 00:54:11,640
+un del nastro non può contenere più di
+
+1011
+00:54:11,640 --> 00:54:15,880
+un simbolo. Come lo possiamo scrivere?
+
+1012
+00:54:15,880 --> 00:54:19,359
+in forma di clausola.
+
+1013
+00:54:19,359 --> 00:54:22,000
+Per ogni stato possiamo mettere eh che
+
+1014
+00:54:22,000 --> 00:54:24,319
+deve verificare solo una stata alla
+
+1015
+00:54:24,319 --> 00:54:30,079
+volta, quindi sarà ehm cos'era? Q
+
+1016
+00:54:30,079 --> 00:54:39,520
+and Q + 1 Q + 1 not QD + 1 K. E
+
+1017
+00:54:39,520 --> 00:54:41,599
+attenzione attenzione
+
+1018
+00:54:41,599 --> 00:54:43,640
+partiamo ad alto livello. Cosa vogliamo
+
+1019
+00:54:43,640 --> 00:54:47,200
+descrivere? per esempio che al passo i
+
+1020
+00:54:47,200 --> 00:54:49,880
+può essere sullo stato zero e non su
+
+1021
+00:54:49,880 --> 00:54:51,440
+tutti gli altri
+e non su tutti gli
+
+1022
+00:54:51,440 --> 00:54:53,079
+altri. Quindi, come la possiamo
+
+1023
+00:54:53,079 --> 00:54:55,079
+descrivere questa cosa in forma di
+
+1024
+00:54:55,079 --> 00:55:00,280
+implicazione? Se la macchina sta
+
+1025
+00:55:01,160 --> 00:55:06,319
+Se zero eh, allora non tutti gli altri.
+
+1026
+00:55:06,319 --> 00:55:08,839
+Esattamente.
+
+1027
+00:55:08,839 --> 00:55:11,160
+E questa cosa la possiamo scrivere così.
+
+1028
+00:55:11,160 --> 00:55:14,760
+Quindi facciamo un end gigantesco di
+
+1029
+00:55:14,760 --> 00:55:18,880
+queste cose, no? Per tutte le triple I,
+
+1030
+00:55:18,880 --> 00:55:21,480
+K e K'
+
+1031
+00:55:21,480 --> 00:55:27,520
+tali che K è diverso da K'.
+
+1032
+00:55:28,240 --> 00:55:32,559
+Che cosa abbiamo? è che se q
+
+1033
+00:55:32,559 --> 00:55:35,119
+è vero,
+
+1034
+00:55:35,119 --> 00:55:38,119
+allora
+
+1035
+00:55:38,599 --> 00:55:42,960
+Q di I K' deve essere falso.
+
+1036
+00:55:42,960 --> 00:55:44,280
+È chiaro il significato di questa
+
+1037
+00:55:44,280 --> 00:55:46,920
+implicazione? Cioè, qui stiamo prendendo
+
+1038
+00:55:46,920 --> 00:55:51,240
+tutte le triple di indici I, k e k' e le
+
+1039
+00:55:51,240 --> 00:55:53,280
+stiamo infilando questa lista
+
+1040
+00:55:53,280 --> 00:55:57,079
+lunghissima dentro la formula. Ok?
+
+1041
+00:55:57,079 --> 00:55:59,799
+Il significato di quelle implicazioni è
+
+1042
+00:55:59,799 --> 00:56:02,000
+se q
+
+1043
+00:56:02,000 --> 00:56:07,480
+è è vero, allora q i k' dove k' è
+
+1044
+00:56:07,480 --> 00:56:11,480
+diverso da k deve essere falso.
+
+1045
+00:56:11,480 --> 00:56:14,119
+È chiaro il significato? Quante sono
+
+1046
+00:56:14,119 --> 00:56:17,599
+quante sono queste clausole?
+
+1047
+00:56:17,599 --> 00:56:22,119
+Sono polinomiali o più di polinomiali?
+
+1048
+00:56:23,520 --> 00:56:26,799
+Polinomiali. sono polinomiali perché i
+
+1049
+00:56:26,799 --> 00:56:30,160
+gli I, gli indici I sono bound da PD N,
+
+1050
+00:56:30,160 --> 00:56:33,359
+k e k' sono bound da una costante,
+
+1051
+00:56:33,359 --> 00:56:36,240
+quindi il numero di clausole è
+
+1052
+00:56:36,240 --> 00:56:40,119
+polinomiale, ok?
+
+1053
+00:56:42,000 --> 00:56:46,920
+E dobbiamo fare una cosa simile per la
+
+1054
+00:56:46,920 --> 00:56:50,799
+testina. Questo me lo dite voi.
+
+1055
+00:56:50,799 --> 00:56:54,160
+Cosa scriviamo?
+
+1056
+00:56:54,480 --> 00:56:57,440
+Vi ricordo che le variabili,
+
+1057
+00:56:57,440 --> 00:57:00,680
+guardiamola assieme, le variabili per la
+
+1058
+00:57:00,680 --> 00:57:04,559
+testina sono le Hij
+
+1059
+00:57:04,559 --> 00:57:09,240
+in cui Hij vale true se al passo i la
+
+1060
+00:57:09,240 --> 00:57:12,079
+testina si trova sulla cella J. Quindi
+
+1061
+00:57:12,079 --> 00:57:13,520
+quello che noi dobbiamo andare a
+
+1062
+00:57:13,520 --> 00:57:17,240
+specificare è che non può accadere che a
+
+1063
+00:57:17,240 --> 00:57:19,960
+un certo passo la testina si trovi in
+
+1064
+00:57:19,960 --> 00:57:23,319
+due celle diverse. Ok? Come lo scriviamo
+
+1065
+00:57:23,319 --> 00:57:25,319
+a formula?
+
+1066
+00:57:25,319 --> 00:57:31,520
+Nello stesso modo I J' con J diverso J'.
+
+1067
+00:57:31,520 --> 00:57:37,119
+Sì,
+abbiamo che H implica not di H.
+
+1068
+00:57:37,119 --> 00:57:40,119
+Esattamente.
+
+1069
+00:57:42,400 --> 00:57:44,440
+Chiaro? Quante ne abbiamo là? Quante
+
+1070
+00:57:44,440 --> 00:57:47,559
+clausole ci sono? Polinomiale è un p n
+
+1071
+00:57:47,559 --> 00:57:49,960
+qu. Ok? Quindi questa formula continua a
+
+1072
+00:57:49,960 --> 00:57:53,839
+essere polinomiale.
+
+1073
+00:57:53,839 --> 00:57:56,079
+Ok? Quali sono? Qual è l'altra famiglia
+
+1074
+00:57:56,079 --> 00:57:59,200
+di variabili che abbiamo? T. Quindi
+
+1075
+00:57:59,200 --> 00:58:03,359
+dobbiamo imporre dei vincoli su T.
+
+1076
+00:58:03,359 --> 00:58:06,720
+Cosa facciamo?
+
+1077
+00:58:12,880 --> 00:58:16,559
+Vi ricordo il significato T di IJL. Al
+
+1078
+00:58:16,559 --> 00:58:20,960
+passo I. Sulla cella J ci sta il simbolo
+
+1079
+00:58:20,960 --> 00:58:26,640
+L. Sì,
+aveva scritto prima IJ.
+
+1080
+00:58:26,640 --> 00:58:30,680
+Ah, Jimo. Sì,
+
+1081
+00:58:31,880 --> 00:58:40,960
+prego.
+J e L
+I J. Poi
+L
+sì
+L'
+sì,
+con
+
+1082
+00:58:40,960 --> 00:58:48,440
+L'O diverso
+sì.
+E ci sarà T I J L. Sì.
+
+1083
+00:58:48,440 --> 00:58:54,559
+Eh, se è vero, allora sarà falso eh TDJ.
+
+1084
+00:58:54,559 --> 00:58:58,400
+Esattamente.
+Ok. E anche queste sono il
+
+1085
+00:58:58,400 --> 00:59:03,160
+numero polinomiale. Ok.
+
+1086
+00:59:05,200 --> 00:59:08,240
+Quindi il primo pezzo della formula,
+
+1087
+00:59:08,240 --> 00:59:10,280
+abbiamo detto la formula è fatta da
+
+1088
+00:59:10,280 --> 00:59:12,640
+quattro pezzi.
+
+1089
+00:59:12,640 --> 00:59:15,039
+Consistenza,
+
+1090
+00:59:15,039 --> 00:59:18,400
+consistenza stato di partenza. Next step
+
+1091
+00:59:18,400 --> 00:59:20,960
+stato finale. Ok? Questo è il pezzo
+
+1092
+00:59:20,960 --> 00:59:23,280
+della formula che si occupa della
+
+1093
+00:59:23,280 --> 00:59:24,960
+consistenza.
+
+1094
+00:59:24,960 --> 00:59:28,880
+Ok? Come vedete non è particolarmente
+
+1095
+00:59:28,880 --> 00:59:30,960
+difficile da scrivere. Il significato
+
+1096
+00:59:30,960 --> 00:59:33,799
+dietro è questo. Adesso guardate la
+
+1097
+00:59:33,799 --> 00:59:38,839
+formula così come è stata definita.
+
+1098
+00:59:38,839 --> 00:59:42,599
+Questo pezzo Cosa
+
+1099
+00:59:42,599 --> 00:59:47,400
+sta imponendo nello specifico?
+
+1100
+00:59:51,079 --> 00:59:55,920
+Sì,
+che solo uno della clausola è vero.
+
+1101
+00:59:55,920 --> 00:59:58,920
+Attenzione
+
+1102
+01:00:02,799 --> 01:00:04,839
+come
+
+1103
+01:00:04,839 --> 01:00:07,160
+tutte vere. Sì, ok. Tutte le
+
+1104
+01:00:07,160 --> 01:00:09,079
+implicazioni devono essere vere. Ma che
+
+1105
+01:00:09,079 --> 01:00:11,079
+cosa possiamo dire sul valore di verità
+
+1106
+01:00:11,079 --> 01:00:13,599
+di queste variabili?
+
+1107
+01:00:13,599 --> 01:00:18,880
+Per esempio, prendiamo Q di I K. Questo
+
+1108
+01:00:18,880 --> 01:00:22,119
+pezzo di formula sta dicendo che la
+
+1109
+01:00:22,119 --> 01:00:24,559
+macchina in un dato passo deve stare
+
+1110
+01:00:24,559 --> 01:00:28,160
+esattamente in uno stato o sta dicendo
+
+1111
+01:00:28,160 --> 01:00:30,039
+altro?
+
+1112
+01:00:30,039 --> 01:00:32,760
+Sta in al più uno stato.
+Sta in al più
+
+1113
+01:00:32,760 --> 01:00:35,280
+uno stato. Ok.
+
+1114
+01:00:35,280 --> 01:00:38,680
+Le gli altri pezzi della formula
+
+1115
+01:00:38,680 --> 01:00:41,520
+imporranno che la macchina deve stare in
+
+1116
+01:00:41,520 --> 01:00:44,440
+almeno uno stato e da cui otterremo che
+
+1117
+01:00:44,440 --> 01:00:46,440
+la macchina starà in esattamente uno
+
+1118
+01:00:46,440 --> 01:00:49,599
+stato. Ok? Quindi, se vogliamo essere
+
+1119
+01:00:49,599 --> 01:00:52,240
+proprio pignoli, questo pezzo di formula
+
+1120
+01:00:52,240 --> 01:00:54,640
+codifica che
+
+1121
+01:00:54,640 --> 01:00:57,720
+la macchina ogni passo sta in al più uno
+
+1122
+01:00:57,720 --> 01:01:00,920
+stato, la testina ogni passo sta in al
+
+1123
+01:01:00,920 --> 01:01:04,640
+più una posizione e che ogni cella del
+
+1124
+01:01:04,640 --> 01:01:08,480
+nastro per ogni passo contiene al più un
+
+1125
+01:01:08,480 --> 01:01:11,640
+simbolo. Ok? Poi gli altri pezzi della
+
+1126
+01:01:11,640 --> 01:01:14,440
+formula faranno sì che qualcosa ci sarà,
+
+1127
+01:01:14,440 --> 01:01:20,640
+ok? E i conti poi ci torneranno. Vabboh.
+
+1128
+01:01:20,640 --> 01:01:25,559
+Ok, vediamo se c'abbiamo spazio. Sì,
+
+1129
+01:01:25,559 --> 01:01:29,640
+scusi.
+Sì,
+quindi eh facendo una summa,
+
+1130
+01:01:29,640 --> 01:01:33,960
+la consiste sì si può definire che eh va
+
+1131
+01:01:33,960 --> 01:01:37,799
+a denunciare come la macchina un passo
+a
+
+1132
+01:01:37,799 --> 01:01:40,160
+un certo passo.
+Guardi soltanto uno
+
+1133
+01:01:40,160 --> 01:01:43,839
+stato e basta. sia in alpù uno stato,
+
+1134
+01:01:43,839 --> 01:01:45,720
+cioè che
+
+1135
+01:01:45,720 --> 01:01:47,720
+siccome noi abbiamo messo quella cosa là
+
+1136
+01:01:47,720 --> 01:01:52,000
+Q di K implica not QD K'nifica
+
+1137
+01:01:52,000 --> 01:01:55,680
+che un qualsiasi assegnamento di verità
+
+1138
+01:01:55,680 --> 01:02:02,160
+per F di V se vuole soddisfare file di W
+
+1139
+01:02:02,160 --> 01:02:06,079
+se sta assegnando vero a Q di 00 non può
+
+1140
+01:02:06,079 --> 01:02:10,720
+assegnare vero a Q di 01 Q di02 Q di03
+
+1141
+01:02:10,720 --> 01:02:12,799
+quindi Quindi tutti gli assegnamenti di
+
+1142
+01:02:12,799 --> 01:02:16,520
+verità candidati a soddisfare
+
+1143
+01:02:16,520 --> 01:02:20,880
+file di W devono assegnare vero a un
+
+1144
+01:02:20,880 --> 01:02:26,359
+solo Q di K per ogni QDI per ogni I. Un
+
+1145
+01:02:26,359 --> 01:02:31,200
+solo HIJ vero per ogni I. Ok?
+
+1146
+01:02:31,200 --> 01:02:33,680
+Questo però ancora non ci sta dicendo
+
+1147
+01:02:33,680 --> 01:02:36,839
+quale farlo. Ci dice se la la
+
+1148
+01:02:36,839 --> 01:02:40,079
+l'assegnamento di verità vuole essere un
+
+1149
+01:02:40,079 --> 01:02:42,039
+assegnamento che soddisfi la formula,
+
+1150
+01:02:42,039 --> 01:02:45,599
+condizione necessaria e che rispetti
+
+1151
+01:02:45,599 --> 01:02:49,200
+questi vincoli. Chiaro?
+Scusi, ma noi
+
+1152
+01:02:49,200 --> 01:02:52,279
+con la forma di file Q andiamo a
+
+1153
+01:02:52,279 --> 01:02:55,920
+definire la forma di F oppure no? Noi
+
+1154
+01:02:55,920 --> 01:03:00,559
+stiamo descrivendo cos'è la formula F di
+
+1155
+01:03:00,559 --> 01:03:04,880
+W sputata fuori da F. Sì, F a ha tira
+
+1156
+01:03:04,880 --> 01:03:07,440
+fuori una formula fatta in questo modo.
+
+1157
+01:03:07,440 --> 01:03:09,480
+Sì,
+
+1158
+01:03:09,480 --> 01:03:10,960
+presentati un attimo M non
+
+1159
+01:03:10,960 --> 01:03:14,359
+deterministica.
+Sì,
+non posso che arriva
+
+1160
+01:03:14,359 --> 01:03:16,240
+a ogni
+
+1161
+01:03:16,240 --> 01:03:18,920
+passimo
+
+1162
+01:03:18,920 --> 01:03:21,520
+passo sono in due stati diversi,
+no?
+
+1163
+01:03:21,520 --> 01:03:24,400
+Perché se noi andiamo a vedere il
+
+1164
+01:03:24,400 --> 01:03:26,039
+computation tree di una macchina non
+
+1165
+01:03:26,039 --> 01:03:29,359
+deterministica e consideriamo uno
+
+1166
+01:03:29,359 --> 01:03:31,559
+specifico stato, una specifica
+
+1167
+01:03:31,559 --> 01:03:34,000
+configurazione, la macchina in quanti
+
+1168
+01:03:34,000 --> 01:03:35,880
+stati è?
+
+1169
+01:03:35,880 --> 01:03:38,000
+Uno.
+
+1170
+01:03:38,000 --> 01:03:40,240
+Quindi noi stiamo semplicemente dando la
+
+1171
+01:03:40,240 --> 01:03:43,920
+possibilità di codificare una qualsiasi
+
+1172
+01:03:43,920 --> 01:03:46,359
+computazione fra tutte le possibili.
+
+1173
+01:03:46,359 --> 01:03:49,359
+Però mentre la macchina tra virgolette
+
+1174
+01:03:49,359 --> 01:03:50,640
+processa, sappiamo che questa macchina
+
+1175
+01:03:50,640 --> 01:03:53,359
+in realtà non c'è, però in un branch
+
+1176
+01:03:53,359 --> 01:03:55,799
+della computazione la macchina in ogni
+
+1177
+01:03:55,799 --> 01:03:58,039
+istante si trova in un solo stato, non
+
+1178
+01:03:58,039 --> 01:04:01,960
+in più uno. È chiaro? Qui
+
+1179
+01:04:01,960 --> 01:04:07,119
+un un branzo 70.
+
+1180
+01:04:07,119 --> 01:04:08,880
+Noi dobbiamo codificare in questa
+
+1181
+01:04:08,880 --> 01:04:11,480
+formula tutti i possibili branch la
+
+1182
+01:04:11,480 --> 01:04:14,359
+macchina può mai eseguire. è quello che
+
+1183
+01:04:14,359 --> 01:04:16,200
+noi ci andiamo a chiedere se ce ne sta
+
+1184
+01:04:16,200 --> 01:04:20,319
+uno accettante fra i tutti. È chiaro?
+
+1185
+01:04:20,319 --> 01:04:23,680
+Chiaro per tutti come stiamo procedendo?
+
+1186
+01:04:23,680 --> 01:04:26,200
+Alright,
+
+1187
+01:04:26,200 --> 01:04:30,720
+quindi andiamo a la parte start della
+
+1188
+01:04:30,720 --> 01:04:32,359
+formula.
+
+1189
+01:04:32,359 --> 01:04:34,799
+Come vi dicevo, questo pezzo di formula
+
+1190
+01:04:34,799 --> 01:04:38,039
+fai deve codificare che la macchina si
+
+1191
+01:04:38,039 --> 01:04:42,640
+trova nello stato iniziale all'inizio
+
+1192
+01:04:42,640 --> 01:04:46,400
+che su nastro ci sta la stringa W per la
+
+1193
+01:04:46,400 --> 01:04:50,680
+lunghezza di W e poi tutto il resto. Una
+
+1194
+01:04:50,680 --> 01:04:53,039
+cosa che vi faccio notare
+
+1195
+01:04:53,039 --> 01:04:57,520
+è questi qua. Guardate le variabili T i
+
+1196
+01:04:57,520 --> 01:05:02,359
+JL. Ok? Come vedete quell'indice J può
+
+1197
+01:05:02,359 --> 01:05:09,079
+variare può tra 0 e PDN
+
+1198
+01:05:09,480 --> 01:05:12,520
+perché una macchina che compia al più P
+
+1199
+01:05:12,520 --> 01:05:14,480
+di N, cioè significa che noi stiamo
+
+1200
+01:05:14,480 --> 01:05:16,480
+andando a guardare un nastro la cui
+
+1201
+01:05:16,480 --> 01:05:19,160
+lunghezza è PDN.
+
+1202
+01:05:19,160 --> 01:05:21,119
+Questa cosa è sufficiente perché una
+
+1203
+01:05:21,119 --> 01:05:24,760
+macchina che compie PDN passi non potrà
+
+1204
+01:05:24,760 --> 01:05:27,559
+mai vedere nulla oltre quell'orizzonte.
+
+1205
+01:05:27,559 --> 01:05:29,920
+Quindi tutto quello che c'è sul nastro,
+
+1206
+01:05:29,920 --> 01:05:33,039
+al di là di quella finestra non potrà
+
+1207
+01:05:33,039 --> 01:05:35,279
+mai influenzare il funzionamento della
+
+1208
+01:05:35,279 --> 01:05:37,799
+macchina perché la macchina non avrà il
+
+1209
+01:05:37,799 --> 01:05:40,400
+tempo di andarlo a vedere. Ok? Quindi
+
+1210
+01:05:40,400 --> 01:05:43,559
+abbiamo necessità solamente di guardare
+
+1211
+01:05:43,559 --> 01:05:45,400
+un pezzo di nastro, un pezzo di
+
+1212
+01:05:45,400 --> 01:05:47,640
+lunghezza polinomiale. Perché? Perché in
+
+1213
+01:05:47,640 --> 01:05:49,880
+tempo polinomiale la macchina non avrà
+
+1214
+01:05:49,880 --> 01:05:52,440
+mai il tempo di essere influenzata da
+
+1215
+01:05:52,440 --> 01:05:54,359
+qualcosa che sta al di fuori di questa
+
+1216
+01:05:54,359 --> 01:05:55,880
+finestra.
+
+1217
+01:05:55,880 --> 01:05:57,359
+Ok?
+
+1218
+01:05:57,359 --> 01:06:00,000
+Quindi tutto quello che ci interessa
+
+1219
+01:06:00,000 --> 01:06:02,559
+della computazione della macchina sta
+
+1220
+01:06:02,559 --> 01:06:07,000
+fra la cella numero zero e la cella PDN.
+
+1221
+01:06:07,000 --> 01:06:09,279
+Quando perciò noi codifichiamo la
+
+1222
+01:06:09,279 --> 01:06:11,319
+configurazione iniziale della macchina
+
+1223
+01:06:11,319 --> 01:06:13,599
+in cui diciamo la macchina al passo zero
+
+1224
+01:06:13,599 --> 01:06:16,400
+sta nello stato zero, nella porzione
+
+1225
+01:06:16,400 --> 01:06:19,520
+iniziale di nastro ci sta w e in tutto
+
+1226
+01:06:19,520 --> 01:06:23,279
+il resto che ci sta?
+
+1227
+01:06:23,799 --> 01:06:25,520
+Ci sta un bl. Quindi questo lo dobbiamo
+
+1228
+01:06:25,520 --> 01:06:29,920
+scrivere in S. Come me lo scriviamo.
+
+1229
+01:06:41,799 --> 01:06:45,039
+Come lo scriviamo?
+
+1230
+01:06:45,039 --> 01:06:47,760
+Tipo dobbiamo dire che la macchina al
+
+1231
+01:06:47,760 --> 01:06:50,640
+passo zero sta nello stato zero, che è
+
+1232
+01:06:50,640 --> 01:06:55,359
+lo stato iniziale. Come lo scriviamo?
+
+1233
+01:06:55,720 --> 01:07:00,000
+Q00
+Q00.
+
+1234
+01:07:02,359 --> 01:07:05,520
+Quindi questa variabile proposizionale
+
+1235
+01:07:05,520 --> 01:07:08,119
+sarà vera solamente se l'assegnamento di
+
+1236
+01:07:08,119 --> 01:07:09,920
+verità gli davvero, non c'è non si
+
+1237
+01:07:09,920 --> 01:07:12,480
+scappa. Quindi se mettiamo questo in
+
+1238
+01:07:12,480 --> 01:07:14,680
+endro,
+
+1239
+01:07:14,680 --> 01:07:17,400
+l'assegnamento di verità, condizione
+
+1240
+01:07:17,400 --> 01:07:19,440
+necessaria per l'assegnamento di verità
+
+1241
+01:07:19,440 --> 01:07:22,240
+che soddisfa file di W è dare vero a Q
+
+1242
+01:07:22,240 --> 01:07:25,720
+di 00. Ok? Poi dobbiamo dire che il
+
+1243
+01:07:25,720 --> 01:07:29,240
+resto del nastro nel all'inizio del
+
+1244
+01:07:29,240 --> 01:07:32,520
+nastro ci sta W, al resto del nastro ci
+
+1245
+01:07:32,520 --> 01:07:34,799
+sta
+
+1246
+01:07:34,799 --> 01:07:36,400
+ah
+
+1247
+01:07:36,400 --> 01:07:40,760
+blanc. Ok? Quindi al passo zero
+
+1248
+01:07:40,760 --> 01:07:44,480
+lo stato è q0. Al passo zero dove sta la
+
+1249
+01:07:44,480 --> 01:07:46,799
+testina?
+
+1250
+01:07:46,799 --> 01:07:48,799
+Zer
+nella cella zero. E come lo
+
+1251
+01:07:48,799 --> 01:07:53,760
+scriviamo? H
+H.
+
+1252
+01:07:54,760 --> 01:07:57,520
+Dopodiché dobbiamo dire che nella cella
+
+1253
+01:07:57,520 --> 01:08:03,000
+0 ci sta la il primo simbolo w V alla
+
+1254
+01:08:03,000 --> 01:08:08,240
+cella 1. Ok. Come facciamo?
+
+1255
+01:08:14,039 --> 01:08:16,120
+Sto dando la soluzione. Quindi dobbiamo
+
+1256
+01:08:16,120 --> 01:08:19,920
+dire che al passo zero in posizione 0 ci
+
+1257
+01:08:19,920 --> 01:08:22,759
+sta il primo carattere di W, chiamiamolo
+
+1258
+01:08:22,759 --> 01:08:24,839
+V0, per esempio. Come lo possiamo
+
+1259
+01:08:24,839 --> 01:08:27,839
+scrivere?
+
+1260
+01:08:31,120 --> 01:08:34,120
+T
+
+1261
+01:08:34,480 --> 01:08:38,880
+0. Per semplicità scriviamo V0. Ok. Lì
+
+1262
+01:08:38,880 --> 01:08:41,719
+dovremmo scrivere l'indice del simbolo.
+
+1263
+01:08:41,719 --> 01:08:45,480
+Ci scriviamo V0 intendiamo che è il
+
+1264
+01:08:45,480 --> 01:08:48,159
+simbolo che appare in zeresima posizione
+
+1265
+01:08:48,159 --> 01:08:55,799
+di W. Dopodiché cosa avremo? t 1
+
+1266
+01:08:55,839 --> 01:08:58,839
+v1
+
+1267
+01:09:01,040 --> 01:09:04,040
+and t di 02
+
+1268
+01:09:04,040 --> 01:09:09,839
+v2 bla bla bla fino a
+
+1269
+01:09:11,920 --> 01:09:15,880
+t di 0
+
+1270
+01:09:18,640 --> 01:09:26,520
+n - 1 V n - 1. Ok?
+
+1271
+01:09:27,080 --> 01:09:32,239
+Dopodiché cos'altro ci sta?
+
+1272
+01:09:40,279 --> 01:09:44,799
+T di 0 di N che ci sta in posizione N al
+
+1273
+01:09:44,799 --> 01:09:47,920
+passo zero sul nastro
+
+1274
+01:09:47,920 --> 01:09:50,839
+blank.
+
+1275
+01:09:51,799 --> 01:09:56,000
+è in posizione n + 1
+
+1276
+01:09:57,520 --> 01:10:01,679
+black. Fin fin dove dobbiamo arrivare?
+
+1277
+01:10:01,679 --> 01:10:05,320
+T di 0.
+
+1278
+01:10:05,679 --> 01:10:09,440
+Qual è l'ultima cella?
+Pn.
+Pdn che ci
+
+1279
+01:10:09,440 --> 01:10:13,840
+sta in posizione PDN.
+Leng. Ok. Quindi
+
+1280
+01:10:13,840 --> 01:10:18,120
+questo è il pezzo S.
+
+1281
+01:10:18,120 --> 01:10:21,560
+Questo pezzo S, come vedete, è una
+
+1282
+01:10:21,560 --> 01:10:24,960
+formula un po' particolare, è una
+
+1283
+01:10:24,960 --> 01:10:28,280
+formula CNF in cui tutte le clausole
+
+1284
+01:10:28,280 --> 01:10:30,080
+hanno taglia uno, hanno un solo
+
+1285
+01:10:30,080 --> 01:10:33,600
+letterale. Ok?
+
+1286
+01:10:33,600 --> 01:10:35,920
+Quindi cosa significa questa formula?
+
+1287
+01:10:35,920 --> 01:10:39,320
+che al passo zero siamo nello stato Q0,
+
+1288
+01:10:39,320 --> 01:10:41,719
+che al passo zero la testina sta in
+
+1289
+01:10:41,719 --> 01:10:46,360
+posizione 0, che al passo zero abbiamo
+
+1290
+01:10:46,360 --> 01:10:48,760
+eh che al passo zero in posizione zero
+
+1291
+01:10:48,760 --> 01:10:51,719
+sul nastro c'è la il zeresimo lo
+
+1292
+01:10:51,719 --> 01:10:56,760
+zeresimo simbolo di w così via fino a n
+
+1293
+01:10:56,760 --> 01:11:01,440
+- 1 e poi abbiamo tutto il resto blend.
+
+1294
+01:11:01,440 --> 01:11:04,040
+Ok,
+
+1295
+01:11:04,040 --> 01:11:08,560
+spazio ne abbiamo non a sufficienza.
+
+1296
+01:11:08,560 --> 01:11:12,400
+Andiamo all'altra pagina.
+
+1297
+01:11:12,400 --> 01:11:15,480
+Oplà. Next.
+
+1298
+01:11:15,480 --> 01:11:18,560
+Next step. Ok. Quindi ora dobbiamo
+
+1299
+01:11:18,560 --> 01:11:20,440
+codificare
+
+1300
+01:11:20,440 --> 01:11:23,840
+che la funzione Tempo ne abbiamo. Sì.
+
+1301
+01:11:23,840 --> 01:11:26,440
+Dobbiamo codificare nella funzione che i
+
+1302
+01:11:26,440 --> 01:11:29,600
+prossimi next passi seguono la funzione
+
+1303
+01:11:29,600 --> 01:11:33,880
+di transizione. Ok?
+
+1304
+01:11:35,000 --> 01:11:37,960
+Allora, vi guido io. Qua ci sono un po'
+
+1305
+01:11:37,960 --> 01:11:39,480
+di cose a cui si deve stare attenti.
+
+1306
+01:11:39,480 --> 01:11:41,199
+Questa è la parte un po' più sofisticata
+
+1307
+01:11:41,199 --> 01:11:43,639
+della funzione. Eh,
+
+1308
+01:11:43,639 --> 01:11:47,159
+fatto questo, è finita la riduzione.
+
+1309
+01:11:47,159 --> 01:11:49,159
+Allora,
+
+1310
+01:11:49,159 --> 01:11:52,040
+la parte n della funzione f si deve
+
+1311
+01:11:52,040 --> 01:11:54,639
+occupare di
+
+1312
+01:11:54,639 --> 01:11:57,679
+alcune cose.
+
+1313
+01:11:57,679 --> 01:12:00,239
+si deve occupare appunto dell'evoluzione
+
+1314
+01:12:00,239 --> 01:12:03,639
+del contenuto del nastro della macchina
+
+1315
+01:12:03,639 --> 01:12:06,320
+in dipendenza della sua funzione di
+
+1316
+01:12:06,320 --> 01:12:10,320
+transizione. Ok?
+
+1317
+01:12:11,639 --> 01:12:14,159
+Sul nastro possiamo distinguere
+
+1318
+01:12:14,159 --> 01:12:18,280
+sostanzialmente due aree:
+
+1319
+01:12:18,280 --> 01:12:21,400
+la cella dove è collocata la testina e
+
+1320
+01:12:21,400 --> 01:12:23,480
+le celle dove non è collocata la
+
+1321
+01:12:23,480 --> 01:12:25,560
+testina. Ok?
+
+1322
+01:12:25,560 --> 01:12:29,520
+Quindi guardiamo prima le celle dove non
+
+1323
+01:12:29,520 --> 01:12:31,800
+sta la testina.
+
+1324
+01:12:31,800 --> 01:12:34,120
+Da un passo all'altro che succede al
+
+1325
+01:12:34,120 --> 01:12:38,040
+contenuto di queste celle?
+
+1326
+01:12:41,080 --> 01:12:42,600
+Scusla.
+
+1327
+01:12:42,600 --> 01:12:45,120
+Nulla. non succede niente. Cioè, quindi
+
+1328
+01:12:45,120 --> 01:12:46,960
+un pezzo di questa formula dovrà
+
+1329
+01:12:46,960 --> 01:12:50,760
+descrivere che le parti di nastro dove
+
+1330
+01:12:50,760 --> 01:12:54,120
+non c'è la testina da un passo all'altro
+
+1331
+01:12:54,120 --> 01:12:57,199
+devono mantenere lo stesso contenuto.
+
+1332
+01:12:57,199 --> 01:13:00,960
+Un altro pezzo di n dovrà descrivere che
+
+1333
+01:13:00,960 --> 01:13:05,520
+i pezzi di nastro dove c'è la testina
+
+1334
+01:13:05,520 --> 01:13:07,960
+cambiano secondo la funzione di
+
+1335
+01:13:07,960 --> 01:13:10,080
+transizione e quello sarà il pezzo un
+
+1336
+01:13:10,080 --> 01:13:12,040
+po' più sofisticato.
+
+1337
+01:13:12,040 --> 01:13:15,320
+Dopodiché avremo un pezzo Next Step da
+
+1338
+01:13:15,320 --> 01:13:18,480
+codificare. È quello che dicevamo
+
+1339
+01:13:18,480 --> 01:13:20,000
+all'inizio che la macchina deve
+
+1340
+01:13:20,000 --> 01:13:22,480
+computare in esattamente PDN passi.
+
+1341
+01:13:22,480 --> 01:13:26,239
+Quindi un pezzo di N si dovrà occupare
+
+1342
+01:13:26,239 --> 01:13:28,920
+di far sì che i branci di computazione
+
+1343
+01:13:28,920 --> 01:13:31,320
+abbiano tutti lunghezza PDN. Quindi una
+
+1344
+01:13:31,320 --> 01:13:32,639
+volta che arriviamo in una
+
+1345
+01:13:32,639 --> 01:13:34,960
+configurazione finale, questa
+
+1346
+01:13:34,960 --> 01:13:37,120
+configurazione viene ripetuta di passo
+
+1347
+01:13:37,120 --> 01:13:39,400
+in passo fino a quando si arriva a PDN.
+
+1348
+01:13:39,400 --> 01:13:41,360
+Ok? Però questo lo vediamo dopo.
+
+1349
+01:13:41,360 --> 01:13:46,199
+Concentriamoci prima su
+
+1350
+01:13:46,480 --> 01:13:49,800
+la parte dell'inerzia. Lo chiamiamo
+
+1351
+01:13:49,800 --> 01:13:52,800
+inerzia
+
+1352
+01:13:54,920 --> 01:13:56,719
+e sostanzialmente
+
+1353
+01:13:56,719 --> 01:13:59,320
+le parti
+
+1354
+01:13:59,320 --> 01:14:02,560
+di nastro
+
+1355
+01:14:03,360 --> 01:14:06,080
+lontane
+
+1356
+01:14:06,080 --> 01:14:09,520
+dalla testina.
+
+1357
+01:14:11,679 --> 01:14:14,679
+rimangono
+
+1358
+01:14:15,400 --> 01:14:18,400
+invariate
+
+1359
+01:14:19,199 --> 01:14:22,600
+da un passo
+
+1360
+01:14:23,840 --> 01:14:25,760
+all'altro.
+
+1361
+01:14:25,760 --> 01:14:28,400
+Ok? Quindi dobbiamo
+
+1362
+01:14:28,400 --> 01:14:31,280
+codificare questa cosa qua. Lo chiamiamo
+
+1363
+01:14:31,280 --> 01:14:36,440
+N di. Come lo possiamo definire?
+
+1364
+01:14:36,440 --> 01:14:39,600
+Quindi ora dobbiamo scrivere a formula
+
+1365
+01:14:39,600 --> 01:14:44,000
+questa cosa qua. Se al passo I
+
+1366
+01:14:44,000 --> 01:14:47,920
+la testina non sta sulla cella J, il
+
+1367
+01:14:47,920 --> 01:14:52,960
+contenuto della cella J al passo D + 1
+
+1368
+01:14:52,960 --> 01:14:55,280
+lo stesso di quello che era al passo D.
+
+1369
+01:14:55,280 --> 01:14:59,280
+Come lo scriviamo a formula?
+
+1370
+01:15:00,080 --> 01:15:02,480
+Ripeto, dobbiamo scrivere a formula
+
+1371
+01:15:02,480 --> 01:15:05,120
+questa cosa qua. Andate a guardare che
+
+1372
+01:15:05,120 --> 01:15:07,320
+variabili proposizionali
+
+1373
+01:15:07,320 --> 01:15:09,760
+disponiamo. Noi dobbiamo descrivere a
+
+1374
+01:15:09,760 --> 01:15:13,360
+formula questa cosa qui. Se al passo I
+
+1375
+01:15:13,360 --> 01:15:17,520
+la testina non sta in posizione J,
+
+1376
+01:15:17,520 --> 01:15:20,600
+allora il contenuto del nastro in
+
+1377
+01:15:20,600 --> 01:15:25,440
+posizione J al passo I sarà lo stesso
+
+1378
+01:15:25,440 --> 01:15:28,239
+che avremo al passo I + 1. Come si
+
+1379
+01:15:28,239 --> 01:15:31,239
+scrive?
+
+1380
+01:15:31,280 --> 01:15:33,920
+Not Hj.
+
+1381
+01:15:33,920 --> 01:15:38,520
+Not H i J
+
+1382
+01:15:44,520 --> 01:15:49,360
+implica. Attenzione, quindi con not H i
+
+1383
+01:15:49,360 --> 01:15:52,760
+J stiamo sc stiamo dicendo la testina al
+
+1384
+01:15:52,760 --> 01:15:56,199
+passo I non sta in posizione J. Adesso
+
+1385
+01:15:56,199 --> 01:15:59,480
+dobbiamo scrivere che
+
+1386
+01:15:59,480 --> 01:16:03,120
+il contenuto del nastro in posizione J
+
+1387
+01:16:03,120 --> 01:16:07,520
+al passo I viene replicato al passo di I
+
+1388
+01:16:07,520 --> 01:16:11,520
++ 1. Come facciamo? Sì.
+Alla prima parte
+
+1389
+01:16:11,520 --> 01:16:13,639
+mettiamo
+
+1390
+01:16:13,639 --> 01:16:17,800
+T I B J L.
+Sì.
+
+1391
+01:16:17,800 --> 01:16:23,480
+Noi implichiamo
+sì
+che eh
+
+1392
+01:16:23,520 --> 01:16:26,159
+TD I J
+
+1393
+01:16:26,159 --> 01:16:28,159
+T di
+
+1394
+01:16:28,159 --> 01:16:30,760
+al passo successivo
+
+1395
+01:16:30,760 --> 01:16:35,840
+1
+I + 1 J
+
+1396
+01:16:35,840 --> 01:16:38,639
+vir L.
+
+1397
+01:16:38,639 --> 01:16:40,920
+Che significa sta formula? Riguardiamolo
+
+1398
+01:16:40,920 --> 01:16:43,920
+assieme.
+
+1399
+01:16:45,040 --> 01:16:50,840
+Se la testina al passo I non sta in
+
+1400
+01:16:50,840 --> 01:16:56,600
+posizione J e inoltre al passo I in
+
+1401
+01:16:56,600 --> 01:17:00,199
+posizione J abbiamo il simbolo L,
+
+1402
+01:17:00,199 --> 01:17:03,320
+l'ellesimo simbolo, allora al passo I +
+
+1403
+01:17:03,320 --> 01:17:05,800
+1 in posizione J il simbolo deve essere
+
+1404
+01:17:05,800 --> 01:17:09,880
+lo stesso. Ok?
+
+1405
+01:17:09,880 --> 01:17:11,120
+È chiaro il significato di questo
+
+1406
+01:17:11,120 --> 01:17:13,520
+pezzettino?
+
+1407
+01:17:13,520 --> 01:17:17,040
+Ovviamente questa cosa deve valere per
+
+1408
+01:17:17,040 --> 01:17:23,320
+tutte le triple I, J.
+
+1409
+01:17:26,880 --> 01:17:29,520
+Eh, andiamo qua. Quindi per tutte le
+
+1410
+01:17:29,520 --> 01:17:33,840
+triple I J L.
+
+1411
+01:17:33,840 --> 01:17:35,960
+Chiaro? È chiaro il significato di sto
+
+1412
+01:17:35,960 --> 01:17:38,600
+pezzo? Sto pezzo semplicemente sta
+
+1413
+01:17:38,600 --> 01:17:43,080
+dicendo se la al passo I la testina non
+
+1414
+01:17:43,080 --> 01:17:45,840
+è in posizione J
+
+1415
+01:17:45,840 --> 01:17:48,760
+e inoltre al passo I in posizione J ci
+
+1416
+01:17:48,760 --> 01:17:51,760
+sta l'ellesimo simbolo, allora al passo
+
+1417
+01:17:51,760 --> 01:17:54,280
+D + 1 in posizione J sul nas ci deve
+
+1418
+01:17:54,280 --> 01:17:57,320
+essere nuovamente l'esimo simbolo. È
+
+1419
+01:17:57,320 --> 01:17:59,120
+chiaro? Quello è il significato di
+
+1420
+01:17:59,120 --> 01:18:01,159
+quella formula, di quel pezzo. Ok?
+
+1421
+01:18:01,159 --> 01:18:04,080
+Questo gestisce solo l'inerzia, cioè le
+
+1422
+01:18:04,080 --> 01:18:07,639
+porzioni di nastro lontane dalla testina
+
+1423
+01:18:07,639 --> 01:18:09,440
+rimangono invariate da un passo
+
+1424
+01:18:09,440 --> 01:18:12,440
+all'altro. Ora ci serve un pezzo di
+
+1425
+01:18:12,440 --> 01:18:14,239
+formula che codifica la funzione di
+
+1426
+01:18:14,239 --> 01:18:17,960
+transizione. Ok?
+
+1427
+01:18:18,320 --> 01:18:20,760
+Questo lo facciamo facciamo un esempio
+
+1428
+01:18:20,760 --> 01:18:25,639
+perché è un po' più difficile.
+
+1429
+01:18:26,880 --> 01:18:29,880
+Allora,
+
+1430
+01:18:31,800 --> 01:18:34,560
+diamo un semp un esempio. Poi ovviamente
+
+1431
+01:18:34,560 --> 01:18:37,199
+è una cosa ci mettiamo in questo pezzo
+
+1432
+01:18:37,199 --> 01:18:39,080
+di formula è una generalizzazione di
+
+1433
+01:18:39,080 --> 01:18:42,880
+questo che vediamo, ok?
+
+1434
+01:18:43,520 --> 01:18:45,840
+per ogni
+
+1435
+01:18:45,840 --> 01:18:48,120
+pezzo
+
+1436
+01:18:48,120 --> 01:18:52,560
+della funzione
+
+1437
+01:18:52,920 --> 01:18:56,679
+di transizione
+
+1438
+01:18:59,800 --> 01:19:03,080
+del tipo
+
+1439
+01:19:03,080 --> 01:19:06,520
+delta Q di K
+
+1440
+01:19:06,520 --> 01:19:10,320
+alfa L.
+
+1441
+01:19:11,920 --> 01:19:14,600
+QK'
+
+1442
+01:19:14,600 --> 01:19:19,560
+alfa L' destra oppure
+
+1443
+01:19:19,560 --> 01:19:22,360
+QK'
+
+1444
+01:19:22,360 --> 01:19:26,080
+alfa L' sinistra,
+
+1445
+01:19:26,080 --> 01:19:28,159
+eccetera.
+
+1446
+01:19:28,159 --> 01:19:30,040
+Quindi noi quello che dobbiamo andare a
+
+1447
+01:19:30,040 --> 01:19:32,360
+fare ora che cos'è? Noi dobbiamo andare
+
+1448
+01:19:32,360 --> 01:19:35,679
+a guardare la funzione di transizione
+
+1449
+01:19:35,679 --> 01:19:37,719
+della macchina. La funzione di
+
+1450
+01:19:37,719 --> 01:19:39,320
+transizione della macchina a questa
+
+1451
+01:19:39,320 --> 01:19:43,000
+struttura per ogni coppia stato simbolo
+
+1452
+01:19:43,000 --> 01:19:45,880
+ci dà una serie di triple, diciamo una
+
+1453
+01:19:45,880 --> 01:19:47,199
+serie perché la macchina è non
+
+1454
+01:19:47,199 --> 01:19:50,400
+deterministica. Quindi per ogni coppia
+
+1455
+01:19:50,400 --> 01:19:52,639
+stato simbolo la funzione di transizione
+
+1456
+01:19:52,639 --> 01:19:55,480
+ci dice quale, come l'avevo chiamato
+
+1457
+01:19:55,480 --> 01:19:59,440
+questo qondo. Vai, chiamo k second così.
+
+1458
+01:19:59,440 --> 01:20:00,920
+Ok?
+
+1459
+01:20:00,920 --> 01:20:03,800
+Per ogni avremo cose di questo tipo.
+
+1460
+01:20:03,800 --> 01:20:06,960
+Data la coppia stato simbolo, la
+
+1461
+01:20:06,960 --> 01:20:08,800
+macchina andrà in uno stato, scrive un
+
+1462
+01:20:08,800 --> 01:20:10,719
+certo simbolo e muove la testino a
+
+1463
+01:20:10,719 --> 01:20:12,960
+destra o a sinistra. Ok? Quindi noi
+
+1464
+01:20:12,960 --> 01:20:15,080
+dobbiamo andare a codificare dentro un
+
+1465
+01:20:15,080 --> 01:20:19,600
+pezzo di formula questa cosa qua. Ok?
+
+1466
+01:20:19,600 --> 01:20:21,040
+Questo è solo un esempio perché
+
+1467
+01:20:21,040 --> 01:20:22,800
+ovviamente può essere più ricca, però
+
+1468
+01:20:22,800 --> 01:20:25,159
+l'importante è dare un'idea. Ok? Quindi
+
+1469
+01:20:25,159 --> 01:20:28,000
+avremo next step
+
+1470
+01:20:28,000 --> 01:20:31,239
+H che codifica il funzionamento sulla
+
+1471
+01:20:31,239 --> 01:20:34,239
+testina.
+
+1472
+01:20:35,679 --> 01:20:40,239
+sarà qualcosa di questo tipo.
+
+1473
+01:20:42,600 --> 01:20:46,760
+Quindi dobbiamo dire
+
+1474
+01:20:47,440 --> 01:20:51,480
+codifichiamo questa cosa qua
+
+1475
+01:20:51,480 --> 01:20:54,800
+che al passo iesimo, questo lo scrivo un
+
+1476
+01:20:54,800 --> 01:20:57,600
+attimo meglio, che era una virgola,
+
+1477
+01:20:57,600 --> 01:21:00,800
+questa è virgola. Ok,
+
+1478
+01:21:00,800 --> 01:21:02,960
+dobbiamo scrivere questo pezzo di
+
+1479
+01:21:02,960 --> 01:21:07,480
+formula. Se al passo i
+
+1480
+01:21:08,360 --> 01:21:13,440
+la macchina sta nello stato cappesimo,
+
+1481
+01:21:13,560 --> 01:21:17,159
+la testina sta in una certa posizione J
+
+1482
+01:21:17,159 --> 01:21:20,239
+e in quella cella c'è il simbolo
+
+1483
+01:21:20,239 --> 01:21:24,040
+ellesimo. Allora, andiamo nello stato K'
+
+1484
+01:21:24,040 --> 01:21:27,080
+scriviamo il simbolo L'O e spostiamo la
+
+1485
+01:21:27,080 --> 01:21:30,320
+a sinistra a destra di di un passo la
+
+1486
+01:21:30,320 --> 01:21:32,440
+testina. Come possiamo scriverla questa
+
+1487
+01:21:32,440 --> 01:21:34,199
+cosa?
+
+1488
+01:21:34,199 --> 01:21:37,400
+Quindi dobbiamo dire che al passo I la
+
+1489
+01:21:37,400 --> 01:21:40,719
+macchina si trova nello stato K. Come lo
+
+1490
+01:21:40,719 --> 01:21:44,280
+scriviamo questo?
+
+1491
+01:21:45,520 --> 01:21:48,480
+H.
+
+1492
+01:21:48,480 --> 01:21:50,600
+Attenzione, attenzione, partiamo. Prima
+
+1493
+01:21:50,600 --> 01:21:52,440
+la macchina al passo I si trova nello
+
+1494
+01:21:52,440 --> 01:21:54,880
+stato K.
+
+1495
+01:21:54,880 --> 01:21:58,280
+Q.
+Q.
+
+1496
+01:21:58,280 --> 01:22:00,199
+Ok.
+
+1497
+01:22:00,199 --> 01:22:02,920
+Poi dobbiamo dire che la testina al
+
+1498
+01:22:02,920 --> 01:22:08,239
+passo I sta in una certa posizione J.
+
+1499
+01:22:08,239 --> 01:22:11,239
+H.
+
+1500
+01:22:11,320 --> 01:22:13,719
+Poi dobbiamo dire che al passo I in
+
+1501
+01:22:13,719 --> 01:22:17,120
+posizione J ci sta il simbolo esimo.
+
+1502
+01:22:17,120 --> 01:22:20,000
+Come facciamo?
+
+1503
+01:22:20,000 --> 01:22:23,560
+T i j.
+
+1504
+01:22:24,000 --> 01:22:27,520
+Quindi questo pezzo di formula ci dice
+
+1505
+01:22:27,520 --> 01:22:31,719
+se al passo i,
+
+1506
+01:22:34,320 --> 01:22:37,480
+se al passo I la macchina si trova nello
+
+1507
+01:22:37,480 --> 01:22:40,679
+stato K, al passo I la testina si trova
+
+1508
+01:22:40,679 --> 01:22:44,080
+in posizione J e al passo I in posizione
+
+1509
+01:22:44,080 --> 01:22:50,679
+J abbiamo il simbolo alfa L. Allora,
+
+1510
+01:22:50,760 --> 01:22:53,560
+in che stato saremo?
+
+1511
+01:22:53,560 --> 01:22:57,679
+al passo i + 1
+
+1512
+01:23:04,639 --> 01:23:11,120
+m k' quindi saremo come q
+
+1513
+01:23:11,120 --> 01:23:16,400
+I + 1 K'
+
+1514
+01:23:18,159 --> 01:23:23,199
+dove sarà la testina al passo i +
+
+1515
+01:23:24,600 --> 01:23:30,320
+sarà in J + 1. Quindi cos'è? Hi + 1 J +
+
+1516
+01:23:30,320 --> 01:23:32,080
+1.
+
+1517
+01:23:32,080 --> 01:23:35,960
+Cosa ci sarà al passo i + 1 in posizione
+
+1518
+01:23:35,960 --> 01:23:38,600
+J sul nastro?
+
+1519
+01:23:38,600 --> 01:23:44,239
+L'fa l' quindi è T I + 1
+
+1520
+01:23:44,239 --> 01:23:47,480
+J L'.
+
+1521
+01:23:47,480 --> 01:23:51,719
+Sì,
+scusi, la testina al passo + 1 non
+
+1522
+01:23:51,719 --> 01:23:54,159
+sta in posizione
+
+1523
+01:23:54,159 --> 01:23:57,400
+J diverso da J' perché può essere o a
+
+1524
+01:23:57,400 --> 01:23:59,840
+destra o a sinistra rispetto alla
+
+1525
+01:23:59,840 --> 01:24:03,280
+posizione della testina al passo in.
+Non
+
+1526
+01:24:03,280 --> 01:24:05,000
+ho capito. Ripendi.
+Allora, quando noi
+
+1527
+01:24:05,000 --> 01:24:06,520
+muoamo la testina andiamo naturalmente
+
+1528
+01:24:06,520 --> 01:24:08,760
+destra e sinistra.
+Sì.
+In questo caso,
+
+1529
+01:24:08,760 --> 01:24:10,239
+come sta considerando il caso iniziale,
+
+1530
+01:24:10,239 --> 01:24:11,960
+qui sicuramente non devo per forza
+
+1531
+01:24:11,960 --> 01:24:14,199
+andare a destra, no?
+
+1532
+01:24:14,199 --> 01:24:16,480
+Quindi quando eh vado a costrellare la
+
+1533
+01:24:16,480 --> 01:24:18,520
+seconda parte di implicazione, lei ha
+
+1534
+01:24:18,520 --> 01:24:20,679
+messo H, appunto, si va a costare la
+
+1535
+01:24:20,679 --> 01:24:24,800
+testina 1, jo,
+quindi vuol dire che io
+
+1536
+01:24:24,800 --> 01:24:27,800
+vado necessariamente a destra.
+Sì,
+ma
+
+1537
+01:24:27,800 --> 01:24:29,560
+non voglio indicare che vado o a destra
+
+1538
+01:24:29,560 --> 01:24:31,040
+o a sinistra.
+Questo lo dobbiamo
+
+1539
+01:24:31,040 --> 01:24:33,520
+scrivere ora. Ah, scusa.
+Ok, però buona
+
+1540
+01:24:33,520 --> 01:24:36,960
+osservazione. Questo pezzo di di di
+
+1541
+01:24:36,960 --> 01:24:40,920
+formula sta codificando solamente questa
+
+1542
+01:24:40,920 --> 01:24:44,960
+cosa qua. Ok?
+
+1543
+01:24:46,440 --> 01:24:48,560
+Però la macchina è non deterministica,
+
+1544
+01:24:48,560 --> 01:24:50,560
+quindi può avere un'altra scelta. Come
+
+1545
+01:24:50,560 --> 01:24:52,880
+gli diamo un'altra scelta? Semplicemente
+
+1546
+01:24:52,880 --> 01:24:55,679
+ci mettiamo un OR qua.
+
+1547
+01:24:55,679 --> 01:24:58,400
+Quindi, qual è l'altra opzione? Che al
+
+1548
+01:24:58,400 --> 01:25:01,760
+passo i + 1 la macchina si trova in
+
+1549
+01:25:01,760 --> 01:25:04,119
+quale stato?
+
+1550
+01:25:04,119 --> 01:25:07,719
+K second. La testina dove si troverà? al
+
+1551
+01:25:07,719 --> 01:25:10,239
+passo i + 1
+
+1552
+01:25:10,239 --> 01:25:13,719
+J - 1
+J - 1
+
+1553
+01:25:13,719 --> 01:25:17,960
+e su nastro al passo i + 1 in posizione
+
+1554
+01:25:17,960 --> 01:25:22,320
+J avremo L second. Ok?
+
+1555
+01:25:22,320 --> 01:25:24,440
+Quindi abbiamo questa regola di
+
+1556
+01:25:24,440 --> 01:25:27,480
+implicazione che ci sta. È un esempio di
+
+1557
+01:25:27,480 --> 01:25:29,840
+codifica di funzione di transizione. Se
+
+1558
+01:25:29,840 --> 01:25:31,520
+la funzione di transizione ha più
+
+1559
+01:25:31,520 --> 01:25:35,639
+scelte, questa cosa c'ha più roba inor
+
+1560
+01:25:35,639 --> 01:25:37,480
+in testa. Ok? Qui abbiamo fatto solo un
+
+1561
+01:25:37,480 --> 01:25:40,360
+esempio. Ovviamente questa cosa va
+
+1562
+01:25:40,360 --> 01:25:44,360
+definita per tutte le triple IJL.
+
+1563
+01:25:44,360 --> 01:25:48,480
+Sì,
+non
+
+1564
+01:25:48,480 --> 01:25:50,719
+anche, però diciamo che può andare da un
+
+1565
+01:25:50,719 --> 01:25:53,280
+lato o dall'altro. Ok? È la stessa cosa.
+
+1566
+01:25:53,280 --> 01:25:55,119
+La macchina fa destra sinistra in caso
+
+1567
+01:25:55,119 --> 01:25:58,760
+gli serve. Ok? Se diciamo che la testina
+
+1568
+01:25:58,760 --> 01:26:03,960
+sta ferma hi + 1 j. Ok? E poi questo va
+
+1569
+01:26:03,960 --> 01:26:08,880
+definito per tutte le triple IGL. Ok,
+
+1570
+01:26:08,880 --> 01:26:12,679
+ci siamo quasi, resistete.
+
+1571
+01:26:12,679 --> 01:26:16,040
+Ok, quindi e questo è il pezzo di next
+
+1572
+01:26:16,040 --> 01:26:19,600
+step che gestisce la testina. Poi ci
+
+1573
+01:26:19,600 --> 01:26:22,760
+serve, quindi uno era questo qua,
+
+1574
+01:26:22,760 --> 01:26:27,239
+l'altro è questo qua, poi ci serve
+
+1575
+01:26:27,239 --> 01:26:32,560
+che cosa? ci serve la parte del padding,
+
+1576
+01:26:32,560 --> 01:26:37,159
+cioè tutte quei passaggi fittizi che ci
+
+1577
+01:26:37,159 --> 01:26:39,560
+siamo inventati che la macchina deve
+
+1578
+01:26:39,560 --> 01:26:42,320
+compiere per fare esattamente PDN passi.
+
+1579
+01:26:42,320 --> 01:26:44,880
+Ok? Questa è una cosa che ci serve a
+
+1580
+01:26:44,880 --> 01:26:48,760
+semplificare la parte f della formula,
+
+1581
+01:26:48,760 --> 01:26:51,560
+ok?
+
+1582
+01:26:51,560 --> 01:26:54,400
+Quindi n
+
+1583
+01:26:54,400 --> 01:26:57,880
+di padding.
+
+1584
+01:26:59,000 --> 01:27:03,679
+Allora, quello che noi dobbiamo dire
+
+1585
+01:27:03,679 --> 01:27:06,639
+sostanzialmente è questo è che se a un
+
+1586
+01:27:06,639 --> 01:27:09,239
+certo passo i
+
+1587
+01:27:09,239 --> 01:27:13,719
+la macchina entra nello stato Fale,
+
+1588
+01:27:13,719 --> 01:27:15,760
+allora al passo successivo la macchina
+
+1589
+01:27:15,760 --> 01:27:18,199
+sta nello stesso stato e il nastro è
+
+1590
+01:27:18,199 --> 01:27:20,320
+invariato, la testina non si sposta e il
+
+1591
+01:27:20,320 --> 01:27:24,960
+nastro è invariato. Come lo scriviamo?
+
+1592
+01:27:26,080 --> 01:27:28,880
+Quindi a un passo i
+
+1593
+01:27:28,880 --> 01:27:32,800
+la macchina entra nello stato finale
+
+1594
+01:27:32,800 --> 01:27:36,159
+che lo chiamiamo F. Quindi se è al passo
+
+1595
+01:27:36,159 --> 01:27:39,000
+i
+
+1596
+01:27:39,000 --> 01:27:42,320
+la macchina entra nello stato F e
+
+1597
+01:27:42,320 --> 01:27:45,840
+inoltre al passo I la testina sta in
+
+1598
+01:27:45,840 --> 01:27:50,679
+posizione J e inoltre al passo I in
+
+1599
+01:27:50,679 --> 01:27:54,560
+posizione J sul nastro c'è il simbolo
+
+1600
+01:27:54,560 --> 01:27:56,239
+esimo.
+
+1601
+01:27:56,239 --> 01:28:00,719
+Allora al passo i + 1 la macchina sta
+
+1602
+01:28:00,719 --> 01:28:03,800
+nello stesso stato.
+
+1603
+01:28:03,800 --> 01:28:07,239
+La testina al passo i + 1 non cambia di
+
+1604
+01:28:07,239 --> 01:28:12,560
+posizione e al passo I + 1 il contenuto
+
+1605
+01:28:12,560 --> 01:28:17,560
+del nastro è lo stesso identico.
+
+1606
+01:28:17,760 --> 01:28:19,719
+Ok?
+
+1607
+01:28:19,719 --> 01:28:21,920
+E questo va fatto per tutte le triple
+
+1608
+01:28:21,920 --> 01:28:24,880
+IJL.
+
+1609
+01:28:24,880 --> 01:28:27,920
+Sì, non ho capito la tipa di padding nel
+
+1610
+01:28:27,920 --> 01:28:31,560
+senso.
+Ok. È questo, è questo
+
+1611
+01:28:31,560 --> 01:28:34,280
+il padding, è questa cosa qua, sono i
+
+1612
+01:28:34,280 --> 01:28:36,440
+passaggi rossi, nel senso se arriviamo a
+
+1613
+01:28:36,440 --> 01:28:38,400
+una configurazione finale,
+
+1614
+01:28:38,400 --> 01:28:40,199
+indipendentemente se sia accettante o
+
+1615
+01:28:40,199 --> 01:28:43,760
+meno, noi facciamo questi passaggi
+
+1616
+01:28:43,760 --> 01:28:46,600
+fittizzi che replicano il contenuto del
+
+1617
+01:28:46,600 --> 01:28:48,920
+nastro, in maniera tale che per vedere
+
+1618
+01:28:48,920 --> 01:28:51,080
+se la macchina ha accettato o meno,
+
+1619
+01:28:51,080 --> 01:28:53,760
+andremo all'ultimissimo passo, al
+
+1620
+01:28:53,760 --> 01:28:56,480
+pdesimo, per vedere se c'è lo stato
+
+1621
+01:28:56,480 --> 01:28:57,920
+accettante o meno, in maniera tale che
+
+1622
+01:28:57,920 --> 01:28:59,679
+non ce lo dobbiamo cercare in mezzo
+
+1623
+01:28:59,679 --> 01:29:01,639
+all'albero dov'è l'accettazione. Ok,
+
+1624
+01:29:01,639 --> 01:29:04,600
+andiamo in fondo. Questo è giusto un
+
+1625
+01:29:04,600 --> 01:29:06,639
+trucchetto.
+
+1626
+01:29:06,639 --> 01:29:10,320
+Dove sta? qua.
+
+1627
+01:29:10,440 --> 01:29:12,960
+Quindi questo pezzo di formula ci dice
+
+1628
+01:29:12,960 --> 01:29:18,159
+che se la macchina M al passo I entra
+
+1629
+01:29:18,159 --> 01:29:20,480
+nello stato finale, la testina al passo
+
+1630
+01:29:20,480 --> 01:29:23,760
+I stanno in posizione J e al passo I la
+
+1631
+01:29:23,760 --> 01:29:26,320
+posizione J sul nastro c'è il simbolo
+
+1632
+01:29:26,320 --> 01:29:28,600
+esimo, allora al passo di dopo la
+
+1633
+01:29:28,600 --> 01:29:30,520
+macchina sta nello stesso stato, la
+
+1634
+01:29:30,520 --> 01:29:32,719
+testina sta nello stesso posto e il
+
+1635
+01:29:32,719 --> 01:29:35,520
+contenuto del nastro è lo stesso. Ok?
+
+1636
+01:29:35,520 --> 01:29:38,880
+Questo però gestisce che cosa? Solamente
+
+1637
+01:29:38,880 --> 01:29:42,440
+gli stati accettato accettante.
+
+1638
+01:29:42,440 --> 01:29:44,400
+Serve un pezzo di formula che fa il
+
+1639
+01:29:44,400 --> 01:29:47,280
+padding quando entriamo in stati non
+
+1640
+01:29:47,280 --> 01:29:50,920
+accettanti, ok? Cioè, quindi entriamo in
+
+1641
+01:29:50,920 --> 01:29:54,400
+una configurazione in cui siamo in uno
+
+1642
+01:29:54,400 --> 01:29:58,320
+stato, leggiamo un simbolo per i quali
+
+1643
+01:29:58,320 --> 01:30:00,760
+la funzione di transizione non è
+
+1644
+01:30:00,760 --> 01:30:03,480
+definita. In quel caso dobbiamo far sì
+
+1645
+01:30:03,480 --> 01:30:06,280
+che la macchina rimanga nello stesso
+
+1646
+01:30:06,280 --> 01:30:09,199
+stato, la testina rimanga nello stesso
+
+1647
+01:30:09,199 --> 01:30:11,520
+posto e sul nastro non succede niente di
+
+1648
+01:30:11,520 --> 01:30:13,480
+strano. Ok?
+
+1649
+01:30:13,480 --> 01:30:17,040
+Questa cosa la facciamo così,
+
+1650
+01:30:17,040 --> 01:30:18,960
+ve la
+
+1651
+01:30:18,960 --> 01:30:21,880
+scrivo io, molto simile per tutte le
+
+1652
+01:30:21,880 --> 01:30:25,280
+triple I, JL.
+
+1653
+01:30:25,280 --> 01:30:29,840
+E inoltre per tutti gli stati QK
+
+1654
+01:30:29,840 --> 01:30:33,440
+appartenenti a Q e tutti i simboli alfa
+
+1655
+01:30:33,440 --> 01:30:37,360
+L appartenenti a gamma tali che la
+
+1656
+01:30:37,360 --> 01:30:40,280
+funzione Q
+
+1657
+01:30:40,280 --> 01:30:45,000
+alfa di L è vuota. No, non è definita,
+
+1658
+01:30:45,000 --> 01:30:48,639
+abbiamo la stessa identica cosa,
+
+1659
+01:30:48,639 --> 01:30:58,840
+cioè Q di I K and H I J and T I J L
+
+1660
+01:30:58,840 --> 01:31:07,639
+implica Q di I + 1 K and H di I J and T
+
+1661
+01:31:07,639 --> 01:31:11,119
+I J
+
+1662
+01:31:14,800 --> 01:31:16,960
+È chiaro? È la stessa identica cosa,
+
+1663
+01:31:16,960 --> 01:31:20,080
+solo che è definita per tutte le coppie
+
+1664
+01:31:20,080 --> 01:31:22,000
+stato simbolo dove la macchina si
+
+1665
+01:31:22,000 --> 01:31:24,119
+blocca. Cioè, quindi che cosa ho scritto
+
+1666
+01:31:24,119 --> 01:31:28,520
+là? per tutte le triple
+
+1667
+01:31:28,520 --> 01:31:30,440
+IJL
+
+1668
+01:31:30,440 --> 01:31:35,199
+e tutte le coppie stato simbolo tale per
+
+1669
+01:31:35,199 --> 01:31:38,800
+cui la funzione di transizione non è
+
+1670
+01:31:38,800 --> 01:31:41,440
+definita su quella coppia.
+
+1671
+01:31:41,440 --> 01:31:44,760
+Allora, se al passo i la macchina sta in
+
+1672
+01:31:44,760 --> 01:31:46,760
+quello stato, la testina sta in
+
+1673
+01:31:46,760 --> 01:31:50,719
+posizione J e in posizione J sul nastro
+
+1674
+01:31:50,719 --> 01:31:52,840
+c'è il simbolo ellesimo, quella cosa
+
+1675
+01:31:52,840 --> 01:31:56,000
+viene replicata al passo successivo.
+
+1676
+01:31:56,000 --> 01:31:59,239
+Sì.
+Domanda. Eh, ma il parking noi l'
+
+1677
+01:31:59,239 --> 01:32:02,840
+andiamo a spiccare soltanto nei rami che
+
+1678
+01:32:02,840 --> 01:32:05,760
+vanno eh diciamo
+e nelle configurazioni
+
+1679
+01:32:05,760 --> 01:32:09,040
+finali. una configurazione finale se la
+
+1680
+01:32:09,040 --> 01:32:11,760
+macchina non può o entra in uno stato
+
+1681
+01:32:11,760 --> 01:32:14,520
+accettante o si sta andando a inceppare
+
+1682
+01:32:14,520 --> 01:32:16,639
+in uno stato non accettante. Però
+
+1683
+01:32:16,639 --> 01:32:18,719
+siccome la nostra definizione, per
+
+1684
+01:32:18,719 --> 01:32:20,760
+esempio, se andrete a vedere gli appunti
+
+1685
+01:32:20,760 --> 01:32:24,159
+di Calautti lì lui ha uno stato
+
+1686
+01:32:24,159 --> 01:32:26,440
+rifiutante. Noi stati rifiutanti non ce
+
+1687
+01:32:26,440 --> 01:32:28,119
+l'abbiamo. Per noi è uno stato
+
+1688
+01:32:28,119 --> 01:32:30,920
+rifiutante quando c è uno stato in cui
+
+1689
+01:32:30,920 --> 01:32:34,320
+la testina legge un simbolo per il per
+
+1690
+01:32:34,320 --> 01:32:36,560
+la quale non non ci aspettiamo di
+
+1691
+01:32:36,560 --> 01:32:38,320
+vederlo in quello stato e quindi la
+
+1692
+01:32:38,320 --> 01:32:40,520
+macchina si ferma là. Quindi lì che cosa
+
+1693
+01:32:40,520 --> 01:32:42,440
+scriviamo là? Che quando siamo in uno
+
+1694
+01:32:42,440 --> 01:32:45,360
+stato e leggiamo un simbolo tale per cui
+
+1695
+01:32:45,360 --> 01:32:47,400
+questa cosa non è prevista dalla
+
+1696
+01:32:47,400 --> 01:32:49,719
+funzione di transizione, allora noi lo
+
+1697
+01:32:49,719 --> 01:32:51,960
+replichiamo il passo successivo. Tutto
+
+1698
+01:32:51,960 --> 01:32:56,199
+qua? Ma scusi,
+
+1699
+01:32:56,239 --> 01:32:59,480
+quando arriviamo alla fine dell'al
+
+1700
+01:32:59,480 --> 01:33:02,480
+stato finale,
+cioè noi applichiamo la
+
+1701
+01:33:02,480 --> 01:33:05,199
+parte dello stato accettante, cioè nel
+
+1702
+01:33:05,199 --> 01:33:08,320
+senso noi non possiamoare questa cosa
+
+1703
+01:33:08,320 --> 01:33:11,679
+per ogni stato. Attenzione, noi non lo
+
+1704
+01:33:11,679 --> 01:33:15,040
+stiamo facendo, noi stiamo inserendo
+
+1705
+01:33:15,040 --> 01:33:18,960
+nella formula FW le possibilità, sarà
+
+1706
+01:33:18,960 --> 01:33:23,400
+l'assegnamento di verità che che si dà
+
+1707
+01:33:23,400 --> 01:33:26,480
+alle alle proposizioni, no, alle
+
+1708
+01:33:26,480 --> 01:33:29,080
+variaboli proposizionali che sarà un
+
+1709
+01:33:29,080 --> 01:33:31,840
+assegnamento di verità true false che va
+
+1710
+01:33:31,840 --> 01:33:34,480
+a specificare cosa esattamente sta
+
+1711
+01:33:34,480 --> 01:33:36,679
+succedendo nella computazione. Ma noi
+
+1712
+01:33:36,679 --> 01:33:38,679
+non lo stiamo non sappiamo quale sarà
+
+1713
+01:33:38,679 --> 01:33:41,199
+questo assegnamento. Stiamo costruendo
+
+1714
+01:33:41,199 --> 01:33:44,360
+una formula il cui assegnamento di
+
+1715
+01:33:44,360 --> 01:33:47,360
+verità che la soddisfa deve soddisfare
+
+1716
+01:33:47,360 --> 01:33:49,360
+dei vincoli che vanno a simulare il
+
+1717
+01:33:49,360 --> 01:33:51,080
+funzionamento di una macchina di Turing.
+
+1718
+01:33:51,080 --> 01:33:53,360
+Ma quale sia? Mica noi lo sappiamo,
+
+1719
+01:33:53,360 --> 01:33:55,320
+perché se lo dovessimo calcolare quello
+
+1720
+01:33:55,320 --> 01:33:58,440
+prenderebbe tempo esponenziale.
+
+1721
+01:33:58,440 --> 01:34:01,520
+Ma una domanda stupida. Ma
+nessuna
+
+1722
+01:34:01,520 --> 01:34:03,080
+domanda è stupida.
+
+1723
+01:34:03,080 --> 01:34:06,400
+Eh, ma in questa fase, cioè questa fase
+
+1724
+01:34:06,400 --> 01:34:09,080
+noi stiamo già dimostrando oppure siamo
+
+1725
+01:34:09,080 --> 01:34:11,679
+in predimostrazione?
+No, qua siamo solo
+
+1726
+01:34:11,679 --> 01:34:15,960
+stiamo mostrando che cosa spunta fuori
+
+1727
+01:34:15,960 --> 01:34:18,840
+la funzione di trasformazione. Poi è
+
+1728
+01:34:18,840 --> 01:34:20,000
+ovvio che questa funzione di
+
+1729
+01:34:20,000 --> 01:34:22,000
+trasformazione tira fuori una file
+
+1730
+01:34:22,000 --> 01:34:25,600
+talmente rifinita che si sta portando
+
+1731
+01:34:25,600 --> 01:34:27,960
+appresso la ragione per cui funzionerà.
+
+1732
+01:34:27,960 --> 01:34:29,560
+Questa è la questione, però finora
+
+1733
+01:34:29,560 --> 01:34:32,040
+stiamo descrivendo solamente che fa F e
+
+1734
+01:34:32,040 --> 01:34:34,600
+non abbiamo nemmeno finito perché manca
+
+1735
+01:34:34,600 --> 01:34:37,880
+un pezzo, ragazzi.
+È chiaro? Cioè, che
+
+1736
+01:34:37,880 --> 01:34:40,679
+fa sta F, guys? Gli ultimi 5 minuti?
+
+1737
+01:34:40,679 --> 01:34:43,560
+Pensavo di finire prima e invece no.
+
+1738
+01:34:43,560 --> 01:34:46,080
+Allora, questi quindi li sfruttiamo. Sì,
+
+1739
+01:34:46,080 --> 01:34:49,360
+dell'ultima che scritto sarebbe al
+
+1740
+01:34:49,360 --> 01:34:53,360
+Yes. Yes. Quello è sbagliato.
+
+1741
+01:34:55,960 --> 01:34:57,080
+Sì.
+
+1742
+01:34:57,080 --> 01:35:00,280
++ 1.
+
+1743
+01:35:02,719 --> 01:35:06,840
+Questo è hi + 1
+
+1744
+01:35:06,840 --> 01:35:16,400
+j e questo è ti + 1 j. Ok. Alright.
+
+1745
+01:35:18,400 --> 01:35:20,159
+Siete sopravvissuti, ci siete?
+
+1746
+01:35:20,159 --> 01:35:22,480
+dell'ultimo pezzo. Ok, quindi la
+
+1747
+01:35:22,480 --> 01:35:26,280
+funzione next step,
+
+1748
+01:35:26,280 --> 01:35:29,159
+wow, è pieno, è fatta da next step, è
+
+1749
+01:35:29,159 --> 01:35:32,280
+fatto next dell'inerzia and next
+
+1750
+01:35:32,280 --> 01:35:35,040
+gestione della testina and next per il
+
+1751
+01:35:35,040 --> 01:35:38,719
+padding. Ok.
+
+1752
+01:36:01,560 --> 01:36:04,400
+Alri,
+
+1753
+01:36:04,400 --> 01:36:06,800
+lo mettiamo qua perché è inutile mettere
+
+1754
+01:36:06,800 --> 01:36:09,080
+una pagina nuova.
+
+1755
+01:36:09,080 --> 01:36:12,760
+Cosa ci manca? Ci manca F. F. Dobbiamo
+
+1756
+01:36:12,760 --> 01:36:17,159
+dire che all'ultimo passo che è il p di
+
+1757
+01:36:17,159 --> 01:36:18,880
+ennesimo,
+
+1758
+01:36:18,880 --> 01:36:22,440
+quindi finish
+
+1759
+01:36:24,000 --> 01:36:26,800
+che f all'ultimo passo lo stato è
+
+1760
+01:36:26,800 --> 01:36:28,560
+accettante.
+
+1761
+01:36:28,560 --> 01:36:31,800
+Come facciamo?
+
+1762
+01:36:35,780 --> 01:36:37,280
+[Musica]
+
+1763
+01:36:37,280 --> 01:36:39,679
+Attenzione, attenzione.
+
+1764
+01:36:39,679 --> 01:36:41,480
+Noi dobbiamo semplicemente dire che al p
+
+1765
+01:36:41,480 --> 01:36:44,040
+di ennesimo passo lo stato e lo stato
+
+1766
+01:36:44,040 --> 01:36:47,800
+fin è lo stato accettante
+
+1767
+01:36:48,400 --> 01:36:51,400
+che è QF lo chiamiamo. Ok? Che
+
+1768
+01:36:51,400 --> 01:36:53,239
+scriviamo?
+
+1769
+01:36:53,239 --> 01:36:58,199
+Eh, Q di P.
+
+1770
+01:36:58,199 --> 01:37:02,320
+Finita è questa. Ok? Questa variabile
+
+1771
+01:37:02,320 --> 01:37:04,639
+per essere vera va assegnato vero a
+
+1772
+01:37:04,639 --> 01:37:09,199
+questo. È chiaro? Quindi la formula fai
+
+1773
+01:37:09,199 --> 01:37:11,440
+di docchia B
+
+1774
+01:37:11,440 --> 01:37:15,239
+è la congiunzione di tutta sta roba qua
+
+1775
+01:37:15,239 --> 01:37:21,520
+che abbiamo scritto DC, DS DN D. Ok?
+
+1776
+01:37:21,520 --> 01:37:24,760
+Questa formula. Prego. Gli stati finale
+
+1777
+01:37:24,760 --> 01:37:26,400
+c'è uno solo, quindi quello
+Sì, sì,
+
+1778
+01:37:26,400 --> 01:37:28,280
+possiamo assumere che va tutto in uno
+
+1779
+01:37:28,280 --> 01:37:32,119
+stato soltanto. Ok.
+
+1780
+01:37:34,920 --> 01:37:37,480
+Senò sarebbe l'or degli stati finali
+
+1781
+01:37:37,480 --> 01:37:41,520
+della macchina. Ok.
+
+1782
+01:37:42,880 --> 01:37:47,119
+Ok. Allora, ultime considerazioni.
+
+1783
+01:37:47,119 --> 01:37:49,159
+La funzione f, quello che abbiamo detto,
+
+1784
+01:37:49,159 --> 01:37:52,400
+la funzione f,
+
+1785
+01:37:52,400 --> 01:37:55,880
+sputa fuori fai di w che ha è questa
+
+1786
+01:37:55,880 --> 01:37:58,719
+formula mostruosa
+
+1787
+01:37:58,719 --> 01:38:02,080
+che è, sebbene sia enorme e comunque di
+
+1788
+01:38:02,080 --> 01:38:04,400
+taglia polinomiale.
+
+1789
+01:38:04,400 --> 01:38:07,920
+Questa formula descrive tramite delle
+
+1790
+01:38:07,920 --> 01:38:10,520
+variabili proposizionali opportune il
+
+1791
+01:38:10,520 --> 01:38:14,920
+funzionamento di una macchina M. fissata
+
+1792
+01:38:14,920 --> 01:38:19,880
+che decide se W appartiene ad L o meno.
+
+1793
+01:38:19,880 --> 01:38:23,520
+Per come è stata definita la la formula
+
+1794
+01:38:23,520 --> 01:38:26,440
+in cui sostanzialmente stiamo andando a
+
+1795
+01:38:26,440 --> 01:38:28,840
+imporre dei vincoli a queste variabili
+
+1796
+01:38:28,840 --> 01:38:31,239
+proposizionali tali per cui gli
+
+1797
+01:38:31,239 --> 01:38:34,800
+assegnamenti veri falsi deve per forza
+
+1798
+01:38:34,800 --> 01:38:38,679
+replicare cosa fa la macchina M sul W.
+
+1799
+01:38:38,679 --> 01:38:40,960
+Di conseguenza, per come è stato
+
+1800
+01:38:40,960 --> 01:38:43,920
+definito file di W,
+
+1801
+01:38:43,920 --> 01:38:47,520
+W appartiene ad L. Se solo se la
+
+1802
+01:38:47,520 --> 01:38:51,679
+macchina M accetta W. Se che è se solo
+
+1803
+01:38:51,679 --> 01:38:55,280
+se la formula F di W è soddisfacibile,
+
+1804
+01:38:55,280 --> 01:38:57,159
+non si scappa.
+
+1805
+01:38:57,159 --> 01:39:00,159
+Questa formula è in CNF perché, come
+
+1806
+01:39:00,159 --> 01:39:01,679
+avete visto, abbiamo usato solo
+
+1807
+01:39:01,679 --> 01:39:03,280
+implicazioni
+
+1808
+01:39:03,280 --> 01:39:07,239
+e quindi un qualsiasi linguaggio di NPL
+
+1809
+01:39:07,239 --> 01:39:09,360
+che non conosciamo
+
+1810
+01:39:09,360 --> 01:39:12,320
+ammette una riduzione di questo tipo
+
+1811
+01:39:12,320 --> 01:39:16,840
+verso SAT da cui un qualsiasi linguaggio
+
+1812
+01:39:16,840 --> 01:39:20,360
+di L di NP si riduce a SAAT e quindi SAT
+
+1813
+01:39:20,360 --> 01:39:23,880
+è NPO. Avevamo già visto nelle lezioni
+
+1814
+01:39:23,880 --> 01:39:26,560
+passate che SAT è anche l'NP perché
+
+1815
+01:39:26,560 --> 01:39:29,840
+basta diessare l'assegnamento di verità
+
+1816
+01:39:29,840 --> 01:39:34,239
+e quindi SAT è NP completo. Infatti SAT
+
+1817
+01:39:34,239 --> 01:39:36,480
+è uno dei problemi che si usa per
+
+1818
+01:39:36,480 --> 01:39:39,560
+codificare altri problemi NP. ci sono
+
+1819
+01:39:39,560 --> 01:39:42,119
+dei solutori, si chiamano SAT solver
+
+1820
+01:39:42,119 --> 01:39:45,199
+programmi, il cui scopo è data una
+
+1821
+01:39:45,199 --> 01:39:48,119
+formula buleana mostruosa, cercare di
+
+1822
+01:39:48,119 --> 01:39:50,159
+vedere se sia soddisfacbile o meno.
+
+1823
+01:39:50,159 --> 01:39:52,080
+Perché esistono questi software? Perché
+
+1824
+01:39:52,080 --> 01:39:55,639
+tanti problemi in NP, tutti i problemi
+
+1825
+01:39:55,639 --> 01:39:58,040
+in NP in realtà, però spesso si usa
+
+1826
+01:39:58,040 --> 01:40:01,000
+proprio in pratica, vengono trasformati
+
+1827
+01:40:01,000 --> 01:40:03,599
+in formule buleane enormi che vengono
+
+1828
+01:40:03,599 --> 01:40:06,599
+dati impasto ai salver e il salver cerca
+
+1829
+01:40:06,599 --> 01:40:08,320
+di capire se la formula sia
+
+1830
+01:40:08,320 --> 01:40:10,239
+soddisfacibile o meno. Ci pigliamo la
+
+1831
+01:40:10,239 --> 01:40:14,119
+risposta e sappiamo se la distanza del
+
+1832
+01:40:14,119 --> 01:40:18,080
+problema di partenza era sì o no. Ok?
+
+1833
+01:40:18,080 --> 01:40:20,280
+E va bene, con questo chiudi diamo anche
+
+1834
+01:40:20,280 --> 01:40:24,560
+per Grazie per essere venuti.

@@ -1,0 +1,6865 @@
+1
+00:00:00,000 --> 00:00:03,000
+Ok,
+
+2
+00:00:04,400 --> 00:00:07,879
+allora introduciamo l'ultimo concetto,
+
+3
+00:00:07,879 --> 00:00:10,840
+gli ultimi due concetti
+
+4
+00:00:10,840 --> 00:00:13,679
+di questo corso. Non andiamo troppo nei
+
+5
+00:00:13,679 --> 00:00:17,960
+dettagli, mai per darvi un po' un'idea.
+
+6
+00:00:17,960 --> 00:00:19,880
+Vedremo
+
+7
+00:00:19,880 --> 00:00:23,320
+oracoli, macchine a oracolo. Oggi è
+
+8
+00:00:23,320 --> 00:00:26,279
+un'introduzione alle classi funzionali e
+
+9
+00:00:26,279 --> 00:00:28,400
+poi prossima volta continueremo sulla
+
+10
+00:00:28,400 --> 00:00:31,759
+cosa. quindi problemi di ottimizzazione
+
+11
+00:00:31,759 --> 00:00:34,759
+eccetera.
+
+12
+00:00:35,040 --> 00:00:39,719
+Ok? Allora, ci focalizziamo su questa
+
+13
+00:00:39,719 --> 00:00:41,520
+cosa qua.
+
+14
+00:00:41,520 --> 00:00:43,559
+Problema del vertex cover. Ve lo
+
+15
+00:00:43,559 --> 00:00:45,280
+ricordate cos'è un vertex cover di un
+
+16
+00:00:45,280 --> 00:00:49,840
+grafo? dato un grafo,
+
+17
+00:00:49,840 --> 00:00:53,160
+un vertex cover
+
+18
+00:00:53,160 --> 00:00:57,800
+e un insieme dei suoi nodi,
+
+19
+00:00:57,800 --> 00:01:02,359
+tale per cui per ogni arco almeno uno
+
+20
+00:01:02,359 --> 00:01:05,680
+degli end point dell'arco è coperto da
+
+21
+00:01:05,680 --> 00:01:08,159
+uno dei dei vertici nel vertex cover.
+
+22
+00:01:08,159 --> 00:01:10,280
+Ok? Chiara la definizione di vertex
+
+23
+00:01:10,280 --> 00:01:12,880
+cover? E vi ricordate come avevamo
+
+24
+00:01:12,880 --> 00:01:16,759
+definito il problema di decisione?
+
+25
+00:01:16,759 --> 00:01:20,920
+Per vertex cover l'avevamo chiamato
+
+26
+00:01:20,920 --> 00:01:23,520
+VC, mi pare. Che cos'è? Cos'era il
+
+27
+00:01:23,520 --> 00:01:28,960
+linguaggio del vertex cover? Sì. GKF
+
+28
+00:01:28,960 --> 00:01:30,560
+Sì.
+
+29
+00:01:30,560 --> 00:01:33,360
+Tale per cui
+
+30
+00:01:33,360 --> 00:01:36,680
+scorere in Italia.
+
+31
+00:01:36,680 --> 00:01:39,680
+Esattamente.
+
+32
+00:01:49,640 --> 00:01:51,479
+Taglia
+
+33
+00:01:51,479 --> 00:01:55,920
+al + K. Ok. Vi ricordate la complessità
+
+34
+00:01:55,920 --> 00:01:59,399
+di questo problema?
+
+35
+00:02:00,719 --> 00:02:04,119
+è un problema NP completo. Ok, sto un
+
+36
+00:02:04,119 --> 00:02:07,079
+attimo riacchiappando le nozioni che ci
+
+37
+00:02:07,079 --> 00:02:09,599
+servono oggi. Mi sapete dire perché
+
+38
+00:02:09,599 --> 00:02:14,039
+questo problema sta in NP?
+
+39
+00:02:15,319 --> 00:02:16,879
+Ok? Questa è la cosa importante, cioè
+
+40
+00:02:16,879 --> 00:02:21,000
+che per rispondere sì gessiamo un vertex
+
+41
+00:02:21,000 --> 00:02:22,720
+cover,
+
+42
+00:02:22,720 --> 00:02:26,480
+verifichiamo che la sua taglia non sia
+
+43
+00:02:26,480 --> 00:02:28,959
+maggiore di K.
+
+44
+00:02:28,959 --> 00:02:32,239
+verifichiamo che in effetti il set di
+
+45
+00:02:32,239 --> 00:02:36,599
+nodi gessati è un vert e rispondiamo di
+
+46
+00:02:36,599 --> 00:02:39,879
+sì. Ok? Quindi la ragione per cui questo
+
+47
+00:02:39,879 --> 00:02:43,360
+problema di decisione sta in NP è perché
+
+48
+00:02:43,360 --> 00:02:46,159
+noi abbiamo un certificato conciso per
+
+49
+00:02:46,159 --> 00:02:48,560
+rispondere di sì. Lo che siiamo. In
+
+50
+00:02:48,560 --> 00:02:50,200
+particolare il certificato conciso in
+
+51
+00:02:50,200 --> 00:02:53,159
+questo caso è una soluzione candidata.
+
+52
+00:02:53,159 --> 00:02:56,239
+Gessiamo la soluzione, la verifichiamo,
+
+53
+00:02:56,239 --> 00:02:58,640
+se va bene diciamo sì, altrimenti
+
+54
+00:02:58,640 --> 00:03:01,560
+tagliamo il branch. Ok? Vi ricordo che
+
+55
+00:03:01,560 --> 00:03:03,799
+una macchina non deterministica accetta
+
+56
+00:03:03,799 --> 00:03:05,200
+se ha un modo di accettare. Di
+
+57
+00:03:05,200 --> 00:03:08,280
+conseguenza accetta se è in grado di
+
+58
+00:03:08,280 --> 00:03:10,480
+trovare questo certificato che gli
+
+59
+00:03:10,480 --> 00:03:12,040
+attesti
+
+60
+00:03:12,040 --> 00:03:13,720
+che
+
+61
+00:03:13,720 --> 00:03:15,120
+l'istanza che abbiamo sottomano è
+
+62
+00:03:15,120 --> 00:03:16,720
+un'istanza sì. Ok? Chiaro per tutti
+
+63
+00:03:16,720 --> 00:03:18,680
+questa cosa qua? Perché ora giochiamo su
+
+64
+00:03:18,680 --> 00:03:21,280
+questa cosa qui, sulla definizione di NP
+
+65
+00:03:21,280 --> 00:03:23,640
+con NP eccetera.
+
+66
+00:03:23,640 --> 00:03:25,360
+È chiaro? Quindi perché è in NP questo
+
+67
+00:03:25,360 --> 00:03:27,799
+problema?
+
+68
+00:03:27,799 --> 00:03:30,640
+M vi ricordate intuitivamente la
+
+69
+00:03:30,640 --> 00:03:35,239
+caratteristica dei problemi in CNP?
+
+70
+00:03:40,159 --> 00:03:42,799
+Come? Scusi,
+sono complementi linguag
+
+71
+00:03:42,799 --> 00:03:45,080
+Sono complementi dei linguaggini NP. E
+
+72
+00:03:45,080 --> 00:03:48,879
+che caratteristica avevano?
+
+73
+00:03:48,879 --> 00:03:50,519
+Per rispondere il no. Ok. Quindi i
+
+74
+00:03:50,519 --> 00:03:52,959
+linguaggi in NP sono quei linguaggi per
+
+75
+00:03:52,959 --> 00:03:56,079
+i quali noi possiamo ghessare
+
+76
+00:03:56,079 --> 00:03:59,000
+la prova che l'istanza che abbiamo in
+
+77
+00:03:59,000 --> 00:04:01,360
+mano è un'istanza no. Ok? Quindi
+
+78
+00:04:01,360 --> 00:04:03,760
+problemi in NP sono quei problemi in cui
+
+79
+00:04:03,760 --> 00:04:06,879
+gesso la prova che l'istanza più o mano
+
+80
+00:04:06,879 --> 00:04:11,599
+è un'istanza sì. I problemi in cp
+
+81
+00:04:11,599 --> 00:04:15,040
+i quali gessiamo la prova che l'istanza
+
+82
+00:04:15,040 --> 00:04:17,440
+che abbiamo in mano è un distanza no.
+
+83
+00:04:17,440 --> 00:04:20,919
+Ok? Chiaro? che ora iniziamo a vedere
+
+84
+00:04:20,919 --> 00:04:24,040
+cose un po' strane. Definiamo
+
+85
+00:04:24,040 --> 00:04:27,479
+quest'altro problema.
+
+86
+00:04:27,479 --> 00:04:30,800
+min cover
+
+87
+00:04:32,280 --> 00:04:36,919
+è l'insieme delle coppie GK
+
+88
+00:04:37,199 --> 00:04:39,039
+tali che
+
+89
+00:04:39,039 --> 00:04:43,759
+G è un grafo
+
+90
+00:04:44,360 --> 00:04:46,639
+i cui
+
+91
+00:04:46,639 --> 00:04:49,320
+vertex
+
+92
+00:04:49,320 --> 00:04:52,320
+cover
+
+93
+00:04:52,600 --> 00:04:55,280
+di taglia
+
+94
+00:04:55,280 --> 00:04:57,880
+minima.
+
+95
+00:04:59,520 --> 00:05:01,199
+anno
+
+96
+00:05:01,199 --> 00:05:04,840
+taglia K.
+
+97
+00:05:05,680 --> 00:05:07,800
+Chiara la differenza di definizione di
+
+98
+00:05:07,800 --> 00:05:09,880
+questi due problemi? Il primo ci dice
+
+99
+00:05:09,880 --> 00:05:12,759
+dato un grafo, un numero k, è vero o no
+
+100
+00:05:12,759 --> 00:05:15,080
+che questo grafo ammette un vertex cover
+
+101
+00:05:15,080 --> 00:05:18,479
+di taglia al + k? E noi rispondiamo sì,
+
+102
+00:05:18,479 --> 00:05:20,880
+no. Questo è un altro problema di
+
+103
+00:05:20,880 --> 00:05:23,960
+decisione leggermente diverso in cui
+
+104
+00:05:23,960 --> 00:05:26,800
+dicevamo, dato questo grafo è un intero
+
+105
+00:05:26,800 --> 00:05:29,880
+K, è vero, no, che i suoi vertex cover
+
+106
+00:05:29,880 --> 00:05:33,080
+di taglia minima contengono esattamente
+
+107
+00:05:33,080 --> 00:05:36,199
+K nodi e devono essere i vertex cover di
+
+108
+00:05:36,199 --> 00:05:38,319
+taglia minima, eh non un vertex cover a
+
+109
+00:05:38,319 --> 00:05:42,039
+caso. Quindi cover è definito come le
+
+110
+00:05:42,039 --> 00:05:45,000
+coppie grafo numero tale per cui il
+
+111
+00:05:45,000 --> 00:05:47,680
+grafo G
+
+112
+00:05:47,680 --> 00:05:50,720
+tale per cui i verte cover del grafo G,
+
+113
+00:05:50,720 --> 00:05:53,680
+i vertex cover minimi del grafo G hanno
+
+114
+00:05:53,680 --> 00:05:56,880
+una taglia esattamente K. Eh, non è che
+
+115
+00:05:56,880 --> 00:06:02,639
+dici almeno al + k, esattamente K. Ok?
+
+116
+00:06:02,639 --> 00:06:07,160
+Taglia minima taglia K.
+Anno taglia K.
+
+117
+00:06:07,160 --> 00:06:10,520
+Dopo taglia minima. Sì, sì, hanno cover
+
+118
+00:06:10,520 --> 00:06:15,599
+di taglia minima. Hanno taglia K.
+
+119
+00:06:20,479 --> 00:06:23,720
+Ok, prendetevi qualche minuto per
+
+120
+00:06:23,720 --> 00:06:26,560
+pensare in quale classe di complessità
+
+121
+00:06:26,560 --> 00:06:30,599
+potrebbe stare sto problema.
+
+122
+00:06:43,000 --> 00:06:44,720
+Vi è chiara la differenza fra i due
+
+123
+00:06:44,720 --> 00:06:46,479
+problemi?
+
+124
+00:06:46,479 --> 00:06:49,240
+Quello fa la differenza. Sì. Non
+
+125
+00:06:49,240 --> 00:06:51,240
+potremmo testare tutti i valori e
+
+126
+00:06:51,240 --> 00:06:53,400
+calcolare eccetera se coper dà un
+
+127
+00:06:53,400 --> 00:06:56,960
+positivo e se lo dà dà un riso.
+
+128
+00:06:56,960 --> 00:06:59,840
+Quindi lei vuole testare
+tutti i valori
+
+129
+00:06:59,840 --> 00:07:01,599
+perché tagli minima, quindi c'è uno
+
+130
+00:07:01,599 --> 00:07:03,879
+inferiore. Esatto. Quello lì che è
+
+131
+00:07:03,879 --> 00:07:06,680
+falso, giusto?
+Sì, noi cerchiamo,
+
+132
+00:07:06,680 --> 00:07:10,960
+dobbiamo essere di Kor uguale.
+
+133
+00:07:10,960 --> 00:07:13,520
+Io voglio che i vertex cover di taglia
+
+134
+00:07:13,520 --> 00:07:17,759
+minima di G abbiano taglia esattamente
+
+135
+00:07:17,759 --> 00:07:19,560
+K.
+
+136
+00:07:19,560 --> 00:07:22,160
+Quindi sono inferiori
+
+137
+00:07:22,160 --> 00:07:25,800
+che tend sono due. Mh
+mh.
+Quindi se
+
+138
+00:07:25,800 --> 00:07:27,599
+consumiamo il cop per tutti i valori
+
+139
+00:07:27,599 --> 00:07:32,319
+inferiori K
+mh
+e qui siamo
+sì
+
+140
+00:07:32,319 --> 00:07:33,840
+second
+
+141
+00:07:33,840 --> 00:07:37,759
+possiamo determinare se
+E quanti sono?
+
+142
+00:07:37,759 --> 00:07:40,520
+Dipende con K. Le K10 sono nuove
+
+143
+00:07:40,520 --> 00:07:42,039
+macchine
+
+144
+00:07:42,039 --> 00:07:45,759
+cover.
+Sì. E rispetto alla taglia di K,
+
+145
+00:07:45,759 --> 00:07:48,759
+questo è un numero, il numero di testa
+
+146
+00:07:48,759 --> 00:07:51,000
+rispetto alla taglia di K, il numero di
+
+147
+00:07:51,000 --> 00:07:52,680
+teste che facciamo è polinomiale o
+
+148
+00:07:52,680 --> 00:07:55,080
+esponenziale?
+
+149
+00:07:55,080 --> 00:07:59,039
+M attenzione
+
+150
+00:07:59,080 --> 00:08:02,319
+perché K è un numero rappresentato in
+
+151
+00:08:02,319 --> 00:08:05,199
+binario, quindi il suo valore è
+
+152
+00:08:05,199 --> 00:08:07,440
+esponenziale nel numero dei bit che lo
+
+153
+00:08:07,440 --> 00:08:09,560
+rappresentano. Se io mi metto a testare
+
+154
+00:08:09,560 --> 00:08:13,000
+tutto quello che è più basso di K,
+
+155
+00:08:13,000 --> 00:08:15,560
+cioè ci può sta, però lei mi sta dicendo
+
+156
+00:08:15,560 --> 00:08:18,720
+che è exp time. Sì, sta in exp, sta in
+
+157
+00:08:18,720 --> 00:08:21,720
+exp time. Possiamo abbassarlo un
+
+158
+00:08:21,720 --> 00:08:24,720
+pochino?
+
+159
+00:08:25,039 --> 00:08:29,720
+Sta in MP questo problema?
+
+160
+00:08:38,470 --> 00:08:41,559
+[Musica]
+
+161
+00:08:58,640 --> 00:09:00,880
+Abbiamo una procedura che gessando
+
+162
+00:09:00,880 --> 00:09:04,160
+qualcosa, no? abbiamo la certezza che
+
+163
+00:09:04,160 --> 00:09:07,680
+quel K è la taglia, ad esempio, no? Ci
+
+164
+00:09:07,680 --> 00:09:11,000
+dice un grafo e ci dà 15. Se noi
+
+165
+00:09:11,000 --> 00:09:13,800
+gessiamo un vertex cover di taglia 15,
+
+166
+00:09:13,800 --> 00:09:15,839
+quello è effettivamente un vertex cover
+
+167
+00:09:15,839 --> 00:09:18,880
+di taglia 15. Possiamo dire di sì, che
+
+168
+00:09:18,880 --> 00:09:21,800
+quello è il verte cover di taglia mine.
+
+169
+00:09:21,800 --> 00:09:24,800
+No, ok, il problema è questo, cioè noi
+
+170
+00:09:24,800 --> 00:09:27,880
+possiamo gessare una cosa per tentare di
+
+171
+00:09:27,880 --> 00:09:29,880
+rispondere sì. Ok? Cioè, noi che siamo
+
+172
+00:09:29,880 --> 00:09:33,160
+un vertex cover di taglia K,
+
+173
+00:09:33,160 --> 00:09:36,279
+quel set di nodi di taglia K è un vertex
+
+174
+00:09:36,279 --> 00:09:38,760
+cover, però noi stiamo semplicemente
+
+175
+00:09:38,760 --> 00:09:40,800
+dicendo che esiste un vertex cover di
+
+176
+00:09:40,800 --> 00:09:42,839
+quella taglia, non abbiamo la garanzia
+
+177
+00:09:42,839 --> 00:09:45,360
+che sia minimo.
+
+178
+00:09:45,360 --> 00:09:47,760
+Possiamo gessare qualcosa che ci dia la
+
+179
+00:09:47,760 --> 00:09:51,800
+garanzia che siamo in modo?
+
+180
+00:10:02,040 --> 00:10:05,959
+M non si può fa'. Sembra che non sia
+
+181
+00:10:05,959 --> 00:10:09,560
+possibile. Ok, quindi accantoniamo NP.
+
+182
+00:10:09,560 --> 00:10:12,040
+Quali altre classi abbiamo visto? CNP.
+
+183
+00:10:12,040 --> 00:10:14,839
+Proviamo. Questo problema sta in CONP.
+
+184
+00:10:14,839 --> 00:10:18,519
+Pensiamoci un po'.
+
+185
+00:10:19,160 --> 00:10:21,240
+Quindi devo poter ghessare qualcosa per
+
+186
+00:10:21,240 --> 00:10:24,240
+rispondere di no.
+
+187
+00:10:24,240 --> 00:10:29,399
+Sì,
+possiamo gessare con k - 1
+
+188
+00:10:29,399 --> 00:10:32,600
+per vedere se se esiste un vertex cover
+
+189
+00:10:32,600 --> 00:10:36,320
+che sia più piccolo di K.
+Ok?
+Se ci
+
+190
+00:10:36,320 --> 00:10:41,040
+risponde no, eh proviamo a pensare K.
+Ma
+
+191
+00:10:41,040 --> 00:10:43,560
+quindi fa doppio di S?
+Eh sì. No, ne
+
+192
+00:10:43,560 --> 00:10:47,079
+serve uno solo
+
+193
+00:10:51,040 --> 00:10:53,000
+per QMP.
+
+194
+00:10:53,000 --> 00:10:55,120
+Possiamo pensare
+
+195
+00:10:55,120 --> 00:10:58,920
+in modo per dire no
+
+196
+00:10:58,920 --> 00:11:01,000
+come
+
+197
+00:11:01,000 --> 00:11:03,120
+più piccolo. Sì, per esempio, se ci
+
+198
+00:11:03,120 --> 00:11:07,600
+danno in input GK e quel K non è la T è
+
+199
+00:11:07,600 --> 00:11:10,560
+più grande della taglia minima, abbiamo
+
+200
+00:11:10,560 --> 00:11:13,600
+un modo per dire di no, cioè che siamo
+
+201
+00:11:13,600 --> 00:11:16,680
+un vertex cover di taglia più piccola,
+
+202
+00:11:16,680 --> 00:11:18,680
+diciamo di no. Ma se in input abbiamo
+
+203
+00:11:18,680 --> 00:11:22,079
+una coppia GK in cui K è più piccolo del
+
+204
+00:11:22,079 --> 00:11:23,680
+per tex cover di Italian Mina, come
+
+205
+00:11:23,680 --> 00:11:26,680
+facciamo?
+
+206
+00:11:34,639 --> 00:11:38,040
+Come si fa?
+
+207
+00:11:38,880 --> 00:11:42,040
+Si può?
+
+208
+00:11:48,120 --> 00:11:50,600
+intuitivamente non si può nemmeno in NP,
+
+209
+00:11:50,600 --> 00:11:52,839
+ok? Perché nel momento in cui gessiamo
+
+210
+00:11:52,839 --> 00:11:56,160
+qualcosa per rispondere di no,
+
+211
+00:11:56,160 --> 00:11:57,600
+noi non lo sappiamo se quella cosa che
+
+212
+00:11:57,600 --> 00:12:00,519
+abbiamo gessata è un vertex cover di
+
+213
+00:12:00,519 --> 00:12:03,240
+taglia minima o meno. Ok? Quindi pare
+
+214
+00:12:03,240 --> 00:12:06,920
+pare che questo problema non stia né in
+
+215
+00:12:06,920 --> 00:12:11,120
+NP né in QNP. Ok? Abbiamo detto che sta
+
+216
+00:12:11,120 --> 00:12:14,000
+in ex time. Sì, perché possiamo testare
+
+217
+00:12:14,000 --> 00:12:17,000
+tutto.
+
+218
+00:12:17,320 --> 00:12:19,800
+Possiamo dare un bound migliore di exp
+
+219
+00:12:19,800 --> 00:12:24,560
+time tra le classi che abbiamo visto.
+
+220
+00:12:25,460 --> 00:12:28,909
+[Musica]
+
+221
+00:12:31,680 --> 00:12:33,440
+Che classi abbiamo visto? Che ci sta
+
+222
+00:12:33,440 --> 00:12:35,480
+sotto postanzi?
+
+223
+00:12:35,480 --> 00:12:37,360
+Pi spazio. Secondo lei possiamo fare un
+
+224
+00:12:37,360 --> 00:12:40,519
+p spazio?
+
+225
+00:12:41,480 --> 00:12:46,639
+Sì,
+sì. Comeamo un solo tentativo
+
+226
+00:12:46,639 --> 00:12:48,760
+tentativo di risponder in memoria alla
+
+227
+00:12:48,760 --> 00:12:53,160
+volta. Sì,
+generiamo
+
+228
+00:12:53,160 --> 00:12:56,680
+generiamo tutti.
+Esattamente. Ok. Quello
+
+229
+00:12:56,680 --> 00:12:59,519
+che si può fare
+
+230
+00:12:59,519 --> 00:13:01,320
+e per risolvere questo problema in P
+
+231
+00:13:01,320 --> 00:13:04,320
+spazio è che praticamente noi testiamo
+
+232
+00:13:04,320 --> 00:13:07,240
+tutti i i
+
+233
+00:13:07,240 --> 00:13:09,040
+vertex cover candidati, quindi dobbiamo
+
+234
+00:13:09,040 --> 00:13:11,480
+tostare tutti i possibili sottoinsiemi
+
+235
+00:13:11,480 --> 00:13:15,000
+di V dell'insieme dei nodi e ne testiamo
+
+236
+00:13:15,000 --> 00:13:17,560
+uno per volta. Ogni volta che facciamo
+
+237
+00:13:17,560 --> 00:13:20,040
+il test lo scriviamo, lo scriviamo su
+
+238
+00:13:20,040 --> 00:13:21,920
+nastro. Facciamo il test se quello è un
+
+239
+00:13:21,920 --> 00:13:25,639
+vertex cover o meno.
+
+240
+00:13:25,639 --> 00:13:27,560
+Ce lo troviamo, ci appuntiamo la sua
+
+241
+00:13:27,560 --> 00:13:29,000
+taglia, insomma, andiamo alla ricerca
+
+242
+00:13:29,000 --> 00:13:31,320
+della taglia più piccola. Il trucco dove
+
+243
+00:13:31,320 --> 00:13:33,320
+sta? Il trucco sta che ogni volta che
+
+244
+00:13:33,320 --> 00:13:35,560
+facciamo un attempt, poi cancelliamo
+
+245
+00:13:35,560 --> 00:13:38,360
+tutto, manteniamo giusto il valore
+
+246
+00:13:38,360 --> 00:13:40,560
+temporario nel minimo trovato e
+
+247
+00:13:40,560 --> 00:13:42,720
+rigeneriamo un altro vertex cover.
+
+248
+00:13:42,720 --> 00:13:46,000
+Quindi noi con spazio polinomiale, se lo
+
+249
+00:13:46,000 --> 00:13:47,680
+riutilizziamo,
+
+250
+00:13:47,680 --> 00:13:50,880
+siamo in grado di rispondere a questo
+
+251
+00:13:50,880 --> 00:13:53,480
+problema. Ok? Quindi questo problema
+
+252
+00:13:53,480 --> 00:13:56,959
+pare essere no è in ppazio. Quello di
+
+253
+00:13:56,959 --> 00:14:00,240
+che ci vogliamo occupare oggi è dare un
+
+254
+00:14:00,240 --> 00:14:02,360
+bound migliore a questo genere di
+
+255
+00:14:02,360 --> 00:14:05,079
+problemi, ok?
+
+256
+00:14:05,079 --> 00:14:07,519
+Perché questo problema non è, sebbene
+
+257
+00:14:07,519 --> 00:14:10,519
+sia risolvibile in pi spazio, non è uno
+
+258
+00:14:10,519 --> 00:14:13,399
+dei problemi più difficili di Ppace. Ok?
+
+259
+00:14:13,399 --> 00:14:15,519
+In realtà questo problema sta in delle
+
+260
+00:14:15,519 --> 00:14:19,440
+classi al di sotto di P spazio, ma al di
+
+261
+00:14:19,440 --> 00:14:21,639
+sopra di NP che finora non abbiamo
+
+262
+00:14:21,639 --> 00:14:24,880
+visto. Ok? Quindi quello che faremo oggi
+
+263
+00:14:24,880 --> 00:14:28,480
+è introdurre queste classi intermedie
+
+264
+00:14:28,480 --> 00:14:31,759
+che stanno fra NP e P spazio, ok? e
+
+265
+00:14:31,759 --> 00:14:34,240
+caratterizzano problemi di questo tipo,
+
+266
+00:14:34,240 --> 00:14:37,279
+no? Nel quale un gess soltanto non ci
+
+267
+00:14:37,279 --> 00:14:41,160
+basta e pi spazio sembra sparare con un
+
+268
+00:14:41,160 --> 00:14:43,440
+cannone a una mosca, ok? Cioè in P
+
+269
+00:14:43,440 --> 00:14:45,440
+spazio potremmo fare una marea di cose
+
+270
+00:14:45,440 --> 00:14:47,320
+che in realtà questo problema è molto
+
+271
+00:14:47,320 --> 00:14:51,000
+più semplice. Ok.
+
+272
+00:14:51,000 --> 00:14:54,519
+Ok. Allora, quello che noi possiamo
+
+273
+00:14:54,519 --> 00:14:57,480
+notare è uno di voi
+
+274
+00:14:57,480 --> 00:15:00,240
+l'aveva sostanzialmente
+
+275
+00:15:00,240 --> 00:15:03,240
+detto prima, mi pare lei, quello che si
+
+276
+00:15:03,240 --> 00:15:05,959
+può fare in realtà, come il nostro
+
+277
+00:15:05,959 --> 00:15:09,240
+collega diceva, è che a noi bastano due
+
+278
+00:15:09,240 --> 00:15:11,680
+test.
+
+279
+00:15:11,680 --> 00:15:14,440
+A noi basta testare che esiste un vertex
+
+280
+00:15:14,440 --> 00:15:18,040
+cover di taglia K e che non esista un
+
+281
+00:15:18,040 --> 00:15:22,040
+verte cover di taglia k - 1. Ok? Quindi
+
+282
+00:15:22,040 --> 00:15:25,040
+noi possiamo
+
+283
+00:15:25,040 --> 00:15:29,480
+trascrivere il cambiare, ok? La
+
+284
+00:15:29,480 --> 00:15:32,519
+definizione del problema in questo modo.
+
+285
+00:15:32,519 --> 00:15:34,880
+Minco cover
+
+286
+00:15:34,880 --> 00:15:40,880
+è l'insieme delle coppie GK tale che G,
+
+287
+00:15:40,880 --> 00:15:43,319
+scriviamolo meglio,
+
+288
+00:15:43,319 --> 00:15:46,839
+tale che GK
+
+289
+00:15:46,839 --> 00:15:51,600
+appartiene a vertex cover.
+
+290
+00:15:51,920 --> 00:15:58,680
+Gk - 1 non appartiene a vertex cover.
+
+291
+00:15:58,680 --> 00:16:00,959
+Come?
+
+292
+00:16:00,959 --> 00:16:02,199
+Eh, questo qua no, è solo una
+
+293
+00:16:02,199 --> 00:16:03,959
+riscrittura di questo di questo
+
+294
+00:16:03,959 --> 00:16:06,000
+problema. Vi rendete conto che abbiamo
+
+295
+00:16:06,000 --> 00:16:09,160
+definito lo stesso problema?
+
+296
+00:16:09,160 --> 00:16:11,920
+Ok? Quindi in realtà
+
+297
+00:16:11,920 --> 00:16:14,560
+quello che qui ci sta dicendo è che a
+
+298
+00:16:14,560 --> 00:16:17,519
+noi bastano un paio di test. Se noi
+
+299
+00:16:17,519 --> 00:16:21,160
+abbiamo un decisore del problema di
+
+300
+00:16:21,160 --> 00:16:23,279
+vertex cover,
+
+301
+00:16:23,279 --> 00:16:26,600
+noi possiamo uscirne fuori facendo un
+
+302
+00:16:26,600 --> 00:16:28,480
+paio di domande a questo decisore di
+
+303
+00:16:28,480 --> 00:16:30,240
+vertex cover. Ok? Se quindi se noi
+
+304
+00:16:30,240 --> 00:16:33,360
+avessimo una subrutine capace di
+
+305
+00:16:33,360 --> 00:16:36,079
+risolvere vertex cover, noi avremmo
+
+306
+00:16:36,079 --> 00:16:37,600
+semplicemente una cosa di questo tipo,
+
+307
+00:16:37,600 --> 00:16:41,680
+no? Minan cover,
+
+308
+00:16:41,680 --> 00:16:44,800
+prendiamo G e K come input, allora
+
+309
+00:16:44,800 --> 00:16:47,480
+facciamo result.
+
+310
+00:16:47,480 --> 00:16:51,360
+1 uguale check
+
+311
+00:16:51,360 --> 00:16:55,040
+di vertex cover di GK.
+
+312
+00:16:55,040 --> 00:16:57,759
+Poi prendiamo result
+
+313
+00:16:57,759 --> 00:17:03,880
+2, facciamo check di vertex cover di G k
+
+314
+00:17:03,880 --> 00:17:08,160
+- 1 e poi restituiamo
+
+315
+00:17:08,160 --> 00:17:11,559
+che cosa? result
+
+316
+00:17:11,559 --> 00:17:14,559
+1 and
+
+317
+00:17:14,559 --> 00:17:17,439
+not result
+
+318
+00:17:17,439 --> 00:17:19,720
+2.
+
+319
+00:17:19,720 --> 00:17:21,600
+Ok, questa sarebbe la procedura. Nel
+
+320
+00:17:21,600 --> 00:17:23,679
+momento in cui ipotizziamo
+
+321
+00:17:23,679 --> 00:17:25,600
+l'esistenza
+
+322
+00:17:25,600 --> 00:17:27,760
+di qualcos'altro
+
+323
+00:17:27,760 --> 00:17:33,280
+che è una sabrutin capace di risolvere
+
+324
+00:17:33,280 --> 00:17:37,039
+il problema del verte, allora noi avremo
+
+325
+00:17:37,039 --> 00:17:39,760
+un algoritmo semplicissimo
+
+326
+00:17:39,760 --> 00:17:42,720
+per stabilire se K è la taglia dei
+
+327
+00:17:42,720 --> 00:17:47,400
+vertex cover più piccoli di G. Chiediamo
+
+328
+00:17:47,400 --> 00:17:51,000
+a questa sabrotin esterna, ma è vero che
+
+329
+00:17:51,000 --> 00:17:55,480
+ci sta un vertex cover di taglia al + k?
+
+330
+00:17:55,480 --> 00:17:57,360
+Se lui ci dice di sì, sappiamo che la
+
+331
+00:17:57,360 --> 00:18:00,720
+taglia di del vertex cover su G, ci sono
+
+332
+00:18:00,720 --> 00:18:04,120
+vertex cover di G di taglia al + k. Se
+
+333
+00:18:04,120 --> 00:18:07,440
+ci risponde di no alla domanda gk - 1, è
+
+334
+00:18:07,440 --> 00:18:09,600
+vero che c'è un vertex cover di taglia
+
+335
+00:18:09,600 --> 00:18:12,679
+al + k - 1 quello ci risponde di no.
+
+336
+00:18:12,679 --> 00:18:15,400
+Allora, vuol dire che i vertex cover che
+
+337
+00:18:15,400 --> 00:18:18,440
+G ammette, i vertex cover più piccoli
+
+338
+00:18:18,440 --> 00:18:20,600
+che G ammette hanno taglia esattamente
+
+339
+00:18:20,600 --> 00:18:24,080
+K. Ok? Quindi, in qualche modo, noi
+
+340
+00:18:24,080 --> 00:18:25,640
+vorremmo
+
+341
+00:18:25,640 --> 00:18:29,000
+legare la complessità
+
+342
+00:18:29,000 --> 00:18:32,799
+di questo problema al fatto che noi
+
+343
+00:18:32,799 --> 00:18:35,960
+possiamo risolverlo
+
+344
+00:18:35,960 --> 00:18:40,400
+in tempo polinomiale deterministico
+
+345
+00:18:40,400 --> 00:18:44,080
+nel momento in cui disponessimo di una
+
+346
+00:18:44,080 --> 00:18:46,520
+procedura che è in grado di risolvere il
+
+347
+00:18:46,520 --> 00:18:48,640
+problema del vertex cover. Ok? Quindi
+
+348
+00:18:48,640 --> 00:18:51,799
+ora stiamo modularizzando l'analisi del
+
+349
+00:18:51,799 --> 00:18:56,520
+problema. Stiamo dicendo se nell'ipotesi
+
+350
+00:18:56,520 --> 00:18:59,919
+di disporre di una procedura che risolva
+
+351
+00:18:59,919 --> 00:19:02,520
+il la versione decisionale del vertex
+
+352
+00:19:02,520 --> 00:19:05,000
+cover,
+
+353
+00:19:05,000 --> 00:19:08,600
+allora noi siamo in grado
+
+354
+00:19:08,600 --> 00:19:11,679
+di sviluppare un algoritmo
+
+355
+00:19:11,679 --> 00:19:14,159
+deterministico
+
+356
+00:19:14,159 --> 00:19:17,520
+che lavora in tempo polinomiale, che
+
+357
+00:19:17,520 --> 00:19:19,919
+tramite chiamati a questa procedura
+
+358
+00:19:19,919 --> 00:19:22,799
+esterna è in grado di risolvere il
+
+359
+00:19:22,799 --> 00:19:26,440
+Questa è l'idea perché in NP non sembra
+
+360
+00:19:26,440 --> 00:19:29,840
+possibile risolverlo. Minco cover in CNP
+
+361
+00:19:29,840 --> 00:19:32,240
+non sembra nemmeno possibile risolverlo
+
+362
+00:19:32,240 --> 00:19:34,559
+e di fatto vi dico che non è possibile a
+
+363
+00:19:34,559 --> 00:19:37,760
+meno che non c'è un collasso di P np,
+
+364
+00:19:37,760 --> 00:19:41,080
+cosa che non ci aspettiamo avvenga.
+
+365
+00:19:41,080 --> 00:19:43,280
+Però quello che noi notiamo è che noi
+
+366
+00:19:43,280 --> 00:19:46,120
+siamo in grado di rispondere al problema
+
+367
+00:19:46,120 --> 00:19:49,000
+del min cover facendo semplicemente due
+
+368
+00:19:49,000 --> 00:19:51,559
+domande a un decisore di vertex cover.
+
+369
+00:19:51,559 --> 00:19:53,720
+Ok? Non ne dobbiamo fare tantissime, ne
+
+370
+00:19:53,720 --> 00:19:55,559
+dobbiamo fare semplicemente due. Ok?
+
+371
+00:19:55,559 --> 00:19:58,640
+Quindi magari pi spazio è una classe
+
+372
+00:19:58,640 --> 00:20:00,799
+veramente troppo grossa per questo
+
+373
+00:20:00,799 --> 00:20:03,799
+problema. Ok?
+
+374
+00:20:03,799 --> 00:20:07,640
+E proprio per questo noi introduciamo
+
+375
+00:20:07,640 --> 00:20:10,080
+un modello di macchina di Touring
+
+376
+00:20:10,080 --> 00:20:13,200
+differente che chiamiamo
+
+377
+00:20:13,200 --> 00:20:16,200
+macchine
+
+378
+00:20:17,480 --> 00:20:21,320
+ad oracolo.
+
+379
+00:20:22,360 --> 00:20:24,640
+Qual è l'obiettivo del modello delle
+
+380
+00:20:24,640 --> 00:20:27,960
+macchine ad oracolo?
+
+381
+00:20:27,960 --> 00:20:29,679
+Il modello delle macchine d'oracolo
+
+382
+00:20:29,679 --> 00:20:33,440
+serve a catturare questa cosa che noi
+
+383
+00:20:33,440 --> 00:20:36,039
+che che è un fenomeno per noi molto
+
+384
+00:20:36,039 --> 00:20:37,400
+comune che è quello di chiamare le
+
+385
+00:20:37,400 --> 00:20:40,480
+sabride. Ok? Quindi definiamo questa
+
+386
+00:20:40,480 --> 00:20:43,120
+macchina, adesso daremo i dettagli di
+
+387
+00:20:43,120 --> 00:20:45,640
+come è definita l'intuizione che è una
+
+388
+00:20:45,640 --> 00:20:48,919
+macchina di Touring che è in grado di
+
+389
+00:20:48,919 --> 00:20:54,120
+inviare di chiedere Quiri a un oracolo
+
+390
+00:20:54,120 --> 00:20:56,919
+che gli risponde qualcosa. Nell'esempio
+
+391
+00:20:56,919 --> 00:20:59,120
+specifico che avevamo su noi quindi
+
+392
+00:20:59,120 --> 00:21:01,720
+avremo una macchina di touring che fa
+
+393
+00:21:01,720 --> 00:21:04,400
+due domande a un oracolo per vertex
+
+394
+00:21:04,400 --> 00:21:06,080
+cover. Gli dici "Scusa, ma mi sai dire
+
+395
+00:21:06,080 --> 00:21:08,400
+se questa qui è un'istanza?" Sì. e gli
+
+396
+00:21:08,400 --> 00:21:10,919
+dà una risposta. Poi dice, "Guarda, te
+
+397
+00:21:10,919 --> 00:21:12,919
+ne faccio un'altra, ma mi sai dire se
+
+398
+00:21:12,919 --> 00:21:14,880
+questa è un'istanza sì" e gli dà una
+
+399
+00:21:14,880 --> 00:21:17,960
+risposta. In base alle due risposte, la
+
+400
+00:21:17,960 --> 00:21:21,120
+macchina chiamante
+
+401
+00:21:21,120 --> 00:21:23,760
+ricevute le risposte dall'oracolo,
+
+402
+00:21:23,760 --> 00:21:27,120
+l'oracolo è la saping sostanzialmente
+
+403
+00:21:27,120 --> 00:21:28,679
+la macchina chiamante è in grado di
+
+404
+00:21:28,679 --> 00:21:33,159
+rispondere sì, no? Prego.
+
+405
+00:21:33,159 --> 00:21:35,559
+Oracolo viene considerato grande
+
+406
+00:21:35,559 --> 00:21:38,960
+costante.
+Adesso definiamo tutto tutto
+
+407
+00:21:38,960 --> 00:21:41,279
+tutto in maniera precisa. Ok? Quindi
+
+408
+00:21:41,279 --> 00:21:44,200
+l'intuizione è questa. Introdurremo per
+
+409
+00:21:44,200 --> 00:21:47,480
+classificare questi problemi che sono
+
+410
+00:21:47,480 --> 00:21:49,640
+problemi che stanno un po' in mezzo fra
+
+411
+00:21:49,640 --> 00:21:53,159
+NP e P spazio e ce ne stanno tantissimi.
+
+412
+00:21:53,159 --> 00:21:55,200
+Un sacco di problemi di ottimizzazione
+
+413
+00:21:55,200 --> 00:21:58,520
+hanno questa faccia un po' strana.
+
+414
+00:21:58,520 --> 00:22:01,000
+Noi definiamo questo modello di calcolo
+
+415
+00:22:01,000 --> 00:22:02,360
+che è il modello delle macchine di
+
+416
+00:22:02,360 --> 00:22:04,480
+touring ad oracolo
+
+417
+00:22:04,480 --> 00:22:07,159
+che ci serve semplicemente a mimare il
+
+418
+00:22:07,159 --> 00:22:09,520
+fatto che una macchina di touring possa
+
+419
+00:22:09,520 --> 00:22:14,880
+chiamare una sabrutine esterna. Ok?
+
+420
+00:22:15,080 --> 00:22:17,159
+Allora, vediamo se c'è spazio. Sì, c'è
+
+421
+00:22:17,159 --> 00:22:19,240
+molto spazio. Allora, le macchine ad
+
+422
+00:22:19,240 --> 00:22:20,919
+oracolo
+
+423
+00:22:20,919 --> 00:22:23,880
+deterministiche o non deterministiche,
+
+424
+00:22:23,880 --> 00:22:27,640
+perché possono essere o l'una o l'altra.
+
+425
+00:22:27,640 --> 00:22:30,400
+Hanno questa, allora lo scriviamo.
+
+426
+00:22:30,400 --> 00:22:33,919
+Possono essere
+
+427
+00:22:36,600 --> 00:22:39,600
+deterministiche
+
+428
+00:22:43,480 --> 00:22:46,679
+o meno.
+
+429
+00:22:47,440 --> 00:22:48,919
+Quindi questa nozione di macchina
+
+430
+00:22:48,919 --> 00:22:50,960
+oracolo si applica per tutti e due i
+
+431
+00:22:50,960 --> 00:22:56,279
+casi. Hanno una serie di orpelli, hanno,
+
+432
+00:22:56,279 --> 00:22:58,919
+dobbiamo fare la domanda all'oracolo,
+
+433
+00:22:58,919 --> 00:23:01,440
+quindi hanno un nastro che noi chiamiamo
+
+434
+00:23:01,440 --> 00:23:04,880
+ora tape
+
+435
+00:23:08,600 --> 00:23:12,919
+che è un nastro di sola scrittura
+
+436
+00:23:15,520 --> 00:23:18,960
+in cui la macchina d'oracolo
+
+437
+00:23:21,640 --> 00:23:26,000
+scrive la propria domanda per l'oracolo.
+
+438
+00:23:26,000 --> 00:23:27,720
+Ok?
+
+439
+00:23:27,720 --> 00:23:30,039
+Allora, le macchine ad oracolo in genere
+
+440
+00:23:30,039 --> 00:23:32,600
+le denotiamo così: M è il nome della
+
+441
+00:23:32,600 --> 00:23:34,919
+macchina e all'esponente c'è un punto
+
+442
+00:23:34,919 --> 00:23:37,080
+interrogativo. Poi vi spiego perché lo
+
+443
+00:23:37,080 --> 00:23:39,600
+facciamo così. Ok?
+
+444
+00:23:39,600 --> 00:23:41,400
+Allora, che fa questa macchina? Questa
+
+445
+00:23:41,400 --> 00:23:43,480
+macchina ha un nastro aggiuntivo, quindi
+
+446
+00:23:43,480 --> 00:23:46,240
+avrà il suo nastro di input come al
+
+447
+00:23:46,240 --> 00:23:49,400
+solito, i nastri di lavoro come al
+
+448
+00:23:49,400 --> 00:23:51,559
+solito, eccetera, che sono multinastro
+
+449
+00:23:51,559 --> 00:23:54,080
+bla. Dopodiché fra i nastri di lavoro
+
+450
+00:23:54,080 --> 00:23:56,679
+c'è un nastro particolare che noi
+
+451
+00:23:56,679 --> 00:23:59,320
+chiamiamo ora tape, il nastro
+
+452
+00:23:59,320 --> 00:24:01,440
+dell'oracolo. Che ci fa con questo
+
+453
+00:24:01,440 --> 00:24:04,279
+nastro la macchina? La macchina durante
+
+454
+00:24:04,279 --> 00:24:06,720
+la sua computazione sul nastro
+
+455
+00:24:06,720 --> 00:24:09,360
+dell'oracolo, sull'oracle tape, lui può
+
+456
+00:24:09,360 --> 00:24:10,919
+scrivere
+
+457
+00:24:10,919 --> 00:24:14,080
+delle domande, delle istanze di
+
+458
+00:24:14,080 --> 00:24:16,600
+linguaggi. Dopodiché chiede all'oracolo,
+
+459
+00:24:16,600 --> 00:24:18,520
+scusa, ma la cosa che ti ho scritto ora
+
+460
+00:24:18,520 --> 00:24:20,679
+sull'oracle tape è un'istanza sì o
+
+461
+00:24:20,679 --> 00:24:22,640
+un'istanza no del linguaggio che tu
+
+462
+00:24:22,640 --> 00:24:24,279
+decidi?
+
+463
+00:24:24,279 --> 00:24:26,679
+Perché l'oracolo
+
+464
+00:24:26,679 --> 00:24:29,440
+di una macchina d'oracolo è un decisore
+
+465
+00:24:29,440 --> 00:24:31,559
+di un linguaggio. Ok? Quindi cosa
+
+466
+00:24:31,559 --> 00:24:33,399
+abbiamo?
+
+467
+00:24:33,399 --> 00:24:36,120
+La macchina d'oracolo ha un nastro
+
+468
+00:24:36,120 --> 00:24:39,480
+particolare. Ah, la macchina d'oracolo
+
+469
+00:24:39,480 --> 00:24:42,720
+interagisce con un oracolo. Che cos'è un
+
+470
+00:24:42,720 --> 00:24:46,360
+oracolo di una macchina d'oracolo? è un
+
+471
+00:24:46,360 --> 00:24:49,360
+decisore di un linguaggio.
+
+472
+00:24:49,360 --> 00:24:53,080
+Quindi il chiamante è una macchina che
+
+473
+00:24:53,080 --> 00:24:57,279
+fa domande all'oracolo. Il chiamato, che
+
+474
+00:24:57,279 --> 00:25:00,080
+è l'oracolo, è un decisore di linguaggi.
+
+475
+00:25:00,080 --> 00:25:02,080
+È uno che sa dire sì no per un certo
+
+476
+00:25:02,080 --> 00:25:05,520
+linguaggio. Cosa fa il chiamante durante
+
+477
+00:25:05,520 --> 00:25:08,760
+la sua esecuzione? Il chiamante può
+
+478
+00:25:08,760 --> 00:25:11,679
+scrivere sul nastro dell'oracolo,
+
+479
+00:25:11,679 --> 00:25:14,279
+sull'oracle tape, delle domande per il
+
+480
+00:25:14,279 --> 00:25:17,360
+chiamato e gli dice, "Guarda, ti ho
+
+481
+00:25:17,360 --> 00:25:20,039
+scritto una stringa su questo nastro. Mi
+
+482
+00:25:20,039 --> 00:25:22,559
+sai dire se questa stringa è un'istanza
+
+483
+00:25:22,559 --> 00:25:25,159
+sì o un'istanza no del linguaggio che tu
+
+484
+00:25:25,159 --> 00:25:27,600
+decidi?" E l'oracolo gli risponde, gli
+
+485
+00:25:27,600 --> 00:25:31,120
+dice sì, no, è chiaro il senso di come
+
+486
+00:25:31,120 --> 00:25:33,640
+funzioni la cosa più nel dettaglio, come
+
+487
+00:25:33,640 --> 00:25:37,120
+avviene? avviene così: la macchina
+
+488
+00:25:37,120 --> 00:25:38,760
+chiamante
+
+489
+00:25:38,760 --> 00:25:42,279
+ha tre stati particolari:
+
+490
+00:25:42,279 --> 00:25:44,760
+Qunto interrogativo,
+
+491
+00:25:44,760 --> 00:25:46,840
+Q yes,
+
+492
+00:25:46,840 --> 00:25:49,840
+Q.
+
+493
+00:25:51,480 --> 00:25:54,000
+Allora, il chiamante
+
+494
+00:25:54,000 --> 00:25:58,799
+fa questo, scrive sul nastro della Quiri
+
+495
+00:25:58,799 --> 00:26:02,120
+propria domanda,
+
+496
+00:26:02,840 --> 00:26:07,120
+dopodiché transisce nello stato Q punto
+
+497
+00:26:07,120 --> 00:26:10,120
+interrogativo.
+
+498
+00:26:11,640 --> 00:26:13,600
+Ok?
+
+499
+00:26:13,600 --> 00:26:18,880
+In quel momento il chiamato, l'oracolo,
+
+500
+00:26:18,880 --> 00:26:22,600
+decide l'appartenenza
+
+501
+00:26:22,600 --> 00:26:25,880
+della stringa che appare in quel momento
+
+502
+00:26:25,880 --> 00:26:29,159
+sul nastro dell'oracolo
+
+503
+00:26:29,159 --> 00:26:32,640
+e in un solo passo
+
+504
+00:26:32,640 --> 00:26:36,080
+della macchina chiamante
+
+505
+00:26:36,080 --> 00:26:40,520
+avviene la transizione verso Q yes o Q.
+
+506
+00:26:40,520 --> 00:26:42,039
+indipendenza se l'oracolo sta
+
+507
+00:26:42,039 --> 00:26:45,640
+rispondendo di sì o di no. Chiaro? È
+
+508
+00:26:45,640 --> 00:26:47,679
+così che avviene la comunicazione fra
+
+509
+00:26:47,679 --> 00:26:49,840
+queste due macchine. Ci sono questi tre
+
+510
+00:26:49,840 --> 00:26:52,679
+stati particolari. La macchina, il
+
+511
+00:26:52,679 --> 00:26:55,039
+chiamante scrive sull'oracle tape la
+
+512
+00:26:55,039 --> 00:26:56,919
+propria domanda. La propria domanda è un
+
+513
+00:26:56,919 --> 00:26:58,880
+è un'istanza per il linguaggio del
+
+514
+00:26:58,880 --> 00:27:02,240
+chiamato. Scrive l'istanza lì, dopodiché
+
+515
+00:27:02,240 --> 00:27:05,520
+transisce in Qunto interrogativo. Il
+
+516
+00:27:05,520 --> 00:27:08,559
+passo successivo, cioè è un passo solo,
+
+517
+00:27:08,559 --> 00:27:12,440
+ok? Non c'è perdita di tempo, conta uno.
+
+518
+00:27:12,440 --> 00:27:14,799
+Il passo successivo
+
+519
+00:27:14,799 --> 00:27:18,120
+all'essere entrati nello nello stato Q
+
+520
+00:27:18,120 --> 00:27:21,159
+punto interrogativo è una transizione
+
+521
+00:27:21,159 --> 00:27:26,080
+magica verso Q sì o Q in dipendenza se
+
+522
+00:27:26,080 --> 00:27:29,679
+il contenuto del nastro della domanda è
+
+523
+00:27:29,679 --> 00:27:31,640
+un'istanza sì o un'istanza no del
+
+524
+00:27:31,640 --> 00:27:34,480
+linguaggio dell'oracolo chiamato. È
+
+525
+00:27:34,480 --> 00:27:37,440
+chiaro come funziona questa cosa?
+
+526
+00:27:37,440 --> 00:27:39,840
+Quindi l'oracolo mago per dirvi sì e no
+
+527
+00:27:39,840 --> 00:27:42,640
+in tempo velocissimo.
+In tempo costante.
+
+528
+00:27:42,640 --> 00:27:45,360
+L'oracolo lo possiamo immaginare come un
+
+529
+00:27:45,360 --> 00:27:48,120
+oracolo, un mago. Noi gli diamo la
+
+530
+00:27:48,120 --> 00:27:52,720
+domanda, one step, abbiamo la risposta.
+
+531
+00:27:52,720 --> 00:27:56,240
+È chiaro come funziona?
+
+532
+00:27:57,480 --> 00:28:01,279
+Insieme a questo succede che nel momento
+
+533
+00:28:01,279 --> 00:28:06,840
+in cui riceviamo la risposta
+
+534
+00:28:06,840 --> 00:28:09,320
+dall'oracolo,
+
+535
+00:28:09,320 --> 00:28:11,480
+magicamente
+
+536
+00:28:11,480 --> 00:28:16,039
+il contenuto dell'oracle tape sparisce.
+
+537
+00:28:16,039 --> 00:28:17,840
+Facciamo questa assunzione. Si cancella
+
+538
+00:28:17,840 --> 00:28:19,760
+il contenuto dell'oracle tape una volta
+
+539
+00:28:19,760 --> 00:28:21,320
+che abbiamo la risposta. Ok? Quindi non
+
+540
+00:28:21,320 --> 00:28:24,679
+dobbiamo perdere tempo a stare là a
+
+541
+00:28:24,679 --> 00:28:27,440
+cancellarlo. Scriviamo la domanda,
+
+542
+00:28:27,440 --> 00:28:30,320
+facciamo la domanda, one step, riceviamo
+
+543
+00:28:30,320 --> 00:28:32,840
+la risposta. Magicamente il contenuto e
+
+544
+00:28:32,840 --> 00:28:36,120
+l'oracle take non c'è più. Ok? Però
+
+545
+00:28:36,120 --> 00:28:41,320
+l'esserci mossi in cui s qiamante
+
+546
+00:28:41,320 --> 00:28:45,120
+la risposta che gli serve. Quindi come
+
+547
+00:28:45,120 --> 00:28:49,000
+potremmo implementare
+
+548
+00:28:49,480 --> 00:28:51,919
+questa procedura? con una macchina ad
+
+549
+00:28:51,919 --> 00:28:54,120
+oracolo.
+
+550
+00:28:54,120 --> 00:28:56,039
+Allora, semplicemente la macchina ad
+
+551
+00:28:56,039 --> 00:28:58,640
+oracolo fa questo,
+
+552
+00:28:58,640 --> 00:29:02,880
+scrive sul nastro il proprio input GK e
+
+553
+00:29:02,880 --> 00:29:05,519
+fa la domanda all'oracolo. L'oracolo gli
+
+554
+00:29:05,519 --> 00:29:09,159
+dirà sì o no. Se gli dice no, fatta,
+
+555
+00:29:09,159 --> 00:29:11,960
+cioè non c'è bisogno che vada oltre. Ok?
+
+556
+00:29:11,960 --> 00:29:13,679
+Dopodiché che facciamo? Prendiamo
+
+557
+00:29:13,679 --> 00:29:18,360
+dall'input cap, gli sottraiamo uno,
+
+558
+00:29:18,360 --> 00:29:20,840
+scriviamo sul nastro dell'oracolo la
+
+559
+00:29:20,840 --> 00:29:24,840
+coppia GK - 1. T. Di nuovo domanda.
+
+560
+00:29:24,840 --> 00:29:28,320
+L'oracolo risponde sì. No, in base alla
+
+561
+00:29:28,320 --> 00:29:30,440
+risposta che noi riceviamo, le
+
+562
+00:29:30,440 --> 00:29:33,480
+combiniamo e diciamo sì, K è la taglia
+
+563
+00:29:33,480 --> 00:29:35,679
+del vertex cover più piccolo oppure no.
+
+564
+00:29:35,679 --> 00:29:37,720
+K non è la taglia del vertex coder più
+
+565
+00:29:37,720 --> 00:29:41,600
+piccolo. Prego.
+Ma adesso magari sono
+
+566
+00:29:41,600 --> 00:29:44,519
+preso io, ma quando abbiamo parlato tipo
+
+567
+00:29:44,519 --> 00:29:48,080
+di linguaggi tipo HT, alt
+
+568
+00:29:48,080 --> 00:29:50,440
+per dimostrare che erano che non erano
+
+569
+00:29:50,440 --> 00:29:52,679
+in R, avevamo fatto delle sorte
+
+570
+00:29:52,679 --> 00:29:54,159
+dimostrazioni così prendeva delle
+
+571
+00:29:54,159 --> 00:29:57,080
+macchine in cui ci mettevamo denti dei
+
+572
+00:29:57,080 --> 00:29:59,519
+piccoli e se quello rispondeva sì,
+
+573
+00:29:59,519 --> 00:30:02,600
+allora la macchina diceva no. in diceva
+
+574
+00:30:02,600 --> 00:30:05,919
+no, faceva una cosa.
+Ok, questa è
+
+575
+00:30:05,919 --> 00:30:07,720
+un'interessantissima osservazione.
+
+576
+00:30:07,720 --> 00:30:10,679
+Allora, in quelle dimostrazioni noi
+
+577
+00:30:10,679 --> 00:30:14,120
+avevamo proprio il plugging
+
+578
+00:30:14,120 --> 00:30:16,679
+di una macchina dentro l'altra, ok?
+
+579
+00:30:16,679 --> 00:30:18,159
+Perché era qualcosa relativa
+
+580
+00:30:18,159 --> 00:30:20,399
+semplicemente a se i linguaggi fossero
+
+581
+00:30:20,399 --> 00:30:23,200
+decidibili o meno, quindi non andavamo
+
+582
+00:30:23,200 --> 00:30:25,480
+molto per il sottile su quanto tempo ci
+
+583
+00:30:25,480 --> 00:30:27,080
+serve, eccetera. Era importante che le
+
+584
+00:30:27,080 --> 00:30:31,720
+cose funzionassero. Allora, perché lì
+
+585
+00:30:31,720 --> 00:30:35,320
+non posso infilare nella macchina che
+
+586
+00:30:35,320 --> 00:30:38,000
+decide Min cover non posso infilare
+
+587
+00:30:38,000 --> 00:30:40,200
+direttamente la funzione di trans, cioè
+
+588
+00:30:40,200 --> 00:30:42,840
+il pezzo di grafo della funzione di
+
+589
+00:30:42,840 --> 00:30:46,039
+transizione che risolve il problema del
+
+590
+00:30:46,039 --> 00:30:48,080
+vertex cover,
+
+591
+00:30:48,080 --> 00:30:53,440
+perché l'oracolo può rispondere sì o no
+
+592
+00:30:53,440 --> 00:30:56,080
+e quel pezzo di funzione in transizione
+
+593
+00:30:56,080 --> 00:30:58,000
+è strutturato per essere una macchina
+
+594
+00:30:58,000 --> 00:31:01,799
+NP. P, cioè ha un bias verso il yes, lo
+
+595
+00:31:01,799 --> 00:31:04,360
+yes. Quindi se a noi serve una risposta
+
+596
+00:31:04,360 --> 00:31:06,919
+no, io devo poter avere che la macchina,
+
+597
+00:31:06,919 --> 00:31:09,600
+che è un'entità separata da me, mi possa
+
+598
+00:31:09,600 --> 00:31:12,159
+rispondere sì, no? E io quella risposta
+
+599
+00:31:12,159 --> 00:31:14,799
+me la flippo come mi serve. Ok? Questa è
+
+600
+00:31:14,799 --> 00:31:16,600
+la ragione per cui non posso fare un
+
+601
+00:31:16,600 --> 00:31:20,200
+plug dentro la macchina e ho bisogno del
+
+602
+00:31:20,200 --> 00:31:23,360
+chiamato fuori.
+
+603
+00:31:23,360 --> 00:31:26,919
+È chiaro questa cosa?
+
+604
+00:31:26,960 --> 00:31:29,960
+Allora,
+
+605
+00:31:30,000 --> 00:31:32,799
+guardiamo questo esempio qua. Allora,
+
+606
+00:31:32,799 --> 00:31:34,840
+una cosa che si potrebbe fare è: "Ma
+
+607
+00:31:34,840 --> 00:31:36,799
+perché mai se io ho una macchina di
+
+608
+00:31:36,799 --> 00:31:38,480
+touring che è in grado di risolvere il
+
+609
+00:31:38,480 --> 00:31:41,240
+problema del vertiscover, non ne scrivo
+
+610
+00:31:41,240 --> 00:31:45,760
+un'altra, no? Nella quale
+
+611
+00:31:45,760 --> 00:31:48,039
+io ci metto direttamente il codice della
+
+612
+00:31:48,039 --> 00:31:51,480
+funzione di transizione, ok? e dopodiché
+
+613
+00:31:51,480 --> 00:31:53,919
+eseguo l'altro pezzo
+
+614
+00:31:53,919 --> 00:31:56,840
+facendo nuovamente la funzione di
+
+615
+00:31:56,840 --> 00:31:59,440
+transizione della macchina che risolve
+
+616
+00:31:59,440 --> 00:32:02,200
+per textover. La cosa non si può fare
+
+617
+00:32:02,200 --> 00:32:03,919
+perché
+
+618
+00:32:03,919 --> 00:32:06,039
+allora il problema è che queste macchine
+
+619
+00:32:06,039 --> 00:32:08,519
+non esistono, quindi è tutto un rigiro
+
+620
+00:32:08,519 --> 00:32:10,840
+un po' particolare, però se voi vi
+
+621
+00:32:10,840 --> 00:32:13,080
+ricordate noi avevamo usato come
+
+622
+00:32:13,080 --> 00:32:15,080
+metafora il fatto che una macchina NP
+
+623
+00:32:15,080 --> 00:32:17,600
+cerca di accettare la propria stringa.
+
+624
+00:32:17,600 --> 00:32:19,279
+Ok?
+
+625
+00:32:19,279 --> 00:32:22,320
+Quindi, nel momento in cui a me serve
+
+626
+00:32:22,320 --> 00:32:25,159
+dall'altra parte una macchina che invece
+
+627
+00:32:25,159 --> 00:32:27,000
+cerca di rifiutare la stringa, perché è
+
+628
+00:32:27,000 --> 00:32:28,600
+una macchina con NP, perché noi stiamo
+
+629
+00:32:28,600 --> 00:32:30,519
+cercando di rispondere a un complemento,
+
+630
+00:32:30,519 --> 00:32:32,840
+queste due cose assieme non ci stanno,
+
+631
+00:32:32,840 --> 00:32:34,559
+non si possono agganciare una presso
+
+632
+00:32:34,559 --> 00:32:36,480
+all'altra. Quindi devo chiamare,
+
+633
+00:32:36,480 --> 00:32:37,960
+l'intuizione è devo chiamare una
+
+634
+00:32:37,960 --> 00:32:39,919
+sabrutina esterna in maniera tale che
+
+635
+00:32:39,919 --> 00:32:42,039
+siano liberi di darmi la risposta che
+
+636
+00:32:42,039 --> 00:32:45,799
+vogliono. Questa è l'intuizione. Ok? In
+
+637
+00:32:45,799 --> 00:32:48,039
+realtà c'è una c'è una ragione più
+
+638
+00:32:48,039 --> 00:32:49,919
+profonda che è la definizione tramite
+
+639
+00:32:49,919 --> 00:32:51,919
+certificati
+
+640
+00:32:51,919 --> 00:32:54,559
+che non è possibile avere un certificato
+
+641
+00:32:54,559 --> 00:32:57,639
+che è in grado di rispondere,
+
+642
+00:32:57,639 --> 00:32:59,799
+è in grado di testimoniare il fatto che
+
+643
+00:32:59,799 --> 00:33:01,240
+un'istanza di quel problema c'è
+
+644
+00:33:01,240 --> 00:33:03,399
+unistanza sì. Ok? L'intuizione è che io
+
+645
+00:33:03,399 --> 00:33:05,480
+non posso mettere appresso una macchina
+
+646
+00:33:05,480 --> 00:33:08,600
+NP e CMP perché una tende a dire di sì,
+
+647
+00:33:08,600 --> 00:33:10,120
+l'altra tende a dire di no. Ma questa è
+
+648
+00:33:10,120 --> 00:33:12,039
+una metafora per ragionare. La
+
+649
+00:33:12,039 --> 00:33:14,000
+definizione formale ci dice il problema
+
+650
+00:33:14,000 --> 00:33:15,960
+sarebbe in NP se ci sta un certificato
+
+651
+00:33:15,960 --> 00:33:18,080
+conciso e polinomialmente verificabile.
+
+652
+00:33:18,080 --> 00:33:20,559
+Per quel problema non c'è e quindi non
+
+653
+00:33:20,559 --> 00:33:23,399
+si può fare.
+
+654
+00:33:23,399 --> 00:33:27,200
+Ok? Cioè questa è un po' l'intuizione,
+
+655
+00:33:27,200 --> 00:33:29,919
+eh. Alright.
+
+656
+00:33:29,919 --> 00:33:32,080
+Quindi abbiamo definito questo bla.
+
+657
+00:33:32,080 --> 00:33:34,320
+Quindi
+
+658
+00:33:34,320 --> 00:33:36,880
+allora noi definiamo, quindi abbiamo
+
+659
+00:33:36,880 --> 00:33:41,679
+detto che la macchina noi la denotiamo m
+
+660
+00:33:41,679 --> 00:33:43,880
+di punto interrogativo. Perché la
+
+661
+00:33:43,880 --> 00:33:46,919
+chiamiamo così? Perché il funzionamento
+
+662
+00:33:46,919 --> 00:33:49,000
+della, cioè la funzione di transizione
+
+663
+00:33:49,000 --> 00:33:53,720
+di m è indipendente
+
+664
+00:33:53,720 --> 00:33:55,919
+dal funzionamento dell'oraccolo. Cioè,
+
+665
+00:33:55,919 --> 00:33:58,639
+se noi guardiamo
+
+666
+00:33:58,639 --> 00:34:01,240
+non guardiamo, se noi guardiamo il
+
+667
+00:34:01,240 --> 00:34:04,440
+funzionamento da Ok, qua c'è tutto, c'è
+
+668
+00:34:04,440 --> 00:34:06,320
+tutto. Se noi guardiamo il funzionamento
+
+669
+00:34:06,320 --> 00:34:08,839
+di quell'algoritmo, quell'algoritmo è
+
+670
+00:34:08,839 --> 00:34:10,960
+fissato. Cioè, non è che l'algoritmo
+
+671
+00:34:10,960 --> 00:34:12,480
+cambia
+
+672
+00:34:12,480 --> 00:34:15,000
+se l'implementazione del checker del
+
+673
+00:34:15,000 --> 00:34:17,599
+vertex cover è diversa.
+
+674
+00:34:17,599 --> 00:34:19,200
+In particolare, quella funzione che noi
+
+675
+00:34:19,200 --> 00:34:21,320
+abbiamo chiamato check vertex cover
+
+676
+00:34:21,320 --> 00:34:24,079
+potrebbe fare completamente altro. Ok?
+
+677
+00:34:24,079 --> 00:34:27,839
+Quindi la macchina M punto interrogativo
+
+678
+00:34:27,839 --> 00:34:29,320
+viene denotata in questo modo per
+
+679
+00:34:29,320 --> 00:34:32,040
+sottolineare che i miei principio noi
+
+680
+00:34:32,040 --> 00:34:34,720
+l'oracolo da m lo possiamo cacciare e ci
+
+681
+00:34:34,720 --> 00:34:37,159
+agganciamo a un'altra cosa. A quel punto
+
+682
+00:34:37,159 --> 00:34:39,679
+la sua esecuzione seguirebbe la propria
+
+683
+00:34:39,679 --> 00:34:41,800
+funzione di transizione, però la
+
+684
+00:34:41,800 --> 00:34:43,800
+risposta che dà a quel punto dipende da
+
+685
+00:34:43,800 --> 00:34:46,560
+come si comporta l'oracolo. Ok? Quindi
+
+686
+00:34:46,560 --> 00:34:49,919
+noi lo scriviamo M punto interrogativo
+
+687
+00:34:49,919 --> 00:34:51,599
+per dire che la macchina è una macchina
+
+688
+00:34:51,599 --> 00:34:54,760
+che accetta un oracolo. Quando vogliamo
+
+689
+00:34:54,760 --> 00:34:59,520
+dire che la macchina sta
+
+690
+00:34:59,520 --> 00:35:01,640
+facendo domande a un oracolo per il
+
+691
+00:35:01,640 --> 00:35:03,800
+linguaggio L, lo scriviamo in questo
+
+692
+00:35:03,800 --> 00:35:08,560
+modo, ok? Quindi M esponente L significa
+
+693
+00:35:08,560 --> 00:35:11,400
+che la macchina M ha come oracolo un
+
+694
+00:35:11,400 --> 00:35:16,200
+decisore del linguaggio L.
+
+695
+00:35:18,690 --> 00:35:21,800
+[Applauso]
+
+696
+00:35:24,079 --> 00:35:27,560
+È chiaro? Ok.
+
+697
+00:35:27,560 --> 00:35:31,680
+Possiamo definire quindi
+
+698
+00:35:32,200 --> 00:35:35,000
+pagina nuova. Possiamo definire quindi
+
+699
+00:35:35,000 --> 00:35:38,040
+facciamo questa cosa e poi pausa.
+
+700
+00:35:38,040 --> 00:35:43,280
+Una serie di classi. Definiamo
+
+701
+00:35:44,880 --> 00:35:48,760
+le seguenti
+
+702
+00:35:48,960 --> 00:35:51,720
+classi
+
+703
+00:35:51,720 --> 00:35:54,920
+ad oracolo
+
+704
+00:35:58,079 --> 00:36:00,240
+come
+
+705
+00:36:00,240 --> 00:36:02,160
+Sì, queste qua che adesso vediamo è
+
+706
+00:36:02,160 --> 00:36:03,760
+sotto
+
+707
+00:36:03,760 --> 00:36:08,920
+Mah può essere vario. Allora, sia
+
+708
+00:36:08,920 --> 00:36:14,280
+c una classe di complessità,
+
+709
+00:36:20,240 --> 00:36:21,839
+cioè le definizioni che abbiamo dato per
+
+710
+00:36:21,839 --> 00:36:23,359
+l'oracolo
+
+711
+00:36:23,359 --> 00:36:25,160
+in realtà è generica, adesso ne vediamo
+
+712
+00:36:25,160 --> 00:36:26,800
+un po'.
+
+713
+00:36:26,800 --> 00:36:29,760
+Quindi sia C una generica classe di
+
+714
+00:36:29,760 --> 00:36:31,160
+complessità come quella che abbiamo
+
+715
+00:36:31,160 --> 00:36:35,040
+visto, può essere P, np, exp, next,
+
+716
+00:36:35,040 --> 00:36:37,760
+ppace, whatever.
+
+717
+00:36:37,760 --> 00:36:40,960
+P^ C
+
+718
+00:36:40,960 --> 00:36:45,560
+è l'insieme dei linguaggi L tale che L
+
+719
+00:36:45,560 --> 00:36:48,960
+può essere
+
+720
+00:36:48,960 --> 00:36:51,960
+deciso
+
+721
+00:36:52,400 --> 00:36:54,040
+in
+
+722
+00:36:54,040 --> 00:36:55,800
+tempo
+
+723
+00:36:55,800 --> 00:36:58,800
+polinomiale
+
+724
+00:37:02,079 --> 00:37:06,920
+da una macchina.
+
+725
+00:37:07,800 --> 00:37:11,000
+ad oracolo
+
+726
+00:37:12,839 --> 00:37:15,839
+deterministica
+
+727
+00:37:19,520 --> 00:37:23,800
+che interpella
+
+728
+00:37:25,800 --> 00:37:29,200
+un oracolo
+
+729
+00:37:30,200 --> 00:37:33,200
+per
+
+730
+00:37:34,280 --> 00:37:37,200
+un linguaggio.
+
+731
+00:37:39,079 --> 00:37:43,440
+L'O appartenente a C.
+
+732
+00:37:43,440 --> 00:37:49,359
+Ok? Allora, P^ C che cos'è? è l'insieme
+
+733
+00:37:49,359 --> 00:37:53,079
+di tutti i linguaggi
+
+734
+00:37:53,079 --> 00:37:56,520
+che possono essere decisi
+
+735
+00:37:56,520 --> 00:37:59,000
+in tempo polinomiale
+
+736
+00:37:59,000 --> 00:38:03,560
+da una macchina d'oracolo deterministica
+
+737
+00:38:03,560 --> 00:38:07,000
+che usufruisce del counseling di un
+
+738
+00:38:07,000 --> 00:38:09,160
+oracolo per un linguaggio L'O che sta
+
+739
+00:38:09,160 --> 00:38:12,640
+nella classe C. Ok?
+
+740
+00:38:12,640 --> 00:38:16,319
+È chiara la definizione? Mh mh.
+
+741
+00:38:16,319 --> 00:38:18,400
+Similmente
+
+742
+00:38:18,400 --> 00:38:20,920
+possiamo definire
+
+743
+00:38:20,920 --> 00:38:24,960
+NP^ C. Secondo voi, com'è definito NP^
+
+744
+00:38:24,960 --> 00:38:27,960
+C?
+
+745
+00:38:33,480 --> 00:38:38,079
+non determine. Quindi L può essere
+
+746
+00:38:38,079 --> 00:38:41,079
+deciso
+
+747
+00:38:41,160 --> 00:38:44,599
+in tempo
+
+748
+00:38:44,599 --> 00:38:45,970
+polinomiale
+
+749
+00:38:45,970 --> 00:38:49,150
+[Musica]
+
+750
+00:38:49,599 --> 00:38:53,480
+non deterministico
+
+751
+00:38:57,079 --> 00:39:00,770
+da una macchina
+
+752
+00:39:00,770 --> 00:39:03,240
+[Musica]
+
+753
+00:39:03,240 --> 00:39:05,800
+ad oracolo.
+
+754
+00:39:07,599 --> 00:39:10,880
+che interpella
+
+755
+00:39:14,440 --> 00:39:17,880
+un oracolo
+
+756
+00:39:19,400 --> 00:39:24,280
+per un linguaggio
+
+757
+00:39:25,560 --> 00:39:30,319
+L'O appartenente a C. Ok?
+
+758
+00:39:30,319 --> 00:39:34,359
+Quindi, dato l'algoritmo che abbiamo
+
+759
+00:39:34,359 --> 00:39:36,960
+scritto,
+
+760
+00:39:36,960 --> 00:39:38,560
+mettiamo tutti e due così vedete
+
+761
+00:39:38,560 --> 00:39:42,000
+entrambe. Ok? Dato l'algoritmo che
+
+762
+00:39:42,000 --> 00:39:44,400
+abbiamo scritto prima per il problema
+
+763
+00:39:44,400 --> 00:39:48,920
+del min cover, in che classe sta il
+
+764
+00:39:48,920 --> 00:39:52,839
+problema del min cover?
+
+765
+00:39:53,160 --> 00:39:56,160
+P
+
+766
+00:39:56,319 --> 00:40:00,440
+elevato all
+P elevato all NP, quindi min
+
+767
+00:40:00,440 --> 00:40:03,440
+cover
+
+768
+00:40:05,640 --> 00:40:09,720
+appartiene a P elevato all NP perché
+
+769
+00:40:09,720 --> 00:40:13,160
+perché è un problema che può essere
+
+770
+00:40:13,160 --> 00:40:16,560
+deciso da un decisore deterministico in
+
+771
+00:40:16,560 --> 00:40:19,520
+tempo polinomiale che interpella un
+
+772
+00:40:19,520 --> 00:40:21,960
+oracolo per NP di un linguaggio che sta
+
+773
+00:40:21,960 --> 00:40:24,599
+in NP. Ok?
+
+774
+00:40:24,599 --> 00:40:28,040
+P^ NP è qualcosa, poi vedremo dopo la
+
+775
+00:40:28,040 --> 00:40:33,520
+pausa che sta dentro gli spazio. Ok?
+
+776
+00:40:37,920 --> 00:40:39,440
+Allora,
+
+777
+00:40:39,440 --> 00:40:43,680
+facciamo prima delle considerazioni.
+
+778
+00:40:44,560 --> 00:40:47,560
+Relazione
+
+779
+00:40:49,560 --> 00:40:51,359
+fra
+
+780
+00:40:51,359 --> 00:40:55,200
+NP e P^ NP.
+
+781
+00:40:55,200 --> 00:40:58,480
+Secondo voi come sono relazionate queste
+
+782
+00:40:58,480 --> 00:41:02,200
+due classi di complessità?
+
+783
+00:41:02,960 --> 00:41:05,240
+Un attimo.
+
+784
+00:41:05,240 --> 00:41:09,640
+Voci nuove. Voci nuove.
+
+785
+00:41:14,119 --> 00:41:16,960
+È chiaro? NP è la è la classe standard
+
+786
+00:41:16,960 --> 00:41:20,240
+che abbiamo visto per settimane. P NP è
+
+787
+00:41:20,240 --> 00:41:22,359
+questa cosa particolare, sono quei
+
+788
+00:41:22,359 --> 00:41:25,040
+linguaggi che possono essere decisi da
+
+789
+00:41:25,040 --> 00:41:27,760
+oracoli determin da macchine ad oracolo
+
+790
+00:41:27,760 --> 00:41:29,599
+deterministiche in tempo polinomiale che
+
+791
+00:41:29,599 --> 00:41:32,520
+fanno una domanda a un oracolo in Net.
+
+792
+00:41:32,520 --> 00:41:36,160
+Sì, prego.
+Sì, cioè posso chiedere
+
+793
+00:41:36,160 --> 00:41:38,640
+all'oracolo di decidere il brech giusto
+
+794
+00:41:38,640 --> 00:41:40,560
+da scegliere
+
+795
+00:41:40,560 --> 00:41:42,640
+di computazione?
+All'oracolo si chiede
+
+796
+00:41:42,640 --> 00:41:45,079
+la domanda che si fa all'oracolo è passo
+
+797
+00:41:45,079 --> 00:41:47,240
+un'istanza. Questa è unistanza sì o
+
+798
+00:41:47,240 --> 00:41:50,319
+unistanza no? E l'oracolo mi dice sì.
+
+799
+00:41:50,319 --> 00:41:52,160
+No, questa è la domanda che facciamo
+
+800
+00:41:52,160 --> 00:41:55,160
+allora.
+
+801
+00:41:56,599 --> 00:42:01,599
+da dire che Ah, prego.
+Da dire che è
+
+802
+00:42:01,599 --> 00:42:04,200
+vista strettamente dentro P.
+
+803
+00:42:04,200 --> 00:42:06,319
+strettamente non lo sappiamo, però sta
+
+804
+00:42:06,319 --> 00:42:10,720
+dentro P^ NP perché
+eh allora appena
+
+805
+00:42:10,720 --> 00:42:14,560
+esattamente eh cioè vabbè l'inclusione
+
+806
+00:42:14,560 --> 00:42:18,839
+sta dentro di PLNP per semplicemente
+
+807
+00:42:18,839 --> 00:42:21,880
+cioè prendono anche un oracolo del ciò
+
+808
+00:42:21,880 --> 00:42:27,119
+che c NP c
+Ok io ho capito però allora
+
+809
+00:42:27,119 --> 00:42:29,280
+il nostro collega ci dice ed è corretto
+
+810
+00:42:29,280 --> 00:42:33,640
+che NP è contenuto in P^ NP P
+
+811
+00:42:33,640 --> 00:42:35,319
+perché
+
+812
+00:42:35,319 --> 00:42:38,480
+sia L
+
+813
+00:42:38,480 --> 00:42:44,640
+sia L un linguaggio appartenente ad NP.
+
+814
+00:42:45,880 --> 00:42:49,079
+Allora, per dimostrare che L appartenga
+
+815
+00:42:49,079 --> 00:42:53,200
+anche a P^ NP,
+
+816
+00:42:54,280 --> 00:42:56,839
+L appartiene alla P, alla alla NP,
+
+817
+00:42:56,839 --> 00:43:00,400
+dobbiamo trovare una macchina
+
+818
+00:43:00,400 --> 00:43:03,760
+ad oracolo che in tempo polinomiale,
+
+819
+00:43:03,760 --> 00:43:06,839
+utilizzando un oracolo per NP, è in
+
+820
+00:43:06,839 --> 00:43:08,839
+grado di rispondere a L. Ok? Questa
+
+821
+00:43:08,839 --> 00:43:11,079
+macchina M fa questa cosa molto
+
+822
+00:43:11,079 --> 00:43:13,240
+semplice. Il suo oracolo è un oracolo
+
+823
+00:43:13,240 --> 00:43:16,359
+per L. Prendiamo l'input, lo copiamo su
+
+824
+00:43:16,359 --> 00:43:18,359
+un nastro d'oracolo, gli facciamo una
+
+825
+00:43:18,359 --> 00:43:19,960
+domanda, prendiamo la risposta,
+
+826
+00:43:19,960 --> 00:43:22,280
+rispondiamo alla stessa cosa. Ok? Quindi
+
+827
+00:43:22,280 --> 00:43:25,200
+questa è la ragione per cui
+
+828
+00:43:25,200 --> 00:43:31,359
+NP è contenuto in P^ NP. Ok?
+
+829
+00:43:34,000 --> 00:43:38,839
+Eh, vediamolo ora. relazione
+
+830
+00:43:39,640 --> 00:43:41,960
+fra
+
+831
+00:43:41,960 --> 00:43:50,319
+CNP e P^ NP. Secondo voi P^ NP contiene
+
+832
+00:43:50,319 --> 00:43:54,720
+CNP? Non lo contiene. CNP contiene P^
+
+833
+00:43:54,720 --> 00:43:57,559
+NP.
+
+834
+00:43:57,559 --> 00:44:01,079
+Sono incomparabili.
+
+835
+00:44:18,400 --> 00:44:21,160
+Si fa una modifica del ragionamento che
+
+836
+00:44:21,160 --> 00:44:24,720
+abbiamo visto prima. Ok. Come facciamo?
+
+837
+00:44:24,720 --> 00:44:27,800
+Sì,
+il contr
+
+838
+00:44:27,800 --> 00:44:30,000
+per quale domanda?
+
+839
+00:44:30,000 --> 00:44:31,599
+Abbiamo fatto l'oracle.
+
+840
+00:44:31,599 --> 00:44:35,359
+ci risponde.
+Ok. Sì. Allora, sia L un
+
+841
+00:44:35,359 --> 00:44:38,559
+linguaggio appartenente a CNP.
+
+842
+00:44:38,559 --> 00:44:41,480
+Ne esegue che L soprassegnato appartiene
+
+843
+00:44:41,480 --> 00:44:44,760
+a NP.
+
+844
+00:44:50,720 --> 00:44:54,319
+La macchina M
+
+845
+00:44:54,319 --> 00:44:57,640
+fa questo.
+
+846
+00:44:57,720 --> 00:45:02,000
+Noi gli diamo come ora L soprasegnato.
+
+847
+00:45:02,000 --> 00:45:04,559
+La macchina M che fa? Fa la domanda
+
+848
+00:45:04,559 --> 00:45:06,200
+all'oraccolo.
+
+849
+00:45:06,200 --> 00:45:08,920
+L'oracolo risponde, la macchina M
+
+850
+00:45:08,920 --> 00:45:11,000
+inverte la risposta e restituisce il
+
+851
+00:45:11,000 --> 00:45:13,440
+risultato. Ok?
+
+852
+00:45:13,440 --> 00:45:16,520
+Quindi noi abbiamo che
+
+853
+00:45:16,520 --> 00:45:19,480
+co NP
+
+854
+00:45:19,480 --> 00:45:22,920
+è un sottinsieme di P^ NP. Quindi che
+
+855
+00:45:22,920 --> 00:45:25,000
+cosa abbiamo? E con questo poi facciamo
+
+856
+00:45:25,000 --> 00:45:27,839
+pausa. Abbiamo P qua,
+
+857
+00:45:27,839 --> 00:45:30,760
+NP sta qui,
+
+858
+00:45:30,760 --> 00:45:32,800
+CNP
+
+859
+00:45:32,800 --> 00:45:34,640
+sta qui
+
+860
+00:45:34,640 --> 00:45:39,839
+e P^ NP sta qui.
+
+861
+00:45:43,359 --> 00:45:46,359
+Ok,
+
+862
+00:45:52,359 --> 00:45:54,040
+giusto un inciso prima di andare in
+
+863
+00:45:54,040 --> 00:45:56,319
+pausa. In realtà il problema min cover
+
+864
+00:45:56,319 --> 00:45:59,920
+non è un problema difficile per P^ NP.
+
+865
+00:45:59,920 --> 00:46:02,480
+L'intuizione è questa. In P^ NP noi
+
+866
+00:46:02,480 --> 00:46:04,000
+possiamo fare quante domande
+
+867
+00:46:04,000 --> 00:46:07,000
+all'oracolo?
+
+868
+00:46:10,680 --> 00:46:12,599
+Eh, ma ne possiamo fare un numero
+
+869
+00:46:12,599 --> 00:46:15,599
+esponenziale?
+
+870
+00:46:15,599 --> 00:46:18,119
+No, perché non abbiamo tempo. Quindi le
+
+871
+00:46:18,119 --> 00:46:20,760
+macchine polinomiale con oracoli in NP,
+
+872
+00:46:20,760 --> 00:46:23,200
+l'intuizione è possono fare un numero
+
+873
+00:46:23,200 --> 00:46:25,680
+polinomiale di domande all'oracolo. Per
+
+874
+00:46:25,680 --> 00:46:27,640
+risolvere in cover, quante domande
+
+875
+00:46:27,640 --> 00:46:29,680
+abbiamo fatto all'oracolo?
+
+876
+00:46:29,680 --> 00:46:32,520
+Costante due. Quindi l'intuizione è che
+
+877
+00:46:32,520 --> 00:46:34,880
+quel problema in realtà non è uno dei
+
+878
+00:46:34,880 --> 00:46:37,280
+problemi tosti di P all NP. Sta in via
+
+879
+00:46:37,280 --> 00:46:39,800
+alla NP, però in realtà sta in un
+
+880
+00:46:39,800 --> 00:46:42,599
+pezzettino molto piccolo che però è un
+
+881
+00:46:42,599 --> 00:46:45,680
+dettaglio che non vediamo. Ok. Pausa. 10
+
+882
+00:46:45,680 --> 00:46:49,359
+minuti. Un quarto d'ora.
+
+883
+00:46:50,040 --> 00:46:53,139
+[Musica]
+
+884
+00:46:56,599 --> 00:46:59,599
+Ok,
+
+885
+00:47:11,839 --> 00:47:15,920
+continuiamo a esplorare le classi ad
+
+886
+00:47:15,920 --> 00:47:18,000
+oracolo.
+
+887
+00:47:18,000 --> 00:47:20,040
+Ne vedremo ancora un po', daremo qualche
+
+888
+00:47:20,040 --> 00:47:21,800
+intuizione, poi vedremo classi
+
+889
+00:47:21,800 --> 00:47:23,920
+funzionali, problemi di ottimizzazione,
+
+890
+00:47:23,920 --> 00:47:25,520
+eccetera.
+
+891
+00:47:25,520 --> 00:47:29,520
+Allora, noi abbiamo introdotto prima
+
+892
+00:47:29,520 --> 00:47:33,400
+le classi P^ NP,
+
+893
+00:47:33,400 --> 00:47:37,359
+NP^ NP.
+
+894
+00:47:38,720 --> 00:47:41,760
+Vabbò, lo vedete? Questa cosa può essere
+
+895
+00:47:41,760 --> 00:47:44,319
+generalizzata e avere cose ancora più
+
+896
+00:47:44,319 --> 00:47:46,400
+sofisticate. Per esempio, potremmo avere
+
+897
+00:47:46,400 --> 00:47:51,119
+NP^ NP^ NP.
+
+898
+00:47:51,119 --> 00:47:54,040
+Ok? Che cos'è questo?
+
+899
+00:47:54,040 --> 00:47:59,359
+Questo sarebbe una macchina NP
+
+900
+00:47:59,359 --> 00:48:02,839
+che ha come oracolo
+
+901
+00:48:02,839 --> 00:48:06,880
+linguaggi in NP NP. Ok? Cioè la
+
+902
+00:48:06,880 --> 00:48:08,599
+definizione è questa qua. Quindi noi
+
+903
+00:48:08,599 --> 00:48:12,319
+possiamo fare delle catene molto lunghe,
+
+904
+00:48:12,319 --> 00:48:14,960
+no, di tanti oracoli, però in genere il
+
+905
+00:48:14,960 --> 00:48:17,119
+significato è in questo caso che la
+
+906
+00:48:17,119 --> 00:48:20,760
+macchina NP, il chiamate ha come
+
+907
+00:48:20,760 --> 00:48:24,680
+linguaggio dell'oracolo un linguaggio
+
+908
+00:48:24,680 --> 00:48:28,760
+che sta in NP^ NP. Ok?
+
+909
+00:48:28,760 --> 00:48:31,400
+Questa cosa si può generalizzare,
+
+910
+00:48:31,400 --> 00:48:36,720
+avere 3 4 5 1000 livelli, eccetera. e dà
+
+911
+00:48:36,720 --> 00:48:39,119
+origine a quella che viene chiamata la
+
+912
+00:48:39,119 --> 00:48:42,720
+gerarchia polinomiale.
+
+913
+00:48:42,720 --> 00:48:45,440
+Prima anche allincito,
+no? All'infinito
+
+914
+00:48:45,440 --> 00:48:48,040
+no. E se
+ha un numero molto facile
+
+915
+00:48:48,040 --> 00:48:50,520
+sempre cosa? Qual è il testimo di
+
+916
+00:48:50,520 --> 00:48:53,400
+compulenza?
+Può può è unbounded può
+
+917
+00:48:53,400 --> 00:48:56,200
+essere un qualsiasi numero finito. 3000
+
+918
+00:48:56,200 --> 00:48:59,359
+3000 un miliardo un miliardo.
+
+919
+00:48:59,359 --> 00:49:01,079
+Se sta sotto sempre esponenziali
+
+920
+00:49:01,079 --> 00:49:02,720
+costruire
+
+921
+00:49:02,720 --> 00:49:05,200
+sta pire
+
+922
+00:49:05,200 --> 00:49:08,400
+sopra cosa
+poi poi poi vediamo. Sì,
+
+923
+00:49:08,400 --> 00:49:12,079
+quindi possiamo avere NP^ NP NP^ NP^ NP.
+
+924
+00:49:12,079 --> 00:49:14,680
+Possiamo avere quanti ne vogliamo là,
+
+925
+00:49:14,680 --> 00:49:17,880
+basta che sia un numero finito. Ok?
+
+926
+00:49:17,880 --> 00:49:20,440
+Questo ci permette di definire quella
+
+927
+00:49:20,440 --> 00:49:25,119
+che viene chiamata la gerarchia
+
+928
+00:49:26,520 --> 00:49:29,520
+polinomiale.
+
+929
+00:49:32,359 --> 00:49:34,640
+Ok? Ci sono tanti problemi interessanti
+
+930
+00:49:34,640 --> 00:49:36,839
+nella gela vecchia polinomiale. Noi ve
+
+931
+00:49:36,839 --> 00:49:40,920
+ne citerò qualcuno alla fine, non li
+
+932
+00:49:40,920 --> 00:49:43,799
+vedremo nei dettagli perché, insomma, è
+
+933
+00:49:43,799 --> 00:49:46,680
+eh un po' un po' tricky. Ci sono alcuni
+
+934
+00:49:46,680 --> 00:49:49,839
+problemi un po' artificiosi, problemi
+
+935
+00:49:49,839 --> 00:49:53,079
+abbastanza naturali e ne vedremo
+
+936
+00:49:53,079 --> 00:49:57,359
+qualcuno. Come è definita la gerarchia
+
+937
+00:49:57,359 --> 00:50:01,559
+polinomiale? La gerarchia polinomiale
+
+938
+00:50:01,559 --> 00:50:04,480
+è, come dice il nome, un insieme di
+
+939
+00:50:04,480 --> 00:50:08,520
+classi che stanno una sopra l'altra, ok?
+
+940
+00:50:08,520 --> 00:50:11,079
+E le classi della gerarchia polinomiale
+
+941
+00:50:11,079 --> 00:50:14,599
+si chiamano sigma pi,
+
+942
+00:50:14,599 --> 00:50:16,799
+pi
+
+943
+00:50:16,799 --> 00:50:21,720
+e delta pi con i mag> uguale 0. Adesso
+
+944
+00:50:21,720 --> 00:50:24,920
+le definiamo. Quindi cos'è la gerarchia
+
+945
+00:50:24,920 --> 00:50:28,559
+polinomiale? La gerarchia polinomiale è
+
+946
+00:50:28,559 --> 00:50:32,599
+una gerarchia di classi di complessità
+
+947
+00:50:32,599 --> 00:50:36,799
+al di sopra di NP
+
+948
+00:50:37,119 --> 00:50:41,400
+che hanno questi nomi qua sigma piσ
+
+949
+00:50:41,400 --> 00:50:44,720
+pi e delta pi dove i è maggiore o uguale
+
+950
+00:50:44,720 --> 00:50:47,720
+a 0. La definizione
+
+951
+00:50:47,720 --> 00:50:51,640
+è di queste classi è questa qui, sigma
+
+952
+00:50:51,640 --> 00:50:56,119
+p0 e p.
+
+953
+00:50:58,160 --> 00:51:00,480
+Ok? E quindi noi diciamo alla base c'è
+
+954
+00:51:00,480 --> 00:51:03,599
+questa classe che chiamiamo sigma p0 che
+
+955
+00:51:03,599 --> 00:51:06,079
+equivale alla classe p time
+
+956
+00:51:06,079 --> 00:51:11,280
+deterministic polynomial time. Dopodiché
+
+957
+00:51:11,280 --> 00:51:13,760
+per
+
+958
+00:51:13,760 --> 00:51:18,640
+i mag> o uguale 1
+
+959
+00:51:18,640 --> 00:51:21,880
+definiamo sigma pi
+
+960
+00:51:21,880 --> 00:51:28,640
+come np^ sigma pi - 1
+
+961
+00:51:28,680 --> 00:51:30,760
+è una definizione.
+
+962
+00:51:30,760 --> 00:51:35,599
+Quindi che cosa avremo? Sigma p2
+
+963
+00:51:35,599 --> 00:51:40,119
+è uguale a np^ np.
+
+964
+00:51:40,799 --> 00:51:43,880
+Sigma P3
+
+965
+00:51:43,880 --> 00:51:48,520
+è NP^ NP^ NP.
+
+966
+00:51:48,520 --> 00:51:54,680
+Sigma P4 è NP^ NP^ NP^ NP e così via.
+
+967
+00:51:54,680 --> 00:51:57,400
+Ok? Quindi noi definiamo
+
+968
+00:51:57,400 --> 00:52:02,520
+sigma P come NP a eh una macchina non
+
+969
+00:52:02,520 --> 00:52:05,319
+deterministic polynomial time che chiede
+
+970
+00:52:05,319 --> 00:52:09,079
+ad oracoli in sigma pi - 1 di rispondere
+
+971
+00:52:09,079 --> 00:52:12,480
+ad alcune domande. Ok?
+
+972
+00:52:12,480 --> 00:52:14,720
+per i
+
+973
+00:52:14,720 --> 00:52:18,280
+mag o ug
+
+974
+00:52:19,920 --> 00:52:22,440
+di pi pi pi i
+
+975
+00:52:22,440 --> 00:52:25,480
+è cosma
+
+976
+00:52:25,480 --> 00:52:30,960
+pi, quindi pi i è l'insieme dei
+
+977
+00:52:30,960 --> 00:52:34,040
+linguaggi complementi di quelli che
+
+978
+00:52:34,040 --> 00:52:37,880
+stanno in sigma pi. Quindi abbiamo pi
+
+979
+00:52:37,880 --> 00:52:39,400
+pebbe
+
+980
+00:52:39,400 --> 00:52:42,200
+il complemento di sigma P2.
+
+981
+00:52:42,200 --> 00:52:45,760
+P3 che è il complemento di sigma P3, π
+
+982
+00:52:45,760 --> 00:52:47,319
+pemento
+
+983
+00:52:47,319 --> 00:52:50,599
+di sigma P4 e così via.
+
+984
+00:52:50,599 --> 00:52:55,599
+E poi definiamo delta di pi + 1 come
+
+985
+00:52:55,599 --> 00:52:58,599
+piang
+
+986
+00:53:07,640 --> 00:53:11,200
+come
+delta delta
+
+987
+00:53:11,200 --> 00:53:15,520
+delta p = p^ sigma pi
+
+988
+00:53:15,520 --> 00:53:19,280
+i + 1. Sì, sì, sì.
+
+989
+00:53:21,880 --> 00:53:24,760
+Ok? Quindi queste sono definizioni di
+
+990
+00:53:24,760 --> 00:53:27,599
+classi e la gerarchia è stata definita
+
+991
+00:53:27,599 --> 00:53:31,040
+così. Quindi delta P2, che cos'è delta
+
+992
+00:53:31,040 --> 00:53:34,040
+P2?
+
+993
+00:53:38,359 --> 00:53:41,359
+Pla,
+
+994
+00:53:43,760 --> 00:53:47,680
+delta P è Pla
+
+995
+00:53:49,050 --> 00:53:52,280
+[Musica]
+
+996
+00:53:53,200 --> 00:53:55,680
+alla NP
+
+997
+00:53:55,680 --> 00:53:59,040
+perché per essere questo 2 qua
+
+998
+00:53:59,040 --> 00:54:03,720
+lì sarebbe 1 e quindi avremmo p^ sigma p
+
+999
+00:54:03,720 --> 00:54:08,880
++ 1 sigma P1 è NP. Ah, ok. Sigma P1 è NP
+
+1000
+00:54:08,880 --> 00:54:12,359
+perché avrei NP
+
+1001
+00:54:12,359 --> 00:54:18,680
+alla sigma P0 dove sigma P0 è P. NP^ P è
+
+1002
+00:54:18,680 --> 00:54:21,880
+NP. Perché se NP fa domanda un oracolo
+
+1003
+00:54:21,880 --> 00:54:23,920
+in P sono cose che in realtà saprbbe
+
+1004
+00:54:23,920 --> 00:54:25,640
+fare da solo, cioè non ha bisogno di un
+
+1005
+00:54:25,640 --> 00:54:32,400
+oracolo in P. Ok? Quindi delta P2 è P^
+
+1006
+00:54:32,400 --> 00:54:35,240
+NP. Di conseguenza noi avremo ad esempio
+
+1007
+00:54:35,240 --> 00:54:37,640
+che
+
+1008
+00:54:37,640 --> 00:54:39,520
+e dai
+
+1009
+00:54:39,520 --> 00:54:42,839
+mean cover
+
+1010
+00:54:43,760 --> 00:54:47,760
+appartiene a delta P2
+
+1011
+00:54:47,760 --> 00:54:49,359
+che è il problema che abbiamo visto
+
+1012
+00:54:49,359 --> 00:54:51,079
+prima.
+
+1013
+00:54:51,079 --> 00:54:53,559
+Adesso quello che noi vogliamo fare è
+
+1014
+00:54:53,559 --> 00:54:56,599
+guardare un po' di relazioni fra queste
+
+1015
+00:54:56,599 --> 00:54:59,520
+classi della gerarchia, ok? chi contiene
+
+1016
+00:54:59,520 --> 00:55:03,280
+cosa e come sono relazionate.
+
+1017
+00:55:03,280 --> 00:55:04,839
+Ok?
+
+1018
+00:55:04,839 --> 00:55:07,839
+Allora,
+
+1019
+00:55:09,160 --> 00:55:12,280
+guardiamo prima questo. Consideriamo un
+
+1020
+00:55:12,280 --> 00:55:17,400
+generico sigma pi e un generico delta pi
+
+1021
+00:55:17,400 --> 00:55:20,400
++ 1.
+
+1022
+00:55:20,400 --> 00:55:24,599
+La definizione sta qua. Ok?
+
+1023
+00:55:24,599 --> 00:55:29,359
+Le vedete? Le vedete? M mh mh.
+
+1024
+00:55:29,359 --> 00:55:33,559
+Ok. Che relazione c'è fra sigma pi e
+
+1025
+00:55:33,559 --> 00:55:37,680
+delta di pi i + 1? Innanzitutto delta di
+
+1026
+00:55:37,680 --> 00:55:42,039
+pi + 1 a che cosa è uguale?
+
+1027
+00:55:47,400 --> 00:55:51,920
+P^ sigma P^ sigma Pi. Ok? Allora, che
+
+1028
+00:55:51,920 --> 00:55:57,240
+relazione c'è fra sigma pi e delta di pi
+
+1029
+00:55:57,240 --> 00:56:01,480
++ 1 dove sappiamo essere p^ sigma p? Sì,
+
+1030
+00:56:01,480 --> 00:56:03,920
+sigma contenuto
+
+1031
+00:56:03,920 --> 00:56:07,280
+perché sigma p è contenuto in delta pi +
+
+1032
+00:56:07,280 --> 00:56:09,640
+1 perché
+
+1033
+00:56:09,640 --> 00:56:13,000
+appartiene al sigma poo.
+
+1034
+00:56:13,000 --> 00:56:16,319
+Esattamente. È la stessa ragione
+
+1035
+00:56:16,319 --> 00:56:19,280
+per cui abbiamo detto che
+
+1036
+00:56:19,280 --> 00:56:21,920
+questo è simile
+
+1037
+00:56:21,920 --> 00:56:26,200
+a NP contenuto in P^ NP. L'abbiamo visto
+
+1038
+00:56:26,200 --> 00:56:29,760
+prima. Noi basta che usiamo un oracolo o
+
+1039
+00:56:29,760 --> 00:56:31,400
+una macchina d'oracolo che non fa
+
+1040
+00:56:31,400 --> 00:56:33,319
+nient'altro che chiedere al proprio
+
+1041
+00:56:33,319 --> 00:56:36,079
+oracolo di decidere il linguaggio in
+
+1042
+00:56:36,079 --> 00:56:38,200
+sigma. Qui prende la risposta e la diamo
+
+1043
+00:56:38,200 --> 00:56:40,400
+in output. Ok?
+Una domanda. Perché
+
+1044
+00:56:40,400 --> 00:56:43,119
+scriviamo i delta più invece che delta p
+
+1045
+00:56:43,119 --> 00:56:46,960
+e poi siamo del pi?
+Stessa cosa come uno
+
+1046
+00:56:46,960 --> 00:56:48,720
+vuole definirla. L'importante è che la
+
+1047
+00:56:48,720 --> 00:56:51,480
+relazione venga dentro. Ok?
+
+1048
+00:56:51,480 --> 00:56:55,720
+Le delta sì hanno un indice aggiuntivo
+
+1049
+00:56:55,720 --> 00:56:57,319
+rispetto alle sigma. Così vanno
+
+1050
+00:56:57,319 --> 00:57:01,559
+chiamate, eh, così ci atteniamo. Ok?
+
+1051
+00:57:01,559 --> 00:57:05,960
+Alri. Cosa possiamo dire di
+
+1052
+00:57:05,960 --> 00:57:07,760
+pi
+
+1053
+00:57:07,760 --> 00:57:12,119
+e delta pi + 1?
+
+1054
+00:57:12,119 --> 00:57:16,000
+In cui questo è pi?
+
+1055
+00:57:23,240 --> 00:57:26,839
+Un attimo, un attimo.
+
+1056
+00:57:27,559 --> 00:57:30,079
+Vi ricordo che questa cosa qua è uguale
+
+1057
+00:57:30,079 --> 00:57:35,599
+a co sigma pi, ok?
+
+1058
+00:57:44,079 --> 00:57:46,839
+Sì, prego.
+Sempre
+
+1059
+00:57:46,839 --> 00:57:50,039
+P è contenuto in delta.
+
+1060
+00:57:50,039 --> 00:57:53,920
+P Sì, è contenuto in delta perché
+eh per
+
+1061
+00:57:53,920 --> 00:57:55,520
+lo stesso motivo, perché bastava
+
+1062
+00:57:55,520 --> 00:57:57,400
+infirare il
+Sì, per la stesso
+
+1063
+00:57:57,400 --> 00:57:59,319
+ragionamento che abbiamo fatto prima per
+
+1064
+00:57:59,319 --> 00:58:03,720
+dire che co NP sta dentro pi np. Per un
+
+1065
+00:58:03,720 --> 00:58:05,720
+ragionamento molto simile possiamo dire
+
+1066
+00:58:05,720 --> 00:58:10,000
+che pi sta dentro delta pi + 1. Qua lo
+
+1067
+00:58:10,000 --> 00:58:13,000
+mettiamo simile
+
+1068
+00:58:13,000 --> 00:58:22,520
+a co NP incluso in p^ np. Ok? Altro?
+
+1069
+00:58:22,520 --> 00:58:26,960
+Cosa possiamo dire
+
+1070
+00:58:30,240 --> 00:58:36,880
+di delta pi e sigma pi? Dove questo è?
+
+1071
+00:58:36,880 --> 00:58:39,839
+No, pensateci voi.
+
+1072
+00:58:39,839 --> 00:58:42,480
+Allora, che cos'è delta pi? Che cos'è
+
+1073
+00:58:42,480 --> 00:58:46,000
+sigma pi?
+
+1074
+00:59:10,920 --> 00:59:12,760
+Qualche idea?
+
+1075
+00:59:12,760 --> 00:59:16,200
+Yes.
+E anche in questo caso delta è
+
+1076
+00:59:16,200 --> 00:59:18,079
+incluso perché sto considerando una
+
+1077
+00:59:18,079 --> 00:59:20,960
+classe deterministica.
+
+1078
+00:59:20,960 --> 00:59:24,359
+Ah ah
+invece che non deterministica.
+Sì.
+
+1079
+00:59:24,359 --> 00:59:28,240
+Delta P com'è definito?
+Eh, come p
+
+1080
+00:59:28,240 --> 00:59:33,280
+elevato all sigma di P
+
+1081
+00:59:33,280 --> 00:59:38,240
+- 1. Sì. E invece sigma P è
+eh NP
+
+1082
+00:59:38,240 --> 00:59:42,000
+elevato
+Sì. alla sigma. Sì, questa è la
+
+1083
+00:59:42,000 --> 00:59:45,599
+ragione. Noi abbiamo che delta P è
+
+1084
+00:59:45,599 --> 00:59:49,760
+contenuto in sigma pchui
+
+1085
+00:59:50,160 --> 00:59:54,160
+oracolo è sigma pi i - 1, però delta di
+
+1086
+00:59:54,160 --> 00:59:58,079
+pi il chiamante è deterministico, in
+
+1087
+00:59:58,079 --> 01:00:00,920
+sigma di piamante è non deterministico,
+
+1088
+01:00:00,920 --> 01:00:02,880
+quindi è più potente e perciò avremo
+
+1089
+01:00:02,880 --> 01:00:07,480
+questa inclusione. delta di pi
+
+1090
+01:00:07,480 --> 01:00:13,359
+è contenuto in sigma pi.
+
+1091
+01:00:13,359 --> 01:00:18,839
+Cosa possiamo dire di delta pi e pi?
+
+1092
+01:00:18,839 --> 01:00:22,160
+Questa cosa è un po' più complicata
+
+1093
+01:00:22,160 --> 01:00:26,359
+e ve la guido io,
+
+1094
+01:00:26,359 --> 01:00:29,799
+però nulla di trascendente.
+
+1095
+01:00:29,799 --> 01:00:32,440
+Quindi abbiamo
+
+1096
+01:00:32,440 --> 01:00:34,640
+delta pi
+
+1097
+01:00:34,640 --> 01:00:36,839
+e pi,
+
+1098
+01:00:36,839 --> 01:00:39,839
+ok?
+
+1099
+01:00:42,680 --> 01:00:44,640
+sia
+
+1100
+01:00:44,640 --> 01:00:47,640
+L
+
+1101
+01:00:49,280 --> 01:00:52,559
+un linguaggio appartenente a delta pi
+
+1102
+01:00:52,559 --> 01:00:56,559
+che è uguale pi
+
+1103
+01:00:58,000 --> 01:01:00,920
+- 1.
+
+1104
+01:01:00,920 --> 01:01:03,799
+Allora, che cosa cosa sappiamo se L è un
+
+1105
+01:01:03,799 --> 01:01:05,440
+linguaggio che appartiene a quella
+
+1106
+01:01:05,440 --> 01:01:10,039
+classe? Sappiamo che esiste
+
+1107
+01:01:10,039 --> 01:01:12,160
+una macchina
+
+1108
+01:01:12,160 --> 01:01:15,079
+M adoracolo
+
+1109
+01:01:15,079 --> 01:01:16,799
+deterministica
+
+1110
+01:01:16,799 --> 01:01:20,640
+che lavora in tempo polinomiale
+
+1111
+01:01:20,640 --> 01:01:23,480
+che facendo domande
+
+1112
+01:01:23,480 --> 01:01:27,280
+ad un oracolo per un linguaggio L in
+
+1113
+01:01:27,280 --> 01:01:32,550
+sigma pi - 1 è in grado di decidere L.
+
+1114
+01:01:32,550 --> 01:01:33,880
+[Applauso]
+
+1115
+01:01:33,880 --> 01:01:36,000
+È chiaro?
+
+1116
+01:01:36,000 --> 01:01:38,480
+Ma questa macchina M è deterministica,
+
+1117
+01:01:38,480 --> 01:01:41,240
+cioè il chiamante dell'oracolo è una
+
+1118
+01:01:41,240 --> 01:01:43,760
+macchina deterministica. Quello che noi
+
+1119
+01:01:43,760 --> 01:01:46,240
+possiamo fare di questa M punto
+
+1120
+01:01:46,240 --> 01:01:48,799
+interrogativo è trasformarla
+
+1121
+01:01:48,799 --> 01:01:51,440
+e scambiare gli stati di accettazione e
+
+1122
+01:01:51,440 --> 01:01:53,200
+di reject.
+
+1123
+01:01:53,200 --> 01:01:56,319
+Quindi se noi prendiamo questa macchina,
+
+1124
+01:01:56,319 --> 01:02:00,279
+chiamiamola M soprasegnato,
+
+1125
+01:02:01,480 --> 01:02:03,640
+che è la stessa di M, però i suoi stati
+
+1126
+01:02:03,640 --> 01:02:08,240
+di accettazione e reject sono swoppati,
+
+1127
+01:02:08,240 --> 01:02:10,720
+per il resto è uguale e chiama lo stesso
+
+1128
+01:02:10,720 --> 01:02:14,599
+oracolo della macchina M, andrà a
+
+1129
+01:02:14,599 --> 01:02:19,760
+decidere che cosa andrà a decidere
+
+1130
+01:02:19,920 --> 01:02:23,160
+L soprasegnata.
+
+1131
+01:02:23,160 --> 01:02:26,079
+Allora, avremo che
+
+1132
+01:02:26,079 --> 01:02:28,760
+L soprasegnato,
+
+1133
+01:02:28,760 --> 01:02:31,799
+notate che la macchina M è ancora una
+
+1134
+01:02:31,799 --> 01:02:34,200
+macchina deterministica polynomial time,
+
+1135
+01:02:34,200 --> 01:02:35,960
+perché siamo partiti da qui, abbiamo
+
+1136
+01:02:35,960 --> 01:02:37,920
+semplicemente invertito gli stati di
+
+1137
+01:02:37,920 --> 01:02:41,200
+accettazione e rifiuto. Ok? Quindi da
+
+1138
+01:02:41,200 --> 01:02:45,160
+questo, per il fatto che m soprasegnato
+
+1139
+01:02:45,160 --> 01:02:47,960
+con l'opportuno oracolo in sigma pi -1 è
+
+1140
+01:02:47,960 --> 01:02:50,319
+in grado di riconoscere L soprassegnato,
+
+1141
+01:02:50,319 --> 01:02:53,279
+abbiamo che L soprassegnato anch'esso
+
+1142
+01:02:53,279 --> 01:02:58,599
+appartiene a P sig P - 1 che è uguale a
+
+1143
+01:02:58,599 --> 01:03:01,599
+P.
+
+1144
+01:03:05,039 --> 01:03:08,839
+per il risultato di prima, che è questo,
+
+1145
+01:03:08,839 --> 01:03:11,839
+avremo che cosa? che questo è un
+
+1146
+01:03:11,839 --> 01:03:13,400
+sottoinsieme
+
+1147
+01:03:13,400 --> 01:03:20,319
+di sigma pi, quindi l soprasegnato
+
+1148
+01:03:20,319 --> 01:03:24,119
+appartiene a sigma pi
+
+1149
+01:03:24,119 --> 01:03:27,200
+da cui
+
+1150
+01:03:27,200 --> 01:03:29,440
+l
+
+1151
+01:03:29,440 --> 01:03:32,839
+appartiene al complemento
+
+1152
+01:03:32,839 --> 01:03:37,400
+di questo qui che è pi.
+
+1153
+01:03:37,920 --> 01:03:39,760
+Quindi cosa abbiamo? che se un
+
+1154
+01:03:39,760 --> 01:03:41,920
+linguaggio
+
+1155
+01:03:41,920 --> 01:03:47,920
+L appartiene a delta pi, lo stesso
+
+1156
+01:03:47,920 --> 01:03:51,680
+linguaggio L appartiene anche a pi,
+
+1157
+01:03:51,680 --> 01:03:54,599
+da cui abbiamo questa relazione di
+
+1158
+01:03:54,599 --> 01:03:56,520
+contenimento.
+
+1159
+01:03:56,520 --> 01:03:59,960
+Delta P è contenuto in pi p. Abbiamo
+
+1160
+01:03:59,960 --> 01:04:02,240
+fatto tutto sto gran casino per adesso
+
+1161
+01:04:02,240 --> 01:04:04,440
+fare un disegnino di come sono
+
+1162
+01:04:04,440 --> 01:04:08,640
+relazionate queste classi, ok?
+
+1163
+01:04:08,640 --> 01:04:11,160
+Posso andare avanti?
+
+1164
+01:04:11,160 --> 01:04:13,559
+Alri, pagina nuova. Come sono
+
+1165
+01:04:13,559 --> 01:04:17,240
+strutturate le cose?
+
+1166
+01:04:17,440 --> 01:04:21,000
+Qua c'abbiamo P.
+
+1167
+01:04:22,599 --> 01:04:26,839
+Ok. Allora, noi abbiamo
+
+1168
+01:04:27,279 --> 01:04:29,799
+NP, sta qui,
+
+1169
+01:04:29,799 --> 01:04:33,319
+NP è anche sigma +1
+
+1170
+01:04:33,319 --> 01:04:36,880
+che è uguale a sigma +1.
+
+1171
+01:04:36,880 --> 01:04:39,720
+Qua c'è con NP
+
+1172
+01:04:39,720 --> 01:04:43,119
+che è uguale a pi P1.
+
+1173
+01:04:43,119 --> 01:04:45,440
+Al di sopra ci sta
+
+1174
+01:04:45,440 --> 01:04:48,640
+delta P2.
+
+1175
+01:04:48,640 --> 01:04:51,440
+Al di sopra ci sta
+
+1176
+01:04:51,440 --> 01:04:56,960
+sigma P2. Da quest'altro lato c'è pi P2.
+
+1177
+01:04:56,960 --> 01:05:01,960
+Al di sopra di tutto c'è delta P3.
+
+1178
+01:05:01,960 --> 01:05:06,319
+Dopodiché che ci sta? Ehi,
+
+1179
+01:05:07,039 --> 01:05:10,559
+sigma P3.
+
+1180
+01:05:12,520 --> 01:05:16,440
+Questo è sigma P3. Al di sopra di questo
+
+1181
+01:05:16,440 --> 01:05:20,760
+ci sta p
+
+1182
+01:05:20,760 --> 01:05:23,240
+a salire. Ok? Quindi queste sono le
+
+1183
+01:05:23,240 --> 01:05:26,200
+relazioni della classe della gerarchia
+
+1184
+01:05:26,200 --> 01:05:28,279
+polinomiale. Ok?
+
+1185
+01:05:28,279 --> 01:05:30,960
+Se lo vogliamo scrivere in una maniera
+
+1186
+01:05:30,960 --> 01:05:33,200
+un pelino più comprensibile, noi avremo
+
+1187
+01:05:33,200 --> 01:05:40,760
+che P è contenuto in NP e in coi
+
+1188
+01:05:40,760 --> 01:05:44,599
+due sono contenuti in delta P2. Questo è
+
+1189
+01:05:44,599 --> 01:05:48,640
+contenuto in piσ.
+
+1190
+01:05:49,440 --> 01:05:52,640
+Questi due sono contenuti in delta P3.
+
+1191
+01:05:52,640 --> 01:05:57,279
+Delta P3 è contenuto in pi,
+
+1192
+01:05:58,319 --> 01:06:01,520
+questi due sono contenuti in delta P4 e
+
+1193
+01:06:01,520 --> 01:06:03,359
+così via. Cioè, quella è la relazione di
+
+1194
+01:06:03,359 --> 01:06:07,119
+contenimento fra le classi, ok? Bla bla
+
+1195
+01:06:07,119 --> 01:06:09,000
+bla bla. Quante ce ne stanno? Ce ne
+
+1196
+01:06:09,000 --> 01:06:12,880
+stanno infinite. Dove si colloca?
+Delta
+
+1197
+01:06:12,880 --> 01:06:18,400
+P 0.
+Sono pien tutto pieno.
+
+1198
+01:06:18,400 --> 01:06:22,480
+Quale chiamiamo? Ok, questo è sigma +1,
+
+1199
+01:06:22,480 --> 01:06:24,720
+questo è
+
+1200
+01:06:24,720 --> 01:06:27,720
+pielta
+
+1201
+01:06:30,359 --> 01:06:34,400
+p0 che è uguale a p1 che è uguale a
+
+1202
+01:06:34,400 --> 01:06:38,920
+sigma p0 che è uguale a sigma a pi0. Va
+
+1203
+01:06:38,920 --> 01:06:41,920
+bene?
+
+1204
+01:06:41,960 --> 01:06:43,200
+Quindi cosa abbiamo? Abbiamo tutte
+
+1205
+01:06:43,200 --> 01:06:45,279
+queste stratificazioni di classi a
+
+1206
+01:06:45,279 --> 01:06:48,200
+pressa all'altra eccetera. Ok? Come
+
+1207
+01:06:48,200 --> 01:06:52,319
+vedete l'inclusione è questa. P sta
+
+1208
+01:06:52,319 --> 01:06:56,119
+dentro con NP ed NP. NP e con NP stanno
+
+1209
+01:06:56,119 --> 01:06:59,119
+dentro delta P2. Delta P2 sta dentro π
+
+1210
+01:06:59,119 --> 01:07:02,640
+P2 sigma P2. Pi P2 sigma P2 stanno
+
+1211
+01:07:02,640 --> 01:07:04,920
+dentro delta P3. Delta P3 sta dentro
+
+1212
+01:07:04,920 --> 01:07:07,039
+questa e quest'altra e così va. E si va
+
+1213
+01:07:07,039 --> 01:07:10,000
+avanti. Papà papà papà. Quanti livelli
+
+1214
+01:07:10,000 --> 01:07:12,240
+ci sono di questa gerarchia? sono
+
+1215
+01:07:12,240 --> 01:07:14,760
+infiniti,
+
+1216
+01:07:14,760 --> 01:07:17,760
+cioè ce ne stanno tantissimi, però sono
+
+1217
+01:07:17,760 --> 01:07:19,319
+infiniti. Infatti uno dei problemi
+
+1218
+01:07:19,319 --> 01:07:21,440
+aperti tra gli innumerevoli problemi
+
+1219
+01:07:21,440 --> 01:07:23,319
+aperti è stabilire se il numero di
+
+1220
+01:07:23,319 --> 01:07:25,279
+livelli della gerarchia polinomiale sia
+
+1221
+01:07:25,279 --> 01:07:28,520
+finito o infinito. Quello che riteniamo
+
+1222
+01:07:28,520 --> 01:07:30,599
+è che siano infiniti, nessuno è mai
+
+1223
+01:07:30,599 --> 01:07:33,160
+riuscito a dimostrarlo, eccetera. Che
+
+1224
+01:07:33,160 --> 01:07:37,240
+cosa ci sta qua sopra?
+
+1225
+01:07:37,240 --> 01:07:41,039
+Qua sopra ci sta
+
+1226
+01:07:41,319 --> 01:07:44,480
+pi spazio.
+
+1227
+01:07:45,279 --> 01:07:49,079
+Quindi questa gerarchia sono un insieme
+
+1228
+01:07:49,079 --> 01:07:51,319
+di livelli che stanno a metà strada fra
+
+1229
+01:07:51,319 --> 01:07:54,039
+NP e P spazio e la riempono. È proprio
+
+1230
+01:07:54,039 --> 01:07:57,359
+fitta, è tutto pieno là. Ok?
+
+1231
+01:07:57,359 --> 01:08:00,599
+fino a pi spazio. Non dimostriamo che
+
+1232
+01:08:00,599 --> 01:08:02,319
+dentro più pi spazio, prendetela per
+
+1233
+01:08:02,319 --> 01:08:05,920
+buono. Eh, questa gerarchia sta dentro
+
+1234
+01:08:05,920 --> 01:08:07,559
+più spazio. Cosa abbiamo sopra più
+
+1235
+01:08:07,559 --> 01:08:10,520
+spazio? Abbiamo expime.
+
+1236
+01:08:10,520 --> 01:08:15,359
+Al di sopra c'è next time. Ok.
+
+1237
+01:08:15,359 --> 01:08:19,239
+E dove sta R?
+
+1238
+01:08:19,440 --> 01:08:22,440
+R che è l'insieme dei linguaggi e sta
+
+1239
+01:08:22,440 --> 01:08:25,839
+sopra tutto. Ok? Anche sopra Exp, Nexp
+
+1240
+01:08:25,839 --> 01:08:27,839
+ci stanno altre gerarchie, non vediamo
+
+1241
+01:08:27,839 --> 01:08:29,759
+niente di tutto ciò. Sappiate che è
+
+1242
+01:08:29,759 --> 01:08:32,719
+pieno di classi fino ad arrivare a a R,
+
+1243
+01:08:32,719 --> 01:08:35,120
+che è l'insieme dei linguaggi
+
+1244
+01:08:35,120 --> 01:08:37,359
+decidibili. Ok, adesso queste sembrano
+
+1245
+01:08:37,359 --> 01:08:39,440
+tutte classi un po' strane e di fatto
+
+1246
+01:08:39,440 --> 01:08:41,279
+sono delle classi un po' strane.
+
+1247
+01:08:41,279 --> 01:08:44,159
+Cerchiamo di dare un'intuizione su quali
+
+1248
+01:08:44,159 --> 01:08:46,960
+problemi stanno là dentro. Allora, noi
+
+1249
+01:08:46,960 --> 01:08:48,600
+abbiamo
+
+1250
+01:08:48,600 --> 01:08:53,120
+visto il problema SAT.
+
+1251
+01:08:53,440 --> 01:08:55,759
+Il problema SAT, ve lo ricordate? Il
+
+1252
+01:08:55,759 --> 01:08:57,560
+problema SAT è il problema di dato una
+
+1253
+01:08:57,560 --> 01:08:59,719
+funzione una formula buleana stabilire
+
+1254
+01:08:59,719 --> 01:09:02,759
+se sia soddisfacbile o meno. Come la
+
+1255
+01:09:02,759 --> 01:09:08,120
+possiamo scrivere quel tipo di problema?
+
+1256
+01:09:08,400 --> 01:09:11,600
+può essere scritto così che esiste. È
+
+1257
+01:09:11,600 --> 01:09:13,600
+vero che esiste un assegnamento per le
+
+1258
+01:09:13,600 --> 01:09:18,600
+variabili X dove X bar è un insieme di
+
+1259
+01:09:18,600 --> 01:09:22,839
+variabili buleane X1, X2, X3, X4.
+
+1260
+01:09:22,839 --> 01:09:24,759
+Dice, è vero che esiste un modo di
+
+1261
+01:09:24,759 --> 01:09:28,159
+assegnare un valore di verità alle
+
+1262
+01:09:28,159 --> 01:09:30,120
+variabili buleane in x tale che la
+
+1263
+01:09:30,120 --> 01:09:34,040
+formula fai di x è vera. Questo è è lo
+
+1264
+01:09:34,040 --> 01:09:37,199
+standard problema sat. Ok? Non avevamo
+
+1265
+01:09:37,199 --> 01:09:39,279
+quel segno di esiste prima perché lo
+
+1266
+01:09:39,279 --> 01:09:41,920
+dicevamo a parole, dicevamo è vero che
+
+1267
+01:09:41,920 --> 01:09:46,679
+esiste un assegnamento di verità alle
+
+1268
+01:09:46,679 --> 01:09:48,719
+variabili buuleane che rendono la
+
+1269
+01:09:48,719 --> 01:09:50,920
+formula vera. Ok? Noi lo possiamo
+
+1270
+01:09:50,920 --> 01:09:53,560
+scrivere pure con un quantificatore e
+
+1271
+01:09:53,560 --> 01:09:56,080
+quindi dire ok, sostanzialmente il
+
+1272
+01:09:56,080 --> 01:09:59,280
+problema SAT standard è presa una
+
+1273
+01:09:59,280 --> 01:10:01,400
+formula quantificata in quel modo in cui
+
+1274
+01:10:01,400 --> 01:10:03,520
+c'è un esistenziale all'inizio e poi il
+
+1275
+01:10:03,520 --> 01:10:05,239
+resto della formula non quantificata,
+
+1276
+01:10:05,239 --> 01:10:07,040
+dobbiamo stabilire se quella formula sia
+
+1277
+01:10:07,040 --> 01:10:09,159
+vera o meno. Cioè ci chiediamo, esiste
+
+1278
+01:10:09,159 --> 01:10:11,719
+un modo di assegnare
+
+1279
+01:10:11,719 --> 01:10:14,239
+eh delle variabili dei valori buliani
+
+1280
+01:10:14,239 --> 01:10:18,280
+alle variabili X tale che e quindi la
+
+1281
+01:10:18,280 --> 01:10:19,800
+formula è verificata, per esempio,
+
+1282
+01:10:19,800 --> 01:10:24,880
+potremmo avere esiste x1, x2, x3
+
+1283
+01:10:24,880 --> 01:10:30,520
+tale che ad esempio x1 or x2
+
+1284
+01:10:30,520 --> 01:10:32,280
+and
+
+1285
+01:10:32,280 --> 01:10:36,679
+x3 implica not
+
+1286
+01:10:36,679 --> 01:10:39,280
+e or bla bla. bla bla. Ok, la formula F
+
+1287
+01:10:39,280 --> 01:10:43,159
+può essere qualsiasi in questo caso. Ok,
+
+1288
+01:10:43,159 --> 01:10:47,360
+questo è lo è il SAT standard. Ci siete?
+
+1289
+01:10:47,360 --> 01:10:51,040
+Allora, noi possiamo generalizzarla
+
+1290
+01:10:51,040 --> 01:10:53,480
+e per questa ragione lo chiamiamo esiste
+
+1291
+01:10:53,480 --> 01:10:56,960
+sat. Ok? Lo possiamo generalizzare a
+
+1292
+01:10:56,960 --> 01:10:59,760
+questa cosa qua. Guardate, considerate
+
+1293
+01:10:59,760 --> 01:11:03,159
+questa formula. esiste x1
+
+1294
+01:11:03,159 --> 01:11:05,440
+e x2
+
+1295
+01:11:05,440 --> 01:11:10,679
+tale che per ogni y1 y2
+
+1296
+01:11:10,679 --> 01:11:13,199
+y3
+
+1297
+01:11:13,199 --> 01:11:15,280
+abbiamo che
+
+1298
+01:11:15,280 --> 01:11:21,640
+x1 or not y1 or x2
+
+1299
+01:11:21,640 --> 01:11:24,199
+and
+
+1300
+01:11:24,199 --> 01:11:29,719
+not y1 or not x2
+
+1301
+01:11:31,280 --> 01:11:35,280
+Y3 e così via. Allora, che ci dice
+
+1302
+01:11:35,280 --> 01:11:37,000
+questa formula buleana? È una formula
+
+1303
+01:11:37,000 --> 01:11:40,360
+buleana un po' più sofisticata
+
+1304
+01:11:40,360 --> 01:11:43,800
+e il significato di questa formula è
+
+1305
+01:11:43,800 --> 01:11:45,360
+questo.
+
+1306
+01:11:45,360 --> 01:11:49,560
+Ci chiediamo se esista
+
+1307
+01:11:49,639 --> 01:11:53,239
+un valore, cioè un assegnamento di
+
+1308
+01:11:53,239 --> 01:11:54,840
+verità
+
+1309
+01:11:54,840 --> 01:11:59,560
+per le variabili x1 x2.
+
+1310
+01:11:59,560 --> 01:12:02,239
+tale che qualsiasi sia l'assegnamento di
+
+1311
+01:12:02,239 --> 01:12:06,040
+verità che diamo alle variabili y1, y2,
+
+1312
+01:12:06,040 --> 01:12:11,679
+y3, la formula è soddisfatta. Ok?
+
+1313
+01:12:11,679 --> 01:12:13,679
+Quindi questa è una formula un po' più
+
+1314
+01:12:13,679 --> 01:12:16,400
+complicata in cui abbiamo due gruppi di
+
+1315
+01:12:16,400 --> 01:12:18,440
+variabili.
+
+1316
+01:12:18,440 --> 01:12:20,679
+Abbiamo delle variabili che le chiamiamo
+
+1317
+01:12:20,679 --> 01:12:23,639
+x bla, delle variabili che chiamiamo y
+
+1318
+01:12:23,639 --> 01:12:26,760
+bla. La domanda è: è vero che esiste un
+
+1319
+01:12:26,760 --> 01:12:29,400
+modo di assegnare? valori buleani alle
+
+1320
+01:12:29,400 --> 01:12:31,800
+variabili X tale per cui qualsiasi cosa
+
+1321
+01:12:31,800 --> 01:12:34,320
+facciamo sulle variabili Y la formula è
+
+1322
+01:12:34,320 --> 01:12:37,040
+soddisfatta.
+
+1323
+01:12:37,040 --> 01:12:39,280
+È chiaro? Questo è un problema di
+
+1324
+01:12:39,280 --> 01:12:43,679
+soddisfacilità diverso e lo chiamiamo
+
+1325
+01:12:43,679 --> 01:12:46,800
+esiste per ogni SAT.
+
+1326
+01:12:46,800 --> 01:12:49,639
+Bene, noi possiamo si può mostrare, non
+
+1327
+01:12:49,639 --> 01:12:51,480
+lo vediamo, che questo è un problema
+
+1328
+01:12:51,480 --> 01:12:54,880
+sigma P2 completo, cioè è un problema
+
+1329
+01:12:54,880 --> 01:12:56,560
+tosto
+
+1330
+01:12:56,560 --> 01:13:00,520
+della classe sigma P2.
+
+1331
+01:13:00,520 --> 01:13:03,520
+Similmente possiamo definire
+
+1332
+01:13:03,520 --> 01:13:06,960
+esiste per ogni esiste sat
+
+1333
+01:13:06,960 --> 01:13:13,040
+e questo qua è sigma P3 completo.
+
+1334
+01:13:14,520 --> 01:13:16,080
+Ok? Quindi questi sono un po' di
+
+1335
+01:13:16,080 --> 01:13:18,840
+problemi tosti di questa di questa
+
+1336
+01:13:18,840 --> 01:13:20,960
+gerarchia, no? Più nel dettaglio di
+
+1337
+01:13:20,960 --> 01:13:24,360
+questo non andremo.
+
+1338
+01:13:24,360 --> 01:13:27,360
+Vi faccio notare che questo è meno
+
+1339
+01:13:27,360 --> 01:13:29,600
+alieno di quanto possa sembrare. È vero
+
+1340
+01:13:29,600 --> 01:13:31,520
+che esiste una mossa, consideriamo gli
+
+1341
+01:13:31,520 --> 01:13:33,600
+scacchi, è vero che esiste una mossa che
+
+1342
+01:13:33,600 --> 01:13:36,239
+io posso fare tale per cui qualsiasi sia
+
+1343
+01:13:36,239 --> 01:13:38,400
+la risposta del mio avversario esiste
+
+1344
+01:13:38,400 --> 01:13:40,719
+una risposta mia. Tale che qualsiasi
+
+1345
+01:13:40,719 --> 01:13:42,840
+cosa faccio il mio avversario esiste una
+
+1346
+01:13:42,840 --> 01:13:44,880
+risposta mia tale che bla bla bla bla e
+
+1347
+01:13:44,880 --> 01:13:47,120
+alla fine vinco. Questi sono i problemi
+
+1348
+01:13:47,120 --> 01:13:49,040
+di questa gerarchia, ok? C'è
+
+1349
+01:13:49,040 --> 01:13:50,560
+un'alternanza
+
+1350
+01:13:50,560 --> 01:13:53,400
+di giocatori in cui esiste una strategia
+
+1351
+01:13:53,400 --> 01:13:55,400
+vincente per me tale che qualsiasi cosa
+
+1352
+01:13:55,400 --> 01:13:57,159
+faccio l'altro ho sempre il modo di
+
+1353
+01:13:57,159 --> 01:13:59,199
+vincere. Questa cosa ovviamente va
+
+1354
+01:13:59,199 --> 01:14:02,040
+avanti all'infinito perché dipende da
+
+1355
+01:14:02,040 --> 01:14:05,080
+quanto si va avanti. Ok? Quindi, giusto
+
+1356
+01:14:05,080 --> 01:14:07,159
+per avere un'intuizione, questo problema
+
+1357
+01:14:07,159 --> 01:14:08,880
+stranissimo delle formule puleane
+
+1358
+01:14:08,880 --> 01:14:10,719
+quantificate in realtà, per esempio, è
+
+1359
+01:14:10,719 --> 01:14:13,400
+la complessità dei giochi. I giochi
+
+1360
+01:14:13,400 --> 01:14:15,679
+hanno quel tipo di complessità perché io
+
+1361
+01:14:15,679 --> 01:14:19,400
+mi chiedo se io ho un opponent
+
+1362
+01:14:19,400 --> 01:14:21,159
+intelligente, non uno che la butta a
+
+1363
+01:14:21,159 --> 01:14:24,639
+casa, no, esiste una strategia per me,
+
+1364
+01:14:24,639 --> 01:14:26,560
+una mossa che io posso fare ora, che
+
+1365
+01:14:26,560 --> 01:14:29,000
+qualsiasi cosa faccia l'altro, per me
+
+1366
+01:14:29,000 --> 01:14:31,719
+esiste un modo bla bla bla bla e alla
+
+1367
+01:14:31,719 --> 01:14:34,760
+fine vinco. Ok, questi sono è la
+
+1368
+01:14:34,760 --> 01:14:36,679
+complessità di questo genere di
+
+1369
+01:14:36,679 --> 01:14:38,360
+problemi.
+
+1370
+01:14:38,360 --> 01:14:40,679
+È chiaro? Ok,
+
+1371
+01:14:40,679 --> 01:14:42,800
+in questi ultimi minuti introduciamo
+
+1372
+01:14:42,800 --> 01:14:44,840
+l'ultimo concetto
+
+1373
+01:14:44,840 --> 01:14:49,000
+che sono problemi di ottimizzazione
+
+1374
+01:14:49,000 --> 01:14:52,280
+e classifale
+
+1375
+01:14:57,040 --> 01:15:01,960
+che sono legate agli oracoli.
+
+1376
+01:15:04,679 --> 01:15:07,719
+Ok, definiamo questo problema functional
+
+1377
+01:15:07,719 --> 01:15:09,360
+mean cover.
+
+1378
+01:15:09,360 --> 01:15:11,400
+che è molto simile a quello che abbiamo
+
+1379
+01:15:11,400 --> 01:15:17,159
+visto, però è un problema di funzione.
+
+1380
+01:15:17,159 --> 01:15:20,520
+F min cover che sta per functional mean
+
+1381
+01:15:20,520 --> 01:15:25,199
+cover. Dato un grafo G,
+
+1382
+01:15:25,199 --> 01:15:31,480
+noi in output vogliamo il minimo valore
+
+1383
+01:15:31,480 --> 01:15:36,960
+di un set V tale che V è un vertex
+
+1384
+01:15:36,960 --> 01:15:40,800
+cover. Ok?
+
+1385
+01:15:54,000 --> 01:15:57,639
+Quindi, dato un grafo G, noi vogliamo
+
+1386
+01:15:57,639 --> 01:16:01,560
+calcolare la taglia.
+
+1387
+01:16:01,560 --> 01:16:03,639
+In questo caso, attenzione, siamo su un
+
+1388
+01:16:03,639 --> 01:16:05,719
+problema completamente diverso. È il
+
+1389
+01:16:05,719 --> 01:16:08,040
+primo problema di calcolo che stiamo
+
+1390
+01:16:08,040 --> 01:16:11,040
+vedendo in questo corso.
+
+1391
+01:16:11,040 --> 01:16:13,880
+Dato un grafo, noi non vogliamo sapere
+
+1392
+01:16:13,880 --> 01:16:15,840
+se abbia un vertex cover o meno, noi
+
+1393
+01:16:15,840 --> 01:16:17,600
+vogliamo sapere la taglia del più
+
+1394
+01:16:17,600 --> 01:16:19,840
+piccolo vertex cover, ok? Quindi questa
+
+1395
+01:16:19,840 --> 01:16:22,080
+ha proprio un flavor completamente
+
+1396
+01:16:22,080 --> 01:16:26,760
+differente questa cosa qua. Ok?
+
+1397
+01:16:27,239 --> 01:16:30,239
+Alrght.
+
+1398
+01:16:30,800 --> 01:16:32,760
+Definiamo
+
+1399
+01:16:32,760 --> 01:16:35,639
+fpunal
+
+1400
+01:16:35,639 --> 01:16:39,679
+deterministic polynomial.
+
+1401
+01:16:42,600 --> 01:16:46,880
+è la classe
+
+1402
+01:16:46,880 --> 01:16:51,280
+delle funzioni
+
+1403
+01:16:52,239 --> 01:16:55,239
+calcolate
+
+1404
+01:16:55,840 --> 01:16:59,880
+da trasduttori
+
+1405
+01:17:01,239 --> 01:17:04,239
+deterministici
+
+1406
+01:17:07,400 --> 01:17:09,840
+in tempo.
+
+1407
+01:17:10,280 --> 01:17:13,280
+polinomiale.
+
+1408
+01:17:14,400 --> 01:17:16,719
+Ok? Quindi abbiamo questa definizione di
+
+1409
+01:17:16,719 --> 01:17:18,679
+classe funzionale
+
+1410
+01:17:18,679 --> 01:17:21,560
+e l'insieme delle funzioni che possono
+
+1411
+01:17:21,560 --> 01:17:24,639
+essere calcolate
+
+1412
+01:17:24,639 --> 01:17:26,600
+da trasduttori. Vi ricordo che il
+
+1413
+01:17:26,600 --> 01:17:28,480
+trasduttore è una macchina di touring
+
+1414
+01:17:28,480 --> 01:17:31,199
+che sputa fuori un output, ok? Che ha un
+
+1415
+01:17:31,199 --> 01:17:35,239
+nastro di output eccetera. Quindi FP è
+
+1416
+01:17:35,239 --> 01:17:39,120
+la classe cugina di P. P è l'insieme dei
+
+1417
+01:17:39,120 --> 01:17:41,880
+problemi di decisione decidibili da
+
+1418
+01:17:41,880 --> 01:17:44,080
+macchine di Touring deterministiche in
+
+1419
+01:17:44,080 --> 01:17:48,679
+tempo polinomiale. Il suo cugino FP
+
+1420
+01:17:48,679 --> 01:17:51,000
+functional deterministic polynomial time
+
+1421
+01:17:51,000 --> 01:17:54,480
+è l'insieme delle funzioni
+
+1422
+01:17:54,480 --> 01:17:57,040
+che possono essere calcolate da
+
+1423
+01:17:57,040 --> 01:17:59,400
+trasduttori deterministici in tempo
+
+1424
+01:17:59,400 --> 01:18:01,760
+polinomiale. Vi faccio notare quindi che
+
+1425
+01:18:01,760 --> 01:18:05,080
+le riduzioni polinomiali sono funzioni
+
+1426
+01:18:05,080 --> 01:18:08,120
+che stanno in FP. Ok?
+
+1427
+01:18:08,120 --> 01:18:11,440
+FNP sarebbe quello legato a NP. Non la
+
+1428
+01:18:11,440 --> 01:18:14,199
+vediamo perché è un macello. Ok? Quindi
+
+1429
+01:18:14,199 --> 01:18:17,239
+ci focalizziamo su FP che è facile e
+
+1430
+01:18:17,239 --> 01:18:20,679
+bella lineare. FP cos'è? È l'insieme
+
+1431
+01:18:20,679 --> 01:18:22,800
+delle funzioni che possono essere
+
+1432
+01:18:22,800 --> 01:18:25,040
+calcolate da trasduttori deterministici
+
+1433
+01:18:25,040 --> 01:18:27,400
+in tempo polinomiali. In soldoni sono
+
+1434
+01:18:27,400 --> 01:18:28,920
+quelle funzioni per i quali abbiamo
+
+1435
+01:18:28,920 --> 01:18:31,120
+algoritmi deterministici che le che le
+
+1436
+01:18:31,120 --> 01:18:35,600
+calcolano. Ok? Tutto qua.
+
+1437
+01:18:38,679 --> 01:18:41,280
+Ok.
+
+1438
+01:18:41,280 --> 01:18:43,760
+Supponiamo, ragioniamo assieme.
+
+1439
+01:18:43,760 --> 01:18:47,719
+Supponiamo che vogliamo risolvere questo
+
+1440
+01:18:47,719 --> 01:18:51,199
+problema qui
+
+1441
+01:18:51,400 --> 01:18:55,000
+e abbiamo a nostra disposizione un
+
+1442
+01:18:55,000 --> 01:18:56,719
+oracolo
+
+1443
+01:18:56,719 --> 01:18:58,400
+per il problema vertex cover
+
+1444
+01:18:58,400 --> 01:19:00,960
+decisionale. Ok? Quindi abbiamo una
+
+1445
+01:19:00,960 --> 01:19:03,679
+bella procedura in una in una libreria
+
+1446
+01:19:03,679 --> 01:19:07,080
+che date una coppia grafo numero è in
+
+1447
+01:19:07,080 --> 01:19:09,360
+grado di dirci se quel grafo ha un
+
+1448
+01:19:09,360 --> 01:19:11,679
+vertex cover di taglia al più quel
+
+1449
+01:19:11,679 --> 01:19:13,920
+numero. Ok? Quindi abbiamo una libreria
+
+1450
+01:19:13,920 --> 01:19:16,360
+che è in grado di fare questo. Noi
+
+1451
+01:19:16,360 --> 01:19:19,840
+vogliamo adesso risolvere il problema di
+
+1452
+01:19:19,840 --> 01:19:24,080
+calcolare dato un grafo, la taglia
+
+1453
+01:19:24,080 --> 01:19:25,600
+del
+
+1454
+01:19:25,600 --> 01:19:28,000
+eh
+
+1455
+01:19:28,000 --> 01:19:31,280
+del verte cover. minimo di quel grafo.
+
+1456
+01:19:31,280 --> 01:19:34,639
+Ok? Se sappiamo che abbiamo la libreria
+
+1457
+01:19:34,639 --> 01:19:37,040
+che ci risolve il problema di decisione,
+
+1458
+01:19:37,040 --> 01:19:39,760
+che algoritmo ci possiamo inventare per
+
+1459
+01:19:39,760 --> 01:19:42,440
+riuscire a calcolare il perfect cover di
+
+1460
+01:19:42,440 --> 01:19:44,760
+taglia minima? Un attimo, un attimo,
+
+1461
+01:19:44,760 --> 01:19:47,040
+diamo un po' di tempo alle persone per
+
+1462
+01:19:47,040 --> 01:19:52,560
+pensare. M Ce l'abbiamo il tempo? Sì.
+
+1463
+01:19:53,660 --> 01:19:56,480
+[Musica]
+
+1464
+01:19:56,480 --> 01:19:57,920
+Ok.
+
+1465
+01:19:57,920 --> 01:20:00,199
+Vi ho visto, vi ho visto. Cerco voci
+
+1466
+01:20:00,199 --> 01:20:03,880
+nuove. Tutto qua.
+
+1467
+01:20:03,880 --> 01:20:06,560
+Però un pochino prendiamo di tempo per
+
+1468
+01:20:06,560 --> 01:20:08,760
+pensare, così un po' ci pensano tutti.
+
+1469
+01:20:08,760 --> 01:20:10,199
+So che non me ne frega assolutamente
+
+1470
+01:20:10,199 --> 01:20:13,199
+niente.
+
+1471
+01:20:22,120 --> 01:20:24,480
+Vi ripeto lo scenario. Abbiamo una
+
+1472
+01:20:24,480 --> 01:20:27,600
+funzione che è in grado di risolverci.
+
+1473
+01:20:27,600 --> 01:20:29,280
+Abbiamo una procedura che è in grado di
+
+1474
+01:20:29,280 --> 01:20:31,159
+risolverci il problema decisionale del
+
+1475
+01:20:31,159 --> 01:20:33,639
+vertex cover. Come usiamo questa
+
+1476
+01:20:33,639 --> 01:20:36,280
+sabrutine per calcolare la taglia del
+
+1477
+01:20:36,280 --> 01:20:40,719
+vertex cover minimo di un grafico?
+
+1478
+01:20:44,560 --> 01:20:49,360
+Visto anche tre voci nuove?
+
+1479
+01:20:51,600 --> 01:20:54,600
+Ok,
+
+1480
+01:21:00,040 --> 01:21:04,760
+lei è il primo. Prego.
+E passiamo a chi
+
+1481
+01:21:04,760 --> 01:21:08,480
+è che decide il
+
+1482
+01:21:09,159 --> 01:21:10,960
+decide il problema.
+Lauder, quale
+
+1483
+01:21:10,960 --> 01:21:14,760
+problema?
+L'oraccolo.
+Attenzione, la
+
+1484
+01:21:14,760 --> 01:21:18,760
+macchina che decide quale problema.
+
+1485
+01:21:18,760 --> 01:21:21,280
+decisionale di
+
+1486
+01:21:21,280 --> 01:21:23,960
+GK.
+Ok, quindi il vertex cover
+
+1487
+01:21:23,960 --> 01:21:26,320
+decisionale. Ok, come facci date un
+
+1488
+01:21:26,320 --> 01:21:30,159
+grafo, come facciamo a calcolare la
+
+1489
+01:21:30,159 --> 01:21:32,880
+taglia del vertex cover minimo di quel
+
+1490
+01:21:32,880 --> 01:21:37,400
+grafo?
+Passiamo ogni K partire da K 1
+
+1491
+01:21:37,400 --> 01:21:41,239
+numeri naturali.
+Sì, primo per l'Oracolo
+
+1492
+01:21:41,239 --> 01:21:45,760
+che siisce è
+Sì. Ok? Questo è un modo,
+
+1493
+01:21:45,760 --> 01:21:47,280
+ve lo ripeto se non avete sentito,
+
+1494
+01:21:47,280 --> 01:21:49,440
+questo è un modo abbastanza semplice. Se
+
+1495
+01:21:49,440 --> 01:21:52,199
+noi abbiamo un decisore del di vertex
+
+1496
+01:21:52,199 --> 01:21:54,440
+cover decisionale, vi ripeto che vertex
+
+1497
+01:21:54,440 --> 01:21:57,000
+cover decisionale è dato un grafo, è un
+
+1498
+01:21:57,000 --> 01:22:00,639
+numero, è vero, no che questo grafo ha
+
+1499
+01:22:00,639 --> 01:22:05,520
+un vertex cover di taglia al QK?
+
+1500
+01:22:05,520 --> 01:22:06,800
+Ok?
+
+1501
+01:22:06,800 --> 01:22:09,000
+Questa la usiamo come sabrutin per
+
+1502
+01:22:09,000 --> 01:22:13,080
+calcolare la taglia del
+
+1503
+01:22:13,080 --> 01:22:14,760
+vertex cover di taglia minimale di
+
+1504
+01:22:14,760 --> 01:22:17,080
+grafico. Come facciamo? Il nostro
+
+1505
+01:22:17,080 --> 01:22:21,360
+collega ci suggerisce iniziamo da k = 1
+
+1506
+01:22:21,360 --> 01:22:24,280
+e iniziamo a chiedere all'oracolo.
+
+1507
+01:22:24,280 --> 01:22:27,080
+È vero che questo grafo ha un vertex
+
+1508
+01:22:27,080 --> 01:22:30,080
+cover di taglia uno? Che no. Ok, andiamo
+
+1509
+01:22:30,080 --> 01:22:31,600
+avanti
+
+1510
+01:22:31,600 --> 01:22:34,159
+di nuovo. Aumentiamo, passiamo a due.
+
+1511
+01:22:34,159 --> 01:22:37,000
+Ora, è vero, no, che questo grafo ha un
+
+1512
+01:22:37,000 --> 01:22:39,920
+vertex cover di taglia duo. Ok, andiamo
+
+1513
+01:22:39,920 --> 01:22:44,800
+avanti. 3 e 4 e 5 e 6 bla. Al primo che
+
+1514
+01:22:44,800 --> 01:22:48,679
+ci dice sì, ci fermiamo
+
+1515
+01:22:48,679 --> 01:22:52,000
+e restituiamo il K che eravamo arrivati
+
+1516
+01:22:52,000 --> 01:22:53,920
+fino a quel momento. Ok, questa
+
+1517
+01:22:53,920 --> 01:22:56,239
+procedura funziona.
+
+1518
+01:22:56,239 --> 01:22:58,239
+Funziona.
+
+1519
+01:22:58,239 --> 01:23:00,560
+Vedrete sugli appunti di Calaouti che
+
+1520
+01:23:00,560 --> 01:23:02,920
+lui va all'inverso, va dal più grande al
+
+1521
+01:23:02,920 --> 01:23:05,560
+più picco, è la stessa cosa, funziona.
+
+1522
+01:23:05,560 --> 01:23:08,120
+Ok, quindi una prima procedura che
+
+1523
+01:23:08,120 --> 01:23:11,040
+abbiamo in mente è questa cosa qua.
+
+1524
+01:23:11,040 --> 01:23:14,440
+sfruttiamo il decisore, quindi il nostro
+
+1525
+01:23:14,440 --> 01:23:17,280
+oracolo sta in NP perché risolve un
+
+1526
+01:23:17,280 --> 01:23:21,000
+problema di decisione e il trasduttore
+
+1527
+01:23:21,000 --> 01:23:25,960
+usa l'oracolo in questo modo: G1, G2,
+
+1528
+01:23:25,960 --> 01:23:28,440
+G3. Ok? Alla prima risposta sì
+
+1529
+01:23:28,440 --> 01:23:32,239
+dell'oracolo ci fermiamo e restutiamo la
+
+1530
+01:23:32,239 --> 01:23:36,280
+nostra risposta. Ok? Per questa ragione
+
+1531
+01:23:36,280 --> 01:23:40,320
+noi diciamo possiamo dire che cosa? che
+
+1532
+01:23:40,320 --> 01:23:43,320
+functional
+
+1533
+01:23:43,400 --> 01:23:46,320
+mean min cover
+
+1534
+01:23:46,320 --> 01:23:51,280
+appartiene a cosa? Adp alla np.
+
+1535
+01:23:51,280 --> 01:23:54,880
+Perché scriviamo questo? Perché un
+
+1536
+01:23:54,880 --> 01:23:57,880
+trasduttore
+
+1537
+01:23:58,040 --> 01:24:00,719
+deterministico
+
+1538
+01:24:00,719 --> 01:24:04,159
+in tempo polinomiale
+
+1539
+01:24:04,159 --> 01:24:10,480
+è in grado di calcolare il risultato
+
+1540
+01:24:10,480 --> 01:24:15,280
+se nella sua esecuzione chiede l'aiuto
+
+1541
+01:24:15,280 --> 01:24:17,639
+di un oracolo in NP e quindi lo
+
+1542
+01:24:17,639 --> 01:24:21,320
+scriviamo FP^ NP.
+
+1543
+01:24:21,320 --> 01:24:23,320
+Chiaro per tutti?
+
+1544
+01:24:23,320 --> 01:24:26,280
+Perché prende tempo polinomiale?
+
+1545
+01:24:26,280 --> 01:24:29,760
+Perché noi andiamo ciclando
+
+1546
+01:24:29,760 --> 01:24:35,480
+su tutti K. Passiamo 1 2 3 4. Male che
+
+1547
+01:24:35,480 --> 01:24:37,159
+va.
+
+1548
+01:24:37,159 --> 01:24:40,080
+Noi dobbiamo ciclare dove? Fino al
+
+1549
+01:24:40,080 --> 01:24:43,040
+limite del numero dei nodi. Perché al
+
+1550
+01:24:43,040 --> 01:24:45,840
+numero dei nodi riceveremo sicuramente
+
+1551
+01:24:45,840 --> 01:24:48,440
+risposta sì dall'oracolo, ok? Perché il
+
+1552
+01:24:48,440 --> 01:24:51,119
+verte cover di tutti i nodi è un vertex
+
+1553
+01:24:51,119 --> 01:24:53,639
+cover trivial. Ok? Quindi noi ci
+
+1554
+01:24:53,639 --> 01:24:55,639
+prendiamo tempo polinomiale perché
+
+1555
+01:24:55,639 --> 01:24:58,360
+facciamo quante male che ci va un numero
+
+1556
+01:24:58,360 --> 01:25:00,639
+di domande all'oracolo pari al numero di
+
+1557
+01:25:00,639 --> 01:25:03,280
+nodi del grafico perché i nodi sono
+
+1558
+01:25:03,280 --> 01:25:06,480
+esplicitamente rappresentati nell'input.
+
+1559
+01:25:06,480 --> 01:25:08,360
+Quello è un numero polinomiale di
+
+1560
+01:25:08,360 --> 01:25:10,440
+chiamate. Queste sono una cosa faremo la
+
+1561
+01:25:10,440 --> 01:25:13,080
+differenza al prossimo giro. Numeri cose
+
+1562
+01:25:13,080 --> 01:25:15,920
+bla. Oggi ci manteniamo sul semplice.
+
+1563
+01:25:15,920 --> 01:25:19,000
+Ok? Quindi andiamo e facciamo il test.
+
+1564
+01:25:19,000 --> 01:25:21,480
+Vertex cover taglia 1. Sì. No, vertex
+
+1565
+01:25:21,480 --> 01:25:25,080
+cover taglia 2. Sì, no, bla bla. C'è una
+
+1566
+01:25:25,080 --> 01:25:26,880
+procedura più efficiente di questa.
+
+1567
+01:25:26,880 --> 01:25:29,400
+Quale può essere? Prego.
+
+1568
+01:25:29,400 --> 01:25:32,440
+Possiamo fare la ricerca binari. Ok?
+
+1569
+01:25:32,440 --> 01:25:36,360
+Quindi la lo stesso oracolo,
+
+1570
+01:25:36,360 --> 01:25:40,199
+prendiamo la taglia del numero dei nodi
+
+1571
+01:25:40,199 --> 01:25:44,159
+n e iniziamo n/2 e chiediamo al nostro
+
+1572
+01:25:44,159 --> 01:25:49,560
+oracolo. È vero, no, che ci sta un
+
+1573
+01:25:49,560 --> 01:25:52,920
+vertex cover di taglial + n/2. Se quello
+
+1574
+01:25:52,920 --> 01:25:55,119
+ci dice sì,
+
+1575
+01:25:55,119 --> 01:25:57,880
+allora vuol dire che il minimo sta fra 0
+
+1576
+01:25:57,880 --> 01:26:00,320
+ed n/2. Se quello ci dice no, vuol dire
+
+1577
+01:26:00,320 --> 01:26:03,080
+che il minimo sta fra n mezzi ed n. E
+
+1578
+01:26:03,080 --> 01:26:06,480
+ripetiamo, becchiamo a metà e facciamo
+
+1579
+01:26:06,480 --> 01:26:08,760
+di nuovo la stessa cosa. È chiara questa
+
+1580
+01:26:08,760 --> 01:26:11,600
+procedura?
+
+1581
+01:26:11,600 --> 01:26:14,280
+L'avevate vista tut informatici sicuro
+
+1582
+01:26:14,280 --> 01:26:15,719
+la ricerca binaria l'amista. I
+
+1583
+01:26:15,719 --> 01:26:18,840
+matematici pure, no? Ok. Quindi pa,
+
+1584
+01:26:18,840 --> 01:26:20,960
+becchiamo a metà e tagliamo di volta in
+
+1585
+01:26:20,960 --> 01:26:22,480
+volta. Quante domande facciamo
+
+1586
+01:26:22,480 --> 01:26:25,480
+all'oracolo?
+
+1587
+01:26:26,920 --> 01:26:29,480
+un numero logaritmico. Ok? Quindi questa
+
+1588
+01:26:29,480 --> 01:26:31,080
+procedura da un certo punto di vista è
+
+1589
+01:26:31,080 --> 01:26:35,080
+più efficiente perché il chiamante
+
+1590
+01:26:35,080 --> 01:26:39,400
+fa un numero logaritmico di domande. Ok?
+
+1591
+01:26:39,400 --> 01:26:42,800
+Come lo scriviamo questo?
+
+1592
+01:26:42,800 --> 01:26:44,840
+Siccome quindi esiste quest'altra
+
+1593
+01:26:44,840 --> 01:26:48,320
+procedura che è in grado di risolvere e
+
+1594
+01:26:48,320 --> 01:26:50,760
+functional mean cover e facciamo però
+
+1595
+01:26:50,760 --> 01:26:52,960
+meno domande all'oracolo, noi lo
+
+1596
+01:26:52,960 --> 01:26:55,040
+scriviamo così.
+
+1597
+01:26:55,040 --> 01:26:59,639
+F min cover
+
+1598
+01:26:59,639 --> 01:27:04,400
+appartiene a fp np e tra parentesi
+
+1599
+01:27:04,400 --> 01:27:09,520
+quadra o di log n che serve a dire
+
+1600
+01:27:09,520 --> 01:27:11,480
+che il numero di chiamate che noi
+
+1601
+01:27:11,480 --> 01:27:15,719
+facciamo all'oracolo è
+
+1602
+01:27:15,719 --> 01:27:17,800
+un numero limitato,
+
+1603
+01:27:17,800 --> 01:27:21,239
+è un numero logaritmico. Ok? Quindi la
+
+1604
+01:27:21,239 --> 01:27:24,199
+classe di functional mean cover è questa
+
+1605
+01:27:24,199 --> 01:27:27,960
+qui che è più piccolina.
+
+1606
+01:27:34,920 --> 01:27:36,880
+domanda per voi e con questo poi
+
+1607
+01:27:36,880 --> 01:27:39,400
+chiudiamo. A questo punto siamo in grado
+
+1608
+01:27:39,400 --> 01:27:41,760
+di stabilire la relazione che abbiamo
+
+1609
+01:27:41,760 --> 01:27:43,159
+detto proprio all'inizio del corso.
+
+1610
+01:27:43,159 --> 01:27:46,760
+All'inizio del corso
+
+1611
+01:27:46,760 --> 01:27:49,040
+abbiamo detto ci focalizziamo sui
+
+1612
+01:27:49,040 --> 01:27:50,520
+problemi di decisione perché i problemi
+
+1613
+01:27:50,520 --> 01:27:52,639
+di decisione sono più facili ma sono
+
+1614
+01:27:52,639 --> 01:27:54,480
+legati ai problemi di ottimizzazione e
+
+1615
+01:27:54,480 --> 01:27:57,560
+di ricerca. Ok?
+
+1616
+01:27:57,560 --> 01:27:59,719
+secondo noi. E qui a questo punto ora
+
+1617
+01:27:59,719 --> 01:28:02,159
+che abbiamo le definizioni FT bla, lo
+
+1618
+01:28:02,159 --> 01:28:04,639
+possiamo vedere in maniera più formale.
+
+1619
+01:28:04,639 --> 01:28:07,480
+Secondo voi functional mean cover,
+
+1620
+01:28:07,480 --> 01:28:09,920
+quindi calcolare
+
+1621
+01:28:09,920 --> 01:28:13,760
+la taglia del vertex cover minimo di un
+
+1622
+01:28:13,760 --> 01:28:18,040
+grafo G può stare in FP?
+
+1623
+01:28:30,280 --> 01:28:32,400
+Chiara la domanda?
+
+1624
+01:28:32,400 --> 01:28:34,560
+Adesso abbiamo visto che c'abbiamo delle
+
+1625
+01:28:34,560 --> 01:28:36,159
+procedure che tramite oracolo
+
+1626
+01:28:36,159 --> 01:28:39,880
+collochiamo questo problema in FP NP o
+
+1627
+01:28:39,880 --> 01:28:42,920
+NP^ o log n indipendenza se siamo furbi
+
+1628
+01:28:42,920 --> 01:28:45,239
+e gli facciamo una ricerca binari. Ma la
+
+1629
+01:28:45,239 --> 01:28:47,600
+domanda ora è,
+
+1630
+01:28:47,600 --> 01:28:50,520
+ma il calcolo della taglia del verte
+
+1631
+01:28:50,520 --> 01:28:55,639
+cover minimo di un grafo sta in FP?
+
+1632
+01:28:55,639 --> 01:28:59,320
+Può stare in FP?
+
+1633
+01:29:00,040 --> 01:29:04,199
+Prego. Direi di no
+Lauder direi di no
+
+1634
+01:29:04,199 --> 01:29:07,040
+perché
+perché si basa sulla funzione
+
+1635
+01:29:07,040 --> 01:29:09,520
+dello stato che noi possiamo
+
+1636
+01:29:09,520 --> 01:29:12,440
+sapere il tempo,
+
+1637
+01:29:12,440 --> 01:29:14,920
+cioè possiamo sapere
+
+1638
+01:29:14,920 --> 01:29:19,600
+la la taglia del minimo del scopo.
+Mh.
+
+1639
+01:29:19,600 --> 01:29:22,440
+Ma questo in realtà non è una cosa in
+
+1640
+01:29:22,440 --> 01:29:24,440
+tempo costante.
+No, no, non in tempo
+
+1641
+01:29:24,440 --> 01:29:27,119
+costante. Io mi chiedo,
+
+1642
+01:29:27,119 --> 01:29:30,199
+il calcolo della taglia del vertex cover
+
+1643
+01:29:30,199 --> 01:29:32,520
+minimo si può fare in tempo polinomiale?
+
+1644
+01:29:32,520 --> 01:29:34,960
+Cioè se F min cover appartiene a FP
+
+1645
+01:29:34,960 --> 01:29:37,719
+significa? Significherebbe che
+
+1646
+01:29:37,719 --> 01:29:40,360
+esisterebbe un algoritmo deterministico
+
+1647
+01:29:40,360 --> 01:29:42,000
+che in tempo polinomiale è in grado di
+
+1648
+01:29:42,000 --> 01:29:44,719
+calcolare la taglia del vertex cover
+
+1649
+01:29:44,719 --> 01:29:46,840
+minimo di un grafo. Questa cosa si può
+
+1650
+01:29:46,840 --> 01:29:49,480
+fare in tempo polinomiale o no? Secondo
+
+1651
+01:29:49,480 --> 01:29:52,480
+voi
+
+1652
+01:29:52,719 --> 01:29:56,119
+vi do un quindi cosa accadrebbe se fosse
+
+1653
+01:29:56,119 --> 01:30:00,360
+in grado? Prego. Potremmo abbassare la
+
+1654
+01:30:00,360 --> 01:30:03,360
+utilizzando
+
+1655
+01:30:03,920 --> 01:30:08,400
+cover.
+Sì. E quindi se fossimo in grado
+
+1656
+01:30:08,400 --> 01:30:10,840
+saremmo in grado di abbassare la
+
+1657
+01:30:10,840 --> 01:30:12,679
+complessità di min cover e saremmo in
+
+1658
+01:30:12,679 --> 01:30:17,239
+grado di abbassare la complessità di
+
+1659
+01:30:21,239 --> 01:30:23,159
+di
+
+1660
+01:30:23,159 --> 01:30:26,280
+di vertex cover. Se noi fossimo in grado
+
+1661
+01:30:26,280 --> 01:30:28,639
+di calcolare in tempo polinomiale
+
+1662
+01:30:28,639 --> 01:30:30,960
+deterministico
+
+1663
+01:30:30,960 --> 01:30:33,920
+la taglia del vertex cover minimo di un
+
+1664
+01:30:33,920 --> 01:30:37,040
+grafo, il problema del verte cover
+
+1665
+01:30:37,040 --> 01:30:39,520
+decisionale, quello sarebbe in P perché
+
+1666
+01:30:39,520 --> 01:30:41,719
+che faremmo? Calcoleremmo la taglia
+
+1667
+01:30:41,719 --> 01:30:43,920
+minima, lo confrontiamo col K che ci
+
+1668
+01:30:43,920 --> 01:30:45,880
+hanno passato in input, vediamo qui è
+
+1669
+01:30:45,880 --> 01:30:48,360
+più grande, rispondiamo si no. Ma ma noi
+
+1670
+01:30:48,360 --> 01:30:51,800
+sappiamo che il verte cover è NP
+
+1671
+01:30:51,800 --> 01:30:53,639
+completo
+
+1672
+01:30:53,639 --> 01:30:56,560
+e P sarebbe uguale a NP. Quindi
+
+1673
+01:30:56,560 --> 01:30:59,880
+calcolare la taglia minima del vertex
+
+1674
+01:30:59,880 --> 01:31:02,560
+cover di un grafo, riteniamo non sia
+
+1675
+01:31:02,560 --> 01:31:04,239
+possibile farlo in tempo polinomiale
+
+1676
+01:31:04,239 --> 01:31:09,520
+perché perché collasserebbe n P su P.
+
+1677
+01:31:09,520 --> 01:31:11,679
+Quindi il fatto che noi sappiamo che
+
+1678
+01:31:11,679 --> 01:31:14,040
+vertex cover, la versione decisionale, è
+
+1679
+01:31:14,040 --> 01:31:17,159
+un problema NP completo, ci dà un bound
+
+1680
+01:31:17,159 --> 01:31:20,280
+stretto, forte su qual è la complessità
+
+1681
+01:31:20,280 --> 01:31:22,480
+del calcolo.
+
+1682
+01:31:22,480 --> 01:31:24,840
+E qui ritorna l'osservazione che avevamo
+
+1683
+01:31:24,840 --> 01:31:27,119
+fatto, cioè il problema di calcolo e il
+
+1684
+01:31:27,119 --> 01:31:29,880
+problema di decisione sono legate perché
+
+1685
+01:31:29,880 --> 01:31:32,320
+se noi fossimo in grado di calcolare in
+
+1686
+01:31:32,320 --> 01:31:34,320
+tempo polinomiale anche il problema di
+
+1687
+01:31:34,320 --> 01:31:36,560
+decisione di decisione sarebbe
+
+1688
+01:31:36,560 --> 01:31:38,440
+deterministic polynomial e a quel punto
+
+1689
+01:31:38,440 --> 01:31:41,639
+avremmo che cosa? NP = P. Ma noi non
+
+1690
+01:31:41,639 --> 01:31:43,520
+riteniamo che questa cosa possa essere
+
+1691
+01:31:43,520 --> 01:31:46,920
+possibile. Ecco dov'è il link ora è
+
+1692
+01:31:46,920 --> 01:31:49,679
+esplicito tra problemi di ricerca,
+
+1693
+01:31:49,679 --> 01:31:52,000
+ottimizzazione e le loro varianti di
+
+1694
+01:31:52,000 --> 01:31:55,320
+decisione. Se un problema di decisione è
+
+1695
+01:31:55,320 --> 01:31:58,560
+tosto, la sua variante di calcolo non
+
+1696
+01:31:58,560 --> 01:32:01,719
+può essere semplice, senò
+
+1697
+01:32:01,719 --> 01:32:04,719
+P ed sarebbero uguali.
+
+1698
+01:32:04,719 --> 01:32:06,920
+Ok? E con questo possiamo chiudere per
+
+1699
+01:32:06,920 --> 01:32:11,040
+oggi. Grazie mille.
+
+1700
+01:32:13,679 --> 01:32:15,840
+All
+
+1701
+01:32:18,020 --> 01:32:20,399
+[Musica]

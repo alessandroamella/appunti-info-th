@@ -1,0 +1,296 @@
+\documentclass[a4paper]{article}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage[italian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[a4paper, total={6in, 8in}]{geometry}
+\usepackage{minted} % Per il codice e pseudocodice. Richiede --shell-escape per la compilazione.
+\usepackage{mathpazo}
+\usepackage{fancyhdr}
+\usepackage{amsthm}
+\usepackage{tikz}
+\usetikzlibrary{automata,positioning}
+
+% Definizione degli ambienti
+\newtheorem{theorem}{Teorema}[section]
+\newtheorem{definition}{Definizione}[section]
+\newtheorem{example}{Esempio}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{proposition}{Proposizione}[section]
+\newtheorem{remark}{Osservazione}[section]
+
+\hypersetup{
+    pdftitle={Lezione di Informatica Teorica: Complessità Spaziale},
+    pdfauthor={Appunti da Trascrizione AI}
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textit{Lezione di Informatica Teorica}}
+\fancyfoot[C]{\thepage}
+
+\title{Lezione di Informatica Teorica: Classi di Complessità Spaziale}
+\author{Appunti da Trascrizione Automatica}
+\date{\today}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+
+\section{Introduzione alla Complessità Spaziale}
+
+Finora ci siamo concentrati sulla \emph{complessità temporale}, ovvero il tempo impiegato da un algoritmo. Ora introduciamo la \emph{complessità spaziale}, che misura la quantità di memoria necessaria per l'esecuzione di un algoritmo.
+Intuitivamente, una macchina con tempo polinomiale è meno potente di una macchina con spazio polinomiale, perché lo spazio può essere riutilizzato, permettendo alla macchina di eseguire più a lungo.
+Come vedremo, la classe \textbf{P} (problemi risolvibili in tempo polinomiale) è contenuta in \textbf{PSPACE} (problemi risolvibili in spazio polinomiale). Tuttavia, non sappiamo se \textbf{P} sia strettamente contenuta in \textbf{PSPACE}, un problema analogo a \textbf{P} vs \textbf{NP}.
+
+\subsection{Modello di Macchina di Turing per la Complessità Spaziale}
+
+Per definire la complessità spaziale, in particolare per classi con vincoli di spazio molto ridotti (es. logaritmico), utilizziamo un modello di Macchina di Turing (MT) leggermente modificato:
+\begin{itemize}
+    \item \textbf{Nastro di Input:} Un nastro di sola lettura. La testina può muoversi in entrambe le direzioni, ma non può modificare il contenuto. Questo nastro contiene l'input $W$.
+    \item \textbf{Nastro di Lavoro (Work Tape):} Un nastro infinito di lettura-scrittura. La testina può muoversi in entrambe le direzioni e modificare il contenuto. Questo nastro è usato per i calcoli intermedi e lo spazio utilizzato su questo nastro sarà quello che misureremo.
+    \item \textbf{Nastro di Output (solo per trasduttori):} Un nastro di sola scrittura. La testina può muoversi solo in una direzione (generalmente a destra). Questo nastro viene usato per produrre l'output finale.
+\end{itemize}
+La separazione dei nastri è cruciale per le classi a basso spazio. Se misurassimo lo spazio sull'input tape, qualsiasi algoritmo che legge l'intero input userebbe almeno spazio lineare, rendendo difficile definire classi come LogSpace.
+
+\subsection{Definizioni Fondamentali}
+
+\begin{definition}[Computation Space]
+Il \textbf{Computation Space} di una macchina di Turing $M$ su un input $W$, denotato $Space_M(W)$, è il numero di celle \emph{distinte} visitate (anche solo lette, non necessariamente scritte) da $M$ sul suo \emph{nastro di lavoro} durante il processo di $W$.
+\begin{itemize}
+    \item Se $M$ è \textbf{deterministica}, $Space_M(W)$ è semplicemente il numero di celle distinte visitate.
+    \item Se $M$ è \textbf{non deterministica}, $Space_M(W)$ è il \emph{massimo} numero di celle distinte visitate su work tape in qualsiasi dei suoi branch di computazione.
+\end{itemize}
+\end{definition}
+
+\begin{definition}[Space Function]
+Una funzione $S: \mathbb{N} \to \mathbb{N}$ è una \textbf{Space Function} se $S(n)$ è strettamente positiva per ogni $n$ ed è non-decreasing.
+\end{definition}
+
+\begin{definition}[Running Space]
+Il \textbf{Running Space} di una macchina di Turing $M$ è $S(n)$ se per ogni stringa $W$ (a parte un numero finito di eccezioni), il $Computation Space$ di $M$ su $W$ è bounded da $S(|W|)$, ovvero $Space_M(W) \in O(S(|W|))$.
+\end{definition}
+
+\subsection{Classi di Complessità Spaziale}
+
+Similmente alle classi temporali (DTIME, NTIME), definiamo le classi spaziali:
+
+\begin{definition}[DSPACE($S(n)$)]
+\textbf{DSPACE($S(n)$)} è l'insieme di tutti i linguaggi $L$ tali che esiste una Macchina di Turing deterministica $M$ che decide $L$ e il cui Running Space è in $O(S(n))$.
+\[ \text{DSPACE}(S(n)) = \{ L \mid \exists M \text{ deterministica t.c. } L(M) = L \text{ e } Space_M(n) \in O(S(n)) \} \]
+\end{definition}
+
+\begin{definition}[NSPACE($S(n)$)]
+\textbf{NSPACE($S(n)$)} è l'insieme di tutti i linguaggi $L$ tali che esiste una Macchina di Turing non deterministica $N$ che decide $L$ e il cui Running Space è in $O(S(n))$.
+\[ \text{NSPACE}(S(n)) = \{ L \mid \exists N \text{ non-deterministica t.c. } L(N) = L \text{ e } Space_N(n) \in O(S(n)) \} \]
+\end{definition}
+
+\begin{definition}[Classi Logaritmiche]
+Definiamo due classi di complessità spaziale fondamentali:
+\begin{itemize}
+    \item \textbf{L (LogSpace):} La classe di linguaggi decidibili da una MT deterministica in spazio logaritmico.
+    \[ \text{L} = \text{DSPACE}(\log n) \]
+    \item \textbf{NL (Nondeterministic LogSpace):} La classe di linguaggi decidibili da una MT non deterministica in spazio logaritmico.
+    \[ \text{NL} = \text{NSPACE}(\log n) \]
+\end{itemize}
+\end{definition}
+
+\begin{proposition}
+Vale la relazione di contenimento: $\text{L} \subseteq \text{NL}$.
+\end{proposition}
+Analogamente a P vs NP, non sappiamo se $\text{L} = \text{NL}$ o se $\text{L} \subset \text{NL}$.
+
+\section{Esempi di Problemi nelle Classi Spaziali}
+
+\subsection{Linguaggio $0^n1^n$ in L}
+
+Consideriamo il linguaggio $L_0 = \{0^n1^n \mid n > 0\}$.
+Avevamo visto un algoritmo deterministico per questo linguaggio che marcava o cancellava i simboli sull'input tape, ma questo non è permesso con il nuovo modello di MT. Se copiassimo l'input sul work tape, useremmo spazio lineare, quindi $L_0 \notin \text{L}$ con quell'algoritmo.
+
+\begin{example}[Decisore per $0^n1^n$ in LogSpace]
+Per decidere $L_0$ in spazio logaritmico, la MT deterministica può fare quanto segue:
+\begin{enumerate}
+    \item Scorre l'input tape, contando il numero di $0$ e memorizzando il conteggio sul work tape in binario. La rappresentazione binaria di $n$ (numero di $0$s) occupa $O(\log n)$ spazio.
+    \item Una volta terminati gli $0$s, riposiziona la testina dell'input tape all'inizio degli $1$s.
+    \item Scorre gli $1$s, contando il loro numero e memorizzando il conteggio sul work tape in binario, sovrascrivendo il conteggio precedente.
+    \item Confronta i due conteggi binari (uno dopo gli $0$s, uno dopo gli $1$s). Se sono uguali e la stringa è della forma corretta ($0...01...1$), la MT accetta; altrimenti, rigetta.
+\end{enumerate}
+Lo spazio utilizzato sul work tape è limitato alla memorizzazione di pochi numeri binari (il conteggio, eventuali puntatori, ecc.), ciascuno dei quali occupa $O(\log n)$ spazio. Pertanto, $L_0 \in \text{L}$.
+\end{example}
+
+\subsection{Problema della Raggiungibilità (REACHABILITY) in NL}
+
+Il problema \textbf{REACHABILITY} (o \textbf{ST-Connectivity}) è un problema classico in teoria dei grafi.
+
+\begin{definition}[REACHABILITY]
+Sia $G=(V,E)$ un grafo orientato, e siano $s, t \in V$ due vertici. Il problema \textbf{REACHABILITY} consiste nel decidere se esiste un cammino (path) da $s$ a $t$ in $G$.
+\[ \text{REACHABILITY} = \{ (G, s, t) \mid G \text{ è un grafo orientato e esiste un cammino da } s \text{ a } t \text{ in } G \} \]
+\end{definition}
+
+Algoritmi standard come BFS (Breadth-First Search) o DFS (Depth-First Search) risolvono REACHABILITY in tempo polinomiale, ma tipicamente richiedono spazio $O(|V| + |E|)$ o $O(|V|)$ per memorizzare i nodi visitati o le code/stack. Questo è spazio lineare, non logaritmico.
+
+\begin{example}[Algoritmo non deterministico per REACHABILITY in LogSpace]
+Sia $M$ una MT non deterministica. Per decidere se esiste un cammino da $s$ a $t$ in $G=(V,E)$, $M$ esegue il seguente algoritmo:
+
+\begin{minted}[
+    frame=lines,
+    framesep=2mm,
+    linenos,
+    tabsize=2,
+    obeytabs,
+    mathescape=true
+]{python}
+Function NDTM_REACHABILITY(G, s, t):
+    # G: grafo, s: nodo sorgente, t: nodo destinazione
+    
+    current_node = s  # Inizializza il nodo corrente con la sorgente
+    path_length_counter = 1 # Contatore della lunghezza del cammino (numero di nodi visitati)
+    
+    # Se il nodo di partenza è già il target, accetta immediatamente
+    if current_node == t:
+        ACCEPT
+        
+    # La MT "guessta" i passi successivi
+    while path_length_counter <= |V|:
+        # Non deterministicamente, "guessta" un vertice successivo
+        # Il guess non richiede di memorizzare tutti i possibili successori,
+        # ma solo di selezionarne uno alla volta.
+        next_node = GUESS_VERTEX_FROM_V() 
+        
+        # Verifica se esiste un arco da current_node a next_node in G
+        # L'accesso al grafo G avviene tramite il nastro di input, senza occupare spazio sul work tape.
+        if (current_node, next_node) in E:
+            current_node = next_node
+            path_length_counter = path_length_counter + 1
+            
+            # Se siamo arrivati al target, il cammino è stato trovato
+            if current_node == t:
+                ACCEPT
+            # Altrimenti, continua a gueessare
+        else:
+            # Se il guess non porta a un arco valido, questo ramo di computazione RIGETTA
+            REJECT
+    
+    # Se il contatore supera |V|, significa che siamo entrati in un ciclo
+    # o abbiamo esplorato un cammino troppo lungo senza trovare t.
+    # In ogni caso, questo ramo di computazione RIGETTA.
+    REJECT
+\end{minted}
+
+\textbf{Analisi dello Spazio:}
+\begin{itemize}
+    \item `current_node`: per memorizzare l'identificativo di un nodo in un grafo con $|V|$ nodi, sono necessari $O(\log |V|)$ bit.
+    \item `next_node`: stessa cosa, $O(\log |V|)$ bit.
+    \item `path_length_counter`: un contatore fino a $|V|$, richiede $O(\log |V|)$ bit.
+\end{itemize}
+In totale, lo spazio utilizzato sul nastro di lavoro è $O(\log |V|)$, che è $O(\log n)$ dove $n$ è la dimensione dell'input (che include la rappresentazione del grafo, quindi $|V|$ è $O(n)$).
+
+\textbf{Correttezza:}
+\begin{itemize}
+    \item \textbf{Completezza:} Se esiste un cammino da $s$ a $t$ in $G$, allora esiste un ramo di computazione non deterministica che sceglie correttamente i nodi successivi lungo quel cammino e accetta quando raggiunge $t$. Il vincolo `path_length_counter <= |V|` assicura che anche in presenza di cicli, il cammino non venga esplorato all'infinito e la MT termini. Se un cammino esiste, ne esiste uno senza cicli di lunghezza al più $|V|-1$.
+    \item \textbf{Soundness:} Se la MT accetta, significa che ha trovato una sequenza di nodi validi che formano un cammino da $s$ a $t$.
+\end{itemize}
+Poiché l'algoritmo non deterministico decide correttamente REACHABILITY e usa spazio logaritmico, concludiamo che $\textbf{REACHABILITY} \in \text{NL}$.
+\end{example}
+
+\section{Riduzioni LogSpace e NL-Completezza}
+
+Per studiare le relazioni tra le classi di complessità spaziale (in particolare tra L e NL), è necessario definire un tipo di riduzione più restrittivo rispetto alle riduzioni polinomiali usate per NP-Completezza. Le riduzioni polinomiali sono "troppo potenti" per le classi a basso spazio (es. $\text{L} \subseteq \text{P}$). Se un problema in L fosse NL-completo sotto riduzione polinomiale, non si otterrebbe una buona separazione.
+
+\subsection{Trasduttore LogSpace}
+
+Per definire le riduzioni LogSpace, introduciamo il concetto di trasduttore.
+
+\begin{definition}[Trasduttore LogSpace]
+Un \textbf{Trasduttore LogSpace} è una Macchina di Turing che calcola una funzione $f: \Sigma^* \to \Gamma^*$ e che soddisfa le seguenti proprietà:
+\begin{itemize}
+    \item Ha un nastro di input (sola lettura), un nastro di lavoro (lettura-scrittura) e un nastro di output (sola scrittura, unidirezionale).
+    \item Il suo spazio di lavoro (sull'work tape) è limitato a $O(\log n)$ dove $n$ è la lunghezza dell'input.
+\end{itemize}
+\end{definition}
+Il nastro di output è di sola scrittura e unidirezionale per assicurarsi che lo spazio speso per l'output non venga conteggiato come spazio di lavoro (non è riutilizzabile per calcoli intermedi) e che il trasduttore non possa usare l'output tape come work tape ausiliario.
+
+\subsection{Riduzione LogSpace}
+
+\begin{definition}[Riduzione LogSpace ($\le_L$)]
+Siano $A$ e $B$ due linguaggi. Diciamo che $A$ si riduce in LogSpace a $B$, denotato $A \le_L B$, se esiste una funzione $f: \Sigma^* \to \Gamma^*$ calcolabile da un Trasduttore LogSpace, tale che per ogni stringa $w$:
+\[ w \in A \iff f(w) \in B \]
+\end{definition}
+Le riduzioni LogSpace godono di proprietà di transitività, analoghe alle riduzioni polinomiali.
+
+\subsection{NL-Completezza}
+
+\begin{definition}[NL-Completo]
+Un linguaggio $L_{NL}$ è \textbf{NL-Completo} se soddisfa due condizioni:
+\begin{enumerate}
+    \item \textbf{Appartenenza:} $L_{NL} \in \text{NL}$ (Membership).
+    \item \textbf{Durezza (Hardness):} Per ogni linguaggio $L' \in \text{NL}$, si ha $L' \le_L L_{NL}$ (NL-Hardness).
+\end{enumerate}
+\end{definition}
+Analogamente al Teorema di Cook-Levin per NP-completezza, un linguaggio NL-completo è considerato il più difficile nella classe NL. Un risultato importante afferma che:
+\begin{theorem}
+Se un linguaggio NL-Completo appartiene a \text{L}, allora $\text{L} = \text{NL}$.
+\end{theorem}
+
+\subsection{REACHABILITY è NL-Completo}
+
+\begin{theorem}[NL-Completezza di REACHABILITY]
+Il problema \textbf{REACHABILITY} è NL-Completo.
+\end{theorem}
+\begin{proof}
+Dobbiamo dimostrare due cose:
+\begin{enumerate}
+    \item \textbf{REACHABILITY $\in$ NL:} Già dimostrato con l'algoritmo non deterministico in LogSpace.
+    \item \textbf{REACHABILITY è NL-Hard:} Dobbiamo mostrare che per ogni linguaggio $L' \in \text{NL}$, si ha $L' \le_L \text{REACHABILITY}$.
+\end{enumerate}
+
+Sia $L'$ un linguaggio arbitrario in $\text{NL}$. Per definizione, esiste una Macchina di Turing non deterministica $M$ che decide $L'$ usando $O(\log n)$ spazio sul suo nastro di lavoro, dove $n$ è la lunghezza dell'input.
+Per dimostrare che $L' \le_L \text{REACHABILITY}$, dobbiamo costruire una funzione $f$ (calcolabile da un trasduttore LogSpace) che prende in input una stringa $w$ e produce un'istanza $(G_w, s, t)$ di REACHABILITY, tale che $w \in L' \iff (G_w, s, t) \in \text{REACHABILITY}$.
+
+L'idea chiave è rappresentare le computazioni di $M$ su $w$ come cammini in un grafo. I nodi del grafo $G_w$ saranno le \emph{configurazioni istantanee} (IDs) di $M$.
+
+\textbf{Configurazione di una MT M:} Una configurazione istantanea (ID) di una MT $M$ in un dato momento della computazione è definita dallo stato corrente di $M$, dal contenuto del nastro di lavoro e dalla posizione di entrambe le testine (input e lavoro).
+\begin{itemize}
+    \item Stato corrente $q \in Q$ (insieme degli stati di $M$). Numero di stati è costante.
+    \item Posizione testina input $h_1 \in \{1, \dots, |w|\}$. Richiede $O(\log |w|)$ bit.
+    \item Posizione testina lavoro $h_2 \in \{1, \dots, S(|w|)\}$. Poiché $S(|w|) \in O(\log |w|)$, $h_2$ richiede $O(\log(\log |w|))$ bit.
+    \item Contenuto nastro di lavoro $C \in \Gamma^{S(|w|)}$ (simboli dell'alfabeto del nastro). Poiché $S(|w|) \in O(\log |w|)$, il contenuto richiede $O(\log |w|)$ simboli.
+\end{itemize}
+Una configurazione può essere rappresentata da una tupla $(q, h_1, h_2, C)$. La lunghezza di questa tupla (come stringa binaria) è $O(\log |w|)$.
+Il numero totale di configurazioni possibili è esponenziale in $O(\log |w|)$, il che è polinomiale in $|w|$ (es. $2^{c \log n} = n^c$).
+
+\textbf{Costruzione del Grafo $G_w = (V,E)$:}
+\begin{itemize}
+    \item \textbf{Vertici $V$:} L'insieme dei vertici di $G_w$ è l'insieme di tutte le possibili configurazioni di $M$ su $w$.
+    \item \textbf{Archi $E$:} Esiste un arco diretto da una configurazione $C_i$ a una configurazione $C_j$ se e solo se $M$ può passare da $C_i$ a $C_j$ in un singolo passo di computazione (secondo la funzione di transizione di $M$). Poiché $M$ è non deterministica, da una configurazione possono partire più archi.
+    \item \textbf{Nodi speciali:}
+        \begin{itemize}
+            \item $s_{start}$: Rappresenta la configurazione iniziale di $M$ su $w$ (stato iniziale $q_0$, testine all'inizio, nastro di lavoro vuoto).
+            \item $t_{final}$: Un nodo speciale aggiunto al grafo, non corrispondente a una configurazione di $M$. Tutti gli archi che provengono da configurazioni accettanti di $M$ (quelle in cui $M$ entra in uno stato di accettazione) puntano a $t_{final}$.
+        \end{itemize}
+\end{itemize}
+
+\textbf{Funzionamento del Trasduttore $f$ (la riduzione LogSpace):}
+Il trasduttore $f$ deve generare $(G_w, s_{start}, t_{final})$ sull'output tape usando solo spazio logaritmico sul work tape. Non può costruire l'intero grafo in memoria, dato che $G_w$ può avere un numero polinomiale di nodi e archi.
+\begin{enumerate}
+    \item \textbf{Generazione di $s_{start}$ e $t_{final}$:} Questi sono facili da generare, rappresentano configurazioni specifiche o un simbolo speciale. Richiedono spazio costante o logaritmico.
+    \item \textbf{Generazione dei vertici di $G_w$:} Il trasduttore itera attraverso tutte le possibili combinazioni dei parametri di una configurazione $(q, h_1, h_2, C)$. Per ogni combinazione valida (cioè, che rispetta i limiti di dimensione e stati di $M$), il trasduttore la scrive sul nastro di output come un nodo del grafo. Questo processo richiede solo spazio logaritmico per memorizzare la configurazione corrente in fase di iterazione.
+    \item \textbf{Generazione degli archi di $G_w$:} Il trasduttore itera attraverso tutte le possibili coppie di configurazioni $(C_i, C_j)$. Per ogni coppia, verifica se $M$ può passare da $C_i$ a $C_j$ in un passo. Se sì, scrive l'arco $(C_i, C_j)$ sul nastro di output. Questo richiede solo spazio logaritmico per memorizzare $C_i$ e $C_j$ e simulare il singolo passo di $M$. Gli archi dalle configurazioni accettanti a $t_{final}$ sono generati analogamente.
+\end{enumerate}
+La verifica della validità di una configurazione o della transizione tra due configurazioni può essere fatta determinismicamente in spazio logaritmico, poiché coinvolge solo la lettura di pochi bit (lo stato corrente, i simboli sotto le testine, le transizioni di $M$) e semplici calcoli.
+Il trasduttore $f$ scrive l'output progressivamente, senza memorizzare l'intero grafo in memoria di lavoro.
+
+\textbf{Equivalenza:}
+\begin{itemize}
+    \item Se $w \in L'$, allora esiste una sequenza di configurazioni $C_0, C_1, \dots, C_k$ tale che $C_0 = s_{start}$, $C_k$ è una configurazione accettante, e ogni $C_{i+1}$ è un successore legale di $C_i$. Questo cammino corrisponde a un cammino da $s_{start}$ a $t_{final}$ nel grafo $G_w$. Quindi $(G_w, s_{start}, t_{final}) \in \text{REACHABILITY}$.
+    \item Se $(G_w, s_{start}, t_{final}) \in \text{REACHABILITY}$, allora esiste un cammino da $s_{start}$ a $t_{final}$ in $G_w$. Questo cammino rappresenta una sequenza di configurazioni $C_0, C_1, \dots, C_k$ di $M$ che parte da $s_{start}$ e arriva a una configurazione accettante (che poi si collega a $t_{final}$). Quindi $M$ accetta $w$, il che significa $w \in L'$.
+\end{itemize}
+Dato che $f$ è calcolabile da un trasduttore LogSpace, abbiamo dimostrato che $L' \le_L \text{REACHABILITY}$ per ogni $L' \in \text{NL}$.
+Quindi, \textbf{REACHABILITY} è NL-Complete.
+\end{proof}
+
+Questo teorema ha implicazioni importanti: se qualcuno trovasse un algoritmo deterministico in LogSpace per \textbf{REACHABILITY}, allora $\text{L} = \text{NL}$. Dato che finora non è stato trovato tale algoritmo, si tende a credere che $\text{L} \ne \text{NL}$, ovvero che il non determinismo aggiunga un potere significativo quando lo spazio è limitato a $\log n$.
+
+\end{document}

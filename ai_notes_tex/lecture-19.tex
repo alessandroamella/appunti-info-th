@@ -1,0 +1,532 @@
+\documentclass[a4paper]{article}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage[italian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[a4paper, total={6in, 8in}]{geometry}
+\usepackage{minted}
+\usepackage{mathpazo}
+\usepackage{fancyhdr}
+\usepackage{amsthm}
+\usepackage{tikz}
+\usetikzlibrary{automata,positioning,calc,graphs,graphdrawing}
+\usepackage{subcaption} % For subfigures if needed, useful for graphs
+\usetikzlibrary{shapes.geometric, arrows, positioning}
+
+% Definizione degli ambienti
+\newtheorem{theorem}{Teorema}[section]
+\newtheorem{definition}{Definizione}[section]
+\newtheorem{example}{Esempio}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{proposition}{Proposizione}[section]
+\newtheorem{corollary}{Corollario}[section]
+
+% Stile per le dimostrazioni (come suggerito dal template)
+\theoremstyle{definition} % Usa lo stile "definition" per le prove se preferisci non un corsivo
+\newtheorem*{proof*}{Dimostrazione}
+
+\hypersetup{
+    pdftitle={Lezione di Informatica Teorica - Problemi NP-Completi},
+    pdfauthor={Appunti da Trascrizione AI}
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textit{Lezione di Informatica Teorica}}
+\fancyfoot[C]{\thepage}
+
+\title{Lezione di Informatica Teorica \\ \Large Problemi NP-Completi}
+\author{Appunti da Trascrizione Automatica}
+\date{\today}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+
+\section{Introduzione ai Problemi NP-Completi}
+
+Dopo aver definito la nozione di NP-Completezza, in questa lezione esamineremo diversi problemi noti per essere NP-Completi. L'obiettivo è comprendere cosa significhi per un problema essere NP-Hard e NP-Completo, e come dimostrarlo attraverso riduzioni polinomiali.
+
+\subsection{Richiami su Exact 3-SAT}
+
+Il problema \emph{Exact 3-SAT} (o \emph{3-SAT Esatto}) è una variante di 3-SAT in cui ogni clausola della formula booleana deve contenere \emph{esattamente} tre letterali. Ieri era stata lasciata la domanda di dimostrarne l'NP-Hardness.
+
+\textbf{Dimostrazione dell'NP-Hardness di Exact 3-SAT:}
+Si parte da una formula 3-SAT generica, dove le clausole hanno "al più" tre letterali. Dobbiamo trasformarla in una formula equivalente in cui ogni clausola ha "esattamente" tre letterali.
+La trasformazione procede clausola per clausola:
+\begin{itemize}
+    \item Se una clausola ha esattamente tre letterali, la si copia così com'è.
+    \item Se una clausola ha meno di tre letterali (es. uno o due), si prendono a caso uno o più letterali già presenti in quella clausola e li si replicano fino a raggiungere esattamente tre letterali.
+\end{itemize}
+Questa trasformazione è polinomiale e mantiene l'equivalenza semantica della formula. Di conseguenza, se 3-SAT è NP-Hard, anche Exact 3-SAT lo è. Per questa ragione, d'ora in avanti, quando si parlerà di 3-SAT ci si potrà riferire indistintamente alla variante con "al più" o "esattamente" tre letterali, a seconda della convenienza per la riduzione.
+
+\section{Independent Set (IS)}
+
+L'Independent Set è il primo problema NP-Completo che esaminiamo in dettaglio.
+
+\begin{definition}[Independent Set]
+Dato un grafo non orientato $G=(V, E)$, un \emph{Independent Set} (IS) $S \subseteq V$ è un sottoinsieme dei suoi nodi tale per cui non esiste alcun arco tra nessuna coppia di nodi in $S$. Formalmente:
+\[ \forall u, v \in S, \quad (u, v) \notin E \]
+Ogni grafo ammette un Independent Set (es. il set vuoto o un singolo nodo). I problemi interessanti riguardano la ricerca di Independent Set "grandi".
+\end{definition}
+
+\begin{definition}[Independent Set (Problema di Decisione)]
+Il problema di decisione \emph{Independent Set} è definito come l'insieme delle coppie $\langle G, K \rangle$ tali che $G$ è un grafo non orientato, $K$ è un numero intero, ed esiste un Independent Set in $G$ di taglia (cardinalità) almeno $K$.
+\end{definition}
+
+\subsection{Membership in NP}
+
+\begin{proposition}
+Il problema \emph{Independent Set} appartiene alla classe NP.
+\end{proposition}
+
+\begin{proof*}
+Per dimostrare che IS $\in$ NP, dobbiamo mostrare che esiste una Macchina di Turing Non-Deterministica (MTND) che decide un'istanza in tempo polinomiale.
+Una MTND può risolvere IS come segue:
+\begin{enumerate}
+    \item \textbf{Guess (Non-Deterministic Choice):} La MTND "indovina" (o sceglie in modo non-deterministico) un sottoinsieme $S'$ di nodi di $V$. Questo può essere fatto in tempo polinomiale (ad esempio, per ogni nodo, decide se includerlo o meno in $S'$).
+    \item \textbf{Check (Deterministic Verification):} La MTND verifica deterministicamente due condizioni:
+    \begin{itemize}
+        \item La cardinalità di $S'$ è almeno $K$: $|S'| \ge K$.
+        \item Non esistono archi tra coppie di nodi in $S'$: Per ogni coppia di nodi $u, v \in S'$ ($u \ne v$), verifica che $(u, v) \notin E$.
+    \end{itemize}
+    Se entrambe le condizioni sono soddisfatte, la MTND accetta l'istanza. Altrimenti, la rifiuta.
+\end{enumerate}
+Entrambi i passaggi (guess e check) possono essere eseguiti in tempo polinomiale rispetto alla dimensione dell'input (numero di nodi e archi del grafo). Quindi, Independent Set $\in$ NP.
+\end{proof*}
+
+\subsection{Dimostrazione NP-Hardness: $3SAT \le_p IS$}
+
+Per dimostrare che Independent Set è NP-Hard, effettuiamo una riduzione polinomiale da 3-SAT a Independent Set.
+
+\begin{theorem}
+$3SAT \le_p IS$. Di conseguenza, \emph{Independent Set} è NP-Hard.
+\end{theorem}
+
+\begin{proof*}
+Sia $\phi = C_1 \land C_2 \land \dots \land C_m$ un'istanza di 3-SAT, dove ogni $C_i$ è una clausola con esattamente tre letterali (possiamo usare la variante Exact 3-SAT). Vogliamo costruire una coppia $\langle G, K \rangle$ tale che $\phi$ è soddisfacibile se e solo se $G$ ha un Independent Set di taglia almeno $K$.
+
+\textbf{Costruzione della Trasformazione ($f$):}
+\begin{enumerate}
+    \item \textbf{Nodi ($V'$):} Per ogni letterale in ogni clausola, creiamo un nodo nel grafo $G$. Se $C_i = (l_{i1} \lor l_{i2} \lor l_{i3})$, creiamo tre nodi distinti $v_{i1}, v_{i2}, v_{i3}$ per questa clausola.
+    Quindi, se $\phi$ ha $m$ clausole, $G$ avrà $3m$ nodi.
+    \item \textbf{Archi ($E'$):} Gli archi sono di due tipi:
+    \begin{itemize}
+        \item \textbf{Archi di Clausola:} Per ogni clausola $C_i$, aggiungiamo un arco tra ogni coppia di nodi corrispondenti ai letterali della stessa clausola. Ad esempio, per $C_i = (l_{i1} \lor l_{i2} \lor l_{i3})$, aggiungiamo gli archi $(v_{i1}, v_{i2})$, $(v_{i1}, v_{i3})$, $(v_{i2}, v_{i3})$. Questo forma un triangolo (una cricca di taglia 3) per ogni clausola.
+        \item \textbf{Archi di Contraddizione:} Aggiungiamo un arco tra due nodi $v_{ij}$ e $v_{kl}$ se i loro letterali corrispondenti $l_{ij}$ e $l_{kl}$ sono opposti (ad esempio, $x_1$ e $\neg x_1$).
+    \end{itemize}
+    \item \textbf{Valore $K$:} Il valore $K$ per l'Independent Set è il numero di clausole in $\phi$, ovvero $K=m$.
+\end{enumerate}
+La costruzione è chiaramente polinomiale in $m$ e nel numero di variabili.
+
+\textbf{Esempio di Trasformazione:}
+Sia $\phi = (x_1 \lor x_2 \lor \neg x_3) \land (\neg x_2 \lor x_3 \lor x_4) \land (\neg x_3 \lor \neg x_4 \lor x_5)$.
+\begin{figure}[h]
+    \centering
+    \begin{tikzpicture}[node distance=2cm, thick]
+        % Clause 1
+        \node[circle, draw] (c1_1) at (0,3) {$x_1$};
+        \node[circle, draw] (c1_2) at (1.5,3) {$x_2$};
+        \node[circle, draw] (c1_3) at (0.75,1.5) {$\neg x_3$};
+        \draw (c1_1) -- (c1_2) -- (c1_3) -- (c1_1);
+
+        % Clause 2
+        \node[circle, draw] (c2_1) at (4,3) {$\neg x_2$};
+        \node[circle, draw] (c2_2) at (5.5,3) {$x_3$};
+        \node[circle, draw] (c2_3) at (4.75,1.5) {$x_4$};
+        \draw (c2_1) -- (c2_2) -- (c2_3) -- (c2_1);
+
+        % Clause 3
+        \node[circle, draw] (c3_1) at (8,3) {$\neg x_3$};
+        \node[circle, draw] (c3_2) at (9.5,3) {$\neg x_4$};
+        \node[circle, draw] (c3_3) at (8.75,1.5) {$x_5$};
+        \draw (c3_1) -- (c3_2) -- (c3_3) -- (c3_1);
+
+        % Contradiction Edges
+        \draw[dashed, red] (c1_2) -- (c2_1); % x_2 and not x_2
+        \draw[dashed, red] (c1_3) -- (c2_2); % not x_3 and x_3
+        \draw[dashed, red] (c1_3) -- (c3_1); % not x_3 and not x_3 (can be simplified if same literal in different clauses)
+        \draw[dashed, red] (c2_2) -- (c3_1); % x_3 and not x_3
+        \draw[dashed, red] (c2_3) -- (c3_2); % x_4 and not x_4
+    \end{tikzpicture}
+    \caption{Grafo $G$ costruito da $\phi$}
+    \label{fig:is_reduction_graph}
+\end{figure}
+
+\textbf{Correttezza della Riduzione:}
+Dobbiamo dimostrare che $\phi$ è soddisfacibile se e solo se $G$ ha un Independent Set di taglia $m$.
+
+\subsubsection{$\implies$ (Se $\phi$ è soddisfacibile, allora $G$ ha un IS di taglia $m$)}
+Supponiamo che $\phi$ sia soddisfacibile. Allora esiste un assegnamento di verità $\sigma$ che soddisfa $\phi$.
+Costruiamo un insieme $S_\sigma$ nel grafo $G$ come segue: per ogni clausola $C_i$ di $\phi$, dato che $\sigma$ soddisfa $C_i$, esiste almeno un letterale in $C_i$ che è vero sotto $\sigma$. Scegliamo uno di questi letterali veri (arbitrariamente se ce ne sono più di uno) e aggiungiamo il nodo corrispondente a $S_\sigma$.
+Poiché ci sono $m$ clausole e scegliamo esattamente un nodo per ogni clausola, la taglia di $S_\sigma$ sarà $|S_\sigma|=m$.
+
+Ora, dobbiamo dimostrare che $S_\sigma$ è un Independent Set.
+Assumiamo per contraddizione che $S_\sigma$ non sia un Independent Set. Questo significa che esistono due nodi $u, v \in S_\sigma$ tali che $(u, v) \in E'$.
+Per costruzione degli archi, questi due nodi $u, v$ possono essere collegati in due modi:
+\begin{enumerate}
+    \item $u$ e $v$ provengono dalla stessa clausola: Questo è impossibile, perché abbiamo scelto solo un nodo per ogni clausola, e i nodi della stessa clausola sono sempre interconnessi. Se avessimo scelto due nodi dalla stessa clausola, questi sarebbero collegati, ma $S_\sigma$ è costruito selezionando un unico nodo per clausola.
+    \item $u$ e $v$ provengono da clausole diverse, ma i loro letterali sono opposti: Se $u$ e $v$ sono collegati e provengono da clausole diverse, ciò implica che i loro letterali corrispondenti $l_u$ e $l_v$ sono opposti (es. $x$ e $\neg x$). Ma per costruzione di $S_\sigma$, sia $l_u$ che $l_v$ devono essere veri sotto l'assegnamento $\sigma$. Questo è impossibile, poiché $\sigma$ è un assegnamento di verità consistente (non può assegnare vero sia a $x$ che a $\neg x$).
+\end{enumerate}
+Entrambi i casi portano a una contraddizione. Pertanto, $S_\sigma$ deve essere un Independent Set di taglia $m$.
+
+\subsubsection{$\impliedby$ (Se $G$ ha un IS di taglia $m$, allora $\phi$ è soddisfacibile)}
+Supponiamo che $G$ abbia un Independent Set $S$ di taglia $m$.
+Per costruzione, ogni "triangolo" di nodi corrispondente a una clausola $C_i$ forma una cricca di taglia 3. Poiché $S$ è un Independent Set, non può contenere più di un nodo da ciascuno di questi triangoli (altrimenti non sarebbe un IS, dato che tutti i nodi in un triangolo sono interconnessi).
+Poiché $|S|=m$ (il numero di clausole), questo significa che $S$ deve contenere \emph{esattamente} un nodo da ciascuna delle $m$ triplette di nodi (triangoli) del grafo.
+
+Ora, costruiamo un assegnamento di verità $\sigma_S$ per le variabili di $\phi$ basato su $S$:
+\begin{itemize}
+    \item Per ogni variabile $x_j$, se un nodo corrispondente al letterale $x_j$ è in $S$, allora $\sigma_S(x_j) = \text{Vero}$.
+    \item Per ogni variabile $x_j$, se un nodo corrispondente al letterale $\neg x_j$ è in $S$, allora $\sigma_S(x_j) = \text{Falso}$.
+    \item Se una variabile $x_j$ non ha né $x_j$ né $\neg x_j$ in $S$, le si può assegnare un valore arbitrario (es. Vero).
+\end{itemize}
+Dobbiamo dimostrare che $\sigma_S$ è un assegnamento consistente. Non può assegnare sia Vero che Falso alla stessa variabile, perché se così fosse, significherebbe che sia $x_j$ che $\neg x_j$ sono rappresentati da nodi in $S$. Ma per costruzione del grafo, nodi corrispondenti a letterali opposti sono collegati da un arco. Se $x_j$ e $\neg x_j$ fossero entrambi in $S$, $S$ non sarebbe un Independent Set, il che contraddice l'ipotesi. Quindi $\sigma_S$ è consistente.
+
+Infine, dobbiamo dimostrare che $\sigma_S$ soddisfa $\phi$.
+Per ogni clausola $C_i$, sappiamo che $S$ contiene esattamente un nodo $v$ proveniente dalla tripletta di nodi di $C_i$. Sia $l$ il letterale corrispondente a $v$. Per costruzione di $\sigma_S$, il valore di verità di $l$ sarà Vero sotto $\sigma_S$. Questo significa che ogni clausola $C_i$ contiene almeno un letterale vero, e quindi $\phi$ è soddisfatta da $\sigma_S$.
+
+Poiché la trasformazione è polinomiale e la dimostrazione di equivalenza è valida in entrambi i versi, abbiamo dimostrato che $3SAT \le_p IS$. Dato che 3-SAT è NP-Hard, anche Independent Set è NP-Hard. Con IS $\in$ NP (dimostrato sopra), concludiamo che \textbf{Independent Set è NP-Completo}.
+\end{proof*}
+
+\section{Vertex Cover (VC)}
+
+\begin{definition}[Vertex Cover]
+Dato un grafo non orientato $G=(V, E)$, un \emph{Vertex Cover} (VC) $C \subseteq V$ è un sottoinsieme dei suoi nodi tale per cui ogni arco $(u,v) \in E$ ha almeno un endpoint in $C$. Formalmente:
+\[ \forall (u, v) \in E, \quad u \in C \lor v \in C \]
+Ogni grafo ammette un Vertex Cover (es. l'intero insieme di nodi $V$). I problemi interessanti riguardano la ricerca di Vertex Cover "piccoli".
+\end{definition}
+
+\begin{definition}[Vertex Cover (Problema di Decisione)]
+Il problema di decisione \emph{Vertex Cover} è definito come l'insieme delle coppie $\langle G, K \rangle$ tali che $G$ è un grafo non orientato, $K$ è un numero intero, ed esiste un Vertex Cover in $G$ di taglia (cardinalità) al più $K$.
+\end{definition}
+
+\subsection{Membership in NP}
+
+\begin{proposition}
+Il problema \emph{Vertex Cover} appartiene alla classe NP.
+\end{proposition}
+
+\begin{proof*}
+Simile a Independent Set:
+\begin{enumerate}
+    \item \textbf{Guess:} La MTND indovina un sottoinsieme $C'$ di nodi di $V$.
+    \item \textbf{Check:} La MTND verifica deterministicamente:
+    \begin{itemize}
+        \item La cardinalità di $C'$ è al più $K$: $|C'| \le K$.
+        \item Ogni arco è coperto da $C'$: Per ogni arco $(u, v) \in E$, verifica che $u \in C'$ oppure $v \in C'$.
+    \end{itemize}
+\end{enumerate}
+Entrambi i passaggi sono polinomiali. Quindi, Vertex Cover $\in$ NP.
+\end{proof*}
+
+\subsection{Dimostrazione NP-Hardness: $IS \le_p VC$}
+
+Per dimostrare che Vertex Cover è NP-Hard, effettuiamo una riduzione polinomiale da Independent Set a Vertex Cover. Questa riduzione si basa su un'importante proprietà di dualità.
+
+\begin{lemma}[Dualità IS-VC]
+Sia $G=(V, E)$ un grafo non orientato. Un sottoinsieme $S \subseteq V$ è un Independent Set di $G$ se e solo se il suo complemento $V \setminus S$ è un Vertex Cover di $G$.
+\end{lemma}
+
+\begin{proof*}
+\begin{itemize}
+    \item[$\implies$] Supponiamo che $S$ sia un Independent Set di $G$.
+    Dobbiamo dimostrare che $C = V \setminus S$ è un Vertex Cover di $G$.
+    Assumiamo per contraddizione che $C$ non sia un Vertex Cover. Questo significa che esiste almeno un arco $(u, v) \in E$ tale che nessuno dei suoi endpoint è in $C$. Se $u \notin C$ e $v \notin C$, allora per definizione di complemento, $u \in S$ e $v \in S$. Ma se $u, v \in S$ e $(u, v) \in E$, allora $S$ non sarebbe un Independent Set, il che contraddice la nostra ipotesi iniziale. Quindi la nostra assunzione è falsa, e $C$ deve essere un Vertex Cover.
+
+    \item[$\impliedby$] Supponiamo che $C = V \setminus S$ sia un Vertex Cover di $G$.
+    Dobbiamo dimostrare che $S$ è un Independent Set di $G$.
+    Assumiamo per contraddizione che $S$ non sia un Independent Set. Questo significa che esiste almeno un arco $(u, v) \in E$ tale che entrambi i suoi endpoints $u, v$ sono in $S$. Ma se $u \in S$ e $v \in S$, allora $u \notin C$ e $v \notin C$. Questo significa che l'arco $(u, v)$ non è coperto da $C$, il che contraddice la nostra ipotesi che $C$ sia un Vertex Cover. Quindi la nostra assunzione è falsa, e $S$ deve essere un Independent Set.
+\end{itemize}
+Il lemma è dimostrato.
+\end{proof*}
+
+\begin{theorem}
+$IS \le_p VC$. Di conseguenza, \emph{Vertex Cover} è NP-Hard.
+\end{theorem}
+
+\begin{proof*}
+Sia $\langle G, K \rangle$ un'istanza di Independent Set. Vogliamo costruire una coppia $\langle H, L \rangle$ tale che $G$ ha un Independent Set di taglia almeno $K$ se e solo se $H$ ha un Vertex Cover di taglia al più $L$.
+
+\textbf{Costruzione della Trasformazione ($f$):}
+\begin{enumerate}
+    \item \textbf{Grafo $H$:} $H = G$. Il grafo rimane invariato.
+    \item \textbf{Valore $L$:} $L = |V| - K$, dove $|V|$ è il numero totale di nodi in $G$ (e quindi in $H$).
+\end{enumerate}
+Questa trasformazione è chiaramente polinomiale (ricopiare un grafo e fare una sottrazione).
+
+\textbf{Correttezza della Riduzione:}
+
+\subsubsection{$\implies$ (Se $G$ ha un IS di taglia almeno $K$, allora $H$ ha un VC di taglia al più $L$)}
+Supponiamo che $\langle G, K \rangle$ sia un'istanza "sì" di Independent Set. Questo significa che esiste un Independent Set $S$ in $G$ tale che $|S| \ge K$.
+Consideriamo il complemento di $S$ rispetto a $V$, ovvero $C = V \setminus S$.
+Per il Lemma di Dualità IS-VC, $C$ è un Vertex Cover di $G$. Poiché $H=G$, $C$ è anche un Vertex Cover di $H$.
+Calcoliamo la taglia di $C$: $|C| = |V| - |S|$.
+Dato che $|S| \ge K$, ne segue che $-|S| \le -K$.
+Quindi, $|C| = |V| - |S| \le |V| - K$.
+Per costruzione, $L = |V| - K$. Dunque, $|C| \le L$.
+Questo significa che $H$ ha un Vertex Cover $C$ di taglia al più $L$, quindi $\langle H, L \rangle$ è un'istanza "sì" di Vertex Cover.
+
+\subsubsection{$\impliedby$ (Se $H$ ha un VC di taglia al più $L$, allora $G$ ha un IS di taglia almeno $K$)}
+Supponiamo che $\langle H, L \rangle$ sia un'istanza "sì" di Vertex Cover. Questo significa che esiste un Vertex Cover $C$ in $H$ tale che $|C| \le L$.
+Consideriamo il complemento di $C$ rispetto a $V_H$ (i nodi di $H$), ovvero $S = V_H \setminus C$.
+Per il Lemma di Dualità IS-VC, $S$ è un Independent Set di $H$. Poiché $G=H$, $S$ è anche un Independent Set di $G$.
+Calcoliamo la taglia di $S$: $|S| = |V_H| - |C|$.
+Dato che $|C| \le L$, ne segue che $-|C| \ge -L$.
+Quindi, $|S| = |V_H| - |C| \ge |V_H| - L$.
+Per costruzione, $L = |V| - K$, e $|V_H| = |V|$. Sostituendo:
+$|S| \ge |V| - (|V| - K) = |V| - |V| + K = K$.
+Questo significa che $G$ ha un Independent Set $S$ di taglia almeno $K$, quindi $\langle G, K \rangle$ è un'istanza "sì" di Independent Set.
+
+Poiché la trasformazione è polinomiale e la dimostrazione di equivalenza è valida in entrambi i versi, abbiamo dimostrato che $IS \le_p VC$. Dato che Independent Set è NP-Hard, anche Vertex Cover è NP-Hard. Con VC $\in$ NP (dimostrato sopra), concludiamo che \textbf{Vertex Cover è NP-Completo}.
+\end{proof*}
+
+\section{Clique}
+
+\begin{definition}[Clique]
+Dato un grafo non orientato $G=(V, E)$, una \emph{Clique} (o Cricca) $Q \subseteq V$ è un sottoinsieme dei suoi nodi tale per cui ogni coppia di nodi distinti in $Q$ è collegata da un arco. In altre parole, $Q$ forma un sottografo completo. Formalmente:
+\[ \forall u, v \in Q, u \ne v \implies (u, v) \in E \]
+Ogni grafo ammette una Clique (es. il set vuoto o un singolo nodo). I problemi interessanti riguardano la ricerca di Clique "grandi".
+\end{definition}
+
+\begin{definition}[Clique (Problema di Decisione)]
+Il problema di decisione \emph{Clique} è definito come l'insieme delle coppie $\langle G, K \rangle$ tali che $G$ è un grafo non orientato, $K$ è un numero intero, ed esiste una Clique in $G$ di taglia (cardinalità) almeno $K$.
+\end{definition}
+
+\subsection{Membership in NP}
+
+\begin{proposition}
+Il problema \emph{Clique} appartiene alla classe NP.
+\end{proposition}
+
+\begin{proof*}
+\begin{enumerate}
+    \item \textbf{Guess:} La MTND indovina un sottoinsieme $Q'$ di nodi di $V$.
+    \item \textbf{Check:} La MTND verifica deterministicamente:
+    \begin{itemize}
+        \item La cardinalità di $Q'$ è almeno $K$: $|Q'| \ge K$.
+        \item Tutti i nodi in $Q'$ sono interconnessi: Per ogni coppia di nodi distinti $u, v \in Q'$, verifica che $(u, v) \in E$.
+    \end{itemize}
+\end{enumerate}
+Entrambi i passaggi sono polinomiali. Quindi, Clique $\in$ NP.
+\end{proof*}
+
+\subsection{Dimostrazione NP-Hardness: $IS \le_p Clique$}
+
+Per dimostrare che Clique è NP-Hard, effettuiamo una riduzione polinomiale da Independent Set a Clique. Questa riduzione si basa sul concetto di grafo complemento.
+
+\begin{definition}[Grafo Complemento]
+Dato un grafo non orientato $G=(V, E)$, il suo \emph{grafo complemento} $\bar{G}=(V, \bar{E})$ è un grafo con lo stesso insieme di nodi $V$, ma con l'insieme di archi $\bar{E}$ tale che $(u, v) \in \bar{E}$ se e solo se $(u, v) \notin E$ (per $u \ne v$). In altre parole, gli archi in $\bar{G}$ sono esattamente gli archi che non esistono in $G$.
+\end{definition}
+
+\begin{lemma}[Relazione IS-Clique nel grafo complemento]
+Sia $G=(V, E)$ un grafo non orientato. Un sottoinsieme $S \subseteq V$ è un Independent Set di $G$ se e solo se $S$ è una Clique in $\bar{G}$.
+\end{lemma}
+
+\begin{proof*}
+\begin{itemize}
+    \item[$\implies$] Supponiamo che $S$ sia un Independent Set di $G$.
+    Dobbiamo dimostrare che $S$ è una Clique in $\bar{G}$.
+    Per definizione di Independent Set, per ogni coppia di nodi distinti $u, v \in S$, non esiste un arco $(u, v)$ in $E$.
+    Per definizione di grafo complemento, se $(u, v) \notin E$, allora $(u, v) \in \bar{E}$.
+    Quindi, per ogni coppia di nodi distinti $u, v \in S$, esiste un arco $(u, v)$ in $\bar{E}$. Questo significa che $S$ è una Clique in $\bar{G}$.
+
+    \item[$\impliedby$] Supponiamo che $S$ sia una Clique in $\bar{G}$.
+    Dobbiamo dimostrare che $S$ è un Independent Set di $G$.
+    Per definizione di Clique, per ogni coppia di nodi distinti $u, v \in S$, esiste un arco $(u, v)$ in $\bar{E}$.
+    Per definizione di grafo complemento, se $(u, v) \in \bar{E}$, allora $(u, v) \notin E$.
+    Quindi, per ogni coppia di nodi distinti $u, v \in S$, non esiste un arco $(u, v)$ in $E$. Questo significa che $S$ è un Independent Set in $G$.
+\end{itemize}
+Il lemma è dimostrato.
+\end{proof*}
+
+\begin{theorem}
+$IS \le_p Clique$. Di conseguenza, \emph{Clique} è NP-Hard.
+\end{theorem}
+
+\begin{proof*}
+Sia $\langle G, K \rangle$ un'istanza di Independent Set. Vogliamo costruire una coppia $\langle H, L \rangle$ tale che $G$ ha un Independent Set di taglia almeno $K$ se e solo se $H$ ha una Clique di taglia almeno $L$.
+
+\textbf{Costruzione della Trasformazione ($f$):}
+\begin{enumerate}
+    \item \textbf{Grafo $H$:} $H = \bar{G}$. $H$ è il grafo complemento di $G$.
+    \item \textbf{Valore $L$:} $L = K$. Il valore $K$ viene copiato.
+\end{enumerate}
+La costruzione del grafo complemento può essere fatta in tempo polinomiale (iterando su tutte le possibili coppie di nodi e controllando l'esistenza di un arco in $G$). Quindi la trasformazione è polinomiale.
+
+\textbf{Correttezza della Riduzione:}
+
+\subsubsection{$\implies$ (Se $G$ ha un IS di taglia almeno $K$, allora $H$ ha una Clique di taglia almeno $L$)}
+Supponiamo che $\langle G, K \rangle$ sia un'istanza "sì" di Independent Set. Questo significa che esiste un Independent Set $S$ in $G$ tale che $|S| \ge K$.
+Per il Lemma di Relazione IS-Clique nel grafo complemento, $S$ è una Clique in $\bar{G}$.
+Poiché $H=\bar{G}$, $S$ è una Clique in $H$.
+La taglia di $S$ è $|S| \ge K$. Per costruzione, $L=K$.
+Quindi, $H$ ha una Clique $S$ di taglia almeno $L$, il che significa che $\langle H, L \rangle$ è un'istanza "sì" di Clique.
+
+\subsubsection{$\impliedby$ (Se $H$ ha una Clique di taglia almeno $L$, allora $G$ ha un IS di taglia almeno $K$)}
+Supponiamo che $\langle H, L \rangle$ sia un'istanza "sì" di Clique. Questo significa che esiste una Clique $S$ in $H$ tale che $|S| \ge L$.
+Per il Lemma di Relazione IS-Clique nel grafo complemento, $S$ è un Independent Set in $\bar{H}$.
+Per costruzione, $H=\bar{G}$, quindi $\bar{H} = \overline{\bar{G}} = G$.
+Pertanto, $S$ è un Independent Set di $G$.
+La taglia di $S$ è $|S| \ge L$. Per costruzione, $L=K$.
+Quindi, $G$ ha un Independent Set $S$ di taglia almeno $K$, il che significa che $\langle G, K \rangle$ è un'istanza "sì" di Independent Set.
+
+Poiché la trasformazione è polinomiale e la dimostrazione di equivalenza è valida in entrambi i versi, abbiamo dimostrato che $IS \le_p Clique$. Dato che Independent Set è NP-Hard, anche Clique è NP-Hard. Con Clique $\in$ NP (dimostrato sopra), concludiamo che \textbf{Clique è NP-Completo}.
+\end{proof*}
+
+\section{Dominating Set (DS)}
+
+\begin{definition}[Dominating Set]
+Dato un grafo non orientato $G=(V, E)$, un \emph{Dominating Set} (DS) $D \subseteq V$ è un sottoinsieme dei suoi nodi tale per cui ogni nodo $v \in V \setminus D$ è adiacente ad almeno un nodo in $D$. In altre parole, ogni nodo fuori da $D$ è "dominato" da un nodo in $D$. Formalmente:
+\[ \forall v \in V \setminus D, \exists u \in D \text{ tale che } (u, v) \in E \]
+\end{definition}
+
+\begin{example}
+Consideriamo il grafo $G=(V, E)$ con $V=\{1,2,3,4,5\}$ ed $E=\{(1,2), (1,3), (2,3), (3,4), (4,5)\}$.
+\begin{center}
+\begin{tikzpicture}[node distance=1.5cm, thick]
+    \node[circle, draw] (1) at (0,0) {1};
+    \node[circle, draw] (2) at (1.5,1) {2};
+    \node[circle, draw] (3) at (1.5,-1) {3};
+    \node[circle, draw] (4) at (3,0) {4};
+    \node[circle, draw] (5) at (4.5,0) {5};
+
+    \draw (1) -- (2);
+    \draw (1) -- (3);
+    \draw (2) -- (3);
+    \draw (3) -- (4);
+    \draw (4) -- (5);
+\end{tikzpicture}
+\end{center}
+Il sottoinsieme $D=\{3,5\}$ è un Dominating Set.
+\begin{itemize}
+    \item Nodo 1: è adiacente a 3 ($\in D$).
+    \item Nodo 2: è adiacente a 3 ($\in D$).
+    \item Nodo 4: è adiacente a 3 ($\in D$) e 5 ($\in D$).
+\end{itemize}
+Tutti i nodi fuori da $D$ sono dominati.
+\end{example}
+
+\textbf{Relazione tra Vertex Cover e Dominating Set:}
+Un Vertex Cover è sempre un Dominating Set. Questo perché se ogni arco $(u,v)$ ha almeno un endpoint in $C$ (VC), allora ogni nodo $x \notin C$ deve per forza avere tutti i suoi vicini in $C$ (altrimenti l'arco che lo collega a un vicino fuori da $C$ non sarebbe coperto). Di conseguenza, ogni nodo $x \notin C$ è dominato da almeno un nodo in $C$.
+Tuttavia, il viceversa non è vero. Nell'esempio precedente, $D=\{3,5\}$ è un Dominating Set di taglia 2. Ma non è un Vertex Cover, perché l'arco $(1,2)$ non è coperto (né 1 né 2 sono in $D$).
+Quindi, un Vertex Cover è un caso più "stringente" rispetto a un Dominating Set.
+
+\begin{definition}[Dominating Set (Problema di Decisione)]
+Il problema di decisione \emph{Dominating Set} è definito come l'insieme delle coppie $\langle G, K \rangle$ tali che $G$ è un grafo non orientato, $K$ è un numero intero, ed esiste un Dominating Set in $G$ di taglia (cardinalità) al più $K$.
+\end{definition}
+
+\subsection{Membership in NP}
+
+\begin{proposition}
+Il problema \emph{Dominating Set} appartiene alla classe NP.
+\end{proposition}
+
+\begin{proof*}
+\begin{enumerate}
+    \item \textbf{Guess:} La MTND indovina un sottoinsieme $D'$ di nodi di $V$.
+    \item \textbf{Check:} La MTND verifica deterministicamente:
+    \begin{itemize}
+        \item La cardinalità di $D'$ è al più $K$: $|D'| \le K$.
+        \item Ogni nodo non in $D'$ è dominato: Per ogni nodo $v \in V \setminus D'$, verifica che esista un nodo $u \in D'$ tale che $(u, v) \in E$.
+    \end{itemize}
+\end{enumerate}
+Entrambi i passaggi sono polinomiali. Quindi, Dominating Set $\in$ NP.
+\end{proof*}
+
+\subsection{Dimostrazione NP-Hardness: $VC \le_p DS$}
+
+Per dimostrare che Dominating Set è NP-Hard, effettuiamo una riduzione polinomiale da Vertex Cover a Dominating Set.
+
+\begin{theorem}
+$VC \le_p DS$. Di conseguenza, \emph{Dominating Set} è NP-Hard.
+\end{theorem}
+
+\begin{proof*}
+Sia $\langle G=(V,E), K \rangle$ un'istanza di Vertex Cover. Vogliamo costruire una coppia $\langle H=(V_H, E_H), L \rangle$ tale che $G$ ha un Vertex Cover di taglia al più $K$ se e solo se $H$ ha un Dominating Set di taglia al più $L$.
+
+\textbf{Costruzione della Trasformazione ($f$):}
+Il grafo $H$ viene costruito a partire da $G$ come segue:
+\begin{enumerate}
+    \item \textbf{Nodi ($V_H$):} $V_H$ contiene tutti i nodi di $V$ (i nodi originali). Per ogni arco $(u, v) \in E$ di $G$, aggiungiamo un nuovo nodo "ausiliario" $e_{uv}$ a $V_H$.
+    \item \textbf{Archi ($E_H$):}
+    \begin{itemize}
+        \item Tutti gli archi originali di $G$ sono inclusi in $E_H$.
+        \item Per ogni nodo ausiliario $e_{uv}$ (corrispondente all'arco $(u,v)$ in $G$), aggiungiamo archi che lo collegano ai suoi due endpoint originali: $(e_{uv}, u)$ e $(e_{uv}, v)$. Non aggiungiamo archi tra i nodi ausiliari.
+    \end{itemize}
+    \item \textbf{Valore $L$:} $L = K$. Il valore $K$ viene copiato.
+\end{enumerate}
+Questa costruzione è polinomiale. Se $G$ ha $N$ nodi e $M$ archi, $H$ avrà $N+M$ nodi e $M + 2M = 3M$ archi.
+
+\textbf{Esempio di Trasformazione:}
+Sia $G$ il grafo con $V=\{1,2,3,4\}$ ed $E=\{(1,2), (1,3), (2,3), (3,4)\}$.
+\begin{center}
+\begin{tikzpicture}[node distance=1.5cm, thick]
+    % Original nodes
+    \node[circle, draw] (1) at (0,2) {1};
+    \node[circle, draw] (2) at (0,0) {2};
+    \node[circle, draw] (3) at (2,0) {3};
+    \node[circle, draw] (4) at (4,0) {4};
+
+    % Original edges
+    \draw (1) -- (2) node[midway, fill=white, inner sep=1pt] {};
+    \draw (1) -- (3) node[midway, fill=white, inner sep=1pt] {};
+    \draw (2) -- (3) node[midway, fill=white, inner sep=1pt] {};
+    \draw (3) -- (4) node[midway, fill=white, inner sep=1pt] {};
+
+    % New nodes (for edges) and their connections
+    \node[circle, draw, scale=0.7] (e12) at (0,1) {$e_{12}$};
+    \node[circle, draw, scale=0.7] (e13) at (1,1) {$e_{13}$};
+    \node[circle, draw, scale=0.7] (e23) at (1,0) {$e_{23}$};
+    \node[circle, draw, scale=0.7] (e34) at (3,0) {$e_{34}$};
+
+    \draw (e12) -- (1); \draw (e12) -- (2);
+    \draw (e13) -- (1); \draw (e13) -- (3);
+    \draw (e23) -- (2); \draw (e23) -- (3);
+    \draw (e34) -- (3); \draw (e34) -- (4);
+
+\end{tikzpicture}
+\end{center}
+\captionof{figure}{Grafo $H$ costruito da $G$}
+\label{fig:ds_reduction_graph}
+
+\textbf{Correttezza della Riduzione:}
+
+\subsubsection{$\implies$ (Se $G$ ha un VC di taglia al più $K$, allora $H$ ha un DS di taglia al più $L$)}
+Supponiamo che $\langle G, K \rangle$ sia un'istanza "sì" di Vertex Cover. Questo significa che esiste un Vertex Cover $C$ in $G$ tale che $|C| \le K$.
+Sosteniamo che $D=C$ (usando gli stessi nodi) è un Dominating Set di $H$. La taglia di $D$ è $|D|=|C| \le K = L$. Dobbiamo solo dimostrare che $D$ domina tutti i nodi in $H \setminus D$.
+I nodi in $H$ sono di due tipi: nodi originali ($V$) e nodi ausiliari ($E_{uv}$).
+\begin{itemize}
+    \item \textbf{Nodi originali non in $D$ ($v \in V \setminus D$):} Poiché $C$ è un Vertex Cover di $G$, ogni arco $(v,u) \in E$ incidente a $v$ deve avere il suo altro endpoint $u \in C$ (dato che $v \notin C$). Quindi $v$ è adiacente a $u \in C$. Poiché $C \subseteq D$, $v$ è dominato da $u \in D$.
+    \item \textbf{Nodi ausiliari ($e_{uv}$):} Per definizione di Vertex Cover, l'arco $(u,v)$ in $G$ è coperto da $C$. Questo significa che $u \in C$ oppure $v \in C$. Poiché $e_{uv}$ è collegato sia a $u$ che a $v$ in $H$, se $u \in C$ allora $e_{uv}$ è dominato da $u \in D$. Se $v \in C$ allora $e_{uv}$ è dominato da $v \in D$. In ogni caso, $e_{uv}$ è dominato da un nodo in $D$.
+\end{itemize}
+Quindi, $D=C$ è un Dominating Set di $H$ di taglia al più $L$. Perciò, $\langle H, L \rangle$ è un'istanza "sì" di Dominating Set.
+
+\subsubsection{$\impliedby$ (Se $H$ ha un DS di taglia al più $L$, allora $G$ ha un VC di taglia al più $K$)}
+Supponiamo che $\langle H, L \rangle$ sia un'istanza "sì" di Dominating Set. Questo significa che esiste un Dominating Set $D$ in $H$ tale che $|D| \le L$.
+Costruiamo un insieme $C'$ di nodi originali a partire da $D$. L'idea è convertire i nodi ausiliari in $D$ in nodi originali, se necessario.
+Sia $C' \subseteq V$ l'insieme dei nodi originali in $V$ che sono in $D$. Se un nodo ausiliario $e_{uv}$ è in $D$, allora aggiungiamo $u$ (o $v$, uno qualsiasi dei due) a $C'$. In altre parole:
+\[ C' = (D \cap V) \cup \{ u \mid e_{uv} \in D \text{ per qualche } v \in V \text{ e } u \text{ è un endpoint di } (u,v) \} \]
+La taglia di $C'$ sarà al più $|D|$ (poiché ogni $e_{uv}$ in $D$ è sostituito da un solo nodo originale in $C'$), e quindi $|C'| \le |D| \le L = K$.
+
+Ora, dobbiamo dimostrare che $C'$ è un Vertex Cover di $G$.
+Assumiamo per contraddizione che $C'$ non sia un Vertex Cover di $G$. Ciò significa che esiste almeno un arco $(x, y) \in E$ in $G$ tale che né $x$ né $y$ sono in $C'$.
+Consideriamo il nodo ausiliario $e_{xy}$ in $H$ che corrisponde all'arco $(x, y)$ in $G$.
+Per ipotesi, $D$ è un Dominating Set di $H$. Quindi, $e_{xy}$ deve essere dominato da un nodo in $D$.
+Un nodo in $D$ che domina $e_{xy}$ può essere:
+\begin{enumerate}
+    \item $e_{xy}$ stesso: Se $e_{xy} \in D$, allora per costruzione di $C'$, uno dei suoi endpoint ($x$ o $y$) sarebbe stato aggiunto a $C'$. Ma abbiamo assunto che né $x$ né $y$ sono in $C'$. Questo è una contraddizione.
+    \item Un nodo originale $v \in V \cap D$ adiacente a $e_{xy}$: Gli unici nodi originali adiacenti a $e_{xy}$ sono $x$ e $y$. Se $x \in D$ o $y \in D$, allora per costruzione di $C'$, $x \in C'$ o $y \in C'$. Questo contraddice la nostra assunzione che né $x$ né $y$ sono in $C'$.
+\end{enumerate}
+Entrambi i casi portano a una contraddizione. Pertanto, l'assunzione che $C'$ non sia un Vertex Cover è falsa.
+Quindi, $C'$ è un Vertex Cover di $G$ di taglia al più $K$. Ciò significa che $\langle G, K \rangle$ è un'istanza "sì" di Vertex Cover.
+
+Poiché la trasformazione è polinomiale e la dimostrazione di equivalenza è valida in entrambi i versi, abbiamo dimostrato che $VC \le_p DS$. Dato che Vertex Cover è NP-Hard, anche Dominating Set è NP-Hard. Con DS $\in$ NP (dimostrato sopra), concludiamo che \textbf{Dominating Set è NP-Completo}.
+\end{proof*}
+
+\section{Conclusioni}
+Oggi abbiamo esaminato diversi problemi NP-Completi sui grafi, dimostrando la loro NP-Completezza tramite riduzioni polinomiali. Abbiamo visto come i problemi NP-Completi siano tutti interconnessi attraverso queste riduzioni, formando una "catena" di complessità. È fondamentale comprendere il metodo delle riduzioni, la costruzione di un'istanza e la dimostrazione della sua correttezza in entrambi i versi. Per padroneggiare questi concetti, è altamente consigliabile rivedere le dimostrazioni e provare a ricrearle autonomamente.
+
+\end{document}
