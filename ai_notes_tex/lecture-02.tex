@@ -97,7 +97,8 @@ def halt_checker(P_code: str, I_input: str) -> bool:
     Restituisce True se il programma P_code si arresta con I_input,
     False altrimenti.
     """
-    pass # La sua implementazione è sconosciuta, ma si assume che funzioni perfettamente
+    # La sua implementazione è sconosciuta, ma si assume che funzioni perfettamente
+    pass
 \end{minted}
 
 Ora, useremo questa \texttt{halt\_checker} per costruire un nuovo programma, che chiameremo \texttt{reverse}. Il programma \texttt{reverse} prende in input una singola stringa, che rappresenta il codice di un programma $P$.
@@ -107,7 +108,8 @@ def reverse(P_code: str):
     """
     Questo programma prende in input il codice di un altro programma P.
     """
-    # Chiama halt_checker passando P_code sia come programma che come input per sé stesso
+    # Chiama halt_checker passando P_code sia come programma
+    # che come input per sé stesso
     halts = halt_checker(P_code, P_code)
 
     if halts:
