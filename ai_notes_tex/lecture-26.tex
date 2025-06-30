@@ -10,7 +10,7 @@
 \usepackage{fancyhdr}
 \usepackage{amsthm}
 \usepackage{tikz}
-\usetikzlibrary{automata,positioning,shapes.geometric}
+\usetikzlibrary{automata,positioning,shapes.geometric,fit}
 
 % Definizione degli ambienti
 \newtheorem{theorem}{Teorema}
@@ -130,7 +130,7 @@ Sia $L \in CoNP$. Ciò implica che $\overline{L} \in NP$. Costruiamo una macchin
 
 \begin{figure}[h]
     \centering
-    \begin{tikzpicture}[node distance=1.5cm, auto, thick, scale=0.8, every node/.style={transformお待ち},
+    \begin{tikzpicture}[node distance=1.5cm, auto, thick, scale=0.8,
         set/.style = {ellipse, draw, minimum width=2.5cm, minimum height=1.5cm}]
 
         % P
@@ -193,28 +193,28 @@ Per ogni $i \ge 0$:
 
 \begin{figure}[h]
     \centering
-    \begin{tikzpicture}[node distance=1.5cm, auto, thick, scale=0.8, every node/.style={transformお待ち}]
+    \begin{tikzpicture}[node distance=1.5cm, auto, thick, scale=0.8]
 
         % Layer 0 (P)
-        \node (P) [ellipse, draw, minimum width=2.5cm, minimum height=1.5cm, label=below:$P (\Sigma_0^P, \Pi_0^P, \Delta_0^P)$] at (0,0) {};
+        \node (P) [ellipse, draw, minimum width=2.5cm, minimum height=1.5cm, label=below:{$P (\Sigma_0^P, \Pi_0^P, \Delta_0^P)$}] at (0,0) {};
 
         % Layer 1 (NP, CoNP)
-        \node (NP) [ellipse, draw, minimum width=2.5cm, minimum height=1.5cm, above right=1.2cm and 1.2cm of P, label=below:$NP (\Sigma_1^P)$] {};
-        \node (CoNP) [ellipse, draw, minimum width=2.5cm, minimum height=1.5cm, above left=1.2cm and 1.2cm of P, label=below:$CoNP (\Pi_1^P)$] {};
+        \node (NP) [ellipse, draw, minimum width=2.5cm, minimum height=1.5cm, above right=1.2cm and 1.2cm of P, label=below:{$NP (\Sigma_1^P)$}] {};
+        \node (CoNP) [ellipse, draw, minimum width=2.5cm, minimum height=1.5cm, above left=1.2cm and 1.2cm of P, label=below:{$CoNP (\Pi_1^P)$}] {};
         
         % Layer 2 (Delta_2^P)
-        \node (Delta2) [ellipse, draw, minimum width=5cm, minimum height=2cm, fit=(NP) (CoNP), label=above:$\Delta_2^P (P^{NP})$] at (0, 3) {};
+        \node (Delta2) [ellipse, draw, minimum width=5cm, minimum height=2cm, fit=(NP) (CoNP), label=above:{$\Delta_2^P (P^{NP})$}] at (0, 3) {};
 
         % Layer 2 (Sigma_2^P, Pi_2^P)
-        \node (Sigma2) [ellipse, draw, minimum width=2.5cm, minimum height=1.5cm, above right=1.2cm and 1.2cm of Delta2, label=below:$\Sigma_2^P (NP^{NP})$] {};
-        \node (Pi2) [ellipse, draw, minimum width=2.5cm, minimum height=1.5cm, above left=1.2cm and 1.2cm of Delta2, label=below:$\Pi_2^P (CoNP^{NP})$] {};
+        \node (Sigma2) [ellipse, draw, minimum width=2.5cm, minimum height=1.5cm, above right=1.2cm and 1.2cm of Delta2, label=below:{$\Sigma_2^P (NP^{NP})$}] {};
+        \node (Pi2) [ellipse, draw, minimum width=2.5cm, minimum height=1.5cm, above left=1.2cm and 1.2cm of Delta2, label=below:{$\Pi_2^P (CoNP^{NP})$}] {};
 
         % Layer 3 (Delta_3^P)
-        \node (Delta3) [ellipse, draw, minimum width=5cm, minimum height=2cm, fit=(Sigma2) (Pi2), label=above:$\Delta_3^P (P^{NP^{NP}})$] at (0, 6) {};
+        \node (Delta3) [ellipse, draw, minimum width=5cm, minimum height=2cm, fit=(Sigma2) (Pi2), label=above:{$\Delta_3^P (P^{NP^{NP}})$}] at (0, 6) {};
 
         % Layer 3 (Sigma_3^P, Pi_3^P)
-        \node (Sigma3) [ellipse, draw, minimum width=2.5cm, minimum height=1.5cm, above right=1.2cm and 1.2cm of Delta3, label=below:$\Sigma_3^P$] {};
-        \node (Pi3) [ellipse, draw, minimum width=2.5cm, minimum height=1.5cm, above left=1.2cm and 1.2cm of Delta3, label=below:$\Pi_3^P$] {};
+        \node (Sigma3) [ellipse, draw, minimum width=2.5cm, minimum height=1.5cm, above right=1.2cm and 1.2cm of Delta3, label=below:{$\Sigma_3^P$}] {};
+        \node (Pi3) [ellipse, draw, minimum width=2.5cm, minimum height=1.5cm, above left=1.2cm and 1.2cm of Delta3, label=below:{$\Pi_3^P$}] {};
 
         % Inclusions
         \draw[->] (P) -- (NP);
@@ -233,16 +233,16 @@ Per ogni $i \ge 0$:
         \node (dots2) at (0, 8) {$\vdots$};
         
         % PSPACE encompassing
-        \node (PSPACE) [ellipse, draw, minimum width=10cm, minimum height=9cm, dashed, fit=(Delta3) (Sigma3) (Pi3), label=above right:$PSPACE$] at (0, 4.5) {};
+        \node (PSPACE) [ellipse, draw, minimum width=10cm, minimum height=9cm, dashed, fit=(Delta3) (Sigma3) (Pi3), label=above right:{$PSPACE$}] at (0, 4.5) {};
 
         % EXPTIME encompassing
-        \node (EXPTIME) [ellipse, draw, minimum width=12cm, minimum height=11cm, dashed, fit=(PSPACE), label=above right:$EXPTIME$] at (0, 5) {};
+        \node (EXPTIME) [ellipse, draw, minimum width=12cm, minimum height=11cm, dashed, fit=(PSPACE), label=above right:{$EXPTIME$}] at (0, 5) {};
         
         % NEXPTIME encompassing
-        \node (NEXPTIME) [ellipse, draw, minimum width=14cm, minimum height=13cm, dashed, fit=(EXPTIME), label=above right:$NEXPTIME$] at (0, 6) {};
+        \node (NEXPTIME) [ellipse, draw, minimum width=14cm, minimum height=13cm, dashed, fit=(EXPTIME), label=above right:{$NEXPTIME$}] at (0, 6) {};
 
         % R encompassing
-        \node (R) [ellipse, draw, minimum width=16cm, minimum height=15cm, dashed, fit=(NEXPTIME), label=above right:$R$] at (0, 7) {};
+        \node (R) [ellipse, draw, minimum width=16cm, minimum height=15cm, dashed, fit=(NEXPTIME), label=above right:{$R$}] at (0, 7) {};
 
     \end{tikzpicture}
     \caption{Struttura della Gerarchia Polinomiale e relazioni con altre classi.}

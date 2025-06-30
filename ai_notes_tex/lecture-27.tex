@@ -10,7 +10,7 @@
 \usepackage{fancyhdr}
 \usepackage{amsthm}
 \usepackage{tikz}
-\usetikzlibrary{automata,positioning,calc,arrows.meta} % Added arrows.meta for better arrow styles
+\usetikzlibrary{automata,positioning,calc,arrows.meta,shapes.geometric} % Added arrows.meta for better arrow styles and shapes.geometric for diamond
 
 % Definizione degli ambienti
 \newtheorem{theorem}{Teorema}
@@ -175,6 +175,7 @@ Sia $(G, K)$ un'istanza di TSP.
     \end{enumerate}
 Tutti questi passaggi possono essere eseguiti in tempo polinomiale rispetto a $|V|$ e $|E|$.
 Pertanto, TSP è in NP.
+\end{itemize}
 \end{proof}
 
 \subsection{Hardness: TSP è NP-arduo}
@@ -282,7 +283,7 @@ Il grafo $G_\Phi$ sarà costruito in modo da codificare sia gli assegnamenti di 
     \label{fig:general_graph}
     \end{figure}
 
-    In ogni sezione di variabile (es. tra `start_x1` e `end_x1`), un ciclo Hamiltoniano dovrà scegliere di percorrere o tutti gli archi "verdi" (associati a $x_i = \text{TRUE}$) o tutti gli archi "rossi" (associati a $x_i = \text{FALSE}$) per passare tutti i nodi interni di quella sezione. Questo crea $2^n$ percorsi distinti da $S$ a $T$, uno per ogni possibile assegnamento di verità.
+    In ogni sezione di variabile (es. tra $\texttt{start\_x1}$ e $\texttt{end\_x1}$), un ciclo Hamiltoniano dovrà scegliere di percorrere o tutti gli archi "verdi" (associati a $x_i = \text{TRUE}$) o tutti gli archi "rossi" (associati a $x_i = \text{FALSE}$) per passare tutti i nodi interni di quella sezione. Questo crea $2^n$ percorsi distinti da $S$ a $T$, uno per ogni possibile assegnamento di verità.
 
     \item \textbf{Nodi Clausola:} Per ogni clausola $C_j$, aggiungiamo un nodo $c_j$. Questi nodi devono essere visitati da qualsiasi ciclo Hamiltoniano. I nodi clausola sono agganciati alle catene delle variabili.
     \begin{itemize}
@@ -329,7 +330,7 @@ $\Phi$ è soddisfacibile se e solo se $G_\Phi$ ammette un ciclo Hamiltoniano.
 \textbf{($\Rightarrow$) Se $\Phi$ è soddisfacibile:}
 Sia $\sigma$ un assegnamento di verità che soddisfa $\Phi$. Costruiamo un ciclo Hamiltoniano $\pi$ in $G_\Phi$ come segue:
 1.  Inizia da $S$.
-2.  Per ogni variabile $x_i$, se $\sigma(x_i) = \text{TRUE}$, attraversa la catena della variabile $x_i$ (ovvero, da `start_xi` a `end_xi`) seguendo gli archi "verdi" (da $x_{i,j}'$ a $x_{i,j+1}'$ tramite nodi ausiliari). Se $\sigma(x_i) = \text{FALSE}$, segui gli archi "rossi" (da $x_{i,j}''$ a $x_{i,j+1}''$).
+2.  Per ogni variabile $x_i$, se $\sigma(x_i) = \text{TRUE}$, attraversa la catena della variabile $x_i$ (ovvero, da $\texttt{start\_xi} a \texttt{end\_xi}$) seguendo gli archi "verdi" (da $x_{i,j}'$ a $x_{i,j+1}'$ tramite nodi ausiliari). Se $\sigma(x_i) = \text{FALSE}$, segui gli archi "rossi" (da $x_{i,j}''$ a $x_{i,j+1}''$).
 3.  Quando si arriva a un nodo $x_{i,j}'$ (se stiamo sul percorso verde) o $x_{i,j}''$ (se stiamo sul percorso rosso), controlla se la clausola $C_j$ è soddisfatta da questo assegnamento di $x_i$. Poiché $\sigma$ è un assegnamento che soddisfa $\Phi$, ogni clausola $C_j$ è soddisfatta da almeno un letterale.
     *   Se $x_i \in C_j$ e $\sigma(x_i) = \text{TRUE}$, allora mentre si passa per $x_{i,j}'$, possiamo deviare verso $c_j$ (arco da $x_{i,j}'$ a $c_j$) e poi tornare a $x_{i,j}''$ (arco da $c_j$ a $x_{i,j}''$), e poi proseguire il percorso principale.
     *   Se $\neg x_i \in C_j$ e $\sigma(x_i) = \text{FALSE}$, allora mentre si passa per $x_{i,j}''$, possiamo deviare verso $c_j$ (arco da $x_{i,j}''$ a $c_j$) e poi tornare a $x_{i,j}'$ (arco da $c_j$ a $x_{i,j}'$), e poi proseguire il percorso principale.
@@ -343,7 +344,7 @@ Sia $\pi$ un ciclo Hamiltoniano in $G_\Phi$. Dobbiamo dimostrare che da $\pi$ si
 \begin{lemma}
 In un ciclo Hamiltoniano $\pi$ di $G_\Phi$:
 \begin{itemize}
-    \item Il percorso attraverso ciascuna sezione di variabile $x_i$ (da `start_xi` a `end_xi`) deve seguire esclusivamente gli archi "verdi" (da $x_{i,j}'$ a $x_{i,j+1}'$) o esclusivamente gli archi "rossi" (da $x_{i,j}''$ a $x_{i,j+1}''$). Non è possibile alternare tra percorsi verdi e rossi all'interno della stessa sezione, altrimenti si lascerebbero nodi non visitati o si violerebbe la proprietà di ciclo.
+    \item Il percorso attraverso ciascuna sezione di variabile $x_i$ (da $\texttt{start\_xi} a \texttt{end\_xi}$) deve seguire esclusivamente gli archi "verdi" (da $x_{i,j}'$ a $x_{i,j+1}'$) o esclusivamente gli archi "rossi" (da $x_{i,j}''$ a $x_{i,j+1}''$). Non è possibile alternare tra percorsi verdi e rossi all'interno della stessa sezione, altrimenti si lascerebbero nodi non visitati o si violerebbe la proprietà di ciclo.
     \item Se $\pi$ devia in un nodo clausola $c_j$ da $x_{i,j}'$, deve tornare a $x_{i,j}''$. Simmetricamente, se devia da $x_{i,j}''$, deve tornare a $x_{i,j}'$. Non sono possibili "salti" a nodi di altre sezioni di variabili o altre clausole.
 \end{itemize}
 \end{lemma}

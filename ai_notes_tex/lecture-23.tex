@@ -10,7 +10,7 @@
 \usepackage{fancyhdr}
 \usepackage{amsthm}
 \usepackage{tikz}
-\usetikzlibrary{automata,positioning,arrows} % Aggiunto 'arrows' per le frecce nei diagrammi
+\usetikzlibrary{automata,positioning,arrows,shapes.geometric} % Aggiunto 'arrows' per le frecce nei diagrammi e 'shapes.geometric' per ellipse
 
 % Definizione degli ambienti
 \newtheorem{theorem}{Teorema}
@@ -216,6 +216,7 @@ Per dimostrare che FACTOR è in NP, dobbiamo mostrare che esiste una NTM che lo 
         \item Verificare che $p$ divida $n$ (cioè $n \pmod p = 0$). La divisione tra interi può essere eseguita in tempo polinomiale rispetto alla dimensione (numero di bit) degli operandi.
     \end{enumerate}
     Tutti i passaggi di verifica sono polinomiali, quindi $\text{FACTOR} \in \text{NP}$.
+\end{itemize}
 
 \textbf{Parte 2: $\text{FACTOR} \in \text{Co-NP}$}
 Per dimostrare che FACTOR è in Co-NP, dobbiamo mostrare che il suo complemento $\overline{\text{FACTOR}}$ è in NP.

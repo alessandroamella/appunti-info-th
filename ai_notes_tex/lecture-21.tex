@@ -227,6 +227,7 @@ Per dimostrare che $\sigma$ soddisfa $\phi$, dobbiamo mostrare che ogni clausola
 Per ogni oggetto $c_j \in U_\phi$, esso deve essere coperto da un insieme in $P$. Gli unici insiemi in $F_\phi$ che contengono $c_j$ sono $S_{j,1}, S_{j,2}, S_{j,3}$. Dunque, esattamente uno di questi insiemi, diciamo $S_{j,k'} = \{c_j, l_{j,k'}\}$, deve essere in $P$.
 Questo significa che il letterale $\lambda_{j,k'}$ corrispondente a $l_{j,k'}$ deve essere TRUE sotto l'assegnamento $\sigma$. Se $\lambda_{j,k'}$ fosse FALSE sotto $\sigma$, allora l'oggetto $l_{j,k'}$ sarebbe incluso in uno degli insiemi $T_i^{true}$ o $T_i^{false}$ selezionati (poiché $l_{j,k'}$ è falsificato). Ma se $l_{j,k'}$ fosse in un $T_i$ selezionato e anche in $S_{j,k'}$ (che è in $P$), ci sarebbe un'intersezione tra $T_i$ e $S_{j,k'}$, violando la proprietà di disgiunzione di una partizione.
 Pertanto, $\lambda_{j,k'}$ deve essere TRUE sotto $\sigma$, il che significa che la clausola $C_j$ è soddisfatta. Poiché questo vale per ogni $C_j$, $\phi$ è soddisfacibile.
+\end{itemize}
 \end{proof}
 
 Conclusione: Exact Cover è NP-completo.

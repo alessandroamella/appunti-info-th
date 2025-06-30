@@ -50,7 +50,7 @@ La classe \textbf{NP} (Nondeterministic Polynomial time) include tutti i problem
 \end{definition}
 
 \begin{definition}[NP-Hard]
-Un linguaggio $L$ è \textbf{NP-Hard} se per ogni linguaggio $L'$ appartenente a NP, $L'$ si riduce polinomialmente a $L$ ($L' \le_P L$). Intuitivamente, i problemi NP-Hard sono ``almeno difficili quanto'' tutti i problemi in NP.
+Un linguaggio $L$ è \textbf{NP-Hard} se per ogni linguaggio $L'$ appartenente a NP, $L'$ si riduce polinomialmente a $L$ ($L' \le_P L$). Intuitivamente, i problemi NP-Hard sono \textit{almeno difficili quanto} tutti i problemi in NP.
 \end{definition}
 
 \begin{definition}[NP-Complete]
@@ -170,6 +170,7 @@ Consideriamo la formula: $A \land B \implies (C \land D) \lor (E \land F)$
     $(\neg A \lor \neg B \lor D \lor F)$
 \end{enumerate}
 Questa forma finale è una formula in CNF, composta da clausole di 4 letterali.
+\end{example}
 
 \subsubsection{1. Consistenza (C)}
 La clausola $C$ impone vincoli affinché l'assegnamento di verità rappresenti una configurazione coerente della macchina di Turing ad ogni passo.

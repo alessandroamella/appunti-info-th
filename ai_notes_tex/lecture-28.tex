@@ -87,9 +87,9 @@ Sarà valutata l'abilità di argomentazione:
 \subsection{Domanda 1: Macchina di Turing}
 Si definisca una Macchina di Turing (eventualmente non-deterministica e/o multi-nastro) per il seguente linguaggio $L$:
 \[ L = \{ A \# B \# W_1 \# \dots \# W_N \mid A, B, W_i \in \{a,b,c,d\}^+, N = |A| + |B|, \forall i \in [1, N]: W_i = R_i S_i R_i^R S_i, |R_i| \ge 1, |S_i| \ge 1 \} \]
-\textbf{Esempio dato:} $A = \text{`bc`}$, $B = \text{`c`}$. $|A|=2$, $|B|=1 \Rightarrow N = 3$.
-Quindi la stringa sarà della forma `bc#c#W1#W2#W3`.
-Un esempio di $W_i$ è `ab c ba c`, dove $R_i=\text{`ab`}$, $S_i=\text{`c`}$. Allora $R_i^R = \text{`ba`}$. La struttura è $R_i S_i R_i^R S_i$.
+\textbf{Esempio dato:} $A = \text{\texttt{bc}}$, $B = \text{\texttt{c}}$. $|A|=2$, $|B|=1 \Rightarrow N = 3$.
+Quindi la stringa sarà della forma \texttt{bc\#c\#W1\#W2\#W3}.
+Un esempio di $W_i$ è \texttt{ab c ba c}, dove $R_i=\text{\texttt{ab}}$, $S_i=\text{\texttt{c}}$. Allora $R_i^R = \text{\texttt{ba}}$. La struttura è $R_i S_i R_i^R S_i$.
 
 \textit{Nota}: Per la soluzione, qualsiasi approccio funzionante è accettato. È preferito un approccio non-deterministico se applicabile, per dimostrare la comprensione del non determinismo. Si richiede il grafo di transizione della macchina e un breve commento sul funzionamento (e.g., utilizzo dei nastri).
 
@@ -171,6 +171,7 @@ Discutere la decidibilità del seguente linguaggio: $L_{cambio}$ è l'insieme de
     \end{itemize}
     La riduzione è polinomiale in tempo. Dato che $L_u$ è indecidibile, e abbiamo una riduzione da $L_u$ a $L_{cambio}$, allora $L_{cambio}$ è indecidibile.
     In conclusione, $L_{cambio}$ è un linguaggio indecidibile e appartiene a $co-R$ (ma non a $R$).
+\end{itemize}
 
 \subsection{Domanda 6: NP-Completezza}
 \subsubsection{Problema: Transazioni}
@@ -209,6 +210,7 @@ Per dimostrare che il problema delle Transazioni è in NP, dobbiamo mostrare che
         Questo controllo può essere fatto efficientemente. Per esempio, si possono creare liste di accesso per ogni dato: per ogni $d_k$, una lista di transazioni che scrivono su $d_k$. Poi si itera su ogni $d_k$. Se una lista contiene più di una transazione presente in $X$, e tutte queste transazioni scrivono su $d_k$, allora c'è un conflitto. Questo check è polinomiale, $O(|X|^2 \cdot |D|)$ o $O(|D| \cdot |T|^2)$ a seconda dell'implementazione.
     \end{itemize}
     Poiché sia la fase di guess che quella di check sono polinomiali, il problema delle Transazioni appartiene a NP.
+\end{enumerate}
 
 \textbf{Passo 2: NP-Hardness (Riduzione da Independent Set)}
 Dobbiamo mostrare una riduzione polinomiale da Independent Set (IS) al problema delle Transazioni.

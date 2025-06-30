@@ -206,18 +206,29 @@ Il grafo $G$ sarà costruito utilizzando diversi "gadget" (sottografi) che simul
         \draw (F) -- (B);
 
         % Variable Gadgets
-        \foreach \i in {1,2,3,4} {
-            \node[circle, draw, right=2cm of T] (x\i) {$x_{\i}$};
-            \node[circle, draw, below=0.5cm of x\i] (nx\i) {$\neg x_{\i}$};
-            \draw (x\i) -- (nx\i);
-            \draw (x\i) -- (B);
-            \draw (nx\i) -- (B);
-            \ifnum\i<4
-                \pgfmathsetmacro{\nextx}{\i+1}
-                \node[right=1.5cm of x\i] (dummyx\nextx) {};
-                \node[below=0.5cm of dummyx\nextx] (dummynx\nextx) {};
-            \fi
-        }
+        \node[circle, draw, right=2cm of T] (x1) {$x_{1}$};
+        \node[circle, draw, below=0.5cm of x1] (nx1) {$\neg x_{1}$};
+        \draw (x1) -- (nx1);
+        \draw (x1) -- (B);
+        \draw (nx1) -- (B);
+        
+        \node[circle, draw, right=1.5cm of x1] (x2) {$x_{2}$};
+        \node[circle, draw, below=0.5cm of x2] (nx2) {$\neg x_{2}$};
+        \draw (x2) -- (nx2);
+        \draw (x2) -- (B);
+        \draw (nx2) -- (B);
+        
+        \node[circle, draw, right=1.5cm of x2] (x3) {$x_{3}$};
+        \node[circle, draw, below=0.5cm of x3] (nx3) {$\neg x_{3}$};
+        \draw (x3) -- (nx3);
+        \draw (x3) -- (B);
+        \draw (nx3) -- (B);
+        
+        \node[circle, draw, right=1.5cm of x3] (x4) {$x_{4}$};
+        \node[circle, draw, below=0.5cm of x4] (nx4) {$\neg x_{4}$};
+        \draw (x4) -- (nx4);
+        \draw (x4) -- (B);
+        \draw (nx4) -- (B);
 
         % Clause Gadgets (simplified representation for the diagram)
         % The professor's description of the OR gadget is:
@@ -282,6 +293,7 @@ Il grafo $G$ è composto da:
         \item Il nodo "output" di ogni Clause Gadget è poi collegato ai nodi $B$ (Base) e $F$ (False) del Truth Gadget. Questo costringe il nodo "output" ad essere colorato con il colore "Vero" (verde), poiché non può essere "Base" (blu) né "Falso" (rosso) a causa dei suoi collegamenti.
     \end{itemize}
     L'intera costruzione del grafo $G$ è polinomiale nella dimensione della formula $\phi$. Il numero di nodi e archi è proporzionale al numero di variabili e clausole.
+\end{enumerate}
 
 \subsubsection{Dimostrazione dell'Equivalenza}
 

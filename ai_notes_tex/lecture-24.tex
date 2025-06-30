@@ -181,15 +181,15 @@ Function NDTM_REACHABILITY(G, s, t):
 
 \textbf{Analisi dello Spazio:}
 \begin{itemize}
-    \item `current_node`: per memorizzare l'identificativo di un nodo in un grafo con $|V|$ nodi, sono necessari $O(\log |V|)$ bit.
-    \item `next_node`: stessa cosa, $O(\log |V|)$ bit.
-    \item `path_length_counter`: un contatore fino a $|V|$, richiede $O(\log |V|)$ bit.
+    \item \texttt{current\_node}: per memorizzare l'identificativo di un nodo in un grafo con $|V|$ nodi, sono necessari $O(\log |V|)$ bit.
+    \item \texttt{next\_node}: stessa cosa, $O(\log |V|)$ bit.
+    \item \texttt{path\_length\_counter}: un contatore fino a $|V|$, richiede $O(\log |V|)$ bit.
 \end{itemize}
 In totale, lo spazio utilizzato sul nastro di lavoro è $O(\log |V|)$, che è $O(\log n)$ dove $n$ è la dimensione dell'input (che include la rappresentazione del grafo, quindi $|V|$ è $O(n)$).
 
 \textbf{Correttezza:}
 \begin{itemize}
-    \item \textbf{Completezza:} Se esiste un cammino da $s$ a $t$ in $G$, allora esiste un ramo di computazione non deterministica che sceglie correttamente i nodi successivi lungo quel cammino e accetta quando raggiunge $t$. Il vincolo `path_length_counter <= |V|` assicura che anche in presenza di cicli, il cammino non venga esplorato all'infinito e la MT termini. Se un cammino esiste, ne esiste uno senza cicli di lunghezza al più $|V|-1$.
+    \item \textbf{Completezza:} Se esiste un cammino da $s$ a $t$ in $G$, allora esiste un ramo di computazione non deterministica che sceglie correttamente i nodi successivi lungo quel cammino e accetta quando raggiunge $t$. Il vincolo $\texttt{path\_length\_counter} \leq |V|$ assicura che anche in presenza di cicli, il cammino non venga esplorato all'infinito e la MT termini. Se un cammino esiste, ne esiste uno senza cicli di lunghezza al più $|V|-1$.
     \item \textbf{Soundness:} Se la MT accetta, significa che ha trovato una sequenza di nodi validi che formano un cammino da $s$ a $t$.
 \end{itemize}
 Poiché l'algoritmo non deterministico decide correttamente REACHABILITY e usa spazio logaritmico, concludiamo che $\textbf{REACHABILITY} \in \text{NL}$.

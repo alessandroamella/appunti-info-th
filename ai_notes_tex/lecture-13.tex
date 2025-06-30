@@ -10,7 +10,7 @@
 \usepackage{fancyhdr}
 \usepackage{amsthm}
 \usepackage{tikz}
-\usetikzlibrary{automata,positioning, arrows.meta} % Aggiunto arrows.meta per frecce migliori
+\usetikzlibrary{automata,positioning, arrows.meta, calc, fit} % Aggiunto arrows.meta per frecce migliori e fit per i box
 
 % Definizione degli ambienti
 \newtheorem{theorem}{Teorema}[section] % Teoremi numerati per sezione
@@ -57,7 +57,7 @@ Si desidera creare un'applicazione web per la gestione di tornei di calcetto, in
 Inizialmente, la soluzione diretta per questo problema risultava difficile.
 
 \textbf{Problema di Arrivo (B): K-Colorabilità di un Grafo}
-\Si conosceva già un algoritmo funzionante per la K-colorabilità di un grafo.
+Si conosceva già un algoritmo funzionante per la K-colorabilità di un grafo.
 \begin{itemize}
     \item \textbf{Input}: Un grafo $G$ e un numero intero $K$ (numero di colori).
     \item \textbf{Output}: Una colorazione dei nodi di $G$ con $K$ colori tale che nodi adiacenti abbiano colori diversi, oppure un'indicazione che non è possibile.
@@ -126,6 +126,7 @@ Inizialmente, la soluzione diretta per questo problema risultava difficile.
     \item La funzione di riduzione $f$ deve essere \textbf{progettata ad arte} (in modo "sensato") in modo che la soluzione ottenuta dal problema di arrivo possa essere utilmente riconvertita per il problema di partenza.
     \item Se $A$ si riduce a $B$ ($A \le B$), intuitivamente $A$ non è più difficile di $B$.
 \end{itemize}
+\end{example}
 
 \section{Definizione Formale di Riduzione}
 

@@ -72,14 +72,14 @@ Ciò significa che l'appartenenza di una macchina $M$ a una proprietà semantica
 \end{definition}
 
 \begin{example}[Proprietà Strutturale]
-Sia $P_1$ la proprietà: ``la macchina di Turing $M$ ha esattamente 5 stati''.
+Sia $P_1$ la proprietà: \textit{la macchina di Turing $M$ ha esattamente 5 stati}.
 $P_1 = \{ \langle M \rangle \mid M \text{ ha 5 stati} \}$.
 Questa è una proprietà strutturale. Per dimostrare che non è semantica, troviamo un controesempio:
 Siano $M_1$ e $M_2$ due macchine di Turing. $M_1$ ha 5 stati e riconosce un linguaggio $L$. $M_2$ è costruita da $M_1$ aggiungendo uno stato irraggiungibile (o una transizione superflua, ecc.), cosicché $M_2$ abbia 6 stati ma riconosca lo stesso linguaggio $L$. In questo caso, $L(M_1) = L(M_2)$, ma $\langle M_1 \rangle \in P_1$ mentre $\langle M_2 \rangle \notin P_1$. Dunque $P_1$ non è semantica.
 \end{example}
 
 \begin{example}[Proprietà Semantica]
-Sia $P_2$ la proprietà: ``il linguaggio riconosciuto da $M$ contiene solo stringhe di lunghezza pari''.
+Sia $P_2$ la proprietà: \textit{il linguaggio riconosciuto da $M$ contiene solo stringhe di lunghezza pari}.
 $P_2 = \{ \langle M \rangle \mid \forall s \in L(M), |s| \text{ è pari} \}$.
 Questa è una proprietà semantica. Se $L(M_1) = L(M_2)$, allora o tutte le stringhe di $L(M_1)$ (e quindi di $L(M_2)$) hanno lunghezza pari, o nessuna (o alcune) ce l'hanno. L'appartenenza a $P_2$ dipende solo dal linguaggio.
 \end{example}

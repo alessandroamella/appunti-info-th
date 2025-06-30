@@ -25,10 +25,6 @@
 \hypersetup{
     pdftitle={Lezione di Informatica Teorica: Macchina di Turing Universale e Linguaggi Indecidibili},
     pdfauthor={Appunti da Trascrizione AI},
-    colorlinks=true,
-    linkcolor=blue,
-    citecolor=green,
-    urlcolor=cyan,
 }
 
 % Impostazioni per header e footer
@@ -84,25 +80,25 @@ La codifica segue queste convenzioni:
 \begin{enumerate}
     \item \textbf{Stati ($Q_i$)}: Ogni stato $Q_i$ è codificato con una sequenza di $i$ zeri.
     \begin{itemize}
-        \item $Q_1$ è lo stato iniziale, codificato come `0`.
-        \item $Q_2$ è lo stato accettante, codificato come `00`.
-        \item Esempio: $Q_5$ è codificato come `00000`.
+        \item $Q_1$ è lo stato iniziale, codificato come $0$.
+        \item $Q_2$ è lo stato accettante, codificato come $00$.
+        \item Esempio: $Q_5$ è codificato come $00000$.
     \end{itemize}
     \item \textbf{Simboli di Nastro ($X_j$)}: Ogni simbolo $X_j$ è codificato con una sequenza di $j$ zeri.
     \begin{itemize}
-        \item $X_1$ è il simbolo `0`, codificato come `0`.
-        \item $X_2$ è il simbolo `1`, codificato come `00`.
-        \item $X_3$ è il simbolo blank ($\phi$), codificato come `000`.
+        \item $X_1$ è il simbolo $0$, codificato come $0$.
+        \item $X_2$ è il simbolo $1$, codificato come $00$.
+        \item $X_3$ è il simbolo blank ($\phi$), codificato come $000$.
     \end{itemize}
     \item \textbf{Direzioni ($D_m$)}:
     \begin{itemize}
-        \item $D_1$ (sinistra, L) è codificato come `0`.
-        \item $D_2$ (destra, R) è codificato come `00`.
+        \item $D_1$ (sinistra, L) è codificato come $0$.
+        \item $D_2$ (destra, R) è codificato come $00$.
     \end{itemize}
     \item \textbf{Separatori}:
     \begin{itemize}
-        \item Tra i componenti di una singola transizione (es. $Q_i$ e $X_j$), si usa il simbolo `1`.
-        \item Tra diverse transizioni (coppie $\delta(\dots)$), si usa la sequenza `11`.
+        \item Tra i componenti di una singola transizione (es. $Q_i$ e $X_j$), si usa il simbolo $1$.
+        \item Tra diverse transizioni (coppie $\delta(\dots)$), si usa la sequenza $11$.
     \end{itemize}
 \end{enumerate}
 
@@ -118,22 +114,22 @@ Codifica della transizione: $\delta(Q_3, \phi) = (Q_5, 0, \rightarrow)$
 La codifica di questa singola transizione sarà:
 $\textbf{000} \text{1} \textbf{000} \text{1} \textbf{00000} \text{1} \textbf{0} \text{1} \textbf{00}$
 
-La codifica completa di una MT è la concatenazione di tutte le sue transizioni, separate da `11`. Ad esempio:
+La codifica completa di una MT è la concatenazione di tutte le sue transizioni, separate da $11$. Ad esempio:
 $\text{Codifica}(\delta_1) \textbf{11} \text{Codifica}(\delta_2) \textbf{11} \text{Codifica}(\delta_3) \dots$
 \end{example}
 
 \begin{remark}
-Non tutte le stringhe binarie corrisponderanno a una MT validamente codificata. Per convenzione, le stringhe che non seguono il formato di codifica (es. quelle con `111` o `1111`, o quelle non interpretabili come programma) sono considerate codifiche di MT che rifiutano qualsiasi input (il cui linguaggio è vuoto).
+Non tutte le stringhe binarie corrisponderanno a una MT validamente codificata. Per convenzione, le stringhe che non seguono il formato di codifica (es. quelle con $111$ o $1111$, o quelle non interpretabili come programma) sono considerate codifiche di MT che rifiutano qualsiasi input (il cui linguaggio è vuoto).
 \end{remark}
 
 \subsection{Architettura e Funzionamento della UTM}
 
-La UTM ($M_U$) è tipicamente una Macchina di Turing a quattro nastri. Riceve come input una stringa che è la concatenazione della codifica di una MT $M$ e di una stringa $w$, separate da una sequenza di `1` (es. `111` per distinguere dalla separazione delle transizioni). L'obiettivo di $M_U$ è simulare il comportamento di $M$ su $w$.
+La UTM ($M_U$) è tipicamente una Macchina di Turing a quattro nastri. Riceve come input una stringa che è la concatenazione della codifica di una MT $M$ e di una stringa $w$, separate da una sequenza di $1$ (es. $111$ per distinguere dalla separazione delle transizioni). L'obiettivo di $M_U$ è simulare il comportamento di $M$ su $w$.
 
 I quattro nastri di $M_U$ hanno i seguenti ruoli:
 \begin{enumerate}
     \item \textbf{Nastro 1 (Input/Programma $M$)}: Contiene la stringa di codifica di $M$. Questo nastro è letto dalla $M_U$ per conoscere le regole di transizione di $M$ e non viene modificato durante la simulazione.
-    \item \textbf{Nastro 2 (Nastro Simulato di $M$)}: Contiene la rappresentazione del nastro della MT $M$. Inizialmente, l'input $w$ viene copiato su questo nastro e ricodificato nel formato dei simboli $X_j$ (es. `0` diventa `0`, `1` diventa `00`, etc.). La testina della $M_U$ su questo nastro simula la posizione della testina di $M$.
+    \item \textbf{Nastro 2 (Nastro Simulato di $M$)}: Contiene la rappresentazione del nastro della MT $M$. Inizialmente, l'input $w$ viene copiato su questo nastro e ricodificato nel formato dei simboli $X_j$ (es. $0$ diventa $0$, $1$ diventa $00$, etc.). La testina della $M_U$ su questo nastro simula la posizione della testina di $M$.
     \item \textbf{Nastro 3 (Stato Simulato di $M$)}: Contiene la codifica dello stato corrente in cui si trova la MT $M$ nella simulazione. Inizia con lo stato iniziale di $M$ ($Q_1$).
     \item \textbf{Nastro 4 (Scratchpad/Ausiliario)}: Utilizzato per operazioni temporanee, come la gestione dello spazio sul Nastro 2 quando un simbolo deve essere riscritto e la sua codifica occupa più o meno spazio.
 \end{enumerate}

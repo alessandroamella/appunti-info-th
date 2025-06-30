@@ -438,7 +438,7 @@ Dobbiamo mostrare che $M \in \overline{\text{HALT}_\epsilon} \iff N \in \text{HA
 \textbf{Direzione 1: $M \in \overline{\text{HALT}_\epsilon} \implies N \in \text{HALT}_\forall$}
 Se $M \in \overline{\text{HALT}_\epsilon}$, significa che $M$ non si arresta sulla stringa vuota $\epsilon$.
 Poiché $M$ non si arresta mai su $\epsilon$, la simulazione di $M$ su $\epsilon$ per un numero finito di passi $t = |w|$ (la lunghezza dell'input di $N$) non raggiungerà mai uno stato di arresto.
-Di conseguenza, per qualsiasi input $w$ dato a $N$, la condizione `simulazione_m_terminata` sarà sempre falsa. Quindi $N$ si arresterà sempre (rifiutando).
+Di conseguenza, per qualsiasi input $w$ dato a $N$, la condizione \texttt{simulazione\_m\_terminata} sarà sempre falsa. Quindi $N$ si arresterà sempre (rifiutando).
 Dunque, $N$ si arresta su ogni input $w$. Per definizione, $N \in \text{HALT}_\forall$.
 
 \textbf{Direzione 2: $M \notin \overline{\text{HALT}_\epsilon} \implies N \notin \text{HALT}_\forall$}
@@ -446,9 +446,9 @@ Se $M \notin \overline{\text{HALT}_\epsilon}$, significa che $M$ si arresta sull
 Sia $k$ il numero di passi dopo i quali $M$ si arresta su $\epsilon$.
 \begin{itemize}
     \item Se $N$ riceve un input $w$ tale che $|w| < k$:
-    $N$ simulerà $M$ su $\epsilon$ per $|w|$ passi. Poiché $|w| < k$, $M$ non si sarà ancora arrestata. La condizione `simulazione_m_terminata` sarà falsa, e $N$ si arresterà (rifiutando).
+    $N$ simulerà $M$ su $\epsilon$ per $|w|$ passi. Poiché $|w| < k$, $M$ non si sarà ancora arrestata. La condizione \texttt{simulazione\_m\_terminata} sarà falsa, e $N$ si arresterà (rifiutando).
     \item Se $N$ riceve un input $w$ tale che $|w| \ge k$:
-    $N$ simulerà $M$ su $\epsilon$ per $|w|$ passi. Poiché $|w| \ge k$, $M$ si arresterà entro $k$ passi. La condizione `simulazione_m_terminata` sarà vera, e $N$ entrerà in un loop infinito.
+    $N$ simulerà $M$ su $\epsilon$ per $|w|$ passi. Poiché $|w| \ge k$, $M$ si arresterà entro $k$ passi. La condizione \texttt{simulazione\_m\_terminata} sarà vera, e $N$ entrerà in un loop infinito.
 \end{itemize}
 Poiché $N$ si arresta su alcuni input (quelli con lunghezza $< k$) e non si arresta su altri input (quelli con lunghezza $\ge k$), $N$ non si arresta su *ogni* input.
 Dunque, $N \notin \text{HALT}_\forall$.
