@@ -15,6 +15,7 @@ node_modules/
 *.synctex.gz(busy)
 # remove releases
 *.pdf
+!ai_notes_pdf/*.pdf
 appunti_completi.tex
 *-content.tex
 *.acn
