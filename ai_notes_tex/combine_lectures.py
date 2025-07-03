@@ -168,6 +168,8 @@ def create_master_document(
                 master_doc.write(f"\\chapter{{{title}}}\n\n")
                 master_doc.write(body)
                 master_doc.write("\n\n")
+            else:
+                print(f"Warning: Skipping '{filename}' due to extraction error.")
 
         # 4. End the document
         master_doc.write("\\end{document}\n")
@@ -176,8 +178,11 @@ def create_master_document(
     print("To compile with table of contents, run these commands:")
     print(f"  {compiler} --shell-escape {output_file}")
     print(f"  {compiler} --shell-escape {output_file}")
+    print(f"  {compiler} --shell-escape {output_file}")
     print(f"Note: Using {compiler} because: {reason}")
-    print("Note: Running twice is needed to generate the table of contents properly.")
+    print(
+        "Note: Running three times is needed to properly generate the table of contents and fix page numbers."
+    )
 
     # Ask user if they want to auto-compile
     response = (
@@ -192,7 +197,7 @@ def create_master_document(
             print("Running first compilation...")
             result1 = subprocess.run(
                 [compiler, "--shell-escape", output_file],
-                capture_output=True,
+                capture_output=False,
                 text=True,
                 cwd=".",
             )
@@ -206,9 +211,49 @@ def create_master_document(
                     cwd=".",
                 )
                 if result2.returncode == 0:
-                    print("✓ Compilation complete! PDF generated successfully.")
-                    pdf_file = output_file.replace(".tex", ".pdf")
-                    print(f"📄 Output: {pdf_file}")
+                    print("✓ Second compilation successful!")
+                    print("Running third compilation to fix page numbers in TOC...")
+                    result3 = subprocess.run(
+                        [compiler, "--shell-escape", output_file],
+                        capture_output=True,
+                        text=True,
+                        cwd=".",
+                    )
+                    if result3.returncode == 0:
+                        print("✓ Compilation complete! PDF generated successfully.")
+                        pdf_file = output_file.replace(".tex", ".pdf")
+                        print(f"📄 Output: {pdf_file}")
+
+                        # Clean up cache files
+                        print("Cleaning up cache files...")
+                        try:
+                            cache_result = subprocess.run(
+                                ["./rm_cache.sh"],
+                                capture_output=True,
+                                text=True,
+                                cwd=".",
+                            )
+                            if cache_result.returncode == 0:
+                                print("✓ Cache cleanup successful!")
+                            else:
+                                print(
+                                    "⚠ Cache cleanup failed, but PDF was generated successfully."
+                                )
+                                if cache_result.stderr:
+                                    print(f"Cache cleanup error: {cache_result.stderr}")
+                        except FileNotFoundError:
+                            print("⚠ rm_cache.sh not found. Skipping cache cleanup.")
+                        except Exception as e:
+                            print(f"⚠ Cache cleanup error: {e}")
+                    else:
+                        print("✗ Third compilation failed.")
+                        if result3.stderr:
+                            print("Error output:")
+                            print(
+                                result3.stderr[:500] + "..."
+                                if len(result3.stderr) > 500
+                                else result3.stderr
+                            )
                 else:
                     print("✗ Second compilation failed.")
                     if result2.stderr:

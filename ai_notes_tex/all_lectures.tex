@@ -9,6 +9,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath, amssymb, amsfonts}
 \usepackage{graphicx}
+\usepackage{dot2texi}
 \usepackage[a4paper, total={6in, 8in}]{geometry}
 
 % --- Fonts and Appearance ---
@@ -42,7 +43,9 @@
     graphs,
     graphdrawing,
     quotes,
-    shapes.geometric
+    shapes.geometric,
+    snakes,
+    shapes
 }
 
 % --- Theorem-like Environments (numbered within sections for consistency) ---
@@ -739,6 +742,298 @@ Gli automi a stati finiti non sono in grado di riconoscere il linguaggio $L = \{
 \textbf{Conclusione}: L'assunzione iniziale che un DFA possa decidere il linguaggio $L = \{a^m b^m \mid m \geq 0\}$ è falsa. Gli automi a stati finiti non hanno la capacità di "contare" in modo arbitrario e confrontare quantità.
 
 Questa limitazione fondamentale degli automi a stati finiti ci spinge a cercare modelli di calcolo più potenti, in grado di svolgere compiti come il conteggio e la memorizzazione di informazioni arbitrarie. Il prossimo passo è l'introduzione delle \emph{Macchine di Turing}, che si dimostreranno essere un modello di calcolo universale, in grado di simulare qualsiasi algoritmo.
+
+
+% =====================================================
+% --- START LECTURE 04 ---
+% =====================================================
+
+\chapter{Macchine di Turing e Linguaggi Decidibili}
+
+
+
+\section{Introduzione e Recap}
+
+Questa lezione riprende e approfondisce i concetti introdotti precedentemente, con un focus sulla formalizzazione dei problemi e l'introduzione di un modello di calcolo più potente: la Macchina di Turing.
+
+\subsection{Problemi e Linguaggi}
+Abbiamo studiato la complessità non degli algoritmi, ma dei \textbf{problemi}. La differenza sostanziale è che qui formalizziamo i problemi stessi.
+
+Esistono due tipi principali di problemi:
+\begin{itemize}
+    \item \textbf{Problemi di Ricerca}: Le risposte possono essere varie.
+    \item \textbf{Problemi di Decisione}: La risposta è sempre un booleano (Sì/No).
+\end{itemize}
+
+I problemi di decisione possono riguardare vari contesti (matrici, grafi, immagini, testo, ecc.). Per semplificare l'analisi, si scelgono problemi che possono essere formalizzati in modo uniforme. Abbiamo scelto di studiare i \textbf{problemi di decidere linguaggi}.
+
+\begin{definition}[Decidere un linguaggio]
+    Decidere un linguaggio significa verificare se una data stringa appartiene o meno a un determinato linguaggio.
+    \begin{itemize}
+        \item \textbf{Input}: Una stringa.
+        \item \textbf{Linguaggio}: Fa parte della definizione del problema, non dell'input.
+        \item \textbf{Output}: Sì/No (la stringa appartiene al linguaggio?).
+    \end{itemize}
+\end{definition}
+
+\textbf{Codifica dei Problemi in Linguaggi}:
+È possibile ricodificare problemi di decisione arbitrari in problemi di decisione di linguaggi.
+\begin{example}[Problema dei Grafi Totalmente Connessi]
+    \textbf{Problema}: Dato un grafo, stabilire se è totalmente connesso.
+    \begin{itemize}
+        \item Questo è un problema di decisione (risposta Sì/No).
+        \item \textbf{Codifica in un linguaggio}: Possiamo inventare un alfabeto $\Sigma$ e una codifica tale per cui le stringhe che fanno parte del linguaggio $L_{GC}$ sono solo quelle stringhe che, secondo la nostra codifica, rappresentano grafi totalmente connessi.
+        \item Una stringa in input che non codifica un grafo (secondo la nostra codifica) non appartiene a $L_{GC}$.
+        \item Le stringhe che codificano grafi non totalmente connessi non appartengono a $L_{GC}$.
+    \end{itemize}
+    In questo modo, decidere se una stringa appartiene a $L_{GC}$ equivale a decidere se il grafo codificato è totalmente connesso.
+\end{example}
+
+Questa codifica può essere estesa anche ai problemi di ricerca:
+\begin{itemize}
+    \item Un problema di ricerca è una relazione binaria tra stringhe (input-output).
+    \item Per codificare un problema di ricerca in un linguaggio, il linguaggio conterrebbe stringhe che codificano le coppie (input, output) valide per quel problema. Decidere l'appartenenza di una stringa a tale linguaggio implicherebbe, in qualche modo, il calcolo della soluzione.
+\end{itemize}
+Per semplicità, in questo corso ci concentreremo sui problemi di decisione e sulla loro formalizzazione come problemi di decisione di linguaggi.
+
+\subsection{Automi a Stati Finiti (Recap)}
+Per determinare se un linguaggio è decidibile (intuitivamente, se esiste un algoritmo che lo risolve), abbiamo introdotto i modelli di calcolo. Inizialmente, abbiamo visto gli \textbf{Automi a Stati Finiti (FA)}.
+
+\begin{itemize}
+    \item \textbf{DFA (Deterministic Finite Automata)}: Per ogni stato e simbolo in input, esiste una sola transizione possibile.
+    \item \textbf{NFA (Non-Deterministic Finite Automata)}: Per ogni stato e simbolo in input, possono esserci più transizioni possibili. Un NFA accetta una stringa se esiste \emph{almeno un percorso} di computazione che porta a uno stato accettante consumando tutto l'input.
+\end{itemize}
+
+\textbf{Potere Computazionale degli FA}:
+Gli NFA e i DFA hanno lo stesso potere computazionale. Ogni NFA può essere convertito in un DFA equivalente. Il tempo di esecuzione è lineare rispetto alla lunghezza dell'input.
+
+\begin{example}[Linguaggio $L = \{a^n b^n \mid n \ge 0\}$]
+    Questo linguaggio, che rappresenta stringhe con $n$ 'a' seguite da $n$ 'b' (es. \texttt{aabb}, \texttt{aaabbb}), \textbf{non può essere riconosciuto da un automa a stati finiti}.
+    \begin{itemize}
+        \item \textbf{Intuito}: Un FA non ha memoria sufficiente per "contare" le 'a' e confrontarle con le 'b'. Ha un numero finito di stati, quindi non può memorizzare un numero arbitrario $n$.
+    \end{itemize}
+    Questo implica la necessità di un modello di calcolo più potente.
+\end{example}
+
+\subsection{Linguaggi Regolari ed Espressioni Regolari}
+Gli automi a stati finiti (DFA/NFA) sono in grado di riconoscere tutti e soli i \textbf{linguaggi regolari}.
+
+\begin{definition}[Linguaggio Regolare ed Espressioni Regolari]
+    Sia $\Sigma$ un alfabeto. Un linguaggio regolare su $\Sigma$ è un linguaggio le cui stringhe possono essere descritte da \textbf{espressioni regolari}.
+    Le regole per costruire espressioni regolari sono:
+    \begin{itemize}
+        \item Se $\alpha \in \Sigma$, allora $\alpha$ è un'espressione regolare (es. $0$, $1$).
+        \item Se $\alpha$ e $\beta$ sono espressioni regolari, allora anche la loro \textbf{concatenazione} $\alpha\beta$ è un'espressione regolare (es. $00$, $0111$).
+        \item Se $\alpha$ e $\beta$ sono espressioni regolari, allora anche la loro \textbf{disgiunzione} $\alpha \lor \beta$ (spesso scritta $\alpha + \beta$ o $\alpha | \beta$) è un'espressione regolare. Rappresenta le stringhe che sono generate da $\alpha$ oppure da $\beta$ (es. $0 | 11$ accetta $0$ o $11$).
+        \item Se $\alpha$ è un'espressione regolare, allora $\alpha^*$ (Kleene Star) è un'espressione regolare. Rappresenta una concatenazione di zero o più occorrenze di $\alpha$ (es. $(10)*$ accetta $\epsilon$, $10$, $1010$, ...).
+        \item A volte si usa $\alpha^+$ (Kleene Plus) per indicare una concatenazione di una o più occorrenze di $\alpha$ (es. $(10)+$ accetta $10$, $1010$, ... ma non $\epsilon$).
+    \end{itemize}
+\end{definition}
+
+\textbf{Proprietà}: I linguaggi riconoscibili dagli automi a stati finiti sono esattamente i linguaggi regolari. Il linguaggio $\{a^n b^n \mid n \ge 0\}$ \textbf{non è un linguaggio regolare}, motivo per cui gli FA non possono riconoscerlo.
+
+\section{Macchine di Turing (TM)}
+Per risolvere problemi più complessi come $\{a^n b^n \mid n \ge 0\}$, è necessario un modello di calcolo più potente: la Macchina di Turing.
+
+\subsection{Introduzione e Concetti Base}
+La Macchina di Turing è un modello astratto di calcolo ideato da Alan Turing negli anni '30 per formalizzare il concetto di "calcolabilità".
+
+\textbf{Differenze chiave rispetto agli Automi a Stati Finiti}:
+\begin{itemize}
+    \item \textbf{Nastro Infinito}: La TM opera su un nastro infinito in entrambe le direzioni, diviso in celle.
+    \item \textbf{Simbolo Blank ($\texttt{B}$)}: Le celle vuote del nastro contengono un simbolo speciale (blank) per delimitare la stringa di input.
+    \item \textbf{Testina di Lettura/Scrittura}: La TM ha una testina che può non solo leggere un simbolo, ma anche \emph{scrivere} (sovrascrivere) un simbolo sulla cella corrente.
+    \item \textbf{Movimento Bidirezionale della Testina}: La testina può spostarsi a destra ($\texttt{R}$) o a sinistra ($\texttt{L}$) lungo il nastro.
+\end{itemize}
+Queste capacità conferiscono alla TM una "memoria" infinita e la capacità di manipolare i dati sul nastro, superando le limitazioni degli FA.
+
+\textbf{Funzionamento}:
+Una TM è un automa con un numero finito di stati. Ogni passo della computazione è determinato dallo stato corrente e dal simbolo letto dalla testina. La TM esegue le seguenti azioni:
+\begin{enumerate}
+    \item Transisce a un nuovo stato.
+    \item Scrive un simbolo sulla cella corrente (sovrascrivendo quello precedente).
+    \item Sposta la testina a destra o a sinistra.
+\end{enumerate}
+
+\subsection{Definizione Formale della Macchina di Turing}
+\begin{definition}[Macchina di Turing]
+    Una Macchina di Turing (TM) $M$ è una 7-tupla:
+    $M = \langle \Sigma, \Gamma, B, Q, q_0, F, \delta \rangle$
+    dove:
+    \begin{itemize}
+        \item $\Sigma$: è l'alfabeto di input (insieme finito di simboli che possono apparire nella stringa di input).
+        \item $\Gamma$: è l'alfabeto di nastro (insieme finito di simboli che possono essere scritti sul nastro). Deve essere $\Sigma \subseteq \Gamma$.
+        \item $B \in \Gamma \setminus \Sigma$: è il simbolo di blank, non è parte dell'input e indica una cella vuota.
+        \item $Q$: è l'insieme finito degli stati interni della macchina.
+        \item $q_0 \in Q$: è lo stato iniziale.
+        \item $F \subseteq Q$: è l'insieme degli stati accettanti (o finali).
+        \item $\delta: Q \times \Gamma \to Q \times \Gamma \times \{L, R\}$: è la funzione di transizione (parziale). Data una coppia (stato corrente, simbolo letto), restituisce una tripla (nuovo stato, simbolo da scrivere, direzione del movimento della testina).
+    \end{itemize}
+\end{definition}
+
+\subsection{Esempio: Macchina di Turing per $L = \{a^n b^n \mid n \ge 0\}$}
+\textbf{Strategia intuitiva}:
+L'idea è "barrare" una 'a' dal lato sinistro e una 'b' dal lato destro ad ogni passo, tornando indietro e avanti fino a quando tutte le 'a' e 'b' sono state "consumate". Se il numero di 'a' e 'b' è lo stesso, il nastro sarà vuoto alla fine.
+
+\begin{figure}[h!]
+    \centering
+    \begin{tikzpicture}[
+        shorten >=1pt, node distance=2cm, on grid, auto,
+        state/.style={rectangle, draw, minimum width=2.5cm, minimum height=0.7cm},
+        head/.style={circle, draw, minimum size=0.5cm, fill=gray!20}
+    ]
+    \node[state] (tape) at (0,0) {};
+    \draw (tape.north west) -- (tape.south west) node[below=0.2cm] {$\dots$};
+    \draw (tape.north east) -- (tape.south east) node[below=0.2cm] {$\dots$};
+    \foreach \x/\y in {-2.5/B, -1.5/B, -0.5/A, 0.5/A, 1.5/B, 2.5/B} {
+        \draw (\x,0.35) rectangle (\x+1,-0.35) node[pos=.5] {\y};
+    }
+    \node[head] (head) at (0,1.2) {$\delta$};
+    \draw[->] (head) -- (0,0.35);
+    \node[below=0.5cm of tape] (blank_sym) {$\texttt{B}$ (Blank)};
+    \end{tikzpicture}
+    \caption{Rappresentazione del nastro della Macchina di Turing con testina.}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \input{../tm.tex}
+    \caption{Diagramma di stati per la Macchina di Turing che riconosce $L = \{A^n B^n \mid n \ge 0\}$.\\ \small{\textbf{Nota}}: Le etichette degli archi sono nel formato: \texttt{Letto/Scritto, Movimento}. Per chiarezza, il simbolo \textit{blank} è indicato con $\sqcup$. L'automa implementa la logica descritta nel testo.}
+\end{figure}
+
+
+\textbf{Traccia del funzionamento (con correzioni al diagramma basate sulla discussione):}
+\begin{enumerate}
+    \item \textbf{$q_0$ (Stato Iniziale)}:
+    \begin{itemize}
+        \item Se legge \texttt{A}: Scrive \texttt{B} (blank), sposta a destra ($\texttt{R}$), va in $q_1$. (Cancella la prima 'a').
+        \item Se legge \texttt{B} o \texttt{B} (blank, dopo aver cancellato tutto): Significa che non ci sono più 'a' da cancellare, quindi verifica se anche le 'b' sono finite. Se legge \texttt{B} e sposta a destra, va in $q_4$ (stato accettante).
+    \end{itemize}
+    
+    \item \textbf{$q_1$ (Cerca l'ultima 'b')}:
+    \begin{itemize}
+        \item Se legge \texttt{A}: Scrive \texttt{A}, sposta a destra ($\texttt{R}$), rimane in $q_1$. (Salta le 'a' rimanenti).
+        \item Se legge \texttt{B}: Scrive \texttt{B}, sposta a destra ($\texttt{R}$), rimane in $q_1$. (Salta le 'b' fino alla fine).
+        \item Se legge \texttt{B} (blank): Scrive \texttt{B}, sposta a sinistra ($\texttt{L}$), va in $q_2$. (Ha raggiunto la fine della stringa, torna indietro per trovare l'ultima 'b').
+    \end{itemize}
+    
+    \item \textbf{$q_2$ (Cancella l'ultima 'b')}:
+    \begin{itemize}
+        \item Se legge \texttt{B}: Scrive \texttt{B} (blank), sposta a sinistra ($\texttt{L}$), va in $q_3$. (Cancella l'ultima 'b' e inizia a tornare all'inizio della stringa).
+    \end{itemize}
+    
+    \item \textbf{$q_3$ (Torna all'inizio)}:
+    \begin{itemize}
+        \item Se legge \texttt{A}: Scrive \texttt{A}, sposta a sinistra ($\texttt{L}$), rimane in $q_3$. (Salta le 'a' rimanenti, andando a sinistra).
+        \item Se legge \texttt{B}: Scrive \texttt{B}, sposta a sinistra ($\texttt{L}$), rimane in $q_3$. (Salta le 'b' rimanenti, andando a sinistra).
+        \item Se legge \texttt{B} (blank): Scrive \texttt{B}, sposta a destra ($\texttt{R}$), va in $q_0$. (Ha raggiunto l'inizio della stringa, torna a $q_0$ per la prossima iterazione).
+    \end{itemize}
+    
+    \item \textbf{$q_4$ (Stato Accettante)}:
+    \begin{itemize}
+        \item Questo è uno stato accettante. Se la TM raggiunge $q_4$, la stringa è accettata.
+    \end{itemize}
+\end{enumerate}
+
+\textbf{Gestione di stringhe "strane" (e.g., \texttt{ABaAB})}:
+La macchina come progettata dovrebbe rifiutare stringhe che non seguono il pattern $a^*b^*$.
+\begin{itemize}
+    \item Se $q_0$ legge \texttt{B} all'inizio, si muove a $q_4$, quindi accetterebbe la stringa vuota $\epsilon$. Ma se è $B$ e non $\epsilon$, si muoverebbe a $q_4$ e accetterebbe una stringa di soli $B$s (e.g., $B$). Questo è un dettaglio che richiede un'attenzione specifica sul caso base $\epsilon$ o stringhe di soli $B$s.
+    \item Se in $q_1$ (dopo aver cancellato la prima 'a' e spostato a destra) la macchina incontra un'altra 'a' dopo una 'b', non ci sono transizioni definite per questa sequenza, e la macchina si blocca, rifiutando la stringa.
+\end{itemize}
+
+\subsection{Computazione di una Macchina di Turing}
+Per formalizzare il comportamento di una TM, si introduce il concetto di \textbf{configurazione}.
+
+\begin{definition}[Configurazione di una TM]
+    Una \textbf{configurazione} di una TM $M$ è una fotografia dello stato corrente di esecuzione della macchina. È rappresentata da una stringa che include:
+    \begin{itemize}
+        \item La parte non-blank del nastro.
+        \item Lo stato corrente della TM.
+        \item La posizione della testina sul nastro.
+    \end{itemize}
+    La notazione comune è $uqv$, dove $u$ è la stringa sul nastro a sinistra della testina, $q$ è lo stato corrente, e $v$ è la stringa sul nastro a destra della testina (incluso il simbolo letto dalla testina, che è il primo simbolo di $v$). Si omettono i blank a meno che non siano rilevanti per la posizione della testina.
+    \begin{example}
+        \begin{itemize}
+            \item $A q_1 BB$: La stringa sul nastro è $\texttt{ABB}$, la TM è nello stato $q_1$, e la testina sta leggendo il primo $\texttt{B}$.
+            \item $ABB q_1 \texttt{B}$: La stringa sul nastro è $\texttt{ABB}$, la TM è nello stato $q_1$, e la testina sta leggendo il primo blank a destra della stringa.
+        \end{itemize}
+    \end{example}
+\end{definition}
+
+\begin{definition}[Successore Legale di una Configurazione]
+    Date due configurazioni $C_1$ e $C_2$ per una TM $M$, diciamo che $C_2$ è un \textbf{successore legale} (o raggiungibile in un passo) di $C_1$ rispetto a $M$, e scriviamo $C_1 \xrightarrow{M} C_2$, se $C_2$ è la configurazione che $M$ raggiunge partendo da $C_1$ ed eseguendo un solo passo secondo la sua funzione di transizione $\delta$.
+    \begin{example}
+        Per la TM di $a^n b^n$, se $C_1 = q_0 AABB$, allora $C_2 = B q_1 ABB$ (dopo aver cancellato la prima A e mosso a destra).
+    \end{example}
+\end{definition}
+
+\begin{definition}[Configurazione Iniziale]
+    La \textbf{configurazione iniziale} di una TM $M$ su una stringa di input $w = w_1 w_2 \dots w_n$ è $q_0 w_1 w_2 \dots w_n$. Si assume che la testina sia sul primo simbolo di $w$.
+\end{definition}
+
+\begin{definition}[Configurazione Finale]
+    Una \textbf{configurazione finale} è una configurazione $C$ per la quale la funzione di transizione $\delta$ non è definita per la combinazione (stato di $C$, simbolo letto in $C$). In altre parole, la macchina si blocca.
+\end{definition}
+
+\begin{definition}[Configurazione Accettante]
+    Una \textbf{configurazione accettante} è una configurazione finale il cui stato corrente appartiene all'insieme degli stati accettanti $F$.
+\end{definition}
+
+\begin{definition}[Configurazione Rifiutante]
+    Una \textbf{configurazione rifiutante} è una configurazione finale il cui stato corrente \textbf{non} appartiene all'insieme degli stati accettanti $F$.
+\end{definition}
+
+\begin{definition}[Computazione Parziale]
+    Una \textbf{computazione parziale} di una TM $M$ è una sequenza di configurazioni $C_1, C_2, \dots, C_k$ tale che $C_i \xrightarrow{M} C_{i+1}$ per ogni $1 \le i < k$.
+\end{definition}
+
+\begin{definition}[Computazione (Completa)]
+    Una \textbf{computazione} di una TM $M$ su una stringa di input $w$ è una computazione parziale $C_1, C_2, \dots, C_k$ tale che:
+    \begin{itemize}
+        \item $C_1$ è la configurazione iniziale di $M$ su $w$.
+        \item $C_k$ è una configurazione finale.
+    \end{itemize}
+\end{definition}
+
+\begin{definition}[Computazione Accettante]
+    Una \textbf{computazione accettante} di una TM $M$ su una stringa $w$ è una computazione $C_1, \dots, C_k$ dove $C_k$ è una configurazione accettante.
+\end{definition}
+
+\begin{definition}[Linguaggio di una Macchina di Turing $L(M)$]
+    Il \textbf{linguaggio di una Macchina di Turing $M$}, denotato $L(M)$, è l'insieme di tutte le stringhe $w$ tali che la computazione di $M$ su $w$ è accettante.
+    $L(M) = \{w \mid M \text{ accetta } w\}$
+    Se una TM non si ferma mai su una stringa $w$, allora $w$ non appartiene a $L(M)$. Se si ferma in uno stato non accettante, $w$ non appartiene a $L(M)$.
+\end{definition}
+
+\subsection{Accettazione vs. Decisione di un Linguaggio}
+
+La differenza tra "accettare" e "decidere" un linguaggio da parte di una Macchina di Turing è fondamentale in Teoria della Computabilità.
+
+\begin{definition}[Macchina di Turing che Decide un Linguaggio]
+    Una Macchina di Turing $M$ \textbf{decide} un linguaggio $L$ se e solo se per ogni stringa $w \in \Sigma^*$:
+    \begin{itemize}
+        \item Se $w \in L$, allora $M$ si arresta (termina) e accetta $w$ (ovvero, la computazione termina in una configurazione accettante).
+        \item Se $w \notin L$, allora $M$ si arresta (termina) e rifiuta $w$ (ovvero, la computazione termina in una configurazione rifiutante).
+    \end{itemize}
+    In questo caso, si dice che $L$ è un \textbf{linguaggio decidibile}. Una macchina che decide garantisce una risposta (Sì o No) in tempo finito per ogni input.
+\end{definition}
+
+\begin{definition}[Macchina di Turing che Accetta un Linguaggio]
+    Una Macchina di Turing $M$ \textbf{accetta} un linguaggio $L$ se e solo se per ogni stringa $w \in \Sigma^*$:
+    \begin{itemize}
+        \item Se $w \in L$, allora $M$ si arresta e accetta $w$.
+        \item Se $w \notin L$, allora $M$ \textbf{non accetta} $w$. Ciò significa che $M$ potrebbe arrestarsi e rifiutare $w$, \emph{oppure potrebbe non arrestarsi mai (loop indefinitamente)}.
+    \end{itemize}
+    In questo caso, si dice che $L$ è un \textbf{linguaggio accettabile} (o ricorsivamente enumerabile).
+\end{definition}
+
+\textbf{Implicazioni}:
+\begin{itemize}
+    \item La classe dei linguaggi decidibili è un sottoinsieme stretto della classe dei linguaggi accettabili.
+    \item Se un linguaggio è decidibile, allora è anche accettabile.
+    \item Esistono linguaggi che sono accettabili ma non decidibili. Per questi linguaggi, se la risposta è "Sì", la macchina terminerà e lo dirà. Ma se la risposta è "No", la macchina potrebbe entrare in un loop infinito e non fornire mai una risposta, lasciando l'utente in attesa indefinita. Questo è un problema fondamentale in Informatica Teorica.
+\end{itemize}
 
 
 % =====================================================
@@ -3609,6 +3904,361 @@ Tutti i problemi di non appartenenza a $R$ sono stati dimostrati mediante riduzi
     \caption{Mappa aggiornata delle classi di linguaggi $R$ e $R_e$ con i linguaggi discussi.}
     \label{fig:r_re_map_updated}
 \end{figure}
+
+
+% =====================================================
+% --- START LECTURE 13 ---
+% =====================================================
+
+\chapter{Riduzioni e Indecidibilità}
+
+
+
+\section{Introduzione al Concetto di Riduzione}
+
+Le riduzioni sono un concetto fondamentale in Informatica Teorica, utilizzate per dimostrare risultati di indecidibilità e irriconoscibilità. Esse permettono di correlare la difficoltà computazionale di diversi problemi.
+
+\subsection{Metafora e Intuizione della Riduzione}
+L'idea intuitiva di riduzione è quella di trasformare un problema da risolvere (problema di partenza) in un altro problema (problema di arrivo) per il quale si conosce già una soluzione.
+
+\begin{example}[Gestione Tornei di Calcetto]
+Si desidera creare un'applicazione web per la gestione di tornei di calcetto, in particolare un algoritmo per la generazione automatica del calendario delle partite (problema di decisione).
+
+\textbf{Problema di Partenza (A): Generazione Calendario}
+\begin{itemize}
+    \item \textbf{Input}: Una lista di squadre (es. Juventus, Milan, Bologna, Roma).
+    \item \textbf{Output desiderato}: Un calendario di partite, ovvero una partizione dell'insieme di tutte le possibili partite in sottoinsiemi (giornate), tale che in ogni sottoinsieme le partite siano compatibili (nessuna squadra gioca più di una partita nella stessa giornata).
+\end{itemize}
+Inizialmente, la soluzione diretta per questo problema risultava difficile.
+
+\textbf{Problema di Arrivo (B): K-Colorabilità di un Grafo}
+Si conosceva già un algoritmo funzionante per la K-colorabilità di un grafo.
+\begin{itemize}
+    \item \textbf{Input}: Un grafo $G$ e un numero intero $K$ (numero di colori).
+    \item \textbf{Output}: Una colorazione dei nodi di $G$ con $K$ colori tale che nodi adiacenti abbiano colori diversi, oppure un'indicazione che non è possibile.
+\end{itemize}
+
+\textbf{L'Idea della Riduzione}: Trasformare un'istanza del problema di generazione del calendario in un'istanza del problema di K-colorabilità, usare il risolutore della K-colorabilità e poi ritrasformare la soluzione ottenuta per risolvere il problema originale.
+
+\textbf{Funzione di Riduzione ($f$)}:
+\begin{itemize}
+    \item \textbf{Input di $f$}: Lista di squadre (istanza del problema A).
+    \item \textbf{Output di $f$}: Coppia $(G', K')$ (istanza del problema B).
+    \item \textbf{Costruzione di $G'$}:
+        \begin{itemize}
+            \item I nodi di $G'$ corrispondono a tutte le possibili partite (coppie di squadre). Per $N$ squadre, ci sono $\binom{N}{2}$ possibili partite/nodi.
+            \item Gli archi di $G'$ collegano due nodi se le partite corrispondenti sono \textit{incompatibili} (cioè, hanno una squadra in comune).
+        \end{itemize}
+    \item \textbf{Determinazione di $K'$}: $K'$ è il numero minimo di giornate necessarie. Per un campionato "all'italiana" con $N$ squadre (ogni squadra gioca contro tutte le altre), $K' = N-1$.
+    \item \textbf{Esempio con 4 squadre (J, M, B, R)}:
+        \begin{itemize}
+            \item Nodi: \{JM, JB, JR, MB, MR, BR\}
+            \item Archi: (JM, JB) (J in comune), (JM, JR), (JB, JR), (MB, MR), (MB, BR), (MR, BR), (JM, MB) (M in comune), (JM, MR), (JB, BR), (JR, MB), (JR, MR), (JB, MR) etc. (ogni coppia di partite incompatibili è collegata da un arco).
+            \item $K' = 4-1 = 3$ colori.
+        \end{itemize}
+\end{itemize}
+
+\textbf{Workflow complessivo per risolvere il problema A}:
+\begin{enumerate}
+    \item Si riceve un'istanza $x$ (lista di squadre) del problema A.
+    \item Si applica la funzione di riduzione $f$ per ottenere un'istanza $y = f(x) = (G', K')$ del problema B.
+    \item Si invia $y$ a un risolutore (solver) del problema B, ottenendo una soluzione $S_y$ (una colorazione del grafo $G'$).
+    \item Si applica una funzione $g$ per ritrasformare $S_y$ in $S_x$ (il calendario del torneo). La funzione $g$ associa ad ogni colore una giornata, e tutte le partite/nodi con lo stesso colore appartengono alla stessa giornata.
+    \item Si restituisce $S_x$.
+\end{enumerate}
+
+\textbf{Diagramma schematico:}
+\[
+\begin{tikzpicture}[node distance=2cm, auto]
+    \node (A) {Problema A};
+    \node (B) [below=of A, yshift=0.5cm] {Problema B};
+    \node (solverA) [right=of A, xshift=2cm] {Solver per A};
+    \node (solverB) [right=of B, xshift=2cm] {Solver per B};
+
+    \node (x) [left=of solverA, xshift=-1cm, yshift=0.5cm] {$x \in A$};
+    \node (y) [right=of x, xshift=0.5cm] {$y = f(x) \in B$};
+    \node (Sy) [right=of y, xshift=0.5cm] {$S_y = \text{solverB}(y)$};
+    \node (Sx) [right=of Sy, xshift=0.5cm] {$S_x = g(S_y) \in A$};
+    \node (return) [right=of Sx, xshift=0.5cm] {Return $S_x$};
+
+    \draw[->] (x) -- node[above] {$f$} (y);
+    \draw[->] (y) -- node[above] {Chiama} (Sy);
+    \draw[->] (Sy) -- node[above] {$g$} (Sx);
+    \draw[->] (Sx) -- (return);
+
+    \node (f_node) at ($(x)!0.5!(y)$) {};
+    \node (g_node) at ($(Sy)!0.5!(Sx)$) {};
+
+    \node[draw,rounded corners, dashed, fit=(f_node) (g_node) (y) (Sy)] (overall_solver) {};
+    \node[above=0.1cm of overall_solver.north, align=center] {Solver per A};
+\end{tikzpicture}
+\]
+
+\textbf{Osservazioni chiave:}
+\begin{itemize}
+    \item La riduzione è una \textbf{trasformazione di istanze} da un problema A a un problema B.
+    \item La riduzione è \textbf{direzionale}: si riduce A a B ($A \le B$), non viceversa.
+    \item La funzione di riduzione $f$ deve essere \textbf{progettata ad arte} (in modo "sensato") in modo che la soluzione ottenuta dal problema di arrivo possa essere utilmente riconvertita per il problema di partenza.
+    \item Se $A$ si riduce a $B$ ($A \le B$), intuitivamente $A$ non è più difficile di $B$.
+\end{itemize}
+\end{example}
+
+\section{Definizione Formale di Riduzione}
+
+Per i problemi di decisione (che hanno risposta sì/no), la definizione di riduzione è più semplice, poiché la "ritrasformazione" della soluzione non è necessaria (la risposta è già 0 o 1).
+
+\begin{definition}[Riduzione tra Linguaggi/Problemi di Decisione]
+Siano $A$ e $B$ due linguaggi. Una funzione $f$ è una \textbf{riduzione} da $A$ a $B$, denotata $A \le B$, se:
+\begin{enumerate}
+    \item $f$ è \textbf{calcolabile}.
+    \item Per ogni stringa $w$, $w \in A \iff f(w) \in B$.
+\end{enumerate}
+\end{definition}
+
+\textbf{Spiegazione:}
+\begin{itemize}
+    \item La condizione $w \in A \iff f(w) \in B$ significa che $f$ deve mappare istanze "sì" di $A$ a istanze "sì" di $B$, e istanze "no" di $A$ a istanze "no" di $B$.
+    \item La calcolabilità di $f$ è cruciale: $f$ non può essere una "funzione magica" che risolve problemi difficili. Deve essere una funzione che può essere calcolata da una Macchina di Turing in tempo finito per ogni input.
+\end{itemize}
+
+\subsection{Funzioni Calcolabili e Trasduttori}
+
+Per definire formalmente cosa significa che una funzione è "calcolabile", introduciamo il concetto di trasduttore.
+
+\begin{definition}[Trasduttore]
+Un \textbf{trasduttore} è una Macchina di Turing caratterizzata da tre nastri:
+\begin{enumerate}
+    \item \textbf{Nastro di Input}: Sola lettura. Contiene la stringa di input $w$.
+    \item \textbf{Nastro di Lavoro (Work Tape)}: Lettura e scrittura. Usato per i calcoli intermedi.
+    \item \textbf{Nastro di Output}: Sola scrittura. Viene scritto il risultato $f(w)$ della funzione.
+\end{enumerate}
+\end{definition}
+
+\begin{definition}[Funzione Calcolabile]
+Una funzione $f: \Sigma^* \to \Sigma^*$ è \textbf{calcolabile} se esiste un trasduttore $M$ tale che per ogni stringa $w \in \Sigma^*$, $M$ esegue su $w$, si arresta (termina) e lascia $f(w)$ sul nastro di output.
+\end{definition}
+\textbf{Nota}: Quando si specifica una riduzione, non è necessario mostrare esplicitamente il trasduttore. È sufficiente una descrizione algoritmica (pseudocodice o linguaggio naturale) sufficientemente precisa da far capire come l'output $f(w)$ viene generato dall'input $w$.
+
+\section{Proprietà delle Riduzioni e Indecidibilità}
+
+Le riduzioni sono uno strumento potente per dimostrare l'indecidibilità dei linguaggi, sfruttando la relazione di "non più difficile di".
+
+\begin{theorem}[Proprietà Fondamentali delle Riduzioni]
+Siano $A$ e $B$ due linguaggi tali che $A \le B$.
+\begin{enumerate}
+    \item Se $A \notin R$ (A non è ricorsivo/decidibile), allora $B \notin R$ (B non è ricorsivo/decidibile).
+    \item Se $A \notin RE$ (A non è ricorsivamente enumerabile/riconoscibile), allora $B \notin RE$ (B non è ricorsivamente enumerabile/riconoscibile).
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+Procediamo per contraddizione.
+
+\textbf{Dimostrazione 1 (Decidibilità):}
+Vogliamo dimostrare: $A \notin R \implies B \notin R$.
+Assumiamo per assurdo la negazione della tesi: $A \notin R \land B \in R$.
+Se $B \in R$, allora esiste una Macchina di Turing decisore $M_B$ che decide $B$.
+Poiché $A \le B$, esiste una funzione calcolabile $f$ tale che $w \in A \iff f(w) \in B$.
+Consideriamo la seguente costruzione di una Macchina di Turing $M_A$ che decide $A$:
+
+\begin{minted}[mathescape,
+               linenos,
+               numbersep=5pt,
+               gobble=2,
+               frame=lines,
+               framesep=2mm]{text}
+  M_A \text{ su input } w:
+  1.  Calcola } f(w). \text{ (Questo è possibile perché } f \text{ è calcolabile)}.
+  2.  Simula } M_B \text{ su } f(w).
+  3.  Se } M_B \text{ accetta, } M_A \text{ accetta.
+  4.  Se } M_B \text{ rifiuta, } M_A \text{ rifiuta.
+\end{minted}
+
+\textbf{Analisi di $M_A$:}
+\begin{itemize}
+    \item $M_A$ decide $A$: Per definizione di riduzione, $w \in A \iff f(w) \in B$. Poiché $M_B$ decide $B$, $M_B$ accetta $f(w)$ se e solo se $f(w) \in B$. Dunque, $M_A$ accetta $w$ se e solo se $w \in A$.
+    \item $M_A$ si arresta sempre: $f$ si arresta sempre (perché è calcolabile) e $M_B$ si arresta sempre (perché è un decisore). Quindi $M_A$ si arresta sempre su ogni input.
+\end{itemize}
+Questo significa che $M_A$ è un decisore per $A$, quindi $A \in R$.
+Ma ciò contraddice la nostra assunzione iniziale che $A \notin R$.
+Pertanto, l'assunzione è falsa, e la tesi $A \notin R \implies B \notin R$ è vera.
+$\blacksquare$
+
+\textbf{Dimostrazione 2 (Riconoscibilità):}
+Vogliamo dimostrare: $A \notin RE \implies B \notin RE$.
+Assumiamo per assurdo la negazione della tesi: $A \notin RE \land B \in RE$.
+Se $B \in RE$, allora esiste una Macchina di Turing accettore $M_B'$ che riconosce $B$.
+Poiché $A \le B$, esiste una funzione calcolabile $f$ tale che $w \in A \iff f(w) \in B$.
+Consideriamo la seguente costruzione di una Macchina di Turing $M_A'$ che riconosce $A$:
+
+\begin{minted}[mathescape,
+               linenos,
+               numbersep=5pt,
+               gobble=2,
+               frame=lines,
+               framesep=2mm]{text}
+  M_A' \text{ su input } w:
+  1.  Calcola } f(w). \text{ (Possibile perché } f \text{ è calcolabile)}.
+  2.  Simula } M_B' \text{ su } f(w).
+  3.  Se } M_B' \text{ accetta, } M_A' \text{ accetta.
+\end{minted}
+
+\textbf{Analisi di $M_A'$:}
+\begin{itemize}
+    \item $M_A'$ riconosce $A$: Per definizione di riduzione, $w \in A \iff f(w) \in B$. Poiché $M_B'$ riconosce $B$, $M_B'$ accetta $f(w)$ se e solo se $f(w) \in B$. Dunque, $M_A'$ accetta $w$ se e solo se $w \in A$.
+    \item $M_A'$ non si arresta necessariamente su input non in $A$: Se $w \notin A$, allora $f(w) \notin B$. Poiché $M_B'$ è un accettore (non un decisore), su input non in $B$ può non terminare. Quindi, $M_A'$ può non terminare su input non in $A$. Questo è consistente con la definizione di accettore.
+\end{itemize}
+Questo significa che $M_A'$ è un accettore per $A$, quindi $A \in RE$.
+Ma ciò contraddice la nostra assunzione iniziale che $A \notin RE$.
+Pertanto, l'assunzione è falsa, e la tesi $A \notin RE \implies B \notin RE$ è vera.
+$\blacksquare$
+\end{proof}
+
+\begin{corollary}[Corollario delle Riduzioni]
+Siano $A$ e $B$ due linguaggi tali che $A \le B$.
+\begin{enumerate}
+    \item Se $B \in R$, allora $A \in R$.
+    \item Se $B \in RE$, allora $A \in RE$.
+\end{enumerate}
+\end{corollary}
+\begin{proof}
+Queste affermazioni sono le contronominali del teorema precedente.
+1. Se $A \notin R \implies B \notin R$ (Teorema 1). La sua contronominale è $B \in R \implies A \in R$.
+2. Se $A \notin RE \implies B \notin RE$ (Teorema 2). La sua contronominale è $B \in RE \implies A \in RE$.
+$\blacksquare$
+\end{proof}
+
+\textbf{Interpretazione del Corollario:}
+\begin{itemize}
+    \item Se il problema di arrivo ($B$) è decidibile/riconoscibile, allora anche il problema di partenza ($A$) lo è.
+    \item Questo implica che se vogliamo dimostrare che un problema $A$ è decidibile/riconoscibile, possiamo cercare di ridurlo a un problema $B$ che sappiamo essere decidibile/riconoscibile.
+\end{itemize}
+
+\section{Esempio: Indecidibilità di $L_{NE}$ (Non-Empty Language)}
+
+Introduciamo un nuovo linguaggio e ne studiamo la decidibilità tramite riduzione.
+
+\begin{definition}[Linguaggio $L_{NE}$]
+Il linguaggio $L_{NE}$ (Non-Empty) è l'insieme dei codici di Macchine di Turing $M_i$ tali che il linguaggio accettato da $M_i$ non è vuoto:
+$L_{NE} = \{ \langle M_i \rangle \mid L(M_i) \neq \emptyset \}$
+Intuitivamente, $L_{NE}$ contiene le Macchine di Turing che accettano almeno una stringa.
+\end{definition}
+
+\subsection{$L_{NE}$ è Ricorsivamente Enumerabile ($L_{NE} \in RE$)}
+
+\begin{proposition}
+$L_{NE} \in RE$.
+\end{proposition}
+\begin{proof}
+Possiamo costruire una Macchina di Turing $M_{NE}$ che riconosce $L_{NE}$. $M_{NE}$ prende in input il codice di una Macchina di Turing $\langle M \rangle$. L'obiettivo è verificare se $M$ accetta almeno una stringa.
+
+\begin{minted}[mathescape,
+               linenos,
+               numbersep=5pt,
+               gobble=2,
+               frame=lines,
+               framesep=2mm]{text}
+  M_{NE} \text{ su input } \langle M \rangle:
+  1.  Per ogni possibile stringa } w \in \Sigma^* \text{ (in ordine lessicografico):
+  2.      Simula } M \text{ su } w.
+  3.      Se } M \text{ accetta } w \text{ (e si ferma in stato di accettazione), } M_{NE} \text{ accetta } \langle M \rangle.
+\end{minted}
+
+Questo approccio iterativo presenta un problema: se $M$ non termina su una stringa $w$, $M_{NE}$ si blocca e non può passare a testare altre stringhe.
+Per risolvere questo, si può usare una Macchina di Turing non deterministica, oppure una strategia di "dovetailing" (simulazione parallela):
+
+\begin{minted}[mathescape,
+               linenos,
+               numbersep=5pt,
+               gobble=2,
+               frame=lines,
+               framesep=2mm]{text}
+  M_{NE} \text{ (versione non deterministica) su input } \langle M \rangle:
+  1.  Indovina (non-deterministicamente) una stringa } w \in \Sigma^*.
+  2.  Simula la Macchina Universale } U \text{ su } (\langle M \rangle, w).
+  3.  Se } U \text{ accetta } (\langle M \rangle, w), \text{ allora } M_{NE} \text{ accetta } \langle M \rangle.
+\end{minted}
+
+\textbf{Analisi:}
+\begin{itemize}
+    \item Se $L(M) \neq \emptyset$, allora esiste almeno una stringa $w_0$ tale che $M$ accetta $w_0$. In tal caso, $M_{NE}$ può non-deterministicamente indovinare $w_0$, simulare $M$ su $w_0$, e accettare. Quindi, se $\langle M \rangle \in L_{NE}$, $M_{NE}$ accetta $\langle M \rangle$.
+    \item Se $L(M) = \emptyset$, allora $M$ non accetta alcuna stringa. Indipendentemente da quale $w$ $M_{NE}$ indovina, la simulazione di $M$ su $w$ non porterà mai all'accettazione. Quindi, $M_{NE}$ non accetterà $\langle M \rangle$.
+\end{itemize}
+Poiché le Macchine di Turing non deterministiche sono equivalenti a quelle deterministiche per la classe RE, esiste una Macchina di Turing deterministica che riconosce $L_{NE}$. Quindi, $L_{NE} \in RE$.
+$\blacksquare$
+\end{proof}
+
+\subsection{$L_{NE}$ non è Ricorsivo ($L_{NE} \notin R$)}
+
+Intuitivamente, è difficile decidere se $L(M) = \emptyset$. Per rispondere "no" (cioè $M \in L_E$, $L(M) = \emptyset$), bisognerebbe essere sicuri che $M$ non accetta *nessuna* stringa, il che richiederebbe un tempo infinito per provare tutte le possibili stringhe.
+
+\begin{theorem}
+$L_{NE} \notin R$.
+\end{theorem}
+\begin{proof}
+Dimostriamo che $L_{NE}$ è indecidibile (non ricorsivo) tramite una riduzione dal linguaggio universale $L_U$, che sappiamo essere indecidibile ($L_U \notin R$).
+Vogliamo dimostrare che $L_U \le L_{NE}$.
+
+\textbf{Problema di Partenza (A)}: $L_U = \{ \langle M, w \rangle \mid M \text{ accetta } w \}$
+\textbf{Problema di Arrivo (B)}: $L_{NE} = \{ \langle M' \rangle \mid L(M') \neq \emptyset \}$
+
+La nostra funzione di riduzione $f$ deve prendere un input $\langle M, w \rangle$ (un'istanza di $L_U$) e produrre un output $\langle M' \rangle$ (un'istanza di $L_{NE}$) tale che:
+\[
+\langle M, w \rangle \in L_U \iff f(\langle M, w \rangle) = \langle M' \rangle \in L_{NE}
+\]
+
+\textbf{Costruzione della funzione di riduzione $f$:}
+La funzione $f$ prende in input $\langle M, w \rangle$ e costruisce il codice di una nuova Macchina di Turing $M'$, definita come segue:
+
+\begin{minted}[mathescape,
+               linenos,
+               numbersep=5pt,
+               gobble=2,
+               frame=lines,
+               framesep=2mm]{text}
+  M' \text{ su input } x:
+  1.  Ignora l'input } x.
+  2.  Scrive la stringa } w \text{ (ottenuta dall'input di } f) \text{ sul suo nastro.
+  3.  Simula } M \text{ (ottenuta dall'input di } f) \text{ su } w.
+  4.  Se } M \text{ accetta } w, \text{ allora } M' \text{ accetta } x.
+  5.  Se } M \text{ rifiuta } w \text{ o va in loop su } w, \text{ allora } M' \text{ rifiuta } x \text{ o va in loop su } x.
+\end{minted}
+
+La funzione $f$ è calcolabile, in quanto è un algoritmo ben definito per costruire la descrizione di $M'$ a partire da $M$ e $w$.
+
+\textbf{Verifica della condizione $w' \in A \iff f(w') \in B$:}
+Sia $w' = \langle M, w \rangle$.
+
+\textbf{Caso 1: $\langle M, w \rangle \in L_U$ (istanza "sì" di $L_U$)}
+Questo significa che $M$ accetta $w$.
+Secondo la costruzione di $M'$, se $M$ accetta $w$, allora $M'$ accetterà \emph{qualsiasi} input $x$ le venga dato.
+Quindi, il linguaggio di $M'$ è $L(M') = \Sigma^*$.
+Poiché $\Sigma^* \neq \emptyset$, ne consegue che $\langle M' \rangle \in L_{NE}$.
+La condizione è soddisfatta: un'istanza "sì" di $L_U$ è mappata a un'istanza "sì" di $L_{NE}$.
+
+\textbf{Caso 2: $\langle M, w \rangle \notin L_U$ (istanza "no" di $L_U$)}
+Questo significa che $M$ non accetta $w$ (cioè, $M$ rifiuta $w$ o $M$ va in loop su $w$).
+Secondo la costruzione di $M'$, se $M$ non accetta $w$, allora $M'$ non accetterà \emph{alcun} input $x$ le venga dato (o andrà in loop su qualsiasi $x$).
+Quindi, il linguaggio di $M'$ è $L(M') = \emptyset$.
+Ne consegue che $\langle M' \rangle \notin L_{NE}$.
+La condizione è soddisfatta: un'istanza "no" di $L_U$ è mappata a un'istanza "no" di $L_{NE}$.
+
+Poiché abbiamo dimostrato che $L_U \le L_{NE}$ e sappiamo che $L_U \notin R$, per il Teorema sulle Proprietà Fondamentali delle Riduzioni (punto 1), possiamo concludere che $L_{NE} \notin R$.
+$\blacksquare$
+\end{proof}
+
+\subsection{Linguaggio Complementare $L_E$}
+
+Consideriamo il linguaggio $L_E$, che è il complemento di $L_{NE}$.
+\begin{definition}[Linguaggio $L_E$]
+Il linguaggio $L_E$ (Empty) è l'insieme dei codici di Macchine di Turing $M_i$ tali che il linguaggio accettato da $M_i$ è vuoto:
+$L_E = \{ \langle M_i \rangle \mid L(M_i) = \emptyset \}$
+\end{definition}
+
+Sappiamo che $L_{NE} \in RE$ ma $L_{NE} \notin R$.
+Un linguaggio $L$ è decidibile ($L \in R$) se e solo se sia $L$ che il suo complemento $\bar{L}$ sono ricorsivamente enumerabili ($L \in RE$ e $\bar{L} \in RE$).
+Poiché $L_{NE} \in RE$ ma $L_{NE} \notin R$, ne consegue che il suo complemento, $L_E = \overline{L_{NE}}$, non può essere ricorsivamente enumerabile.
+Quindi, $L_E \notin RE$.
 
 
 % =====================================================
