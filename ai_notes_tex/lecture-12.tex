@@ -52,33 +52,6 @@
 \tableofcontents
 \newpage
 
-\section{Introduzione e Ripasso}
-Ripassiamo i concetti fondamentali della scorsa lezione, chiarendo alcuni punti sulla Macchina Universale (MU) e introducendo nuovi linguaggi e problemi legati alla decidibilità.
-
-\subsection{Macchina Universale (MU)}
-La Macchina Universale è una Macchina di Turing programmabile, capace di simulare il comportamento di qualsiasi altra Macchina di Turing. Sebbene la sua funzione di transizione sia complessa, la sua progettazione è fattibile e si può realizzare con un numero limitato di stati.
-
-\subsection{Linguaggio Diagonale (LD)}
-La scorsa lezione abbiamo introdotto il linguaggio diagonale $LD$:
-\begin{definition}[Linguaggio Diagonale (LD)]
-Il linguaggio diagonale $LD$ è l'insieme delle codifiche di Macchine di Turing $M_i$ tali che $M_i$ non accetta la propria codifica $\langle M_i \rangle$.
-\[ LD = \{ \langle M_i \rangle \mid M_i \text{ non accetta } \langle M_i \rangle \} \]
-\end{definition}
-
-Abbiamo dimostrato che $LD$ non appartiene alla classe dei linguaggi ricorsivamente enumerabili ($R_e$).
-\begin{theorem}
-$LD \notin R_e$.
-\end{theorem}
-\begin{proof}
-La dimostrazione si basa sulla tecnica di diagonalizzazione di Cantor, già vista in precedenza. Assumendo per assurdo l'esistenza di una Macchina di Turing $M_D$ che accetta $LD$, si può costruire una contraddizione nel comportamento di $M_D$ sulla propria codifica.
-\end{proof}
-
-Una conseguenza diretta di questo teorema è che $LD$ non può appartenere nemmeno alla classe dei linguaggi ricorsivi ($R$).
-\begin{proposition}
-Se $L \in R$, allora $L \in R_e$.
-Poiché $LD \notin R_e$, allora $LD \notin R$.
-\end{proposition}
-
 \section{Linguaggio Universale (LU)}
 
 Introduciamo il Linguaggio Universale.
@@ -91,7 +64,7 @@ Il linguaggio universale $LU$ è l'insieme delle coppie $\langle M, w \rangle$, 
 $LU \in R_e$.
 \end{theorem}
 \begin{proof}
-Per dimostrare che $LU \in R_e$, dobbiamo mostrare l'esistenza di una Macchina di Turing che lo accetti. Tale macchina è la Macchina Universale (MU).
+Per dimostrare che $LU \in R_e$, dobbiamo mostrare l'esistenza di una Macchina di Turing che lo accetti. Tale macchina è la Macchina di Turing Universale (UTM).
 \begin{enumerate}
     \item La MU prende in input la codifica $\langle M, w \rangle$.
     \item La MU simula passo-passo il comportamento di $M$ su $w$.
@@ -165,7 +138,7 @@ Per dimostrare che $\overline{LD} \in R_e$, dobbiamo costruire una Macchina di T
 \begin{enumerate}
     \item $M_{\overline{LD}}$ prende in input la codifica di una Macchina di Turing $\langle M_i \rangle$.
     \item $M_{\overline{LD}}$ crea una copia di $\langle M_i \rangle$ per usarla come stringa $w$. Forma quindi la coppia $\langle M_i, \langle M_i \rangle \rangle$.
-    \item $M_{\overline{LD}}$ simula $M_i$ su $\langle M_i \rangle$ usando una Macchina Universale (MU).
+    \item $M_{\overline{LD}}$ simula $M_i$ su $\langle M_i \rangle$ usando una UTM.
     \item Se la simulazione di $M_i$ su $\langle M_i \rangle$ si arresta e accetta, allora $M_{\overline{LD}}$ accetta (risponde "sì").
     \item Se la simulazione di $M_i$ su $\langle M_i \rangle$ si arresta e rifiuta, o entra in loop, allora $M_{\overline{LD}}$ non accetta (risponde "no" o va in loop).
 \end{enumerate}
@@ -227,7 +200,7 @@ Per dimostrare che $HALT \in R_e$, dobbiamo costruire una Macchina di Turing $M_
 \textbf{Costruzione di $M_{HALT}$:}
 \begin{enumerate}
     \item $M_{HALT}$ prende in input la coppia $\langle M, w \rangle$.
-    \item $M_{HALT}$ simula $M$ su $w$ usando una Macchina Universale (MU).
+    \item $M_{HALT}$ simula $M$ su $w$ usando una UTM.
     \item Se la simulazione di $M$ su $w$ si arresta (sia in uno stato accettante che non accettante), allora $M_{HALT}$ accetta (risponde "sì").
     \item Se la simulazione di $M$ su $w$ entra in loop infinito, allora $M_{HALT}$ entra in loop (non risponde "sì").
 \end{enumerate}
@@ -257,7 +230,7 @@ La dimostrazione procede per assurdo, utilizzando una riduzione da $LU$ (di cui 
         \item $M'$ verifica la risposta di $M_{HALT}^*$:
         \begin{itemize}
             \item \textbf{Se $M_{HALT}^*$ risponde "no"}: (Significa che $M$ non si arresta su $w$). Allora $M'$ risponde "no". (In questo caso, $M$ non può accettare $w$, quindi $\langle M, w \rangle \notin LU$).
-            \item \textbf{Se $M_{HALT}^*$ risponde "sì"}: (Significa che $M$ si arresta su $w$). Allora $M'$ simula $M$ su $w$ usando una Macchina Universale (MU).
+            \item \textbf{Se $M_{HALT}^*$ risponde "sì"}: (Significa che $M$ si arresta su $w$). Allora $M'$ simula $M$ su $w$ usando una UTM.
             \begin{itemize}
                 \item Se la simulazione di $M$ su $w$ si arresta e accetta, allora $M'$ risponde "sì".
                 \item Se la simulazione di $M$ su $w$ si arresta e rifiuta, allora $M'$ risponde "no".
@@ -312,7 +285,7 @@ Per dimostrare che $HALT_\epsilon \in R_e$, dobbiamo costruire una Macchina di T
 \textbf{Costruzione di $M_{HALT_\epsilon}$:}
 \begin{enumerate}
     \item $M_{HALT_\epsilon}$ prende in input la codifica $\langle M \rangle$.
-    \item $M_{HALT_\epsilon}$ simula $M$ sulla stringa vuota $\epsilon$ usando una Macchina Universale (MU).
+    \item $M_{HALT_\epsilon}$ simula $M$ sulla stringa vuota $\epsilon$ usando una UTM.
     \item Se la simulazione di $M$ su $\epsilon$ si arresta (sia accettando che rifiutando), allora $M_{HALT_\epsilon}$ accetta (risponde "sì").
     \item Se la simulazione di $M$ su $\epsilon$ entra in loop infinito, allora $M_{HALT_\epsilon}$ entra in loop (non risponde "sì").
 \end{enumerate}
