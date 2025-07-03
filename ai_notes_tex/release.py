@@ -2,6 +2,7 @@
 
 import argparse
 import os
+import signal
 import sys
 from datetime import datetime
 
@@ -24,6 +25,29 @@ REPO_OWNER = os.getenv("REPO_OWNER", "alessandroamella")
 REPO_NAME = os.getenv("REPO_NAME", os.path.basename(os.getcwd()))
 RELEASE_PREFIX = os.getenv("RELEASE_PREFIX", "appunti")
 
+# Global variable to track files that need cleanup
+temp_files_to_cleanup = []
+
+
+def cleanup_temp_files():
+    """Clean up temporary files"""
+    global temp_files_to_cleanup
+    for file_path in temp_files_to_cleanup:
+        try:
+            if os.path.exists(file_path):
+                os.remove(file_path)
+                print(f"Deleted: {file_path}")
+        except Exception as e:
+            print(f"Warning: Could not delete {file_path}: {e}")
+    temp_files_to_cleanup.clear()
+
+
+def signal_handler(signum, frame):
+    """Handle Ctrl+C interruption"""
+    print("\nInterrupted! Cleaning up temporary files...")
+    cleanup_temp_files()
+    sys.exit(1)
+
 
 def validate_config():
     """Validate required environment variables"""
@@ -37,11 +61,18 @@ def validate_config():
 
 def generate_pdf():
     """Generate PDF using combine_lectures.py"""
-    try:
-        # Create output filename with timestamp
-        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-        output_filename = f"{RELEASE_PREFIX}_{timestamp}"
+    global temp_files_to_cleanup
 
+    # Create output filename with timestamp
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    output_filename = f"{RELEASE_PREFIX}_{timestamp}"
+    tex_path = f"{output_filename}.tex"
+    pdf_path = f"{output_filename}.pdf"
+
+    # Add files to cleanup list
+    temp_files_to_cleanup.extend([tex_path, pdf_path])
+
+    try:
         print("Generating PDF using combine_lectures.py...")
         print(f"Output file: {output_filename}")
 
@@ -51,13 +82,12 @@ def generate_pdf():
 
         try:
             # Call the main function from combine_lectures
-            combine_lectures.main(f"{output_filename}.tex")
+            combine_lectures.main(tex_path)
         finally:
             # Restore original sys.argv
             sys.argv = original_argv
 
         # Check if PDF was generated
-        pdf_path = f"{output_filename}.pdf"
         if not os.path.exists(pdf_path):
             raise FileNotFoundError(f"PDF file {pdf_path} was not generated")
 
@@ -66,6 +96,7 @@ def generate_pdf():
 
     except Exception as e:
         print(f"Error generating PDF: {e}")
+        cleanup_temp_files()
         sys.exit(1)
 
 
@@ -142,34 +173,30 @@ def create_github_release(pdf_path, output_filename, custom_message=""):
 
 def cleanup_files(pdf_path, tex_path):
     """Clean up generated .tex and .pdf files"""
-    files_to_delete = [pdf_path, tex_path]
-
-    for file_path in files_to_delete:
-        try:
-            if os.path.exists(file_path):
-                os.remove(file_path)
-                print(f"Deleted: {file_path}")
-            else:
-                print(f"File not found (skipping): {file_path}")
-        except Exception as e:
-            print(f"Warning: Could not delete {file_path}: {e}")
+    # Use the global cleanup function
+    cleanup_temp_files()
 
 
 def main():
     """Main function"""
+    # Set up signal handler for Ctrl+C
+    signal.signal(signal.SIGINT, signal_handler)
+
     parser = argparse.ArgumentParser(description="Simple GitHub Release Script")
     parser.add_argument("-m", "--message", help="Custom message for the release")
 
     args = parser.parse_args()
 
     validate_config()
-    pdf_path, output_filename = generate_pdf()
-    create_github_release(pdf_path, output_filename, args.message or "")
 
-    # Clean up generated files
-    tex_path = f"{output_filename}.tex"
-    cleanup_files(pdf_path, tex_path)
-    print("Cleanup completed.")
+    try:
+        pdf_path, output_filename = generate_pdf()
+        create_github_release(pdf_path, output_filename, args.message or "")
+        print("Release completed successfully.")
+    finally:
+        # Always clean up generated files, even if interrupted
+        cleanup_temp_files()
+        print("Cleanup completed.")
 
 
 if __name__ == "__main__":
