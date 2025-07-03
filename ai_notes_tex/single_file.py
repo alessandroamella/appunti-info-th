@@ -73,6 +73,8 @@ def compile_tex_file(tex_file, interactive=False, clear_cache=False):
                 [compiler, "--shell-escape", tex_file],
                 capture_output=True,
                 text=True,
+                encoding="utf-8",
+                errors="replace",
                 cwd=".",
             )
             if result2.returncode == 0:
@@ -82,6 +84,8 @@ def compile_tex_file(tex_file, interactive=False, clear_cache=False):
                     [compiler, "--shell-escape", tex_file],
                     capture_output=True,
                     text=True,
+                    encoding="utf-8",
+                    errors="replace",
                     cwd=".",
                 )
                 if result3.returncode == 0:
@@ -97,6 +101,8 @@ def compile_tex_file(tex_file, interactive=False, clear_cache=False):
                                 ["./rm_cache.sh"],
                                 capture_output=True,
                                 text=True,
+                                encoding="utf-8",
+                                errors="replace",
                                 cwd=".",
                             )
                             if cache_result.returncode == 0:
