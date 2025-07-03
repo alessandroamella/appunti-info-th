@@ -88,13 +88,11 @@ con la notazione \texttt{leggi; scrivi, mossa}. Il simbolo \texttt{\_} indica "q
 
 \subsection{Esercizio 1: Sottostringa Palindroma di Lunghezza Variabile}
 
-\begin{definition}[Linguaggio $L_1$]
 Sia $L_1$ il linguaggio definito come:
 \[
 L_1 = \{ X^N \Sh W_1 \Sh W_2 \Sh \dots \Sh W_N \mid N > 0, W_i \in \{a,b,c,d\}^+, \forall i \in [1, N], \exists S_i \subseteq W_i \text{ t.c. } |S_i| = i \text{ e } S_i = S_i^R \}
 \]
 dove $X^N$ indica $N$ occorrenze del simbolo \texttt{X}.
-\end{definition}
 
 \subsubsection{Strategia della Macchina di Turing}
 La macchina utilizzerà cinque nastri:
@@ -177,12 +175,10 @@ Sia $\Sigma_I = \{\X, \Sh, a,b,c,d\}$ e $\Gamma_T = \Sigma_I \cup \{\B\}$. Usiam
 
 \subsection{Esercizio 2: Coppie di $W_i$}
 
-\begin{definition}[Linguaggio $L_2$]
 Sia $L_2$ il linguaggio definito come:
 \[
 L_2 = \{ A\Sh B\Sh W_1 W_1 W_2 W_2 \dots W_N W_N \mid A, B, W_i \in \{0,1\}^+, |A| > |B|, N = |A| - |B|, |W_i| \ge |B| \}
 \]
-\end{definition}
 
 \subsubsection{Strategia della Macchina di Turing}
 \begin{itemize}
@@ -247,13 +243,11 @@ L_2 = \{ A\Sh B\Sh W_1 W_1 W_2 W_2 \dots W_N W_N \mid A, B, W_i \in \{0,1\}^+, |
 
 \subsection{Esercizio 3: Parità di Lunghezza di $W_i$}
 
-\begin{definition}[Linguaggio $L_3$]
 Sia $L_3$ il linguaggio definito come:
 \[
 L_3 = \{A\Sh B\Sh W_1 \Sh \dots \Sh W_N \mid A, B, W_i \in \{a,b,c,d\}^+, |A| > |B|, N = |A| - |B|, 
 \]
 $\qquad (\text{se } |W_i| \text{ è pari, allora } B \subseteq W_i) \land (\text{se } |W_i| \text{ è dispari, allora } B^R \subseteq W_i) \}$
-\end{definition}
 
 \subsubsection{Strategia della Macchina di Turing}
 La strategia chiave qui è determinare la parità della lunghezza di $W_i$ e poi biforcare la logica. Come spiegato dal professore, questo si può fare elegantemente usando due stati che si alternano, uno per le lunghezze parziali dispari e uno per quelle pari, senza bisogno di un nastro aggiuntivo.
@@ -316,13 +310,11 @@ La strategia chiave qui è determinare la parità della lunghezza di $W_i$ e poi
 
 \subsection{Esercizio 4: $A$ o $B^R$ in $W_i$ in base alla Parità dell'Indice $i$}
 
-\begin{definition}[Linguaggio $L_4$]
 Sia $L_4$ il linguaggio definito come:
 \[
 L_4 = \{A\Sh B\Sh W_1 \Sh \dots \Sh W_N \mid A, B, W_i \in \{a,b,c,d\}^+, |A|>|B|>0, N=|A|+|B|, 
 \]
 $\qquad (\text{se } i \text{ è dispari, allora } A \subseteq W_i) \land (\text{se } i \text{ è pari, allora } B^R \subseteq W_i) \}$
-\end{definition}
 
 \subsubsection{Strategia della Macchina di Turing}
 La logica qui è un ciclo alternato: un ramo della macchina gestisce gli indici dispari (verificando $A$) e un altro ramo gestisce gli indici pari (verificando $B^R$).
