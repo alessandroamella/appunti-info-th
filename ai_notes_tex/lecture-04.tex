@@ -18,6 +18,7 @@
 \newtheorem{example}{Esempio}
 \newtheorem{lemma}{Lemma}
 \newtheorem{proposition}{Proposizione}
+\newcommand{\blankS}{\ensuremath{\not\text{b}}} % Standardized Blank Symbol
 
 \hypersetup{
     pdftitle={Lezione di Informatica Teorica},
@@ -127,7 +128,7 @@ La Macchina di Turing è un modello astratto di calcolo ideato da Alan Turing ne
 \textbf{Differenze chiave rispetto agli Automi a Stati Finiti}:
 \begin{itemize}
     \item \textbf{Nastro Infinito}: La TM opera su un nastro infinito in entrambe le direzioni, diviso in celle.
-    \item \textbf{Simbolo Blank ($\texttt{B}$)}: Le celle vuote del nastro contengono un simbolo speciale (blank) per delimitare la stringa di input.
+    \item \textbf{Simbolo Blank ($\blankS$)}: Le celle vuote del nastro contengono un simbolo speciale (blank) per delimitare la stringa di input.
     \item \textbf{Testina di Lettura/Scrittura}: La TM ha una testina che può non solo leggere un simbolo, ma anche \emph{scrivere} (sovrascrivere) un simbolo sulla cella corrente.
     \item \textbf{Movimento Bidirezionale della Testina}: La testina può spostarsi a destra ($\texttt{R}$) o a sinistra ($\texttt{L}$) lungo il nastro.
 \end{itemize}
@@ -176,7 +177,7 @@ L'idea è "barrare" una 'a' dal lato sinistro e una 'b' dal lato destro ad ogni 
     }
     \node[head] (head) at (0,1.2) {$\delta$};
     \draw[->] (head) -- (0,0.35);
-    \node[below=0.5cm of tape] (blank_sym) {$\texttt{B}$ (Blank)};
+    \node[below=0.5cm of tape] (blank_sym) {$\blankS$ (Blank)};
     \end{tikzpicture}
     \caption{Rappresentazione del nastro della Macchina di Turing con testina.}
 \end{figure}
@@ -208,24 +209,24 @@ L'idea è "barrare" una 'a' dal lato sinistro e una 'b' dal lato destro ad ogni 
 \textbf{Traccia del funzionamento (con correzioni al diagramma basate sulla discussione):}
 1.  \textbf{$q_0$ (Stato Iniziale)}:
     \begin{itemize}
-        \item Se legge \texttt{A}: Scrive \texttt{B} (blank), sposta a destra ($\texttt{R}$), va in $q_1$. (Cancella la prima 'a').
-        \item Se legge \texttt{B} o \texttt{B} (blank, dopo aver cancellato tutto): Significa che non ci sono più 'a' da cancellare, quindi verifica se anche le 'b' sono finite. Se legge \texttt{B} e sposta a destra, va in $q_4$ (stato accettante).
+        \item Se legge \texttt{A}: Scrive \blankS (blank), sposta a destra ($\texttt{R}$), va in $q_1$. (Cancella la prima 'a').
+        \item Se legge \blankS o \blankS (blank, dopo aver cancellato tutto): Significa che non ci sono più 'a' da cancellare, quindi verifica se anche le 'b' sono finite. Se legge \blankS e sposta a destra, va in $q_4$ (stato accettante).
     \end{itemize}
 2.  \textbf{$q_1$ (Cerca l'ultima 'b')}:
     \begin{itemize}
         \item Se legge \texttt{A}: Scrive \texttt{A}, sposta a destra ($\texttt{R}$), rimane in $q_1$. (Salta le 'a' rimanenti).
-        \item Se legge \texttt{B}: Scrive \texttt{B}, sposta a destra ($\texttt{R}$), rimane in $q_1$. (Salta le 'b' fino alla fine).
-        \item Se legge \texttt{B} (blank): Scrive \texttt{B}, sposta a sinistra ($\texttt{L}$), va in $q_2$. (Ha raggiunto la fine della stringa, torna indietro per trovare l'ultima 'b').
+        \item Se legge \blankS: Scrive \blankS, sposta a destra ($\texttt{R}$), rimane in $q_1$. (Salta le 'b' fino alla fine).
+        \item Se legge \blankS (blank): Scrive \blankS, sposta a sinistra ($\texttt{L}$), va in $q_2$. (Ha raggiunto la fine della stringa, torna indietro per trovare l'ultima 'b').
     \end{itemize}
 3.  \textbf{$q_2$ (Cancella l'ultima 'b')}:
     \begin{itemize}
-        \item Se legge \texttt{B}: Scrive \texttt{B} (blank), sposta a sinistra ($\texttt{L}$), va in $q_3$. (Cancella l'ultima 'b' e inizia a tornare all'inizio della stringa).
+        \item Se legge \blankS: Scrive \blankS (blank), sposta a sinistra ($\texttt{L}$), va in $q_3$. (Cancella l'ultima 'b' e inizia a tornare all'inizio della stringa).
     \end{itemize}
 4.  \textbf{$q_3$ (Torna all'inizio)}:
     \begin{itemize}
         \item Se legge \texttt{A}: Scrive \texttt{A}, sposta a sinistra ($\texttt{L}$), rimane in $q_3$. (Salta le 'a' rimanenti, andando a sinistra).
-        \item Se legge \texttt{B}: Scrive \texttt{B}, sposta a sinistra ($\texttt{L}$), rimane in $q_3$. (Salta le 'b' rimanenti, andando a sinistra).
-        \item Se legge \texttt{B} (blank): Scrive \texttt{B}, sposta a destra ($\texttt{R}$), va in $q_0$. (Ha raggiunto l'inizio della stringa, torna a $q_0$ per la prossima iterazione).
+        \item Se legge \blankS: Scrive \blankS, sposta a sinistra ($\texttt{L}$), rimane in $q_3$. (Salta le 'b' rimanenti, andando a sinistra).
+        \item Se legge \blankS (blank): Scrive \blankS, sposta a destra ($\texttt{R}$), va in $q_0$. (Ha raggiunto l'inizio della stringa, torna a $q_0$ per la prossima iterazione).
     \end{itemize}
 5.  \textbf{$q_4$ (Stato Accettante)}:
     \begin{itemize}
@@ -235,7 +236,7 @@ L'idea è "barrare" una 'a' dal lato sinistro e una 'b' dal lato destro ad ogni 
 \textbf{Gestione di stringhe "strane" (e.g., \texttt{ABaAB})}:
 La macchina come progettata dovrebbe rifiutare stringhe che non seguono il pattern $a^*b^*$.
 \begin{itemize}
-    \item Se $q_0$ legge \texttt{B} all'inizio, si muove a $q_4$, quindi accetterebbe la stringa vuota $\epsilon$. Ma se è $B$ e non $\epsilon$, si muoverebbe a $q_4$ e accetterebbe una stringa di soli $B$s (e.g., $B$). Questo è un dettaglio che richiede un'attenzione specifica sul caso base $\epsilon$ o stringhe di soli $B$s.
+    \item Se $q_0$ legge \blankS all'inizio, si muove a $q_4$, quindi accetterebbe la stringa vuota $\epsilon$. Ma se è $B$ e non $\epsilon$, si muoverebbe a $q_4$ e accetterebbe una stringa di soli $B$s (e.g., $B$). Questo è un dettaglio che richiede un'attenzione specifica sul caso base $\epsilon$ o stringhe di soli $B$s.
     \item Se in $q_1$ (dopo aver cancellato la prima 'a' e spostato a destra) la macchina incontra un'altra 'a' dopo una 'b', non ci sono transizioni definite per questa sequenza, e la macchina si blocca, rifiutando la stringa.
 \end{itemize}
 
@@ -252,8 +253,8 @@ Per formalizzare il comportamento di una TM, si introduce il concetto di \textbf
     La notazione comune è $uqv$, dove $u$ è la stringa sul nastro a sinistra della testina, $q$ è lo stato corrente, e $v$ è la stringa sul nastro a destra della testina (incluso il simbolo letto dalla testina, che è il primo simbolo di $v$). Si omettono i blank a meno che non siano rilevanti per la posizione della testina.
     \begin{example}
         \begin{itemize}
-            \item $A q_1 BB$: La stringa sul nastro è $\texttt{ABB}$, la TM è nello stato $q_1$, e la testina sta leggendo il primo $\texttt{B}$.
-            \item $ABB q_1 \texttt{B}$: La stringa sul nastro è $\texttt{ABB}$, la TM è nello stato $q_1$, e la testina sta leggendo il primo blank a destra della stringa.
+            \item $A q_1 BB$: La stringa sul nastro è $\texttt{ABB}$, la TM è nello stato $q_1$, e la testina sta leggendo il primo $\blankS$.
+            \item $ABB q_1 \blankS$: La stringa sul nastro è $\texttt{ABB}$, la TM è nello stato $q_1$, e la testina sta leggendo il primo blank a destra della stringa.
         \end{itemize}
     \end{example}
 \end{definition}

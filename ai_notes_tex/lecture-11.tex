@@ -19,6 +19,7 @@
 \newtheorem{example}{Esempio}
 \newtheorem{lemma}{Lemma}
 \newtheorem{proposition}{Proposizione}
+\newcommand{\blankS}{\ensuremath{\not\text{b}}} % Standardized Blank Symbol
 \theoremstyle{remark} % Cambio lo stile per le osservazioni
 \newtheorem{remark}{Osservazione}
 
@@ -82,7 +83,7 @@ La codifica si basa sull'idea di rappresentare ogni indice con un numero corrisp
     \begin{itemize}
         \item $X_1$ (simbolo '0') $\rightarrow 0$
         \item $X_2$ (simbolo '1') $\rightarrow 00$
-        \item $X_3$ (simbolo blank $\blacksquare$) $\rightarrow 000$
+        \item $X_3$ (simbolo blank $\blankS$) $\rightarrow 000$
     \end{itemize}
     \item \textbf{Direzioni ($D_m$)}: codificate con $m$ zeri.
     \begin{itemize}
@@ -97,10 +98,10 @@ La codifica si basa sull'idea di rappresentare ogni indice con un numero corrisp
 \end{enumerate}
 
 \begin{example}[Esempio di codifica]
-Codifichiamo la transizione: $\delta(q_3, \blacksquare) = (q_5, 0, R)$
+Codifichiamo la transizione: $\delta(q_3, \blankS) = (q_5, 0, R)$
 \begin{itemize}
     \item $q_3 \rightarrow \textbf{000}$
-    \item $\blacksquare$ è $X_3 \rightarrow \textbf{000}$
+    \item $\blankS$ è $X_3 \rightarrow \textbf{000}$
     \item $q_5 \rightarrow \textbf{00000}$
     \item $0$ è $X_1 \rightarrow \textbf{0}$
     \item $R$ è $D_2 \rightarrow \textbf{00}$
@@ -132,7 +133,7 @@ La UTM ($M_U$) è spesso descritta come una TM a più nastri per rendere più ch
     % Nastro 2
     \draw (-5,-0.4) -- (mu.west |- 0,-0.4);
     \node[anchor=east] at (-5.2, -0.4) {Nastro 2 (Nastro di M):};
-    \node[anchor=west, font=\ttfamily] at (-4.8, -0.4) {... $\blacksquare$ $\blacksquare$ $\underline{00}$ 000 $\blacksquare$ ...};
+    \node[anchor=west, font=\ttfamily] at (-4.8, -0.4) {... $\blankS$ $\blankS$ $\underline{00}$ 000 $\blankS$ ...};
     
     % Nastro 3
     \draw (-5,0.4) -- (mu.west |- 0,0.4);
@@ -181,7 +182,7 @@ Esistono problemi che nessuna TM può risolvere. La dimostrazione classica usa l
 \subsection{Enumerazione di Stringhe e Macchine di Turing}
 
 \begin{enumerate}
-    \item \textbf{Enumerazione di stringhe binarie ($\Sigma^*$)}: L'insieme di tutte le stringhe binarie $\Sigma^*$ è \textbf{numerabile} (infinito ma "contabile"). Possiamo ordinarle (es. per lunghezza, poi lessicograficamente: $\epsilon, 0, 1, 00, 01, \dots$) e parlare della $i$-esima stringa $w_i$. La sua cardinalità è $\aleph_0$, la stessa dei numeri naturali.
+    \item \textbf{Enumerazione di stringhe binarie ($\Sigma^*$)}: L'insieme di tutte le stringhe binarie $\Sigma^*$ è \textbf{numerabile} (infinito ma "contabile"). Possiamo ordinarle (es. per lunghezza, poi lessicograficamente: $\epsilon, 0, 1, 00, 01, \dots$) e considerare la $i$-esima stringa $w_i$. La sua cardinalità è $\aleph_0$, la stessa dei numeri naturali.
     \item \textbf{Enumerazione delle TM}: Poiché ogni TM può essere codificata come una stringa binaria, anche l'insieme di tutte le TM è \textbf{numerabile}. Possiamo parlare della $i$-esima TM, $M_i$.
 \end{enumerate}
 

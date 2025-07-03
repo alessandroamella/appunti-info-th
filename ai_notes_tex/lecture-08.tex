@@ -18,6 +18,7 @@
 \newtheorem{example}{Esempio}
 \newtheorem{lemma}{Lemma}
 \newtheorem{proposition}{Proposizione}
+\newcommand{\blankS}{\ensuremath{\not\text{b}}} % Standardized Blank Symbol
 
 \hypersetup{
     pdftitle={Lezione di Informatica Teorica - Macchine di Turing Non Deterministica e Classi di Computabilità},
@@ -62,7 +63,7 @@ Consideriamo la seguente macchina di Turing (parzialmente descritta):
   \path (q1) edge node {$0/0, L$} (q0); % Questo è il punto di non-determinismo
 
   \path (q1) edge [loop right] node {$1/1, R$} (q1);
-  \path (q1) edge node {$\sqcup/\sqcup, R$} (q2);
+  \path (q1) edge node {$\blankS/\blankS, R$} (q2);
 
   \path (q2) edge [loop right] node {$0/0, R$} (q2); % Aggiunta per completezza
   \path (q2) edge [loop right] node {$1/1, R$} (q2); % Aggiunta per completezza
@@ -80,11 +81,11 @@ Le macchine viste finora (mononastro, multinastro, multitraccia) erano tutte \te
 
 \section{Definizione Formale di Macchina di Turing Non Deterministica}
 
-Una \textbf{Macchina di Turing Non Deterministica (NDTM)} $N$ è una tupla $N = \langle \Sigma, \Gamma, \sqcup, Q, q_0, F, \delta \rangle$, dove:
+Una \textbf{Macchina di Turing Non Deterministica (NDTM)} $N$ è una tupla $N = \langle \Sigma, \Gamma, \blankS, Q, q_0, F, \delta \rangle$, dove:
 \begin{itemize}
     \item $\Sigma$: l'alfabeto di input (simboli che possono essere letti sull'input iniziale del nastro).
     \item $\Gamma$: l'alfabeto di nastro (tutti i simboli che la macchina può maneggiare sul nastro, con $\Sigma \subset \Gamma$).
-    \item $\sqcup$: il simbolo di blank, $\sqcup \in \Gamma \setminus \Sigma$.
+    \item $\blankS$: il simbolo di blank, $\blankS \in \Gamma \setminus \Sigma$.
     \item $Q$: l'insieme finito degli stati della macchina.
     \item $q_0$: lo stato iniziale, $q_0 \in Q$.
     \item $F$: l'insieme degli stati finali (o accettanti), $F \subseteq Q$.
@@ -138,15 +139,15 @@ La configurazione iniziale è $q_001$.
     \node[config, below left of=root] (n1) {$1 q_0 1$};
     
     % Level 2  
-    \node[config, below of=n1] (n2) {$10 q_1 \sqcup$};
+    \node[config, below of=n1] (n2) {$10 q_1 \blankS$};
     
     % Level 3 - Non-deterministic branching
-    \node[accept, below left of=n2] (accept1) {$10\sqcup q_2 \sqcup$};
+    \node[accept, below left of=n2] (accept1) {$10\blankS q_2 \blankS$};
     
     % Add edges
     \draw[->] (root) -- (n1) node[midway, left] {\small $0/1, R$};
     \draw[->] (n1) -- (n2) node[midway, left] {\small $1/0, R$};
-    \draw[->] (n2) -- (accept1) node[midway, left] {\small $\sqcup/\sqcup, R$};
+    \draw[->] (n2) -- (accept1) node[midway, left] {\small $\blankS/\blankS, R$};
     
     % Add labels
     \node[below=0.3cm of accept1, font=\small] {Accetta};
@@ -177,8 +178,8 @@ Per illustrare meglio il non-determinismo, consideriamo un input che attivi effe
     \node[reject, below of=left2] (leftend) {Blocco};
     
     % Right branch - choice 2: (q_1, 0, R)  
-    \node[config, below right of=root, xshift=1cm] (right1) {$100q_1\sqcup$};
-    \node[accept, below of=right1] (rightend) {$100\sqcup q_2\sqcup$};
+    \node[config, below right of=root, xshift=1cm] (right1) {$100q_1\blankS$};
+    \node[accept, below of=right1] (rightend) {$100\blankS q_2\blankS$};
     
     % Add edges with labels
     \draw[->] (root) -- (left1) node[midway, above left, font=\small] {$0/0, L \to q_0$};
@@ -187,7 +188,7 @@ Per illustrare meglio il non-determinismo, consideriamo un input che attivi effe
     \draw[->] (left1) -- (left2) node[midway, left, font=\small] {$0/1, R$};
     \draw[->] (left2) -- (leftend) node[midway, left, font=\small] {Nessuna transizione};
     
-    \draw[->] (right1) -- (rightend) node[midway, right, font=\small] {$\sqcup/\sqcup, R$};
+    \draw[->] (right1) -- (rightend) node[midway, right, font=\small] {$\blankS/\blankS, R$};
     
     % Add branch labels
     \node[left=0.5cm of left1, font=\small, text=red] {Ramo 1: Rifiuta};
@@ -200,24 +201,24 @@ Analizziamo il processo passo-passo:
 \begin{enumerate}
     \item Iniziamo da $q_001$.
     \item Da $q_0$ leggendo $0$: si va a $q_0$, si scrive $1$, si sposta a destra. Nuova configurazione: $1q_01$.
-    \item Da $q_0$ leggendo $1$: si va a $q_1$, si scrive $0$, si sposta a destra. Nuova configurazione: $10q_1\sqcup$.
-    \item Da $q_1$ leggendo $\sqcup$: c'è il non-determinismo (in realtà l'esempio della lezione aveva $q_1$ che leggeva $0$, ma nel grafico è $\sqcup$, seguiamo il grafico per la computazione e l'esempio della $\delta(q_1,0)$). Il professore ha disegnato la freccia per $(q_1, \sqcup)$ in $q_2$. Rivediamo l'esempio del disegno, $q_1$ legge $0$, sposta a destra. C'è un arco da $q_1$ con $1/1,R$ che cicla in $q_1$. Poi da $q_1$ con $\sqcup/\sqcup,R$ va a $q_2$.
+    \item Da $q_0$ leggendo $1$: si va a $q_1$, si scrive $0$, si sposta a destra. Nuova configurazione: $10q_1\blankS$.
+    \item Da $q_1$ leggendo $\blankS$: c'è il non-determinismo (in realtà l'esempio della lezione aveva $q_1$ che leggeva $0$, ma nel grafico è $\blankS$, seguiamo il grafico per la computazione e l'esempio della $\delta(q_1,0)$). Il professore ha disegnato la freccia per $(q_1, \blankS)$ in $q_2$. Rivediamo l'esempio del disegno, $q_1$ legge $0$, sposta a destra. C'è un arco da $q_1$ con $1/1,R$ che cicla in $q_1$. Poi da $q_1$ con $\blankS/\blankS,R$ va a $q_2$.
     
     \begin{itemize}
         \item \textbf{Rivediamo l'esempio del professore basandoci sul disegno e l'input 01:}
         \begin{itemize}
             \item Iniziale: $\mathbf{q_0}01$
             \item $q_0,0 \to (q_0,1,R)$: $1\mathbf{q_0}1$
-            \item $q_0,1 \to (q_1,0,R)$: $10\mathbf{q_1}\sqcup$
-            \item Ora siamo in $10q_1\sqcup$. La testina è sul blank. Dal diagramma, $q_1$ leggendo blank porta a $q_2$ scrivendo blank e spostandosi a destra.
-            \item $q_1,\sqcup \to (q_2,\sqcup,R)$: $10\sqcup\mathbf{q_2}\sqcup$ (questa è una configurazione accettante, in quanto $q_2 \in F$).
+            \item $q_0,1 \to (q_1,0,R)$: $10\mathbf{q_1}\blankS$
+            \item Ora siamo in $10q_1\blankS$. La testina è sul blank. Dal diagramma, $q_1$ leggendo blank porta a $q_2$ scrivendo blank e spostandosi a destra.
+            \item $q_1,\blankS \to (q_2,\blankS,R)$: $10\blankS\mathbf{q_2}\blankS$ (questa è una configurazione accettante, in quanto $q_2 \in F$).
         \end{itemize}
         
         \item \textbf{Rivediamo invece l'esempio di non-determinismo che il professore ha esplicitamente discusso $\delta(q_1,0)$:}
         \begin{itemize}
             \item Configurazione $q_001$
             \item $q_0,0 \to (q_0,1,R)$: $1q_01$
-            \item $q_0,1 \to (q_1,0,R)$: $10q_1\sqcup$ (Questo è il punto di divergenza tra il diagramma mostrato e l'input $01$ effettivo, in quanto dopo $10q_1\sqcup$ la testina è sul blank, non sul $0$ per attivare il non-determinismo).
+            \item $q_0,1 \to (q_1,0,R)$: $10q_1\blankS$ (Questo è il punto di divergenza tra il diagramma mostrato e l'input $01$ effettivo, in quanto dopo $10q_1\blankS$ la testina è sul blank, non sul $0$ per attivare il non-determinismo).
             \item \textbf{Per allineare l'esempio alla discussione del professore, dobbiamo immaginare un input diverso che porti a $\mathbf{q_1}0...$}: Il professore usa \texttt{10q10} nell'esempio sull'albero, non \texttt{10q1\_blank\_}. Questo implica che l'input doveva essere più lungo.
             \item \textbf{Seguiamo l'esempio disegnato dal professore, che mostra la configurazione $10q_10$ come punto di non-determinismo:}
             \begin{itemize}
@@ -226,12 +227,12 @@ Analizziamo il processo passo-passo:
                 \item \textbf{Primo branch:} $(q_0, 0, L)$. Scriviamo $0$, spostiamo a sinistra, andiamo in $q_0$.\\
                 Configurazione successiva: $1\mathbf{q_0}00$.\\
                 Da $1\mathbf{q_0}00$: $q_0,0 \to (q_0,1,R)$. Scriviamo $1$, spostiamo a destra. $11\mathbf{q_0}0$.\\
-                Da $11\mathbf{q_0}0$: $q_0,0 \to (q_0,1,R)$. Scriviamo $1$, spostiamo a destra. $111\mathbf{q_0}\sqcup$.\\
-                Da $111\mathbf{q_0}\sqcup$: $q_0,\sqcup \to (q_2,\sqcup,R)$. (Non specificato nel disegno iniziale, assumiamo). Se non c'è transizione, si blocca e rifiuta. Nell'esempio disegnato, questo ramo è bloccato e non accettante (X).
+                Da $11\mathbf{q_0}0$: $q_0,0 \to (q_0,1,R)$. Scriviamo $1$, spostiamo a destra. $111\mathbf{q_0}\blankS$.\\
+                Da $111\mathbf{q_0}\blankS$: $q_0,\blankS \to (q_2,\blankS,R)$. (Non specificato nel disegno iniziale, assumiamo). Se non c'è transizione, si blocca e rifiuta. Nell'esempio disegnato, questo ramo è bloccato e non accettante (X).
                 \item \textbf{Secondo branch:} $(q_1, 0, R)$. Scriviamo $0$, spostiamo a destra, andiamo in $q_1$.\\
-                Configurazione successiva: $100\mathbf{q_1}\sqcup$.\\
-                Da $100\mathbf{q_1}\sqcup$: $q_1,\sqcup \to (q_2,\sqcup,R)$. Scriviamo $\sqcup$, spostiamo a destra.\\
-                Configurazione successiva: $100\sqcup\mathbf{q_2}\sqcup$. (Questa è accettante, $q_2 \in F$).
+                Configurazione successiva: $100\mathbf{q_1}\blankS$.\\
+                Da $100\mathbf{q_1}\blankS$: $q_1,\blankS \to (q_2,\blankS,R)$. Scriviamo $\blankS$, spostiamo a destra.\\
+                Configurazione successiva: $100\blankS\mathbf{q_2}\blankS$. (Questa è accettante, $q_2 \in F$).
             \end{itemize}
             \item L'esempio nel disegno ha un ramo ulteriore: $10\mathbf{q_1}0 \to 10\mathbf{q_1}0$ (ciclo su $0/0,L$) $\to \dots$. Questo dimostra che possono esserci più rami e che un ramo può anche andare in loop.
         \end{itemize}

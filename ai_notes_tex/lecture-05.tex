@@ -18,6 +18,7 @@
 \newtheorem{example}{Esempio}
 \newtheorem{lemma}{Lemma}
 \newtheorem{proposition}{Proposizione}
+\newcommand{\blankS}{\ensuremath{\not\text{b}}} % Standardized Blank Symbol
 
 \hypersetup{
     pdftitle={Lezione di Informatica Teorica: Macchine di Turing},
@@ -90,7 +91,7 @@ Vogliamo progettare una TM che decide il linguaggio delle stringhe palindromiche
 La strategia consiste nel confrontare il primo carattere di $w$ con l'ultimo carattere di $w^R$, il secondo con il penultimo, e così via, fino a quando tutti i caratteri sono stati confrontati.
 \begin{enumerate}
     \item Partire dal primo simbolo non marcato del nastro.
-    \item Leggere il simbolo (es. $0$ o $1$), marcarlo (sostituirlo con un Blank $B$).
+    \item Leggere il simbolo (es. $0$ o $1$), marcarlo (sostituirlo con un Blank $\blankS$).
     \item Spostare la testina fino alla fine della stringa (trovando il primo $B$ a destra), quindi tornare indietro di un passo per posizionarsi sull'ultimo simbolo.
     \item Verificare che l'ultimo simbolo sia uguale a quello letto inizialmente. Se sì, marcarlo (sostituirlo con $B$).
     \item Spostare la testina all'inizio della parte non marcata della stringa.

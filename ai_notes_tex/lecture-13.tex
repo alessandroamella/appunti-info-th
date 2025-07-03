@@ -207,7 +207,7 @@ Consideriamo la seguente costruzione di una Macchina di Turing $M_A$ che decide 
 Questo significa che $M_A$ è un decisore per $A$, quindi $A \in R$.
 Ma ciò contraddice la nostra assunzione iniziale che $A \notin R$.
 Pertanto, l'assunzione è falsa, e la tesi $A \notin R \implies B \notin R$ è vera.
-$\blacksquare$
+$\blankS$
 
 \textbf{Dimostrazione 2 (Riconoscibilità):}
 Vogliamo dimostrare: $A \notin RE \implies B \notin RE$.
@@ -236,7 +236,7 @@ Consideriamo la seguente costruzione di una Macchina di Turing $M_A'$ che ricono
 Questo significa che $M_A'$ è un accettore per $A$, quindi $A \in RE$.
 Ma ciò contraddice la nostra assunzione iniziale che $A \notin RE$.
 Pertanto, l'assunzione è falsa, e la tesi $A \notin RE \implies B \notin RE$ è vera.
-$\blacksquare$
+$\blankS$
 \end{proof}
 
 \begin{corollary}[Corollario delle Riduzioni]
@@ -250,7 +250,7 @@ Siano $A$ e $B$ due linguaggi tali che $A \le B$.
 Queste affermazioni sono le contronominali del teorema precedente.
 1. Se $A \notin R \implies B \notin R$ (Teorema 1). La sua contronominale è $B \in R \implies A \in R$.
 2. Se $A \notin RE \implies B \notin RE$ (Teorema 2). La sua contronominale è $B \in RE \implies A \in RE$.
-$\blacksquare$
+$\blankS$
 \end{proof}
 
 \textbf{Interpretazione del Corollario:}
@@ -310,7 +310,7 @@ Per risolvere questo, si può usare una Macchina di Turing non deterministica, o
     \item Se $L(M) = \emptyset$, allora $M$ non accetta alcuna stringa. Indipendentemente da quale $w$ $M_{NE}$ indovina, la simulazione di $M$ su $w$ non porterà mai all'accettazione. Quindi, $M_{NE}$ non accetterà $\langle M \rangle$.
 \end{itemize}
 Poiché le Macchine di Turing non deterministiche sono equivalenti a quelle deterministiche per la classe RE, esiste una Macchina di Turing deterministica che riconosce $L_{NE}$. Quindi, $L_{NE} \in RE$.
-$\blacksquare$
+$\blankS$
 \end{proof}
 
 \subsection{$L_{NE}$ non è Ricorsivo ($L_{NE} \notin R$)}
@@ -369,7 +369,7 @@ Ne consegue che $\langle M' \rangle \notin L_{NE}$.
 La condizione è soddisfatta: un'istanza "no" di $L_U$ è mappata a un'istanza "no" di $L_{NE}$.
 
 Poiché abbiamo dimostrato che $L_U \le L_{NE}$ e sappiamo che $L_U \notin R$, per il Teorema sulle Proprietà Fondamentali delle Riduzioni (punto 1), possiamo concludere che $L_{NE} \notin R$.
-$\blacksquare$
+$\blankS$
 \end{proof}
 
 \subsection{Linguaggio Complementare $L_E$}
