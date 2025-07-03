@@ -167,7 +167,7 @@ Utilizziamo 3 nastri.
         \item \textbf{Condizione:} Nastro 1: $\alpha \in \{0,1\}$, Nastro 2: $X$, Nastro 3: $X$.
         \item \textbf{Azione:} Nastro 1: $(\alpha/\alpha, R)$, Nastro 2: $(X/\Box, L)$, Nastro 3: $(X/\Box, L)$. Rimani in $q_2$.
         \item \textbf{Controllo $|C|=|A|-|B|$:} Se Nastro 2 diventa $\Box$ e Nastro 1 non è finito, significa $|C|>|A|-|B|$. Se Nastro 1 finisce e Nastro 2 ha ancora X, significa $|C|<|A|-|B|$. In entrambi i casi, rifiuta. Se Nastro 1 e Nastro 2 finiscono assieme (Nastro 2 legge $\Box$ quando Nastro 1 legge $\Box$), allora $|C|=|A|-|B|$.
-        \item \textbf{Controllo $|B|>|C|$:} Durante il processo, Nastro 3 deve ancora avere 'X' quando Nastro 1 finisce (cioè Nastro 3 deve diventare $\Box$ *dopo* Nastro 1). Se Nastro 3 diventa $\Box$ prima o insieme a Nastro 1, significa $|B| \le |C|$, quindi rifiuta.
+        \item \textbf{Controllo $|B|>|C|$:} Durante il processo, Nastro 3 deve ancora avere 'X' quando Nastro 1 finisce (cioè Nastro 3 deve diventare $\Box$ \textbf{dopo} Nastro 1). Se Nastro 3 diventa $\Box$ prima o insieme a Nastro 1, significa $|B| \le |C|$, quindi rifiuta.
         \item \textbf{Uscita:} Quando Nastro 1 legge $\Box$.
         \item \textbf{Transizione:} Da $q_2$ a $q_{acc}$: Nastro 1: $(\Box/\Box, S)$, Nastro 2: $(\Box/\Box, S)$, Nastro 3: $(X/X, S)$ (Nastro 3 deve ancora avere X per $|B|>|C|$).
     \end{itemize}

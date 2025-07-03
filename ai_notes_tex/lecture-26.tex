@@ -78,7 +78,6 @@ $\langle G, k \rangle \in Min-Cover \iff \langle G, k \rangle \in VC \text{ AND 
 Questo significa che per decidere $Min-Cover$, possiamo fare due domande a un decisore per $VC$.
 Consideriamo il seguente pseudocodice:
 \begin{minted}[mathescape, linenos, escapeinside=||]{python}
-# `check_VC` è una subroutine che decide il problema VC
 def solve_MinCover(G, k):
     # Domanda 1: Esiste un VC di taglia <= k?
     result1 = check_VC(G, k)

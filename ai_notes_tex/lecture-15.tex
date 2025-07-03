@@ -341,7 +341,7 @@ Sia $\text{HALT}_\forall = \{ \langle M \rangle \mid M \text{ si arresta su ogni
 \begin{remark}
 Intuitivamente:
 \begin{itemize}
-    \item \textbf{Perché $\text{HALT}_\forall \notin \text{RE}$?} Per determinare se una macchina si arresta su *ogni* input, dovremmo simulare la macchina su tutti gli input possibili, che sono infiniti. Se la macchina si arresta su tutti, non potremmo mai finire di verificarlo.
+    \item \textbf{Perché $\text{HALT}_\forall \notin \text{RE}$?} Per determinare se una macchina si arresta su \textbf{ogni} input, dovremmo simulare la macchina su tutti gli input possibili, che sono infiniti. Se la macchina si arresta su tutti, non potremmo mai finire di verificarlo.
     \item \textbf{Perché $\text{HALT}_\forall \notin \text{coRE}$?} Se $\text{HALT}_\forall \in \text{coRE}$, allora $\overline{\text{HALT}_\forall} \in \text{RE}$. Ma $\overline{\text{HALT}_\forall} = \{ \langle M \rangle \mid M \text{ non si arresta su almeno un input } w \}$. Per determinare se $M$ non si arresta su *almeno un* input, dovremmo cercare questo input. Se $M$ non si arresta su un certo $w$, la simulazione di $M$ su $w$ non terminerebbe, e quindi non potremmo dire "SÌ" in tempo finito.
 \end{itemize}
 Quindi, $\text{HALT}_\forall$ sembra essere un candidato a non stare né in RE né in coRE.
@@ -450,7 +450,7 @@ Sia $k$ il numero di passi dopo i quali $M$ si arresta su $\epsilon$.
     \item Se $N$ riceve un input $w$ tale che $|w| \ge k$:
     $N$ simulerà $M$ su $\epsilon$ per $|w|$ passi. Poiché $|w| \ge k$, $M$ si arresterà entro $k$ passi. La condizione \texttt{simulazione\_m\_terminata} sarà vera, e $N$ entrerà in un loop infinito.
 \end{itemize}
-Poiché $N$ si arresta su alcuni input (quelli con lunghezza $< k$) e non si arresta su altri input (quelli con lunghezza $\ge k$), $N$ non si arresta su *ogni* input.
+Poiché $N$ si arresta su alcuni input (quelli con lunghezza $< k$) e non si arresta su altri input (quelli con lunghezza $\ge k$), $N$ non si arresta su \textbf{ogni} input.
 Dunque, $N \notin \text{HALT}_\forall$.
 
 La riduzione $\overline{\text{HALT}_\epsilon} \le_m \text{HALT}_\forall$ è valida.

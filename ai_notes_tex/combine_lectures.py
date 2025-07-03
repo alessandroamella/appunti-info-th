@@ -291,7 +291,8 @@ def create_master_document(
         print("Compilation skipped. You can compile manually using the commands above.")
 
 
-if __name__ == "__main__":
+def main(output_file="all_lectures.tex"):
+    """Main function to parse command line arguments and create the master document."""
     parser = argparse.ArgumentParser(
         description="Combine multiple lecture-*.tex files into a single master document."
     )
@@ -305,4 +306,8 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     # Assuming the script is in the same directory as the .tex files
-    create_master_document(interactive=args.interactive)
+    create_master_document(interactive=args.interactive, output_file=output_file)
+
+
+if __name__ == "__main__":
+    main()
