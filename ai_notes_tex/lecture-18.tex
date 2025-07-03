@@ -42,7 +42,7 @@
 
 Abbiamo iniziato a definire classi di complessità che sono sottoclassi della classe $\mathbf{R}$ (Problemi Decidibili). Ci chiediamo quali problemi siano facili e quali difficili.
 
-Abbiamo introdotto i concetti di \emph{computation time} e \emph{running time} per Macchine di Turing (MT) e le funzioni di tempo. Da ciò, abbiamo definito le classi:
+Abbiamo introdotto i concetti di \emph{computation time} e \emph{running time} per Macchine di Turing (TM) e le funzioni di tempo. Da ciò, abbiamo definito le classi:
 \begin{itemize}
     \item \textbf{Time($f(n)$)}: L'insieme di tutti i linguaggi decidibili da una Macchina di Turing deterministica in tempo $O(f(n))$.
     \item \textbf{NTime($f(n)$)}: L'insieme di tutti i linguaggi decidibili da una Macchina di Turing non deterministica in tempo $O(f(n))$.
@@ -66,11 +66,11 @@ Formalmente: $\mathbf{NP} = \bigcup_{k \ge 1} \text{NTime}(n^k)$.
 
 \subsubsection{Relazione tra P e NP: Il Problema P vs NP}
 
-È intuitivo che $\mathbf{P} \subseteq \mathbf{NP}$. Tutto ciò che può essere deciso in tempo polinomiale deterministico può anche essere deciso in tempo polinomiale non deterministico (una MT deterministica è un caso particolare di MT non deterministica).
+È intuitivo che $\mathbf{P} \subseteq \mathbf{NP}$. Tutto ciò che può essere deciso in tempo polinomiale deterministico può anche essere deciso in tempo polinomiale non deterministico (una TM deterministica è un caso particolare di TM non deterministica).
 
 La relazione inversa, ovvero se $\mathbf{NP} \subseteq \mathbf{P}$ (il che implicherebbe $\mathbf{P} = \mathbf{NP}$), è un problema tuttora aperto e uno dei più importanti problemi non risolti dell'informatica teorica (e uno dei problemi del millennio).
 
-Attualmente, sappiamo simulare una Macchina di Turing non deterministica con una deterministica con un overhead esponenziale. Questo significa che un linguaggio in $\mathbf{NP}$ può essere deciso da una MT deterministica in tempo esponenziale. Questo non lo colloca automaticamente in $\mathbf{P}$. Non è stato ancora dimostrato che non esista un metodo più efficiente (polinomiale) per tale simulazione. La congettura comune è che $\mathbf{P} \ne \mathbf{NP}$.
+Attualmente, sappiamo simulare una Macchina di Turing non deterministica con una deterministica con un overhead esponenziale. Questo significa che un linguaggio in $\mathbf{NP}$ può essere deciso da una TM deterministica in tempo esponenziale. Questo non lo colloca automaticamente in $\mathbf{P}$. Non è stato ancora dimostrato che non esista un metodo più efficiente (polinomiale) per tale simulazione. La congettura comune è che $\mathbf{P} \ne \mathbf{NP}$.
 
 \subsection{Riduzione Polinomiale}
 
@@ -131,7 +131,7 @@ Questo significa che per ogni linguaggio $L' \in \mathbf{NP}$, esiste una riduzi
 Consideriamo una Macchina di Turing $M_{L'}$ che decide $L'$ utilizzando la riduzione a $L$. $M_{L'}$ è costruita come segue:
 \begin{enumerate}
     \item Input: una stringa $w$.
-    \item Calcola $y = f(w)$. Sia $M_f$ la MT che calcola $f$.
+    \item Calcola $y = f(w)$. Sia $M_f$ la TM che calcola $f$.
     \item Simula la Macchina di Turing $M_L$ (che decide $L$) con input $y$.
     \item $M_{L'}$ accetta se $M_L$ accetta, e $M_{L'}$ rifiuta se $M_L$ rifiuta.
 \end{enumerate}
@@ -259,7 +259,7 @@ Per dimostrare che 3-SAT è NP-complete, dobbiamo provare due cose:
 
 \subsubsection{3-SAT $\in \mathbf{NP}$}
 Un problema è in NP se può essere deciso da una macchina di Turing non deterministica in tempo polinomiale.
-Per 3-SAT, una MT non deterministica può:
+Per 3-SAT, una TM non deterministica può:
 \begin{enumerate}
     \item \textbf{Guess (indovinare):} Indovinare un'assegnazione di verità per tutte le variabili booleane nella formula. Questo può essere fatto in tempo polinomiale (lineare nel numero di variabili, che è al più lineare nella lunghezza della formula).
     \item \textbf{Check (verificare):} Verificare se l'assegnazione indovinata soddisfa la formula. Questo comporta la valutazione di ogni clausola. Per una formula in 3-CNF, ogni clausola ha al più 3 letterali, quindi la valutazione di una clausola è costante. Verificare tutte le clausole richiede tempo polinomiale (lineare nel numero di clausole).

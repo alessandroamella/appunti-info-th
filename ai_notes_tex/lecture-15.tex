@@ -81,13 +81,13 @@ $\text{HALT}_\epsilon^C \le_m \text{Tiling}$. Poiché $\text{HALT}_\epsilon^C$ �
 \end{theorem}
 
 \subsubsection{Idea della Riduzione}
-L'idea è codificare le computazioni di una Macchina di Turing $M$ sul nastro semi-infinito (senza perdere generalità) utilizzando le piastrelle. Ogni "riga" di piastrelle nel tiling (ovvero, le piastrelle con lo stesso valore di $n$) rappresenterà una configurazione della macchina di Turing ad un determinato passo. I bordi orizzontali tra le righe di piastrelle codificheranno le configurazioni successive della MT.
+L'idea è codificare le computazioni di una Macchina di Turing $M$ sul nastro semi-infinito (senza perdere generalità) utilizzando le piastrelle. Ogni "riga" di piastrelle nel tiling (ovvero, le piastrelle con lo stesso valore di $n$) rappresenterà una configurazione della macchina di Turing ad un determinato passo. I bordi orizzontali tra le righe di piastrelle codificheranno le configurazioni successive della TM.
 
-La MT $M$ non si arresta su $\epsilon$ se e solo se è possibile piastrellare l'intero quadrante.
+La TM $M$ non si arresta su $\epsilon$ se e solo se è possibile piastrellare l'intero quadrante.
 
 \subsubsection{Costruzione della Macchina di Turing $N$ (funzione $G$)}
-Sia $M = (Q, \Sigma, \Gamma, \delta, q_0, q_{acc}, q_{rej})$ una Macchina di Turing (MT) data in input a $G$. La funzione $G$ costruirà un sistema di tiling $T=(D, D_0, H, V)$.
-Useremo "etichette" per i colori delle porzioni di piastrella, che saranno simboli del nastro, stati della MT o combinazioni di essi. Il nastro è semi-infinito a destra.
+Sia $M = (Q, \Sigma, \Gamma, \delta, q_0, q_{acc}, q_{rej})$ una Macchina di Turing (TM) data in input a $G$. La funzione $G$ costruirà un sistema di tiling $T=(D, D_0, H, V)$.
+Useremo "etichette" per i colori delle porzioni di piastrella, che saranno simboli del nastro, stati della TM o combinazioni di essi. Il nastro è semi-infinito a destra.
 
 Le piastrelle avranno tipi $d \in D$ definiti per simulare il comportamento di $M$:
 
@@ -109,7 +109,7 @@ Le piastrelle avranno tipi $d \in D$ definiti per simulare il comportamento di $
     Queste piastrelle assicurano che un simbolo $X$ sul bordo inferiore venga replicato sul bordo superiore, simulando l'inerzia del nastro. Il "colore" del bordo superiore-destro deve combaciare con quello inferiore-sinistro della piastrella adiacente, e così via.
 
     \item \textbf{Piastrelle di Transizione (Spostamento della Testina a Destra):}
-    Queste piastrelle simulano una transizione $\delta(q, X) = (p, Y, R)$. Una tale transizione significa che la MT, nello stato $q$ leggendo $X$, si sposta nello stato $p$, scrive $Y$ e sposta la testina a destra.
+    Queste piastrelle simulano una transizione $\delta(q, X) = (p, Y, R)$. Una tale transizione significa che la TM, nello stato $q$ leggendo $X$, si sposta nello stato $p$, scrive $Y$ e sposta la testina a destra.
     Queste transizioni coinvolgono due celle del nastro.
     Per ogni $q, p \in Q \setminus \{q_{acc}, q_{rej}\}$ (stati non terminali) e per ogni $X, Y, Z \in \Gamma$:
     \[
@@ -144,7 +144,7 @@ Le piastrelle avranno tipi $d \in D$ definiti per simulare il comportamento di $
     \end{itemize}
 
     \item \textbf{Piastrelle di Transizione (Spostamento della Testina a Sinistra):}
-    Simulano una transizione $\delta(q, X) = (p, Y, L)$. La MT, nello stato $q$ leggendo $X$, si sposta nello stato $p$, scrive $Y$ e sposta la testina a sinistra.
+    Simulano una transizione $\delta(q, X) = (p, Y, L)$. La TM, nello stato $q$ leggendo $X$, si sposta nello stato $p$, scrive $Y$ e sposta la testina a sinistra.
     Per ogni $q, p \in Q \setminus \{q_{acc}, q_{rej}\}$ e per ogni $X, Y, Z \in \Gamma$:
     \[
     \begin{tikzpicture}[scale=0.8]
@@ -261,10 +261,10 @@ $\text{RE} \cap \text{coRE} = \text{R}$.
 \begin{proof}
 \textbf{Parte 1: $\text{RE} \cap \text{coRE} \subseteq \text{R}$}
 Sia $L$ un linguaggio tale che $L \in \text{RE} \cap \text{coRE}$.
-Poiché $L \in \text{RE}$, esiste una MT $M_1$ che accetta $L$. Per ogni $w \in L$, $M_1(w)$ si arresta e accetta. Per $w \notin L$, $M_1(w)$ o si arresta e rifiuta o entra in loop.
-Poiché $L \in \text{coRE}$, per definizione $\overline{L} \in \text{RE}$. Quindi esiste una MT $M_2$ che accetta $\overline{L}$. Per ogni $w \notin L$ (cioè $w \in \overline{L}$), $M_2(w)$ si arresta e accetta. Per $w \in L$, $M_2(w)$ o si arresta e rifiuta o entra in loop.
+Poiché $L \in \text{RE}$, esiste una TM $M_1$ che accetta $L$. Per ogni $w \in L$, $M_1(w)$ si arresta e accetta. Per $w \notin L$, $M_1(w)$ o si arresta e rifiuta o entra in loop.
+Poiché $L \in \text{coRE}$, per definizione $\overline{L} \in \text{RE}$. Quindi esiste una TM $M_2$ che accetta $\overline{L}$. Per ogni $w \notin L$ (cioè $w \in \overline{L}$), $M_2(w)$ si arresta e accetta. Per $w \in L$, $M_2(w)$ o si arresta e rifiuta o entra in loop.
 
-Per dimostrare che $L \in \text{R}$, costruiamo una nuova MT $M_{decider}$ che decide $L$:
+Per dimostrare che $L \in \text{R}$, costruiamo una nuova TM $M_{decider}$ che decide $L$:
 \begin{minted}[mathescape=true, framesep=2mm, breaklines, fontsize=\small]{text}
 M_decider(w):
   Simula M_1(w) e M_2(w) in parallelo.
@@ -275,7 +275,7 @@ Poiché $w$ deve essere o in $L$ o in $\overline{L}$, una delle due simulazioni 
 
 \textbf{Parte 2: $\text{R} \subseteq \text{RE} \cap \text{coRE}$}
 Sia $L \in \text{R}$.
-Poiché $L \in \text{R}$, esiste una MT $M$ che decide $L$. Questa MT si arresta sempre. Dunque $M$ è anche una macchina che accetta $L$, quindi $L \in \text{RE}$.
+Poiché $L \in \text{R}$, esiste una TM $M$ che decide $L$. Questa TM si arresta sempre. Dunque $M$ è anche una macchina che accetta $L$, quindi $L \in \text{RE}$.
 Inoltre, se $M$ decide $L$, possiamo costruire una macchina $M'$ che decide $\overline{L}$ semplicemente invertendo le risposte di $M$. Poiché $M'$ decide $\overline{L}$, $\overline{L} \in \text{R}$. E dato che $\text{R} \subseteq \text{RE}$, allora $\overline{L} \in \text{RE}$. Per definizione, questo significa che $L \in \text{coRE}$.
 Quindi, se $L \in \text{R}$, allora $L \in \text{RE}$ e $L \in \text{coRE}$, da cui $L \in \text{RE} \cap \text{coRE}$.
 \end{proof}
@@ -372,7 +372,7 @@ Quindi l'assunzione è falsa, e se $A \le_m B$ e $A \notin \text{coRE}$, allora 
 Per dimostrare $\text{HALT}_\forall \notin \text{coRE}$, useremo la riduzione $\text{HALT}_\epsilon \le_m \text{HALT}_\forall$.
 Sappiamo che $\text{HALT}_\epsilon \in \text{RE}$ ma $\text{HALT}_\epsilon \notin \text{coRE}$ (infatti $\overline{\text{HALT}_\epsilon} \in \text{RE}$).
 
-Sia $f$ la funzione di riduzione che prende una MT $M$ e produce una MT $N = f(M)$.
+Sia $f$ la funzione di riduzione che prende una TM $M$ e produce una TM $N = f(M)$.
 \begin{minted}[mathescape=true, framesep=2mm, breaklines, fontsize=\small]{python}
 # Pseudocodice per la macchina N = f(M)
 def N(input_w):
@@ -413,7 +413,7 @@ Poiché $\text{HALT}_\epsilon \notin \text{coRE}$, per il Lemma, segue che $\tex
 Per dimostrare $\text{HALT}_\forall \notin \text{RE}$, useremo la riduzione $\overline{\text{HALT}_\epsilon} \le_m \text{HALT}_\forall$.
 Sappiamo che $\overline{\text{HALT}_\epsilon} \notin \text{RE}$.
 
-Sia $f$ la funzione di riduzione che prende una MT $M$ e produce una MT $N = f(M)$.
+Sia $f$ la funzione di riduzione che prende una TM $M$ e produce una TM $N = f(M)$.
 \begin{minted}[mathescape=true, framesep=2mm, breaklines, fontsize=\small]{python}
 # Pseudocodice per la macchina N = f(M)
 def N(input_w):

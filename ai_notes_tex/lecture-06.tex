@@ -39,7 +39,7 @@
 \newpage
 
 \section{Introduzione alle Varianti delle Macchine di Turing}
-Le Macchine di Turing (MT) standard, pur essendo fondamentali per la teoria della computabilità, sono spesso complesse da programmare a causa della loro semplicità definitoria. Oggi esploreremo alcune varianti delle MT che, sebbene sembrino più potenti, si dimostreranno equivalenti alle MT standard in termini di potere computazionale, ma molto più facili da programmare.
+Le Macchine di Turing (TM) standard, pur essendo fondamentali per la teoria della computabilità, sono spesso complesse da programmare a causa della loro semplicità definitoria. Oggi esploreremo alcune varianti delle TM che, sebbene sembrino più potenti, si dimostreranno equivalenti alle TM standard in termini di potere computazionale, ma molto più facili da programmare.
 
 \subsection{Consigli per lo Studio}
 È utile estrapolare domande chiave dai concetti visti. Ad esempio:
@@ -48,15 +48,15 @@ Le Macchine di Turing (MT) standard, pur essendo fondamentali per la teoria dell
     \item Problemi di ricerca vs. problemi di decisione: qual è il loro rapporto?
     \item Che ruolo hanno i linguaggi nei problemi di decisione?
     \item Cos'è una Macchina di Turing? Come è definita?
-    \item Qual è la condizione di accettazione per una MT?
-    \item Cosa significa che una MT decide un linguaggio vs. accetta un linguaggio? Qual è la differenza?
+    \item Qual è la condizione di accettazione per una TM?
+    \item Cosa significa che una TM decide un linguaggio vs. accetta un linguaggio? Qual è la differenza?
 \end{itemize}
 
 \section{Macchine di Turing con Memoria nello Stato}
-Riprendiamo l'esempio del linguaggio $WW^R = \{w w^R \mid w \in \{0,1\}^*\}$. Nella MT standard per questo linguaggio, eravamo costretti a creare rami di computazione separati a seconda del primo carattere letto (0 o 1), perché la macchina doveva "ricordarsi" quel carattere. L'idea è: non sarebbe più semplice se la macchina potesse memorizzare direttamente il simbolo letto?
+Riprendiamo l'esempio del linguaggio $WW^R = \{w w^R \mid w \in \{0,1\}^*\}$. Nella TM standard per questo linguaggio, eravamo costretti a creare rami di computazione separati a seconda del primo carattere letto (0 o 1), perché la macchina doveva "ricordarsi" quel carattere. L'idea è: non sarebbe più semplice se la macchina potesse memorizzare direttamente il simbolo letto?
 
 \begin{definition}[Macchina di Turing con Memoria nello Stato]
-Una Macchina di Turing con memoria nello stato è una MT che può memorizzare un simbolo dell'alfabeto del nastro all'interno del suo stato finito. Lo stato è quindi una coppia $(q_i, \text{simbolo\_memorizzato})$, dove $q_i$ è lo stato del controllo finito e $\text{simbolo\_memorizzato}$ è il contenuto della "memoria interna".
+Una Macchina di Turing con memoria nello stato è una TM che può memorizzare un simbolo dell'alfabeto del nastro all'interno del suo stato finito. Lo stato è quindi una coppia $(q_i, \text{simbolo\_memorizzato})$, dove $q_i$ è lo stato del controllo finito e $\text{simbolo\_memorizzato}$ è il contenuto della "memoria interna".
 \begin{itemize}
     \item La macchina può memorizzare uno o più simboli (un numero fissato al momento della progettazione).
     \item La memoria non cresce durante l'esecuzione; è pre-determinata dal design.
@@ -92,16 +92,16 @@ Vogliamo riconoscere stringhe binarie che iniziano con un simbolo e tutti gli al
 Questo approccio evita la necessità di duplicare gli stati per 0 e 1, rendendo la programmazione più compatta.
 \end{example}
 
-\subsubsection{Potere Computazionale delle MT con Memoria nello Stato}
-Le MT con memoria nello stato \emph{non} sono più potenti delle MT standard.
+\subsubsection{Potere Computazionale delle TM con Memoria nello Stato}
+Le TM con memoria nello stato \emph{non} sono più potenti delle TM standard.
 \begin{itemize}
-    \item Questa descrizione è un modo compatto per rappresentare una MT standard più grande.
-    \item Gli stati di una MT con memoria nello stato sono di fatto ottenibili tramite il prodotto cartesiano degli stati del controllo finito e dei possibili simboli memorizzabili.
-    \item Se lo stato $(q_i, \alpha)$ è uno stato, questo può essere semplicemente rinominato come $q_{i,\alpha}$ in una MT standard. Il numero di stati aumenta, ma la natura computazionale rimane la stessa.
+    \item Questa descrizione è un modo compatto per rappresentare una TM standard più grande.
+    \item Gli stati di una TM con memoria nello stato sono di fatto ottenibili tramite il prodotto cartesiano degli stati del controllo finito e dei possibili simboli memorizzabili.
+    \item Se lo stato $(q_i, \alpha)$ è uno stato, questo può essere semplicemente rinominato come $q_{i,\alpha}$ in una TM standard. Il numero di stati aumenta, ma la natura computazionale rimane la stessa.
 \end{itemize}
 
 \section{Macchine di Turing Multitraccia}
-Le macchine multitraccia sono un altro trucchetto per semplificare la progettazione delle MT.
+Le macchine multitraccia sono un altro trucchetto per semplificare la progettazione delle TM.
 
 \begin{definition}[Macchina di Turing Multitraccia]
 Una Macchina di Turing multitraccia ha un singolo nastro, ma questo nastro è diviso orizzontalmente in più \textbf{tracce} (es. 2, 3, 7 tracce).
@@ -115,7 +115,7 @@ Una Macchina di Turing multitraccia ha un singolo nastro, ma questo nastro è di
 \end{definition}
 
 \begin{example}[Linguaggio $L = \{w\#w \mid w \in \{a,b\}^+\}$]
-Simuliamo il riconoscimento di questo linguaggio con una MT multitraccia, usando due tracce: la prima per l'input e la seconda per i marcatori.
+Simuliamo il riconoscimento di questo linguaggio con una TM multitraccia, usando due tracce: la prima per l'input e la seconda per i marcatori.
 \begin{itemize}
     \item \textbf{Stato Iniziale} $(q_0, \emptyset)$.
     \item \textbf{Passo 1: Lettura e Marcatura del Primo $w$}
@@ -217,15 +217,15 @@ Simuliamo il riconoscimento di questo linguaggio con una MT multitraccia, usando
 Questa macchina è più semplice da progettare rispetto alla versione a nastro singolo perché non si perde il contenuto originale dell'input.
 \end{example}
 
-\subsubsection{Potere Computazionale delle MT Multitraccia}
-Le MT multitraccia \emph{non} sono più potenti delle MT standard.
+\subsubsection{Potere Computazionale delle TM Multitraccia}
+Le TM multitraccia \emph{non} sono più potenti delle TM standard.
 \begin{enumerate}
     \item \textbf{Simulazione tramite Alfabeto Esteso}:
-    Una MT multitraccia con $K$ tracce può essere simulata da una MT standard (a singolo nastro e singola traccia) che usa un alfabeto esteso. Ogni simbolo del nuovo alfabeto è una tupla di $K$ simboli, rappresentando la combinazione di simboli che apparirebbero su ogni traccia in una data cella. Ad esempio, se le tracce sono 2 e gli alfabeti $\{a,b\}$, $\{*, \sqcup\}$, il nuovo alfabeto può includere simboli come $(a, *)$, $(b, \sqcup)$, ecc. Questo aumenta la dimensione dell'alfabeto, ma non il potere computazionale.
+    Una TM multitraccia con $K$ tracce può essere simulata da una TM standard (a singolo nastro e singola traccia) che usa un alfabeto esteso. Ogni simbolo del nuovo alfabeto è una tupla di $K$ simboli, rappresentando la combinazione di simboli che apparirebbero su ogni traccia in una data cella. Ad esempio, se le tracce sono 2 e gli alfabeti $\{a,b\}$, $\{*, \sqcup\}$, il nuovo alfabeto può includere simboli come $(a, *)$, $(b, \sqcup)$, ecc. Questo aumenta la dimensione dell'alfabeto, ma non il potere computazionale.
     \item \textbf{Simulazione tramite Spazio Aggiuntivo e Memoria nello Stato (meno comune per la dimostrazione di equivalenza):}
-    Una MT standard può simulare una MT multitraccia prendendo l'input della MT multitraccia, inserendo delimitatori tra i simboli per creare "spazio" per le tracce aggiuntive. La MT standard userà poi la memoria nello stato per tenere traccia dei simboli che sarebbero sulle altre tracce e simulerà i movimenti della testina leggendo e scrivendo nei blocchi delimitati. Questo dimostra l'equivalenza ma è più complesso.
+    Una TM standard può simulare una TM multitraccia prendendo l'input della TM multitraccia, inserendo delimitatori tra i simboli per creare "spazio" per le tracce aggiuntive. La TM standard userà poi la memoria nello stato per tenere traccia dei simboli che sarebbero sulle altre tracce e simulerà i movimenti della testina leggendo e scrivendo nei blocchi delimitati. Questo dimostra l'equivalenza ma è più complesso.
 \end{enumerate}
-In sintesi, le MT multitraccia, sebbene sembrino più sofisticate, hanno lo stesso potere computazionale delle MT standard. Sono solo più facili da programmare.
+In sintesi, le TM multitraccia, sebbene sembrino più sofisticate, hanno lo stesso potere computazionale delle TM standard. Sono solo più facili da programmare.
 
 \section{Macchine di Turing Multinastro}
 Introduciamo il modello più conveniente per la programmazione: le Macchine di Turing Multinastro.
@@ -242,7 +242,7 @@ Una Macchina di Turing multinastro ha \textbf{più nastri completamente indipend
 
 \begin{example}[Linguaggio $L = \{w \mid w \in \{0,1,2\}^*, \text{count}(0)=\text{count}(1)=\text{count}(2)\}$]
 Vogliamo decidere se il numero di '0', '1' e '2' in una stringa di input è uguale.
-Approccio con MT multinastro (4 nastri: 1 input, 3 di lavoro):
+Approccio con TM multinastro (4 nastri: 1 input, 3 di lavoro):
 \begin{enumerate}
     \item \textbf{Nastro 1 (Input)}: Contiene la stringa $w$.
     \item \textbf{Nastro 2 (Zeros)}: Memorizzerà tutti gli '0'.
@@ -300,7 +300,7 @@ Approccio con MT multinastro (4 nastri: 1 input, 3 di lavoro):
                 \end{itemize}
         \end{itemize}
 \end{itemize}
-Le MT multinastro sono molto convenienti perché permettono un controllo indipendente delle testine, rendendo algoritmi come questo (che altrimenti richiederebbero complessi vai-e-vieni sul nastro singolo) molto più intuitivi.
+Le TM multinastro sono molto convenienti perché permettono un controllo indipendente delle testine, rendendo algoritmi come questo (che altrimenti richiederebbero complessi vai-e-vieni sul nastro singolo) molto più intuitivi.
 \end{example}
 
 \begin{figure}[h!]
@@ -339,18 +339,18 @@ Le MT multinastro sono molto convenienti perché permettono un controllo indipen
 \end{figure}
 
 \section{Equivalenza e Complessità Temporale}
-Come per le varianti precedenti, ci si chiede: le MT multinastro sono più potenti delle MT standard? La risposta è no, ma sono potenzialmente più veloci.
+Come per le varianti precedenti, ci si chiede: le TM multinastro sono più potenti delle TM standard? La risposta è no, ma sono potenzialmente più veloci.
 
-\begin{definition}[Tempo di Esecuzione di una MT]
+\begin{definition}[Tempo di Esecuzione di una TM]
 Il tempo di esecuzione di una Macchina di Turing su una certa stringa di input $W$ è definito come il \textbf{numero di passi} (o il numero di configurazioni nella sua computazione) che la macchina compie prima di arrestarsi. Se la macchina non si arresta, il tempo di esecuzione è infinito. Questa definizione è molto precisa e permette un'analisi fine della complessità.
 \end{definition}
 
-\begin{theorem}[Equivalenza MT Multinastro e MT Standard]
+\begin{theorem}[Equivalenza TM Multinastro e TM Standard]
 Sia $M$ una macchina di Turing multinastro. Allora esiste una macchina $S$ a nastro singolo (e multitraccia) tale che il linguaggio riconosciuto da $M$ è uguale al linguaggio riconosciuto da $S$.
 \end{theorem}
 
 \subsubsection{Dimostrazione (Sketch)}
-L'idea è simulare una MT multinastro $M$ (con $K$ nastri) tramite una MT $S$ a nastro singolo ma multitraccia.
+L'idea è simulare una TM multinastro $M$ (con $K$ nastri) tramite una TM $S$ a nastro singolo ma multitraccia.
 \begin{itemize}
     \item \textbf{Architettura di $S$}: La macchina $S$ avrà $2K$ tracce.
         \begin{itemize}
@@ -372,7 +372,7 @@ L'idea è simulare una MT multinastro $M$ (con $K$ nastri) tramite una MT $S$ a 
 \end{itemize}
 
 \subsubsection{Analisi della Complessità Temporale della Simulazione}
-Sia $M$ una MT multinastro che esegue $N$ passi.
+Sia $M$ una TM multinastro che esegue $N$ passi.
 \begin{itemize}
     \item Il tempo di esecuzione di $M$ è $N$.
     \item Durante $N$ passi, una testina di $M$ non può allontanarsi più di $N$ celle dalla sua posizione iniziale.
@@ -386,12 +386,12 @@ Sia $M$ una MT multinastro che esegue $N$ passi.
     \[
     T_S(N) = C \cdot \frac{N(N+1)}{2} + C \cdot NK = O(N^2 + NK) = O(N^2)
     \]
-    \item Pertanto, una MT multinastro può essere simulata da una MT multitraccia (e quindi standard) con un \textbf{rallentamento quadratico}. Se $M$ impiega $N$ passi, $S$ impiega $O(N^2)$ passi.
+    \item Pertanto, una TM multinastro può essere simulata da una TM multitraccia (e quindi standard) con un \textbf{rallentamento quadratico}. Se $M$ impiega $N$ passi, $S$ impiega $O(N^2)$ passi.
 \end{itemize}
 
 \subsection{Conclusioni sul Potere Computazionale}
 \begin{itemize}
-    \item Le Macchine di Turing con memoria nello stato, le Macchine di Turing multitraccia e le Macchine di Turing multinastro sono tutte \textbf{computazionalmente equivalenti} alle Macchine di Turing standard. Non possono riconoscere linguaggi che una MT standard non possa riconoscere.
+    \item Le Macchine di Turing con memoria nello stato, le Macchine di Turing multitraccia e le Macchine di Turing multinastro sono tutte \textbf{computazionalmente equivalenti} alle Macchine di Turing standard. Non possono riconoscere linguaggi che una TM standard non possa riconoscere.
     \item Tuttavia, offrono notevoli vantaggi in termini di \textbf{facilità di programmazione} e possono garantire un'esecuzione \textbf{più efficiente} (con un rallentamento polinomiale, non esponenziale, nella simulazione).
     \item Per la loro praticità, le Macchine di Turing multinastro sono spesso il modello preferito nella pratica per studiare la complessità degli algoritmi.
 \end{itemize}

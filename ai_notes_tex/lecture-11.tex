@@ -55,15 +55,15 @@ Nella lezione precedente abbiamo introdotto le Macchine di Turing Non-Determinis
 
 \section{La Macchina di Turing Universale (UTM)}
 
-Le Macchine di Turing (MT) studiate finora sono intrinsecamente fisse nel loro comportamento: la loro funzione di transizione è immutabile e determinano un unico compito. I computer moderni, al contrario, sono programmabili, ovvero possono eseguire programmi diversi. Per colmare questa apparente discrepanza, introduciamo il concetto di \textbf{Macchina di Turing Universale (UTM)}.
+Le Macchine di Turing (TM) studiate finora sono intrinsecamente fisse nel loro comportamento: la loro funzione di transizione è immutabile e determinano un unico compito. I computer moderni, al contrario, sono programmabili, ovvero possono eseguire programmi diversi. Per colmare questa apparente discrepanza, introduciamo il concetto di \textbf{Macchina di Turing Universale (UTM)}.
 
 \begin{definition}[Macchina di Turing Universale (UTM)]
 Una Macchina di Turing Universale ($M_U$) è una macchina di Turing che è in grado di \textbf{simulare il comportamento di qualsiasi altra Macchina di Turing} ($M$) quando le viene fornita la descrizione (codifica) di $M$ e l'input $w$ su cui $M$ dovrebbe operare.
 \end{definition}
 
-\subsection{Codifica di una Macchina di Turing (MT)}
+\subsection{Codifica di una Macchina di Turing (TM)}
 
-Per consentire a una UTM di simulare un'altra MT, il "programma" della MT (la sua funzione di transizione) deve essere codificato in una stringa binaria. Assumiamo, per semplicità, che le MT considerate abbiano un alfabeto di input binario $\Sigma = \{0,1\}$.
+Per consentire a una UTM di simulare un'altra TM, il "programma" della TM (la sua funzione di transizione) deve essere codificato in una stringa binaria. Assumiamo, per semplicità, che le TM considerate abbiano un alfabeto di input binario $\Sigma = \{0,1\}$.
 
 Una generica istruzione della funzione di transizione $\delta$ ha la forma:
 \[ \delta(Q_i, X_j) = (Q_k, X_L, D_m) \]
@@ -114,23 +114,23 @@ Codifica della transizione: $\delta(Q_3, \phi) = (Q_5, 0, \rightarrow)$
 La codifica di questa singola transizione sarà:
 $\textbf{000} \text{1} \textbf{000} \text{1} \textbf{00000} \text{1} \textbf{0} \text{1} \textbf{00}$
 
-La codifica completa di una MT è la concatenazione di tutte le sue transizioni, separate da $11$. Ad esempio:
+La codifica completa di una TM è la concatenazione di tutte le sue transizioni, separate da $11$. Ad esempio:
 $\text{Codifica}(\delta_1) \textbf{11} \text{Codifica}(\delta_2) \textbf{11} \text{Codifica}(\delta_3) \dots$
 \end{example}
 
 \begin{remark}
-Non tutte le stringhe binarie corrisponderanno a una MT validamente codificata. Per convenzione, le stringhe che non seguono il formato di codifica (es. quelle con $111$ o $1111$, o quelle non interpretabili come programma) sono considerate codifiche di MT che rifiutano qualsiasi input (il cui linguaggio è vuoto).
+Non tutte le stringhe binarie corrisponderanno a una TM validamente codificata. Per convenzione, le stringhe che non seguono il formato di codifica (es. quelle con $111$ o $1111$, o quelle non interpretabili come programma) sono considerate codifiche di TM che rifiutano qualsiasi input (il cui linguaggio è vuoto).
 \end{remark}
 
 \subsection{Architettura e Funzionamento della UTM}
 
-La UTM ($M_U$) è tipicamente una Macchina di Turing a quattro nastri. Riceve come input una stringa che è la concatenazione della codifica di una MT $M$ e di una stringa $w$, separate da una sequenza di $1$ (es. $111$ per distinguere dalla separazione delle transizioni). L'obiettivo di $M_U$ è simulare il comportamento di $M$ su $w$.
+La UTM ($M_U$) è tipicamente una Macchina di Turing a quattro nastri. Riceve come input una stringa che è la concatenazione della codifica di una TM $M$ e di una stringa $w$, separate da una sequenza di $1$ (es. $111$ per distinguere dalla separazione delle transizioni). L'obiettivo di $M_U$ è simulare il comportamento di $M$ su $w$.
 
 I quattro nastri di $M_U$ hanno i seguenti ruoli:
 \begin{enumerate}
     \item \textbf{Nastro 1 (Input/Programma $M$)}: Contiene la stringa di codifica di $M$. Questo nastro è letto dalla $M_U$ per conoscere le regole di transizione di $M$ e non viene modificato durante la simulazione.
-    \item \textbf{Nastro 2 (Nastro Simulato di $M$)}: Contiene la rappresentazione del nastro della MT $M$. Inizialmente, l'input $w$ viene copiato su questo nastro e ricodificato nel formato dei simboli $X_j$ (es. $0$ diventa $0$, $1$ diventa $00$, etc.). La testina della $M_U$ su questo nastro simula la posizione della testina di $M$.
-    \item \textbf{Nastro 3 (Stato Simulato di $M$)}: Contiene la codifica dello stato corrente in cui si trova la MT $M$ nella simulazione. Inizia con lo stato iniziale di $M$ ($Q_1$).
+    \item \textbf{Nastro 2 (Nastro Simulato di $M$)}: Contiene la rappresentazione del nastro della TM $M$. Inizialmente, l'input $w$ viene copiato su questo nastro e ricodificato nel formato dei simboli $X_j$ (es. $0$ diventa $0$, $1$ diventa $00$, etc.). La testina della $M_U$ su questo nastro simula la posizione della testina di $M$.
+    \item \textbf{Nastro 3 (Stato Simulato di $M$)}: Contiene la codifica dello stato corrente in cui si trova la TM $M$ nella simulazione. Inizia con lo stato iniziale di $M$ ($Q_1$).
     \item \textbf{Nastro 4 (Scratchpad/Ausiliario)}: Utilizzato per operazioni temporanee, come la gestione dello spazio sul Nastro 2 quando un simbolo deve essere riscritto e la sua codifica occupa più o meno spazio.
 \end{enumerate}
 
@@ -161,7 +161,7 @@ Abbiamo affermato l'esistenza di problemi completamente indecidibili (non in RE)
 
 \begin{enumerate}
     \item \textbf{Enumerazione di stringhe binarie ($\Sigma^*$)}: L'insieme di tutte le stringhe binarie finite ($\Sigma^*$, dove $\Sigma = \{0,1\}$) è \textbf{numerabile}. Possiamo ordinarle per lunghezza crescente e, a parità di lunghezza, lessicograficamente. Questo ci permette di parlare della $1^{a}$ stringa, $2^{a}$ stringa, ecc. (es., $\epsilon, 0, 1, 00, 01, 10, 11, \dots$). La cardinalità di $\Sigma^*$ è $\aleph_0$ (aleph-zero), la stessa dei numeri naturali.
-    \item \textbf{Enumerazione delle Macchine di Turing (MT)}: Poiché ogni MT può essere codificata come una stringa binaria finita, e le stringhe binarie sono numerabili, anche l'insieme di tutte le Macchine di Turing è \textbf{numerabile}. Possiamo quindi parlare della $1^{a}$ MT ($M_1$), della $2^{a}$ MT ($M_2$), ecc.
+    \item \textbf{Enumerazione delle Macchine di Turing (TM)}: Poiché ogni TM può essere codificata come una stringa binaria finita, e le stringhe binarie sono numerabili, anche l'insieme di tutte le Macchine di Turing è \textbf{numerabile}. Possiamo quindi parlare della $1^{a}$ TM ($M_1$), della $2^{a}$ TM ($M_2$), ecc.
 \end{enumerate}
 
 \subsection{Vettore Caratteristico di un Linguaggio}
@@ -175,8 +175,8 @@ Per un linguaggio $L$ su un alfabeto $\Sigma$, il suo \textbf{vettore caratteris
 Consideriamo una tabella infinita dove:
 \begin{itemize}
     \item Le \textbf{colonne} sono indicizzate dalle stringhe enumerate di $\Sigma^*$: $w_1, w_2, w_3, \dots$
-    \item Le \textbf{righe} sono indicizzate dalle MT enumerate: $M_1, M_2, M_3, \dots$
-    \item La cella $(i, j)$ contiene $1$ se la MT $M_i$ \textbf{accetta} la stringa $w_j$, e $0$ altrimenti.
+    \item Le \textbf{righe} sono indicizzate dalle TM enumerate: $M_1, M_2, M_3, \dots$
+    \item La cella $(i, j)$ contiene $1$ se la TM $M_i$ \textbf{accetta} la stringa $w_j$, e $0$ altrimenti.
 \end{itemize}
 Ogni riga $i$ di questa tabella rappresenta il vettore caratteristico del linguaggio $L(M_i)$ accettato dalla macchina $M_i$.
 
@@ -208,8 +208,8 @@ Procediamo alla costruzione del linguaggio di diagonalizzazione ($L_D$):
 
 Il linguaggio $L_D$ può essere più intuitivamente definito come:
 \begin{definition}[Linguaggio di Diagonalizzazione $L_D$]
-$L_D = \{ \langle M_i \rangle \mid M_i \text{ è una MT e } M_i \text{ rifiuta la propria codifica } \langle M_i \rangle \}$
-dove $\langle M_i \rangle$ (o $w_i$) denota la stringa che codifica la MT $M_i$.
+$L_D = \{ \langle M_i \rangle \mid M_i \text{ è una TM e } M_i \text{ rifiuta la propria codifica } \langle M_i \rangle \}$
+dove $\langle M_i \rangle$ (o $w_i$) denota la stringa che codifica la TM $M_i$.
 In altre parole, una stringa $\langle M_i \rangle$ appartiene a $L_D$ se e solo se la macchina $M_i$ non accetta $\langle M_i \rangle$.
 \end{definition}
 
@@ -220,7 +220,7 @@ Il linguaggio $L_D$ non appartiene alla classe RE (Linguaggi Ricorsivamente Enum
 \end{theorem}
 
 \begin{proof}
-Supponiamo per contraddizione che $L_D$ sia ricorsivamente enumerabile. Se $L_D \in RE$, allora esisterebbe una Macchina di Turing, diciamo $M_k$, che accetta $L_D$. Poiché tutte le MT sono enumerate nella nostra tabella, $M_k$ corrisponde a una specifica riga $k$ in quella tabella.
+Supponiamo per contraddizione che $L_D$ sia ricorsivamente enumerabile. Se $L_D \in RE$, allora esisterebbe una Macchina di Turing, diciamo $M_k$, che accetta $L_D$. Poiché tutte le TM sono enumerate nella nostra tabella, $M_k$ corrisponde a una specifica riga $k$ in quella tabella.
 
 Consideriamo la stringa $w_k$, che è la codifica $\langle M_k \rangle$ della macchina $M_k$.
 Ora poniamoci la domanda: $w_k \in L_D$ o $w_k \notin L_D$?
@@ -249,10 +249,10 @@ Poiché in entrambi i casi si arriva a una contraddizione, l'assunzione iniziale
 
 La ragione profonda per l'esistenza di linguaggi indecidibili (e non ricorsivamente enumerabili) è una questione di \textbf{cardinalità} degli insiemi:
 \begin{itemize}
-    \item L'insieme di tutte le \textbf{Macchine di Turing} è numerabile (ha cardinalità $\aleph_0$). Ogni MT riconosce esattamente un linguaggio.
+    \item L'insieme di tutte le \textbf{Macchine di Turing} è numerabile (ha cardinalità $\aleph_0$). Ogni TM riconosce esattamente un linguaggio.
     \item L'insieme di tutti i \textbf{linguaggi} su un alfabeto infinito (come $\Sigma^*$) è l'insieme potenza di $\Sigma^*$. Poiché $\Sigma^*$ è numerabile, il suo insieme potenza ha la cardinalità del continuo ($2^{\aleph_0}$), che è strettamente maggiore di $\aleph_0$.
 \end{itemize}
-Questo significa che ci sono \textbf{molti più linguaggi che Macchine di Turing}. Dal momento che non ci sono abbastanza MT per riconoscere tutti i linguaggi possibili, devono esistere linguaggi per i quali non esiste alcuna MT in grado di accettarli. $L_D$ è un esempio concreto di uno di questi linguaggi.
+Questo significa che ci sono \textbf{molti più linguaggi che Macchine di Turing}. Dal momento che non ci sono abbastanza TM per riconoscere tutti i linguaggi possibili, devono esistere linguaggi per i quali non esiste alcuna TM in grado di accettarli. $L_D$ è un esempio concreto di uno di questi linguaggi.
 
 \section{Proprietà sui Linguaggi Ricorsivi e Ricorsivamente Enumerabili}
 
@@ -262,9 +262,9 @@ Introduciamo due importanti teoremi che collegano le classi R e RE con le operaz
 Se un linguaggio $L$ appartiene alla classe R (è ricorsivo), allora anche il suo complemento $\overline{L}$ appartiene a R.
 \end{theorem}
 \begin{proof}
-Sia $L \in R$. Per definizione, esiste una MT $M_L$ che decide $L$. Questo significa che per ogni stringa $w$ data in input, $M_L$ termina sempre, accettando $w$ se $w \in L$ e rifiutando $w$ se $w \notin L$.
+Sia $L \in R$. Per definizione, esiste una TM $M_L$ che decide $L$. Questo significa che per ogni stringa $w$ data in input, $M_L$ termina sempre, accettando $w$ se $w \in L$ e rifiutando $w$ se $w \notin L$.
 
-Possiamo costruire una nuova MT $M_{\overline{L}}$ per decidere $\overline{L}$ come segue:
+Possiamo costruire una nuova TM $M_{\overline{L}}$ per decidere $\overline{L}$ come segue:
 $M_{\overline{L}}$ simula $M_L$ su qualsiasi input $w$. Poiché $M_L$ termina sempre:
 \begin{itemize}
     \item Se $M_L$ accetta $w$ (cioè $w \in L$), allora $M_{\overline{L}}$ modifica il suo comportamento per rifiutare $w$.
@@ -289,7 +289,7 @@ Supponiamo che $L \in RE$ e $\overline{L} \in RE$.
     \item Poiché $L \in RE$, esiste una Macchina di Turing $M_L$ che accetta $L$ (garantisce terminazione per i "sì", ma potrebbe non terminare per i "no").
     \item Poiché $\overline{L} \in RE$, esiste una Macchina di Turing $M_{\overline{L}}$ che accetta $\overline{L}$ (garantisce terminazione per i "sì" in $\overline{L}$, ovvero per i "no" in $L$).
 \end{itemize}
-Possiamo costruire una nuova MT $M_{decider}$ che decide $L$. $M_{decider}$ opera come segue su qualsiasi input $w$:
+Possiamo costruire una nuova TM $M_{decider}$ che decide $L$. $M_{decider}$ opera come segue su qualsiasi input $w$:
 \begin{enumerate}
     \item $M_{decider}$ simula $M_L$ e $M_{\overline{L}}$ in \textbf{parallelo}. Questo può essere fatto, ad esempio, alternando i passi di esecuzione delle due macchine (un passo di $M_L$, poi un passo di $M_{\overline{L}}$, poi un altro passo di $M_L$, ecc., utilizzando un approccio multi-nastro o di interleaving).
     \item Se la simulazione di $M_L$ accetta $w$ (ovvero $M_L$ entra in uno stato di accettazione), allora $M_{decider}$ \textbf{accetta} $w$.

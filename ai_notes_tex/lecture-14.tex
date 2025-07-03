@@ -136,14 +136,14 @@ Dimostriamo che il Linguaggio Universale ($LU$) si riduce al MPCP. Dato che $LU$
 Un'istanza di $LU$ è una coppia $(M, w)$, dove $M$ è una Macchina di Turing e $w$ è una stringa.
 Un'istanza di MPCP è una coppia di liste di stringhe $(A, B)$.
 La funzione di riduzione $f$ deve trasformare $(M, w)$ in $(A, B)$.
-L'idea centrale è simulare la computazione di $M$ su $w$ usando le stringhe delle liste $A$ e $B$. La computazione di una MT può essere rappresentata come una sequenza di \emph{descrizioni istantanee} (ID) separate da un simbolo speciale (e.g., $\#$).
+L'idea centrale è simulare la computazione di $M$ su $w$ usando le stringhe delle liste $A$ e $B$. La computazione di una TM può essere rappresentata come una sequenza di \emph{descrizioni istantanee} (ID) separate da un simbolo speciale (e.g., $\#$).
 $ID_1 \# ID_2 \# ID_3 \# \dots \# ID_k$
 Vogliamo costruire le liste $A$ e $B$ in modo tale che, se $M$ accetta $w$, allora esista una sequenza di indici per MPCP che costruisce la stessa stringa.
 Le stringhe di $B$ saranno sempre "un passo avanti" rispetto alle stringhe di $A$, simulando la prossima ID. Quando $M$ accetta, le stringhe di $A$ avranno la possibilità di "recuperare" e allinearsi con quelle di $B$.
 
 \subsection{Costruzione delle Liste $A$ e $B$}
 L'alfabeto del MPCP sarà $\Gamma \cup Q \cup \{\#, \$, *\}$, dove $\Gamma$ è l'alfabeto del nastro di $M$, $Q$ è l'insieme degli stati di $M$, e $\#, \$, *$ sono nuovi simboli.
-Assumiamo che $M$ non scriva mai il simbolo blank e che il suo nastro sia semi-infinito a destra (non si muova mai a sinistra della posizione iniziale). Queste sono assunzioni standard che non limitano la generalità delle MT.
+Assumiamo che $M$ non scriva mai il simbolo blank e che il suo nastro sia semi-infinito a destra (non si muova mai a sinistra della posizione iniziale). Queste sono assunzioni standard che non limitano la generalità delle TM.
 
 Le liste $A$ e $B$ sono costruite con le seguenti classi di coppie di stringhe $(A_i, B_i)$:
 
@@ -208,7 +208,7 @@ Le liste $A$ e $B$ sono costruite con le seguenti classi di coppie di stringhe $
     (Il professore ha menzionato $XQY \to QY$ come regola generale per $Q \in F$. Il principio è che la stringa di A diventa più lunga o uguale, permettendo di chiudere la partita.)
 
     \item \textbf{Coppia Finale:}
-    Permette di completare il match una volta che la MT è in uno stato accettante e la differenza di lunghezza è stata recuperata.
+    Permette di completare il match una volta che la TM è in uno stato accettante e la differenza di lunghezza è stata recuperata.
     Per ogni $q_f \in F$:
     \begin{itemize}
         \item $A_i = q_f \# \#$ (due simboli \texttt{\#} per A)

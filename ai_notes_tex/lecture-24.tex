@@ -47,7 +47,7 @@ Come vedremo, la classe \textbf{P} (problemi risolvibili in tempo polinomiale) �
 
 \subsection{Modello di Macchina di Turing per la Complessità Spaziale}
 
-Per definire la complessità spaziale, in particolare per classi con vincoli di spazio molto ridotti (es. logaritmico), utilizziamo un modello di Macchina di Turing (MT) leggermente modificato:
+Per definire la complessità spaziale, in particolare per classi con vincoli di spazio molto ridotti (es. logaritmico), utilizziamo un modello di Macchina di Turing (TM) leggermente modificato:
 \begin{itemize}
     \item \textbf{Nastro di Input:} Un nastro di sola lettura. La testina può muoversi in entrambe le direzioni, ma non può modificare il contenuto. Questo nastro contiene l'input $W$.
     \item \textbf{Nastro di Lavoro (Work Tape):} Un nastro infinito di lettura-scrittura. La testina può muoversi in entrambe le direzioni e modificare il contenuto. Questo nastro è usato per i calcoli intermedi e lo spazio utilizzato su questo nastro sarà quello che misureremo.
@@ -90,9 +90,9 @@ Similmente alle classi temporali (DTIME, NTIME), definiamo le classi spaziali:
 \begin{definition}[Classi Logaritmiche]
 Definiamo due classi di complessità spaziale fondamentali:
 \begin{itemize}
-    \item \textbf{L (LogSpace):} La classe di linguaggi decidibili da una MT deterministica in spazio logaritmico.
+    \item \textbf{L (LogSpace):} La classe di linguaggi decidibili da una TM deterministica in spazio logaritmico.
     \[ \text{L} = \text{DSPACE}(\log n) \]
-    \item \textbf{NL (Nondeterministic LogSpace):} La classe di linguaggi decidibili da una MT non deterministica in spazio logaritmico.
+    \item \textbf{NL (Nondeterministic LogSpace):} La classe di linguaggi decidibili da una TM non deterministica in spazio logaritmico.
     \[ \text{NL} = \text{NSPACE}(\log n) \]
 \end{itemize}
 \end{definition}
@@ -107,15 +107,15 @@ Analogamente a P vs NP, non sappiamo se $\text{L} = \text{NL}$ o se $\text{L} \s
 \subsection{Linguaggio $0^n1^n$ in L}
 
 Consideriamo il linguaggio $L_0 = \{0^n1^n \mid n > 0\}$.
-Avevamo visto un algoritmo deterministico per questo linguaggio che marcava o cancellava i simboli sull'input tape, ma questo non è permesso con il nuovo modello di MT. Se copiassimo l'input sul work tape, useremmo spazio lineare, quindi $L_0 \notin \text{L}$ con quell'algoritmo.
+Avevamo visto un algoritmo deterministico per questo linguaggio che marcava o cancellava i simboli sull'input tape, ma questo non è permesso con il nuovo modello di TM. Se copiassimo l'input sul work tape, useremmo spazio lineare, quindi $L_0 \notin \text{L}$ con quell'algoritmo.
 
 \begin{example}[Decisore per $0^n1^n$ in LogSpace]
-Per decidere $L_0$ in spazio logaritmico, la MT deterministica può fare quanto segue:
+Per decidere $L_0$ in spazio logaritmico, la TM deterministica può fare quanto segue:
 \begin{enumerate}
     \item Scorre l'input tape, contando il numero di $0$ e memorizzando il conteggio sul work tape in binario. La rappresentazione binaria di $n$ (numero di $0$s) occupa $O(\log n)$ spazio.
     \item Una volta terminati gli $0$s, riposiziona la testina dell'input tape all'inizio degli $1$s.
     \item Scorre gli $1$s, contando il loro numero e memorizzando il conteggio sul work tape in binario, sovrascrivendo il conteggio precedente.
-    \item Confronta i due conteggi binari (uno dopo gli $0$s, uno dopo gli $1$s). Se sono uguali e la stringa è della forma corretta ($0...01...1$), la MT accetta; altrimenti, rigetta.
+    \item Confronta i due conteggi binari (uno dopo gli $0$s, uno dopo gli $1$s). Se sono uguali e la stringa è della forma corretta ($0...01...1$), la TM accetta; altrimenti, rigetta.
 \end{enumerate}
 Lo spazio utilizzato sul work tape è limitato alla memorizzazione di pochi numeri binari (il conteggio, eventuali puntatori, ecc.), ciascuno dei quali occupa $O(\log n)$ spazio. Pertanto, $L_0 \in \text{L}$.
 \end{example}
@@ -132,7 +132,7 @@ Sia $G=(V,E)$ un grafo orientato, e siano $s, t \in V$ due vertici. Il problema 
 Algoritmi standard come BFS (Breadth-First Search) o DFS (Depth-First Search) risolvono REACHABILITY in tempo polinomiale, ma tipicamente richiedono spazio $O(|V| + |E|)$ o $O(|V|)$ per memorizzare i nodi visitati o le code/stack. Questo è spazio lineare, non logaritmico.
 
 \begin{example}[Algoritmo non deterministico per REACHABILITY in LogSpace]
-Sia $M$ una MT non deterministica. Per decidere se esiste un cammino da $s$ a $t$ in $G=(V,E)$, $M$ esegue il seguente algoritmo:
+Sia $M$ una TM non deterministica. Per decidere se esiste un cammino da $s$ a $t$ in $G=(V,E)$, $M$ esegue il seguente algoritmo:
 
 \begin{minted}[
     frame=lines,
@@ -152,7 +152,7 @@ Function NDTM_REACHABILITY(G, s, t):
     if current_node == t:
         ACCEPT
         
-    # La MT "guessta" i passi successivi
+    # La TM "guessta" i passi successivi
     while path_length_counter <= |V|:
         # Non deterministicamente, "guessta" un vertice successivo
         # Il guess non richiede di memorizzare tutti i possibili successori,
@@ -189,8 +189,8 @@ In totale, lo spazio utilizzato sul nastro di lavoro è $O(\log |V|)$, che è $O
 
 \textbf{Correttezza:}
 \begin{itemize}
-    \item \textbf{Completezza:} Se esiste un cammino da $s$ a $t$ in $G$, allora esiste un ramo di computazione non deterministica che sceglie correttamente i nodi successivi lungo quel cammino e accetta quando raggiunge $t$. Il vincolo $\texttt{path\_length\_counter} \leq |V|$ assicura che anche in presenza di cicli, il cammino non venga esplorato all'infinito e la MT termini. Se un cammino esiste, ne esiste uno senza cicli di lunghezza al più $|V|-1$.
-    \item \textbf{Soundness:} Se la MT accetta, significa che ha trovato una sequenza di nodi validi che formano un cammino da $s$ a $t$.
+    \item \textbf{Completezza:} Se esiste un cammino da $s$ a $t$ in $G$, allora esiste un ramo di computazione non deterministica che sceglie correttamente i nodi successivi lungo quel cammino e accetta quando raggiunge $t$. Il vincolo $\texttt{path\_length\_counter} \leq |V|$ assicura che anche in presenza di cicli, il cammino non venga esplorato all'infinito e la TM termini. Se un cammino esiste, ne esiste uno senza cicli di lunghezza al più $|V|-1$.
+    \item \textbf{Soundness:} Se la TM accetta, significa che ha trovato una sequenza di nodi validi che formano un cammino da $s$ a $t$.
 \end{itemize}
 Poiché l'algoritmo non deterministico decide correttamente REACHABILITY e usa spazio logaritmico, concludiamo che $\textbf{REACHABILITY} \in \text{NL}$.
 \end{example}
@@ -251,7 +251,7 @@ Per dimostrare che $L' \le_L \text{REACHABILITY}$, dobbiamo costruire una funzio
 
 L'idea chiave è rappresentare le computazioni di $M$ su $w$ come cammini in un grafo. I nodi del grafo $G_w$ saranno le \emph{configurazioni istantanee} (IDs) di $M$.
 
-\textbf{Configurazione di una MT M:} Una configurazione istantanea (ID) di una MT $M$ in un dato momento della computazione è definita dallo stato corrente di $M$, dal contenuto del nastro di lavoro e dalla posizione di entrambe le testine (input e lavoro).
+\textbf{Configurazione di una TM M:} Una configurazione istantanea (ID) di una TM $M$ in un dato momento della computazione è definita dallo stato corrente di $M$, dal contenuto del nastro di lavoro e dalla posizione di entrambe le testine (input e lavoro).
 \begin{itemize}
     \item Stato corrente $q \in Q$ (insieme degli stati di $M$). Numero di stati è costante.
     \item Posizione testina input $h_1 \in \{1, \dots, |w|\}$. Richiede $O(\log |w|)$ bit.

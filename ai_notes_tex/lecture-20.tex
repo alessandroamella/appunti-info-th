@@ -100,7 +100,7 @@ L'NTM $M'$ per decidere $L$ funziona come segue:
 \begin{enumerate}
     \item Su input $x$:
     \item $M'$ indovina non deterministicamente una stringa $y$. Poiché $R_L$ è polinomialmente bilanciata, sappiamo che la lunghezza di $y$ non eccede $|x|^c$ per una qualche costante $c$. Quindi, $M'$ può "scrivere" (ovvero indovinare i bit e scriverli sul nastro) $y$ in tempo polinomiale rispetto a $|x|$.
-    \item $M'$ quindi controlla se la coppia $(x, y)$ appartiene a $R_L$. Poiché $R_L$ è polinomialmente decidibile, esiste una Macchina di Turing deterministica che esegue questo controllo in tempo polinomiale. $M'$ simula questa MT deterministica.
+    \item $M'$ quindi controlla se la coppia $(x, y)$ appartiene a $R_L$. Poiché $R_L$ è polinomialmente decidibile, esiste una Macchina di Turing deterministica che esegue questo controllo in tempo polinomiale. $M'$ simula questa TM deterministica.
     \item Se il controllo restituisce "sì" (cioè $(x, y) \in R_L$), $M'$ accetta l'input $x$. Altrimenti, $M'$ rifiuta.
 \end{enumerate}
 Poiché sia la fase di indovinamento (scrittura di $y$) che la fase di verifica (decisione di $R_L$) avvengono in tempo polinomiale, l'intera computazione di $M'$ è in tempo polinomiale. Dunque, $L \in NP$.

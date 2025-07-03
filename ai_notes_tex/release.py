@@ -45,8 +45,16 @@ def generate_pdf():
         print("Generating PDF using combine_lectures.py...")
         print(f"Output file: {output_filename}")
 
-        # Call the main function from combine_lectures
-        combine_lectures.main(f"{output_filename}.tex")
+        # Temporarily clear sys.argv to avoid argument conflicts with combine_lectures
+        original_argv = sys.argv[:]
+        sys.argv = [sys.argv[0]]  # Keep only the script name
+
+        try:
+            # Call the main function from combine_lectures
+            combine_lectures.main(f"{output_filename}.tex")
+        finally:
+            # Restore original sys.argv
+            sys.argv = original_argv
 
         # Check if PDF was generated
         pdf_path = f"{output_filename}.pdf"

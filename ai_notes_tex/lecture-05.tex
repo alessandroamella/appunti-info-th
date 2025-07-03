@@ -40,14 +40,14 @@
 
 \section{Introduzione alle Macchine di Turing}
 
-Ripassiamo brevemente i concetti fondamentali delle Macchine di Turing (MT) introdotti nella lezione precedente.
+Ripassiamo brevemente i concetti fondamentali delle Macchine di Turing (TM) introdotti nella lezione precedente.
 
 \begin{definition}[Macchina di Turing]
 Una Macchina di Turing è un automa a stati finiti con le seguenti peculiarità:
 \begin{itemize}
-    \item Possiede un \textbf{nastro di input infinito} che può essere letto e scritto. A differenza degli automi a stati finiti che possono solo leggere l'input, le MT possono modificare il loro nastro.
+    \item Possiede un \textbf{nastro di input infinito} che può essere letto e scritto. A differenza degli automi a stati finiti che possono solo leggere l'input, le TM possono modificare il loro nastro.
     \item La \textbf{testina} della macchina può spostarsi sia a destra che a sinistra sul nastro. Gli automi a stati finiti, invece, si muovono solo a destra.
-    \item Il \textbf{programma} (funzione di transizione) di una MT è fissato e non può cambiare durante l'esecuzione. Una volta che la macchina è "accesa" con un determinato programma, esso rimane invariato. Questo, pur sembrando una limitazione rispetto ai computer moderni, vedremo che non lo è, poiché le MT sono modelli di calcolo universali.
+    \item Il \textbf{programma} (funzione di transizione) di una TM è fissato e non può cambiare durante l'esecuzione. Una volta che la macchina è "accesa" con un determinato programma, esso rimane invariato. Questo, pur sembrando una limitazione rispetto ai computer moderni, vedremo che non lo è, poiché le TM sono modelli di calcolo universali.
 \end{itemize}
 Queste caratteristiche rendono le Macchine di Turing un modello di calcolo universale, capace di simulare qualsiasi algoritmo computabile.
 \end{definition}
@@ -84,7 +84,7 @@ Un'altra tecnica importante è \textbf{evitare di cancellare i simboli di input}
 
 \subsection{Esercizio 1: Linguaggio dei Palindromi $L = \{ww^R \mid w \in \{0,1\}^*\}$}
 
-Vogliamo progettare una MT che decide il linguaggio delle stringhe palindromiche con due parti $w$ e $w^R$ concatenate. L'alfabeto è $\{0,1\}$. Esempi: $\varepsilon$, $00$, $11$, $0110$, $1001$.
+Vogliamo progettare una TM che decide il linguaggio delle stringhe palindromiche con due parti $w$ e $w^R$ concatenate. L'alfabeto è $\{0,1\}$. Esempi: $\varepsilon$, $00$, $11$, $0110$, $1001$.
 
 \begin{example}[Strategia]
 La strategia consiste nel confrontare il primo carattere di $w$ con l'ultimo carattere di $w^R$, il secondo con il penultimo, e così via, fino a quando tutti i caratteri sono stati confrontati.
@@ -161,11 +161,11 @@ La strategia consiste nel confrontare il primo carattere di $w$ con l'ultimo car
     \end{itemize}
     \item \textbf{Stato $q_6$ (Accettante):} Se la macchina raggiunge questo stato, la stringa è accettata.
 \end{itemize}
-Questa MT decide il linguaggio, poiché su ogni input valido o meno, si fermerà in uno stato accettante o non accettante.
+Questa TM decide il linguaggio, poiché su ogni input valido o meno, si fermerà in uno stato accettante o non accettante.
 
 \subsection{Esercizio 2: Linguaggio $L = \{a^n b^m \mid m > n > 0\}$}
 
-Vogliamo progettare una MT che decide il linguaggio di stringhe con sequenze di 'a' seguite da sequenze di 'b', dove il numero di 'b' è strettamente maggiore del numero di 'a', ed entrambi sono maggiori di $0$. Esempio: $aab^{3}$, $ab^{2}$.
+Vogliamo progettare una TM che decide il linguaggio di stringhe con sequenze di 'a' seguite da sequenze di 'b', dove il numero di 'b' è strettamente maggiore del numero di 'a', ed entrambi sono maggiori di $0$. Esempio: $aab^{3}$, $ab^{2}$.
 
 \begin{example}[Strategia]
 La strategia prevede di marcare un' 'a' e poi la prima 'b' corrispondente, ripetendo il processo. Alla fine, si verifica che tutte le 'a' siano state marcate e che ci siano 'b' non marcate rimaste.
@@ -215,11 +215,11 @@ La strategia prevede di marcare un' 'a' e poi la prima 'b' corrispondente, ripet
         \end{itemize}
     \item \textbf{Stato $q_6$ (Accettante):} Stringa accettata.
 \end{itemize}
-Questa MT decide il linguaggio, rifiutando stringhe che non soddisfano le condizioni (es. $n \ge m$, ordine sbagliato dei caratteri, ecc.).
+Questa TM decide il linguaggio, rifiutando stringhe che non soddisfano le condizioni (es. $n \ge m$, ordine sbagliato dei caratteri, ecc.).
 
 \subsection{Esercizio 3: Linguaggio $L = \{a^n b^m \mid n > 0, m = 2n\}$}
 
-Vogliamo progettare una MT che decide il linguaggio di stringhe con sequenze di 'a' seguite da sequenze di 'b', dove il numero di 'b' è il doppio del numero di 'a', ed $n$ è maggiore di $0$. Esempio: $aab^{4}$, $ab^{2}$.
+Vogliamo progettare una TM che decide il linguaggio di stringhe con sequenze di 'a' seguite da sequenze di 'b', dove il numero di 'b' è il doppio del numero di 'a', ed $n$ è maggiore di $0$. Esempio: $aab^{4}$, $ab^{2}$.
 
 \begin{example}[Strategia]
 Molto simile al precedente, ma per ogni 'a' marcata, si devono marcare due 'b'.
@@ -270,7 +270,7 @@ Condizioni di rifiuto implicite: se non si trovano due 'b' per ogni 'a', o se l'
 
 \subsection{Esercizio 4: Linguaggio $L = \{w\#w \mid w \in \{a,b\}^+\}$}
 
-Vogliamo progettare una MT che decide il linguaggio di stringhe composte da una sequenza $w$, seguita da un separatore '\#', e poi dalla stessa sequenza $w$. $w$ deve avere almeno un simbolo. Esempi: $a\#a$, $ab\#ab$, $baba\#baba$.
+Vogliamo progettare una TM che decide il linguaggio di stringhe composte da una sequenza $w$, seguita da un separatore '\#', e poi dalla stessa sequenza $w$. $w$ deve avere almeno un simbolo. Esempi: $a\#a$, $ab\#ab$, $baba\#baba$.
 
 \begin{example}[Strategia]
 La strategia si basa sul confronto carattere per carattere delle due metà della stringa, usando il '\#' come punto di riferimento.
@@ -344,11 +344,11 @@ La strategia si basa sul confronto carattere per carattere delle due metà della
         \end{itemize}
     \item \textbf{Stato $q_9$ (Accettante):} Stringa accettata.
 \end{itemize}
-Questa MT decide il linguaggio, rifiutando stringhe come $a\#b$ o $aa\#a$ o $a\#bb$.
+Questa TM decide il linguaggio, rifiutando stringhe come $a\#b$ o $aa\#a$ o $a\#bb$.
 
 \subsection{Esercizio 5: Linguaggio $L = \{a^n b^n c^n \mid n > 0\}$}
 
-Vogliamo progettare una MT che decide il linguaggio di stringhe con un numero uguale di 'a', 'b', e 'c', in sequenza $a^*b^*c^*$. $n$ deve essere maggiore di $0$. Esempio: $abc$, $aabbcc$.
+Vogliamo progettare una TM che decide il linguaggio di stringhe con un numero uguale di 'a', 'b', e 'c', in sequenza $a^*b^*c^*$. $n$ deve essere maggiore di $0$. Esempio: $abc$, $aabbcc$.
 
 \begin{example}[Strategia]
 La strategia è marcare un' 'a', poi una 'b', poi una 'c', e ripetere fino a quando tutti i caratteri sono stati marcati.
@@ -415,6 +415,6 @@ La strategia è marcare un' 'a', poi una 'b', poi una 'c', e ripetere fino a qua
         \end{itemize}
     \item \textbf{Stato $q_8$ (Accettante):} Stringa accettata.
 \end{itemize}
-Questa MT decide il linguaggio. Implicitamente rifiuta stringhe con ordine errato dei caratteri (es. $acb$) o conteggi non corrispondenti (es. $aabc$).
+Questa TM decide il linguaggio. Implicitamente rifiuta stringhe con ordine errato dei caratteri (es. $acb$) o conteggi non corrispondenti (es. $aabc$).
 
 \end{document}
