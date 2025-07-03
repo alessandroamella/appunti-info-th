@@ -110,52 +110,52 @@ Ora analizziamo il linguaggio deciso da $M'$, $L(M')$:
     Poiché $M_{\overline{LU}}$ decide $\overline{LU}$, la risposta "no" implica che $\langle M_i, \langle M_i \rangle \rangle \notin \overline{LU}$, ovvero $\langle M_i, \langle M_i \rangle \rangle \in LU$.
     Per definizione di $LU$, ciò significa che $M_i$ \textbf{accetta} $\langle M_i \rangle$.
 \end{itemize}
-Il comportamento di $M'$ è esattamente quello di una macchina che decide il linguaggio diagonale $LD$. Infatti, $M'$ risponde "sì" se $M_i$ non accetta $\langle M_i \rangle$, e "no" se $M_i$ accetta $\langle M_i \rangle$. Dunque, $L(M') = LD$.
+Il comportamento di $M'$ è esattamente quello di una macchina che decide il linguaggio diagonale $L_D$. Infatti, $M'$ risponde "sì" se $M_i$ non accetta $\langle M_i \rangle$, e "no" se $M_i$ accetta $\langle M_i \rangle$. Dunque, $L(M') = L_D$.
 
-Poiché $M'$ è costruita usando $M_{\overline{LU}}$ (che è un decider e si arresta sempre), $M'$ è anch'essa una Macchina di Turing che si arresta sempre, ovvero un decider. Questo implicherebbe che $LD \in R$.
+Poiché $M'$ è costruita usando $M_{\overline{LU}}$ (che è un decider e si arresta sempre), $M'$ è anch'essa una Macchina di Turing che si arresta sempre, ovvero un decider. Questo implicherebbe che $L_D \in R$.
 
-\textbf{Contraddizione:} Sappiamo che $LD \notin RE$, e quindi a maggior ragione $LD \notin R$.
+\textbf{Contraddizione:} Sappiamo che $L_D \notin RE$, e quindi a maggior ragione $L_D \notin R$.
 L'assunzione iniziale ($LU \in R$) deve essere falsa.
 
 \textbf{Conclusione:} $LU \notin R$.
 \end{proof}
 
-\subsection{Il Complemento del Linguaggio Diagonale ($\overline{LD}$)}
-Consideriamo ora il complemento di $LD$:
-\begin{definition}[Complemento del Linguaggio Diagonale ($\overline{LD}$)]
-Il complemento del linguaggio diagonale $\overline{LD}$ è l'insieme delle codifiche di Macchine di Turing $M_i$ tali che $M_i$ accetta la propria codifica $\langle M_i \rangle$.
-\[ \overline{LD} = \{ \langle M_i \rangle \mid M_i \text{ accetta } \langle M_i \rangle \} \]
+\subsection{Il Complemento del Linguaggio Diagonale ($\overline{L_D}$)}
+Consideriamo ora il complemento di $L_D$:
+\begin{definition}[Complemento del Linguaggio Diagonale ($\overline{L_D}$)]
+Il complemento del linguaggio diagonale $\overline{L_D}$ è l'insieme delle codifiche di Macchine di Turing $M_i$ tali che $M_i$ accetta la propria codifica $\langle M_i \rangle$.
+\[ \overline{L_D} = \{ \langle M_i \rangle \mid M_i \text{ accetta } \langle M_i \rangle \} \]
 \end{definition}
 
 \begin{theorem}
-Il complemento del linguaggio diagonale, $\overline{LD}$, è ricorsivamente enumerabile (ovvero, $\overline{LD} \in RE$).
+Il complemento del linguaggio diagonale, $\overline{L_D}$, è ricorsivamente enumerabile (ovvero, $\overline{L_D} \in RE$).
 \end{theorem}
 \begin{proof}
-Per dimostrare che $\overline{LD} \in RE$, dobbiamo costruire una Macchina di Turing $M_{\overline{LD}}$ che accetti $\overline{LD}$.
+Per dimostrare che $\overline{L_D} \in RE$, dobbiamo costruire una Macchina di Turing $M_{\overline{L_D}}$ che accetti $\overline{L_D}$.
 
-\textbf{Costruzione di $M_{\overline{LD}}$:}
+\textbf{Costruzione di $M_{\overline{L_D}}$:}
 \begin{enumerate}
-    \item $M_{\overline{LD}}$ prende in input la codifica di una Macchina di Turing $\langle M_i \rangle$.
-    \item $M_{\overline{LD}}$ crea una copia di $\langle M_i \rangle$ per usarla come stringa $w$. Forma quindi la coppia $\langle M_i, \langle M_i \rangle \rangle$.
-    \item $M_{\overline{LD}}$ simula $M_i$ su $\langle M_i \rangle$ usando una UTM.
-    \item Se la simulazione di $M_i$ su $\langle M_i \rangle$ si arresta e accetta, allora $M_{\overline{LD}}$ accetta (risponde "sì").
-    \item Se la simulazione di $M_i$ su $\langle M_i \rangle$ si arresta e rifiuta, o entra in loop, allora $M_{\overline{LD}}$ non accetta (non risponde "sì").
+    \item $M_{\overline{L_D}}$ prende in input la codifica di una Macchina di Turing $\langle M_i \rangle$.
+    \item $M_{\overline{L_D}}$ crea una copia di $\langle M_i \rangle$ per usarla come stringa $w$. Forma quindi la coppia $\langle M_i, \langle M_i \rangle \rangle$.
+    \item $M_{\overline{L_D}}$ simula $M_i$ su $\langle M_i \rangle$ usando una UTM.
+    \item Se la simulazione di $M_i$ su $\langle M_i \rangle$ si arresta e accetta, allora $M_{\overline{L_D}}$ accetta (risponde "sì").
+    \item Se la simulazione di $M_i$ su $\langle M_i \rangle$ si arresta e rifiuta, o entra in loop, allora $M_{\overline{L_D}}$ non accetta (non risponde "sì").
 \end{enumerate}
-\textbf{Analisi del comportamento di $M_{\overline{LD}}$:}
+\textbf{Analisi del comportamento di $M_{\overline{L_D}}$:}
 \begin{itemize}
-    \item \textbf{Se $\langle M_i \rangle \in \overline{LD}$:}
-    Per definizione, $M_i$ accetta $\langle M_i \rangle$. La simulazione della UTM si arresterà e accetterà. Di conseguenza, $M_{\overline{LD}}$ accetterà.
-    \item \textbf{Se $\langle M_i \rangle \notin \overline{LD}$:}
-    Per definizione, $M_i$ non accetta $\langle M_i \rangle$. Ciò significa che $M_i$ o rifiuta o va in loop su $\langle M_i \rangle$. In entrambi i casi, $M_{\overline{LD}}$ non si arresterà in uno stato accettante.
+    \item \textbf{Se $\langle M_i \rangle \in \overline{L_D}$:}
+    Per definizione, $M_i$ accetta $\langle M_i \rangle$. La simulazione della UTM si arresterà e accetterà. Di conseguenza, $M_{\overline{L_D}}$ accetterà.
+    \item \textbf{Se $\langle M_i \rangle \notin \overline{L_D}$:}
+    Per definizione, $M_i$ non accetta $\langle M_i \rangle$. Ciò significa che $M_i$ o rifiuta o va in loop su $\langle M_i \rangle$. In entrambi i casi, $M_{\overline{L_D}}$ non si arresterà in uno stato accettante.
 \end{itemize}
-Poiché $M_{\overline{LD}}$ accetta esattamente le stringhe che appartengono a $\overline{LD}$, si conclude che $\overline{LD} \in RE$.
+Poiché $M_{\overline{L_D}}$ accetta esattamente le stringhe che appartengono a $\overline{L_D}$, si conclude che $\overline{L_D} \in RE$.
 \end{proof}
 
 \begin{proposition}
-Il linguaggio $\overline{LD}$ non è ricorsivo (ovvero, $\overline{LD} \notin R$).
+Il linguaggio $\overline{L_D}$ non è ricorsivo (ovvero, $\overline{L_D} \notin R$).
 \end{proposition}
 \begin{proof}
-Se per assurdo $\overline{LD}$ fosse in $R$, allora per la proprietà che $R$ è chiusa rispetto al complemento, anche il suo complemento $LD = \overline{\overline{LD}}$ sarebbe in $R$. Ma sappiamo che $LD \notin RE$, e quindi $LD \notin R$. Questo è una contraddizione.
+Se per assurdo $\overline{L_D}$ fosse in $R$, allora per la proprietà che $R$ è chiusa rispetto al complemento, anche il suo complemento $L_D = \overline{\overline{L_D}}$ sarebbe in $R$. Ma sappiamo che $L_D \notin RE$, e quindi $L_D \notin R$. Questo è una contraddizione.
 \end{proof}
 
 \section{Problema dell'Arresto (HALT)}
@@ -294,8 +294,8 @@ L'assunzione iniziale ($HALT_\epsilon \in R$) deve essere falsa.
 \section{Riepilogo e Conclusioni}
 Abbiamo esplorato la decidibilità di diversi linguaggi fondamentali per la teoria della computazione, stabilendo le seguenti proprietà:
 \begin{itemize}
-    \item $LD$: Non è ricorsivamente enumerabile ($LD \notin RE$).
-    \item $\overline{LD}$: È ricorsivamente enumerabile ma non ricorsivo ($\overline{LD} \in RE \setminus R$).
+    \item $L_D$: Non è ricorsivamente enumerabile ($L_D \notin RE$).
+    \item $\overline{L_D}$: È ricorsivamente enumerabile ma non ricorsivo ($\overline{L_D} \in RE \setminus R$).
     \item $LU$: È ricorsivamente enumerabile ma non ricorsivo ($LU \in RE \setminus R$).
     \item $HALT$: È ricorsivamente enumerabile ma non ricorsivo ($HALT \in RE \setminus R$).
     \item $HALT_\epsilon$: È ricorsivamente enumerabile ma non ricorsivo ($HALT_\epsilon \in RE \setminus R$).
@@ -312,13 +312,13 @@ Tutti i problemi di non appartenenza a $R$ sono stati dimostrati mediante riduzi
         \draw[thick, green!60!black] (0,0) circle (1.8cm) node[above right=0.1cm, green!60!black] {$R$};
         
         % Languages inside RE but outside R (Recursively Enumerable but not Recursive)
-        \node[red] at (135:2.6cm) {$\overline{LD}$};
+        \node[red] at (135:2.6cm) {$\overline{L_D}$};
         \node[red] at (45:2.6cm) {$LU$};
         \node[red] at (225:2.6cm) {$HALT_\epsilon$};
         \node[red] at (315:2.6cm) {$HALT$};
         
         % Languages outside RE (and therefore outside R)
-        \node[purple] at (0:4.2cm) {$LD$};
+        \node[purple] at (0:4.2cm) {$L_D$};
         \node[purple] at (180:4.2cm) {$\overline{HALT}$};
         \node[purple] at (90:4.2cm) {$\overline{LU}$};
         \node[purple] at (270:4.2cm) {$\overline{HALT_\epsilon}$};
