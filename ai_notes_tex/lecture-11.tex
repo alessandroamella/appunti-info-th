@@ -61,6 +61,18 @@ Le Macchine di Turing (TM) studiate finora sono intrinsecamente fisse nel loro c
 Una Macchina di Turing Universale ($M_U$) è una macchina di Turing che è in grado di \textbf{simulare il comportamento di qualsiasi altra Macchina di Turing} ($M$) quando le viene fornita la descrizione (codifica) di $M$ e l'input $w$ su cui $M$ dovrebbe operare.
 \end{definition}
 
+\begin{remark}[Chiarimento sulla UTM e Decidibilità]
+È importante sottolineare che la UTM $M_U$ \textbf{non rende decidibili tutti i problemi}. La UTM è in grado di simulare fedelmente qualsiasi TM $M$, ma mantiene esattamente le stesse proprietà computazionali di $M$:
+
+\begin{itemize}
+    \item Se $M$ \textbf{decide} un linguaggio $L$ (cioè $L \in R$), allora $M_U$ con input $(\langle M \rangle, w)$ terminerà sempre, accettando se $w \in L$ e rifiutando se $w \notin L$.
+    \item Se $M$ \textbf{accetta} ma non decide un linguaggio $L$ (cioè $L \in RE \setminus R$), allora $M_U$ con input $(\langle M \rangle, w)$ accetterà se $w \in L$, ma potrebbe non terminare mai se $w \notin L$.
+    \item Se $M$ non accetta un linguaggio $L$ (cioè $L \notin RE$), allora $M_U$ con input $(\langle M \rangle, w)$ non può accettare stringhe di $L$.
+\end{itemize}
+
+In altre parole, la UTM ci permette di determinare se una stringa $w$ è \textbf{accettabile} da una data TM $M$, ma non necessariamente se è \textbf{decidibile}. La UTM preserva la distinzione tra problemi decidibili (classe R) e semi-decidibili (classe RE). La potenza della UTM sta nella sua \textit{universalità} - può simulare qualsiasi algoritmo - non nel rendere decidibili problemi intrinsecamente indecidibili.
+\end{remark}
+
 \subsection{Codifica di una Macchina di Turing (TM)}
 
 Per consentire a una UTM di simulare un'altra TM, il "programma" della TM (la sua funzione di transizione) deve essere codificato in una stringa binaria. Assumiamo, per semplicità, che le TM considerate abbiano un alfabeto di input binario $\Sigma = \{0,1\}$.
