@@ -18,6 +18,7 @@
 \newtheorem{example}{Esempio}
 \newtheorem{lemma}{Lemma}
 \newtheorem{proposition}{Proposizione}
+\newtheorem{remark}{Osservazione}
 
 
 \hypersetup{
@@ -92,7 +93,25 @@ Sia $L_1$ il linguaggio definito come:
 \[
 L_1 = \{ X^N \Sh W_1 \Sh W_2 \Sh \dots \Sh W_N \mid N > 0, W_i \in \{a,b,c,d\}^+, \forall i \in [1, N], \exists S_i \subseteq W_i \text{ t.c. } |S_i| = i \text{ e } S_i = S_i^R \}
 \]
-dove $X^N$ indica $N$ occorrenze del simbolo \texttt{X}.
+dove $X^N$ indica \texttt{X} ripetuto $N$ volte.
+
+\begin{remark}
+La definizione di $L_1$ descrive stringhe che iniziano con un numero $N$ di simboli \texttt{X}, seguiti da $N$ blocchi $W_i$ separati da \texttt{\#}. La condizione chiave è che per ogni blocco $W_i$ (con $i$ che va da 1 a $N$), deve esistere una sottostringa $S_i$ di lunghezza \textbf{esattamente $i$} che sia palindroma. Questo significa che il primo blocco $W_1$ deve contenere almeno un carattere palindromo (di lunghezza 1), il secondo blocco $W_2$ deve contenere una sottostringa palindroma di lunghezza 2, e così via. La difficoltà computazionale sta nel fatto che la macchina deve "indovinare" quale sottostringa di $W_i$ rappresenta il palindromo $S_i$ di lunghezza $i$, per poi verificare che sia effettivamente un palindromo e una sottostringa di $W_i$.
+\end{remark}
+
+\begin{example}
+Ecco alcuni esempi di stringhe che appartengono a $L_1$ per chiarire la definizione.
+\begin{itemize}
+    \item Se $N=1$, la stringa \texttt{X\#daca} è valida. Infatti, $W_1 = \texttt{daca}$ e deve contenere una sottostringa palindroma di lunghezza $i=1$. Qualsiasi carattere è un palindromo di lunghezza 1, quindi la condizione è soddisfatta.
+    \item Se $N=3$, una stringa valida potrebbe essere \texttt{XXX\#a\#dabb\#cdabac}. Analizziamola:
+    \begin{itemize}
+        \item Per $i=1$, $W_1 = \texttt{a}$. La sottostringa palindroma di lunghezza 1 è \texttt{a} stessa.
+        \item Per $i=2$, $W_2 = \texttt{dabb}$. Contiene la sottostringa \texttt{bb}, che è un palindromo di lunghezza 2.
+        \item Per $i=3$, $W_3 = \texttt{cdabac}$. Contiene la sottostringa \texttt{aba}, che è un palindromo di lunghezza 3.
+    \end{itemize}
+    \item Una stringa come \texttt{XX\#c\#bda} non appartiene al linguaggio. Per $i=2$, $W_2 = \texttt{bda}$ non contiene alcuna sottostringa palindroma di lunghezza 2 (le sottostringhe sono \texttt{bd} e \texttt{da}, nessuna è palindroma).
+\end{itemize}
+\end{example}
 
 \subsubsection{Strategia della Macchina di Turing}
 La macchina utilizzerà cinque nastri:
