@@ -61,31 +61,31 @@ Il linguaggio universale $LU$ è l'insieme delle coppie $\langle M, w \rangle$, 
 \end{definition}
 
 \begin{theorem}
-$LU \in R_e$.
+Il linguaggio universale $LU$ è ricorsivamente enumerabile (ovvero, $LU \in R_e$).
 \end{theorem}
 \begin{proof}
 Per dimostrare che $LU \in R_e$, dobbiamo mostrare l'esistenza di una Macchina di Turing che lo accetti. Tale macchina è la Macchina di Turing Universale (UTM).
 \begin{enumerate}
-    \item La MU prende in input la codifica $\langle M, w \rangle$.
-    \item La MU simula passo-passo il comportamento di $M$ su $w$.
-    \item Se $M$ si arresta in uno stato accettante su $w$, la MU si arresta e accetta (risponde "sì").
-    \item Se $M$ si arresta in uno stato non accettante su $w$, la MU si arresta e rifiuta (risponde "no").
-    \item Se $M$ non si arresta su $w$ (entra in un loop infinito), la MU simulerà all'infinito e non si arresterà (non darà risposta "sì").
+    \item La UTM prende in input la codifica $\langle M, w \rangle$.
+    \item La UTM simula passo-passo il comportamento di $M$ su $w$.
+    \item Se $M$ si arresta in uno stato accettante su $w$, la UTM si arresta e accetta (risponde "sì").
+    \item Se $M$ si arresta in uno stato non accettante su $w$, la UTM si arresta e rifiuta (risponde "no").
+    \item Se $M$ non si arresta su $w$ (entra in un loop infinito), la UTM simulerà all'infinito e non si arresterà (non darà risposta "sì").
 \end{enumerate}
-Poiché la MU accetta tutte le istanze di $LU$ e non accetta quelle che non vi appartengono, $LU$ è ricorsivamente enumerabile.
+Poiché la UTM accetta tutte e sole le istanze di $LU$, il linguaggio $LU$ è ricorsivamente enumerabile.
 \end{proof}
 
-Ora, la domanda cruciale: $LU \in R$? Intuitivamente, se $M$ va in loop su $w$, la MU non si arresterà per dare una risposta "no". Questo suggerisce che $LU$ non sia decidibile.
+Ora, la domanda cruciale: $LU \in R$? Intuitivamente, se $M$ va in loop su $w$, la UTM non si arresterà per dare una risposta "no". Questo suggerisce che $LU$ non sia decidibile.
 
 \begin{theorem}
-$LU \notin R$.
+Il linguaggio universale $LU$ non è ricorsivo (ovvero, $LU \notin R$).
 \end{theorem}
 \begin{proof}
-La dimostrazione procede per assurdo, utilizzando una riduzione da $LD$ (di cui sappiamo la non appartenenza a $R_e$, e quindi a $R$).
+La dimostrazione procede per assurdo.
 
 \textbf{Assunzione per assurdo:} Supponiamo che $LU \in R$.
 \begin{enumerate}
-    \item Se $LU \in R$, allora per le proprietà delle classi di linguaggi, anche il suo complemento $\overline{LU} \in R$.
+    \item Se $LU \in R$, allora per le proprietà di chiusura delle classi di linguaggi, anche il suo complemento $\overline{LU}$ deve essere in $R$.
     \item Se $\overline{LU} \in R$, allora esiste una Macchina di Turing $M_{\overline{LU}}$ che \textbf{decide} $\overline{LU}$. Ciò significa che $M_{\overline{LU}}$ si arresta sempre (su ogni input) e dà una risposta corretta (sì/no).
     \item Costruiamo una nuova Macchina di Turing $M'$ che prende in input una codifica di macchina $\langle M_i \rangle$. Il comportamento di $M'$ è il seguente:
     \begin{enumerate}
@@ -110,12 +110,11 @@ Ora analizziamo il linguaggio deciso da $M'$, $L(M')$:
     Poiché $M_{\overline{LU}}$ decide $\overline{LU}$, la risposta "no" implica che $\langle M_i, \langle M_i \rangle \rangle \notin \overline{LU}$, ovvero $\langle M_i, \langle M_i \rangle \rangle \in LU$.
     Per definizione di $LU$, ciò significa che $M_i$ \textbf{accetta} $\langle M_i \rangle$.
 \end{itemize}
-Il comportamento di $M'$ è esattamente quello di una macchina che decide $LD$. Infatti, $M'$ risponde "sì" se $M_i$ non accetta $\langle M_i \rangle$, e "no" se $M_i$ accetta $\langle M_i \rangle$. Dunque, $L(M') = LD$.
+Il comportamento di $M'$ è esattamente quello di una macchina che decide il linguaggio diagonale $LD$. Infatti, $M'$ risponde "sì" se $M_i$ non accetta $\langle M_i \rangle$, e "no" se $M_i$ accetta $\langle M_i \rangle$. Dunque, $L(M') = LD$.
 
-Poiché $M'$ è costruita usando $M_{\overline{LU}}$ (che è un decider e si arresta sempre), $M'$ è anch'essa una Macchina di Turing che si arresta sempre, ovvero un decider.
-Questo implicherebbe che $LD \in R$.
+Poiché $M'$ è costruita usando $M_{\overline{LU}}$ (che è un decider e si arresta sempre), $M'$ è anch'essa una Macchina di Turing che si arresta sempre, ovvero un decider. Questo implicherebbe che $LD \in R$.
 
-\textbf{Contraddizione:} Sappiamo che $LD \notin R_e$, e quindi $LD \notin R$.
+\textbf{Contraddizione:} Sappiamo che $LD \notin R_e$, e quindi a maggior ragione $LD \notin R$.
 L'assunzione iniziale ($LU \in R$) deve essere falsa.
 
 \textbf{Conclusione:} $LU \notin R$.
@@ -129,7 +128,7 @@ Il complemento del linguaggio diagonale $\overline{LD}$ è l'insieme delle codif
 \end{definition}
 
 \begin{theorem}
-$\overline{LD} \in R_e$.
+Il complemento del linguaggio diagonale, $\overline{LD}$, è ricorsivamente enumerabile (ovvero, $\overline{LD} \in R_e$).
 \end{theorem}
 \begin{proof}
 Per dimostrare che $\overline{LD} \in R_e$, dobbiamo costruire una Macchina di Turing $M_{\overline{LD}}$ che accetti $\overline{LD}$.
@@ -140,48 +139,24 @@ Per dimostrare che $\overline{LD} \in R_e$, dobbiamo costruire una Macchina di T
     \item $M_{\overline{LD}}$ crea una copia di $\langle M_i \rangle$ per usarla come stringa $w$. Forma quindi la coppia $\langle M_i, \langle M_i \rangle \rangle$.
     \item $M_{\overline{LD}}$ simula $M_i$ su $\langle M_i \rangle$ usando una UTM.
     \item Se la simulazione di $M_i$ su $\langle M_i \rangle$ si arresta e accetta, allora $M_{\overline{LD}}$ accetta (risponde "sì").
-    \item Se la simulazione di $M_i$ su $\langle M_i \rangle$ si arresta e rifiuta, o entra in loop, allora $M_{\overline{LD}}$ non accetta (risponde "no" o va in loop).
+    \item Se la simulazione di $M_i$ su $\langle M_i \rangle$ si arresta e rifiuta, o entra in loop, allora $M_{\overline{LD}}$ non accetta (non risponde "sì").
 \end{enumerate}
 \textbf{Analisi del comportamento di $M_{\overline{LD}}$:}
 \begin{itemize}
     \item \textbf{Se $\langle M_i \rangle \in \overline{LD}$:}
-    Per definizione, $M_i$ accetta $\langle M_i \rangle$. La simulazione della MU si arresterà e accetterà. Di conseguenza, $M_{\overline{LD}}$ accetterà.
+    Per definizione, $M_i$ accetta $\langle M_i \rangle$. La simulazione della UTM si arresterà e accetterà. Di conseguenza, $M_{\overline{LD}}$ accetterà.
     \item \textbf{Se $\langle M_i \rangle \notin \overline{LD}$:}
-    Per definizione, $M_i$ non accetta $\langle M_i \rangle$. Ciò significa che $M_i$ o rifiuta o va in loop su $\langle M_i \rangle$.
-    \begin{itemize}
-        \item Se $M_i$ rifiuta $\langle M_i \rangle$, la simulazione della MU si arresterà e rifiuterà. $M_{\overline{LD}}$ non accetterà.
-        \item Se $M_i$ va in loop su $\langle M_i \rangle$, la simulazione della MU andrà in loop. $M_{\overline{LD}}$ non accetterà.
-    \end{itemize}
+    Per definizione, $M_i$ non accetta $\langle M_i \rangle$. Ciò significa che $M_i$ o rifiuta o va in loop su $\langle M_i \rangle$. In entrambi i casi, $M_{\overline{LD}}$ non si arresterà in uno stato accettante.
 \end{itemize}
 Poiché $M_{\overline{LD}}$ accetta esattamente le stringhe che appartengono a $\overline{LD}$, si conclude che $\overline{LD} \in R_e$.
 \end{proof}
 
 \begin{proposition}
-$\overline{LD} \notin R$.
+Il linguaggio $\overline{LD}$ non è ricorsivo (ovvero, $\overline{LD} \notin R$).
 \end{proposition}
 \begin{proof}
-Se $\overline{LD}$ fosse in $R$, allora per la proprietà che $R$ è chiusa rispetto al complemento, anche $LD$ sarebbe in $R$. Ma sappiamo che $LD \notin R_e$, e quindi $LD \notin R$. Questo è una contraddizione.
+Se per assurdo $\overline{LD}$ fosse in $R$, allora per la proprietà che $R$ è chiusa rispetto al complemento, anche il suo complemento $LD = \overline{\overline{LD}}$ sarebbe in $R$. Ma sappiamo che $LD \notin R_e$, e quindi $LD \notin R$. Questo è una contraddizione.
 \end{proof}
-
-\begin{figure}[h!]
-    \centering
-    \begin{tikzpicture}[node distance=1.8cm, >=Stealth]
-        \draw (0,0) circle (3cm) node[below] {$R_e$};
-        \draw (0,0) circle (1.5cm) node[above] {$R$};
-        \node at (2.5, 2.5) {$\overline{LU}$};
-        \node at (2.5, -2.5) {$\overline{HALT}$};
-        \node at (1.0, 1.0) {$LU$};
-        \node at (1.0, -1.0) {$HALT$};
-        \node at (-1.0, 1.0) {$\overline{LD}$};
-        \node at (-1.0, -1.0) {$LD$}; % Errore di posizionamento nella figura del professore, LD è fuori Re. Correggo qui.
-        
-        % Aggiustamenti per chiarezza e correttezza (LD fuori Re)
-        \node at (4.0, 0) {$LD$}; % LD è fuori Re
-        \node at (-4.0, 0) {?}; % Altri linguaggi non in Re
-    \end{tikzpicture}
-    \caption{Relazioni tra classi di linguaggi R e $R_e$ e posizione di alcuni linguaggi}
-    \label{fig:r_re_map}
-\end{figure}
 
 \section{Problema dell'Arresto (HALT)}
 Introduciamo il famoso Problema dell'Arresto.
@@ -192,7 +167,7 @@ Il linguaggio $HALT$ è l'insieme delle coppie $\langle M, w \rangle$, dove $M$ 
 La differenza con $LU$ è sottile ma cruciale: $LU$ richiede l'accettazione, $HALT$ richiede solo l'arresto.
 
 \begin{theorem}
-$HALT \in R_e$.
+Il linguaggio dell'arresto $HALT$ è ricorsivamente enumerabile (ovvero, $HALT \in R_e$).
 \end{theorem}
 \begin{proof}
 Per dimostrare che $HALT \in R_e$, dobbiamo costruire una Macchina di Turing $M_{HALT}$ che accetti $HALT$.
@@ -207,15 +182,15 @@ Per dimostrare che $HALT \in R_e$, dobbiamo costruire una Macchina di Turing $M_
 \textbf{Analisi del comportamento di $M_{HALT}$:}
 \begin{itemize}
     \item \textbf{Se $\langle M, w \rangle \in HALT$:}
-    Per definizione, $M$ si arresta su $w$. La simulazione della MU si arresterà. Di conseguenza, $M_{HALT}$ accetterà.
+    Per definizione, $M$ si arresta su $w$. La simulazione della UTM si arresterà. Di conseguenza, $M_{HALT}$ accetterà.
     \item \textbf{Se $\langle M, w \rangle \notin HALT$:}
-    Per definizione, $M$ non si arresta su $w$ (va in loop). La simulazione della MU andrà in loop. Di conseguenza, $M_{HALT}$ non accetterà.
+    Per definizione, $M$ non si arresta su $w$ (va in loop). La simulazione della UTM andrà in loop. Di conseguenza, $M_{HALT}$ non accetterà.
 \end{itemize}
 Poiché $M_{HALT}$ accetta esattamente le istanze di $HALT$, si conclude che $HALT \in R_e$.
 \end{proof}
 
 \begin{theorem}
-$HALT \notin R$.
+Il linguaggio dell'arresto $HALT$ non è ricorsivo (ovvero, $HALT \notin R$).
 \end{theorem}
 \begin{proof}
 La dimostrazione procede per assurdo, utilizzando una riduzione da $LU$ (di cui sappiamo la non appartenenza a $R$).
@@ -223,14 +198,14 @@ La dimostrazione procede per assurdo, utilizzando una riduzione da $LU$ (di cui 
 \textbf{Assunzione per assurdo:} Supponiamo che $HALT \in R$.
 \begin{enumerate}
     \item Se $HALT \in R$, allora esiste una Macchina di Turing $M_{HALT}^*$ che \textbf{decide} $HALT$. Ciò significa che $M_{HALT}^*$ si arresta sempre e dà una risposta corretta (sì/no).
-    \item Costruiamo una nuova Macchina di Turing $M'$ che prende in input una coppia $\langle M, w \rangle$. Il comportamento di $M'$ è il seguente:
+    \item Costruiamo una nuova Macchina di Turing $M'$ che prende in input una coppia $\langle M, w \rangle$ e intende decidere $LU$. Il suo comportamento è il seguente:
     \begin{enumerate}
         \item Riceve $\langle M, w \rangle$ come input.
         \item Dà in input $\langle M, w \rangle$ alla macchina $M_{HALT}^*$ (la cui esistenza è garantita dalla nostra assunzione).
         \item $M'$ verifica la risposta di $M_{HALT}^*$:
         \begin{itemize}
             \item \textbf{Se $M_{HALT}^*$ risponde "no"}: (Significa che $M$ non si arresta su $w$). Allora $M'$ risponde "no". (In questo caso, $M$ non può accettare $w$, quindi $\langle M, w \rangle \notin LU$).
-            \item \textbf{Se $M_{HALT}^*$ risponde "sì"}: (Significa che $M$ si arresta su $w$). Allora $M'$ simula $M$ su $w$ usando una UTM.
+            \item \textbf{Se $M_{HALT}^*$ risponde "sì"}: (Significa che $M$ si arresta su $w$). A questo punto, sapendo che la computazione terminerà, $M'$ simula $M$ su $w$ usando una UTM.
             \begin{itemize}
                 \item Se la simulazione di $M$ su $w$ si arresta e accetta, allora $M'$ risponde "sì".
                 \item Se la simulazione di $M$ su $w$ si arresta e rifiuta, allora $M'$ risponde "no".
@@ -238,23 +213,10 @@ La dimostrazione procede per assurdo, utilizzando una riduzione da $LU$ (di cui 
         \end{itemize}
     \end{enumerate}
 \end{enumerate}
-Ora analizziamo il linguaggio deciso da $M'$, $L(M')$:
-\begin{itemize}
-    \item \textbf{Se $M'$ risponde "sì":}
-    Ciò accade solo se $M_{HALT}^*$ ha risposto "sì" (cioè $M$ si arresta su $w$) \textbf{e} la simulazione di $M$ su $w$ ha accettato.
-    Questo significa che $M$ accetta $w$. Quindi, $\langle M, w \rangle \in LU$.
-    \item \textbf{Se $M'$ risponde "no":}
-    Ciò può accadere in due scenari:
-    \begin{itemize}
-        \item Scenario 1: $M_{HALT}^*$ ha risposto "no". Questo significa che $M$ non si arresta su $w$. Se $M$ non si arresta, non può accettare $w$. Quindi, $\langle M, w \rangle \notin LU$.
-        \item Scenario 2: $M_{HALT}^*$ ha risposto "sì", ma la simulazione di $M$ su $w$ ha rifiutato. Questo significa che $M$ si è arrestata su $w$ ma non ha accettato $w$. Quindi, $\langle M, w \rangle \notin LU$.
-    \end{itemize}
-    In entrambi gli scenari, $M'$ risponde "no" se $\langle M, w \rangle \notin LU$.
-\end{itemize}
-Il comportamento di $M'$ è esattamente quello di una macchina che decide $LU$. Dunque, $L(M') = LU$.
+Analizziamo il linguaggio deciso da $M'$, $L(M')$:
+$M'$ risponde "sì" se e solo se $M_{HALT}^*$ risponde "sì" (cioè $M$ si arresta su $w$) \textbf{e} la successiva simulazione di $M$ su $w$ accetta. Questo è vero se e solo se $M$ accetta $w$, ovvero $\langle M, w \rangle \in LU$. In tutti gli altri casi, $M'$ risponde "no".
 
-Poiché $M'$ è costruita usando $M_{HALT}^*$ (che è un decider e si arresta sempre), e la parte di simulazione dopo la risposta "sì" di $M_{HALT}^*$ è garantita arrestarsi, $M'$ è anch'essa una Macchina di Turing che si arresta sempre, ovvero un decider.
-Questo implicherebbe che $LU \in R$.
+Il comportamento di $M'$ è esattamente quello di una macchina che decide $LU$. Poiché $M'$ è costruita usando $M_{HALT}^*$ (che è un decider) e una simulazione che è garantita terminare, $M'$ è anch'essa un decider. Questo implicherebbe che $LU \in R$.
 
 \textbf{Contraddizione:} Sappiamo che $LU \notin R$.
 L'assunzione iniziale ($HALT \in R$) deve essere falsa.
@@ -263,10 +225,10 @@ L'assunzione iniziale ($HALT \in R$) deve essere falsa.
 \end{proof}
 
 \begin{proposition}
-Il complemento di $HALT$, $\overline{HALT}$, non appartiene a $R$.
+Il complemento di $HALT$, $\overline{HALT}$, non appartiene a $R_e$.
 \end{proposition}
 \begin{proof}
-Se $\overline{HALT}$ fosse in $R$, allora per la proprietà che $R$ è chiusa rispetto al complemento, anche $HALT$ sarebbe in $R$. Ma abbiamo appena dimostrato che $HALT \notin R$. Questo è una contraddizione.
+Sappiamo che $HALT \in R_e$ ma $HALT \notin R$. Se per assurdo il suo complemento $\overline{HALT}$ fosse in $R_e$, allora per il teorema sulla decidibilità, dato che sia un linguaggio che il suo complemento sono ricorsivamente enumerabili, il linguaggio stesso ($HALT$) sarebbe ricorsivo ($R$). Ma abbiamo appena dimostrato che $HALT \notin R$. Questo è una contraddizione.
 \end{proof}
 
 \section{Problema dell'Arresto su Stringa Vuota (HALT$_\epsilon$)}
@@ -277,7 +239,7 @@ Il linguaggio $HALT_\epsilon$ è l'insieme delle codifiche di Macchine di Turing
 \end{definition}
 
 \begin{theorem}
-$HALT_\epsilon \in R_e$.
+Il linguaggio dell'arresto su stringa vuota, $HALT_\epsilon$, è ricorsivamente enumerabile (ovvero, $HALT_\epsilon \in R_e$).
 \end{theorem}
 \begin{proof}
 Per dimostrare che $HALT_\epsilon \in R_e$, dobbiamo costruire una Macchina di Turing $M_{HALT_\epsilon}$ che accetti $HALT_\epsilon$.
@@ -289,62 +251,39 @@ Per dimostrare che $HALT_\epsilon \in R_e$, dobbiamo costruire una Macchina di T
     \item Se la simulazione di $M$ su $\epsilon$ si arresta (sia accettando che rifiutando), allora $M_{HALT_\epsilon}$ accetta (risponde "sì").
     \item Se la simulazione di $M$ su $\epsilon$ entra in loop infinito, allora $M_{HALT_\epsilon}$ entra in loop (non risponde "sì").
 \end{enumerate}
-\textbf{Analisi del comportamento di $M_{HALT_\epsilon}$:}
-\begin{itemize}
-    \item \textbf{Se $\langle M \rangle \in HALT_\epsilon$:}
-    Per definizione, $M$ si arresta su $\epsilon$. La simulazione della MU si arresterà. Di conseguenza, $M_{HALT_\epsilon}$ accetterà.
-    \item \textbf{Se $\langle M \rangle \notin HALT_\epsilon$:}
-    Per definizione, $M$ non si arresta su $\epsilon$ (va in loop). La simulazione della MU andrà in loop. Di conseguenza, $M_{HALT_\epsilon}$ non accetterà.
-\end{itemize}
 Poiché $M_{HALT_\epsilon}$ accetta esattamente le istanze di $HALT_\epsilon$, si conclude che $HALT_\epsilon \in R_e$.
 \end{proof}
 
 \begin{theorem}
-$HALT_\epsilon \notin R$.
+Il linguaggio dell'arresto su stringa vuota, $HALT_\epsilon$, non è ricorsivo (ovvero, $HALT_\epsilon \notin R$).
 \end{theorem}
 \begin{proof}
 La dimostrazione procede per assurdo, utilizzando una riduzione da $HALT$ (di cui sappiamo la non appartenenza a $R$).
 
 \textbf{Assunzione per assurdo:} Supponiamo che $HALT_\epsilon \in R$.
 \begin{enumerate}
-    \item Se $HALT_\epsilon \in R$, allora esiste una Macchina di Turing $M_{HALT_\epsilon}^*$ che \textbf{decide} $HALT_\epsilon$. Ciò significa che $M_{HALT_\epsilon}^*$ si arresta sempre e dà una risposta corretta (sì/no).
-    \item Costruiamo una nuova Macchina di Turing $M'$ che prende in input una coppia $\langle M, w \rangle$. Il comportamento di $M'$ è il seguente:
+    \item Se $HALT_\epsilon \in R$, allora esiste una Macchina di Turing $M_{HALT_\epsilon}^*$ che \textbf{decide} $HALT_\epsilon$.
+    \item Costruiamo una nuova Macchina di Turing $M'$ che prende in input una coppia $\langle M, w \rangle$ (un'istanza del problema $HALT$) e intende deciderla.
     \begin{enumerate}
         \item Riceve $\langle M, w \rangle$ come input.
-        \item $M'$ costruisce (mediante un "modulo di reshaping") una nuova Macchina di Turing, che chiamiamo $M_{M,w}$ (o $M_w^{\text{tilde}}$), la cui codifica $\langle M_{M,w} \rangle$ viene passata al passo successivo.
-        \item La Macchina $M_{M,w}$ è definita come segue:
+        \item $M'$ costruisce la descrizione di una nuova Macchina di Turing, $M_{w}$.
+        \item La macchina $M_w$ è definita come segue:
         \begin{itemize}
-            \item Quando $M_{M,w}$ viene avviata su un qualsiasi input (ad esempio, la stringa vuota $\epsilon$), ignora l'input.
-            \item Cancella il suo nastro di input.
+            \item Quando $M_w$ viene avviata su un qualsiasi input, per prima cosa ignora l'input.
             \item Scrive la stringa $w$ (ottenuta dalla coppia $\langle M, w \rangle$ iniziale) sul proprio nastro.
-            \item Simula la Macchina di Turing $M$ (ottenuta dalla coppia $\langle M, w \rangle$ iniziale) sul contenuto attuale del nastro, ovvero su $w$.
-            \item $M_{M,w}$ accetta se $M$ accetta $w$, rifiuta se $M$ rifiuta $w$, va in loop se $M$ va in loop su $w$. In sintesi, $M_{M,w}$ si arresta su $\epsilon$ se e solo se $M$ si arresta su $w$.
+            \item Successivamente, simula la Macchina di Turing $M$ sul contenuto attuale del nastro, ovvero su $w$.
+            \item $M_w$ si arresta se e solo se la simulazione di $M$ su $w$ si arresta.
         \end{itemize}
-        \item $M'$ dà in input la codifica $\langle M_{M,w} \rangle$ alla macchina $M_{HALT_\epsilon}^*$.
-        \item $M'$ adotta la risposta di $M_{HALT_\epsilon}^*$:
-        \begin{itemize}
-            \item Se $M_{HALT_\epsilon}^*$ risponde "sì", allora $M'$ risponde "sì".
-            \item Se $M_{HALT_\epsilon}^*$ risponde "no", allora $M'$ risponde "no".
-        \end{itemize}
+        \item L'idea chiave è che $M_w$ (che ignora il suo input) si arresta sulla stringa vuota $\epsilon$ se e solo se $M$ si arresta su $w$.
+        \item $M'$ dà in input la codifica $\langle M_w \rangle$ alla macchina $M_{HALT_\epsilon}^*$.
+        \item $M'$ adotta la risposta di $M_{HALT_\epsilon}^*$: se risponde "sì", $M'$ risponde "sì"; se risponde "no", $M'$ risponde "no".
     \end{enumerate}
 \end{enumerate}
-Ora analizziamo il linguaggio deciso da $M'$, $L(M')$:
-\begin{itemize}
-    \item \textbf{Se $M'$ risponde "sì":}
-    Ciò significa che $M_{HALT_\epsilon}^*$ ha risposto "sì" sull'input $\langle M_{M,w} \rangle$.
-    Poiché $M_{HALT_\epsilon}^*$ decide $HALT_\epsilon$, la risposta "sì" implica che $M_{M,w}$ si arresta su $\epsilon$.
-    Per come abbiamo costruito $M_{M,w}$, questa si arresta su $\epsilon$ se e solo se $M$ si arresta su $w$.
-    Quindi, $M$ si arresta su $w$. Ciò significa che $\langle M, w \rangle \in HALT$.
-    \item \textbf{Se $M'$ risponde "no":}
-    Ciò significa che $M_{HALT_\epsilon}^*$ ha risposto "no" sull'input $\langle M_{M,w} \rangle$.
-    Poiché $M_{HALT_\epsilon}^*$ decide $HALT_\epsilon$, la risposta "no" implica che $M_{M,w}$ non si arresta su $\epsilon$.
-    Per come abbiamo costruito $M_{M,w}$, questa non si arresta su $\epsilon$ se e solo se $M$ non si arresta su $w$.
-    Quindi, $M$ non si arresta su $w$. Ciò significa che $\langle M, w \rangle \notin HALT$.
-\end{itemize}
-Il comportamento di $M'$ è esattamente quello di una macchina che decide $HALT$. Dunque, $L(M') = HALT$.
+Analizziamo il linguaggio deciso da $M'$, $L(M')$:
+$M'$ risponde "sì" all'input $\langle M, w \rangle$ se e solo se $M_{HALT_\epsilon}^*$ risponde "sì" a $\langle M_w \rangle$. Questo accade se e solo se $M_w$ si arresta su $\epsilon$, che a sua volta accade se e solo se $M$ si arresta su $w$.
+Dunque, $M'$ decide correttamente se $\langle M, w \rangle \in HALT$.
 
-Poiché $M'$ è costruita usando $M_{HALT_\epsilon}^*$ (che è un decider e si arresta sempre), $M'$ è anch'essa una Macchina di Turing che si arresta sempre, ovvero un decider.
-Questo implicherebbe che $HALT \in R$.
+Il comportamento di $M'$ è esattamente quello di una macchina che decide $HALT$. Poiché $M'$ è costruita usando un decider, è essa stessa un decider. Questo implicherebbe che $HALT \in R$.
 
 \textbf{Contraddizione:} Sappiamo che $HALT \notin R$.
 L'assunzione iniziale ($HALT_\epsilon \in R$) deve essere falsa.
@@ -352,46 +291,39 @@ L'assunzione iniziale ($HALT_\epsilon \in R$) deve essere falsa.
 \textbf{Conclusione:} $HALT_\epsilon \notin R$.
 \end{proof}
 
-\begin{proposition}
-Il complemento di $HALT_\epsilon$, $\overline{HALT_\epsilon}$, non appartiene a $R$.
-\end{proposition}
-\begin{proof}
-Se $\overline{HALT_\epsilon}$ fosse in $R$, allora per la proprietà che $R$ è chiusa rispetto al complemento, anche $HALT_\epsilon$ sarebbe in $R$. Ma abbiamo appena dimostrato che $HALT_\epsilon \notin R$. Questo è una contraddizione.
-\end{proof}
-
 \section{Riepilogo e Conclusioni}
-Abbiamo esplorato la decidibilità di diversi linguaggi fondamentali per la teoria della computazione:
+Abbiamo esplorato la decidibilità di diversi linguaggi fondamentali per la teoria della computazione, stabilendo le seguenti proprietà:
 \begin{itemize}
-    \item $LD$: Non ricorsivamente enumerabile ($LD \notin R_e \implies LD \notin R$).
-    \item $\overline{LD}$: Ricorsivamente enumerabile ($\overline{LD} \in R_e$), ma non ricorsivo ($\overline{LD} \notin R$).
-    \item $LU$: Ricorsivamente enumerabile ($LU \in R_e$), ma non ricorsivo ($LU \notin R$).
-    \item $HALT$: Ricorsivamente enumerabile ($HALT \in R_e$), ma non ricorsivo ($HALT \notin R$).
-    \item $HALT_\epsilon$: Ricorsivamente enumerabile ($HALT_\epsilon \in R_e$), ma non ricorsivo ($HALT_\epsilon \notin R$).
+    \item $LD$: Non è ricorsivamente enumerabile ($LD \notin R_e$).
+    \item $\overline{LD}$: È ricorsivamente enumerabile ma non ricorsivo ($\overline{LD} \in R_e \setminus R$).
+    \item $LU$: È ricorsivamente enumerabile ma non ricorsivo ($LU \in R_e \setminus R$).
+    \item $HALT$: È ricorsivamente enumerabile ma non ricorsivo ($HALT \in R_e \setminus R$).
+    \item $HALT_\epsilon$: È ricorsivamente enumerabile ma non ricorsivo ($HALT_\epsilon \in R_e \setminus R$).
 \end{itemize}
-Tutti i problemi di non appartenenza a $R$ sono stati dimostrati mediante riduzione ad altri problemi di cui era già nota la non decidibilità. Questo è un metodo standard in teoria della computazione per dimostrare l'indecidibilità.
+Tutti i problemi di non appartenenza a $R$ sono stati dimostrati mediante riduzione, una tecnica fondamentale in teoria della computazione per classificare la difficoltà dei problemi.
 
 \begin{figure}[h!]
     \centering
     \begin{tikzpicture}[node distance=1.8cm, >=Stealth]
         % R_e boundary
-        \draw[thick, blue] (0,0) circle (3.5cm) node[below right, blue] {$R_e$};
+        \draw[thick, blue!60] (0,0) circle (3.5cm) node[below right=0.1cm, blue!60] {$R_e$};
         
         % R boundary
-        \draw[thick, green] (0,0) circle (1.8cm) node[above right, green] {$R$};
+        \draw[thick, green!60!black] (0,0) circle (1.8cm) node[above right=0.1cm, green!60!black] {$R$};
         
         % Languages inside R_e but outside R (Recursively Enumerable but not Recursive)
-        \node[red] at (2.5, 2.5) {$LU$};
-        \node[red] at (2.5, -2.5) {$HALT$};
-        \node[red] at (-2.5, 2.5) {$\overline{LD}$};
-        \node[red] at (-2.5, -2.5) {$HALT_\epsilon$};
+        \node[red] at (135:2.6cm) {$\overline{LD}$};
+        \node[red] at (45:2.6cm) {$LU$};
+        \node[red] at (225:2.6cm) {$HALT_\epsilon$};
+        \node[red] at (315:2.6cm) {$HALT$};
         
         % Languages outside R_e (and therefore outside R)
-        \node[purple] at (4.5, 0) {$LD$};
-        \node[purple] at (-4.5, 0) {$\overline{HALT}$};
-        \node[purple] at (0, 4.5) {$\overline{LU}$}; % Also outside R_e, by implication from LU
-        \node[purple] at (0, -4.5) {$\overline{HALT_\epsilon}$}; % Also outside R_e, by implication from HALT_epsilon
+        \node[purple] at (0:4.2cm) {$LD$};
+        \node[purple] at (180:4.2cm) {$\overline{HALT}$};
+        \node[purple] at (90:4.2cm) {$\overline{LU}$};
+        \node[purple] at (270:4.2cm) {$\overline{HALT_\epsilon}$};
     \end{tikzpicture}
-    \caption{Mappa aggiornata delle classi di linguaggi $R$ e $R_e$ con i linguaggi discussi.}
+    \caption{Mappa delle classi di linguaggi $R$ e $R_e$ con la posizione dei problemi discussi.}
     \label{fig:r_re_map_updated}
 \end{figure}
 
