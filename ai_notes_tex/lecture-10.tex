@@ -19,27 +19,6 @@
 \newtheorem{lemma}{Lemma}
 \newtheorem{proposition}{Proposizione}
 
-% Stili per i diagrammi TikZ
-\tikzset{
-    ->, % Stile delle frecce
-    >=stealth, % Punta della freccia
-    node distance=3.5cm, % Distanza tra i nodi
-    every state/.style={
-        thick,
-        fill=blue!10,
-        draw=blue!60
-    },
-    accepting/.style={
-        double,
-        double distance=2pt
-    },
-    edge label/.style={
-        below,
-        align=center,
-        font=\scriptsize
-    }
-}
-
 
 \hypersetup{
     pdftitle={Lezione di Informatica Teorica: Macchine di Turing Non Deterministiche},
@@ -64,6 +43,30 @@
 \newcommand{\any}{\_} % Wildcard symbol
 
 \begin{document}
+
+
+% Stili per i diagrammi TikZ
+\tikzset{
+    ->, % Stile delle frecce
+    >=stealth, % Punta della freccia
+    node distance=3.5cm, % Distanza tra i nodi
+    every state/.style={
+        thick,
+        fill=blue!10,
+        draw=blue!60
+    },
+    accepting/.style={
+        double,
+        double distance=2pt
+    },
+    edge label/.style={
+        below,
+        align=center,
+        font=\scriptsize
+    }
+}
+
+
 \maketitle
 \tableofcontents
 \newpage
@@ -141,12 +144,10 @@ L'idea chiave, come suggerito dal professore, è \textbf{indovinare} $S_i$ prima
     \path (q7) edge node[edge label] {$\any;\any,S$ / $\X;\X,S$ / $\any;\any,S$ \\ / $\any;\any,S$ / $\any;\any,S$} (q8);
     
     % Trucco del riavvolgimento non deterministico
-    \path (q8) edge[loop above] node[edge label] {
-        $\{\alphaSym;\alphaSym,R$ / $\any;\any,S$ / $\any;\any,S$ / $\any;\any,S$ / $\any;\any,S\}$, \\
-        $\{\any;\any,S$ / $\any;\any,S$ / $\X;\X,L$ / $\any;\any,S$ / $\any;\any,S\}$} (q8);
+    \path (q8) edge[loop above] node[edge label] {Riavvolgi nastri \\ non deterministicamente} (q8);
     \path (q8) edge[bend left=35] node[edge label, right] {$\Sh;\Sh,S$ / $\any;\any,S$ / $\B;\B,S$ \\ / $\B;\B,S$ / $\B;\B,S$} (q1);
     
-    \path (q7) edge node[edge label] {$\B;\B,S$ / $\B;\B,S$ \\ / $\dots$} (q_acc);
+    \path (q7) edge node[edge label] {Fine controllo} (q_acc);
 \end{tikzpicture}
 \caption{Diagramma della NDTM per il linguaggio $L_1$. La notazione $\{\dots\}$ indica scelte non deterministiche per il riavvolgimento dei nastri.}
 \end{figure}
