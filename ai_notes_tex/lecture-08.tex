@@ -119,41 +119,123 @@ Il \textbf{computation tree} di una macchina di Turing non deterministica $M$ su
 \begin{example}[Computazione di $N$ su input $01$]
 Usiamo l'esempio di NDTM di cui sopra e la stringa di input $W = 01$.
 La configurazione iniziale è $q_001$.
-% \begin{figure}[h!]
-%     \centering
-%     \includegraphics[width=0.8\textwidth]{pag1_computation_tree.jpeg}
-%     \caption{Albero di Computazione della NDTM su input $01$}
-% \end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \begin{tikzpicture}[
+        node distance=2.5cm,
+        every node/.style={align=center},
+        level/.style={sibling distance=60mm/#1},
+        config/.style={circle, draw, minimum size=1.2cm, font=\small},
+        accept/.style={circle, draw, double, minimum size=1.2cm, font=\small, fill=green!20},
+        reject/.style={circle, draw, minimum size=1.2cm, font=\small, fill=red!20}
+    ]
+    
+    % Root node
+    \node[config] (root) {$q_0 01$};
+    
+    % Level 1
+    \node[config, below left of=root] (n1) {$1 q_0 1$};
+    
+    % Level 2  
+    \node[config, below of=n1] (n2) {$10 q_1 \sqcup$};
+    
+    % Level 3 - Non-deterministic branching
+    \node[accept, below left of=n2] (accept1) {$10\sqcup q_2 \sqcup$};
+    
+    % Add edges
+    \draw[->] (root) -- (n1) node[midway, left] {\small $0/1, R$};
+    \draw[->] (n1) -- (n2) node[midway, left] {\small $1/0, R$};
+    \draw[->] (n2) -- (accept1) node[midway, left] {\small $\sqcup/\sqcup, R$};
+    
+    % Add labels
+    \node[below=0.3cm of accept1, font=\small] {Accetta};
+    
+    \end{tikzpicture}
+    \caption{Albero di Computazione della NDTM su input $01$ - Caso semplice}
+\end{figure}
+
+Per illustrare meglio il non-determinismo, consideriamo un input che attivi effettivamente la scelta multipla. Supponiamo di avere la configurazione $10q_10$ dove la macchina deve scegliere tra due transizioni per $\delta(q_1, 0)$:
+
+\begin{figure}[h!]
+    \centering
+    \begin{tikzpicture}[
+        node distance=2cm,
+        every node/.style={align=center},
+        level/.style={sibling distance=50mm/#1},
+        config/.style={rectangle, draw, minimum width=1.5cm, minimum height=0.8cm, font=\scriptsize},
+        accept/.style={rectangle, draw, minimum width=1.5cm, minimum height=0.8cm, font=\scriptsize, fill=green!20},
+        reject/.style={rectangle, draw, minimum width=1.5cm, minimum height=0.8cm, font=\scriptsize, fill=red!20}
+    ]
+    
+    % Root - the non-deterministic choice point
+    \node[config] (root) {$10q_10$};
+    
+    % Left branch - choice 1: (q_0, 0, L)
+    \node[config, below left of=root, xshift=-1cm] (left1) {$1q_000$};
+    \node[config, below of=left1] (left2) {$1q_100$};
+    \node[reject, below of=left2] (leftend) {Blocco};
+    
+    % Right branch - choice 2: (q_1, 0, R)  
+    \node[config, below right of=root, xshift=1cm] (right1) {$100q_1\sqcup$};
+    \node[accept, below of=right1] (rightend) {$100\sqcup q_2\sqcup$};
+    
+    % Add edges with labels
+    \draw[->] (root) -- (left1) node[midway, above left, font=\small] {$0/0, L \to q_0$};
+    \draw[->] (root) -- (right1) node[midway, above right, font=\small] {$0/0, R \to q_1$};
+    
+    \draw[->] (left1) -- (left2) node[midway, left, font=\small] {$0/1, R$};
+    \draw[->] (left2) -- (leftend) node[midway, left, font=\small] {Nessuna transizione};
+    
+    \draw[->] (right1) -- (rightend) node[midway, right, font=\small] {$\sqcup/\sqcup, R$};
+    
+    % Add branch labels
+    \node[left=0.5cm of left1, font=\small, text=red] {Ramo 1: Rifiuta};
+    \node[right=0.5cm of right1, font=\small, text=green!70!black] {Ramo 2: Accetta};
+    
+    \end{tikzpicture}
+    \caption{Albero di Computazione con Non-determinismo - La macchina accetta perché esiste almeno un ramo accettante}
+\end{figure}
 Analizziamo il processo passo-passo:
 \begin{enumerate}
     \item Iniziamo da $q_001$.
     \item Da $q_0$ leggendo $0$: si va a $q_0$, si scrive $1$, si sposta a destra. Nuova configurazione: $1q_01$.
     \item Da $q_0$ leggendo $1$: si va a $q_1$, si scrive $0$, si sposta a destra. Nuova configurazione: $10q_1\sqcup$.
     \item Da $q_1$ leggendo $\sqcup$: c'è il non-determinismo (in realtà l'esempio della lezione aveva $q_1$ che leggeva $0$, ma nel grafico è $\sqcup$, seguiamo il grafico per la computazione e l'esempio della $\delta(q_1,0)$). Il professore ha disegnato la freccia per $(q_1, \sqcup)$ in $q_2$. Rivediamo l'esempio del disegno, $q_1$ legge $0$, sposta a destra. C'è un arco da $q_1$ con $1/1,R$ che cicla in $q_1$. Poi da $q_1$ con $\sqcup/\sqcup,R$ va a $q_2$.
-    *   **Rivediamo l'esempio del professore basandoci sul disegno e l'input 01:**
-        *   Iniziale: $\mathbf{q_0}01$
-        *   $q_0,0 \to (q_0,1,R)$: $1\mathbf{q_0}1$
-        *   $q_0,1 \to (q_1,0,R)$: $10\mathbf{q_1}\sqcup$
-        *   Ora siamo in $10q_1\sqcup$. La testina è sul blank. Dal diagramma, $q_1$ leggendo blank porta a $q_2$ scrivendo blank e spostandosi a destra.
-        *   $q_1,\sqcup \to (q_2,\sqcup,R)$: $10\sqcup\mathbf{q_2}\sqcup$ (questa è una configurazione accettante, in quanto $q_2 \in F$).
-    *   **Rivediamo invece l'esempio di non-determinismo che il professore ha esplicitamente discusso $\delta(q_1,0)$:**
-        *   Configurazione $q_001$
-        *   $q_0,0 \to (q_0,1,R)$: $1q_01$
-        *   $q_0,1 \to (q_1,0,R)$: $10q_1\sqcup$ (Questo è il punto di divergenza tra il diagramma mostrato e l'input $01$ effettivo, in quanto dopo $10q_1\sqcup$ la testina è sul blank, non sul $0$ per attivare il non-determinismo).
-        *   \textbf{Per allineare l'esempio alla discussione del professore, dobbiamo immaginare un input diverso che porti a $\mathbf{q_1}0...$}: Il professore usa \texttt{10q10} nell'esempio sull'albero, non \texttt{10q1\_blank\_}. Questo implica che l'input doveva essere più lungo.
-        *   **Seguiamo l'esempio disegnato dal professore, che mostra la configurazione $10q_10$ come punto di non-determinismo**:
-            *   Siamo in $10\mathbf{q_1}0$. Testina su $0$, stato $q_1$.
-            *   $\delta(q_1, 0) = \{ (q_0, 0, L), (q_1, 0, R) \}$
-            *   \textbf{Primo branch:} $(q_0, 0, L)$. Scriviamo $0$, spostiamo a sinistra, andiamo in $q_0$.
-                Configurazione successiva: $1\mathbf{q_0}00$.
-                Da $1\mathbf{q_0}00$: $q_0,0 \to (q_0,1,R)$. Scriviamo $1$, spostiamo a destra. $11\mathbf{q_0}0$.
-                Da $11\mathbf{q_0}0$: $q_0,0 \to (q_0,1,R)$. Scriviamo $1$, spostiamo a destra. $111\mathbf{q_0}\sqcup$.
+    
+    \begin{itemize}
+        \item \textbf{Rivediamo l'esempio del professore basandoci sul disegno e l'input 01:}
+        \begin{itemize}
+            \item Iniziale: $\mathbf{q_0}01$
+            \item $q_0,0 \to (q_0,1,R)$: $1\mathbf{q_0}1$
+            \item $q_0,1 \to (q_1,0,R)$: $10\mathbf{q_1}\sqcup$
+            \item Ora siamo in $10q_1\sqcup$. La testina è sul blank. Dal diagramma, $q_1$ leggendo blank porta a $q_2$ scrivendo blank e spostandosi a destra.
+            \item $q_1,\sqcup \to (q_2,\sqcup,R)$: $10\sqcup\mathbf{q_2}\sqcup$ (questa è una configurazione accettante, in quanto $q_2 \in F$).
+        \end{itemize}
+        
+        \item \textbf{Rivediamo invece l'esempio di non-determinismo che il professore ha esplicitamente discusso $\delta(q_1,0)$:}
+        \begin{itemize}
+            \item Configurazione $q_001$
+            \item $q_0,0 \to (q_0,1,R)$: $1q_01$
+            \item $q_0,1 \to (q_1,0,R)$: $10q_1\sqcup$ (Questo è il punto di divergenza tra il diagramma mostrato e l'input $01$ effettivo, in quanto dopo $10q_1\sqcup$ la testina è sul blank, non sul $0$ per attivare il non-determinismo).
+            \item \textbf{Per allineare l'esempio alla discussione del professore, dobbiamo immaginare un input diverso che porti a $\mathbf{q_1}0...$}: Il professore usa \texttt{10q10} nell'esempio sull'albero, non \texttt{10q1\_blank\_}. Questo implica che l'input doveva essere più lungo.
+            \item \textbf{Seguiamo l'esempio disegnato dal professore, che mostra la configurazione $10q_10$ come punto di non-determinismo:}
+            \begin{itemize}
+                \item Siamo in $10\mathbf{q_1}0$. Testina su $0$, stato $q_1$.
+                \item $\delta(q_1, 0) = \{ (q_0, 0, L), (q_1, 0, R) \}$
+                \item \textbf{Primo branch:} $(q_0, 0, L)$. Scriviamo $0$, spostiamo a sinistra, andiamo in $q_0$.\\
+                Configurazione successiva: $1\mathbf{q_0}00$.\\
+                Da $1\mathbf{q_0}00$: $q_0,0 \to (q_0,1,R)$. Scriviamo $1$, spostiamo a destra. $11\mathbf{q_0}0$.\\
+                Da $11\mathbf{q_0}0$: $q_0,0 \to (q_0,1,R)$. Scriviamo $1$, spostiamo a destra. $111\mathbf{q_0}\sqcup$.\\
                 Da $111\mathbf{q_0}\sqcup$: $q_0,\sqcup \to (q_2,\sqcup,R)$. (Non specificato nel disegno iniziale, assumiamo). Se non c'è transizione, si blocca e rifiuta. Nell'esempio disegnato, questo ramo è bloccato e non accettante (X).
-            *   \textbf{Secondo branch:} $(q_1, 0, R)$. Scriviamo $0$, spostiamo a destra, andiamo in $q_1$.
-                Configurazione successiva: $100\mathbf{q_1}\sqcup$.
-                Da $100\mathbf{q_1}\sqcup$: $q_1,\sqcup \to (q_2,\sqcup,R)$. Scriviamo $\sqcup$, spostiamo a destra.
+                \item \textbf{Secondo branch:} $(q_1, 0, R)$. Scriviamo $0$, spostiamo a destra, andiamo in $q_1$.\\
+                Configurazione successiva: $100\mathbf{q_1}\sqcup$.\\
+                Da $100\mathbf{q_1}\sqcup$: $q_1,\sqcup \to (q_2,\sqcup,R)$. Scriviamo $\sqcup$, spostiamo a destra.\\
                 Configurazione successiva: $100\sqcup\mathbf{q_2}\sqcup$. (Questa è accettante, $q_2 \in F$).
-        *   L'esempio nel disegno ha un ramo ulteriore: $10\mathbf{q_1}0 \to 10\mathbf{q_1}0$ (ciclo su $0/0,L$) $\to \dots$. Questo dimostra che possono esserci più rami e che un ramo può anche andare in loop.
+            \end{itemize}
+            \item L'esempio nel disegno ha un ramo ulteriore: $10\mathbf{q_1}0 \to 10\mathbf{q_1}0$ (ciclo su $0/0,L$) $\to \dots$. Questo dimostra che possono esserci più rami e che un ramo può anche andare in loop.
+        \end{itemize}
+    \end{itemize}
 
 \end{enumerate}
 \end{example}

@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+import argparse
 import os
 import re
 
@@ -97,6 +98,7 @@ def create_master_document(
     source_dir=".",
     output_file="all_lectures.tex",
     preamble_file="preamble.tex",
+    interactive=True,
 ):
     """
     Finds all lecture-*.tex files, combines them into a single master document.
@@ -136,7 +138,7 @@ def create_master_document(
 
         # 2. Write the main document structure
         master_doc.write("\n\\title{Appunti Completi di Informatica Teorica}\n")
-        master_doc.write("\\author{Consolidato da Script Python}\n")
+        master_doc.write("\\author{Alessandro Amella}\n")
         master_doc.write("\\date{\\today}\n\n")
 
         master_doc.write("\\begin{document}\n")
@@ -184,12 +186,19 @@ def create_master_document(
         "Note: Running three times is needed to properly generate the table of contents and fix page numbers."
     )
 
-    # Ask user if they want to auto-compile
-    response = (
-        input("\nWould you like to compile the document now? (y/N): ").strip().lower()
-    )
+    # Ask user if they want to auto-compile (only if interactive mode)
+    should_compile = True
+    if interactive:
+        response = (
+            input("\nWould you like to compile the document now? (y/N): ")
+            .strip()
+            .lower()
+        )
+        should_compile = response in ["y", "yes"]
+    else:
+        print("\nAuto-compiling the document...")
 
-    if response in ["y", "yes"]:
+    if should_compile:
         print("\nCompiling the document...")
         import subprocess
 
@@ -283,5 +292,17 @@ def create_master_document(
 
 
 if __name__ == "__main__":
+    parser = argparse.ArgumentParser(
+        description="Combine multiple lecture-*.tex files into a single master document."
+    )
+    parser.add_argument(
+        "-i",
+        "--interactive",
+        action="store_true",
+        help="Ask for confirmation before compiling the document (default: auto-compile)",
+    )
+
+    args = parser.parse_args()
+
     # Assuming the script is in the same directory as the .tex files
-    create_master_document()
+    create_master_document(interactive=args.interactive)
