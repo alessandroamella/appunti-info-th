@@ -4,13 +4,13 @@
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
 \usepackage{hyperref}
-\usepackage[a4paper, total={6in, 8in}]{geometry}
+\usepackage[a4paper, total={6.5in, 9in}]{geometry} % Aumentato lo spazio verticale
 \usepackage{minted} % For pseudocode, if needed. Requires --shell-escape
 \usepackage{mathpazo} % For a nicer font
 \usepackage{fancyhdr}
 \usepackage{amsthm}
 \usepackage{tikz}
-\usetikzlibrary{automata,positioning}
+\usetikzlibrary{automata, positioning, arrows.meta, calc}
 
 % Definizione degli ambienti
 \newtheorem{theorem}{Teorema}
@@ -18,6 +18,28 @@
 \newtheorem{example}{Esempio}
 \newtheorem{lemma}{Lemma}
 \newtheorem{proposition}{Proposizione}
+
+% Stili per i diagrammi TikZ
+\tikzset{
+    ->, % Stile delle frecce
+    >=stealth, % Punta della freccia
+    node distance=3.5cm, % Distanza tra i nodi
+    every state/.style={
+        thick,
+        fill=blue!10,
+        draw=blue!60
+    },
+    accepting/.style={
+        double,
+        double distance=2pt
+    },
+    edge label/.style={
+        below,
+        align=center,
+        font=\scriptsize
+    }
+}
+
 
 \hypersetup{
     pdftitle={Lezione di Informatica Teorica: Macchine di Turing Non Deterministiche},
@@ -30,14 +52,16 @@
 \fancyfoot[C]{\thepage}
 
 \title{Macchine di Turing Non Deterministiche: Esercitazioni}
-\author{Appunti da Trascrizione Automatica}
+\author{Appunti da Trascrizione Automatica (con diagrammi)}
 \date{\today}
 
 % Comandi personalizzati per simboli TM
-\newcommand{\B}{\text{B}} % Blank symbol
-\newcommand{\SigmaI}{\Sigma_I} % Input Alphabet
-\newcommand{\GammaT}{\Gamma} % Tape Alphabet
+\newcommand{\B}{\texttt{B}} % Blank symbol
+\newcommand{\Sh}{\texttt{\#}} % Sharp symbol
+\newcommand{\X}{\texttt{X}} % Counter symbol
 \newcommand{\alphaSym}{\alpha} % Generic symbol from input alphabet (non-#)
+\newcommand{\betaSym}{\beta}  % Another generic symbol
+\newcommand{\any}{\_} % Wildcard symbol
 
 \begin{document}
 \maketitle
@@ -55,13 +79,17 @@ Un esempio pratico di questa capacità delle NDTM è la possibilità di \textit{
 
 \section{Esercizi}
 
-Analizziamo alcuni esercizi per applicare i concetti delle NDTM.
+Analizziamo alcuni esercizi per applicare i concetti delle NDTM. Le etichette sulle transizioni sono nel formato:
+\texttt{Nastro 1 / Nastro 2 / Nastro 3 / Nastro 4 / Nastro 5}
+con la notazione \texttt{leggi; scrivi, mossa}. Il simbolo \texttt{\_} indica "qualsiasi simbolo".
 
 \subsection{Esercizio 1: Sottostringa Palindroma di Lunghezza Variabile}
 
 \begin{definition}[Linguaggio $L_1$]
 Sia $L_1$ il linguaggio definito come:
-$L_1 = \{ X^N \texttt{\#} W_1 \texttt{\#} W_2 \texttt{\#} \dots \texttt{\#} W_N \mid N > 0, W_i \in \{a,b,c,d\}^+, \forall i \in [1, N], \exists S_i \subseteq W_i \text{ t.c. } |S_i| = i \text{ e } S_i = S_i^R \}$
+\[
+L_1 = \{ X^N \Sh W_1 \Sh W_2 \Sh \dots \Sh W_N \mid N > 0, W_i \in \{a,b,c,d\}^+, \forall i \in [1, N], \exists S_i \subseteq W_i \text{ t.c. } |S_i| = i \text{ e } S_i = S_i^R \}
+\]
 dove $X^N$ indica $N$ occorrenze del simbolo \texttt{X}.
 \end{definition}
 
@@ -69,411 +97,288 @@ dove $X^N$ indica $N$ occorrenze del simbolo \texttt{X}.
 La macchina utilizzerà cinque nastri:
 \begin{itemize}
     \item \textbf{Nastro 1 (Input):} Contiene la stringa di input.
-    \item \textbf{Nastro 2 (Conteggio $N$):} Per memorizzare il numero di blocchi $W_i$.
-    \item \textbf{Nastro 3 (Conteggio $i$):} Per memorizzare il valore corrente dell'indice $i$.
+    \item \textbf{Nastro 2 (Conteggio $N$):} Per memorizzare il numero di blocchi $W_i$ (come una pila di $\X$).
+    \item \textbf{Nastro 3 (Conteggio $i$):} Per memorizzare il valore corrente dell'indice $i$ (come $\X^i$).
     \item \textbf{Nastro 4 (\textit{Guess} $S_i$):} Per scrivere la stringa $S_i$ \textit{indovinata}.
     \item \textbf{Nastro 5 (\textit{Guess} $S_i$ per $S_i^R$):} Una copia di $S_i$ per il controllo di palindromia.
 \end{itemize}
+L'idea chiave, come suggerito dal professore, è \textbf{indovinare} $S_i$ prima, scrivendola sui nastri 4 e 5, e solo dopo \textbf{verificare} che sia una sottostringa palindroma di $W_i$ della lunghezza corretta.
 
-L'idea principale è che per ogni $W_i$, la macchina non deterministicamente \textit{indovina} la stringa $S_i$ sul Nastro 4 e 5. Successivamente, verifica che $S_i$ sia palindroma (confrontando Nastro 4 e Nastro 5) e che sia effettivamente una sottostringa di $W_i$ (confrontando Nastro 4 con il Nastro 1). La lunghezza di $S_i$ viene controllata usando il Nastro 3.
+\subsubsection{Diagramma della Macchina di Turing per $L_1$}
+
+\begin{figure}[h!]
+\centering
+\begin{tikzpicture}[scale=0.7, transform shape, node distance=1.5cm and 2.5cm]
+    \node[state, initial] (q0) {$Q_0$};
+    \node[state, right=of q0] (q1) {$Q_1$};
+    \node[state, below=of q1, yshift=-0.8cm] (q2) {$Q_2$};
+    \node[state, right=of q2] (q3) {$Q_3$};
+    \node[state, right=of q3] (q4) {$Q_4$};
+    \node[state, below=of q4, yshift=-0.8cm] (q5) {$Q_5$};
+    \node[state, right=of q5] (q6) {$Q_6$};
+    \node[state, below=of q6, yshift=-0.8cm] (q7) {$Q_7$};
+    \node[state, accepting, below=of q7, yshift=-0.8cm] (q_acc) {$Q_{acc}$};
+    \node[state, left=of q7] (q8) {$Q_8$};
+    
+    \path (q0) edge[loop above] node[edge label] {$\X;\X,R$ / $\B;\X,R$ \\ / $\any;\any,S$ / $\any;\any,S$ / $\any;\any,S$} (q0);
+    \path (q0) edge node[edge label] {$\Sh;\Sh,S$} (q1);
+    \path (q1) edge[bend right=20] node[edge label, right] {$\Sh;\Sh,R$ / $\X;\B,L$ / $\B;\X,R$ \\ / $\any;\any,S$ / $\any;\any,S$} (q2);
+    
+    \path (q2) edge node[edge label] {$\any;\any,S$ / $\any;\any,S$ / $\B;\X,L$ \\ / $\B;\alphaSym,R$ / $\B;\alphaSym,R$} (q3);
+    
+    \path (q3) edge[loop above] node[edge label] {$\any;\any,S$ / $\any;\any,S$ / $\X;\X,R$ \\ / $\B;\alphaSym,R$ / $\B;\alphaSym,R$} (q3);
+    \path (q3) edge node[edge label] {$\any;\any,S$ / $\any;\any,S$ / $\B;\B,L$ \\ / $\B;\B,L$ / $\B;\B,S$} (q4);
+    
+    \path (q4) edge[loop above] node[edge label] {$\any;\any,S$ / $\any;\any,S$ / $\any;\any,S$ \\ / $\alphaSym;\alphaSym,L$ / $\any;\any,S$} (q4);
+    \path (q4) edge node[edge label] {$\any;\any,S$ / $\any;\any,S$ / $\any;\any,S$ \\ / $\B;\B,R$ / $\any;\any,S$} (q5);
+    
+    \path (q5) edge[loop above] node[edge label] {$\alphaSym;\alphaSym,R$ / $\dots$} (q5);
+    \path (q5) edge node[edge label] {$\alphaSym;\alphaSym,R$ / $\any;\any,S$ / $\any;\any,S$ \\ / $\alphaSym;\B,R$ / $\alphaSym;\B,L$} (q6);
+    
+    \path (q6) edge[loop above] node[edge label] {$\alphaSym;\alphaSym,R$ / $\any;\any,S$ / $\any;\any,S$ \\ / $\alphaSym;\B,R$ / $\alphaSym;\B,L$} (q6);
+    \path (q6) edge node[edge label] {$\any;\any,S$ / $\any;\any,S$ / $\any;\any,S$ \\ / $\B;\B,S$ / $\B;\B,S$} (q7);
+    
+    \path (q7) edge node[edge label] {$\any;\any,S$ / $\X;\X,S$ / $\any;\any,S$ \\ / $\any;\any,S$ / $\any;\any,S$} (q8);
+    
+    % Trucco del riavvolgimento non deterministico
+    \path (q8) edge[loop above] node[edge label] {
+        $\{\alphaSym;\alphaSym,R$ / $\any;\any,S$ / $\any;\any,S$ / $\any;\any,S$ / $\any;\any,S\}$, \\
+        $\{\any;\any,S$ / $\any;\any,S$ / $\X;\X,L$ / $\any;\any,S$ / $\any;\any,S\}$} (q8);
+    \path (q8) edge[bend left=35] node[edge label, right] {$\Sh;\Sh,S$ / $\any;\any,S$ / $\B;\B,S$ \\ / $\B;\B,S$ / $\B;\B,S$} (q1);
+    
+    \path (q7) edge node[edge label] {$\B;\B,S$ / $\B;\B,S$ \\ / $\dots$} (q_acc);
+\end{tikzpicture}
+\caption{Diagramma della NDTM per il linguaggio $L_1$. La notazione $\{\dots\}$ indica scelte non deterministiche per il riavvolgimento dei nastri.}
+\end{figure}
 
 \subsubsection{Descrizione degli Stati e delle Transizioni}
-Sia $\Sigma_I = \{\texttt{X}, \texttt{\#}, a,b,c,d\}$ l'alfabeto di input e $\Gamma_T = \Sigma_I \cup \{\B, \text{ausiliari}\}$ l'alfabeto del nastro. Usiamo $\alpha$ per un simbolo generico da $\{a,b,c,d\}$.
-
+Sia $\Sigma_I = \{\X, \Sh, a,b,c,d\}$ e $\Gamma_T = \Sigma_I \cup \{\B\}$. Usiamo $\alphaSym$ per un simbolo in $\{a,b,c,d\}$.
 \begin{itemize}
-    \item \textbf{Stato $Q_0$ (Inizio):}
+    \item \textbf{$Q_0 \to Q_1$:} Copia le $\X$ iniziali dal nastro 1 al nastro 2 per contare $N$. La testina del nastro 1 si ferma su $\Sh$.
+    \item \textbf{$Q_1 \to Q_2$:} Inizia il ciclo per una $W_i$. Supera $\Sh$ su Nastro 1. Cancella una $\X$ da Nastro 2 (decrementa $N$ rimanente). Scrive la prima $\X$ su Nastro 3 per $i=1$ (o incrementa $i$ per cicli successivi).
+    \item \textbf{$Q_2 \to Q_3 \to Q_3$ (\textit{Guess} $S_i$):} Questa è la fase non deterministica chiave. Per ogni $\X$ sul Nastro 3 (che conta la lunghezza target $i$), la macchina scrive un simbolo $\alphaSym$ \textit{indovinato} sui nastri 4 e 5. La scelta di $\alphaSym$ è non deterministica.
+    \item \textbf{$Q_3 \to Q_4$ (Fine \textit{Guess}):} Quando il contatore $i$ (Nastro 3) è esaurito, la macchina ha scritto una stringa $S_i$ di lunghezza $i$ sui nastri 4 e 5. Ora riavvolge il Nastro 4 all'inizio di $S_i$ (Nastro 5 è già pronto per essere letto al contrario).
+    \item \textbf{$Q_4 \to Q_5$:} Riavvolgimento del nastro 4.
+    \item \textbf{$Q_5 \to Q_6$ (\textit{Check} $S_i$):} Inizia la fase di verifica.
         \begin{itemize}
-            \item \textbf{Transizione per $X^N$:} Legge \texttt{X} dal Nastro 1, lo riscrive e si muove a destra. Scrive \texttt{X} sul Nastro 2 (inizialmente vuoto) e si muove a destra. Passa allo stato $Q_1$. Questo ciclo si ripete per tutti gli \texttt{X} iniziali.
-            \item $(\texttt{X}, \B, \B, \B, \B) \to (\texttt{X}, \texttt{X}, \B, \B, \B), (R,R,S,S,S)$
+            \item \textbf{Loop su $Q_5$:} Non deterministicamente, salta un numero arbitrario di caratteri su $W_i$ (Nastro 1) per "indovinare" il punto di inizio di $S_i$.
+            \item \textbf{Transizione a $Q_6$:} Inizia il confronto. Verifica che il carattere su Nastro 1 corrisponda a quello su Nastro 4 (verifica di sottostringa) e che il carattere su Nastro 4 corrisponda a quello su Nastro 5 (verifica di palindromia, leggendo Nastro 4 in avanti e Nastro 5 all'indietro). I caratteri sui nastri 4 e 5 vengono cancellati.
         \end{itemize}
-    \item \textbf{Stato $Q_1$ (Copia $N$ e Inizio $W_1$):}
+    \item \textbf{$Q_6 \to Q_7$ (Fine \textit{Check}):} Se il confronto ha successo (i nastri 4 e 5 sono vuoti), la verifica per la corrente $W_i$ è completata.
+    \item \textbf{$Q_7$ (Controllo Ciclo/Fine):}
         \begin{itemize}
-            \item \textbf{Transizione per \texttt{\#}:} Quando legge \texttt{\#} sul Nastro 1, lo riscrive e si muove a destra (posizionandosi all'inizio di $W_1$). Sul Nastro 2 (che contiene gli \texttt{X} per $N$), legge un \texttt{X}, lo cancella ($\B$) e si muove a sinistra (si posizione sull'ultimo \texttt{X} restante o $\B$). Sul Nastro 3 (inizialmente vuoto), scrive \texttt{X} e si muove a destra (questo inizia il conteggio di $i=1$). Passa a $Q_2$.
-            \item $(\texttt{\#}, \texttt{X}, \B, \B, \B) \to (\texttt{\#}, \B, \texttt{X}, \B, \B), (R,L,R,S,S)$
+            \item \textbf{$\to Q_8$ (Prossima $W_i$):} Se ci sono ancora $\X$ sul Nastro 2, c'è un'altra $W_i$ da processare. Va a $Q_8$ per prepararsi al prossimo ciclo.
+            \item \textbf{$\to Q_{acc}$ (Accettazione):} Se il Nastro 2 è vuoto (tutte le $N$ stringhe sono state controllate) e il Nastro 1 è alla fine ($\B$), la macchina accetta.
         \end{itemize}
-    \item \textbf{Stato $Q_2$ (\textit{Guess} $S_i$):}
-        Questo stato gestisce la generazione non deterministica di $S_i$ sui nastri 4 e 5. Il loop avviene basandosi sul Nastro 3 (che contiene $i$).
-        \begin{itemize}
-            \item \textbf{Transizione (Loop per \textit{guess} $S_i$):}
-                Mentre Nastro 3 contiene \texttt{X} (cioè, $S_i$ non ha ancora raggiunto la lunghezza $i$):
-                \begin{itemize}
-                    \item Nastro 1: Legge $\alpha$ (qualsiasi simbolo di input), lo riscrive e si muove a destra (continua a leggere $W_i$).
-                    \item Nastro 2: Non modificato.
-                    \item Nastro 3: Legge \texttt{X}, lo riscrive e si muove a destra (avanza nel conteggio di $i$).
-                    \item Nastro 4: Legge $\B$, scrive $\alphaSym$ (un simbolo non deterministico dall'alfabeto di input) e si muove a destra.
-                    \item Nastro 5: Legge $\B$, scrive $\alphaSym$ (lo stesso simbolo di Nastro 4) e si muove a destra.
-                \end{itemize}
-                Questo loop rimane in $Q_3$ (si passa a $Q_3$ nella descrizione, il diagramma usa $Q_2$ $\to$ $Q_3$ $\to$ $Q_3$).
-                \item $(\alpha, \text{any}, \texttt{X}, \B, \B) \to (\alpha, \text{any}, \texttt{X}, \alphaSym, \alphaSym), (R,S,R,R,R)$ (Questo $\alpha$ su Nastro 1 è solo lettura, $\alphaSym$ è il simbolo guessed).
-            \item \textbf{Transizione (Fine \textit{guess} $S_i$):}
-                Quando Nastro 3 legge $\B$ (ha scritto $i$ simboli su Nastro 4 e 5):
-                \begin{itemize}
-                    \item Nastro 1: Legge $\alpha$, lo riscrive e si muove a destra.
-                    \item Nastro 2: Non modificato.
-                    \item Nastro 3: Legge $\B$, lo riscrive e si muove a sinistra (riavvolge il conteggio di $i$).
-                    \item Nastro 4: Legge $\B$, lo riscrive e si muove a sinistra (riavvolge Nastro 4).
-                    \item Nastro 5: Legge $\B$, lo riscrive e si muove a sinistra (riavvolge Nastro 5).
-                \end{itemize}
-                Passa a $Q_4$.
-                \item $(\alpha, \text{any}, \B, \B, \B) \to (\alpha, \text{any}, \B, \B, \B), (R,S,L,L,L)$
-        \end{itemize}
-    \item \textbf{Stato $Q_4$ (Riavvolgimento):}
-        Questo stato riavvolge i nastri 3, 4 e 5 per prepararsi al controllo. Si continua a muoversi a sinistra su Nastro 3, 4 e 5 finché non si raggiunge il $\B$ iniziale.
-        \begin{itemize}
-            \item \textbf{Transizione (Loop di riavvolgimento):}
-                Mentre Nastro 4 non è $\B$:
-                \begin{itemize}
-                    \item Nastro 1: Ignorato (ma continua a leggere $W_i$).
-                    \item Nastro 2: Ignorato.
-                    \item Nastro 3: Legge \texttt{X}, lo riscrive, si muove a sinistra.
-                    \item Nastro 4: Legge $\alphaSym$, lo riscrive, si muove a sinistra.
-                    \item Nastro 5: Legge $\alphaSym$, lo riscrive, si muove a sinistra.
-                \end{itemize}
-                Questo loop rimane in $Q_4$.
-                \item $(\text{any}, \text{any}, \texttt{X}, \alphaSym, \alphaSym) \to (\text{any}, \text{any}, \texttt{X}, \alphaSym, \alphaSym), (S,S,L,L,L)$
-            \item \textbf{Transizione (Fine riavvolgimento):}
-                Quando Nastro 4 e Nastro 5 leggono $\B$ (sono all'inizio di $S_i$):
-                \begin{itemize}
-                    \item Nastro 1: Ignorato.
-                    \item Nastro 2: Ignorato.
-                    \item Nastro 3: Legge $\B$, lo riscrive, si muove a destra.
-                    \item Nastro 4: Legge $\B$, lo riscrive, si muove a destra.
-                    \item Nastro 5: Legge $\B$, lo riscrive, si muove a destra (posiziona il capo del Nastro 5 sulla fine di $S_i$ per il reverse check).
-                \end{itemize}
-                Passa a $Q_5$.
-                \item $(\text{any}, \text{any}, \B, \B, \B) \to (\text{any}, \text{any}, \B, \B, \B), (S,S,R,R,R)$
-        \end{itemize}
-    \item \textbf{Stato $Q_5$ (Check $S_i$ e $S_i^R$ in $W_i$):}
-        Questo stato non deterministicamente cerca l'inizio di $S_i$ in $W_i$ sul Nastro 1 e contemporaneamente verifica la palindromia di $S_i$ tra Nastro 4 (leggendo in avanti) e Nastro 5 (leggendo all'indietro).
-        \begin{itemize}
-            \item \textbf{Transizione (Salto in $W_i$):}
-                Nondeterministicamente salta caratteri in $W_i$ sul Nastro 1 fino a trovare un possibile inizio di $S_i$.
-                \begin{itemize}
-                    \item Nastro 1: Legge $\alpha$, lo riscrive, si muove a destra.
-                \end{itemize}
-                Loop su $Q_5$.
-                \item $(\alpha, \text{any}, \text{any}, \text{any}, \text{any}) \to (\alpha, \text{any}, \text{any}, \text{any}, \text{any}), (R,S,S,S,S)$
-            \item \textbf{Transizione (Confronto e Palindromia):}
-                Quando si decide di iniziare il confronto:
-                \begin{itemize}
-                    \item Nastro 1: Legge $\alphaSym$, lo riscrive, si muove a destra (confronta con $S_i$).
-                    \item Nastro 4: Legge $\alphaSym$, lo cancella ($\B$), si muove a destra (consuma $S_i$).
-                    \item Nastro 5: Legge $\alphaSym$, lo cancella ($\B$), si muove a sinistra (consuma $S_i^R$).
-                \end{itemize}
-                Passa a $Q_6$. Questo loop continua in $Q_6$.
-                \item $(\alphaSym, \text{any}, \text{any}, \alphaSym, \alphaSym) \to (\alphaSym, \text{any}, \text{any}, \B, \B), (R,S,S,R,L)$
-        \end{itemize}
-    \item \textbf{Stato $Q_6$ (Continuazione del Check):}
-        \begin{itemize}
-            \item \textbf{Transizione (Fine del confronto):}
-                Quando Nastro 4 e Nastro 5 leggono $\B$ (hanno verificato tutta $S_i$):
-                \begin{itemize}
-                    \item Nastro 1: Ignorato.
-                    \item Nastro 4: Legge $\B$, lo riscrive, si ferma.
-                    \item Nastro 5: Legge $\B$, lo riscrive, si ferma.
-                \end{itemize}
-                Passa a $Q_7$.
-                \item $(\text{any}, \text{any}, \text{any}, \B, \B) \to (\text{any}, \text{any}, \text{any}, \B, \B), (S,S,S,S,S)$
-        \end{itemize}
-    \item \textbf{Stato $Q_7$ (Controllo Prossima $W_i$ o Accettazione):}
-        \begin{itemize}
-            \item \textbf{Transizione (Prossima $W_i$):}
-                Se Nastro 2 contiene ancora \texttt{X} (ci sono altre $W_i$ da processare):
-                \begin{itemize}
-                    \item Nastro 1: Continua a leggere $\alpha$ e si sposta a destra (fino a fine $W_i$ o \texttt{\#}).
-                    \item Nastro 2: Legge \texttt{X}, lo riscrive, si ferma (la cancellazione avverrà tornando a $Q_1$).
-                    \item Nastro 3: Riavvolge a sinistra fino a $\B$.
-                \end{itemize}
-                Questa è una transizione composta:
-                $\{ (\alpha, \texttt{X}, \alpha, \B, \B) \to (\alpha, \texttt{X}, \alpha, \B, \B), (R,S,L,S,S) \}$ (Loop per riavvolgere Nastro 3)
-                Al raggiungimento del $\B$ su Nastro 3 e \texttt{\#} su Nastro 1:
-                $(\texttt{\#}, \texttt{X}, \B, \B, \B) \to (\texttt{\#}, \texttt{X}, \B, \B, \B), (R,S,R,S,S)$ e torna a $Q_1$ (per processare il prossimo \texttt{\#} e la prossima $W_i$, decrementando $N$ su Nastro 2).
-            \item \textbf{Transizione (Accettazione):}
-                Se Nastro 2 legge $\B$ (non ci sono più \texttt{X} per $N$, quindi tutte le $W_i$ sono state processate):
-                \begin{itemize}
-                    \item Nastro 1: Controlla che sia finito (legga $\B$).
-                    \item Nastro 2: Legge $\B$, lo riscrive, si ferma.
-                \end{itemize}
-                Passa a $Q_{acc}$.
-                \item $(\B, \B, \text{any}, \B, \B) \to (\B, \B, \text{any}, \B, \B), (S,S,S,S,S)$ (e si sposta in $Q_{acc}$).
-        \end{itemize}
+    \item \textbf{$Q_8 \to Q_1$ (Riavvolgimento e Ciclo):} Questo stato riavvolge in modo non deterministico il Nastro 1 fino al prossimo $\Sh$ e il Nastro 3 all'inizio. Una volta posizionate le testine, torna a $Q_1$ per iniziare il ciclo per $W_{i+1}$.
 \end{itemize}
+
 
 \subsection{Esercizio 2: Coppie di $W_i$}
 
 \begin{definition}[Linguaggio $L_2$]
 Sia $L_2$ il linguaggio definito come:
-$L_2 = \{ A\texttt{\#}B\texttt{\#}W_1 W_1 W_2 W_2 \dots W_N W_N \mid A, B, W_i \in \{0,1\}^+, |A| > |B|, N = |A| - |B|, |W_i| \ge |B| \}$
+\[
+L_2 = \{ A\Sh B\Sh W_1 W_1 W_2 W_2 \dots W_N W_N \mid A, B, W_i \in \{0,1\}^+, |A| > |B|, N = |A| - |B|, |W_i| \ge |B| \}
+\]
 \end{definition}
 
 \subsubsection{Strategia della Macchina di Turing}
 \begin{itemize}
-    \item \textbf{Nastro 1 (Input):} Contiene $A\texttt{\#}B\texttt{\#}W_1 W_1 \dots$.
+    \item \textbf{Nastro 1 (Input):} Contiene $A\Sh B\Sh W_1 W_1 \dots$.
     \item \textbf{Nastro 2 (Conteggio $N$):} Per memorizzare $N = |A| - |B|$.
-    \item \textbf{Nastro 3 (Copia $B$):} Per memorizzare la stringa $B$.
-    \item \textbf{Nastro 4 (Copia $W_i$):} Per memorizzare $W_i$ e confrontarla con la sua seconda occorrenza.
+    \item \textbf{Nastro 3 (Copia $B$):} Per memorizzare la stringa $B$ e usarla per il check $|W_i| \ge |B|$.
+    \item \textbf{Nastro 4 (Copia $W_i$):} Per memorizzare la prima occorrenza di $W_i$ e confrontarla con la seconda.
 \end{itemize}
+
+\subsubsection{Diagramma della Macchina di Turing per $L_2$}
+\begin{figure}[h!]
+\centering
+\begin{tikzpicture}[transform shape, node distance=1.5cm and 2.5cm]
+    \node[state, initial] (q0) {$Q_0$};
+    \node[state, right=of q0] (q1) {$Q_1$};
+    \node[state, right=of q1] (q2) {$Q_2$};
+    \node[state, right=of q2] (q3) {$Q_3$};
+    \node[state, below=of q3, yshift=-1cm] (q4) {$Q_4$};
+    \node[state, left=of q4] (q5) {$Q_5$};
+    \node[state, left=of q5] (q6) {$Q_6$};
+    \node[state, accepting, below=of q6, yshift=-1cm] (q_acc) {$Q_{acc}$};
+    
+    \path (q0) edge[loop above] node[edge label] {$\alphaSym;\alphaSym,R$ / $\B;\X,R$} (q0);
+    \path (q0) edge node[edge label] {$\Sh;\Sh,R$ / $\B;\B,L$} (q1);
+    
+    \path (q1) edge[loop above] node[edge label] {$\alphaSym;\alphaSym,R$ / $\X;\B,L$ / $\B;\alphaSym,R$} (q1);
+    \path (q1) edge node[edge label] {$\Sh;\Sh,R$ / $\X;\X,S$ / $\B;\B,L$} (q2);
+    
+    \path (q2) edge node[edge label] {Inizio $W_i$} (q3);
+    
+    \path (q3) edge[loop above] node[edge label] {$\alphaSym;\alphaSym,R$ / $\any;\any,S$ / $\X;\X,L$ / $\B;\alphaSym,R$} (q3); % Check |W_i| >= |B|
+    \path (q3) edge[loop right] node[edge label] {$\alphaSym;\alphaSym,R$ / $\any;\any,S$ / $\B;\B,S$ / $\B;\alphaSym,R$} (q3); % Copia resto di W_i
+    
+    \path (q3) edge node[edge label] {Fine $W_i$ \\ $\any;\any,S$ / $\X;\B,L$ / $\B;\B,R$ / $\B;\B,L$} (q4);
+    
+    \path (q4) edge[loop below] node[edge label] {Riavvolgi T3, T4} (q4);
+    \path (q4) edge node[edge label] {Pronto} (q5);
+    
+    \path (q5) edge[loop below] node[edge label] {$\alphaSym;\alphaSym,R$ / $\any;\any,S$ / $\any;\any,S$ / $\alphaSym;\B,R$} (q5);
+    \path (q5) edge node[edge label] {Fine $W_iW_i$ \\ $\any;\any,S$ / $\any;\any,S$ / $\any;\any,S$ / $\B;\B,S$} (q6);
+    
+    \path (q6) edge[bend right=45] node[edge label, above] {$\X$ su T2} (q2);
+    \path (q6) edge node[edge label] {$\B$ su T2, $\B$ su T1} (q_acc);
+    
+\end{tikzpicture}
+\caption{Schema concettuale della NDTM per il linguaggio $L_2$. Alcuni stati sono aggregati per chiarezza.}
+\end{figure}
 
 \subsubsection{Descrizione degli Stati e delle Transizioni}
-Sia $\Sigma_I = \{0,1,\texttt{\#}\}$ l'alfabeto di input e $\Gamma_T = \Sigma_I \cup \{\B, \texttt{X}\}$ l'alfabeto del nastro. Usiamo $\alpha$ per un simbolo generico da $\{0,1\}$.
-
 \begin{itemize}
-    \item \textbf{Stato $Q_0$ (Copia $A$):}
-        \begin{itemize}
-            \item Legge $\alpha$ da Nastro 1, riscrive $\alpha$, $R$. Scrive \texttt{X} su Nastro 2, $R$.
-            \item Alla lettura di \texttt{\#}: riscrive \texttt{\#}, $R$. Su Nastro 2, $S$. Passa a $Q_1$.
-        \end{itemize}
-    \item \textbf{Stato $Q_1$ (Copia $B$ e Calcolo $N$):}
-        \begin{itemize}
-            \item Legge $\alpha$ da Nastro 1, riscrive $\alpha$, $R$.
-            \item Legge \texttt{X} da Nastro 2, lo cancella ($\B$), $L$. (Inizia a calcolare $|A|-|B|$).
-            \item Scrive $\alpha$ su Nastro 3, $R$. (Copia $B$).
-            \item Loop in $Q_2$.
-        \end{itemize}
-    \item \textbf{Stato $Q_2$ (Fine Calcolo $N$ e Copia $B$):}
-        \begin{itemize}
-            \item Alla lettura di \texttt{\#} (dopo $B$): riscrive \texttt{\#}, $R$.
-            \item Su Nastro 2: legge \texttt{X}, lo riscrive, $S$. (Controlla $|A|>|B|$: se Nastro 2 fosse $\B$ qui, allora $|A| \le |B|$, quindi rifiuterebbe implicitamente).
-            \item Su Nastro 3: legge $\B$, riscrive $\B$, $L$. (Riavvolge Nastro 3 per preparare $B$ per confronti futuri).
-            \item Passa a $Q_3$.
-        \end{itemize}
-    \item \textbf{Stato $Q_3$ (Processa $W_i$ - prima occorrenza):}
-        Questo stato si occupa di copiare la prima occorrenza di $W_i$ sul Nastro 4 e di verificare che $|W_i| \ge |B|$.
-        \begin{itemize}
-            \item Nondeterministicamente, la macchina può saltare caratteri in $W_i$ finché non decide di iniziare a copiare la sottostringa $W_i$ e allo stesso tempo verificare $|W_i| \ge |B|$.
-            \item Loop in $Q_3$: Legge $\alpha$ da Nastro 1, riscrive $\alpha$, $R$. Copia $\alpha$ su Nastro 4, $R$.
-            \item Questo loop continua finché non si raggiunge la fine di $W_i$ (prossimo \texttt{\#} o $\B$).
-            \item Alla lettura di \texttt{\#}: riscrive \texttt{\#}, $R$.
-            \item Cancella un \texttt{X} dal Nastro 2, $L$. (Decrementa $N$).
-            \item Riavvolge Nastro 4 a sinistra per preparare il confronto. Passa a $Q_5$.
-        \end{itemize}
-    \item \textbf{Stato $Q_5$ (Verifica $W_i W_i$):}
-        Confronta la $W_i$ copiata sul Nastro 4 con la seconda occorrenza di $W_i$ sul Nastro 1.
-        \begin{itemize}
-            \item Legge $\alpha$ da Nastro 1, lo riscrive, $R$.
-            \item Legge $\alpha$ da Nastro 4, lo cancella ($\B$), $R$.
-            \item Se i simboli non corrispondono, la macchina si blocca e rifiuta (non c'è transizione definita per questa situazione).
-            \item Loop in $Q_6$.
-            \item Quando Nastro 4 è $\B$ (fine di $W_i$ copiata):
-                \begin{itemize}
-                    \item Su Nastro 1: deve esserci l'inizio della seconda $W_i$.
-                    \item Passa a $Q_7$.
-                \end{itemize}
-        \end{itemize}
-    \item \textbf{Stato $Q_7$ (Prossima Coppia $W_i W_i$ o Accettazione):}
-        \begin{itemize}
-            \item Se Nastro 2 contiene \texttt{X} (ci sono altre coppie $W_i W_i$):
-                \begin{itemize}
-                    \item Nastro 1: Posiziona il capo lettura sull'inizio della prossima $W_i$ (dopo il \texttt{\#}).
-                    \item Riavvolge Nastro 3 e 4.
-                    \item Torna a $Q_3$.
-                \end{itemize}
-            \item Se Nastro 2 è $\B$ (tutte le coppie $W_i W_i$ sono state processate):
-                \begin{itemize}
-                    \item Nastro 1: Controlla che sia $\B$ (fine input).
-                    \item Accetta ($Q_{acc}$).
-                \end{itemize}
-        \end{itemize}
+    \item \textbf{$Q_0 \to Q_1$ (Copia $|A|$):} Legge $A$ dal Nastro 1 e scrive $|A|$ \texttt{X} sul Nastro 2.
+    \item \textbf{$Q_1 \to Q_2$ (Calcolo $N$ e Copia $B$):} Legge $B$. Per ogni simbolo di $B$, cancella una $\X$ da Nastro 2 e copia il simbolo sul Nastro 3. Alla fine, il Nastro 2 conterrà $N=|A|-|B|$ \texttt{X}. Il controllo $|A|>|B|$ è implicito: se il nastro 2 si svuotasse, la macchina si bloccherebbe.
+    \item \textbf{$Q_2 \to Q_3 \to \dots$ (Ciclo per $W_i$):}
+    \begin{enumerate}
+        \item \textbf{Copia $W_i$ e verifica lunghezza:} Inizia a leggere $W_i$. Copia $W_i$ sul Nastro 4. Contemporaneamente, per ogni simbolo copiato, sposta la testina del Nastro 3 (che contiene $B$) a sinistra. Se si raggiunge la fine di $B$ mentre si sta ancora leggendo $W_i$, la condizione $|W_i| \ge |B|$ è soddisfatta. La copia di $W_i$ continua non deterministicamente fino alla fine della prima occorrenza.
+        \item \textbf{Prepara confronto:} Alla fine della prima $W_i$, cancella una $\X$ dal Nastro 2, riavvolge i nastri 3 e 4.
+        \item \textbf{Verifica $W_i=W_i$:} Confronta la $W_i$ copiata sul Nastro 4 con la seconda occorrenza di $W_i$ sul Nastro 1.
+        \item \textbf{Ciclo o Accetta:} Se Nastro 2 ha ancora $\X$, torna all'inizio del ciclo per la prossima coppia. Altrimenti, se Nastro 1 è alla fine, accetta.
+    \end{enumerate}
 \end{itemize}
+
 
 \subsection{Esercizio 3: Parità di Lunghezza di $W_i$}
 
 \begin{definition}[Linguaggio $L_3$]
 Sia $L_3$ il linguaggio definito come:
-$L_3 = \{A\texttt{\#}B\texttt{\#}W_1 \texttt{\#} W_2 \texttt{\#} \dots \texttt{\#} W_N \mid A, B, W_i \in \{a,b,c,d\}^+, |A| > |B|, N = |A| - |B|, $
+\[
+L_3 = \{A\Sh B\Sh W_1 \Sh \dots \Sh W_N \mid A, B, W_i \in \{a,b,c,d\}^+, |A| > |B|, N = |A| - |B|, 
+\]
 $\qquad (\text{se } |W_i| \text{ è pari, allora } B \subseteq W_i) \land (\text{se } |W_i| \text{ è dispari, allora } B^R \subseteq W_i) \}$
 \end{definition}
 
 \subsubsection{Strategia della Macchina di Turing}
+La strategia chiave qui è determinare la parità della lunghezza di $W_i$ e poi biforcare la logica. Come spiegato dal professore, questo si può fare elegantemente usando due stati che si alternano, uno per le lunghezze parziali dispari e uno per quelle pari, senza bisogno di un nastro aggiuntivo.
 \begin{itemize}
     \item \textbf{Nastro 1 (Input):} Contiene la stringa di input.
     \item \textbf{Nastro 2 (Conteggio $N$):} Per memorizzare $N = |A| - |B|$.
-    \item \textbf{Nastro 3 (Copia $B$):} Per memorizzare la stringa $B$. La stringa $B^R$ sarà controllata rileggendo $B$ dal Nastro 3 all'indietro.
-    \item \textbf{Nastro 4:} Non esplicitamente usata per copie permanenti in questa strategia, ma potrebbe servire per un flag temporaneo di parità o per verificare sottostringhe temporanee. Il professore descrive un metodo che evita un nastro specifico per la parità, ma usa stati distinti.
+    \item \textbf{Nastro 3 (Copia $B$):} Memorizza $B$. $B^R$ viene verificato leggendo questo nastro all'indietro.
 \end{itemize}
 
-\subsubsection{Descrizione degli Stati e delle Transizioni}
-Sia $\Sigma_I = \{a,b,c,d,\texttt{\#}\}$ l'alfabeto di input e $\Gamma_T = \Sigma_I \cup \{\B, \texttt{X}\}$ l'alfabeto del nastro. Usiamo $\alpha$ per un simbolo generico da $\{a,b,c,d\}$.
+\subsubsection{Diagramma della Macchina di Turing per $L_3$}
+\begin{figure}[h!]
+\centering
+\begin{tikzpicture}[scale=0.7, transform shape, node distance=2.5cm]
+    \node[state, initial] (q_start) {$Q_{0-2}$};
+    \node[state, right=of q_start] (q3) {$Q_3$};
+    \node[state, below right=of q3, yshift=-0.5cm] (q4) {\begin{tabular}{c}$Q_4$ \\ (dispari)\end{tabular}};
+    \node[state, above right=of q3, yshift=0.5cm] (q5) {\begin{tabular}{c}$Q_5$ \\ (pari)\end{tabular}};
+    \node[state, right=of q4, xshift=1.5cm] (q6) {\begin{tabular}{c}Cerca \\ $B^R$\end{tabular}};
+    \node[state, right=of q5, xshift=1.5cm] (q9) {\begin{tabular}{c}Cerca \\ $B$\end{tabular}};
+    \node[state, right=of q6, xshift=1.5cm] (q_loop) {$Q_{loop}$};
+    \node[state, accepting, below=of q_loop] (q_acc) {$Q_{acc}$};
 
+    \path (q_start) edge node[edge label] {Inizio $W_i$} (q3);
+    
+    \path (q3) edge node[edge label, sloped] {$\alphaSym;\alphaSym,R$} (q4);
+    
+    \path (q4) edge[bend left=30] node[edge label] {$\alphaSym;\alphaSym,R$} (q5);
+    \path (q5) edge[bend left=30] node[edge label] {$\alphaSym;\alphaSym,R$} (q4);
+    
+    \path (q4) edge node[edge label] {$\Sh$ o $\B$} (q6);
+    \path (q5) edge node[edge label] {$\Sh$ o $\B$} (q9);
+    
+    \path (q6) edge node[edge label] {Check OK} (q_loop);
+    \path (q9) edge node[edge label] {Check OK} (q_loop);
+    
+    \path (q_loop) edge[bend left=45] node[edge label, left] {Altra $W_i$} (q3);
+    \path (q_loop) edge node[edge label] {Fine} (q_acc);
+    
+\end{tikzpicture}
+\caption{Schema concettuale della NDTM per $L_3$. $Q_{0-2}$ rappresenta la fase iniziale di conteggio. L'oscillazione tra $Q_4$ e $Q_5$ determina la parità della lunghezza di $W_i$.}
+\end{figure}
+
+\subsubsection{Descrizione degli Stati e delle Transizioni}
 \begin{itemize}
-    \item \textbf{Stato $Q_0$ (Copia $A$):}
+    \item \textbf{$Q_{0-2}$ (Fase Iniziale):} Come nell'esercizio precedente, calcola $N=|A|-|B|$ sul Nastro 2 e copia $B$ sul Nastro 3.
+    \item \textbf{$Q_3$ (Inizio Controllo Parità per $W_i$):} Inizia il ciclo per una $W_i$. Decrementa $N$ su Nastro 2. Legge il primo carattere di $W_i$ e passa a $Q_4$, lo stato che rappresenta una lunghezza parziale letta dispari (1 carattere).
+    \item \textbf{$Q_4 \leftrightarrow Q_5$ (Oscillazione di Parità):}
         \begin{itemize}
-            \item Legge $\alpha$ da Nastro 1, riscrive $\alpha$, $R$. Scrive \texttt{X} su Nastro 2, $R$. (Copia $A$ come \texttt{X}s su Nastro 2).
-            \item Alla lettura di \texttt{\#}: riscrive \texttt{\#}, $R$. Su Nastro 2, $L$. Passa a $Q_1$.
+            \item Da $Q_4$ (lunghezza dispari), leggere un altro carattere porta a $Q_5$ (lunghezza pari).
+            \item Da $Q_5$ (lunghezza pari), leggere un altro carattere porta a $Q_4$ (lunghezza dispari).
+            \item Questo continua finché non si incontra $\Sh$ o $\B$, che segna la fine di $W_i$.
         \end{itemize}
-    \item \textbf{Stato $Q_1$ (Copia $B$ e Calcolo $N$):}
+    \item \textbf{Biforcazione della Logica:}
         \begin{itemize}
-            \item Legge $\alpha$ da Nastro 1, riscrive $\alpha$, $R$.
-            \item Legge \texttt{X} da Nastro 2, lo cancella ($\B$), $L$. (Inizia a calcolare $|A|-|B|$).
-            \item Scrive $\alpha$ su Nastro 3, $R$. (Copia $B$).
-            \item Loop in $Q_2$.
+            \item Se la fine di $W_i$ viene raggiunta da $Q_4$, la lunghezza è \textbf{dispari}. La macchina procede a cercare non deterministicamente $B^R$ come sottostringa di $W_i$. Questo viene fatto confrontando il Nastro 1 (letto in avanti) con il Nastro 3 (letto all'indietro).
+            \item Se la fine di $W_i$ viene raggiunta da $Q_5$, la lunghezza è \textbf{pari}. La macchina procede a cercare non deterministicamente $B$ come sottostringa di $W_i$ (confrontando Nastro 1 e Nastro 3, entrambi letti in avanti).
         \end{itemize}
-    \item \textbf{Stato $Q_2$ (Fine Calcolo $N$ e Copia $B$):}
-        \begin{itemize}
-            \item Alla lettura di \texttt{\#} (dopo $B$): riscrive \texttt{\#}, $R$.
-            \item Su Nastro 2: legge \texttt{X}, lo riscrive, $S$. (Controlla $|A|>|B|$).
-            \item Su Nastro 3: legge $\B$, riscrive $\B$, $L$. (Riavvolge Nastro 3 all'inizio di $B$).
-            \item Passa a $Q_3$.
-        \end{itemize}
-    \item \textbf{Stato $Q_3$ (Inizio Parity Check per $W_i$):}
-        \begin{itemize}
-            \item Legge $\alpha$ da Nastro 1, riscrive $\alpha$, $R$. (Legge il primo carattere di $W_i$).
-            \item Su Nastro 2: legge \texttt{X}, lo cancella ($\B$), $L$. (Decrementa $N$ per questa $W_i$).
-            \item Su Nastro 3: $S$.
-            \item Passa a $Q_4$ (stato per lunghezza dispari, avendo letto il 1° carattere).
-        \end{itemize}
-    \item \textbf{Stato $Q_4$ (Lunghezza $W_i$ dispari / Prossimo carattere):}
-        \begin{itemize}
-            \item \textbf{Transizione (Prossimo carattere - pari):}
-                Legge $\alpha$ da Nastro 1, riscrive $\alpha$, $R$. Passa a $Q_5$.
-                (Se siamo in $Q_4$ con $k$ caratteri letti, il prossimo carattere rende la lunghezza $k+1$, che è pari).
-            \item \textbf{Transizione (Fine $W_i$ - dispari):}
-                Legge \texttt{\#} o $\B$ da Nastro 1, riscrive, $L$. (Ritorna all'inizio di $W_i$).
-                Passa a $Q_6$. (La lunghezza di $W_i$ è dispari, quindi cerchiamo $B^R$).
-        \end{itemize}
-    \item \textbf{Stato $Q_5$ (Lunghezza $W_i$ pari / Prossimo carattere):}
-        \begin{itemize}
-            \item \textbf{Transizione (Prossimo carattere - dispari):}
-                Legge $\alpha$ da Nastro 1, riscrive $\alpha$, $R$. Passa a $Q_4$.
-                (Se siamo in $Q_5$ con $k$ caratteri letti, il prossimo carattere rende la lunghezza $k+1$, che è dispari).
-            \item \textbf{Transizione (Fine $W_i$ - pari):}
-                Legge \texttt{\#} o $\B$ da Nastro 1, riscrive, $L$. (Ritorna all'inizio di $W_i$).
-                Passa a $Q_9$. (La lunghezza di $W_i$ è pari, quindi cerchiamo $B$).
-        \end{itemize}
-    \item \textbf{Stato $Q_6$ (Cerca $B^R$ in $W_i$ - Lunghezza dispari):}
-        \begin{itemize}
-            \item Si muove non deterministicamente su Nastro 1 (leggendo $\alpha$, riscrivendo, $L$) per trovare l'inizio della $B^R$ in $W_i$.
-            \item Quando decide di iniziare il confronto: Legge $\alpha$ da Nastro 1, riscrive $\alpha$, $R$. Legge $\alpha$ da Nastro 3, riscrive $\alpha$, $L$. Passa a $Q_7$.
-            (Nastro 3 ha $B$, leggendolo $L$ si legge $B^R$).
-        \end{itemize}
-    \item \textbf{Stato $Q_7$ (Confronto $B^R$):}
-        \begin{itemize}
-            \item Legge $\alpha$ da Nastro 1, riscrive $\alpha$, $R$. Legge $\alpha$ da Nastro 3, riscrive $\alpha$, $L$.
-            \item Loop in $Q_7$.
-            \item Quando Nastro 3 legge $\B$ (fine di $B^R$): Nastro 1 continua a leggere $\alpha$, riscrive $\alpha$, $R$. Passa a $Q_8$.
-        \end{itemize}
-    \item \textbf{Stato $Q_8$ (Pulizia dopo $B^R$):}
-        \begin{itemize}
-            \item Riavvolge Nastro 1 a destra fino al prossimo \texttt{\#} o $\B$. Riavvolge Nastro 3 a destra fino al $\B$ iniziale.
-            \item Quando \texttt{\#} o $\B$ su Nastro 1 e $\B$ su Nastro 3 sono raggiunti, passa a \texttt{Q\_{loop\_check}} (stato intermedio per decidere se continuare o accettare).
-        \end{itemize}
-    \item \textbf{Stato $Q_9$ (Cerca $B$ in $W_i$ - Lunghezza pari):}
-        \begin{itemize}
-            \item Si muove non deterministicamente su Nastro 1 (leggendo $\alpha$, riscrivendo, $R$) per trovare l'inizio della $B$ in $W_i$.
-            \item Quando decide di iniziare il confronto: Legge $\alpha$ da Nastro 1, riscrive $\alpha$, $R$. Legge $\alpha$ da Nastro 3, riscrive $\alpha$, $R$. Passa a \texttt{Q\_{10}}.
-            (Nastro 3 ha $B$, leggendolo $R$ si legge $B$).
-        \end{itemize}
-    \item \textbf{Stato \texttt{Q\_{10}} (Confronto $B$):}
-        \begin{itemize}
-            \item Legge $\alpha$ da Nastro 1, riscrive $\alpha$, $R$. Legge $\alpha$ da Nastro 3, riscrive $\alpha$, $R$.
-            \item Loop in \texttt{Q\_{10}}.
-            \item Quando Nastro 3 legge $\B$ (fine di $B$): Nastro 1 continua a leggere $\alpha$, riscrive $\alpha$, $R$. Passa a \texttt{Q\_{11}}.
-        \end{itemize}
-    \item \textbf{Stato \texttt{Q\_{11}} (Pulizia dopo $B$):}
-        \begin{itemize}
-            \item Riavvolge Nastro 1 a destra fino al prossimo \texttt{\#} o $\B$. Riavvolge Nastro 3 a destra fino al $\B$ iniziale.
-            \item Quando \texttt{\#} o $\B$ su Nastro 1 e $\B$ su Nastro 3 sono raggiunti, passa a \texttt{Q\_{loop\_check}}.
-        \end{itemize}
-    \item \textbf{Stato \texttt{Q\_{loop\_check}} (Controllo $N$ e Ciclo/Accetta):}
-        \begin{itemize}
-            \item Se Nastro 2 ha ancora \texttt{X} (altre $W_i$):
-                \begin{itemize}
-                    \item Nastro 1: legge \texttt{\#} o $\B$, riscrive, $R$.
-                    \item Nastro 2: legge \texttt{X}, riscrive \texttt{X}, $S$. (Indica che ci sono ancora $W_i$ da processare, la cancellazione è stata fatta in $Q_3$).
-                    \item Nastro 3: riavvolge.
-                    \item Torna a $Q_3$.
-                \end{itemize}
-            \item Se Nastro 2 è $\B$ (tutte le $W_i$ sono state processate):
-                \begin{itemize}
-                    \item Nastro 1: legge $\B$, riscrive $\B$, $S$.
-                    \item Accetta ($Q_{acc}$).
-                \end{itemize}
-        \end{itemize}
+    \item \textbf{$Q_{loop}$ (Controllo Ciclo/Fine):} Dopo una verifica riuscita, la macchina si sposta in uno stato di controllo. Se ci sono ancora $\X$ su Nastro 2, torna a $Q_3$ per la prossima $W_i$. Altrimenti, se Nastro 1 è alla fine, accetta.
 \end{itemize}
 
 \subsection{Esercizio 4: $A$ o $B^R$ in $W_i$ in base alla Parità dell'Indice $i$}
 
 \begin{definition}[Linguaggio $L_4$]
 Sia $L_4$ il linguaggio definito come:
-$L_4 = \{A\texttt{\#}B\texttt{\#}W_1 \texttt{\#} W_2 \texttt{\#} \dots \texttt{\#} W_N \mid A, B, W_i \in \{a,b,c,d\}^+, |A| > |B| > 0, N = |A| + |B|, $
+\[
+L_4 = \{A\Sh B\Sh W_1 \Sh \dots \Sh W_N \mid A, B, W_i \in \{a,b,c,d\}^+, |A|>|B|>0, N=|A|+|B|, 
+\]
 $\qquad (\text{se } i \text{ è dispari, allora } A \subseteq W_i) \land (\text{se } i \text{ è pari, allora } B^R \subseteq W_i) \}$
 \end{definition}
 
 \subsubsection{Strategia della Macchina di Turing}
+La logica qui è un ciclo alternato: un ramo della macchina gestisce gli indici dispari (verificando $A$) e un altro ramo gestisce gli indici pari (verificando $B^R$).
 \begin{itemize}
-    \item \textbf{Nastro 1 (Input):} Contiene la stringa di input.
-    \item \textbf{Nastro 2 (Conteggio $N$ e Parità Indice):} Memorizza $N = |A| + |B|$. Per ogni $W_i$ processata, un \texttt{X} viene cancellato, permettendo al nastro di fungere anche da contatore di indice $i$ (implicitamente).
+    \item \textbf{Nastro 1 (Input):} Stringa di input.
+    \item \textbf{Nastro 2 (Conteggio $N$):} Memorizza $N = |A| + |B|$ come una pila di $\X$.
     \item \textbf{Nastro 3 (Copia $A$):} Memorizza la stringa $A$.
-    \item \textbf{Nastro 4 (Copia $B$):} Memorizza la stringa $B$. Per $B^R$, Nastro 4 verrà letto all'indietro.
+    \item \textbf{Nastro 4 (Copia $B$):} Memorizza la stringa $B$.
 \end{itemize}
+
+\subsubsection{Diagramma della Macchina di Turing per $L_4$}
+\begin{figure}[h!]
+\centering
+\begin{tikzpicture}
+    \node[state, initial] (q_start) {$Q_{0-2}$};
+    \node[state, right=of q_start, xshift=1cm] (q_dispari) {$Q_{dispari}$};
+    \node[state, below=of q_dispari, yshift=-1cm] (q_pari) {$Q_{pari}$};
+    \node[state, accepting, right=of q_dispari, xshift=4cm] (q_acc) {$Q_{acc}$};
+
+    \path (q_start) edge node[edge label] {Inizio $W_1$} (q_dispari);
+    
+    \path (q_dispari) edge[bend left] node[edge label, left] {Check $A \subseteq W_i$ OK \\ Prossimo $\Sh$} (q_pari);
+    \path (q_pari) edge[bend left] node[edge label, right] {Check $B^R \subseteq W_{i+1}$ OK \\ Prossimo $\Sh$} (q_dispari);
+    
+    % Acceptance paths
+    \path (q_dispari) edge[dashed] node[edge label, above, sloped] {Fine input} (q_acc);
+    \path (q_pari) edge[dashed] node[edge label, below, sloped] {Fine input} (q_acc);
+
+\end{tikzpicture}
+\caption{Schema concettuale della NDTM per $L_4$. $Q_{0-2}$ rappresenta la fase iniziale. La macchina alterna tra uno stato per indici dispari ($Q_{dispari}$) e uno per indici pari ($Q_{pari}$).}
+\end{figure}
 
 \subsubsection{Descrizione degli Stati e delle Transizioni}
-Sia $\Sigma_I = \{a,b,c,d,\texttt{\#}\}$ l'alfabeto di input e $\Gamma_T = \Sigma_I \cup \{\B, \texttt{X}\}$ l'alfabeto del nastro. Usiamo $\alpha$ per un simbolo generico da $\{a,b,c,d\}$.
-
 \begin{itemize}
-    \item \textbf{Stato $Q_0$ (Copia $A$ e $|A|$ su Nastro 2):}
+    \item \textbf{$Q_{0-2}$ (Fase Iniziale):}
+        \begin{enumerate}
+            \item Copia $A$ sul Nastro 3 e $|A|$ \texttt{X} sul Nastro 2.
+            \item Legge $B$, copia $B$ sul Nastro 4 e aggiunge $|B|$ \texttt{X} sul Nastro 2. Ora Nastro 2 contiene $N=|A|+|B|$ \texttt{X}.
+            \item Il controllo $|A|>|B|>0$ viene fatto durante questo processo (es. verificando che la parte di $B$ sia non vuota e che la parte di $A$ sul nastro 3 sia più lunga di $B$ sul nastro 4).
+            \item Riavvolge i nastri 2, 3, 4 e si prepara per il ciclo principale.
+        \end{enumerate}
+    \item \textbf{$Q_{dispari}$ (Processa $W_i$ con $i$ dispari):}
         \begin{itemize}
-            \item Legge $\alpha$ da Nastro 1, riscrive $\alpha$, $R$. Scrive \texttt{X} su Nastro 2, $R$. (Copia $A$ come \texttt{X}s su Nastro 2). Scrive $\alpha$ su Nastro 3, $R$. (Copia $A$ su Nastro 3).
-            \item Alla lettura di \texttt{\#}: riscrive \texttt{\#}, $R$. Riavvolge Nastro 3 ($L$). Passa a $Q_1$.
+            \item Decrementa il contatore $N$ sul Nastro 2.
+            \item Cerca non deterministicamente $A$ (da Nastro 3) come sottostringa di $W_i$ (su Nastro 1).
+            \item Se la trova, avanza fino al prossimo $\Sh$ e passa a $Q_{pari}$.
+            \item Se il contatore $N$ è esaurito e l'input è terminato, accetta.
         \end{itemize}
-    \item \textbf{Stato $Q_1$ (Copia $B$ e Calcolo $|A|+|B|$ su Nastro 2):}
+    \item \textbf{$Q_{pari}$ (Processa $W_i$ con $i$ pari):}
         \begin{itemize}
-            \item Legge $\alpha$ da Nastro 1, riscrive $\alpha$, $R$. Scrive \texttt{X} su Nastro 2, $R$. (Aggiunge $|B|$ a Nastro 2). Scrive $\alpha$ su Nastro 4, $R$. (Copia $B$ su Nastro 4).
-            \item Alla lettura di \texttt{\#}: riscrive \texttt{\#}, $R$. Riavvolge Nastro 4 ($L$).
-            \item Controlla $|A|>|B|>0$: questo avviene verificando che Nastro 2 ha almeno due \texttt{X}s dopo aver contato $A$ e $B$ e che Nastro 4 ha almeno un \texttt{X}. Implicitamente, si assicura che $B$ non sia vuoto e che $A$ sia più lungo di $B$.
-            \item Passa a $Q_2$.
-        \end{itemize}
-    \item \textbf{Stato $Q_2$ (Preparazione e Inizio Loop $W_i$):}
-        \begin{itemize}
-            \item Riavvolge Nastro 2 a sinistra per posizionarsi sul primo \texttt{X} da consumare. Riavvolge Nastro 3 all'inizio di $A$. Riavvolge Nastro 4 all'inizio di $B$.
-            \item Passa a $Q_3$.
-        \end{itemize}
-    \item \textbf{Stato $Q_3$ (Processa $W_i$ - indice dispari):}
-        Questo stato gestisce $W_i$ con $i$ dispari (es. $W_1, W_3, \dots$).
-        \begin{itemize}
-            \item Su Nastro 2: legge \texttt{X}, lo cancella ($\B$), $L$. (Decrementa $N$ per questa $W_i$).
-            \item Nondeterministicamente cerca l'inizio di $A$ in $W_i$ su Nastro 1 (legge $\alpha$, riscrive, $R$).
-            \item Quando decide di iniziare il confronto: Legge $\alpha$ da Nastro 1, riscrive $\alpha$, $R$. Legge $\alpha$ da Nastro 3, riscrive $\alpha$, $R$. Passa a $Q_4$.
-        \end{itemize}
-    \item \textbf{Stato $Q_4$ (Confronto $A$):}
-        \begin{itemize}
-            \item Legge $\alpha$ da Nastro 1, riscrive $\alpha$, $R$. Legge $\alpha$ da Nastro 3, riscrive $\alpha$, $R$.
-            \item Loop in $Q_4$.
-            \item Quando Nastro 3 è $\B$ (fine di $A$): Nastro 1 continua a leggere $\alpha$, riscrive $\alpha$, $R$. Passa a $Q_5$.
-        \end{itemize}
-    \item \textbf{Stato $Q_5$ (Pulizia dopo $A$ e Preparazione per $W_{i+1}$):}
-        \begin{itemize}
-            \item Riavvolge Nastro 3 a sinistra al $\B$ iniziale.
-            \item Riavvolge Nastro 1 a destra fino al prossimo \texttt{\#} o $\B$.
-            \item Quando \texttt{\#} su Nastro 1 è raggiunto e Nastro 3 è riavvolto: Legge \texttt{\#}, riscrive \texttt{\#}, $R$. Passa a $Q_6$.
-        \end{itemize}
-    \item \textbf{Stato $Q_6$ (Processa $W_i$ - indice pari):}
-        Questo stato gestisce $W_i$ con $i$ pari (es. $W_2, W_4, \dots$).
-        \begin{itemize}
-            \item Su Nastro 2: legge \texttt{X}, lo cancella ($\B$), $L$. (Decrementa $N$ per questa $W_i$).
-            \item Nondeterministicamente cerca l'inizio di $B^R$ in $W_i$ su Nastro 1 (legge $\alpha$, riscrive, $L$ - posizionandosi per il reverse check).
-            \item Quando decide di iniziare il confronto: Legge $\alpha$ da Nastro 1, riscrive $\alpha$, $R$. Legge $\alpha$ da Nastro 4, riscrive $\alpha$, $L$. Passa a $Q_7$.
-        \end{itemize}
-    \item \textbf{Stato $Q_7$ (Confronto $B^R$):}
-        \begin{itemize}
-            \item Legge $\alpha$ da Nastro 1, riscrive $\alpha$, $R$. Legge $\alpha$ da Nastro 4, riscrive $\alpha$, $L$.
-            \item Loop in $Q_7$.
-            \item Quando Nastro 4 è $\B$ (fine di $B^R$): Nastro 1 continua a leggere $\alpha$, riscrive $\alpha$, $R$. Passa a $Q_8$.
-        \end{itemize}
-    \item \textbf{Stato $Q_8$ (Pulizia dopo $B^R$ e Preparazione per $W_{i+1}$):}
-        \begin{itemize}
-            \item Riavvolge Nastro 4 a sinistra al $\B$ iniziale.
-            \item Riavvolge Nastro 1 a destra fino al prossimo \texttt{\#} o $\B$.
-            \item Quando \texttt{\#} su Nastro 1 è raggiunto e Nastro 4 è riavvolto: Legge \texttt{\#}, riscrive \texttt{\#}, $R$. Passa a $Q_3$ (per la prossima $W_i$ dispari).
-        \end{itemize}
-    \item \textbf{Accettazione ($Q_{acc}$):}
-        \begin{itemize}
-            \item Dopo l'elaborazione dell'ultima $W_N$, se Nastro 2 legge $\B$ (tutti gli \texttt{X} sono stati consumati) e Nastro 1 legge $\B$ (fine input):
-                \begin{itemize}
-                    \item $(\B, \B, \text{any}, \text{any}) \to (\B, \B, \text{any}, \text{any}), (S,S,S,S)$ e accetta.
-                \end{itemize}
+            \item Decrementa il contatore $N$ sul Nastro 2.
+            \item Cerca non deterministicamente $B^R$ (leggendo Nastro 4 all'indietro) come sottostringa di $W_i$ (su Nastro 1).
+            \item Se la trova, avanza fino al prossimo $\Sh$ e torna a $Q_{dispari}$.
+            \item Se il contatore $N$ è esaurito e l'input è terminato, accetta.
         \end{itemize}
 \end{itemize}
+L'alternanza tra i due stati garantisce che la condizione venga verificata correttamente per indici pari e dispari.
 
 \section{Conclusioni}
 Le esercitazioni di oggi hanno permesso di approfondire la progettazione di Macchine di Turing Non Deterministiche, in particolare mostrando come la capacità di \textit{guess} (indovinare) combinata con un robusto \textit{check} (controllo) possa semplificare la logica di alcune verifiche complesse. È stato evidenziato come le NDTM possano \textit{scrivere in anticipo} su nastri ausiliari stringhe che verranno poi validate.
