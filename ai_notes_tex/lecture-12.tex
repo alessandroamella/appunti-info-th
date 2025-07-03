@@ -61,10 +61,10 @@ Il linguaggio universale $LU$ è l'insieme delle coppie $\langle M, w \rangle$, 
 \end{definition}
 
 \begin{theorem}
-Il linguaggio universale $LU$ è ricorsivamente enumerabile (ovvero, $LU \in R_e$).
+Il linguaggio universale $LU$ è ricorsivamente enumerabile (ovvero, $LU \in RE$).
 \end{theorem}
 \begin{proof}
-Per dimostrare che $LU \in R_e$, dobbiamo mostrare l'esistenza di una Macchina di Turing che lo accetti. Tale macchina è la Macchina di Turing Universale (UTM).
+Per dimostrare che $LU \in RE$, dobbiamo mostrare l'esistenza di una Macchina di Turing che lo accetti. Tale macchina è la Macchina di Turing Universale (UTM).
 \begin{enumerate}
     \item La UTM prende in input la codifica $\langle M, w \rangle$.
     \item La UTM simula passo-passo il comportamento di $M$ su $w$.
@@ -114,7 +114,7 @@ Il comportamento di $M'$ è esattamente quello di una macchina che decide il lin
 
 Poiché $M'$ è costruita usando $M_{\overline{LU}}$ (che è un decider e si arresta sempre), $M'$ è anch'essa una Macchina di Turing che si arresta sempre, ovvero un decider. Questo implicherebbe che $LD \in R$.
 
-\textbf{Contraddizione:} Sappiamo che $LD \notin R_e$, e quindi a maggior ragione $LD \notin R$.
+\textbf{Contraddizione:} Sappiamo che $LD \notin RE$, e quindi a maggior ragione $LD \notin R$.
 L'assunzione iniziale ($LU \in R$) deve essere falsa.
 
 \textbf{Conclusione:} $LU \notin R$.
@@ -128,10 +128,10 @@ Il complemento del linguaggio diagonale $\overline{LD}$ è l'insieme delle codif
 \end{definition}
 
 \begin{theorem}
-Il complemento del linguaggio diagonale, $\overline{LD}$, è ricorsivamente enumerabile (ovvero, $\overline{LD} \in R_e$).
+Il complemento del linguaggio diagonale, $\overline{LD}$, è ricorsivamente enumerabile (ovvero, $\overline{LD} \in RE$).
 \end{theorem}
 \begin{proof}
-Per dimostrare che $\overline{LD} \in R_e$, dobbiamo costruire una Macchina di Turing $M_{\overline{LD}}$ che accetti $\overline{LD}$.
+Per dimostrare che $\overline{LD} \in RE$, dobbiamo costruire una Macchina di Turing $M_{\overline{LD}}$ che accetti $\overline{LD}$.
 
 \textbf{Costruzione di $M_{\overline{LD}}$:}
 \begin{enumerate}
@@ -148,14 +148,14 @@ Per dimostrare che $\overline{LD} \in R_e$, dobbiamo costruire una Macchina di T
     \item \textbf{Se $\langle M_i \rangle \notin \overline{LD}$:}
     Per definizione, $M_i$ non accetta $\langle M_i \rangle$. Ciò significa che $M_i$ o rifiuta o va in loop su $\langle M_i \rangle$. In entrambi i casi, $M_{\overline{LD}}$ non si arresterà in uno stato accettante.
 \end{itemize}
-Poiché $M_{\overline{LD}}$ accetta esattamente le stringhe che appartengono a $\overline{LD}$, si conclude che $\overline{LD} \in R_e$.
+Poiché $M_{\overline{LD}}$ accetta esattamente le stringhe che appartengono a $\overline{LD}$, si conclude che $\overline{LD} \in RE$.
 \end{proof}
 
 \begin{proposition}
 Il linguaggio $\overline{LD}$ non è ricorsivo (ovvero, $\overline{LD} \notin R$).
 \end{proposition}
 \begin{proof}
-Se per assurdo $\overline{LD}$ fosse in $R$, allora per la proprietà che $R$ è chiusa rispetto al complemento, anche il suo complemento $LD = \overline{\overline{LD}}$ sarebbe in $R$. Ma sappiamo che $LD \notin R_e$, e quindi $LD \notin R$. Questo è una contraddizione.
+Se per assurdo $\overline{LD}$ fosse in $R$, allora per la proprietà che $R$ è chiusa rispetto al complemento, anche il suo complemento $LD = \overline{\overline{LD}}$ sarebbe in $R$. Ma sappiamo che $LD \notin RE$, e quindi $LD \notin R$. Questo è una contraddizione.
 \end{proof}
 
 \section{Problema dell'Arresto (HALT)}
@@ -167,10 +167,10 @@ Il linguaggio $HALT$ è l'insieme delle coppie $\langle M, w \rangle$, dove $M$ 
 La differenza con $LU$ è sottile ma cruciale: $LU$ richiede l'accettazione, $HALT$ richiede solo l'arresto.
 
 \begin{theorem}
-Il linguaggio dell'arresto $HALT$ è ricorsivamente enumerabile (ovvero, $HALT \in R_e$).
+Il linguaggio dell'arresto $HALT$ è ricorsivamente enumerabile (ovvero, $HALT \in RE$).
 \end{theorem}
 \begin{proof}
-Per dimostrare che $HALT \in R_e$, dobbiamo costruire una Macchina di Turing $M_{HALT}$ che accetti $HALT$.
+Per dimostrare che $HALT \in RE$, dobbiamo costruire una Macchina di Turing $M_{HALT}$ che accetti $HALT$.
 
 \textbf{Costruzione di $M_{HALT}$:}
 \begin{enumerate}
@@ -186,7 +186,7 @@ Per dimostrare che $HALT \in R_e$, dobbiamo costruire una Macchina di Turing $M_
     \item \textbf{Se $\langle M, w \rangle \notin HALT$:}
     Per definizione, $M$ non si arresta su $w$ (va in loop). La simulazione della UTM andrà in loop. Di conseguenza, $M_{HALT}$ non accetterà.
 \end{itemize}
-Poiché $M_{HALT}$ accetta esattamente le istanze di $HALT$, si conclude che $HALT \in R_e$.
+Poiché $M_{HALT}$ accetta esattamente le istanze di $HALT$, si conclude che $HALT \in RE$.
 \end{proof}
 
 \begin{theorem}
@@ -225,10 +225,10 @@ L'assunzione iniziale ($HALT \in R$) deve essere falsa.
 \end{proof}
 
 \begin{proposition}
-Il complemento di $HALT$, $\overline{HALT}$, non appartiene a $R_e$.
+Il complemento di $HALT$, $\overline{HALT}$, non appartiene a $RE$.
 \end{proposition}
 \begin{proof}
-Sappiamo che $HALT \in R_e$ ma $HALT \notin R$. Se per assurdo il suo complemento $\overline{HALT}$ fosse in $R_e$, allora per il teorema sulla decidibilità, dato che sia un linguaggio che il suo complemento sono ricorsivamente enumerabili, il linguaggio stesso ($HALT$) sarebbe ricorsivo ($R$). Ma abbiamo appena dimostrato che $HALT \notin R$. Questo è una contraddizione.
+Sappiamo che $HALT \in RE$ ma $HALT \notin R$. Se per assurdo il suo complemento $\overline{HALT}$ fosse in $RE$, allora per il teorema sulla decidibilità, dato che sia un linguaggio che il suo complemento sono ricorsivamente enumerabili, il linguaggio stesso ($HALT$) sarebbe ricorsivo ($R$). Ma abbiamo appena dimostrato che $HALT \notin R$. Questo è una contraddizione.
 \end{proof}
 
 \section{Problema dell'Arresto su Stringa Vuota (HALT$_\epsilon$)}
@@ -239,10 +239,10 @@ Il linguaggio $HALT_\epsilon$ è l'insieme delle codifiche di Macchine di Turing
 \end{definition}
 
 \begin{theorem}
-Il linguaggio dell'arresto su stringa vuota, $HALT_\epsilon$, è ricorsivamente enumerabile (ovvero, $HALT_\epsilon \in R_e$).
+Il linguaggio dell'arresto su stringa vuota, $HALT_\epsilon$, è ricorsivamente enumerabile (ovvero, $HALT_\epsilon \in RE$).
 \end{theorem}
 \begin{proof}
-Per dimostrare che $HALT_\epsilon \in R_e$, dobbiamo costruire una Macchina di Turing $M_{HALT_\epsilon}$ che accetti $HALT_\epsilon$.
+Per dimostrare che $HALT_\epsilon \in RE$, dobbiamo costruire una Macchina di Turing $M_{HALT_\epsilon}$ che accetti $HALT_\epsilon$.
 
 \textbf{Costruzione di $M_{HALT_\epsilon}$:}
 \begin{enumerate}
@@ -251,7 +251,7 @@ Per dimostrare che $HALT_\epsilon \in R_e$, dobbiamo costruire una Macchina di T
     \item Se la simulazione di $M$ su $\epsilon$ si arresta (sia accettando che rifiutando), allora $M_{HALT_\epsilon}$ accetta (risponde "sì").
     \item Se la simulazione di $M$ su $\epsilon$ entra in loop infinito, allora $M_{HALT_\epsilon}$ entra in loop (non risponde "sì").
 \end{enumerate}
-Poiché $M_{HALT_\epsilon}$ accetta esattamente le istanze di $HALT_\epsilon$, si conclude che $HALT_\epsilon \in R_e$.
+Poiché $M_{HALT_\epsilon}$ accetta esattamente le istanze di $HALT_\epsilon$, si conclude che $HALT_\epsilon \in RE$.
 \end{proof}
 
 \begin{theorem}
@@ -294,36 +294,36 @@ L'assunzione iniziale ($HALT_\epsilon \in R$) deve essere falsa.
 \section{Riepilogo e Conclusioni}
 Abbiamo esplorato la decidibilità di diversi linguaggi fondamentali per la teoria della computazione, stabilendo le seguenti proprietà:
 \begin{itemize}
-    \item $LD$: Non è ricorsivamente enumerabile ($LD \notin R_e$).
-    \item $\overline{LD}$: È ricorsivamente enumerabile ma non ricorsivo ($\overline{LD} \in R_e \setminus R$).
-    \item $LU$: È ricorsivamente enumerabile ma non ricorsivo ($LU \in R_e \setminus R$).
-    \item $HALT$: È ricorsivamente enumerabile ma non ricorsivo ($HALT \in R_e \setminus R$).
-    \item $HALT_\epsilon$: È ricorsivamente enumerabile ma non ricorsivo ($HALT_\epsilon \in R_e \setminus R$).
+    \item $LD$: Non è ricorsivamente enumerabile ($LD \notin RE$).
+    \item $\overline{LD}$: È ricorsivamente enumerabile ma non ricorsivo ($\overline{LD} \in RE \setminus R$).
+    \item $LU$: È ricorsivamente enumerabile ma non ricorsivo ($LU \in RE \setminus R$).
+    \item $HALT$: È ricorsivamente enumerabile ma non ricorsivo ($HALT \in RE \setminus R$).
+    \item $HALT_\epsilon$: È ricorsivamente enumerabile ma non ricorsivo ($HALT_\epsilon \in RE \setminus R$).
 \end{itemize}
 Tutti i problemi di non appartenenza a $R$ sono stati dimostrati mediante riduzione, una tecnica fondamentale in teoria della computazione per classificare la difficoltà dei problemi.
 
 \begin{figure}[h!]
     \centering
     \begin{tikzpicture}[node distance=1.8cm, >=Stealth]
-        % R_e boundary
-        \draw[thick, blue!60] (0,0) circle (3.5cm) node[below right=0.1cm, blue!60] {$R_e$};
+        % RE boundary
+        \draw[thick, blue!60] (0,0) circle (3.5cm) node[below right=0.1cm, blue!60] {$RE$};
         
         % R boundary
         \draw[thick, green!60!black] (0,0) circle (1.8cm) node[above right=0.1cm, green!60!black] {$R$};
         
-        % Languages inside R_e but outside R (Recursively Enumerable but not Recursive)
+        % Languages inside RE but outside R (Recursively Enumerable but not Recursive)
         \node[red] at (135:2.6cm) {$\overline{LD}$};
         \node[red] at (45:2.6cm) {$LU$};
         \node[red] at (225:2.6cm) {$HALT_\epsilon$};
         \node[red] at (315:2.6cm) {$HALT$};
         
-        % Languages outside R_e (and therefore outside R)
+        % Languages outside RE (and therefore outside R)
         \node[purple] at (0:4.2cm) {$LD$};
         \node[purple] at (180:4.2cm) {$\overline{HALT}$};
         \node[purple] at (90:4.2cm) {$\overline{LU}$};
         \node[purple] at (270:4.2cm) {$\overline{HALT_\epsilon}$};
     \end{tikzpicture}
-    \caption{Mappa delle classi di linguaggi $R$ e $R_e$ con la posizione dei problemi discussi.}
+    \caption{Mappa delle classi di linguaggi $R$ e $RE$ con la posizione dei problemi discussi.}
     \label{fig:r_re_map_updated}
 \end{figure}
 
