@@ -4,10 +4,10 @@
 import os
 import re
 import time
-import asyncio
-from pathlib import Path
-from dotenv import load_dotenv
 from concurrent.futures import ThreadPoolExecutor
+from pathlib import Path
+
+from dotenv import load_dotenv
 
 load_dotenv()  # take environment variables
 
@@ -61,37 +61,40 @@ def setup_directories():
     TEX_OUTPUT_DIR.mkdir(exist_ok=True)
     print(f" -> LaTeX output: {TEX_OUTPUT_DIR}")
 
+
 def load_prompt():
     """Loads the prompt from the prompt.md file."""
     if not PROMPT_FILE.exists():
         print(f"Error: Prompt file not found at '{PROMPT_FILE}'")
         print("Please create the prompt.md file in the base directory.")
         exit(1)
-    
+
     try:
-        prompt_content = PROMPT_FILE.read_text(encoding='utf-8')
+        prompt_content = PROMPT_FILE.read_text(encoding="utf-8")
         print(f"Successfully loaded prompt from {PROMPT_FILE}")
         return prompt_content
     except Exception as e:
         print(f"Error reading prompt file: {e}")
         exit(1)
 
+
 def get_lecture_numbers():
     """Scans the subtitles directory to find all available lecture numbers."""
     if not TXT_DIR.exists():
         print(f"Error: Subtitles directory not found at '{TXT_DIR}'")
         return []
-    
+
     lecture_files = sorted(TXT_DIR.glob("lecture-*.txt"))
     lecture_numbers = []
     for f in lecture_files:
         match = re.search(r"lecture-(\d+)\.txt", f.name)
         if match:
             lecture_numbers.append(match.group(1))
-    
+
     print(f"Found {len(lecture_numbers)} lectures.")
     return lecture_numbers
-    
+
+
 def clean_latex_output(text):
     """Removes the markdown-style code fences that the AI might add."""
     text = re.sub(r"^```latex\n", "", text, flags=re.MULTILINE)
@@ -104,13 +107,13 @@ def process_lecture_batch(lecture_batch, client, prompt):
     Processes a batch of lectures simultaneously using threading.
     """
     print(f"\n----- Processing Batch: Lectures {', '.join(lecture_batch)} -----")
-    
+
     with ThreadPoolExecutor(max_workers=BATCH_SIZE) as executor:
         futures = []
         for lecture_num in lecture_batch:
             future = executor.submit(process_lecture, lecture_num, client, prompt)
             futures.append(future)
-        
+
         # Wait for all lectures in the batch to complete
         for future in futures:
             future.result()
@@ -121,7 +124,7 @@ def process_lecture(lecture_num, client, prompt):
     Processes a single lecture: generates LaTeX directly from transcript and PDF.
     """
     print(f"  -> Processing Lecture {lecture_num}")
-    
+
     txt_path = TXT_DIR / f"lecture-{lecture_num}.txt"
     pdf_path = PDF_DIR / f"lecture-{lecture_num}.pdf"
     tex_output_path = TEX_OUTPUT_DIR / f"lecture-{lecture_num}.tex"
@@ -134,8 +137,10 @@ def process_lecture(lecture_num, client, prompt):
     # 2. Check for source files
     if not txt_path.exists() or not pdf_path.exists():
         print(f"  -> Warning: Missing source files for lecture {lecture_num}.")
-        if not txt_path.exists(): print(f"     -> Missing: {txt_path}")
-        if not pdf_path.exists(): print(f"     -> Missing: {pdf_path}")
+        if not txt_path.exists():
+            print(f"     -> Missing: {txt_path}")
+        if not pdf_path.exists():
+            print(f"     -> Missing: {pdf_path}")
         return
 
     # Using the File API is robust for handling large files.
@@ -148,23 +153,24 @@ def process_lecture(lecture_num, client, prompt):
         uploaded_pdf = client.files.upload(file=pdf_path)
         print(f"     -> Uploading {txt_path.name}...")
         uploaded_txt = client.files.upload(file=txt_path)
-        
+
         print(f"     -> Sending request to Gemini API for lecture {lecture_num}...")
         response = client.models.generate_content(
-            model=MODEL_NAME,
-            contents=[uploaded_pdf, uploaded_txt, prompt]
+            model=MODEL_NAME, contents=[uploaded_pdf, uploaded_txt, prompt]
         )
-        
+
         latex_content = clean_latex_output(response.text)
-        tex_output_path.write_text(latex_content, encoding='utf-8')
-        print(f"  -> Successfully saved LaTeX for lecture {lecture_num} to {tex_output_path}")
+        tex_output_path.write_text(latex_content, encoding="utf-8")
+        print(
+            f"  -> Successfully saved LaTeX for lecture {lecture_num} to {tex_output_path}"
+        )
 
     except Exception as e:
         print(f"  -> An error occurred while processing lecture {lecture_num}:")
         print(f"     -> Error Type: {type(e).__name__}")
         print(f"     -> Error Details: {e}")
         print("     -> Moving to the next lecture.")
-    
+
     finally:
         # Clean up uploaded files from the Gemini API to manage storage
         print(f"  -> Cleaning up uploaded API files for lecture {lecture_num}...")
@@ -187,12 +193,12 @@ def main():
     print("======================================================")
     print("=      AI Lecture Notes Generator Initialized      =")
     print("======================================================")
-    
+
     setup_directories()
-    
+
     # Load the prompt from file
     prompt = load_prompt()
-    
+
     lecture_numbers = get_lecture_numbers()
     if not lecture_numbers:
         print("\nNo lectures found. Exiting.")
@@ -205,9 +211,9 @@ def main():
         # As per the request, skip lecture 1 and start from 2
         if int(num) < 2:
             continue
-        
+
         process_lecture(num, client, prompt)
-        
+
         # Add a delay to avoid hitting API rate limits, but not after the last item
         if i < len(lecture_numbers) - 1:
             print(f"\nWaiting for {API_CALL_DELAY} seconds before the next lecture...")
