@@ -101,19 +101,19 @@ Un esempio di $W_i$ è \texttt{ab c ba c}, dove $R_i=\text{\texttt{ab}}$, $S_i=\
 \textit{Nota}: Per la soluzione, qualsiasi approccio funzionante è accettato. È preferito un approccio non-deterministico se applicabile, per dimostrare la comprensione del non determinismo. Si richiede il grafo di transizione della macchina e un breve commento sul funzionamento (e.g., utilizzo dei nastri).
 
 \subsection{Domanda 2: Domande Teoriche}
-\begin{itemize}
-    \item \textbf{A. Perché ci focalizziamo sullo studio dei problemi di decisione?}
+\begin{enumerate}
+    \item \textbf{Perché ci focalizziamo sullo studio dei problemi di decisione?}
     \textbf{Risposta:} I problemi di decisione sono concettualmente più semplici da affrontare e da studiare formalmente. Un problema di ricerca o di ottimizzazione può spesso essere ricondotto a una serie di problemi di decisione.
 
-    \item \textbf{B. Definizione formale di Big-O notation.}
+    \item \textbf{Definizione formale di Big-O notation.}
     \textbf{Risposta:} Una funzione $f(n)$ è $O(g(n))$ se esistono costanti positive $c$ e $n_0$ tali che $0 \le f(n) \le c \cdot g(n)$ per ogni $n \ge n_0$.
 
-    \item \textbf{C. Cos'è un trasduttore?}
+    \item \textbf{Cos'è un trasduttore?}
     \textbf{Risposta:} Un trasduttore è una macchina di Turing con almeno tre nastri: un nastro di input, un nastro di lavoro (work tape) e un nastro di output. Un trasduttore calcola una funzione $f$ se, data una stringa $w$ sul nastro di input, al termine della sua esecuzione, il nastro di output contiene $f(w)$.
 
-    \item \textbf{D. Dimostrare che se un linguaggio $L$ appartiene a R, allora il suo complemento $\bar{L}$ appartiene anch'esso a R.}
+    \item \textbf{Dimostrare che se un linguaggio $L$ appartiene a R, allora il suo complemento $\bar{L}$ appartiene anch'esso a R.}
     \textbf{Risposta:} Se $L \in R$, esiste una TM $M$ che decide $L$. $M$ si ferma e accetta per $w \in L$ e si ferma e rifiuta per $w \notin L$. Per costruire una TM $M'$ che decide $\bar{L}$, basta scambiare gli stati di accettazione e rifiuto di $M$. Se $M$ accetta $w$, $M'$ rifiuta $w$. Se $M$ rifiuta $w$, $M'$ accetta $w$. Poiché $M$ si ferma sempre, anche $M'$ si fermerà sempre. Quindi $M'$ decide $\bar{L}$, e $\bar{L} \in R$.
-\end{itemize}
+\end{enumerate}
 
 \subsection{Domanda 5: Decidibilità/Indecidibilità}
 \subsubsection{Problema}
