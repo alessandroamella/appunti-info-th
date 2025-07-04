@@ -87,7 +87,7 @@ Poiché $L \in \text{NP}$, per definizione, esiste una \emph{Macchina di Turing 
 
 La riduzione $f$ prenderà in input una stringa $W$ (istanza generica di $L$) e produrrà una \emph{formula booleana} $F(W)$ in forma congiuntiva normale (CNF). La formula $F(W)$ sarà soddisfacibile se e solo se la macchina $M$ accetta la stringa $W$.
 
-\[ W \in L \iff M \text{ accetta } W \iff F(W) \text{ è soddisfacibile} \]
+\[ W \in L \iff M \Vdash W \iff F(W) \text{ è soddisfacibile} \]
 
 La funzione di riduzione $f$ (che costruisce $F(W)$) dovrà essere calcolabile in tempo polinomiale.
 

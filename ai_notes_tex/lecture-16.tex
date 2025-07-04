@@ -112,7 +112,7 @@ In altre parole, se $P$ è una proprietà semantica (proprietà di linguaggi) ta
 \end{theorem}
 
 \subsection{Dimostrazione del Teorema di Rice}
-Sia $P$ una proprietà semantica non banale dei linguaggi RE. Vogliamo dimostrare che $L_P$ è indecidibile. Procediamo con una riduzione dal Problema di Halting Universale, $L_u = \{\langle M,w \rangle \mid M \text{ accetta } w\}$, che sappiamo essere indecidibile.
+Sia $P$ una proprietà semantica non banale dei linguaggi RE. Vogliamo dimostrare che $L_P$ è indecidibile. Procediamo con una riduzione dal Problema di Halting Universale, $L_u = \{\langle M,w \rangle \mid M \Vdash w\}$, che sappiamo essere indecidibile.
 
 La dimostrazione si divide in due casi, a seconda che il linguaggio vuoto $\emptyset$ appartenga o meno alla proprietà $P$.
 
@@ -251,7 +251,7 @@ Per il Teorema di Rice, $P_L$ è \textbf{indecidibile}.
 \end{example}
 
 \begin{example}[Decidere se ogni stringa di $L(M)$ è accettata in al più 100 passi]
-Sia $P_{100steps} = \{\langle M \rangle \mid \forall s \in L(M), M \text{ accetta } s \text{ in } \le 100 \text{ passi}\}$.
+Sia $P_{100steps} = \{\langle M \rangle \mid \forall s \in L(M), M \Vdash s \text{ in } \le 100 \text{ passi}\}$.
 \begin{itemize}
     \item \textbf{Proprietà di macchine?}: Sì.
     \item \textbf{Proprietà semantica?}: No. Dipende dal comportamento computazionale (numero di passi). Controesempio: una macchina $M_1$ accetta "a" in 10 passi. Un'altra macchina $M_2$ potrebbe accettare "a" in 200 passi (es. loopando inutilmente prima di accettare). $L(M_1) = L(M_2) = \{a\}$. Ma $M_1 \in P_{100steps}$ e $M_2 \notin P_{100steps}$.

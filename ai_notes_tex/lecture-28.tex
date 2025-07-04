@@ -154,7 +154,7 @@ Discutere la decidibilità del seguente linguaggio: $L_{cambio}$ è l'insieme de
     \end{itemize}
 
     \item \textbf{Passo 3: Dimostrazione di indecidibilità (riduzione)}
-    Per dimostrare che $L_{cambio} \notin R$, riduciamo un problema noto indecidibile a $L_{cambio}$. Useremo il linguaggio $L_u = \{ \langle M, w \rangle \mid M \text{ accetta } w \}$, che è noto essere indecidibile.
+    Per dimostrare che $L_{cambio} \notin R$, riduciamo un problema noto indecidibile a $L_{cambio}$. Useremo il linguaggio $L_u = \{ \langle M, w \rangle \mid M \Vdash w \}$, che è noto essere indecidibile.
     Costruiamo una riduzione $f$ tale che $\langle M, w \rangle \in L_u \iff f(\langle M, w \rangle) \in L_{cambio}$.
     La funzione $f$ prende $\langle M, w \rangle$ e costruisce una nuova macchina $N = f(\langle M, w \rangle)$ nel modo seguente:
     \begin{itemize}

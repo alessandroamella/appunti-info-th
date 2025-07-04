@@ -57,7 +57,7 @@
 Introduciamo il Linguaggio Universale.
 \begin{definition}[Linguaggio Universale (LU)]
 Il linguaggio universale $LU$ è l'insieme delle coppie $\langle M, w \rangle$, dove $M$ è una Macchina di Turing e $w$ è una stringa, tali che $M$ accetta $w$. L'operatore "accetta" (indicato anche con $\models$) implica che $M$ si arresta in uno stato accettante su $w$.
-\[ LU = \{ \langle M, w \rangle \mid M \text{ accetta } w \} \]
+\[ LU = \{ \langle M, w \rangle \mid M \Vdash w \} \]
 \end{definition}
 
 \begin{theorem}
@@ -110,7 +110,7 @@ Ora analizziamo il linguaggio deciso da $M'$, $L(M')$:
     Poiché $M_{\overline{LU}}$ decide $\overline{LU}$, la risposta "no" implica che $\langle M_i, \langle M_i \rangle \rangle \notin \overline{LU}$, ovvero $\langle M_i, \langle M_i \rangle \rangle \in LU$.
     Per definizione di $LU$, ciò significa che $M_i$ \textbf{accetta} $\langle M_i \rangle$.
 \end{itemize}
-Il comportamento di $M'$ è esattamente quello di una macchina che decide il linguaggio diagonale $L_D$. Infatti, $M'$ risponde "sì" se $M_i$ non accetta $\langle M_i \rangle$, e "no" se $M_i$ accetta $\langle M_i \rangle$. Dunque, $L(M') = L_D$.
+Il comportamento di $M'$ è esattamente quello di una macchina che decide il linguaggio di diagonalizzazione $L_D$. Infatti, $M'$ risponde "sì" se $M_i$ non accetta $\langle M_i \rangle$, e "no" se $M_i$ accetta $\langle M_i \rangle$. Dunque, $L(M') = L_D$.
 
 Poiché $M'$ è costruita usando $M_{\overline{LU}}$ (che è un decider e si arresta sempre), $M'$ è anch'essa una Macchina di Turing che si arresta sempre, ovvero un decider. Questo implicherebbe che $L_D \in R$.
 
@@ -120,11 +120,11 @@ L'assunzione iniziale ($LU \in R$) deve essere falsa.
 \textbf{Conclusione:} $LU \notin R$.
 \end{proof}
 
-\subsection{Il Complemento del Linguaggio Diagonale ($\overline{L_D}$)}
+\subsection{Il Complemento del Linguaggio di Diagonalizzazione ($\overline{L_D}$)}
 Consideriamo ora il complemento di $L_D$:
-\begin{definition}[Complemento del Linguaggio Diagonale ($\overline{L_D}$)]
+\begin{definition}[Complemento del Linguaggio di Diagonalizzazione ($\overline{L_D}$)]
 Il complemento del linguaggio diagonale $\overline{L_D}$ è l'insieme delle codifiche di Macchine di Turing $M_i$ tali che $M_i$ accetta la propria codifica $\langle M_i \rangle$.
-\[ \overline{L_D} = \{ \langle M_i \rangle \mid M_i \text{ accetta } \langle M_i \rangle \} \]
+\[ \overline{L_D} = \{ \langle M_i \rangle \mid M_i \Vdash \langle M_i \rangle \} \]
 \end{definition}
 
 \begin{theorem}

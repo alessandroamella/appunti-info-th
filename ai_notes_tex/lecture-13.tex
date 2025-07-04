@@ -10,6 +10,7 @@
 \usepackage{fancyhdr}
 \usepackage{amsthm}
 \usepackage{tikz}
+\newcommand{\blankS}{\ensuremath{\square}}
 \usetikzlibrary{automata,positioning, arrows.meta, calc, fit} % Aggiunto arrows.meta per frecce migliori e fit per i box
 
 % Definizione degli ambienti
@@ -93,31 +94,25 @@ Si conosceva già un algoritmo funzionante per la K-colorabilità di un grafo.
 \end{enumerate}
 
 \textbf{Diagramma schematico:}
-\[
-\begin{tikzpicture}[node distance=2cm, auto]
-    \node (A) {Problema A};
-    \node (B) [below=of A, yshift=0.5cm] {Problema B};
-    \node (solverA) [right=of A, xshift=2cm] {Solver per A};
-    \node (solverB) [right=of B, xshift=2cm] {Solver per B};
+\begin{center}
+\begin{tikzpicture}[node distance=1.5cm, auto, transform shape]
+    % Main flow nodes
+    \node (x) {$x \in A$};
+    \node (y) [right=of x] {$y = f(x)$};
+    \node (Sy) [right=of y] {$S_y$};
+    \node (Sx) [right=of Sy] {$S_x = g(S_y)$};
+    \node (return) [right=of Sx] {Return $S_x$};
 
-    \node (x) [left=of solverA, xshift=-1cm, yshift=0.5cm] {$x \in A$};
-    \node (y) [right=of x, xshift=0.5cm] {$y = f(x) \in B$};
-    \node (Sy) [right=of y, xshift=0.5cm] {$S_y = \text{solverB}(y)$};
-    \node (Sx) [right=of Sy, xshift=0.5cm] {$S_x = g(S_y) \in A$};
-    \node (return) [right=of Sx, xshift=0.5cm] {Return $S_x$};
-
+    % Arrows with labels
     \draw[->] (x) -- node[above] {$f$} (y);
-    \draw[->] (y) -- node[above] {Chiama} (Sy);
+    \draw[->] (y) -- node[above] {Solver B} (Sy);
     \draw[->] (Sy) -- node[above] {$g$} (Sx);
     \draw[->] (Sx) -- (return);
 
-    \node (f_node) at ($(x)!0.5!(y)$) {};
-    \node (g_node) at ($(Sy)!0.5!(Sx)$) {};
-
-    \node[draw,rounded corners, dashed, fit=(f_node) (g_node) (y) (Sy)] (overall_solver) {};
-    \node[above=0.1cm of overall_solver.north, align=center] {Solver per A};
+    % Dashed box around the solver components
+    \node[draw, rounded corners, dashed, fit=(y) (Sy), inner sep=0.3cm, label=above:Solver per A] (overall_solver) {};
 \end{tikzpicture}
-\]
+\end{center}
 
 \textbf{Osservazioni chiave:}
 \begin{itemize}
@@ -186,18 +181,13 @@ Se $B \in R$, allora esiste una Macchina di Turing decisore $M_B$ che decide $B$
 Poiché $A \le B$, esiste una funzione calcolabile $f$ tale che $w \in A \iff f(w) \in B$.
 Consideriamo la seguente costruzione di una Macchina di Turing $M_A$ che decide $A$:
 
-\begin{minted}[mathescape,
-               linenos,
-               numbersep=5pt,
-               gobble=2,
-               frame=lines,
-               framesep=2mm]{text}
-  M_A \text{ su input } w:
-  1.  Calcola } f(w). \text{ (Questo è possibile perché } f \text{ è calcolabile)}.
-  2.  Simula } M_B \text{ su } f(w).
-  3.  Se } M_B \text{ accetta, } M_A \text{ accetta.
-  4.  Se } M_B \text{ rifiuta, } M_A \text{ rifiuta.
-\end{minted}
+\textbf{Algoritmo di $M_A$ su input $w$:}
+\begin{enumerate}
+    \item Calcola $f(w)$. (Questo è possibile perché $f$ è calcolabile).
+    \item Simula $M_B$ su $f(w)$.
+    \item Se $M_B$ accetta, $M_A$ accetta.
+    \item Se $M_B$ rifiuta, $M_A$ rifiuta.
+\end{enumerate}
 
 \textbf{Analisi di $M_A$:}
 \begin{itemize}
@@ -216,17 +206,12 @@ Se $B \in RE$, allora esiste una Macchina di Turing accettore $M_B'$ che riconos
 Poiché $A \le B$, esiste una funzione calcolabile $f$ tale che $w \in A \iff f(w) \in B$.
 Consideriamo la seguente costruzione di una Macchina di Turing $M_A'$ che riconosce $A$:
 
-\begin{minted}[mathescape,
-               linenos,
-               numbersep=5pt,
-               gobble=2,
-               frame=lines,
-               framesep=2mm]{text}
-  M_A' \text{ su input } w:
-  1.  Calcola } f(w). \text{ (Possibile perché } f \text{ è calcolabile)}.
-  2.  Simula } M_B' \text{ su } f(w).
-  3.  Se } M_B' \text{ accetta, } M_A' \text{ accetta.
-\end{minted}
+\textbf{Algoritmo di $M_A'$ su input $w$:}
+\begin{enumerate}
+    \item Calcola $f(w)$. (Possibile perché $f$ è calcolabile).
+    \item Simula $M_B'$ su $f(w)$.
+    \item Se $M_B'$ accetta, $M_A'$ accetta.
+\end{enumerate}
 
 \textbf{Analisi di $M_A'$:}
 \begin{itemize}
@@ -277,32 +262,22 @@ $L_{NE} \in RE$.
 \begin{proof}
 Possiamo costruire una Macchina di Turing $M_{NE}$ che riconosce $L_{NE}$. $M_{NE}$ prende in input il codice di una Macchina di Turing $\langle M \rangle$. L'obiettivo è verificare se $M$ accetta almeno una stringa.
 
-\begin{minted}[mathescape,
-               linenos,
-               numbersep=5pt,
-               gobble=2,
-               frame=lines,
-               framesep=2mm]{text}
-  M_{NE} \text{ su input } \langle M \rangle:
-  1.  Per ogni possibile stringa } w \in \Sigma^* \text{ (in ordine lessicografico):
-  2.      Simula } M \text{ su } w.
-  3.      Se } M \text{ accetta } w \text{ (e si ferma in stato di accettazione), } M_{NE} \text{ accetta } \langle M \rangle.
-\end{minted}
+\textbf{Primo approccio di $M_{NE}$ su input $\langle M \rangle$:}
+\begin{enumerate}
+    \item Per ogni possibile stringa $w \in \Sigma^*$ (in ordine lessicografico):
+    \item Simula $M$ su $w$.
+    \item Se $M \Vdash w$ (e si ferma in stato di accettazione), $M_{NE} \Vdash \langle M \rangle$.
+\end{enumerate}
 
 Questo approccio iterativo presenta un problema: se $M$ non termina su una stringa $w$, $M_{NE}$ si blocca e non può passare a testare altre stringhe.
 Per risolvere questo, si può usare una Macchina di Turing non deterministica, oppure una strategia di "dovetailing" (simulazione parallela):
 
-\begin{minted}[mathescape,
-               linenos,
-               numbersep=5pt,
-               gobble=2,
-               frame=lines,
-               framesep=2mm]{text}
-  M_{NE} \text{ (versione non deterministica) su input } \langle M \rangle:
-  1.  Indovina (non-deterministicamente) una stringa } w \in \Sigma^*.
-  2.  Simula la Macchina Universale } U \text{ su } (\langle M \rangle, w).
-  3.  Se } U \text{ accetta } (\langle M \rangle, w), \text{ allora } M_{NE} \text{ accetta } \langle M \rangle.
-\end{minted}
+\textbf{Algoritmo di $M_{NE}$ (versione non deterministica) su input $\langle M \rangle$:}
+\begin{enumerate}
+    \item Indovina (non-deterministicamente) una stringa $w \in \Sigma^*$.
+    \item Simula la Macchina Universale $U$ su $(\langle M \rangle, w)$.
+    \item Se $U \Vdash (\langle M \rangle, w)$, allora $M_{NE} \Vdash \langle M \rangle$.
+\end{enumerate}
 
 \textbf{Analisi:}
 \begin{itemize}
@@ -324,7 +299,7 @@ $L_{NE} \notin R$.
 Dimostriamo che $L_{NE}$ è indecidibile (non ricorsivo) tramite una riduzione dal linguaggio universale $L_U$, che sappiamo essere indecidibile ($L_U \notin R$).
 Vogliamo dimostrare che $L_U \le L_{NE}$.
 
-\textbf{Problema di Partenza (A)}: $L_U = \{ \langle M, w \rangle \mid M \text{ accetta } w \}$
+\textbf{Problema di Partenza (A)}: $L_U = \{ \langle M, w \rangle \mid M \Vdash w \}$
 \textbf{Problema di Arrivo (B)}: $L_{NE} = \{ \langle M' \rangle \mid L(M') \neq \emptyset \}$
 
 La nostra funzione di riduzione $f$ deve prendere un input $\langle M, w \rangle$ (un'istanza di $L_U$) e produrre un output $\langle M' \rangle$ (un'istanza di $L_{NE}$) tale che:
@@ -335,19 +310,14 @@ La nostra funzione di riduzione $f$ deve prendere un input $\langle M, w \rangle
 \textbf{Costruzione della funzione di riduzione $f$:}
 La funzione $f$ prende in input $\langle M, w \rangle$ e costruisce il codice di una nuova Macchina di Turing $M'$, definita come segue:
 
-\begin{minted}[mathescape,
-               linenos,
-               numbersep=5pt,
-               gobble=2,
-               frame=lines,
-               framesep=2mm]{text}
-  M' \text{ su input } x:
-  1.  Ignora l'input } x.
-  2.  Scrive la stringa } w \text{ (ottenuta dall'input di } f) \text{ sul suo nastro.
-  3.  Simula } M \text{ (ottenuta dall'input di } f) \text{ su } w.
-  4.  Se } M \text{ accetta } w, \text{ allora } M' \text{ accetta } x.
-  5.  Se } M \text{ rifiuta } w \text{ o va in loop su } w, \text{ allora } M' \text{ rifiuta } x \text{ o va in loop su } x.
-\end{minted}
+\textbf{Algoritmo di $M'$ su input $x$:}
+\begin{enumerate}
+    \item Ignora l'input $x$.
+    \item Scrive la stringa $w$ (ottenuta dall'input di $f$) sul suo nastro.
+    \item Simula $M$ (ottenuta dall'input di $f$) su $w$.
+    \item Se $M \Vdash w$, allora $M' \Vdash x$.
+    \item Se $M$ rifiuta $w$ o va in loop su $w$, allora $M'$ rifiuta $x$ o va in loop su $x$.
+\end{enumerate}
 
 La funzione $f$ è calcolabile, in quanto è un algoritmo ben definito per costruire la descrizione di $M'$ a partire da $M$ e $w$.
 

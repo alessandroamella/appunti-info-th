@@ -235,7 +235,7 @@ Il procedimento è (vedi Figura \ref{fig:diag}):
 
 Formalmente, la definizione di $L_D$ è:
 \begin{definition}[Linguaggio di Diagonalizzazione $L_D$]
-$L_D = \{ w_i \mid M_i \text{ non accetta } w_i \}$.
+$L_D = \{ w_i \mid M_i \nVdash w_i \}$.
 In altre parole, $L_D$ contiene le codifiche di macchine ($w_i = \langle M_i \rangle$) che rifiutano (o non terminano su) la propria codifica come input.
 \end{definition}
 

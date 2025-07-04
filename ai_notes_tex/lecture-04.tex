@@ -300,7 +300,11 @@ Per formalizzare il comportamento di una TM, si introduce il concetto di \textbf
 
 \begin{definition}[Linguaggio di una Macchina di Turing $L(M)$]
     Il \textbf{linguaggio di una Macchina di Turing $M$}, denotato $L(M)$, è l'insieme di tutte le stringhe $w$ tali che la computazione di $M$ su $w$ è accettante.
-    $L(M) = \{w \mid M \text{ accetta } w\}$
+    Formalmente, si definisce come:
+    \[
+        L(M) = \{w \mid M \Vdash w\}\footnote{Il simbolo $\Vdash$ significa "accetta", quindi $M \Vdash w$ si legge "$M$ accetta $w$".}
+    \]
+        
     Se una TM non si ferma mai su una stringa $w$, allora $w$ non appartiene a $L(M)$. Se si ferma in uno stato non accettante, $w$ non appartiene a $L(M)$.
 \end{definition}
 
@@ -321,7 +325,7 @@ La differenza tra "accettare" e "decidere" un linguaggio da parte di una Macchin
     Una Macchina di Turing $M$ \textbf{accetta} un linguaggio $L$ se e solo se per ogni stringa $w \in \Sigma^*$:
     \begin{itemize}
         \item Se $w \in L$, allora $M$ si arresta e accetta $w$.
-        \item Se $w \notin L$, allora $M$ \textbf{non accetta} $w$. Ciò significa che $M$ potrebbe arrestarsi e rifiutare $w$, \emph{oppure potrebbe non arrestarsi mai (loop indefinitamente)}.
+        \item Se $w \notin L$, allora $M \nVdash w$\footnote{Il simbolo $\nVdash$ significa "non accetta", quindi $M \nVdash w$ si legge "$M$ non accetta $w$". È importante notare che \textbf{non accettazione $\neq$ rifiuto}: una macchina può non accettare una stringa sia rifiutandola esplicitamente (fermandosi in uno stato non accettante) sia non fermandosi mai.}. Ciò significa che $M$ potrebbe arrestarsi e rifiutare $w$, \emph{oppure potrebbe non arrestarsi mai (loop indefinitamente)}.
     \end{itemize}
     In questo caso, si dice che $L$ è un \textbf{linguaggio accettabile} (o ricorsivamente enumerabile).
 \end{definition}
