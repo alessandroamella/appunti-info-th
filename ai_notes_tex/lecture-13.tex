@@ -14,7 +14,9 @@
 \usetikzlibrary{automata,positioning, arrows.meta, calc, fit} % Aggiunto arrows.meta per frecce migliori e fit per i box
 
 % Definizione degli ambienti
-\newtheorem{theorem}{Teorema}[section] % Teoremi numerati per sezione
+\theoremstyle{definition} % Use definition style for normal (non-italic) text
+\newtheorem{theorem}{Teorema}
+[section] % Teoremi numerati per sezione
 \newtheorem{definition}[theorem]{Definizione}
 \newtheorem{example}[theorem]{Esempio}
 \newtheorem{lemma}[theorem]{Lemma}

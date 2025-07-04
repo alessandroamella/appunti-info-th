@@ -13,6 +13,7 @@
 \usetikzlibrary{automata,positioning}
 
 % Definizione degli ambienti
+\theoremstyle{definition} % Use definition style for normal (non-italic) text
 \newtheorem{theorem}{Teorema}
 \newtheorem{definition}{Definizione}
 \newtheorem{example}{Esempio}
@@ -20,6 +21,8 @@
 \newtheorem{proposition}{Proposizione}
 \newcommand{\blankS}{\ensuremath{\square}}
 \newtheorem{proof_sketch}{Sketch di Dimostrazione} % Adding a sketch environment for complex proofs
+\theoremstyle{remark} % Cambio lo stile per le osservazioni
+\newtheorem{remark}{Osservazione}
 
 \hypersetup{
     pdftitle={Lezione di Informatica Teorica: Riduzioni e Indecidibilità del PCP},
@@ -50,12 +53,39 @@ Siano $A$ e $B$ due linguaggi (problemi di decisione). Una funzione $f: \Sigma^*
     \item $f$ è calcolabile (esiste una Macchina di Turing che calcola $f$ in tempo finito per ogni input).
     \item Per ogni stringa $w \in \Sigma^*$, si ha che $w \in A \iff f(w) \in B$.
 \end{enumerate}
+\end{definition}
+
+\begin{example}[Esempio di Riduzione]
+Consideriamo due problemi semplici per illustrare il concetto:
+\begin{itemize}
+    \item \textbf{Problema A (EVEN):} Data una stringa binaria $w$, decidere se il numero di simboli $1$ in $w$ è pari.
+    \item \textbf{Problema B (ODD):} Data una stringa binaria $w$, decidere se il numero di simboli $1$ in $w$ è dispari.
+\end{itemize}
+
+Possiamo definire una riduzione $f$ da EVEN a ODD come segue:
+$$f(w) = w1$$
+cioè $f$ aggiunge un simbolo $1$ alla fine della stringa $w$.
+
+\textbf{Verifichiamo che sia una riduzione valida:}
+\begin{enumerate}
+    \item $f$ è chiaramente calcolabile: basta concatenare $1$ alla fine di $w$.
+    \item Dimostriamo che $w \in \text{EVEN} \iff f(w) \in \text{ODD}$:
+    \begin{itemize}
+        \item Se $w$ ha un numero pari di $1$, allora $f(w) = w1$ ha un numero dispari di $1$ (pari + 1 = dispari). Quindi $w \in \text{EVEN} \implies f(w) \in \text{ODD}$.
+        \item Se $w$ ha un numero dispari di $1$, allora $f(w) = w1$ ha un numero pari di $1$ (dispari + 1 = pari). Quindi $w \notin \text{EVEN} \implies f(w) \notin \text{ODD}$.
+    \end{itemize}
+\end{enumerate}
+
+Quindi $\text{EVEN} \le_m \text{ODD}$. Se sapessimo che EVEN è indecidibile (ipotesi), allora per il teorema che seguirà, anche ODD sarebbe indecidibile.
+\end{example}
+
+\begin{remark}
 Il significato di $w \in A \iff f(w) \in B$ è duplice:
 \begin{itemize}
     \item Se $w \in A$, allora $f(w) \in B$.
     \item Se $w \notin A$, allora $f(w) \notin B$.
 \end{itemize}
-\end{definition}
+\end{remark}
 
 \subsection{Scopo delle Riduzioni}
 
