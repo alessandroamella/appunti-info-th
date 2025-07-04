@@ -164,13 +164,29 @@ L'unica differenza tra PCP e MPCP è la condizione che la sequenza di indici deb
 Dimostriamo che il Linguaggio Universale ($LU$) si riduce al MPCP. Dato che $LU$ è indecidibile, questo implicherà che MPCP è indecidibile.
 
 \subsection{Idea della Riduzione}
-Un'istanza di $LU$ è una coppia $(M, w)$, dove $M$ è una Macchina di Turing e $w$ è una stringa.
-Un'istanza di MPCP è una coppia di liste di stringhe $(A, B)$.
-La funzione di riduzione $f$ deve trasformare $(M, w)$ in $(A, B)$.
-L'idea centrale è simulare la computazione di $M$ su $w$ usando le stringhe delle liste $A$ e $B$. La computazione di una TM può essere rappresentata come una sequenza di \emph{descrizioni istantanee} (ID) separate da un simbolo speciale (e.g., $\#$).
-$ID_1 \# ID_2 \# ID_3 \# \dots \# ID_k$
-Vogliamo costruire le liste $A$ e $B$ in modo tale che, se $M$ accetta $w$, allora esista una sequenza di indici per MPCP che costruisce la stessa stringa.
-Le stringhe di $B$ saranno sempre "un passo avanti" rispetto alle stringhe di $A$, simulando la prossima ID. Quando $M$ accetta, le stringhe di $A$ avranno la possibilità di "recuperare" e allinearsi con quelle di $B$.
+
+\paragraph{Setup della Riduzione}
+\begin{itemize}
+    \item \textbf{Input di $LU$:} Una coppia $(M, w)$, dove $M$ è una Macchina di Turing e $w$ è una stringa.
+    \item \textbf{Output di MPCP:} Una coppia di liste di stringhe $(A, B)$.
+    \item \textbf{Funzione di riduzione:} $f$ deve trasformare $(M, w)$ in $(A, B)$.
+\end{itemize}
+
+\paragraph{Strategia di Simulazione}
+L'idea centrale è \textbf{simulare la computazione di $M$ su $w$} usando le stringhe delle liste $A$ e $B$. 
+
+La computazione di una Macchina di Turing può essere rappresentata come una sequenza di \emph{descrizioni istantanee} (ID) separate da un simbolo speciale:
+$$ID_1 \# ID_2 \# ID_3 \# \dots \# ID_k$$
+
+dove ogni $ID_i$ rappresenta lo stato della macchina, la posizione della testina e il contenuto del nastro in un determinato momento.
+
+\paragraph{Meccanismo di Sincronizzazione}
+Vogliamo costruire le liste $A$ e $B$ in modo tale che:
+\begin{enumerate}
+    \item Se $M$ accetta $w$, allora esista una sequenza di indici per MPCP che costruisce la stessa stringa.
+    \item Le stringhe di $B$ saranno sempre \textbf{"un passo avanti"} rispetto alle stringhe di $A$, simulando la prossima configurazione istantanea.
+    \item Quando $M$ raggiunge uno stato accettante, le stringhe di $A$ avranno la possibilità di \textbf{"recuperare"} e allinearsi con quelle di $B$.
+\end{enumerate}
 
 \subsection{Costruzione delle Liste $A$ e $B$}
 L'alfabeto del MPCP sarà $\Gamma \cup Q \cup \{\#, \$, *\}$, dove $\Gamma$ è l'alfabeto del nastro di $M$, $Q$ è l'insieme degli stati di $M$, e $\#, \$, *$ sono nuovi simboli.
@@ -248,23 +264,52 @@ Le liste $A$ e $B$ sono costruite con le seguenti classi di coppie di stringhe $
 \end{enumerate}
 
 \subsection{Esempio di Simulazione}
-Sia $M$ la Macchina di Turing definita come segue (dal diagramma della lezione):
-Stati: $Q = \{q_1, q_2, q_3\}$ (dove $q_1$ è iniziale, $q_3$ è finale).
-Alfabeto del nastro: $\Gamma = \{0, 1, \beta\}$ ($\beta$ è il simbolo blank).
-Funzione di transizione (interpretata dal diagramma):
-$\delta(q_1, 0) = (q_2, 1, R)$
-$\delta(q_1, 1) = (q_1, 0, L)$
-$\delta(q_2, 1) = (q_1, 0, R)$
-$\delta(q_1, \beta) = (q_2, 1, L)$ (loop dal blank, torna indietro e cambia stato)
-$\delta(q_2, \beta) = (q_3, 0, R)$ (accetta e si sposta a destra)
 
-Sia la stringa d'input $w = 01$.
-La computazione di $M$ su $w=01$ è:
-1. $\#q_1 01\#$ (Configurazione iniziale)
-2. $\#1q_2 1\#$ (Da $q_1$ legge $0$, scrive $1$, va in $q_2$, si sposta a $R$)
-3. $\#10q_1 \#$ (Da $q_2$ legge $1$, scrive $0$, va in $q_1$, si sposta a $R$)
-4. $\#1q_2 1\#$ (Da $q_1$ legge $\beta$, scrive $1$, va in $q_2$, si sposta a $L$)
-5. $\#10q_3 \#$ (Da $q_2$ legge $\beta$, scrive $0$, va in $q_3$, si sposta a $R$) - Stato accettante $q_3$.
+Consideriamo la Macchina di Turing $M$ definita come segue:
+
+\begin{itemize}
+    \item \textbf{Stati:} $Q = \{q_1, q_2, q_3\}$ (dove $q_1$ è lo stato iniziale e $q_3$ è lo stato finale)
+    \item \textbf{Alfabeto del nastro:} $\Gamma = \{0, 1, \beta\}$ (dove $\beta$ è il simbolo blank)
+    \item \textbf{Funzione di transizione:}
+    \begin{align}
+        \delta(q_1, 0) &= (q_2, 1, R) \\
+        \delta(q_1, 1) &= (q_1, 0, L) \\
+        \delta(q_2, 1) &= (q_1, 0, R) \\
+        \delta(q_1, \beta) &= (q_2, 1, L) \\
+        \delta(q_2, \beta) &= (q_3, 0, R)
+    \end{align}
+\end{itemize}
+
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}[node distance=5cm, auto, thick]
+    % Stati
+    \node[state, initial] (q1) {$q_1$};
+    \node[state, right of=q1] (q2) {$q_2$};
+    \node[state, accepting, right of=q2] (q3) {$q_3$};
+    
+    % Transizioni
+    \path[->]
+        (q1) edge[bend left] node[above] {$0 \to 1, R$} (q2)
+        (q1) edge[loop above] node[above] {$1 \to 0, L$} (q1)
+        (q2) edge[bend left] node[below] {$1 \to 0, R$} (q1)
+        (q1) edge[bend right=60] node[below] {$\beta \to 1, L$} (q2)
+        (q2) edge node[above] {$\beta \to 0, R$} (q3);
+\end{tikzpicture}
+\caption{Diagramma della Macchina di Turing $M$}
+\end{figure}
+
+Consideriamo la stringa d'input $w = 01$. La computazione di $M$ su $w$ procede come segue:
+
+\begin{enumerate}
+    \item $\#q_1 01\#$ \quad (Configurazione iniziale)
+    \item $\#1q_2 1\#$ \quad (Da $q_1$ legge $0$, scrive $1$, va in $q_2$, si sposta a destra)
+    \item $\#10q_1 \#$ \quad (Da $q_2$ legge $1$, scrive $0$, va in $q_1$, si sposta a destra)
+    \item $\#1q_2 1\#$ \quad (Da $q_1$ legge $\beta$, scrive $1$, va in $q_2$, si sposta a sinistra)
+    \item $\#10q_3 \#$ \quad (Da $q_2$ legge $\beta$, scrive $0$, va in $q_3$, si sposta a destra)
+\end{enumerate}
+
+La computazione termina nello stato accettante $q_3$, quindi $M$ accetta la stringa $w = 01$.
 
 \paragraph{Come la riduzione costruisce la soluzione MPCP:}
 \begin{itemize}
@@ -287,22 +332,37 @@ La computazione di $M$ su $w=01$ è:
 Si deve dimostrare che $(M, w)$ è un'istanza "sì" di $LU$ se e solo se l'istanza $(A, B)$ generata dalla riduzione è un'istanza "sì" di MPCP.
 
 \paragraph{Parte 1: Se $M$ accetta $w$, allora l'istanza MPCP ha soluzione.}
-Se $M$ accetta $w$, significa che esiste una sequenza di configurazioni $ID_1, ID_2, \dots, ID_k$ dove $ID_1 = q_0 w$, e $ID_k$ è una configurazione accettante.
-Costruiamo la sequenza di indici per MPCP come segue:
-Iniziamo sempre con l'indice $1$ (la coppia iniziale). Questo produce $A_{concat} = \#$ e $B_{concat} = \#ID_1\#$.
-Poi, si scelgono le coppie di stringhe $(A_i, B_i)$ dalle classi 2 e 3 che simulano la transizione da $ID_j$ a $ID_{j+1}$. Ogni volta che si concatena una coppia di transizione, la stringa di $A$ "completa" la $ID_j$ e la stringa di $B$ "inizia" la $ID_{j+1}$.
-Questo fa sì che $A_{concat}$ diventi $\#ID_1\#ID_2\# \dots \#ID_{k-1}\#$ e $B_{concat}$ diventi $\#ID_1\#ID_2\# \dots \#ID_k\#$.
-Poiché $ID_k$ è una configurazione accettante, possiamo usare le coppie di Classe 4 per "rimuovere" i simboli vicino allo stato finale in $A$ e $B$ in modo disuguale (o meglio, $A$ apporta più simboli di $B$ per la stessa parte di configurazione), riducendo il divario di lunghezza. Infine, la coppia di Classe 5 permette di far terminare le stringhe con esattamente gli stessi simboli, facendo sì che $A_{concat} = B_{concat}$.
-Dunque, esiste una soluzione per l'istanza MPCP.
+
+\begin{itemize}
+    \item \emph{Premessa:} Se $M$ accetta $w$, significa che esiste una sequenza di configurazioni $ID_1, ID_2, \dots, ID_k$ dove $ID_1 = q_0 w$, e $ID_k$ è una configurazione accettante.
+    
+    \item \emph{Costruzione della sequenza di indici:}
+    \begin{enumerate}
+        \item Iniziamo sempre con l'indice $1$ (la coppia iniziale). Questo produce $A_{concat} = \#$ e $B_{concat} = \#ID_1\#$.
+        \item Poi, si scelgono le coppie di stringhe $(A_i, B_i)$ dalle classi 2 e 3 che simulano la transizione da $ID_j$ a $ID_{j+1}$. 
+        \item Ogni volta che si concatena una coppia di transizione, la stringa di $A$ "completa" la $ID_j$ e la stringa di $B$ "inizia" la $ID_{j+1}$.
+    \end{enumerate}
+    
+    \item \emph{Risultato:} Questo fa sì che $A_{concat}$ diventi $\#ID_1\#ID_2\# \dots \#ID_{k-1}\#$ e $B_{concat}$ diventi $\#ID_1\#ID_2\# \dots \#ID_k\#$.
+    
+    \item \emph{Fase di recupero:} Poiché $ID_k$ è una configurazione accettante, possiamo usare le coppie di Classe 4 per "rimuovere" i simboli vicino allo stato finale in $A$ e $B$ in modo disuguale, riducendo il divario di lunghezza. Infine, la coppia di Classe 5 permette di far terminare le stringhe con esattamente gli stessi simboli, facendo sì che $A_{concat} = B_{concat}$.
+    
+    \item \emph{Conclusione:} Esiste una soluzione per l'istanza MPCP.
+\end{itemize}
 
 \paragraph{Parte 2: Se l'istanza MPCP ha soluzione, allora $M$ accetta $w$.}
-Supponiamo che l'istanza MPCP $(A, B)$ generata dalla riduzione abbia una soluzione.
-Per la definizione di MPCP, questa soluzione deve iniziare con la coppia $(A_1, B_1)$, che è $(\#, \#q_0 w\#)$.
-L'unico modo per le stringhe concatenate di $A$ e $B$ di rimanere allineate e infine eguagliarsi è che le coppie usate simulino correttamente le transizioni di $M$.
-Qualsiasi sequenza di indici che non rispetti la simulazione delle transizioni (ad esempio, usando una coppia $(X,Y)$ senza che $Y$ sia il risultato della transizione di $X$) non permetterebbe mai alle stringhe di allinearsi correttamente a causa dell'alternanza di simboli di nastro e stato.
-Poiché le stringhe di $B$ sono sempre un passo avanti (contengono $\#ID_j\#ID_{j+1}\#$ mentre $A$ ha solo $\#ID_j\#$), l'unico modo per $A$ di "recuperare" e far sì che le stringhe concatenate di $A$ e $B$ diventino uguali è tramite l'uso delle coppie di Classe 4 (Accettazione/Recupero) e Classe 5 (Finale).
-Le coppie di Classe 4 e 5 possono essere utilizzate solo se la configurazione attuale di $M$ (simulata) contiene uno stato accettante.
-Pertanto, se esiste una soluzione MPCP, la simulazione deve aver raggiunto una configurazione accettante, il che significa che $M$ accetta $w$.
+
+\begin{itemize}
+    \item \emph{Premessa:} Supponiamo che l'istanza MPCP $(A, B)$ generata dalla riduzione abbia una soluzione.
+    
+    \item \emph{Vincolo iniziale:} Per la definizione di MPCP, questa soluzione deve iniziare con la coppia $(A_1, B_1)$, che è $(\#, \#q_0 w\#)$.
+    
+    \item \emph{Necessità di simulazione corretta:} L'unico modo per le stringhe concatenate di $A$ e $B$ di rimanere allineate e infine eguagliarsi è che le coppie usate simulino correttamente le transizioni di $M$. Qualsiasi sequenza di indici che non rispetti la simulazione delle transizioni non permetterebbe mai alle stringhe di allinearsi correttamente.
+    
+    \item \emph{Meccanismo di recupero:} Poiché le stringhe di $B$ sono sempre un passo avanti (contengono $\#ID_j\#ID_{j+1}\#$ mentre $A$ ha solo $\#ID_j\#$), l'unico modo per $A$ di "recuperare" e far sì che le stringhe concatenate di $A$ e $B$ diventino uguali è tramite l'uso delle coppie di Classe 4 (Accettazione/Recupero) e Classe 5 (Finale).
+    
+    \item \emph{Conclusione:} Le coppie di Classe 4 e 5 possono essere utilizzate solo se la configurazione attuale di $M$ (simulata) contiene uno stato accettante. Pertanto, se esiste una soluzione MPCP, la simulazione deve aver raggiunto una configurazione accettante, il che significa che $M$ accetta $w$.
+\end{itemize}
 \end{proof_sketch}
 
 Poiché $LU$ è indecidibile e $LU \le_m MPCP$, concludiamo che $MPCP$ è \textbf{indecidibile}.
@@ -382,31 +442,50 @@ L'istanza PCP risultante è $C=(C_0, C_1, C_2, C_3, C_4)$ e $D=(D_0, D_1, D_2, D
 Si deve dimostrare che l'istanza $(A, B)$ è "sì" per MPCP se e solo se l'istanza $(C, D)$ generata dalla riduzione è "sì" per PCP.
 
 \paragraph{Parte 1: Se $(A, B)$ ha soluzione MPCP, allora $(C, D)$ ha soluzione PCP.}
-Se $(A, B)$ ha una soluzione MPCP, esiste una sequenza di indici $I = (1, i_2, \dots, i_m)$ tale che $A_1 A_{i_2} \dots A_{i_m} = B_1 B_{i_2} \dots B_{i_m}$.
-Costruiamo la soluzione PCP come segue: $I' = (0, 1, i_2, \dots, i_m, k+1)$.
-La stringa $C_{concat}$ sarà $C_0 C_1 C_{i_2} \dots C_{i_m} C_{k+1}$.
-La stringa $D_{concat}$ sarà $D_0 D_1 D_{i_2} \dots D_{i_m} D_{k+1}$.
 
-Sostituendo le definizioni:
-$C_{concat} = (* A_1') (A_1' \text{ con } * \text{dopo}) (A_{i_2}' \text{ con } * \text{dopo}) \dots (A_{i_m}' \text{ con } * \text{dopo}) (\$)$
-$D_{concat} = (B_1' \text{ con } * \text{prima}) (B_1' \text{ con } * \text{prima}) (B_{i_2}' \text{ con } * \text{prima}) \dots (B_{i_m}' \text{ con } * \text{prima}) (*\$)$
-
-Se $A_1 A_{i_2} \dots A_{i_m} = B_1 B_{i_2} \dots B_{i_m}$, allora è facile vedere che:
-$A_1' A_{i_2}' \dots A_{i_m}' \text{ con asterischi finali}$
-sarà uguale a
-$B_1' B_{i_2}' \dots B_{i_m}' \text{ con asterischi iniziali}$.
-L'aggiunta iniziale di $C_0 = *A_1'$ e $D_0 = B_1'$ (dove $B_1'$ ha l'asterisco iniziale) fa sì che il primo asterisco di $C_0$ si allinei con il primo asterisco di $D_0$. Poi, la corrispondenza simbolo-asterisco e asterisco-simbolo si mantiene. L'aggiunta finale di $\$$ e $*\$$ permette di concludere il match.
+\begin{itemize}
+    \item \emph{Premessa:} Se $(A, B)$ ha una soluzione MPCP, esiste una sequenza di indici $I = (1, i_2, \dots, i_m)$ tale che $A_1 A_{i_2} \dots A_{i_m} = B_1 B_{i_2} \dots B_{i_m}$.
+    
+    \item \emph{Costruzione della soluzione PCP:} Costruiamo la soluzione PCP come segue: $I' = (0, 1, i_2, \dots, i_m, k+1)$.
+    
+    \item \emph{Stringhe concatenate:} Le stringhe risultanti saranno:
+    \begin{align}
+        C_{concat} &= C_0 C_1 C_{i_2} \dots C_{i_m} C_{k+1} \\
+        D_{concat} &= D_0 D_1 D_{i_2} \dots D_{i_m} D_{k+1}
+    \end{align}
+    
+    \item \emph{Sostituzioni delle definizioni:}
+    \begin{align}
+        C_{concat} &= (* A_1') (A_1' \text{ con } * \text{dopo}) (A_{i_2}' \text{ con } * \text{dopo}) \dots (A_{i_m}' \text{ con } * \text{dopo}) (\$) \\
+        D_{concat} &= (B_1' \text{ con } * \text{prima}) (B_1' \text{ con } * \text{prima}) (B_{i_2}' \text{ con } * \text{prima}) \dots (B_{i_m}' \text{ con } * \text{prima}) (*\$)
+    \end{align}
+    
+    \item \emph{Correttezza dell'allineamento:} Se $A_1 A_{i_2} \dots A_{i_m} = B_1 B_{i_2} \dots B_{i_m}$, allora:
+    \begin{itemize}
+        \item $A_1' A_{i_2}' \dots A_{i_m}'$ con asterischi finali sarà uguale a $B_1' B_{i_2}' \dots B_{i_m}'$ con asterischi iniziali
+        \item L'aggiunta iniziale di $C_0 = *A_1'$ e $D_0 = B_1'$ fa sì che il primo asterisco di $C_0$ si allinei con il primo asterisco di $D_0$
+        \item La corrispondenza simbolo-asterisco e asterisco-simbolo si mantiene per tutta la sequenza
+        \item L'aggiunta finale di $\$$ e $*\$$ permette di concludere il match
+    \end{itemize}
+\end{itemize}
 
 \paragraph{Parte 2: Se $(C, D)$ ha soluzione PCP, allora $(A, B)$ ha soluzione MPCP.}
-Supponiamo che $(C, D)$ abbia una soluzione PCP, ovvero una sequenza di indici $I' = (j_1, j_2, \dots, j_p)$ tale che $C_{j_1} C_{j_2} \dots C_{j_p} = D_{j_1} D_{j_2} \dots D_{j_p}$.
+
 \begin{itemize}
-    \item \textbf{Forzatura dell'inizio:} L'unica stringa in $C$ che inizia con un asterisco è $C_0$. Tutte le stringhe in $D$ (tranne $D_{k+1}=*\$$) iniziano con un asterisco. Pertanto, per un match, la prima coppia usata deve essere $(C_0, D_0)$. Questo garantisce che $j_1 = 0$.
-    \item \textbf{Allineamento degli asterischi:} Dopo l'inizio con $(C_0, D_0)$, tutte le stringhe di $C_i$ (per $i>0$) terminano con un asterisco, e tutte le stringhe di $D_i$ iniziano con un asterisco. Questo significa che un $C_i$ e un $D_j$ possono iniziare a corrispondere solo se l'ultimo carattere del precedente segmento di $C$ è un simbolo non-asterisco, e il primo carattere del successivo segmento di $D$ è un asterisco. Questo meccanismo di "passo-passo" impone che la sequenza di indici debba essere tale da mantenere una perfetta alternanza di simboli normali e asterischi per tutta la stringa.
-    \item \textbf{Forzatura della fine:} Per terminare la stringa con un match, deve essere usata la coppia $(C_{k+1}, D_{k+1}) = (\$, *\$)$. Questo assicura che il match si concluda con un dollaro.
+    \item \emph{Premessa:} Supponiamo che $(C, D)$ abbia una soluzione PCP, ovvero una sequenza di indici $I' = (j_1, j_2, \dots, j_p)$ tale che $C_{j_1} C_{j_2} \dots C_{j_p} = D_{j_1} D_{j_2} \dots D_{j_p}$.
+    
+    \item \emph{Forzatura dell'inizio:} L'unica stringa in $C$ che inizia con un asterisco è $C_0$. Tutte le stringhe in $D$ (tranne $D_{k+1}=*\$$) iniziano con un asterisco. Pertanto, per un match, la prima coppia usata deve essere $(C_0, D_0)$. Questo garantisce che $j_1 = 0$.
+    
+    \item \emph{Allineamento degli asterischi:} Dopo l'inizio con $(C_0, D_0)$, tutte le stringhe di $C_i$ (per $i>0$) terminano con un asterisco, e tutte le stringhe di $D_i$ iniziano con un asterisco. Questo meccanismo di "passo-passo" impone che la sequenza di indici debba mantenere una perfetta alternanza di simboli normali e asterischi per tutta la stringa.
+    
+    \item \emph{Forzatura della fine:} Per terminare la stringa con un match, deve essere usata la coppia
+    $$(C_{k+1}, D_{k+1}) = (\$, *\$).$$
+    Questo assicura che il match si concluda con un dollaro.
+    
+    \item \emph{Corrispondenza con MPCP:} Data la struttura della riduzione, se le stringhe concatenate di $C$ e $D$ sono uguali, significa che la sequenza originale di $A$ (senza asterischi e dollari) deve essere uguale alla sequenza originale di $B$ (senza asterischi e dollari).
+    
+    \item \emph{Conclusione:} Poiché la soluzione PCP deve iniziare con $(C_0, D_0)$, questo implica che la soluzione MPCP inizia con la coppia $(A_1, B_1)$, soddisfacendo il requisito di MPCP. Dunque, esiste una soluzione per l'istanza MPCP.
 \end{itemize}
-Data la struttura della riduzione, se le stringhe concatenate di $C$ e $D$ sono uguali, significa che la sequenza originale di $A$ (senza asterischi e dollari) deve essere uguale alla sequenza originale di $B$ (senza asterischi e dollari).
-Poiché la soluzione PCP deve iniziare con $(C_0, D_0)$, questo implica che la soluzione MPCP inizia con la coppia $(A_1, B_1)$, soddisfacendo il requisito di MPCP.
-Dunque, esiste una soluzione per l'istanza MPCP.
 \end{proof_sketch}
 
 Poiché $MPCP$ è indecidibile e $MPCP \le_m PCP$, concludiamo che $PCP$ è \textbf{indecidibile}.

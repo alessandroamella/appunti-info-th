@@ -5,8 +5,9 @@ Prendi la trascrizione automatica della lezione del professor Enrico Malizia di 
 ## Struttura degli Appunti
 
 Organizza il contenuto con:
+
 - **Sezioni e sottosezioni** (`\section{}`, `\subsection{}`, `\subsubsection{}`)
-- **Definizioni formali** con ambiente `definition` 
+- **Definizioni formali** con ambiente `definition`
 - **Teoremi e proprietà** con ambiente `theorem`
 - **Esempi pratici** con ambiente `example` (includi tutti gli esempi che fa il professore)
 - **Dimostrazioni** quando menzionate
@@ -40,6 +41,7 @@ Organizza il contenuto con:
 \usetikzlibrary{automata,positioning}
 
 % Definizione degli ambienti
+\theoremstyle{definition} % Use definition style for normal (non-italic) text
 \newtheorem{theorem}{Teorema}
 \newtheorem{definition}{Definizione}
 \newtheorem{example}{Esempio}
@@ -73,6 +75,7 @@ Organizza il contenuto con:
 ## Obiettivo
 
 Crea appunti **completi e autocontenuti** che uno studente possa usare per studiare l'argomento senza altre fonti. Includi:
+
 - Tutte le definizioni e concetti teorici
 - Ogni esempio pratico menzionato dal professore
 - Controesempi quando rilevanti
