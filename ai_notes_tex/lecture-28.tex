@@ -87,7 +87,13 @@ Sarà valutata l'abilità di argomentazione:
 
 \subsection{Domanda 1: Macchina di Turing}
 Si definisca una Macchina di Turing (eventualmente non-deterministica e/o multi-nastro) per il seguente linguaggio $L$:
-\[ L = \{ A \# B \# W_1 \# \dots \# W_N \mid A, B, W_i \in \{a,b,c,d\}^+, N = |A| + |B|, \forall i \in [1, N]: W_i = R_i S_i R_i^R S_i, |R_i| \ge 1, |S_i| \ge 1 \} \]
+\begin{align*}
+L = \{ & A \# B \# W_1 \# \dots \# W_N \mid \\
+& A, B, W_i \in \{a,b,c,d\}^+, \\
+& N = |A| + |B|, \\
+& \forall i \in [1, N]: W_i = R_i S_i R_i^R S_i, \\
+& |R_i| \ge 1, |S_i| \ge 1 \}
+\end{align*}
 \textbf{Esempio dato:} $A = \text{\texttt{bc}}$, $B = \text{\texttt{c}}$. $|A|=2$, $|B|=1 \Rightarrow N = 3$.
 Quindi la stringa sarà della forma \texttt{bc\#c\#W1\#W2\#W3}.
 Un esempio di $W_i$ è \texttt{ab c ba c}, dove $R_i=\text{\texttt{ab}}$, $S_i=\text{\texttt{c}}$. Allora $R_i^R = \text{\texttt{ba}}$. La struttura è $R_i S_i R_i^R S_i$.
