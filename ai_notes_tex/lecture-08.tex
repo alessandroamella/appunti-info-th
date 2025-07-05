@@ -10,7 +10,7 @@
 \usepackage{fancyhdr}
 \usepackage{amsthm}
 \usepackage{tikz}
-\usetikzlibrary{automata,positioning,arrows}
+\usetikzlibrary{automata,positioning,arrows,shapes.geometric}
 
 % Definizione degli ambienti
 \theoremstyle{definition} % Use definition style for normal (non-italic) text
@@ -117,6 +117,63 @@ Il \textbf{computation tree} di una macchina di Turing non deterministica $M$ su
     \item C'è un arco da una configurazione $\alpha$ a una configurazione $\beta$ se $\beta$ è uno dei successori legali di $\alpha$.
 \end{itemize}
 \end{definition}
+
+\begin{example}[Albero di Computazione di una NDTM]
+    \begin{tikzpicture}[
+    node distance=2.5cm,
+    auto,
+    state/.style={circle, draw=black, thick, minimum size=1cm},
+    config/.style={ellipse, draw=black, thick, minimum width=2cm, minimum height=0.6cm, inner sep=2pt},
+    arrow/.style={->, thick}
+]
+
+% Left side - Nondeterministic TM
+\node[state] (Q) at (-2,1.5) {$q_0$};
+\node[state] (P) at (1,2.5) {$q_1$};
+\node[state] (R) at (1,0.5) {$q_2$};
+\node[state] (S) at (-2,-1) {$q_3$};
+\node[state] (T) at (-3.5,-2.5) {$q_4$};
+\node[state] (U) at (-0.5,-2.5) {$q_5$};
+
+% Start arrow pointing to initial state Q
+\draw[arrow] (-3.5,1.5) -- (Q) node[midway, above] {\textbf{...}};
+
+% Transitions for TM
+\draw[arrow] (Q) -- (P) node[midway, above] {$a \to x, R$};
+\draw[arrow] (Q) -- (S) node[midway, left] {$a \to y, L$};
+\draw[arrow] (S) -- (T) node[midway, left] {$c \to z, L$};
+\draw[arrow] (S) -- (U) node[midway, right] {$c \to w, R$};
+\draw[arrow] (P) -- (R) node[midway, right] {$b \to y, R$};
+
+\draw[arrow] (P) to[loop above] (P);
+\draw[arrow] (R) to[loop right] (R);
+
+% Title for left side
+\node at (-0.5, 4) {\Large \textbf{NDTM}};
+
+% Right side - Computation History
+\node[config] (c1) at (5.5,2) {$c$ $c$ $\underline{q_0}$ $a$ $b$ $b$ $c$};
+\node[config] (c2) at (4,0) {$c$ $\underline{q_3}$ $c$ $y$ $b$ $b$ $c$};
+\node[config] (c3) at (7,0) {$c$ $c$ $x$ $\underline{q_1}$ $b$ $b$ $c$};
+\node[config] (c4) at (2.5,-2) {$\underline{q_4}$ $c$ $z$ $y$ $b$ $b$ $c$};
+\node[config] (c5) at (5.5,-2) {$c$ $w$ $\underline{q_5}$ $y$ $b$ $b$ $c$};
+\node[config] (c6) at (8.5,-2) {$c$ $c$ $x$ $y$ $\underline{q_2}$ $b$ $c$};
+
+% Start arrow pointing to initial configuration c1
+\draw[arrow] (5.5,3) -- (c1) node[midway, above=8pt] {\textbf{...}};
+
+% Arrows for computation history
+\draw[arrow] (c1) -- (c2);
+\draw[arrow] (c1) -- (c3);
+\draw[arrow] (c2) -- (c4);
+\draw[arrow] (c2) -- (c5);
+\draw[arrow] (c3) -- (c6);
+
+% Title for right side
+\node at (5.5, 4) {\Large \textbf{Computation Tree}};
+
+\end{tikzpicture}
+\end{example}
 
 \begin{example}[Computazione di $N$ su input $01$]
 Usiamo l'esempio di NDTM di cui sopra e la stringa di input $W = 01$.
