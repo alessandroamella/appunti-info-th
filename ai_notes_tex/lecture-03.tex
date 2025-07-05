@@ -241,7 +241,7 @@ Consideriamo l'NFA precedente e la stringa $w = 0100$.
     \item Ora, da $Q_1$ leggendo $1$, si torna in $Q_0$.
     \item $\xrightarrow{\text{leggi 1, transisci in } Q_0}$ $(Q_0, 00)$
     *A questo punto l'automa non è riuscito a finire la sequenza $000$ nel modo sperato, e dovrebbe continuare a processare per vedere se trova altri $000$.*
-    *Esempio più semplice: se da $Q_1$ non ci fosse una transizione per '1', la macchina si bloccherebbe.*
+    *Esempio più semplice: se da $Q_1$ non ci fosse una transizione per $1$, la macchina si bloccherebbe.*
 \end{itemize}
 \end{example}
 
@@ -264,8 +264,8 @@ Nonostante la loro utilità, gli automi a stati finiti (sia deterministici che n
 \begin{example}[Linguaggio $L = \{a^m b^m \mid m \geq 0\}$]
 Consideriamo il linguaggio $L$ sull'alfabeto $\Sigma = \{a, b\}$ definito come:
 \[ L = \{a^m b^m \mid m \geq 0\} \]
-Questo linguaggio include stringhe come $\epsilon$ (per $m=0$), $ab$, $aabb$, $aaabbb$, e così via. Ogni stringa in $L$ è composta da un certo numero di 'a' seguito esattamente dallo stesso numero di 'b'.
-Un programma Python o Java saprebbe facilmente verificare se una stringa è di questo tipo, ad esempio contando il numero di 'a' e 'b'.
+Questo linguaggio include stringhe come $\epsilon$ (per $m=0$), $ab$, $aabb$, $aaabbb$, e così via. Ogni stringa in $L$ è composta da un certo numero di $a$ seguito esattamente dallo stesso numero di $b$.
+Un programma Python o Java saprebbe facilmente verificare se una stringa è di questo tipo, ad esempio contando il numero di $a$ e $b$.
 \end{example}
 
 \subsection{Argomento Intuitivo (Pumping Lemma)}
@@ -275,16 +275,16 @@ Gli automi a stati finiti non sono in grado di riconoscere il linguaggio $L = \{
     \item \textbf{Assunzione per contraddizione}: Supponiamo che esista un DFA $D$ in grado di decidere il linguaggio $L = \{a^m b^m \mid m \geq 0\}$.
     \item Sia $P$ il numero di stati del DFA $D$. $P$ è un numero finito e costante.
     \item \textbf{Consideriamo una stringa lunga}: Scegliamo una stringa $s = a^P b^P$. Questa stringa appartiene a $L$ ed ha lunghezza $2P$. Poiché $P \geq 1$ (assumendo almeno uno stato), $2P > P$.
-    \item \textbf{Il Principio dei Cassetti (Pigeonhole Principle)}: Quando il DFA $D$ processa i primi $P$ simboli 'a' della stringa $s$, esso visiterà $P+1$ configurazioni (partendo da $q_0$ e leggendo $P$ 'a'). Poiché il DFA ha solo $P$ stati, per il principio dei cassetti, l'automa deve \textbf{per forza rivisitare almeno uno stato} durante il processo delle prime $P$ 'a'.
+    \item \textbf{Il Principio dei Cassetti (Pigeonhole Principle)}: Quando il DFA $D$ processa i primi $P$ simboli $a$ della stringa $s$, esso visiterà $P+1$ configurazioni (partendo da $q_0$ e leggendo $P$ $a$). Poiché il DFA ha solo $P$ stati, per il principio dei cassetti, l'automa deve \textbf{per forza rivisitare almeno uno stato} durante il processo delle prime $P$ $a$.
     \item Questo significa che esiste un \textbf{ciclo} nel percorso di computazione dell'automa mentre sta leggendo la porzione $a^P$ della stringa. Possiamo scomporre la stringa $s$ in tre parti: $s = uvw$, dove:
         \begin{itemize}
             \item $u$ è la parte iniziale della stringa prima che si entri nel ciclo (potrebbe essere vuota).
-            \item $v$ è la porzione di stringa che corrisponde al ciclo (contiene solo 'a' e non è vuota).
-            \item $w$ è la parte restante della stringa dopo aver completato il ciclo una volta, che include le 'a' rimanenti (se ci sono) e tutte le 'b'.
+            \item $v$ è la porzione di stringa che corrisponde al ciclo (contiene solo $a$ e non è vuota).
+            \item $w$ è la parte restante della stringa dopo aver completato il ciclo una volta, che include le $a$ rimanenti (se ci sono) e tutte le $b$.
         \end{itemize}
         Graficamente: $q_0 \xrightarrow{u} q_i \xrightarrow{v} q_i \xrightarrow{w} q_f \in F$.
     \item \textbf{Implicazione del ciclo}: Se il DFA accetta $uvw$, dato che $v$ corrisponde a un ciclo, l'automa accetterà anche $uvvw$, $uvvvw$, e in generale $uv^i w$ per qualsiasi $i \geq 0$. Questo perché percorrere il ciclo ($v$) più volte riporta sempre l'automa nello stesso stato $q_i$, e da lì la computazione prosegue identica.
-    \item \textbf{Contraddizione}: Poiché $v$ contiene solo 'a' (essendo parte dei primi $P$ simboli 'a'), se consideriamo la stringa $uv^2 w$, essa avrà più 'a' di $uvw$ ma lo stesso numero di 'b'. Ad esempio, se $s = a^P b^P$, allora $uv^2 w$ sarà della forma $a^{P+|v|} b^P$, dove $|v| > 0$. Questa nuova stringa \textbf{non appartiene} al linguaggio $L$ perché il numero di 'a' non è uguale al numero di 'b'.
+    \item \textbf{Contraddizione}: Poiché $v$ contiene solo $a$ (essendo parte dei primi $P$ simboli $a$), se consideriamo la stringa $uv^2 w$, essa avrà più $a$ di $uvw$ ma lo stesso numero di $b$. Ad esempio, se $s = a^P b^P$, allora $uv^2 w$ sarà della forma $a^{P+|v|} b^P$, dove $|v| > 0$. Questa nuova stringa \textbf{non appartiene} al linguaggio $L$ perché il numero di $a$ non è uguale al numero di $b$.
     \item Tuttavia, per la proprietà dei cicli, il DFA $D$ dovrebbe accettare $uv^2 w$. Questo è una contraddizione, in quanto $D$ dovrebbe accettare solo stringhe in $L$ e rifiutare quelle non in $L$.
 \end{itemize}
 \textbf{Conclusione}: L'assunzione iniziale che un DFA possa decidere il linguaggio $L = \{a^m b^m \mid m \geq 0\}$ è falsa. Gli automi a stati finiti non hanno la capacità di "contare" in modo arbitrario e confrontare quantità.

@@ -237,7 +237,7 @@ Un linguaggio $L$ su un alfabeto $\Sigma$ è un qualsiasi sottoinsieme di $\Sigm
 Formalmente, $L \subseteq \Sigma^*$.
 \end{definition}
 \begin{example}
-Se $\Sigma = \{0, 1\}$, il linguaggio di tutte le stringhe binarie che iniziano con '0' potrebbe essere $L = \{0, 00, 01, 000, 001, \ldots\}$.
+Se $\Sigma = \{0, 1\}$, il linguaggio di tutte le stringhe binarie che iniziano con $0$ potrebbe essere $L = \{0, 00, 01, 000, 001, \ldots\}$.
 \end{example}
 
 \subsection{Decidere un Linguaggio}
@@ -273,49 +273,48 @@ Consideriamo il comportamento di un lettore CD come un automa per capire il conc
 \begin{figure}[h!]
     \centering
     \begin{tikzpicture}[
-        node distance=2.5cm,
-        every state/.style={minimum size=1cm},
+        node distance=3cm,
+        every state/.style={minimum size=1.2cm},
         initial text={},
         shorten >=1pt,
         auto
     ]
-        % Stati
-        \node[state, initial] (standby) {StandBy};
-        \node[state, right of=standby, xshift=2cm] (testcd) {Test CD};
-        \node[state, above right of=testcd, yshift=0.5cm] (empty_stopped) {Empty Stopped};
-        \node[state, below right of=testcd, yshift=-0.5cm] (cd_in_stopped) {CD in Stopped};
-        \node[state, above right of=empty_stopped, xshift=2cm] (opened) {Opened};
-        \node[state, below right of=cd_in_stopped, yshift=-0.5cm] (playing) {Playing};
-        \node[state, right of=playing, xshift=2cm] (paused) {Paused};
+        % Stati - reorganized layout
+        \node[state, initial] (standby) {Spento};
+        \node[state, right of=standby] (testcd) {Test CD};
+        \node[state, above of=testcd, yshift=1cm] (empty_stopped) {Vuoto};
+        \node[state, below of=testcd, yshift=-1cm] (cd_in_stopped) {Fermo};
+        \node[state, right of=testcd] (opened) {Aperto};
+        \node[state, below left of=cd_in_stopped, xshift=-1cm, yshift=-1.5cm] (playing) {Playing};
+        \node[state, below right of=cd_in_stopped, xshift=1cm, yshift=-1.5cm] (paused) {Pausa};
 
-        % Transizioni
-        \path (standby) edge[bend left=10] node {PWR} (testcd);
-        \path (testcd) edge node {No} (empty_stopped);
-        \path (testcd) edge node {Yes} (cd_in_stopped);
+        % Transizioni - using arrows
+        \draw[->] (standby) -- node {PWR} (testcd);
+        \draw[->] (testcd) -- node {No CD} (empty_stopped);
+        \draw[->] (testcd) -- node {CD OK} (cd_in_stopped);
 
         % Power off from various states
-        \path (empty_stopped) edge[bend left=10] node {PWR} (standby);
-        \path (cd_in_stopped) edge[bend left=10] node {PWR} (standby);
-        \path (testcd) edge[bend left=20] node {PWR} (standby); % Assuming PWR can turn it off from test state too
+        \draw[->] (empty_stopped) edge[bend right=20] node[above left] {PWR} (standby);
+        \draw[->] (cd_in_stopped) edge[bend left=20] node[above right] {PWR} (standby);
 
         % Eject
-        \path (empty_stopped) edge node {EJECT} (opened);
-        \path (cd_in_stopped) edge node {EJECT} (opened);
-        \path (opened) edge node {EJECT} (testcd); % Closing tray leads to re-test
+        \draw[->] (empty_stopped) edge[bend left=20] node {EJECT} (opened);
+        \draw[->] (cd_in_stopped) edge[bend right=30] node[right] {EJECT} (opened);
+        \draw[->] (opened) -- node[below] {EJECT} (testcd);
 
         % Play, Pause, Stop
-        \path (cd_in_stopped) edge[bend left=10] node {PLAY} (playing);
-        \path (playing) edge node {PAUSE} (paused);
-        \path (paused) edge node {PAUSE} (playing);
-        \path (playing) edge[bend right=10] node {STOP} (cd_in_stopped);
-        \path (paused) edge[bend left=10] node {STOP} (cd_in_stopped);
+        \draw[->] (cd_in_stopped) edge[bend left=10] node[right] {PLAY} (playing);
+        \draw[->] (playing) edge[bend left=10] node[above] {PAUSE} (paused);
+        \draw[->] (paused) edge[bend left=10] node[below] {PLAY} (playing);
+        \draw[->] (playing) edge[bend left=10] node[left] {STOP} (cd_in_stopped);
+        \draw[->] (paused) edge[bend right=30] node[right] {STOP} (cd_in_stopped);
     \end{tikzpicture}
     \caption{Automa di un Lettore CD}
 \end{figure}
 
 \subsubsection{Spiegazione dell'Automa del Lettore CD}
 \begin{itemize}
-    \item \textbf{Stati (nodi)}: Rappresentano le diverse modalità operative del lettore (e.g., \texttt{StandBy}, \texttt{Playing}, \texttt{Paused}). Il pallino pieno indica lo stato iniziale (\texttt{StandBy}).
+    \item \textbf{Stati (nodi)}: Rappresentano le diverse modalità operative del lettore (e.g., \texttt{Spento}, \texttt{Playing}, \texttt{Pausa}). Il pallino pieno indica lo stato iniziale (\texttt{Spento}).
     \item \textbf{Transizioni (frecce)}: Rappresentano il passaggio da uno stato all'altro in risposta a un input (e.g., \texttt{PWR}, \texttt{EJECT}, \texttt{PLAY}). Le etichette sulle frecce indicano l'input che provoca la transizione.
     \item \textbf{Input/Segnali}: Azioni dell'utente (pressione di tasti) o sensori (rilevamento CD).
 \end{itemize}
@@ -341,7 +340,7 @@ Un DFA \textbf{accetta} una stringa se, partendo dallo stato iniziale e processa
 Consideriamo il linguaggio $L_{dispari}$ delle stringhe binarie che rappresentano numeri dispari.
 \begin{itemize}
     \item $\Sigma = \{0, 1\}$
-    \item Una stringa binaria rappresenta un numero dispari se e solo se il suo ultimo simbolo è '1'. (Es: $1_2=1$, $11_2=3$, $101_2=5$; $0_2=0$, $10_2=2$, $100_2=4$). La stringa vuota $\epsilon$ non rappresenta un numero e non deve essere accettata.
+    \item Una stringa binaria rappresenta un numero dispari se e solo se il suo ultimo simbolo è $1$. (Es: $1_2=1$, $11_2=3$, $101_2=5$; $0_2=0$, $10_2=2$, $100_2=4$). La stringa vuota $\epsilon$ non rappresenta un numero e non deve essere accettata.
 \end{itemize}
 
 Costruiamo un DFA per $L_{dispari}$:
@@ -355,10 +354,10 @@ Costruiamo un DFA per $L_{dispari}$:
     \item $F = \{Q_1\}$ (Se la stringa termina mentre siamo in questo stato, è un numero dispari).
     \item Funzione di transizione $\delta$:
         \begin{itemize}
-            \item $\delta(Q_0, 0) = Q_0$ (Se eravamo in stato 'pari' e leggiamo '0', rimaniamo 'pari').
-            \item $\delta(Q_0, 1) = Q_1$ (Se eravamo in stato 'pari' e leggiamo '1', diventiamo 'dispari').
-            \item $\delta(Q_1, 0) = Q_0$ (Se eravamo in stato 'dispari' e leggiamo '0', diventiamo 'pari').
-            \item $\delta(Q_1, 1) = Q_1$ (Se eravamo in stato 'dispari' e leggiamo '1', rimaniamo 'dispari').
+            \item $\delta(Q_0, 0) = Q_0$ (Se eravamo in stato 'pari' e leggiamo $0$, rimaniamo 'pari').
+            \item $\delta(Q_0, 1) = Q_1$ (Se eravamo in stato 'pari' e leggiamo $1$, diventiamo 'dispari').
+            \item $\delta(Q_1, 0) = Q_0$ (Se eravamo in stato 'dispari' e leggiamo $0$, diventiamo 'pari').
+            \item $\delta(Q_1, 1) = Q_1$ (Se eravamo in stato 'dispari' e leggiamo $1$, rimaniamo 'dispari').
         \end{itemize}
 \end{itemize}
 
@@ -388,9 +387,9 @@ Costruiamo un DFA per $L_{dispari}$:
 Stringa di input: \texttt{101}
 \begin{enumerate}
     \item Inizia in $Q_0$.
-    \item Legge '1': $\delta(Q_0, 1) = Q_1$. Automa si sposta in $Q_1$.
-    \item Legge '0': $\delta(Q_1, 0) = Q_0$. Automa si sposta in $Q_0$.
-    \item Legge '1': $\delta(Q_0, 1) = Q_1$. Automa si sposta in $Q_1$.
+    \item Legge $1$: $\delta(Q_0, 1) = Q_1$. Automa si sposta in $Q_1$.
+    \item Legge $0$: $\delta(Q_1, 0) = Q_0$. Automa si sposta in $Q_0$.
+    \item Legge $1$: $\delta(Q_0, 1) = Q_1$. Automa si sposta in $Q_1$.
     \item Stringa terminata. L'automa si trova in $Q_1$, che è uno stato accettante.
 \end{enumerate}
 Quindi, la stringa \texttt{101} (che rappresenta il numero 5, dispari) è accettata.
@@ -398,9 +397,9 @@ Quindi, la stringa \texttt{101} (che rappresenta il numero 5, dispari) è accett
 Stringa di input: \texttt{110}
 \begin{enumerate}
     \item Inizia in $Q_0$.
-    \item Legge '1': $\delta(Q_0, 1) = Q_1$. Automa si sposta in $Q_1$.
-    \item Legge '1': $\delta(Q_1, 1) = Q_1$. Automa si sposta in $Q_1$.
-    \item Legge '0': $\delta(Q_1, 0) = Q_0$. Automa si sposta in $Q_0$.
+    \item Legge $1$: $\delta(Q_0, 1) = Q_1$. Automa si sposta in $Q_1$.
+    \item Legge $1$: $\delta(Q_1, 1) = Q_1$. Automa si sposta in $Q_1$.
+    \item Legge $0$: $\delta(Q_1, 0) = Q_0$. Automa si sposta in $Q_0$.
     \item Stringa terminata. L'automa si trova in $Q_0$, che non è uno stato accettante.
 \end{enumerate}
 Quindi, la stringa \texttt{110} (che rappresenta il numero 6, pari) è rifiutata.
