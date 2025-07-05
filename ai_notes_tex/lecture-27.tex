@@ -102,11 +102,13 @@ Le istanze di TSP sono coppie $(G, K)$.
 Supponiamo di avere un oracolo per TSP. Vogliamo risolvere FTSP usando chiamate a questo oracolo.
 
 \subsubsection{Prima Soluzione (Naive)}
-1.  Inizializza $K=1$.
-2.  Chiedi all'oracolo: "Esiste un ciclo Hamiltoniano di peso al più $K$ in $G$?"
-3.  Se l'oracolo risponde "Sì", allora $K$ è il peso minimo. Termina.
-4.  Se l'oracolo risponde "No", incrementa $K$ e ripeti dal passo 2.
-5.  Se $G$ non ammette alcun ciclo Hamiltoniano, l'oracolo risponderà sempre "No". Per garantire la terminazione, il valore massimo di $K$ da testare può essere la somma di tutti i pesi degli archi in $G$ (chiamiamo questo valore $S_{total}$). Se l'oracolo risponde "No" anche per $S_{total}$, allora non esiste un ciclo Hamiltoniano.
+\begin{enumerate}
+    \item Inizializza $K=1$.
+    \item Chiedi all'oracolo: "Esiste un ciclo Hamiltoniano di peso al più $K$ in $G$?"
+    \item Se l'oracolo risponde "Sì", allora $K$ è il peso minimo. Termina.
+    \item Se l'oracolo risponde "No", incrementa $K$ e ripeti dal passo 2.
+    \item Se $G$ non ammette alcun ciclo Hamiltoniano, l'oracolo risponderà sempre "No". Per garantire la terminazione, il valore massimo di $K$ da testare può essere la somma di tutti i pesi degli archi in $G$ (chiamiamo questo valore $S_{total}$). Se l'oracolo risponde "No" anche per $S_{total}$, allora non esiste un ciclo Hamiltoniano.
+\end{enumerate}
 
 \begin{remark}
 Questa procedura non colloca FTSP in $\text{FP}^{\text{NP}}$. Il numero di chiamate all'oracolo è proporzionale a $S_{total}$. Poiché $S_{total}$ può essere esponenziale nella dimensione dell'input (se i pesi sono grandi e rappresentati in binario), il trasduttore impiega un tempo esponenziale per effettuare le chiamate. La complessità è una funzione della taglia dell'input, non del suo valore numerico.
@@ -115,16 +117,22 @@ Questa procedura non colloca FTSP in $\text{FP}^{\text{NP}}$. Il numero di chiam
 \subsubsection{Seconda Soluzione (Ricerca Binaria)}
 Questa procedura è quella corretta per collocare FTSP in $\text{FP}^{\text{NP}}$.
 
-1.  Calcola $S_{total}$, la somma di tutti i pesi degli archi in $G$.
-2.  Chiedi all'oracolo: "Esiste un ciclo Hamiltoniano di peso al più $S_{total}$ in $G$?"
-    *   Se l'oracolo risponde "No", allora $G$ non ammette alcun ciclo Hamiltoniano. Termina.
-    *   Se l'oracolo risponde "Sì", allora esiste almeno un ciclo Hamiltoniano. Procedi con una ricerca binaria nell'intervallo $[0, S_{total}]$ per trovare il peso minimo.
-3.  Esegui una ricerca binaria sull'intervallo $[L, R]$, inizialmente $[0, S_{total}]$:
-    *   Sia $M = \lfloor (L+R)/2 \rfloor$.
-    *   Chiedi all'oracolo: "Esiste un ciclo Hamiltoniano di peso al più $M$ in $G$?"
-    *   Se l'oracolo risponde "Sì", allora il peso minimo è $\le M$, quindi imposta $R = M$.
-    *   Se l'oracolo risponde "No", allora il peso minimo è $> M$, quindi imposta $L = M+1$.
-    *   Ripeti finché $L=R$. Il valore finale di $L$ (o $R$) è il peso minimo.
+\begin{enumerate}
+    \item Calcola $S_{total}$, la somma di tutti i pesi degli archi in $G$.
+    \item Chiedi all'oracolo: "Esiste un ciclo Hamiltoniano di peso al più $S_{total}$ in $G$?"
+    \begin{itemize}
+        \item Se l'oracolo risponde "No", allora $G$ non ammette alcun ciclo Hamiltoniano. Termina.
+        \item Se l'oracolo risponde "Sì", allora esiste almeno un ciclo Hamiltoniano. Procedi con una ricerca binaria nell'intervallo $[0, S_{total}]$ per trovare il peso minimo.
+    \end{itemize}
+    \item Esegui una ricerca binaria sull'intervallo $[L, R]$, inizialmente $[0, S_{total}]$:
+    \begin{itemize}
+        \item Sia $M = \lfloor (L+R)/2 \rfloor$.
+        \item Chiedi all'oracolo: "Esiste un ciclo Hamiltoniano di peso al più $M$ in $G$?"
+        \item Se l'oracolo risponde "Sì", allora il peso minimo è $\le M$, quindi imposta $R = M$.
+        \item Se l'oracolo risponde "No", allora il peso minimo è $> M$, quindi imposta $L = M+1$.
+        \item Ripeti finché $L=R$. Il valore finale di $L$ (o $R$) è il peso minimo.
+    \end{itemize}
+\end{enumerate}
 
 \begin{theorem}
 $\text{FTSP} \in \text{FP}^{\text{NP}}$.
@@ -146,8 +154,10 @@ Se $\text{FTSP} \in \text{FP}$, allora $\text{TSP} \in \text{P}$.
 \end{proposition}
 \begin{proof}
 Supponiamo che esista un algoritmo deterministico polinomiale per FTSP. Per risolvere un'istanza $(G, K)$ di TSP:
-1.  Usa l'algoritmo per FTSP per calcolare il peso minimo di un ciclo Hamiltoniano in $G$, sia esso $W_{min}$.
-2.  Confronta $W_{min}$ con $K$. Se $W_{min} \le K$, la risposta è "Sì"; altrimenti, la risposta è "No".
+\begin{enumerate}
+    \item Usa l'algoritmo per FTSP per calcolare il peso minimo di un ciclo Hamiltoniano in $G$, sia esso $W_{min}$.
+    \item Confronta $W_{min}$ con $K$. Se $W_{min} \le K$, la risposta è "Sì"; altrimenti, la risposta è "No".
+\end{enumerate}
 Poiché sia il calcolo di $W_{min}$ che il confronto sono polinomiali, anche TSP sarebbe risolvibile in tempo polinomiale.
 \end{proof}
 
@@ -156,8 +166,10 @@ Dato che P $\neq$ NP è un problema aperto e si ritiene improbabile che P = NP, 
 \section{TSP è NP-Completo}
 
 Dimostriamo ora che TSP è NP-completo. Per fare ciò, dobbiamo mostrare due cose:
-1.  $\text{TSP} \in \text{NP}$ (membership).
-2.  $\text{TSP}$ è $\text{NP}$-arduo (hardness).
+\begin{enumerate}
+    \item $\text{TSP} \in \text{NP}$ (membership).
+    \item $\text{TSP}$ è $\text{NP}$-arduo (hardness).
+\end{enumerate}
 
 \subsection{Membership: TSP $\in$ NP}
 
@@ -167,17 +179,17 @@ $\text{TSP} \in \text{NP}$.
 \begin{proof}
 Per mostrare che TSP è in NP, dobbiamo esibire un certificato di dimensione polinomiale che possa essere verificato in tempo polinomiale da una macchina deterministica.
 Sia $(G, K)$ un'istanza di TSP.
-\begin{itemize}
-    \item \textbf{Guess (Certificato):} La macchina non deterministica "indovina" una sequenza di vertici $v_1, v_2, \dots, v_{|V|}, v_1$ che rappresenta un potenziale ciclo Hamiltoniano. Questa sequenza ha lunghezza $|V|+1$, quindi è polinomiale nella dimensione dell'input.
-    \item \textbf{Check (Verifica):} Una macchina deterministica può verificare in tempo polinomiale che la sequenza:
+\begin{description}
+    \item[Guess (Certificato)] La macchina non deterministica "indovina" una sequenza di vertici $v_1, v_2, \dots, v_{|V|}, v_1$ che rappresenta un potenziale ciclo Hamiltoniano. Questa sequenza ha lunghezza $|V|+1$, quindi è polinomiale nella dimensione dell'input.
+    \item[Check (Verifica)] Una macchina deterministica può verificare in tempo polinomiale che la sequenza:
     \begin{enumerate}
         \item Formi un ciclo: $v_1 \to v_2 \to \dots \to v_{|V|} \to v_1$. Questo significa controllare che per ogni $i \in \{1, \dots, |V|-1\}$, esista un arco $(v_i, v_{i+1})$ e un arco $(v_{|V|}, v_1)$ in $E$.
         \item Visiti tutti i vertici: Controllare che ogni vertice in $V$ appaia esattamente una volta nella sequenza $v_1, \dots, v_{|V|}$.
         \item Abbia peso al più $K$: Calcolare la somma dei pesi degli archi lungo il ciclo $\sum_{i=1}^{|V|-1} \lambda(v_i, v_{i+1}) + \lambda(v_{|V|}, v_1)$ e verificare che sia $\le K$.
     \end{enumerate}
+\end{description}
 Tutti questi passaggi possono essere eseguiti in tempo polinomiale rispetto a $|V|$ e $|E|$.
 Pertanto, TSP è in NP.
-\end{itemize}
 \end{proof}
 
 \subsection{Hardness: TSP è NP-arduo}
@@ -185,10 +197,10 @@ Pertanto, TSP è in NP.
 Per dimostrare che TSP è NP-arduo, mostreremo una catena di riduzioni polinomiali da un problema noto $\text{NP}$-completo (3SAT) a TSP:
 $$ \text{3SAT} \le_P \text{DHC} \le_P \text{HC} \le_P \text{TSP} $$
 dove:
-\begin{itemize}
-    \item \textbf{DHC (Directed Hamiltonian Cycle):} Dato un grafo orientato $G$, decidere se $G$ ammette un ciclo Hamiltoniano.
-    \item \textbf{HC (Undirected Hamiltonian Cycle):} Dato un grafo non orientato $G$, decidere se $G$ ammette un ciclo Hamiltoniano.
-\end{itemize}
+\begin{description}
+    \item[DHC (Directed Hamiltonian Cycle)] Dato un grafo orientato $G$, decidere se $G$ ammette un ciclo Hamiltoniano.
+    \item[HC (Undirected Hamiltonian Cycle)] Dato un grafo non orientato $G$, decidere se $G$ ammette un ciclo Hamiltoniano.
+\end{description}
 
 \subsubsection{Riduzione: 3SAT $\le_P$ DHC}
 
@@ -198,8 +210,8 @@ Sia $\Phi = C_1 \land C_2 \land \dots \land C_m$ una formula 3CNF con $m$ clauso
 
 \textbf{Costruzione del Grafo $G_\Phi$:}
 Il grafo $G_\Phi$ sarà costruito in modo da codificare sia gli assegnamenti di verità delle variabili che la soddisfazione delle clausole.
-\begin{itemize}
-    \item \textbf{Sezioni Variabili:} Per ogni variabile $x_i \in X$, creiamo una "catena" di nodi composta da $m$ coppie di nodi, una per ogni clausola. Ogni coppia è $(x_{i,j}', x_{i,j}'')$ per $j=1, \dots, m$. Aggiungiamo nodi intermedi ausiliari (piccoli pallini) tra le coppie e nodi diamante all'inizio e alla fine di ciascuna catena.
+\begin{description}
+    \item[Sezioni Variabili] Per ogni variabile $x_i \in X$, creiamo una "catena" di nodi composta da $m$ coppie di nodi, una per ogni clausola. Ogni coppia è $(x_{i,j}', x_{i,j}'')$ per $j=1, \dots, m$. Aggiungiamo nodi intermedi ausiliari (piccoli pallini) tra le coppie e nodi diamante all'inizio e alla fine di ciascuna catena.
 
     \begin{figure}[h]
     \centering
@@ -247,7 +259,7 @@ Il grafo $G_\Phi$ sarà costruito in modo da codificare sia gli assegnamenti di 
     \label{fig:xi_chain}
     \end{figure}
 
-    \item \textbf{Struttura Generale del Grafo:} Connettiamo le $n$ sezioni di variabili in serie. Ci sarà un nodo di inizio globale $S$ e un nodo di fine globale $T$.
+    \item[Struttura Generale del Grafo] Connettiamo le $n$ sezioni di variabili in serie. Ci sarà un nodo di inizio globale $S$ e un nodo di fine globale $T$.
     \begin{figure}[h]
     \centering
     \begin{tikzpicture}[node distance=2cm, auto, thick, scale=0.8, every node/.style={transform shape}]
@@ -287,7 +299,7 @@ Il grafo $G_\Phi$ sarà costruito in modo da codificare sia gli assegnamenti di 
 
     In ogni sezione di variabile (es. tra $\texttt{start\_x1}$ e $\texttt{end\_x1}$), un ciclo Hamiltoniano dovrà scegliere di percorrere o tutti gli archi "verdi" (associati a $x_i = \text{TRUE}$) o tutti gli archi "rossi" (associati a $x_i = \text{FALSE}$) per passare tutti i nodi interni di quella sezione. Questo crea $2^n$ percorsi distinti da $S$ a $T$, uno per ogni possibile assegnamento di verità.
 
-    \item \textbf{Nodi Clausola:} Per ogni clausola $C_j$, aggiungiamo un nodo $c_j$. Questi nodi devono essere visitati da qualsiasi ciclo Hamiltoniano. I nodi clausola sono agganciati alle catene delle variabili.
+    \item[Nodi Clausola] Per ogni clausola $C_j$, aggiungiamo un nodo $c_j$. Questi nodi devono essere visitati da qualsiasi ciclo Hamiltoniano. I nodi clausola sono agganciati alle catene delle variabili.
     \begin{itemize}
         \item Se il letterale $x_i$ appare positivamente in $C_j$: Aggiungi archi orientati da $x_{i,j}'$ a $c_j$ e da $c_j$ a $x_{i,j}''$. Questo crea un "detour" dalla catena "verde" (True) di $x_i$.
         \item Se il letterale $\neg x_i$ appare negativamente in $C_j$: Aggiungi archi orientati da $x_{i,j}''$ a $c_j$ e da $c_j$ a $x_{i,j}'$. Questo crea un "detour" dalla catena "rossa" (False) di $x_i$.
@@ -322,7 +334,7 @@ Il grafo $G_\Phi$ sarà costruito in modo da codificare sia gli assegnamenti di 
     \caption{Agganci tra Nodi Variabile e Nodi Clausola}
     \label{fig:clause_attachment}
     \end{figure}
-\end{itemize}
+\end{description}
 
 \textbf{Dimostrazione:}
 \begin{theorem}
@@ -331,13 +343,17 @@ $\Phi$ è soddisfacibile se e solo se $G_\Phi$ ammette un ciclo Hamiltoniano.
 \begin{proof}
 \textbf{($\Rightarrow$) Se $\Phi$ è soddisfacibile:}
 Sia $\sigma$ un assegnamento di verità che soddisfa $\Phi$. Costruiamo un ciclo Hamiltoniano $\pi$ in $G_\Phi$ come segue:
-1.  Inizia da $S$.
-2.  Per ogni variabile $x_i$, se $\sigma(x_i) = \text{TRUE}$, attraversa la catena della variabile $x_i$ (ovvero, da $\texttt{start\_xi} a \texttt{end\_xi}$) seguendo gli archi "verdi" (da $x_{i,j}'$ a $x_{i,j+1}'$ tramite nodi ausiliari). Se $\sigma(x_i) = \text{FALSE}$, segui gli archi "rossi" (da $x_{i,j}''$ a $x_{i,j+1}''$).
-3.  Quando si arriva a un nodo $x_{i,j}'$ (se stiamo sul percorso verde) o $x_{i,j}''$ (se stiamo sul percorso rosso), controlla se la clausola $C_j$ è soddisfatta da questo assegnamento di $x_i$. Poiché $\sigma$ è un assegnamento che soddisfa $\Phi$, ogni clausola $C_j$ è soddisfatta da almeno un letterale.
-    *   Se $x_i \in C_j$ e $\sigma(x_i) = \text{TRUE}$, allora mentre si passa per $x_{i,j}'$, possiamo deviare verso $c_j$ (arco da $x_{i,j}'$ a $c_j$) e poi tornare a $x_{i,j}''$ (arco da $c_j$ a $x_{i,j}''$), e poi proseguire il percorso principale.
-    *   Se $\neg x_i \in C_j$ e $\sigma(x_i) = \text{FALSE}$, allora mentre si passa per $x_{i,j}''$, possiamo deviare verso $c_j$ (arco da $x_{i,j}''$ a $c_j$) e poi tornare a $x_{i,j}'$ (arco da $c_j$ a $x_{i,j}'$), e poi proseguire il percorso principale.
-4.  Questo meccanismo assicura che tutti i nodi clausola $c_j$ vengano visitati (dato che ogni $C_j$ è soddisfatta da almeno un letterale $x_i$ o $\neg x_i$ il cui percorso si sta già attraversando). I nodi intermedi (pallini) e i nodi $x_{i,j}', x_{i,j}''$ vengono tutti visitati.
-5.  Infine, da $T$ si torna a $S$ chiudendo il ciclo.
+\begin{enumerate}
+    \item Inizia da $S$.
+    \item Per ogni variabile $x_i$, se $\sigma(x_i) = \text{TRUE}$, attraversa la catena della variabile $x_i$ (ovvero, da $\texttt{start\_xi} a \texttt{end\_xi}$) seguendo gli archi "verdi" (da $x_{i,j}'$ a $x_{i,j+1}'$ tramite nodi ausiliari). Se $\sigma(x_i) = \text{FALSE}$, segui gli archi "rossi" (da $x_{i,j}''$ a $x_{i,j+1}''$).
+    \item Quando si arriva a un nodo $x_{i,j}'$ (se stiamo sul percorso verde) o $x_{i,j}''$ (se stiamo sul percorso rosso), controlla se la clausola $C_j$ è soddisfatta da questo assegnamento di $x_i$. Poiché $\sigma$ è un assegnamento che soddisfa $\Phi$, ogni clausola $C_j$ è soddisfatta da almeno un letterale.
+    \begin{itemize}
+        \item Se $x_i \in C_j$ e $\sigma(x_i) = \text{TRUE}$, allora mentre si passa per $x_{i,j}'$, possiamo deviare verso $c_j$ (arco da $x_{i,j}'$ a $c_j$) e poi tornare a $x_{i,j}''$ (arco da $c_j$ a $x_{i,j}''$), e poi proseguire il percorso principale.
+        \item Se $\neg x_i \in C_j$ e $\sigma(x_i) = \text{FALSE}$, allora mentre si passa per $x_{i,j}''$, possiamo deviare verso $c_j$ (arco da $x_{i,j}''$ a $c_j$) e poi tornare a $x_{i,j}'$ (arco da $c_j$ a $x_{i,j}'$), e poi proseguire il percorso principale.
+    \end{itemize}
+    \item Questo meccanismo assicura che tutti i nodi clausola $c_j$ vengano visitati (dato che ogni $C_j$ è soddisfatta da almeno un letterale $x_i$ o $\neg x_i$ il cui percorso si sta già attraversando). I nodi intermedi (pallini) e i nodi $x_{i,j}', x_{i,j}''$ vengono tutti visitati.
+    \item Infine, da $T$ si torna a $S$ chiudendo il ciclo.
+\end{enumerate}
 Questo percorso $\pi$ visita tutti i nodi esattamente una volta (inclusi $S, T$, tutti i nodi delle catene $x_i$, e tutti i nodi clausola $c_j$) e forma un ciclo. Quindi $G_\Phi$ ammette un ciclo Hamiltoniano.
 
 \textbf{($\Leftarrow$) Se $G_\Phi$ ammette un ciclo Hamiltoniano:}
@@ -355,13 +371,19 @@ La prima proprietà è assicurata dalla struttura delle catene: se si alterna, s
 \end{proof}
 
 Grazie al Lemma, un ciclo Hamiltoniano $\pi$ ha una struttura ben definita:
-1.  Per ogni variabile $x_i$, $\pi$ o attraversa tutti i nodi $x_{i,j}'$ (usando gli archi "verdi") o tutti i nodi $x_{i,j}''$ (usando gli archi "rossi"). Questo ci permette di definire un assegnamento $\sigma$:
-    *   Se $\pi$ attraversa la sezione $x_i$ sul percorso verde, poniamo $\sigma(x_i) = \text{TRUE}$.
-    *   Se $\pi$ attraversa la sezione $x_i$ sul percorso rosso, poniamo $\sigma(x_i) = \text{FALSE}$.
-2.  Poiché $\pi$ è un ciclo Hamiltoniano, deve visitare tutti i nodi del grafo, inclusi tutti i nodi clausola $c_j$.
-3.  Per ogni nodo $c_j$ visitato, $\pi$ deve aver eseguito un detour da un nodo $x_{i,j}'$ o $x_{i,j}''$.
-    *   Se il detour è da $x_{i,j}'$ (percorso verde), significa che $\sigma(x_i)=\text{TRUE}$ e $x_i \in C_j$. Questo rende la clausola $C_j$ vera.
-    *   Se il detour è da $x_{i,j}''$ (percorso rosso), significa che $\sigma(x_i)=\text{FALSE}$ e $\neg x_i \in C_j$. Questo rende la clausola $C_j$ vera.
+\begin{enumerate}
+    \item Per ogni variabile $x_i$, $\pi$ o attraversa tutti i nodi $x_{i,j}'$ (usando gli archi "verdi") o tutti i nodi $x_{i,j}''$ (usando gli archi "rossi"). Questo ci permette di definire un assegnamento $\sigma$:
+    \begin{itemize}
+        \item Se $\pi$ attraversa la sezione $x_i$ sul percorso verde, poniamo $\sigma(x_i) = \text{TRUE}$.
+        \item Se $\pi$ attraversa la sezione $x_i$ sul percorso rosso, poniamo $\sigma(x_i) = \text{FALSE}$.
+    \end{itemize}
+    \item Poiché $\pi$ è un ciclo Hamiltoniano, deve visitare tutti i nodi del grafo, inclusi tutti i nodi clausola $c_j$.
+    \item Per ogni nodo $c_j$ visitato, $\pi$ deve aver eseguito un detour da un nodo $x_{i,j}'$ o $x_{i,j}''$.
+    \begin{itemize}
+        \item Se il detour è da $x_{i,j}'$ (percorso verde), significa che $\sigma(x_i)=\text{TRUE}$ e $x_i \in C_j$. Questo rende la clausola $C_j$ vera.
+        \item Se il detour è da $x_{i,j}''$ (percorso rosso), significa che $\sigma(x_i)=\text{FALSE}$ e $\neg x_i \in C_j$. Questo rende la clausola $C_j$ vera.
+    \end{itemize}
+\end{enumerate}
 Poiché tutti i nodi $c_j$ sono visitati, tutte le clausole $C_j$ devono essere soddisfatte dall'assegnamento $\sigma$.
 Quindi $\Phi$ è soddisfacibile.
 \end{proof}
@@ -420,14 +442,14 @@ Per ogni vertice $v \in V$ in $G$, creiamo tre vertici in $H$: $v_{in}$, $v_{mid
 \label{fig:dhc_to_hc}
 \end{figure}
 
-\begin{itemize}
-    \item \textbf{Nodi in $H$:} $V' = \{v_{in}, v_{mid}, v_{out} \mid v \in V\}$. Quindi $|V'| = 3|V|$.
-    \item \textbf{Archi in $H$:}
+\begin{description}
+    \item[Nodi in $H$] $V' = \{v_{in}, v_{mid}, v_{out} \mid v \in V\}$. Quindi $|V'| = 3|V|$.
+    \item[Archi in $H$]
     \begin{enumerate}
         \item Per ogni $v \in V$, aggiungi archi non orientati $(v_{in}, v_{mid})$ e $(v_{mid}, v_{out})$. Questi archi "forzano" l'attraversamento in sequenza.
         \item Per ogni arco orientato $(u, v) \in E$ in $G$, aggiungi un arco non orientato $(u_{out}, v_{in})$ in $H$.
     \end{enumerate}
-\end{itemize}
+\end{description}
 
 \textbf{Dimostrazione:}
 \begin{theorem}
@@ -460,9 +482,11 @@ Questa riduzione è polinomiale poiché $|V'|=3|V|$ e il numero di archi in $H$ 
 Dobbiamo trasformare un grafo non orientato $G=(V, E)$ in un'istanza $(H, K)$ di TSP.
 
 \textbf{Costruzione dell'Istanza $(H, K)$ per TSP:}
-1.  Il grafo $H$ è uguale a $G$: $H=G$. Tutti i vertici e gli archi di $G$ sono i vertici e gli archi di $H$.
-2.  Assegna un peso a tutti gli archi di $H$: Per ogni arco $e \in E$, imposta il peso $\lambda(e)=1$.
-3.  Imposta il valore limite $K$: $K=|V|$ (il numero di vertici in $G$).
+\begin{enumerate}
+    \item Il grafo $H$ è uguale a $G$: $H=G$. Tutti i vertici e gli archi di $G$ sono i vertici e gli archi di $H$.
+    \item Assegna un peso a tutti gli archi di $H$: Per ogni arco $e \in E$, imposta il peso $\lambda(e)=1$.
+    \item Imposta il valore limite $K$: $K=|V|$ (il numero di vertici in $G$).
+\end{enumerate}
 
 \textbf{Dimostrazione:}
 \begin{theorem}

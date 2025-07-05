@@ -122,15 +122,19 @@ Il cammino diretto è $2 \to 1 \to 4 \to 3 \to 5$.
 \subsection{Analisi della Complessità Spaziale di \texttt{exists-path}}
 Per analizzare la complessità spaziale, dobbiamo considerare lo spazio richiesto da una singola chiamata della funzione e l'altezza massima dello stack di chiamate ricorsive.
 
-1.  \textbf{Spazio per una singola chiamata}:
-    Una singola chiamata a \texttt{exists-path} deve memorizzare i parametri $S$, $T$, $K$ e la variabile $U$ nel ciclo \texttt{for}.
-    *   $S$, $T$, $U$: sono identificativi di nodi. Per un grafo con $N$ nodi, un identificativo richiede $O(\log N)$ bit di spazio (ad esempio, un indice numerico).
-    *   $K$: rappresenta la lunghezza massima del cammino. Inizialmente $K$ può essere al massimo $N$ (il numero di nodi). Quindi $K$ richiede $O(\log N)$ bit.
-    *   In totale, una singola chiamata richiede $O(\log N)$ spazio sul \emph{work tape}. Questo spazio viene riutilizzato per ogni iterazione del ciclo \texttt{for} (cambiando $U$) e per ogni chiamata ricorsiva (passando nuovi $S, T, K$).
+\begin{enumerate}
+    \item \textbf{Spazio per una singola chiamata}:
+        Una singola chiamata a \texttt{exists-path} deve memorizzare i parametri $S$, $T$, $K$ e la variabile $U$ nel ciclo \texttt{for}.
+        \begin{itemize}
+            \item $S$, $T$, $U$: sono identificativi di nodi. Per un grafo con $N$ nodi, un identificativo richiede $O(\log N)$ bit di spazio (ad esempio, un indice numerico).
+            \item $K$: rappresenta la lunghezza massima del cammino. Inizialmente $K$ può essere al massimo $N$ (il numero di nodi). Quindi $K$ richiede $O(\log N)$ bit.
+            \item In totale, una singola chiamata richiede $O(\log N)$ spazio sul \emph{work tape}. Questo spazio viene riutilizzato per ogni iterazione del ciclo \texttt{for} (cambiando $U$) e per ogni chiamata ricorsiva (passando nuovi $S, T, K$).
+        \end{itemize}
 
-2.  \textbf{Altezza dello stack di chiamate ricorsive}:
-    L'algoritmo ricorsivo dimezza il parametro $K$ ad ogni passo (da $K$ a $\lceil K/2 \rceil$). Questo significa che il numero di livelli di ricorsione è logaritmico rispetto al valore iniziale di $K$. Poiché $K$ può essere al massimo il numero di nodi $N$, la profondità massima di ricorsione è $O(\log N)$.
-    Durante l'esecuzione, il ciclo \texttt{for each U} implica che le chiamate ricorsive per ogni $U$ non sono eseguite in parallelo. L'algoritmo esplora un ramo dell'albero di ricorsione (corrispondente a una scelta di $U$) e solo dopo aver completato quel ramo (o aver trovato un \texttt{TRUE}) passa al successivo $U$. Questo significa che, in memoria, lo stack contiene al più una sequenza di chiamate ricorsive in un singolo "percorso" attraverso l'albero di computazione (un ramo di ricerca in profondità).
+    \item \textbf{Altezza dello stack di chiamate ricorsive}:
+        L'algoritmo ricorsivo dimezza il parametro $K$ ad ogni passo (da $K$ a $\lceil K/2 \rceil$). Questo significa che il numero di livelli di ricorsione è logaritmico rispetto al valore iniziale di $K$. Poiché $K$ può essere al massimo il numero di nodi $N$, la profondità massima di ricorsione è $O(\log N)$.
+        Durante l'esecuzione, il ciclo \texttt{for each U} implica che le chiamate ricorsive per ogni $U$ non sono eseguite in parallelo. L'algoritmo esplora un ramo dell'albero di ricorsione (corrispondente a una scelta di $U$) e solo dopo aver completato quel ramo (o aver trovato un \texttt{TRUE}) passa al successivo $U$. Questo significa che, in memoria, lo stack contiene al più una sequenza di chiamate ricorsive in un singolo "percorso" attraverso l'albero di computazione (un ramo di ricerca in profondità).
+\end{enumerate}
 
 Combinando questi due fattori, lo spazio totale richiesto è il prodotto dello spazio per una singola chiamata per l'altezza massima dello stack:
 \[ \text{Spazio totale} = O(\text{Spazio per chiamata}) \times O(\text{Profondità stack}) \]
@@ -149,8 +153,10 @@ Questo teorema implica che, per funzioni di spazio che crescono almeno logaritmi
 
 \subsection{Sketch della Dimostrazione del Teorema di Savitch}
 L'idea della dimostrazione si basa su due concetti che abbiamo già introdotto:
-1.  La riduzione di qualsiasi linguaggio in \textbf{NSPACE}$(S(n))$ al problema \textbf{REACHABILITY} su un grafo di configurazioni.
-2.  L'algoritmo \texttt{exists-path} per \textbf{REACHABILITY} in \textbf{DSPACE}$(\log^2 n)$.
+\begin{enumerate}
+    \item La riduzione di qualsiasi linguaggio in \textbf{NSPACE}$(S(n))$ al problema \textbf{REACHABILITY} su un grafo di configurazioni.
+    \item L'algoritmo \texttt{exists-path} per \textbf{REACHABILITY} in \textbf{DSPACE}$(\log^2 n)$.
+\end{enumerate}
 
 \begin{enumerate}
     \item \textbf{Linguaggio e Macchina Non Deterministica:} Sia $L$ un linguaggio appartenente a \textbf{NSPACE}$(S(n))$. Per definizione, esiste una macchina di Turing non deterministica $M$ che decide $L$ e utilizza $O(S(n))$ spazio sul nastro di lavoro.
