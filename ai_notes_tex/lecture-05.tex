@@ -19,7 +19,7 @@
 \newtheorem{example}{Esempio}
 \newtheorem{lemma}{Lemma}
 \newtheorem{proposition}{Proposizione}
-\newcommand{\blankS}{\ensuremath{\square}}
+\newcommand{\blankS}{\ensuremath{\raisebox{-0.15ex}{\scalebox{1.3}[0.7]{$\sqcup$}}}}
 
 \hypersetup{
     pdftitle={Lezione di Informatica Teorica: Macchine di Turing},
@@ -101,30 +101,27 @@ La strategia consiste nel confrontare il primo carattere di $w$ con l'ultimo car
 \end{enumerate}
 \end{example}
 
-\begin{tikzpicture}[shorten >=1pt,node distance=2.5cm,on grid,auto]
+\begin{tikzpicture}[shorten >=1pt,node distance=3cm,on grid,auto]
     \node[state,initial] (q0) {$q_0$};
     \node[state] (q1) [right=of q0] {$q_1$};
     \node[state] (q2) [right=of q1] {$q_2$};
-    \node[state] (q3) [below=of q2] {$q_3$};
+    \node[state] (q3) [right=of q2] {$q_3$};
     \node[state] (q4) [below=of q0] {$q_4$};
-    \node[state] (q5) [below=of q4] {$q_5$};
-    \node[state,accepting] (q6) [below=of q3] {$q_6$};
+    \node[state] (q5) [right=4cm of q4] {$q_5$};
+    \node[state,accepting] (q6) [above=2cm of q0] {$q_6$};
 
     \path[->]
-    (q0) edge node {$0/B, R$} (q1)
-         edge node {$1/B, R$} (q4)
-         edge [bend left] node {$B/B, R$} (q6)
-    (q1) edge [loop above] node {$0/0, R$} ()
-         edge [loop below] node {$1/1, R$} ()
-         edge node {$B/B, L$} (q2)
-    (q2) edge node {$0/B, L$} (q3)
-    (q3) edge [loop left] node {$0/0, L$} ()
-         edge [loop above] node {$1/1, L$} ()
-         edge node {$B/B, R$} (q0)
-    (q4) edge [loop above] node {$0/0, R$} ()
-         edge [loop below] node {$1/1, R$} ()
-         edge node {$B/B, L$} (q5)
-    (q5) edge node {$1/B, L$} (q3);
+    (q0) edge node {$0/\blankS, R$} (q1)
+         edge node {$1/\blankS, R$} (q4)
+         edge [bend left] node {$\blankS/\blankS, R$} (q6)
+    (q1) edge [loop below] node {\begin{tabular}{c}$0/0, R$\\$1/1, R$\end{tabular}} ()
+         edge node {$\blankS/\blankS, L$} (q2)
+    (q2) edge node {$0/\blankS, L$} (q3)
+    (q3) edge [loop right] node {\begin{tabular}{c}$0/0, L$\\$1/1, L$\end{tabular}} ()
+         edge [bend right=40] node[below] {$\blankS/\blankS, R$} (q0)
+    (q4) edge [loop left] node {\begin{tabular}{c}$0/0, R$\\$1/1, R$\end{tabular}} ()
+         edge node {$\blankS/\blankS, L$} (q5)
+    (q5) edge [bend left=15] node[right=0.3cm] {$1/\blankS, L$} (q3);
 \end{tikzpicture}
 
 \vspace{0.5cm}
