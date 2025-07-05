@@ -1,0 +1,245 @@
+\documentclass[a4paper]{article}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage[italian]{babel}
+\usepackage[utf8]{inputenc} % Corrected this line
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[a4paper, total={6in, 8in}]{geometry}
+\usepackage{minted}
+\usepackage{mathpazo}
+\usepackage{fancyhdr}
+\usepackage{amsthm}
+\usepackage{tikz}
+\usetikzlibrary{automata,positioning}
+
+% Definizione degli ambienti
+\theoremstyle{definition} % Use definition style for normal (non-italic) text
+\newtheorem{theorem}{Teorema}
+\newtheorem{definition}{Definizione}
+\newtheorem{example}{Esempio}
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}{Proposizione}
+\newcommand{\blankS}{\ensuremath{\raisebox{-0.15ex}{\scalebox{1.3}[0.7]{$\sqcup$}}}}
+
+\hypersetup{
+    pdftitle={Lezione di Informatica Teorica - Il Problema dell'Arresto e Introduzione agli Automi},
+    pdfauthor={Appunti da Trascrizione AI}
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textit{Tecniche di Programmazione per Macchine di Turing}}
+\fancyfoot[C]{\thepage}
+
+\title{Tecniche di Programmazione per Macchine di Turing}
+\author{Appunti da Trascrizione Automatica}
+\date{\today}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+
+\section{Riconoscimento dell'Estremità Sinistra del Nastro (Marking)}
+
+\subsection{Il Problema}
+Una Macchina di Turing (MdT) standard opera su un nastro infinito in entrambe le direzioni (o semi-infinito a sinistra). Per progetto, la macchina non ha un meccanismo intrinseco per "sapere" di trovarsi sulla prima cella del nastro. Un tentativo di movimento a sinistra dalla cella iniziale semplicemente fallisce o porta a un comportamento non definito, ma non informa la macchina della sua posizione. Questo può complicare la progettazione di algoritmi che necessitano di tornare all'inizio dell'input.
+
+\subsection{La Tecnica}
+La soluzione consiste nell'utilizzare una tecnica di \textbf{marcatura}. Prima di iniziare l'elaborazione vera e propria, si applica una fase di pre-elaborazione:
+\begin{enumerate}
+    \item \textbf{Spostamento (Shift):} L'intera stringa di input presente sul nastro viene spostata di una cella verso destra.
+    \item \textbf{Inserimento di un Marcatore:} Nella prima cella del nastro, ora libera, viene inserito un simbolo speciale che non appartiene all'alfabeto di input. Un simbolo comune per questo scopo è il dollaro (\texttt{\$}).
+\end{enumerate}
+
+\subsection{Esempio}
+Consideriamo una stringa di input iniziale sul nastro:
+\begin{center}
+\begin{tikzpicture}[scale=0.8]
+    % Draw tape cells
+    \foreach \x in {0,1,2,3,4,5,6} {
+        \draw (\x,0) rectangle (\x+1,1);
+    }
+    % Add cell contents
+    \node at (0.5,0.5) {a};
+    \node at (1.5,0.5) {a};
+    \node at (2.5,0.5) {b};
+    \node at (3.5,0.5) {b};
+    \node at (4.5,0.5) {a};
+    \node at (5.5,0.5) {\blankS};
+    \node at (6.5,0.5) {...};
+    % Add head pointer
+    \draw[thick,->] (0.5,-0.5) -- (0.5,-0.1);
+    \node at (0.5,-0.7) {\small testina};
+\end{tikzpicture}
+\end{center}
+Dopo aver applicato la tecnica, il nastro apparirà così:
+\begin{center}
+\begin{tikzpicture}[scale=0.8]
+    % Draw tape cells
+    \foreach \x in {0,1,2,3,4,5,6,7} {
+        \draw (\x,0) rectangle (\x+1,1);
+    }
+    % Add cell contents
+    \node at (0.5,0.5) {\$};
+    \node at (1.5,0.5) {a};
+    \node at (2.5,0.5) {a};
+    \node at (3.5,0.5) {b};
+    \node at (4.5,0.5) {b};
+    \node at (5.5,0.5) {a};
+    \node at (6.5,0.5) {\blankS};
+    \node at (7.5,0.5) {...};
+    % Add head pointer
+    \draw[thick,->] (0.5,-0.5) -- (0.5,-0.1);
+    \node at (0.5,-0.7) {\small testina};
+\end{tikzpicture}
+\end{center}
+
+\subsection{Vantaggio}
+Il simbolo \texttt{\$} agisce come una "guardia" o un marcatore di fine nastro a sinistra. Durante l'esecuzione, ogni volta che la testina della MdT legge il simbolo \texttt{\$}, sa con certezza di aver raggiunto l'estremità sinistra dell'input. A questo punto, può evitare di muoversi ulteriormente a sinistra e può invece iniziare a muoversi a destra per riesaminare la stringa, semplificando notevolmente la logica della macchina.
+
+\section{Utilizzo di Macchine di Turing come Sottoprogrammi (Subroutines)}
+
+\subsection{Il Concetto}
+Per risolvere problemi complessi, non è sempre necessario progettare una singola e monolitica Macchina di Turing. Una tecnica di programmazione potente è quella di \textbf{comporre} macchine più semplici, ognuna delle quali risolve una parte del problema. Ogni macchina semplice agisce come un sottoprogramma (subroutine).
+
+\subsection{La Tecnica}
+L'idea è di "collegare" diverse MdT in sequenza.
+\begin{enumerate}
+    \item Si progetta una MdT (es. $M_1$) per eseguire un primo compito.
+    \item Lo stato finale di accettazione di $M_1$ non porta all'arresto, ma diventa lo stato iniziale di una seconda MdT ($M_2$).
+    \item $M_2$ inizia la sua elaborazione sul nastro, che è stato modificato da $M_1$.
+    \item La macchina complessiva accetta la stringa solo se tutte le sottomacchine completano con successo la loro esecuzione in sequenza.
+\end{enumerate}
+
+\subsection{Esempio: Riconoscere il linguaggio $L = \{0^N1^N0^N\}$}
+Questo linguaggio non è context-free e richiede una MdT. Possiamo progettarla usando sottoprogrammi.
+\begin{enumerate}
+    \item \textbf{Step 1 (Sottoprogramma 1):} Si utilizza una MdT che riconosce il linguaggio $0^k1^k$. Questa macchina, ad esempio, trasforma la stringa $000111$ in $XXX YYY$ confrontando e marcando i simboli. Applicata alla nostra stringa, trasformerà la prima parte del nastro così:
+    \begin{center}
+    \begin{tikzpicture}[scale=0.7]
+        % Before transformation
+        \foreach \x in {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14} {
+            \draw (\x,1) rectangle (\x+1,2);
+        }
+        \node at (0.5,1.5) {0};
+        \node at (1.5,1.5) {0};
+        \node at (2.5,1.5) {0};
+        \node at (3.5,1.5) {0};
+        \node at (4.5,1.5) {0};
+        \node at (5.5,1.5) {1};
+        \node at (6.5,1.5) {1};
+        \node at (7.5,1.5) {1};
+        \node at (8.5,1.5) {1};
+        \node at (9.5,1.5) {1};
+        \node at (10.5,1.5) {0};
+        \node at (11.5,1.5) {0};
+        \node at (12.5,1.5) {0};
+        \node at (13.5,1.5) {0};
+        \node at (14.5,1.5) {0};
+        
+        % Arrow
+        \draw[thick,->] (7.5,0.7) -- (7.5,-0.7);
+        \node at (7.5,-1) {trasformazione};
+        
+        % After transformation
+        \foreach \x in {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14} {
+            \draw (\x,-2.5) rectangle (\x+1,-1.5);
+        }
+        \node at (0.5,-2) {x};
+        \node at (1.5,-2) {x};
+        \node at (2.5,-2) {x};
+        \node at (3.5,-2) {x};
+        \node at (4.5,-2) {x};
+        \node at (5.5,-2) {y};
+        \node at (6.5,-2) {y};
+        \node at (7.5,-2) {y};
+        \node at (8.5,-2) {y};
+        \node at (9.5,-2) {y};
+        \node at (10.5,-2) {0};
+        \node at (11.5,-2) {0};
+        \node at (12.5,-2) {0};
+        \node at (13.5,-2) {0};
+        \node at (14.5,-2) {0};
+    \end{tikzpicture}
+    \end{center}
+    \item \textbf{Step 2 (Sottoprogramma 2):} Si progetta una seconda MdT simile che riconosce il linguaggio $y^k0^k$. Questa macchina confronterà il numero di simboli \texttt{y} con il numero di \texttt{0} rimanenti.
+    \item \textbf{Step 3 (Composizione):} La macchina finale viene costruita combinando le due. Una volta che il primo sottoprogramma ha verificato che i primi \texttt{0} e \texttt{1} sono in numero uguale, passa il controllo al secondo sottoprogramma. Se anche quest'ultimo termina con successo, la stringa viene accettata.
+\end{enumerate}
+Questo approccio modulare permette di gestire la complessità suddividendo un problema grande in sotto-problemi più semplici e gestibili.
+
+\section{Marcatura e Memorizzazione non Distruttiva}
+\subsection{Il Problema: Perdita di Informazioni}
+Una tecnica comune nelle MdT è quella di marcare i simboli sul nastro per tener traccia di quelli già elaborati. Ad esempio, per confrontare due stringhe, si potrebbe marcare un simbolo nella prima e il corrispondente nella seconda con lo stesso marcatore (es. \texttt{x}).
+Tuttavia, questo approccio è \textbf{distruttivo}: alla fine della computazione, la stringa originale viene persa, sostituita da una sequenza di marcatori.
+\begin{center}
+\begin{tikzpicture}[scale=0.7]
+    % Before transformation
+    \foreach \x in {0,1,2,3,4,5,6,7,8,9,10,11} {
+        \draw (\x,1) rectangle (\x+1,2);
+    }
+    \node at (0.5,1.5) {a};
+    \node at (1.5,1.5) {b};
+    \node at (2.5,1.5) {b};
+    \node at (3.5,1.5) {a};
+    \node at (4.5,1.5) {c};
+    \node at (5.5,1.5) {\#};
+    \node at (6.5,1.5) {a};
+    \node at (7.5,1.5) {b};
+    \node at (8.5,1.5) {b};
+    \node at (9.5,1.5) {a};
+    \node at (10.5,1.5) {c};
+    \node at (11.5,1.5) {\blankS};
+    
+    % Arrow
+    \draw[thick,->] (6,0.7) -- (6,-0.7);
+    \node at (6,-1) {marcatura};
+    
+    % After transformation
+    \foreach \x in {0,1,2,3,4,5,6,7,8,9,10,11} {
+        \draw (\x,-2.5) rectangle (\x+1,-1.5);
+    }
+    \node at (0.5,-2) {x};
+    \node at (1.5,-2) {x};
+    \node at (2.5,-2) {x};
+    \node at (3.5,-2) {x};
+    \node at (4.5,-2) {x};
+    \node at (5.5,-2) {\#};
+    \node at (6.5,-2) {x};
+    \node at (7.5,-2) {x};
+    \node at (8.5,-2) {x};
+    \node at (9.5,-2) {x};
+    \node at (10.5,-2) {x};
+    \node at (11.5,-2) {\blankS};
+\end{tikzpicture}
+\end{center}
+
+In alcuni casi, potremmo aver bisogno di riutilizzare la stringa originale per ulteriori calcoli.
+
+\subsection{La Tecnica: Marcatura Unica e Ripristino}
+Per evitare la perdita di dati, si utilizza una tecnica di \textbf{marcatura non distruttiva}.
+\begin{enumerate}
+    \item \textbf{Marcatura Unica:} Invece di usare un unico simbolo come marcatore, si associa un marcatore univoco a ciascun simbolo dell'alfabeto di input.
+    
+    \begin{center}
+    \begin{tabular}{|c|c|}
+    \hline
+    \textbf{Simbolo Originale} & \textbf{Marcatore} \\
+    \hline
+    \texttt{a} & \texttt{p} \\
+    \texttt{b} & \texttt{q} \\
+    \texttt{c} & \texttt{r} \\
+    \hline
+    \end{tabular}
+    \end{center}
+    \item \textbf{Comparazione:} La macchina legge un simbolo (es. \texttt{a}), lo sostituisce con il suo marcatore (\texttt{p}), si sposta sulla seconda parte della stringa, cerca il simbolo corrispondente (\texttt{a}) e lo marca anch'esso con \texttt{p}. Questo processo viene ripetuto per tutti i simboli.
+    \item \textbf{Ripristino (Restore):} Una volta completata la comparazione, se l'esito è positivo, un'ultima fase della MdT può essere dedicata al ripristino della stringa originale. La macchina scorre il nastro e inverte le sostituzioni.
+    \begin{itemize}
+        \item Esempio: \texttt{p} $\rightarrow$ \texttt{a}, \texttt{q} $\rightarrow$ \texttt{b}, \texttt{r} $\rightarrow$ \texttt{c}.
+    \end{itemize}
+\end{enumerate}
+
+\subsection{Vantaggio}
+Questa tecnica permette di "memorizzare" temporaneamente l'informazione del simbolo marcato utilizzando un nuovo simbolo univoco. In questo modo, la MdT può eseguire operazioni complesse come la comparazione di stringhe e, se necessario, ripristinare il nastro al suo stato originale per successive elaborazioni. È un modo efficace per simulare la memorizzazione di informazioni senza alterare permanentemente l'input.
+
+\end{document}

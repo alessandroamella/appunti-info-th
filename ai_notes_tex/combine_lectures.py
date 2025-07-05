@@ -114,7 +114,7 @@ def create_master_document(
     compiler, reason = detect_compiler_needed(common_preamble)
     print(f"Detected compiler requirement: {compiler} ({reason})")
 
-    # Find all lecture files
+    # Find all lecture files and appendix files
     try:
         all_files = os.listdir(source_dir)
     except FileNotFoundError:
@@ -122,15 +122,19 @@ def create_master_document(
         return
 
     lecture_files = [f for f in all_files if re.match(r"lecture-\d+\.tex", f)]
+    appendix_files = [f for f in all_files if re.match(r"appendix-\d+\.tex", f)]
 
-    if not lecture_files:
-        print("No 'lecture-*.tex' files found. Aborting.")
+    if not lecture_files and not appendix_files:
+        print("No 'lecture-*.tex' or 'appendix-*.tex' files found. Aborting.")
         return
 
-    # Sort files numerically based on the lecture number
+    # Sort files numerically based on the lecture/appendix number
     lecture_files.sort(key=lambda f: int(re.search(r"(\d+)", f).group(1)))
+    appendix_files.sort(key=lambda f: int(re.search(r"(\d+)", f).group(1)))
 
-    print(f"Found {len(lecture_files)} lecture files to combine.")
+    print(
+        f"Found {len(lecture_files)} lecture files and {len(appendix_files)} appendix files to combine."
+    )
 
     with open(output_file, "w", encoding="utf-8") as master_doc:
         # 1. Write the common preamble
@@ -173,7 +177,43 @@ def create_master_document(
             else:
                 print(f"Warning: Skipping '{filename}' due to extraction error.")
 
-        # 4. End the document
+        # 4. Add appendices if any exist
+        if appendix_files:
+            master_doc.write(
+                "\n% =====================================================\n"
+            )
+            master_doc.write("% --- START APPENDICES ---\n")
+            master_doc.write(
+                "% =====================================================\n\n"
+            )
+            master_doc.write("\\appendix\n\n")
+
+            for i, filename in enumerate(appendix_files):
+                print(f"Processing '{filename}'...")
+                filepath = os.path.join(source_dir, filename)
+
+                title, body = extract_content(filepath)
+
+                if title and body:
+                    # Get the appendix number for the chapter title
+                    appendix_num = re.search(r"(\d+)", filename).group(1)
+
+                    master_doc.write(
+                        "\n% =====================================================\n"
+                    )
+                    master_doc.write(f"% --- START APPENDIX {appendix_num} ---\n")
+                    master_doc.write(
+                        "% =====================================================\n\n"
+                    )
+
+                    # Each appendix becomes a chapter
+                    master_doc.write(f"\\chapter{{{title}}}\n\n")
+                    master_doc.write(body)
+                    master_doc.write("\n\n")
+                else:
+                    print(f"Warning: Skipping '{filename}' due to extraction error.")
+
+        # 5. End the document
         master_doc.write("\\end{document}\n")
 
     print(f"\nSuccessfully created master file: '{output_file}'")
