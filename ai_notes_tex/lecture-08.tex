@@ -56,18 +56,18 @@ Consideriamo la seguente macchina di Turing (parzialmente descritta):
   \node[state, right of=q0] (q1) {$q_1$};
   \node[state, right of=q1, accepting] (q2) {$q_2$};
 
-  \path (q0) edge [loop left] node {$0/1, R$} (q0);
-  \path (q0) edge node {$1/0, R$} (q1);
+  \path (q0) edge [loop above] node {$0/1, R$} (q0);
+  \path (q0) edge [bend left] node {$1/0, R$} (q1);
 
   % Non-determinismo
-  \path (q1) edge [loop left] node {$0/0, L$} (q1);
-  \path (q1) edge node {$0/0, L$} (q0); % Questo è il punto di non-determinismo
+  \path (q1) edge [loop above] node {$0/0, L$} (q1);
+  \path (q1) edge [bend left] node {$0/0, L$} (q0); % Questo è il punto di non-determinismo
 
-  \path (q1) edge [loop right] node {$1/1, R$} (q1);
+  \path (q1) edge [loop below] node {$1/1, R$} (q1);
   \path (q1) edge node {$\blankS/\blankS, R$} (q2);
 
-  \path (q2) edge [loop right] node {$0/0, R$} (q2); % Aggiunta per completezza
-  \path (q2) edge [loop right] node {$1/1, R$} (q2); % Aggiunta per completezza
+  \path (q2) edge [loop above] node {$0/0, R$} (q2); % Aggiunta per completezza
+  \path (q2) edge [loop below] node {$1/1, R$} (q2); % Aggiunta per completezza
 \end{tikzpicture}
 \end{center}
 Questa macchina presenta una peculiarità nello stato $q_1$: se legge il simbolo $0$, ha due possibili transizioni:
