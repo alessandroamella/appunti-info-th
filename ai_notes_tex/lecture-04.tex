@@ -19,10 +19,11 @@
 \newtheorem{example}{Esempio}
 \newtheorem{lemma}{Lemma}
 \newtheorem{proposition}{Proposizione}
-\newcommand{\blankS}{\ensuremath{\raisebox{-0.15ex}{\scalebox{1.3}[0.7]{$\sqcup$}}}}
+\newcommand{\blankS}{\ensuremath{\raisebox{-0.15ex}{\scalebox{1.3}[0.7]{$\sqcup$}}\mkern2mu}}
+
 
 \hypersetup{
-    pdftitle={Lezione di Informatica Teorica},
+    pdftitle={Lezione di Informatica Teorica: Macchine di Turing},
     pdfauthor={Appunti da Trascrizione AI}
 }
 
@@ -31,7 +32,7 @@
 \fancyhead[L]{\textit{Lezione di Informatica Teorica}}
 \fancyfoot[C]{\thepage}
 
-\title{Lezione di Informatica Teorica}
+\title{Lezione di Informatica Teorica: Introduzione alle Macchine di Turing}
 \author{Appunti da Trascrizione Automatica}
 \date{\today}
 
@@ -96,9 +97,9 @@ Per determinare se un linguaggio è decidibile (intuitivamente, se esiste un alg
 Gli NFA e i DFA hanno lo stesso potere computazionale. Ogni NFA può essere convertito in un DFA equivalente. Il tempo di esecuzione è lineare rispetto alla lunghezza dell'input.
 
 \begin{example}[Linguaggio $L = \{a^n b^n \mid n \ge 0\}$]
-    Questo linguaggio, che rappresenta stringhe con $n$ 'a' seguite da $n$ 'b' (es. \texttt{aabb}, \texttt{aaabbb}), \textbf{non può essere riconosciuto da un automa a stati finiti}.
+    Questo linguaggio, che rappresenta stringhe con $n$ $a$ seguite da $n$ $b$ (es. \texttt{aabb}, \texttt{aaabbb}), \textbf{non può essere riconosciuto da un automa a stati finiti}.
     \begin{itemize}
-        \item \textbf{Intuito}: Un FA non ha memoria sufficiente per "contare" le 'a' e confrontarle con le 'b'. Ha un numero finito di stati, quindi non può memorizzare un numero arbitrario $n$.
+        \item \textbf{Intuito}: Un FA non ha memoria sufficiente per "contare" le $a$ e confrontarle con le $b$. Ha un numero finito di stati, quindi non può memorizzare un numero arbitrario $n$.
     \end{itemize}
     Questo implica la necessità di un modello di calcolo più potente.
 \end{example}
@@ -161,24 +162,34 @@ Una TM è un automa con un numero finito di stati. Ogni passo della computazione
 
 \subsection{Esempio: Macchina di Turing per $L = \{a^n b^n \mid n \ge 0\}$}
 \textbf{Strategia intuitiva}:
-L'idea è "barrare" una 'a' dal lato sinistro e una 'b' dal lato destro ad ogni passo, tornando indietro e avanti fino a quando tutte le 'a' e 'b' sono state "consumate". Se il numero di 'a' e 'b' è lo stesso, il nastro sarà vuoto alla fine.
+L'idea è "barrare" una $a$ dal lato sinistro e una $b$ dal lato destro ad ogni passo, tornando indietro e avanti fino a quando tutte le $a$ e $b$ sono state "consumate". Se il numero di $a$ e $b$ è lo stesso, il nastro sarà vuoto alla fine.
 
 \begin{figure}[h!]
     \centering
     \begin{tikzpicture}[
         shorten >=1pt, node distance=2cm, on grid, auto,
-        state/.style={rectangle, draw, minimum width=2.5cm, minimum height=0.7cm},
+        cell/.style={rectangle, draw, minimum width=0.8cm, minimum height=0.8cm},
         head/.style={circle, draw, minimum size=0.5cm, fill=gray!20}
     ]
-    \node[state] (tape) at (0,0) {};
-    \draw (tape.north west) -- (tape.south west) node[below=0.2cm] {$\dots$};
-    \draw (tape.north east) -- (tape.south east) node[below=0.2cm] {$\dots$};
-    \foreach \x/\y in {-2.5/B, -1.5/B, -0.5/A, 0.5/A, 1.5/B, 2.5/B} {
-        \draw (\x,0.35) rectangle (\x+1,-0.35) node[pos=.5] {\y};
-    }
+    % Draw tape cells with content
+    \node[cell] (c1) at (-2,0) {$\blankS$};
+    \node[cell] (c2) at (-1,0) {$\blankS$};
+    \node[cell] (c3) at (0,0) {a};
+    \node[cell] (c4) at (1,0) {a};
+    \node[cell] (c5) at (2,0) {b};
+    \node[cell] (c6) at (3,0) {b};
+    \node[cell] (c7) at (4,0) {$\blankS$};
+    
+    % Add dots to indicate infinite tape
+    \node at (-3.5,0) {$\cdots$};
+    \node at (5.5,0) {$\cdots$};
+    
+    % Draw the head pointing to the current cell
     \node[head] (head) at (0,1.2) {$\delta$};
-    \draw[->] (head) -- (0,0.35);
-    \node[below=0.5cm of tape] (blank_sym) {$\blankS$ (Blank)};
+    \draw[->] (head) -- (c3.north);
+    
+    % Add label for blank symbol
+    \node[below=1cm of c4] {$\blankS$ (Blank)};
     \end{tikzpicture}
     \caption{Rappresentazione del nastro della Macchina di Turing con testina.}
 \end{figure}
@@ -188,21 +199,19 @@ L'idea è "barrare" una 'a' dal lato sinistro e una 'b' dal lato destro ad ogni 
     \begin{tikzpicture}[shorten >=1pt,node distance=2.5cm,on grid,auto]
         \node[state,initial] (q0)   {$q_0$};
         \node[state] (q1) [right of=q0] {$q_1$};
-        \node[state] (q2) [right of=q1] {$q_2$};
-        \node[state] (q3) [below of=q0] {$q_3$};
-        \node[state,accepting] (q4) [below of=q1] {$q_4$};
+        \node[state] (q2) [below of=q1, node distance=2cm] {$q_2$};
+        \node[state] (q3) [below of=q0, node distance=2cm] {$q_3$};
+        \node[state,accepting] (q4) [above of=q0, node distance=2cm] {$q_4$};
 
         \path[->]
-        (q0) edge [bend left] node {A/B, R} (q1) % First A to blank
-        (q1) edge [loop above] node {A/A, R} (q1) % Skip A's
-        (q1) edge [loop below] node {B/B, R} (q1) % Skip B's
-        (q1) edge [bend left] node {B/B, L} (q2) % Found Blank, go left to find last B (Correction based on lecture: should be Blank/Blank, L)
-        (q2) edge [loop below] node {B/B, L} (q2) % Skip B's backwards
-        (q2) edge [bend right] node {A/B, L} (q3) % Found A, replace with Blank, go left (Correction based on lecture: should be B/Blank, L)
-        (q3) edge [loop above] node {A/A, L} (q3) % Skip A's backwards
-        (q3) edge [loop below] node {B/B, L} (q3) % Skip B's backwards
-        (q3) edge [bend left] node {B/B, R} (q0) % Found Blank, go right to q0 (Correction based on lecture: should be Blank/Blank, R)
-        (q0) edge [bend right] node {B/B, R} (q4); % If all A's and B's are matched, hit blank and accept (Correction based on lecture: should be Blank/Blank, R)
+        (q0) edge node {A/B, R} (q1) % First A to blank
+        (q1) edge [loop right] node {\parbox{1.5cm}{\centering A/A, R \\ B/B, R}} (q1) % Skip A's and B's
+        (q1) edge node {B/B, L} (q2) % Found Blank, go left to find last B (Correction based on lecture: should be Blank/Blank, L)
+        (q2) edge [loop right] node {B/B, L} (q2) % Skip B's backwards
+        (q2) edge node {A/B, L} (q3) % Found A, replace with Blank, go left (Correction based on lecture: should be B/Blank, L)
+        (q3) edge [loop left] node {\parbox{1.5cm}{\centering A/A, L \\ B/B, L}} (q3) % Skip A's and B's backwards
+        (q3) edge node {B/B, R} (q0) % Found Blank, go right to q0 (Correction based on lecture: should be Blank/Blank, R)
+        (q0) edge node {B/B, R} (q4); % If all A's and B's are matched, hit blank and accept (Correction based on lecture: should be Blank/Blank, R)
     \end{tikzpicture}
     \caption{Diagramma di stati per la Macchina di Turing che riconosce $L = \{a^n b^n \mid n \ge 0\}$.\\ \small{\textbf{Nota}}: Le etichette degli archi sono nel formato: \texttt{SimboloLetto/SimboloScritto, DirezioneMovimento}.}
 \end{figure}
@@ -211,23 +220,23 @@ L'idea è "barrare" una 'a' dal lato sinistro e una 'b' dal lato destro ad ogni 
 \begin{enumerate}
     \item \textbf{$q_0$ (Stato Iniziale)}:
         \begin{itemize}
-            \item Se legge \texttt{A}: Scrive \blankS (blank), sposta a destra ($\texttt{R}$), va in $q_1$. (Cancella la prima 'a').
-            \item Se legge \blankS o \blankS (blank, dopo aver cancellato tutto): Significa che non ci sono più 'a' da cancellare, quindi verifica se anche le 'b' sono finite. Se legge \blankS e sposta a destra, va in $q_4$ (stato accettante).
+            \item Se legge \texttt{A}: Scrive \blankS (blank), sposta a destra ($\texttt{R}$), va in $q_1$. (Cancella la prima $a$).
+            \item Se legge \blankS o \blankS (blank, dopo aver cancellato tutto): Significa che non ci sono più $a$ da cancellare, quindi verifica se anche le $b$ sono finite. Se legge \blankS e sposta a destra, va in $q_4$ (stato accettante).
         \end{itemize}
-    \item \textbf{$q_1$ (Cerca l'ultima 'b')}:
+    \item \textbf{$q_1$ (Cerca l'ultima $b$)}:
         \begin{itemize}
-            \item Se legge \texttt{A}: Scrive \texttt{A}, sposta a destra ($\texttt{R}$), rimane in $q_1$. (Salta le 'a' rimanenti).
-            \item Se legge \blankS: Scrive \blankS, sposta a destra ($\texttt{R}$), rimane in $q_1$. (Salta le 'b' fino alla fine).
-            \item Se legge \blankS (blank): Scrive \blankS, sposta a sinistra ($\texttt{L}$), va in $q_2$. (Ha raggiunto la fine della stringa, torna indietro per trovare l'ultima 'b').
+            \item Se legge \texttt{A}: Scrive \texttt{A}, sposta a destra ($\texttt{R}$), rimane in $q_1$. (Salta le $a$ rimanenti).
+            \item Se legge \blankS: Scrive \blankS, sposta a destra ($\texttt{R}$), rimane in $q_1$. (Salta le $b$ fino alla fine).
+            \item Se legge \blankS (blank): Scrive \blankS, sposta a sinistra ($\texttt{L}$), va in $q_2$. (Ha raggiunto la fine della stringa, torna indietro per trovare l'ultima $b$).
         \end{itemize}
-    \item \textbf{$q_2$ (Cancella l'ultima 'b')}:
+    \item \textbf{$q_2$ (Cancella l'ultima $b$)}:
         \begin{itemize}
-            \item Se legge \blankS: Scrive \blankS (blank), sposta a sinistra ($\texttt{L}$), va in $q_3$. (Cancella l'ultima 'b' e inizia a tornare all'inizio della stringa).
+            \item Se legge \blankS: Scrive \blankS (blank), sposta a sinistra ($\texttt{L}$), va in $q_3$. (Cancella l'ultima $b$ e inizia a tornare all'inizio della stringa).
         \end{itemize}
     \item \textbf{$q_3$ (Torna all'inizio)}:
         \begin{itemize}
-            \item Se legge \texttt{A}: Scrive \texttt{A}, sposta a sinistra ($\texttt{L}$), rimane in $q_3$. (Salta le 'a' rimanenti, andando a sinistra).
-            \item Se legge \blankS: Scrive \blankS, sposta a sinistra ($\texttt{L}$), rimane in $q_3$. (Salta le 'b' rimanenti, andando a sinistra).
+            \item Se legge \texttt{A}: Scrive \texttt{A}, sposta a sinistra ($\texttt{L}$), rimane in $q_3$. (Salta le $a$ rimanenti, andando a sinistra).
+            \item Se legge \blankS: Scrive \blankS, sposta a sinistra ($\texttt{L}$), rimane in $q_3$. (Salta le $b$ rimanenti, andando a sinistra).
             \item Se legge \blankS (blank): Scrive \blankS, sposta a destra ($\texttt{R}$), va in $q_0$. (Ha raggiunto l'inizio della stringa, torna a $q_0$ per la prossima iterazione).
         \end{itemize}
     \item \textbf{$q_4$ (Stato Accettante)}:
@@ -240,7 +249,7 @@ L'idea è "barrare" una 'a' dal lato sinistro e una 'b' dal lato destro ad ogni 
 La macchina come progettata dovrebbe rifiutare stringhe che non seguono il pattern $a^*b^*$.
 \begin{itemize}
     \item Se $q_0$ legge \blankS all'inizio, si muove a $q_4$, quindi accetterebbe la stringa vuota $\epsilon$. Ma se è $B$ e non $\epsilon$, si muoverebbe a $q_4$ e accetterebbe una stringa di soli $B$s (e.g., $B$). Questo è un dettaglio che richiede un'attenzione specifica sul caso base $\epsilon$ o stringhe di soli $B$s.
-    \item Se in $q_1$ (dopo aver cancellato la prima 'a' e spostato a destra) la macchina incontra un'altra 'a' dopo una 'b', non ci sono transizioni definite per questa sequenza, e la macchina si blocca, rifiutando la stringa.
+    \item Se in $q_1$ (dopo aver cancellato la prima $a$ e spostato a destra) la macchina incontra un'altra $a$ dopo una $b$, non ci sono transizioni definite per questa sequenza, e la macchina si blocca, rifiutando la stringa.
 \end{itemize}
 
 \subsection{Computazione di una Macchina di Turing}
