@@ -119,6 +119,8 @@ Il \textbf{computation tree} di una macchina di Turing non deterministica $M$ su
 \end{definition}
 
 \begin{example}[Albero di Computazione di una NDTM]
+Consideriamo la seguente NDTM:
+
     \begin{tikzpicture}[
     node distance=2.5cm,
     auto,
@@ -222,9 +224,9 @@ Per illustrare meglio il non-determinismo, consideriamo un input che attivi effe
         node distance=2cm,
         every node/.style={align=center},
         level/.style={sibling distance=50mm/#1},
-        config/.style={rectangle, draw, minimum width=1.5cm, minimum height=0.8cm, font=\scriptsize},
-        accept/.style={rectangle, draw, minimum width=1.5cm, minimum height=0.8cm, font=\scriptsize, fill=green!20},
-        reject/.style={rectangle, draw, minimum width=1.5cm, minimum height=0.8cm, font=\scriptsize, fill=red!20}
+        config/.style={ellipse, draw, minimum width=1.5cm, minimum height=0.8cm, font=\scriptsize},
+        accept/.style={ellipse, draw, minimum width=1.5cm, minimum height=0.8cm, font=\scriptsize, fill=green!20},
+        reject/.style={ellipse, draw, minimum width=1.5cm, minimum height=0.8cm, font=\scriptsize, fill=red!20}
     ]
     
     % Root - the non-deterministic choice point
