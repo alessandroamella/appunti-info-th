@@ -71,8 +71,8 @@ significa che per eseguire la transizione, la TM deve leggere $\text{leggi}_1$ d
 \begin{itemize}
     \item \textbf{Simboli Variabili:} Spesso si usano simboli come $\alpha, \beta, \gamma$ per indicare caratteri generici dall'alfabeto del nastro ($\Gamma$).
     \begin{itemize}
-        \item Se lo \textbf{stesso simbolo variabile} (es. $\alpha$) compare nella lettura di \textbf{più nastri} nella stessa etichetta di transizione, significa che su quei nastri deve essere letto lo \textbf{stesso identico carattere}. Es. \texttt{nastro 1: ($\alpha$/$\alpha$, R), nastro 2: ($\alpha$/$\alpha$, R)} implica che se si legge '0' su nastro 1, si deve leggere '0' anche su nastro 2. Se si legge '1' su nastro 1, si deve leggere '1' anche su nastro 2. Se si legge '0' su nastro 1 e '1' su nastro 2, questa transizione non è valida.
-        \item Se \textbf{simboli variabili diversi} (es. $\alpha, \beta$) compaiono nella lettura di \textbf{più nastri} nella stessa etichetta di transizione, significa che i caratteri letti possono essere \textbf{diversi o uguali}. Es. \texttt{nastro 1: ($\alpha$/$\alpha$, R), nastro 2: ($\beta$/$\beta$, R)} implica che $\alpha$ può essere '0' e $\beta$ '1' (o viceversa, o uguali). Non viene imposto alcun confronto.
+        \item Se lo \textbf{stesso simbolo variabile} (es. $\alpha$) compare nella lettura di \textbf{più nastri} nella stessa etichetta di transizione, significa che su quei nastri deve essere letto lo \textbf{stesso identico carattere}. Es. \texttt{nastro 1: ($\alpha$/$\alpha$, R), nastro 2: ($\alpha$/$\alpha$, R)} implica che se si legge $0$ su nastro 1, si deve leggere $0$ anche su nastro 2. Se si legge $1$ su nastro 1, si deve leggere $1$ anche su nastro 2. Se si legge $0$ su nastro 1 e $1$ su nastro 2, questa transizione non è valida.
+        \item Se \textbf{simboli variabili diversi} (es. $\alpha, \beta$) compaiono nella lettura di \textbf{più nastri} nella stessa etichetta di transizione, significa che i caratteri letti possono essere \textbf{diversi o uguali}. Es. \texttt{nastro 1: ($\alpha$/$\alpha$, R), nastro 2: ($\beta$/$\beta$, R)} implica che $\alpha$ può essere $0$ e $\beta$ $1$ (o viceversa, o uguali). Non viene imposto alcun confronto.
     \end{itemize}
     \item \textbf{Omissione di operazioni:} Se per un nastro non viene specificata alcuna operazione di scrittura o movimento, si intende che la testina rimane ferma (\texttt{S}) e il simbolo non viene modificato.
     \item \textbf{Simbolo di blank:} Il simbolo $\blankS$ indica una cella vuota.
@@ -82,7 +82,7 @@ significa che per eseguire la transizione, la TM deve leggere $\text{leggi}_1$ d
 Illustriamo il funzionamento delle TM multinastro attraverso esempi pratici di riconoscimento di linguaggi.
 
 \subsection{Linguaggio $L_1$}
-Il linguaggio $L_1 = \{A\#B\#AB \mid A,B \in \{0,1\}^+\}$ è l'insieme di tutte le stringhe composte da tre parti $A$, $B$ e $AB$ (concatenazione di $A$ e $B$), separate da simboli \texttt{\#}. Le stringhe $A$ e $B$ sono composte da caratteri '0' o '1' e devono avere lunghezza di almeno 1.
+Il linguaggio $L_1 = \{A\#B\#AB \mid A,B \in \{0,1\}^+\}$ è l'insieme di tutte le stringhe composte da tre parti $A$, $B$ e $AB$ (concatenazione di $A$ e $B$), separate da simboli \texttt{\#}. Le stringhe $A$ e $B$ sono composte da caratteri $0$ o $1$ e devono avere lunghezza di almeno 1.
 \begin{example}
 Esempi di stringhe in $L_1$: $0\texttt{\#}1\texttt{\#}01$, $01\texttt{\#}0\texttt{\#}010$.
 Esempi di stringhe non in $L_1$: $0\texttt{\#}1\texttt{\#}10$ (AB sbagliato), $0\texttt{\#}\texttt{\#}0$ (B vuoto), $\texttt{\#}1\texttt{\#}1$ (A vuoto).
@@ -129,7 +129,7 @@ Utilizziamo una TM con 2 nastri.
 \end{description}
 
 \subsection{Linguaggio $L_2$}
-Il linguaggio $L_2 = \{A\#B\#C \mid A,B,C \in \{0,1\}^+, |A|>|B|>|C|, |C|=|A|-|B|\}$ consiste in stringhe $A\#B\#C$ dove $A,B,C$ sono stringhe non vuote di '0' o '1'. Devono valere le condizioni sulle lunghezze:
+Il linguaggio $L_2 = \{A\#B\#C \mid A,B,C \in \{0,1\}^+, |A|>|B|>|C|, |C|=|A|-|B|\}$ consiste in stringhe $A\#B\#C$ dove $A,B,C$ sono stringhe non vuote di $0$ o $1$. Devono valere le condizioni sulle lunghezze:
 \begin{itemize}
     \item $|A| > |B| > |C|$ (lunghezze strettamente decrescenti)
     \item $|C| = |A| - |B|$
@@ -173,7 +173,7 @@ Utilizziamo 3 nastri.
 \end{description}
 
 \subsection{Linguaggio $L_3$}
-Il linguaggio $L_3 = \{W\#W\#W \mid W \in \{0,1\}^*\}$ consiste in stringhe $W\#W\#W$, dove $W$ è una stringa (anche vuota) di '0' o '1'. Le tre occorrenze di $W$ devono essere identiche.
+Il linguaggio $L_3 = \{W\#W\#W \mid W \in \{0,1\}^*\}$ consiste in stringhe $W\#W\#W$, dove $W$ è una stringa (anche vuota) di $0$ o $1$. Le tre occorrenze di $W$ devono essere identiche.
 \begin{example}
 Esempi: $01\#01\#01$, $\#\#$ (per $W=\epsilon$).
 \end{example}
@@ -287,7 +287,7 @@ La strategia consiste nel provare a far corrispondere la stringa $A$ (copiata su
 \end{description}
 
 \subsection{Linguaggio $L_5$}
-Il linguaggio $L_5 = \{WW \mid W \in \{0,1\}^+\}$ è l'insieme di stringhe che sono la concatenazione di una stringa $W$ con sé stessa, dove $W$ è non vuota e composta da '0' o '1'.
+Il linguaggio $L_5 = \{WW \mid W \in \{0,1\}^+\}$ è l'insieme di stringhe che sono la concatenazione di una stringa $W$ con sé stessa, dove $W$ è non vuota e composta da $0$ o $1$.
 \begin{example}
 Esempi: $00$, $0101$, $1111$.
 Esempi non in $L_5$: $0110$ (non $WW$), $0$ (lunghezza dispari), $\epsilon$ (W non vuota).
@@ -353,6 +353,6 @@ Il problema principale è identificare il punto centrale della stringa senza un 
 
 \subsection{Esercizio Aggiuntivo per Casa}
 Sia $L_6 = \{W\#A \mid W,A \in \{0,1\}^+, A=W \text{ OR } A=W^R\}$.
-Il linguaggio $L_6$ include stringhe $W\#A$ dove $W$ e $A$ sono stringhe non vuote di '0' o '1'. La stringa $A$ deve essere identica a $W$ oppure essere la sua inversa ($W^R$).
+Il linguaggio $L_6$ include stringhe $W\#A$ dove $W$ e $A$ sono stringhe non vuote di $0$ o $1$. La stringa $A$ deve essere identica a $W$ oppure essere la sua inversa ($W^R$).
 
 \end{document}
