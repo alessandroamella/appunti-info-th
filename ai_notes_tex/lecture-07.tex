@@ -81,10 +81,8 @@ significa che per eseguire la transizione, la TM deve leggere $\text{leggi}_1$ d
 \section{Esercizi di Riconoscimento di Linguaggi}
 Illustriamo il funzionamento delle TM multinastro attraverso esempi pratici di riconoscimento di linguaggi.
 
-\subsection{Linguaggio $L_1 = \{A\#B\#AB \mid A,B \in \{0,1\}^+\}$}
-\begin{definition}
-Il linguaggio $L_1$ è l'insieme di tutte le stringhe composte da tre parti $A$, $B$ e $AB$ (concatenazione di $A$ e $B$), separate da simboli \texttt{\#}. Le stringhe $A$ e $B$ sono composte da caratteri '0' o '1' e devono avere lunghezza di almeno 1.
-\end{definition}
+\subsection{Linguaggio $L_1$}
+Il linguaggio $L_1 = \{A\#B\#AB \mid A,B \in \{0,1\}^+\}$ è l'insieme di tutte le stringhe composte da tre parti $A$, $B$ e $AB$ (concatenazione di $A$ e $B$), separate da simboli \texttt{\#}. Le stringhe $A$ e $B$ sono composte da caratteri '0' o '1' e devono avere lunghezza di almeno 1.
 \begin{example}
 Esempi di stringhe in $L_1$: $0\texttt{\#}1\texttt{\#}01$, $01\texttt{\#}0\texttt{\#}010$.
 Esempi di stringhe non in $L_1$: $0\texttt{\#}1\texttt{\#}10$ (AB sbagliato), $0\texttt{\#}\texttt{\#}0$ (B vuoto), $\texttt{\#}1\texttt{\#}1$ (A vuoto).
@@ -130,14 +128,12 @@ Utilizziamo una TM con 2 nastri.
     \item[Rifiuto:] Se in qualsiasi stato la TM tenta una transizione non definita (es. simboli non corrispondenti durante il confronto, \texttt{\#} al posto di un carattere, stringa non conforme al formato $A\texttt{\#}B\texttt{\#}AB$), la macchina si blocca e rifiuta.
 \end{description}
 
-\subsection{Linguaggio $L_2 = \{A\#B\#C \mid A,B,C \in \{0,1\}^+, |A|>|B|>|C|, |C|=|A|-|B|\}$}
-\begin{definition}
-Il linguaggio $L_2$ consiste in stringhe $A\#B\#C$ dove $A,B,C$ sono stringhe non vuote di '0' o '1'. Devono valere le condizioni sulle lunghezze:
+\subsection{Linguaggio $L_2$}
+Il linguaggio $L_2 = \{A\#B\#C \mid A,B,C \in \{0,1\}^+, |A|>|B|>|C|, |C|=|A|-|B|\}$ consiste in stringhe $A\#B\#C$ dove $A,B,C$ sono stringhe non vuote di '0' o '1'. Devono valere le condizioni sulle lunghezze:
 \begin{itemize}
     \item $|A| > |B| > |C|$ (lunghezze strettamente decrescenti)
     \item $|C| = |A| - |B|$
 \end{itemize}
-\end{definition}
 
 \subsubsection{Strategia}
 Utilizziamo 3 nastri.
@@ -176,10 +172,8 @@ Utilizziamo 3 nastri.
     \item[Rifiuto:] Tutte le condizioni non soddisfatte portano al rifiuto (es. testina Nastro 2 su $\blankS$ troppo presto, testina Nastro 3 su $\blankS$ troppo presto, etc.).
 \end{description}
 
-\subsection{Linguaggio $L_3 = \{W\#W\#W \mid W \in \{0,1\}^*\}$}
-\begin{definition}
-Il linguaggio $L_3$ consiste in stringhe $W\#W\#W$, dove $W$ è una stringa (anche vuota) di '0' o '1'. Le tre occorrenze di $W$ devono essere identiche.
-\end{definition}
+\subsection{Linguaggio $L_3$}
+Il linguaggio $L_3 = \{W\#W\#W \mid W \in \{0,1\}^*\}$ consiste in stringhe $W\#W\#W$, dove $W$ è una stringa (anche vuota) di '0' o '1'. Le tre occorrenze di $W$ devono essere identiche.
 \begin{example}
 Esempi: $01\#01\#01$, $\#\#$ (per $W=\epsilon$).
 \end{example}
@@ -226,10 +220,8 @@ Dopo aver copiato la prima $W$, le testine di Nastro 2 e 3 vengono riavvolte. Su
     \item[Rifiuto:] Qualsiasi discrepanza tra i simboli durante i confronti o formato non corretto della stringa porta al rifiuto.
 \end{description}
 
-\subsection{Linguaggio $L_4 = \{A\#B \mid A,B \in \{a,b\}^*, A \subseteq B \}$}
-\begin{definition}
-Il linguaggio $L_4$ è l'insieme di stringhe $A\#B$ dove $A$ e $B$ sono stringhe sull'alfabeto $\{a,b\}$, e $A$ è una sottostringa di $B$. La stringa vuota ($\epsilon$) è una sottostringa di ogni stringa.
-\end{definition}
+\subsection{Linguaggio $L_4$}
+Il linguaggio $L_4 = \{A\#B \mid A,B \in \{a,b\}^*, A \subseteq B \}$ è l'insieme di stringhe $A\#B$ dove $A$ e $B$ sono stringhe sull'alfabeto $\{a,b\}$, e $A$ è una sottostringa di $B$. La stringa vuota ($\epsilon$) è una sottostringa di ogni stringa.
 \begin{example}
 Esempi: $a\#bab$, $ab\#ababa$, $\#ab$ (A è vuota).
 Esempi non in $L_4$: $ab\#ba$, $a\#b$.
@@ -294,10 +286,8 @@ La strategia consiste nel provare a far corrispondere la stringa $A$ (copiata su
     \end{itemize}
 \end{description}
 
-\subsection{Linguaggio $L_5 = \{WW \mid W \in \{0,1\}^+\}$}
-\begin{definition}
-Il linguaggio $L_5$ è l'insieme di stringhe che sono la concatenazione di una stringa $W$ con sé stessa, dove $W$ è non vuota e composta da '0' o '1'.
-\end{definition}
+\subsection{Linguaggio $L_5$}
+Il linguaggio $L_5 = \{WW \mid W \in \{0,1\}^+\}$ è l'insieme di stringhe che sono la concatenazione di una stringa $W$ con sé stessa, dove $W$ è non vuota e composta da '0' o '1'.
 \begin{example}
 Esempi: $00$, $0101$, $1111$.
 Esempi non in $L_5$: $0110$ (non $WW$), $0$ (lunghezza dispari), $\epsilon$ (W non vuota).
@@ -362,9 +352,7 @@ Il problema principale è identificare il punto centrale della stringa senza un 
 \end{description}
 
 \subsection{Esercizio Aggiuntivo per Casa}
-\begin{definition}
-Sia $L_6 = \{W\#A \mid W,A \in \{0,1\}^+, A=W \text{ OR } A=W^R\}$
-\end{definition}
+Sia $L_6 = \{W\#A \mid W,A \in \{0,1\}^+, A=W \text{ OR } A=W^R\}$.
 Il linguaggio $L_6$ include stringhe $W\#A$ dove $W$ e $A$ sono stringhe non vuote di '0' o '1'. La stringa $A$ deve essere identica a $W$ oppure essere la sua inversa ($W^R$).
 
 \end{document}
