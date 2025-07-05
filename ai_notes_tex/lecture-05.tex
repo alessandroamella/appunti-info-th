@@ -84,9 +84,8 @@ La programmazione delle Macchine di Turing richiede una visualizzazione chiara d
 
 Un'altra tecnica importante è \textbf{evitare di cancellare i simboli di input} (sostituendoli con blank) se non strettamente necessario, specialmente per stringhe complesse. Questo può creare "buchi" sul nastro, rendendo difficile tenere traccia della posizione relativa della testina e delle parti rimanenti della stringa. È preferibile \textbf{marcare i simboli di input} con simboli speciali dell'alfabeto del nastro ($\Gamma$), mantenendo l'input compatto.
 
-\subsection{Esercizio 1: Linguaggio dei Palindromi $L = \{ww^R \mid w \in \{0,1\}^*\}$}
-
-Vogliamo progettare una TM che decide il linguaggio delle stringhe palindromiche con due parti $w$ e $w^R$ concatenate. L'alfabeto è $\{0,1\}$. Esempi: $\varepsilon$, $00$, $11$, $0110$, $1001$.
+\subsection{Esercizio 1: Linguaggio dei Palindromi}
+Il linguaggio $L = \{ww^R \mid w \in \{0,1\}^*\}$ è l'insieme delle stringhe palindromiche composte da due parti $w$ e $w^R$ concatenate. L'alfabeto è $\{0,1\}$. Esempi: $\varepsilon$, $00$, $11$, $0110$, $1001$.
 
 \begin{example}[Strategia]
 La strategia consiste nel confrontare il primo carattere di $w$ con l'ultimo carattere di $w^R$, il secondo con il penultimo, e così via, fino a quando tutti i caratteri sono stati confrontati.
@@ -162,9 +161,8 @@ La strategia consiste nel confrontare il primo carattere di $w$ con l'ultimo car
 \end{itemize}
 Questa TM decide il linguaggio, poiché su ogni input valido o meno, si fermerà in uno stato accettante o non accettante.
 
-\subsection{Esercizio 2: Linguaggio $L = \{a^n b^m \mid m > n > 0\}$}
-
-Vogliamo progettare una TM che decide il linguaggio di stringhe con sequenze di $a$ seguite da sequenze di $b$, dove il numero di $b$ è strettamente maggiore del numero di $a$, ed entrambi sono maggiori di $0$. Esempio: $aab^{3}$, $ab^{2}$.
+\subsection{Esercizio 2}
+Il linguaggio $L = \{a^n b^m \mid m > n > 0\}$ è l'insieme di stringhe con sequenze di $a$ seguite da sequenze di $b$, dove il numero di $b$ è strettamente maggiore del numero di $a$, ed entrambi sono maggiori di $0$. Esempio: $aab^{3}$, $ab^{2}$.
 
 \begin{example}[Strategia]
 La strategia prevede di marcare un'$a$ e poi la prima $b$ corrispondente, ripetendo il processo. Alla fine, si verifica che tutte le $a$ siano state marcate e che ci siano $b$ non marcate rimaste.
@@ -216,9 +214,8 @@ La strategia prevede di marcare un'$a$ e poi la prima $b$ corrispondente, ripete
 \end{itemize}
 Questa TM decide il linguaggio, rifiutando stringhe che non soddisfano le condizioni (es. $n \ge m$, ordine sbagliato dei caratteri, ecc.).
 
-\subsection{Esercizio 3: Linguaggio $L = \{a^n b^m \mid n > 0, m = 2n\}$}
-
-Vogliamo progettare una TM che decide il linguaggio di stringhe con sequenze di $a$ seguite da sequenze di $b$, dove il numero di $b$ è il doppio del numero di $a$, ed $n$ è maggiore di $0$. Esempio: $aab^{4}$, $ab^{2}$.
+\subsection{Esercizio 3}
+Il linguaggio $L = \{a^n b^m \mid n > 0, m = 2n\}$ è l'insieme di stringhe con sequenze di $a$ seguite da sequenze di $b$, dove il numero di $b$ è il doppio del numero di $a$, ed $n$ è maggiore di $0$. Esempio: $aab^{4}$, $ab^{2}$.
 
 \begin{example}[Strategia]
 Molto simile al precedente, ma per ogni $a$ marcata, si devono marcare due $b$.
@@ -267,9 +264,8 @@ Molto simile al precedente, ma per ogni $a$ marcata, si devono marcare due $b$.
 \end{itemize}
 Condizioni di rifiuto implicite: se non si trovano due $b$ per ogni $a$, o se l'ordine dei simboli non è $a$ poi $b$.
 
-\subsection{Esercizio 4: Linguaggio $L = \{w\#w \mid w \in \{a,b\}^+\}$}
-
-Vogliamo progettare una TM che decide il linguaggio di stringhe composte da una sequenza $w$, seguita da un separatore $\#$, e poi dalla stessa sequenza $w$. $w$ deve avere almeno un simbolo. Esempi: $a\#a$, $ab\#ab$, $baba\#baba$.
+\subsection{Esercizio 4}
+Il linguaggio $L = \{w\#w \mid w \in \{a,b\}^+\}$ è l'insieme di stringhe composte da una sequenza $w$, seguita da un separatore $\#$, e poi dalla stessa sequenza $w$. $w$ deve avere almeno un simbolo. Esempi: $a\#a$, $ab\#ab$, $baba\#baba$.
 
 \begin{example}[Strategia]
 La strategia si basa sul confronto carattere per carattere delle due metà della stringa, usando il $\#$ come punto di riferimento.
@@ -345,9 +341,8 @@ La strategia si basa sul confronto carattere per carattere delle due metà della
 \end{itemize}
 Questa TM decide il linguaggio, rifiutando stringhe come $a\#b$ o $aa\#a$ o $a\#bb$.
 
-\subsection{Esercizio 5: Linguaggio $L = \{a^n b^n c^n \mid n > 0\}$}
-
-Vogliamo progettare una TM che decide il linguaggio di stringhe con un numero uguale di $a$, $b$, e $c$, in sequenza $a^*b^*c^*$. $n$ deve essere maggiore di $0$. Esempio: $abc$, $aabbcc$.
+\subsection{Esercizio 5}
+Il linguaggio $L = \{a^n b^n c^n \mid n > 0\}$ è l'insieme di stringhe con un numero uguale di $a$, $b$, e $c$, in sequenza $a^*b^*c^*$. $n$ deve essere maggiore di $0$. Esempio: $abc$, $aabbcc$.
 
 \begin{example}[Strategia]
 La strategia è marcare un'$a$, poi una $b$, poi una $c$, e ripetere fino a quando tutti i caratteri sono stati marcati.
