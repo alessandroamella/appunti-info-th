@@ -208,31 +208,33 @@ L'idea è "barrare" una 'a' dal lato sinistro e una 'b' dal lato destro ad ogni 
 \end{figure}
 
 \textbf{Traccia del funzionamento (con correzioni al diagramma basate sulla discussione):}
-1.  \textbf{$q_0$ (Stato Iniziale)}:
-    \begin{itemize}
-        \item Se legge \texttt{A}: Scrive \blankS (blank), sposta a destra ($\texttt{R}$), va in $q_1$. (Cancella la prima 'a').
-        \item Se legge \blankS o \blankS (blank, dopo aver cancellato tutto): Significa che non ci sono più 'a' da cancellare, quindi verifica se anche le 'b' sono finite. Se legge \blankS e sposta a destra, va in $q_4$ (stato accettante).
-    \end{itemize}
-2.  \textbf{$q_1$ (Cerca l'ultima 'b')}:
-    \begin{itemize}
-        \item Se legge \texttt{A}: Scrive \texttt{A}, sposta a destra ($\texttt{R}$), rimane in $q_1$. (Salta le 'a' rimanenti).
-        \item Se legge \blankS: Scrive \blankS, sposta a destra ($\texttt{R}$), rimane in $q_1$. (Salta le 'b' fino alla fine).
-        \item Se legge \blankS (blank): Scrive \blankS, sposta a sinistra ($\texttt{L}$), va in $q_2$. (Ha raggiunto la fine della stringa, torna indietro per trovare l'ultima 'b').
-    \end{itemize}
-3.  \textbf{$q_2$ (Cancella l'ultima 'b')}:
-    \begin{itemize}
-        \item Se legge \blankS: Scrive \blankS (blank), sposta a sinistra ($\texttt{L}$), va in $q_3$. (Cancella l'ultima 'b' e inizia a tornare all'inizio della stringa).
-    \end{itemize}
-4.  \textbf{$q_3$ (Torna all'inizio)}:
-    \begin{itemize}
-        \item Se legge \texttt{A}: Scrive \texttt{A}, sposta a sinistra ($\texttt{L}$), rimane in $q_3$. (Salta le 'a' rimanenti, andando a sinistra).
-        \item Se legge \blankS: Scrive \blankS, sposta a sinistra ($\texttt{L}$), rimane in $q_3$. (Salta le 'b' rimanenti, andando a sinistra).
-        \item Se legge \blankS (blank): Scrive \blankS, sposta a destra ($\texttt{R}$), va in $q_0$. (Ha raggiunto l'inizio della stringa, torna a $q_0$ per la prossima iterazione).
-    \end{itemize}
-5.  \textbf{$q_4$ (Stato Accettante)}:
-    \begin{itemize}
-        \item Questo è uno stato accettante. Se la TM raggiunge $q_4$, la stringa è accettata.
-    \end{itemize}
+\begin{enumerate}
+    \item \textbf{$q_0$ (Stato Iniziale)}:
+        \begin{itemize}
+            \item Se legge \texttt{A}: Scrive \blankS (blank), sposta a destra ($\texttt{R}$), va in $q_1$. (Cancella la prima 'a').
+            \item Se legge \blankS o \blankS (blank, dopo aver cancellato tutto): Significa che non ci sono più 'a' da cancellare, quindi verifica se anche le 'b' sono finite. Se legge \blankS e sposta a destra, va in $q_4$ (stato accettante).
+        \end{itemize}
+    \item \textbf{$q_1$ (Cerca l'ultima 'b')}:
+        \begin{itemize}
+            \item Se legge \texttt{A}: Scrive \texttt{A}, sposta a destra ($\texttt{R}$), rimane in $q_1$. (Salta le 'a' rimanenti).
+            \item Se legge \blankS: Scrive \blankS, sposta a destra ($\texttt{R}$), rimane in $q_1$. (Salta le 'b' fino alla fine).
+            \item Se legge \blankS (blank): Scrive \blankS, sposta a sinistra ($\texttt{L}$), va in $q_2$. (Ha raggiunto la fine della stringa, torna indietro per trovare l'ultima 'b').
+        \end{itemize}
+    \item \textbf{$q_2$ (Cancella l'ultima 'b')}:
+        \begin{itemize}
+            \item Se legge \blankS: Scrive \blankS (blank), sposta a sinistra ($\texttt{L}$), va in $q_3$. (Cancella l'ultima 'b' e inizia a tornare all'inizio della stringa).
+        \end{itemize}
+    \item \textbf{$q_3$ (Torna all'inizio)}:
+        \begin{itemize}
+            \item Se legge \texttt{A}: Scrive \texttt{A}, sposta a sinistra ($\texttt{L}$), rimane in $q_3$. (Salta le 'a' rimanenti, andando a sinistra).
+            \item Se legge \blankS: Scrive \blankS, sposta a sinistra ($\texttt{L}$), rimane in $q_3$. (Salta le 'b' rimanenti, andando a sinistra).
+            \item Se legge \blankS (blank): Scrive \blankS, sposta a destra ($\texttt{R}$), va in $q_0$. (Ha raggiunto l'inizio della stringa, torna a $q_0$ per la prossima iterazione).
+        \end{itemize}
+    \item \textbf{$q_4$ (Stato Accettante)}:
+        \begin{itemize}
+            \item Questo è uno stato accettante. Se la TM raggiunge $q_4$, la stringa è accettata.
+        \end{itemize}
+\end{enumerate}
 
 \textbf{Gestione di stringhe "strane" (e.g., \texttt{ABaAB})}:
 La macchina come progettata dovrebbe rifiutare stringhe che non seguono il pattern $a^*b^*$.

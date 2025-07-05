@@ -243,33 +243,33 @@ Una Macchina di Turing multinastro ha \textbf{più nastri completamente indipend
 \end{definition}
 
 \begin{example}[Linguaggio $L = \{w \mid w \in \{0,1,2\}^*, \text{count}(0)=\text{count}(1)=\text{count}(2)\}$]
-Vogliamo decidere se il numero di '0', '1' e '2' in una stringa di input è uguale.
+Vogliamo decidere se il numero di $0$, $1$ e $2$ in una stringa di input è uguale.
 Approccio con TM multinastro (4 nastri: 1 input, 3 di lavoro):
 \begin{enumerate}
     \item \textbf{Nastro 1 (Input)}: Contiene la stringa $w$.
-    \item \textbf{Nastro 2 (Zeros)}: Memorizzerà tutti gli '0'.
-    \item \textbf{Nastro 3 (Ones)}: Memorizzerà tutti gli '1'.
-    \item \textbf{Nastro 4 (Twos)}: Memorizzerà tutti i '2'.
+    \item \textbf{Nastro 2 (Zeros)}: Memorizzerà tutti gli $0$.
+    \item \textbf{Nastro 3 (Ones)}: Memorizzerà tutti gli $1$.
+    \item \textbf{Nastro 4 (Twos)}: Memorizzerà tutti i $2$.
 \end{enumerate}
 \textbf{Strategia:}
 \begin{itemize}
     \item \textbf{Passo 1: Copia e Separazione (Stato $q_0$)}:
         \begin{itemize}
             \item Si scansiona il Nastro 1 da sinistra a destra.
-            \item Se si legge '0' sul Nastro 1:
+            \item Se si legge $0$ sul Nastro 1:
                 \begin{itemize}
-                    \item Mantiene '0' sul Nastro 1, muove testina 1 a destra (R).
-                    \item Scrive '0' sul Nastro 2 (che era $\blankS$), muove testina 2 a destra (R).
+                    \item Mantiene $0$ sul Nastro 1, muove testina 1 a destra (R).
+                    \item Scrive $0$ sul Nastro 2 (che era $\blankS$), muove testina 2 a destra (R).
                 \end{itemize}
-            \item Se si legge '1' sul Nastro 1:
+            \item Se si legge $1$ sul Nastro 1:
                 \begin{itemize}
-                    \item Mantiene '1' sul Nastro 1, muove testina 1 a destra (R).
-                    \item Scrive '1' sul Nastro 3 (che era $\blankS$), muove testina 3 a destra (R).
+                    \item Mantiene $1$ sul Nastro 1, muove testina 1 a destra (R).
+                    \item Scrive $1$ sul Nastro 3 (che era $\blankS$), muove testina 3 a destra (R).
                 \end{itemize}
-            \item Se si legge '2' sul Nastro 1:
+            \item Se si legge $2$ sul Nastro 1:
                 \begin{itemize}
-                    \item Mantiene '2' sul Nastro 1, muove testina 1 a destra (R).
-                    \item Scrive '2' sul Nastro 4 (che era $\blankS$), muove testina 4 a destra (R).
+                    \item Mantiene $2$ sul Nastro 1, muove testina 1 a destra (R).
+                    \item Scrive $2$ sul Nastro 4 (che era $\blankS$), muove testina 4 a destra (R).
                 \end{itemize}
             \item Questo continua finché il Nastro 1 non incontra $\blankS$.
         \end{itemize}
@@ -286,7 +286,7 @@ Approccio con TM multinastro (4 nastri: 1 input, 3 di lavoro):
         \begin{itemize}
             \item Nello stato $q_1$, le testine dei nastri 2, 3, 4 sono posizionate all'inizio dei simboli scritti.
             \item Si muovono simultaneamente a sinistra (L), leggendo i simboli.
-            \item Se Nastro 2 legge '0', Nastro 3 legge '1', Nastro 4 legge '2':
+            \item Se Nastro 2 legge $0$, Nastro 3 legge $1$, Nastro 4 legge $2$:
                 \begin{itemize}
                     \item Mantengono i simboli, muovono testine 2, 3, 4 a sinistra (L).
                     \item Rimangono in $q_1$.

@@ -93,8 +93,8 @@ La strategia consiste nel confrontare il primo carattere di $w$ con l'ultimo car
 \begin{enumerate}
     \item Partire dal primo simbolo non marcato del nastro.
     \item Leggere il simbolo (es. $0$ o $1$), marcarlo (sostituirlo con un Blank $\blankS$).
-    \item Spostare la testina fino alla fine della stringa (trovando il primo $B$ a destra), quindi tornare indietro di un passo per posizionarsi sull'ultimo simbolo.
-    \item Verificare che l'ultimo simbolo sia uguale a quello letto inizialmente. Se sì, marcarlo (sostituirlo con $B$).
+    \item Spostare la testina fino alla fine della stringa (trovando il primo \blankS a destra), quindi tornare indietro di un passo per posizionarsi sull'ultimo simbolo.
+    \item Verificare che l'ultimo simbolo sia uguale a quello letto inizialmente. Se sì, marcarlo (sostituirlo con \blankS).
     \item Spostare la testina all'inizio della parte non marcata della stringa.
     \item Ripetere il processo fino a quando tutti i simboli sono stati marcati.
     \item Se tutti i simboli sono stati marcati correttamente, la stringa è accettata.
@@ -132,34 +132,34 @@ La strategia consiste nel confrontare il primo carattere di $w$ con l'ultimo car
 \begin{itemize}
     \item \textbf{Stato $q_0$ (Iniziale):}
     \begin{itemize}
-        \item Se legge $0$: scrive $B$ (blank), sposta a destra ($R$), va in $q_1$.
-        \item Se legge $1$: scrive $B$, sposta a destra ($R$), va in $q_4$.
-        \item Se legge $B$: scrive $B$, sposta a destra ($R$), va in $q_6$ (stato accettante). Questo accetta la stringa vuota.
+        \item Se legge $0$: scrive \blankS (blank), sposta a destra ($R$), va in $q_1$.
+        \item Se legge $1$: scrive \blankS, sposta a destra ($R$), va in $q_4$.
+        \item Se legge \blankS: scrive \blankS, sposta a destra ($R$), va in $q_6$ (stato accettante). Questo accetta la stringa vuota.
     \end{itemize}
     \item \textbf{Stato $q_1$ (Cerca fine stringa dopo aver letto $0$):}
     \begin{itemize}
         \item Se legge $0$ o $1$: lascia il simbolo, sposta a destra ($R$), rimane in $q_1$. Salta tutti i caratteri.
-        \item Se legge $B$: lascia $B$, sposta a sinistra ($L$), va in $q_2$. Questo indica che la testina ha raggiunto la fine della stringa e si posiziona sull'ultimo carattere.
+        \item Se legge \blankS: lascia \blankS, sposta a sinistra ($L$), va in $q_2$. Questo indica che la testina ha raggiunto la fine della stringa e si posiziona sull'ultimo carattere.
     \end{itemize}
     \item \textbf{Stato $q_2$ (Confronta ultimo carattere per $0$):}
     \begin{itemize}
-        \item Se legge $0$: scrive $B$, sposta a sinistra ($L$), va in $q_3$. Il $0$ iniziale è stato confrontato con successo.
-        \item Se legge $1$ o $B$: la stringa non è del formato corretto (implica rifiuto non fermandosi in stato accettante).
+        \item Se legge $0$: scrive \blankS, sposta a sinistra ($L$), va in $q_3$. Il $0$ iniziale è stato confrontato con successo.
+        \item Se legge $1$ o \blankS: la stringa non è del formato corretto (implica rifiuto non fermandosi in stato accettante).
     \end{itemize}
     \item \textbf{Stato $q_3$ (Torna all'inizio):}
     \begin{itemize}
         \item Se legge $0$ o $1$: lascia il simbolo, sposta a sinistra ($L$), rimane in $q_3$. Salta tutti i caratteri.
-        \item Se legge $B$: lascia $B$, sposta a destra ($R$), va in $q_0$. Questo indica che la testina ha raggiunto l'inizio del nastro e si posiziona sul prossimo carattere non marcato.
+        \item Se legge \blankS: lascia \blankS, sposta a destra ($R$), va in $q_0$. Questo indica che la testina ha raggiunto l'inizio del nastro e si posiziona sul prossimo carattere non marcato.
     \end{itemize}
     \item \textbf{Stato $q_4$ (Cerca fine stringa dopo aver letto $1$):}
     \begin{itemize}
         \item Se legge $0$ o $1$: lascia il simbolo, sposta a destra ($R$), rimane in $q_4$. Salta tutti i caratteri.
-        \item Se legge $B$: lascia $B$, sposta a sinistra ($L$), va in $q_5$. Raggiunto fine stringa, posiziona sull'ultimo.
+        \item Se legge \blankS: lascia \blankS, sposta a sinistra ($L$), va in $q_5$. Raggiunto fine stringa, posiziona sull'ultimo.
     \end{itemize}
     \item \textbf{Stato $q_5$ (Confronta ultimo carattere per $1$):}
     \begin{itemize}
-        \item Se legge $1$: scrive $B$, sposta a sinistra ($L$), va in $q_3$. L'$1$ iniziale è stato confrontato con successo.
-        \item Se legge $0$ o $B$: la stringa non è del formato corretto (implica rifiuto).
+        \item Se legge $1$: scrive \blankS, sposta a sinistra ($L$), va in $q_3$. L'$1$ iniziale è stato confrontato con successo.
+        \item Se legge $0$ o \blankS: la stringa non è del formato corretto (implica rifiuto).
     \end{itemize}
     \item \textbf{Stato $q_6$ (Accettante):} Se la macchina raggiunge questo stato, la stringa è accettata.
 \end{itemize}
@@ -167,53 +167,53 @@ Questa TM decide il linguaggio, poiché su ogni input valido o meno, si fermerà
 
 \subsection{Esercizio 2: Linguaggio $L = \{a^n b^m \mid m > n > 0\}$}
 
-Vogliamo progettare una TM che decide il linguaggio di stringhe con sequenze di 'a' seguite da sequenze di 'b', dove il numero di 'b' è strettamente maggiore del numero di 'a', ed entrambi sono maggiori di $0$. Esempio: $aab^{3}$, $ab^{2}$.
+Vogliamo progettare una TM che decide il linguaggio di stringhe con sequenze di $a$ seguite da sequenze di $b$, dove il numero di $b$ è strettamente maggiore del numero di $a$, ed entrambi sono maggiori di $0$. Esempio: $aab^{3}$, $ab^{2}$.
 
 \begin{example}[Strategia]
-La strategia prevede di marcare un' 'a' e poi la prima 'b' corrispondente, ripetendo il processo. Alla fine, si verifica che tutte le 'a' siano state marcate e che ci siano 'b' non marcate rimaste.
+La strategia prevede di marcare un'$a$ e poi la prima $b$ corrispondente, ripetendo il processo. Alla fine, si verifica che tutte le $a$ siano state marcate e che ci siano $b$ non marcate rimaste.
 \begin{enumerate}
-    \item Marcare la prima 'a' non marcata (es. con 'X').
-    \item Spostarsi a destra, saltando altre 'a' e 'Y' (b già marcate) fino a trovare la prima 'b' non marcata.
-    \item Marcare questa 'b' (es. con 'Y').
-    \item Spostarsi a sinistra, saltando 'a', 'b', 'Y' fino a trovare la 'X' più a destra.
-    \item Spostarsi a destra di una posizione per trovare la prossima 'a' non marcata e ripetere.
-    \item Una volta che tutte le 'a' sono state marcate, si controlla che ci siano 'b' non marcate rimaste. Se sì, la stringa è accettata.
+    \item Marcare la prima $a$ non marcata (es. con $X$).
+    \item Spostarsi a destra, saltando altre $a$ e $Y$ (b già marcate) fino a trovare la prima $b$ non marcata.
+    \item Marcare questa $b$ (es. con $Y$).
+    \item Spostarsi a sinistra, saltando $a$, $b$, $Y$ fino a trovare la $X$ più a destra.
+    \item Spostarsi a destra di una posizione per trovare la prossima $a$ non marcata e ripetere.
+    \item Una volta che tutte le $a$ sono state marcate, si controlla che ci siano $b$ non marcate rimaste. Se sì, la stringa è accettata.
 \end{enumerate}
 \end{example}
 
 \noindent \textbf{Alfabeto del nastro $\Gamma = \{a, b, X, Y, B\}$.}
-\noindent \textbf{Stati:} $q_0$ (iniziale), $q_1$ (marcata 'a', cerca 'b'), $q_2$ (salta 'Y' per trovare 'b'), $q_3$ (marcata 'b', torna indietro), $q_4$ (torna indietro per 'X'), $q_5$ (accettazione 'b' residue), $q_6$ (accettante).
+\noindent \textbf{Stati:} $q_0$ (iniziale), $q_1$ (marcata $a$, cerca $b$), $q_2$ (salta $Y$ per trovare $b$), $q_3$ (marcata $b$, torna indietro), $q_4$ (torna indietro per $X$), $q_5$ (accettazione $b$ residue), $q_6$ (accettante).
 
 \noindent \textbf{Transizioni:}
 \begin{itemize}
-    \item \textbf{Stato $q_0$ (Iniziale / Cerca 'a'):}
+    \item \textbf{Stato $q_0$ (Iniziale / Cerca $a$):}
         \begin{itemize}
-            \item $q_0 \xrightarrow{a / X, R} q_1$ (Marca la prima 'a' con 'X', si muove a destra)
-            \item $q_0 \xrightarrow{Y / Y, R} q_5$ (Se trova una 'Y', significa che tutte le 'a' sono state marcate e si controllano le 'b' residue)
-            \item Se $q_0$ legge $B$ (stringa vuota) o $b$ (stringa non valida, n > 0) $\to$ implicitamente rifiuta.
+            \item $q_0 \xrightarrow{a / X, R} q_1$ (Marca la prima $a$ con $X$, si muove a destra)
+            \item $q_0 \xrightarrow{Y / Y, R} q_5$ (Se trova una $Y$, significa che tutte le $a$ sono state marcate e si controllano le $b$ residue)
+            \item Se $q_0$ legge \blankS (stringa vuota) o \blankS (stringa non valida, $n > 0$) $\to$ implicitamente rifiuta.
         \end{itemize}
-    \item \textbf{Stato $q_1$ (Marca 'a', cerca 'b'):}
+    \item \textbf{Stato $q_1$ (Marca $a$, cerca $b$):}
         \begin{itemize}
-            \item $q_1 \xrightarrow{a / a, R} q_1$ (Salta altre 'a')
-            \item $q_1 \xrightarrow{Y / Y, R} q_2$ (Salta 'b' già marcate con 'Y')
-            \item $q_1 \xrightarrow{b / Y, L} q_3$ (Marca la prima 'b' con 'Y', va a sinistra. Questo è il caso in cui non ci sono 'Y' tra 'a' e 'b' non marcate)
+            \item $q_1 \xrightarrow{a / a, R} q_1$ (Salta altre $a$)
+            \item $q_1 \xrightarrow{Y / Y, R} q_2$ (Salta $b$ già marcate con $Y$)
+            \item $q_1 \xrightarrow{b / Y, L} q_3$ (Marca la prima $b$ con $Y$, va a sinistra. Questo è il caso in cui non ci sono $Y$ tra $a$ e $b$ non marcate)
         \end{itemize}
-    \item \textbf{Stato $q_2$ (Salto 'Y' intermedie):}
+    \item \textbf{Stato $q_2$ (Salto $Y$ intermedie):}
         \begin{itemize}
-            \item $q_2 \xrightarrow{Y / Y, R} q_2$ (Continua a saltare 'Y' già marcate)
-            \item $q_2 \xrightarrow{b / Y, L} q_3$ (Marca la 'b' con 'Y', va a sinistra)
+            \item $q_2 \xrightarrow{Y / Y, R} q_2$ (Continua a saltare $Y$ già marcate)
+            \item $q_2 \xrightarrow{b / Y, L} q_3$ (Marca la $b$ con $Y$, va a sinistra)
         \end{itemize}
-    \item \textbf{Stato $q_3$ (Marca 'b', torna indietro):}
+    \item \textbf{Stato $q_3$ (Marca $b$, torna indietro):}
         \begin{itemize}
-            \item $q_3 \xrightarrow{a / a, L} q_3$ (Salta 'a' mentre torna indietro)
-            \item $q_3 \xrightarrow{Y / Y, L} q_3$ (Salta 'Y' mentre torna indietro)
-            \item $q_3 \xrightarrow{X / X, R} q_0$ (Ha trovato l'X della 'a' iniziale. Sposta a destra per la prossima 'a' da marcare)
+            \item $q_3 \xrightarrow{a / a, L} q_3$ (Salta $a$ mentre torna indietro)
+            \item $q_3 \xrightarrow{Y / Y, L} q_3$ (Salta $Y$ mentre torna indietro)
+            \item $q_3 \xrightarrow{X / X, R} q_0$ (Ha trovato l'$X$ della $a$ iniziale. Sposta a destra per la prossima $a$ da marcare)
         \end{itemize}
-    \item \textbf{Stato $q_5$ (Verifica 'b' residue):}
+    \item \textbf{Stato $q_5$ (Verifica $b$ residue):}
         \begin{itemize}
-            \item $q_5 \xrightarrow{Y / Y, R} q_5$ (Salta 'Y' residue)
-            \item $q_5 \xrightarrow{b / b, R} q_5$ (Salta 'b' residue non marcate - devono esistere per $m>n$)
-            \item $q_5 \xrightarrow{B / B, R} q_6$ (Se trova $B$, significa che ci sono più 'b' delle 'a' ed è un blank. Stringa accettata)
+            \item $q_5 \xrightarrow{Y / Y, R} q_5$ (Salta $Y$ residue)
+            \item $q_5 \xrightarrow{b / b, R} q_5$ (Salta $b$ residue non marcate - devono esistere per $m>n$)
+            \item $q_5 \xrightarrow{B / B, R} q_6$ (Se trova \blankS, significa che ci sono più $b$ delle $a$ ed è un blank. Stringa accettata)
         \end{itemize}
     \item \textbf{Stato $q_6$ (Accettante):} Stringa accettata.
 \end{itemize}
@@ -221,128 +221,128 @@ Questa TM decide il linguaggio, rifiutando stringhe che non soddisfano le condiz
 
 \subsection{Esercizio 3: Linguaggio $L = \{a^n b^m \mid n > 0, m = 2n\}$}
 
-Vogliamo progettare una TM che decide il linguaggio di stringhe con sequenze di 'a' seguite da sequenze di 'b', dove il numero di 'b' è il doppio del numero di 'a', ed $n$ è maggiore di $0$. Esempio: $aab^{4}$, $ab^{2}$.
+Vogliamo progettare una TM che decide il linguaggio di stringhe con sequenze di $a$ seguite da sequenze di $b$, dove il numero di $b$ è il doppio del numero di $a$, ed $n$ è maggiore di $0$. Esempio: $aab^{4}$, $ab^{2}$.
 
 \begin{example}[Strategia]
-Molto simile al precedente, ma per ogni 'a' marcata, si devono marcare due 'b'.
+Molto simile al precedente, ma per ogni $a$ marcata, si devono marcare due $b$.
 \begin{enumerate}
-    \item Marcare la prima 'a' non marcata (con 'X').
-    \item Spostarsi a destra, saltando 'a' e 'Y' fino a trovare la prima 'b' non marcata. Marcarla (con 'Y').
-    \item Spostarsi ancora a destra, trovare la seconda 'b' non marcata. Marcarla (con 'Y').
-    \item Spostarsi a sinistra, saltando tutti i simboli marcati e non, fino a trovare la 'X' più a destra.
-    \item Spostarsi a destra di una posizione per trovare la prossima 'a' non marcata e ripetere.
-    \item Una volta che tutte le 'a' sono state marcate, si controlla che tutte le 'b' siano state marcate. Se sì, la stringa è accettata.
+    \item Marcare la prima $a$ non marcata (con $X$).
+    \item Spostarsi a destra, saltando $a$ e $Y$ fino a trovare la prima $b$ non marcata. Marcarla (con $Y$).
+    \item Spostarsi ancora a destra, trovare la seconda $b$ non marcata. Marcarla (con $Y$).
+    \item Spostarsi a sinistra, saltando tutti i simboli marcati e non, fino a trovare la $X$ più a destra.
+    \item Spostarsi a destra di una posizione per trovare la prossima $a$ non marcata e ripetere.
+    \item Una volta che tutte le $a$ sono state marcate, si controlla che tutte le $b$ siano state marcate. Se sì, la stringa è accettata.
 \end{enumerate}
 \end{example}
 
 \noindent \textbf{Alfabeto del nastro $\Gamma = \{a, b, X, Y, B\}$.}
-\noindent \textbf{Stati:} $q_0$ (iniziale), $q_1$ (marcata 'a', cerca prima 'b'), $q_2$ (marcata prima 'b', cerca seconda 'b'), $q_3$ (marcata seconda 'b', torna indietro), $q_4$ (torna indietro), $q_5$ (accettazione 'Y' residue), $q_6$ (accettante).
+\noindent \textbf{Stati:} $q_0$ (iniziale), $q_1$ (marcata $a$, cerca prima $b$), $q_2$ (marcata prima $b$, cerca seconda $b$), $q_3$ (marcata seconda $b$, torna indietro), $q_4$ (torna indietro), $q_5$ (accettazione $Y$ residue), $q_6$ (accettante).
 
 \noindent \textbf{Transizioni:}
 \begin{itemize}
-    \item \textbf{Stato $q_0$ (Iniziale / Cerca 'a'):}
+    \item \textbf{Stato $q_0$ (Iniziale / Cerca $a$):}
         \begin{itemize}
-            \item $q_0 \xrightarrow{a / X, R} q_1$ (Marca la prima 'a' con 'X')
-            \item $q_0 \xrightarrow{Y / Y, R} q_5$ (Se trova 'Y', tutte le 'a' sono state marcate, si controllano solo 'b' marcate)
+            \item $q_0 \xrightarrow{a / X, R} q_1$ (Marca la prima $a$ con $X$)
+            \item $q_0 \xrightarrow{Y / Y, R} q_5$ (Se trova $Y$, tutte le $a$ sono state marcate, si controllano solo $b$ marcate)
         \end{itemize}
-    \item \textbf{Stato $q_1$ (Marca 'a', cerca prima 'b'):}
+    \item \textbf{Stato $q_1$ (Marca $a$, cerca prima $b$):}
         \begin{itemize}
-            \item $q_1 \xrightarrow{a / a, R} q_1$ (Salta 'a')
-            \item $q_1 \xrightarrow{Y / Y, R} q_1$ (Salta 'Y' già marcate)
-            \item $q_1 \xrightarrow{b / Y, R} q_2$ (Marca la prima 'b' con 'Y', si muove a destra per cercare la seconda 'b')
+            \item $q_1 \xrightarrow{a / a, R} q_1$ (Salta $a$)
+            \item $q_1 \xrightarrow{Y / Y, R} q_1$ (Salta $Y$ già marcate)
+            \item $q_1 \xrightarrow{b / Y, R} q_2$ (Marca la prima $b$ con $Y$, si muove a destra per cercare la seconda $b$)
         \end{itemize}
-    \item \textbf{Stato $q_2$ (Cerca seconda 'b'):}
+    \item \textbf{Stato $q_2$ (Cerca seconda $b$):}
         \begin{itemize}
-            \item $q_2 \xrightarrow{b / Y, L} q_3$ (Marca la seconda 'b' con 'Y', si muove a sinistra per tornare)
+            \item $q_2 \xrightarrow{b / Y, L} q_3$ (Marca la seconda $b$ con $Y$, si muove a sinistra per tornare)
         \end{itemize}
-    \item \textbf{Stato $q_3$ (Marca seconda 'b', torna indietro):}
+    \item \textbf{Stato $q_3$ (Marca seconda $b$, torna indietro):}
         \begin{itemize}
-            \item $q_3 \xrightarrow{a / a, L} q_3$ (Salta 'a')
-            \item $q_3 \xrightarrow{Y / Y, L} q_3$ (Salta 'Y')
-            \item $q_3 \xrightarrow{X / X, R} q_0$ (Trovato 'X', sposta a destra per la prossima 'a')
+            \item $q_3 \xrightarrow{a / a, L} q_3$ (Salta $a$)
+            \item $q_3 \xrightarrow{Y / Y, L} q_3$ (Salta $Y$)
+            \item $q_3 \xrightarrow{X / X, R} q_0$ (Trovato $X$, sposta a destra per la prossima $a$)
         \end{itemize}
-    \item \textbf{Stato $q_5$ (Verifica 'b' residue):}
+    \item \textbf{Stato $q_5$ (Verifica $b$ residue):}
         \begin{itemize}
-            \item $q_5 \xrightarrow{Y / Y, R} q_5$ (Salta 'Y' residue)
-            \item $q_5 \xrightarrow{B / B, R} q_6$ (Se trova $B$, tutte le 'b' sono state marcate correttamente. Accetta)
+            \item $q_5 \xrightarrow{Y / Y, R} q_5$ (Salta $Y$ residue)
+            \item $q_5 \xrightarrow{B / B, R} q_6$ (Se trova \blankS, tutte le $b$ sono state marcate correttamente. Accetta)
         \end{itemize}
     \item \textbf{Stato $q_6$ (Accettante):} Stringa accettata.
 \end{itemize}
-Condizioni di rifiuto implicite: se non si trovano due 'b' per ogni 'a', o se l'ordine dei simboli non è 'a' poi 'b'.
+Condizioni di rifiuto implicite: se non si trovano due $b$ per ogni $a$, o se l'ordine dei simboli non è $a$ poi $b$.
 
 \subsection{Esercizio 4: Linguaggio $L = \{w\#w \mid w \in \{a,b\}^+\}$}
 
-Vogliamo progettare una TM che decide il linguaggio di stringhe composte da una sequenza $w$, seguita da un separatore '\#', e poi dalla stessa sequenza $w$. $w$ deve avere almeno un simbolo. Esempi: $a\#a$, $ab\#ab$, $baba\#baba$.
+Vogliamo progettare una TM che decide il linguaggio di stringhe composte da una sequenza $w$, seguita da un separatore $\#$, e poi dalla stessa sequenza $w$. $w$ deve avere almeno un simbolo. Esempi: $a\#a$, $ab\#ab$, $baba\#baba$.
 
 \begin{example}[Strategia]
-La strategia si basa sul confronto carattere per carattere delle due metà della stringa, usando il '\#' come punto di riferimento.
+La strategia si basa sul confronto carattere per carattere delle due metà della stringa, usando il $\#$ come punto di riferimento.
 \begin{enumerate}
-    \item Marcare il primo simbolo non marcato della prima $w$ (es. 'a' o 'b' con 'X').
-    \item Spostarsi a destra, saltando tutti i simboli intermedi, fino a trovare il '\#'.
-    \item Superare il '\#', e poi saltare i simboli già marcati ('X') nella seconda $w$.
-    \item Trovare il simbolo corrispondente nella seconda $w$ (deve essere uguale a quello marcato nel passo 1), marcarlo (con 'X').
-    \item Spostarsi a sinistra, saltando tutti i simboli intermedi, fino a trovare il '\#'.
-    \item Superare il '\#', e poi saltare i simboli già marcati ('X') nella prima $w$.
+    \item Marcare il primo simbolo non marcato della prima $w$ (es. $a$ o $b$ con $X$).
+    \item Spostarsi a destra, saltando tutti i simboli intermedi, fino a trovare il $\#$.
+    \item Superare il $\#$, e poi saltare i simboli già marcati ($X$) nella seconda $w$.
+    \item Trovare il simbolo corrispondente nella seconda $w$ (deve essere uguale a quello marcato nel passo 1), marcarlo (con $X$).
+    \item Spostarsi a sinistra, saltando tutti i simboli intermedi, fino a trovare il $\#$.
+    \item Superare il $\#$, e poi saltare i simboli già marcati ($X$) nella prima $w$.
     \item Posizionarsi sul prossimo simbolo non marcato nella prima $w$ e ripetere il ciclo.
     \item Se tutti i simboli sono stati marcati correttamente, la stringa è accettata.
 \end{enumerate}
 \end{example}
 
 \noindent \textbf{Alfabeto del nastro $\Gamma = \{a, b, \#, X, B\}$.}
-\noindent \textbf{Stati:} $q_0$ (iniziale), $q_1$ (marcata 'a', cerca match), $q_2$ (dopo '\#', salta 'X', cerca 'a'), $q_3$ (match trovato, torna indietro), $q_4$ (dopo '\#', torna indietro a 'X'), $q_5$ (check finale 'X' prima di '\#'), $q_6$ (marcata 'b', cerca match), $q_7$ (dopo '\#', salta 'X', cerca 'b'), $q_8$ (dopo '\#', check finale 'X' dopo '\#'), $q_9$ (accettante).
+\noindent \textbf{Stati:} $q_0$ (iniziale), $q_1$ (marcata $a$, cerca match), $q_2$ (dopo $\#$, salta $X$, cerca $a$), $q_3$ (match trovato, torna indietro), $q_4$ (dopo $\#$, torna indietro a $X$), $q_5$ (check finale $X$ prima di $\#$), $q_6$ (marcata $b$, cerca match), $q_7$ (dopo $\#$, salta $X$, cerca $b$), $q_8$ (dopo $\#$, check finale $X$ dopo $\#$), $q_9$ (accettante).
 
 \noindent \textbf{Transizioni:}
 \begin{itemize}
     \item \textbf{Stato $q_0$ (Iniziale / Cerca simbolo in $w_1$):}
         \begin{itemize}
-            \item $q_0 \xrightarrow{a / X, R} q_1$ (Marca 'a' con 'X', va a destra)
-            \item $q_0 \xrightarrow{b / X, R} q_6$ (Marca 'b' con 'X', va a destra)
+            \item $q_0 \xrightarrow{a / X, R} q_1$ (Marca $a$ con $X$, va a destra)
+            \item $q_0 \xrightarrow{b / X, R} q_6$ (Marca $b$ con $X$, va a destra)
             \item $q_0 \xrightarrow{X / X, R} q_5$ (Tutte le prime $w$ sono marcate, passa alla fase di controllo finale)
         \end{itemize}
-    \item \textbf{Stato $q_1$ (Marcata 'a', cerca 'a' in $w_2$):}
+    \item \textbf{Stato $q_1$ (Marcata $a$, cerca $a$ in $w_2$):}
         \begin{itemize}
-            \item $q_1 \xrightarrow{a / a, R} q_1$ (Salta 'a')
-            \item $q_1 \xrightarrow{b / b, R} q_1$ (Salta 'b')
-            \item $q_1 \xrightarrow{\# / \#, R} q_2$ (Passa il separatore '\#')
+            \item $q_1 \xrightarrow{a / a, R} q_1$ (Salta $a$)
+            \item $q_1 \xrightarrow{b / b, R} q_1$ (Salta $b$)
+            \item $q_1 \xrightarrow{\# / \#, R} q_2$ (Passa il separatore $\#$)
         \end{itemize}
-    \item \textbf{Stato $q_2$ (Dopo '\#', cerca 'a' in $w_2$):}
+    \item \textbf{Stato $q_2$ (Dopo $\#$, cerca $a$ in $w_2$):}
         \begin{itemize}
-            \item $q_2 \xrightarrow{X / X, R} q_2$ (Salta 'X' già marcate)
-            \item $q_2 \xrightarrow{a / X, L} q_3$ (Trova 'a', marca con 'X', va a sinistra per tornare)
+            \item $q_2 \xrightarrow{X / X, R} q_2$ (Salta $X$ già marcate)
+            \item $q_2 \xrightarrow{a / X, L} q_3$ (Trova $a$, marca con $X$, va a sinistra per tornare)
         \end{itemize}
-    \item \textbf{Stato $q_6$ (Marcata 'b', cerca 'b' in $w_2$):}
+    \item \textbf{Stato $q_6$ (Marcata $b$, cerca $b$ in $w_2$):}
         \begin{itemize}
-            \item $q_6 \xrightarrow{a / a, R} q_6$ (Salta 'a')
-            \item $q_6 \xrightarrow{b / b, R} q_6$ (Salta 'b')
-            \item $q_6 \xrightarrow{\# / \#, R} q_7$ (Passa il separatore '\#')
+            \item $q_6 \xrightarrow{a / a, R} q_6$ (Salta $a$)
+            \item $q_6 \xrightarrow{b / b, R} q_6$ (Salta $b$)
+            \item $q_6 \xrightarrow{\# / \#, R} q_7$ (Passa il separatore $\#$)
         \end{itemize}
-    \item \textbf{Stato $q_7$ (Dopo '\#', cerca 'b' in $w_2$):}
+    \item \textbf{Stato $q_7$ (Dopo $\#$, cerca $b$ in $w_2$):}
         \begin{itemize}
-            \item $q_7 \xrightarrow{X / X, R} q_7$ (Salta 'X' già marcate)
-            \item $q_7 \xrightarrow{b / X, L} q_3$ (Trova 'b', marca con 'X', va a sinistra per tornare)
+            \item $q_7 \xrightarrow{X / X, R} q_7$ (Salta $X$ già marcate)
+            \item $q_7 \xrightarrow{b / X, L} q_3$ (Trova $b$, marca con $X$, va a sinistra per tornare)
         \end{itemize}
     \item \textbf{Stato $q_3$ (Match trovato, torna indietro):}
         \begin{itemize}
-            \item $q_3 \xrightarrow{X / X, L} q_3$ (Salta 'X' già marcate)
-            \item $q_3 \xrightarrow{a / a, L} q_3$ (Salta 'a')
-            \item $q_3 \xrightarrow{b / b, L} q_3$ (Salta 'b')
-            \item $q_3 \xrightarrow{\# / \#, L} q_4$ (Passa il separatore '\#')
+            \item $q_3 \xrightarrow{X / X, L} q_3$ (Salta $X$ già marcate)
+            \item $q_3 \xrightarrow{a / a, L} q_3$ (Salta $a$)
+            \item $q_3 \xrightarrow{b / b, L} q_3$ (Salta $b$)
+            \item $q_3 \xrightarrow{\# / \#, L} q_4$ (Passa il separatore $\#$)
         \end{itemize}
-    \item \textbf{Stato $q_4$ (Dopo '\#', torna all'inizio di $w_1$):}
+    \item \textbf{Stato $q_4$ (Dopo $\#$, torna all'inizio di $w_1$):}
         \begin{itemize}
-            \item $q_4 \xrightarrow{a / a, L} q_4$ (Salta 'a')
-            \item $q_4 \xrightarrow{b / b, L} q_4$ (Salta 'b')
-            \item $q_4 \xrightarrow{X / X, R} q_0$ (Trovata 'X' della 'a' o 'b' iniziale, si posiziona a destra per la prossima iterazione)
+            \item $q_4 \xrightarrow{a / a, L} q_4$ (Salta $a$)
+            \item $q_4 \xrightarrow{b / b, L} q_4$ (Salta $b$)
+            \item $q_4 \xrightarrow{X / X, R} q_0$ (Trovata $X$ della $a$ o $b$ iniziale, si posiziona a destra per la prossima iterazione)
         \end{itemize}
     \item \textbf{Stato $q_5$ (Controllo finale, parte $w_1$):}
         \begin{itemize}
-            \item $q_5 \xrightarrow{X / X, R} q_5$ (Salta 'X' nella prima metà)
-            \item $q_5 \xrightarrow{\# / \#, R} q_8$ (Passa il separatore '\#', ora controlla seconda metà)
+            \item $q_5 \xrightarrow{X / X, R} q_5$ (Salta $X$ nella prima metà)
+            \item $q_5 \xrightarrow{\# / \#, R} q_8$ (Passa il separatore $\#$, ora controlla seconda metà)
         \end{itemize}
     \item \textbf{Stato $q_8$ (Controllo finale, parte $w_2$):}
         \begin{itemize}
-            \item $q_8 \xrightarrow{X / X, R} q_8$ (Salta 'X' nella seconda metà)
-            \item $q_8 \xrightarrow{B / B, R} q_9$ (Se trova $B$, tutte le parti sono state marcate, stringa accettata)
+            \item $q_8 \xrightarrow{X / X, R} q_8$ (Salta $X$ nella seconda metà)
+            \item $q_8 \xrightarrow{B / B, R} q_9$ (Se trova \blankS, tutte le parti sono state marcate, stringa accettata)
         \end{itemize}
     \item \textbf{Stato $q_9$ (Accettante):} Stringa accettata.
 \end{itemize}
@@ -350,70 +350,70 @@ Questa TM decide il linguaggio, rifiutando stringhe come $a\#b$ o $aa\#a$ o $a\#
 
 \subsection{Esercizio 5: Linguaggio $L = \{a^n b^n c^n \mid n > 0\}$}
 
-Vogliamo progettare una TM che decide il linguaggio di stringhe con un numero uguale di 'a', 'b', e 'c', in sequenza $a^*b^*c^*$. $n$ deve essere maggiore di $0$. Esempio: $abc$, $aabbcc$.
+Vogliamo progettare una TM che decide il linguaggio di stringhe con un numero uguale di $a$, $b$, e $c$, in sequenza $a^*b^*c^*$. $n$ deve essere maggiore di $0$. Esempio: $abc$, $aabbcc$.
 
 \begin{example}[Strategia]
-La strategia è marcare un' 'a', poi una 'b', poi una 'c', e ripetere fino a quando tutti i caratteri sono stati marcati.
+La strategia è marcare un'$a$, poi una $b$, poi una $c$, e ripetere fino a quando tutti i caratteri sono stati marcati.
 \begin{enumerate}
-    \item Marcare la prima 'a' non marcata (con 'X').
-    \item Spostarsi a destra, saltando altre 'a' e 'Y' (b già marcate), fino a trovare la prima 'b' non marcata. Marcarla (con 'Y').
-    \item Spostarsi a destra, saltando altre 'b' e 'Z' (c già marcate), fino a trovare la prima 'c' non marcata. Marcarla (con 'Z').
-    \item Spostarsi a sinistra, saltando tutti i simboli marcati e non, fino a trovare la 'X' più a destra.
-    \item Spostarsi a destra di una posizione per trovare la prossima 'a' non marcata e ripetere.
-    \item Una volta che tutte le 'a' sono state marcate, si controlla che tutte le 'b' e 'c' siano state marcate anch'esse.
+    \item Marcare la prima $a$ non marcata (con $X$).
+    \item Spostarsi a destra, saltando altre $a$ e $Y$ (b già marcate), fino a trovare la prima $b$ non marcata. Marcarla (con $Y$).
+    \item Spostarsi a destra, saltando altre $b$ e $Z$ (c già marcate), fino a trovare la prima $c$ non marcata. Marcarla (con $Z$).
+    \item Spostarsi a sinistra, saltando tutti i simboli marcati e non, fino a trovare la $X$ più a destra.
+    \item Spostarsi a destra di una posizione per trovare la prossima $a$ non marcata e ripetere.
+    \item Una volta che tutte le $a$ sono state marcate, si controlla che tutte le $b$ e $c$ siano state marcate anch'esse.
 \end{enumerate}
 \end{example}
 
 \noindent \textbf{Alfabeto del nastro $\Gamma = \{a, b, c, X, Y, Z, B\}$.}
-\noindent \textbf{Stati:} $q_0$ (iniziale), $q_1$ (marcata 'a', cerca 'b'), $q_2$ (salta 'Y', cerca 'b'), $q_3$ (marcata 'b', cerca 'c'), $q_4$ (salta 'Z', cerca 'c'), $q_5$ (marcata 'c', torna indietro), $q_6$ (accettazione 'Y' residue), $q_7$ (accettazione 'Z' residue), $q_8$ (accettante).
+\noindent \textbf{Stati:} $q_0$ (iniziale), $q_1$ (marcata $a$, cerca $b$), $q_2$ (salta $Y$, cerca $b$), $q_3$ (marcata $b$, cerca $c$), $q_4$ (salta $Z$, cerca $c$), $q_5$ (marcata $c$, torna indietro), $q_6$ (accettazione $Y$ residue), $q_7$ (accettazione $Z$ residue), $q_8$ (accettante).
 
 \noindent \textbf{Transizioni:}
 \begin{itemize}
-    \item \textbf{Stato $q_0$ (Iniziale / Cerca 'a'):}
+    \item \textbf{Stato $q_0$ (Iniziale / Cerca $a$):}
         \begin{itemize}
-            \item $q_0 \xrightarrow{a / X, R} q_1$ (Marca 'a' con 'X')
-            \item $q_0 \xrightarrow{Y / Y, R} q_6$ (Se trova 'Y', tutte le 'a' sono state marcate, si controllano 'b' e 'c' marcate)
+            \item $q_0 \xrightarrow{a / X, R} q_1$ (Marca $a$ con $X$)
+            \item $q_0 \xrightarrow{Y / Y, R} q_6$ (Se trova $Y$, tutte le $a$ sono state marcate, si controllano $b$ e $c$ marcate)
         \end{itemize}
-    \item \textbf{Stato $q_1$ (Marca 'a', cerca 'b'):}
+    \item \textbf{Stato $q_1$ (Marca $a$, cerca $b$):}
         \begin{itemize}
-            \item $q_1 \xrightarrow{a / a, R} q_1$ (Salta 'a')
-            \item $q_1 \xrightarrow{Y / Y, R} q_2$ (Salta 'Y' già marcate)
-            \item $q_1 \xrightarrow{b / Y, R} q_3$ (Marca la prima 'b' con 'Y'. Caso iniziale senza 'Y' intermedie)
+            \item $q_1 \xrightarrow{a / a, R} q_1$ (Salta $a$)
+            \item $q_1 \xrightarrow{Y / Y, R} q_2$ (Salta $Y$ già marcate)
+            \item $q_1 \xrightarrow{b / Y, R} q_3$ (Marca la prima $b$ con $Y$. Caso iniziale senza $Y$ intermedie)
         \end{itemize}
-    \item \textbf{Stato $q_2$ (Salto 'Y' intermedie):}
+    \item \textbf{Stato $q_2$ (Salto $Y$ intermedie):}
         \begin{itemize}
-            \item $q_2 \xrightarrow{Y / Y, R} q_2$ (Continua a saltare 'Y' già marcate)
-            \item $q_2 \xrightarrow{b / Y, R} q_3$ (Marca 'b' con 'Y')
+            \item $q_2 \xrightarrow{Y / Y, R} q_2$ (Continua a saltare $Y$ già marcate)
+            \item $q_2 \xrightarrow{b / Y, R} q_3$ (Marca $b$ con $Y$)
         \end{itemize}
-    \item \textbf{Stato $q_3$ (Marca 'b', cerca 'c'):}
+    \item \textbf{Stato $q_3$ (Marca $b$, cerca $c$):}
         \begin{itemize}
-            \item $q_3 \xrightarrow{b / b, R} q_3$ (Salta 'b')
-            \item $q_3 \xrightarrow{Z / Z, R} q_4$ (Salta 'Z' già marcate)
-            \item $q_3 \xrightarrow{c / Z, L} q_5$ (Marca la prima 'c' con 'Z'. Caso iniziale senza 'Z' intermedie)
+            \item $q_3 \xrightarrow{b / b, R} q_3$ (Salta $b$)
+            \item $q_3 \xrightarrow{Z / Z, R} q_4$ (Salta $Z$ già marcate)
+            \item $q_3 \xrightarrow{c / Z, L} q_5$ (Marca la prima $c$ con $Z$. Caso iniziale senza $Z$ intermedie)
         \end{itemize}
-    \item \textbf{Stato $q_4$ (Salto 'Z' intermedie):}
+    \item \textbf{Stato $q_4$ (Salto $Z$ intermedie):}
         \begin{itemize}
-            \item $q_4 \xrightarrow{Z / Z, R} q_4$ (Continua a saltare 'Z' già marcate)
-            \item $q_4 \xrightarrow{c / Z, L} q_5$ (Marca 'c' con 'Z')
+            \item $q_4 \xrightarrow{Z / Z, R} q_4$ (Continua a saltare $Z$ già marcate)
+            \item $q_4 \xrightarrow{c / Z, L} q_5$ (Marca $c$ con $Z$)
         \end{itemize}
-    \item \textbf{Stato $q_5$ (Marca 'c', torna indietro):}
+    \item \textbf{Stato $q_5$ (Marca $c$, torna indietro):}
         \begin{itemize}
-            \item $q_5 \xrightarrow{Z / Z, L} q_5$ (Salta 'Z')
-            \item $q_5 \xrightarrow{c / c, L} q_5$ (Salta 'c')
-            \item $q_5 \xrightarrow{Y / Y, L} q_5$ (Salta 'Y')
-            \item $q_5 \xrightarrow{b / b, L} q_5$ (Salta 'b')
-            \item $q_5 \xrightarrow{a / a, L} q_5$ (Salta 'a')
-            \item $q_5 \xrightarrow{X / X, R} q_0$ (Trovato 'X', sposta a destra per la prossima 'a')
+            \item $q_5 \xrightarrow{Z / Z, L} q_5$ (Salta $Z$)
+            \item $q_5 \xrightarrow{c / c, L} q_5$ (Salta $c$)
+            \item $q_5 \xrightarrow{Y / Y, L} q_5$ (Salta $Y$)
+            \item $q_5 \xrightarrow{b / b, L} q_5$ (Salta $b$)
+            \item $q_5 \xrightarrow{a / a, L} q_5$ (Salta $a$)
+            \item $q_5 \xrightarrow{X / X, R} q_0$ (Trovato $X$, sposta a destra per la prossima $a$)
         \end{itemize}
-    \item \textbf{Stato $q_6$ (Verifica 'Y' residue):}
+    \item \textbf{Stato $q_6$ (Verifica $Y$ residue):}
         \begin{itemize}
-            \item $q_6 \xrightarrow{Y / Y, R} q_6$ (Salta 'Y' residue)
-            \item $q_6 \xrightarrow{Z / Z, R} q_7$ (Se trova 'Z', passa a controllare le 'c')
+            \item $q_6 \xrightarrow{Y / Y, R} q_6$ (Salta $Y$ residue)
+            \item $q_6 \xrightarrow{Z / Z, R} q_7$ (Se trova $Z$, passa a controllare le $c$)
         \end{itemize}
-    \item \textbf{Stato $q_7$ (Verifica 'Z' residue):}
+    \item \textbf{Stato $q_7$ (Verifica $Z$ residue):}
         \begin{itemize}
-            \item $q_7 \xrightarrow{Z / Z, R} q_7$ (Salta 'Z' residue)
-            \item $q_7 \xrightarrow{B / B, R} q_8$ (Se trova $B$, tutte le 'a', 'b', 'c' sono state marcate correttamente. Accetta)
+            \item $q_7 \xrightarrow{Z / Z, R} q_7$ (Salta $Z$ residue)
+            \item $q_7 \xrightarrow{B / B, R} q_8$ (Se trova \blankS, tutte le $a$, $b$, $c$ sono state marcate correttamente. Accetta)
         \end{itemize}
     \item \textbf{Stato $q_8$ (Accettante):} Stringa accettata.
 \end{itemize}
