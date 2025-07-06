@@ -13,7 +13,25 @@
 \usepackage{fancyhdr}
 \usepackage{amsthm}
 \usepackage{tikz}
-\usetikzlibrary{automata,positioning}
+\usetikzlibrary{
+    automata,
+    positioning,
+    arrows,
+    arrows.meta,
+    calc,
+    fit,
+    patterns,
+    graphs,
+    graphdrawing,
+    matrix,
+    quotes,
+    shapes.geometric,
+    snakes,
+    shapes,
+    decorations.pathreplacing,
+    calligraphy,
+    chains,
+}
 
 % Definizione degli ambienti
 \theoremstyle{definition} % Use definition style for normal (non-italic) text
@@ -43,10 +61,9 @@
 \tableofcontents
 \newpage
 
-\section{Introduzione alle Macchine di Turing Multinastro}
+\section{Macchine di Turing Multinastro}
 
-\subsection{Definizione e Equivalenza}
-Le macchine di Turing (TM) multinastro sono estensioni del modello standard che possiedono più nastri, ciascuno con la propria testina indipendente. Questo permette di accedere a diverse parti della memoria contemporaneamente.
+\subsection{Definizione Formale}
 
 \begin{definition}[Macchina di Turing Multinastro]
 Una macchina di Turing multinastro è definita come una tupla $(Q, \Sigma, \Gamma, \delta, q_0, q_{acc}, q_{rej})$, dove:
@@ -60,11 +77,6 @@ Una macchina di Turing multinastro è definita come una tupla $(Q, \Sigma, \Gamm
     \item $q_{rej} \in Q$ è lo stato di rifiuto.
 \end{itemize}
 \end{definition}
-
-\begin{proposition}[Equivalenza]
-Le macchine di Turing multinastro sono equivalenti alle macchine di Turing standard (mononastro). Ciò significa che ogni linguaggio riconoscibile/decidibile da una TM multinastro è riconoscibile/decidibile anche da una TM standard, e viceversa.
-\end{proposition}
-Sebbene non aumentino il potere computazionale (cioè, non possono risolvere più problemi), le TM multinastro possono essere più efficienti in termini di tempo o più facili da programmare, grazie alla capacità di gestire più flussi di dati in parallelo.
 
 \subsection{Convenzioni di Notazione nelle Transizioni}
 Nei diagrammi di stato (e nella loro descrizione testuale), le transizioni sono etichettate con una notazione compatta per rappresentare le operazioni su più nastri. Una transizione da uno stato $q_i$ a $q_j$ etichettata con, ad esempio:
@@ -97,6 +109,52 @@ Utilizziamo una TM con 2 nastri.
     \item \textbf{Nastro 1 (Input):} Contiene la stringa di input $A\#B\#AB$.
     \item \textbf{Nastro 2 (Lavoro):} Utilizzato per copiare la stringa $A$ e poi $B$ sequenzialmente, ottenendo $AB$. Successivamente, il contenuto di Nastro 2 (che è $AB$) verrà confrontato con l'ultima parte della stringa sul Nastro 1 (che dovrebbe essere $AB$).
 \end{itemize}
+
+\begin{center}
+\begin{tikzpicture}[
+    tape/.style={draw, rectangle, minimum size=9mm},
+    state/.style={draw, circle, thick, font=\Large},
+    head/.style={-Stealth, thick, red},
+]
+% Stato attuale della Macchina
+\node[state] (q) at (2.5, -1.5) {$q_3$};
+
+% --- Nastro 1 (Input) ---
+\node (label1) at (-2.5,0) {\textbf{Nastro 1:}};
+\begin{scope}[start chain=t1 going right, node distance=0pt]
+    \node[tape, on chain] at (0,0) {0};
+    \node[tape, on chain] {1};
+    \node[tape, on chain] {\#};
+    \node[tape, on chain] {1};
+    \node[tape, on chain] {0};
+    \node[tape, on chain] {\#};
+    \node[tape, on chain, name=head1] {0}; % Testina qui
+    \node[tape, on chain] {1};
+    \node[tape, on chain] {1};
+    \node[tape, on chain] {0};
+    \node[tape, on chain] {\blankS};
+\end{scope}
+\draw[head] (q) to [out=90, in=-90] (head1.south);
+
+% --- Nastro 2 (Lavoro) ---
+\node (label2) at (-2.5,-1.5) {\textbf{Nastro 2:}};
+\begin{scope}[yshift=-1.5cm, start chain=t2 going right, node distance=0pt]
+    \node[tape, on chain, name=head2] at (0,-1.5) {0}; % Testina qui
+    \node[tape, on chain] {1};
+    \node[tape, on chain] {1};
+    \node[tape, on chain] {0};
+    \node[tape, on chain] {\blankS};
+    \node[tape, on chain] {\blankS};
+    \node[tape, on chain] {\blankS};
+    \node[tape, on chain] {\blankS};
+    \node[tape, on chain] {\blankS};
+    \node[tape, on chain] {\blankS};
+    \node[tape, on chain] {\blankS};
+\end{scope}
+\draw[head] (q) to [out=-90, in=90] (head2.north);
+
+\end{tikzpicture}
+\end{center}
 
 \subsubsection{Implementazione (Stati e Transizioni)}
 \begin{description}
