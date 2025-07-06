@@ -4,13 +4,33 @@
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
 \usepackage{hyperref}
+\usepackage[scaled]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage[T1]{fontenc}
 \usepackage[a4paper, total={6in, 8in}]{geometry}
 \usepackage{minted}
 \usepackage{mathpazo}
 \usepackage{fancyhdr}
 \usepackage{amsthm}
 \usepackage{tikz}
-\usetikzlibrary{automata,positioning, arrows}
+\usetikzlibrary{
+    automata,
+    positioning,
+    arrows,
+    arrows.meta,
+    calc,
+    fit,
+    patterns,
+    graphs,
+    graphdrawing,
+    matrix,
+    quotes,
+    shapes.geometric,
+    snakes,
+    shapes,
+    decorations.pathreplacing,
+    calligraphy,
+}
 
 % Definizione degli ambienti
 \theoremstyle{definition} % Use definition style for normal (non-italic) text
@@ -58,7 +78,7 @@ Le Macchine di Turing (TM) standard, pur essendo fondamentali per la teoria dell
 Riprendiamo l'esempio del linguaggio $WW^R = \{w w^R \mid w \in \{0,1\}^*\}$. Nella TM standard per questo linguaggio, eravamo costretti a creare rami di computazione separati a seconda del primo carattere letto (0 o 1), perché la macchina doveva "ricordarsi" quel carattere. L'idea è: non sarebbe più semplice se la macchina potesse memorizzare direttamente il simbolo letto?
 
 \begin{definition}[Macchina di Turing con Memoria nello Stato]
-Una Macchina di Turing con memoria nello stato è una TM che può memorizzare un simbolo dell'alfabeto del nastro all'interno del suo stato finito. Lo stato è quindi una coppia $(q_i, \text{simbolo\_memorizzato})$, dove $q_i$ è lo stato del controllo finito e $\text{simbolo\_memorizzato}$ è il contenuto della "memoria interna".
+Una Macchina di Turing con memoria nello stato è una TM che può memorizzare un simbolo dell'alfabeto del nastro all'interno del suo stato finito. Lo stato è quindi una coppia $(q_i, \alpha)$, dove $q_i$ è lo stato del controllo finito e $\alpha$ è il contenuto della "memoria interna".
 \begin{itemize}
     \item La macchina può memorizzare uno o più simboli (un numero fissato al momento della progettazione).
     \item La memoria non cresce durante l'esecuzione; è pre-determinata dal design.
@@ -99,11 +119,11 @@ Le TM con memoria nello stato \emph{non} sono più potenti delle TM standard.
 \begin{itemize}
     \item Questa descrizione è un modo compatto per rappresentare una TM standard più grande.
     \item Gli stati di una TM con memoria nello stato sono di fatto ottenibili tramite il prodotto cartesiano degli stati del controllo finito e dei possibili simboli memorizzabili.
-    \item Se lo stato $(q_i, \alpha)$ è uno stato, questo può essere semplicemente rinominato come $q_{i,\alpha}$ in una TM standard. Il numero di stati aumenta, ma la natura computazionale rimane la stessa.
+    \item Se lo stato $(q_i, M)$ è uno stato, questo può essere semplicemente rinominato come $q_{i,M}$ in una TM standard. Il numero di stati aumenta, ma la natura computazionale rimane la stessa.
 \end{itemize}
 
 \section{Macchine di Turing Multitraccia}
-Le macchine multitraccia sono un altro trucchetto per semplificare la progettazione delle TM.
+Le macchine multitraccia sono un altro truccetto per semplificare la progettazione delle TM.
 
 \begin{definition}[Macchina di Turing Multitraccia]
 Una Macchina di Turing multitraccia ha un singolo nastro, ma questo nastro è diviso orizzontalmente in più \textbf{tracce} (es. 2, 3, 7 tracce).
@@ -219,6 +239,63 @@ Simuliamo il riconoscimento di questo linguaggio con una TM multitraccia, usando
 Questa macchina è più semplice da progettare rispetto alla versione a nastro singolo perché non si perde il contenuto originale dell'input.
 \end{example}
 
+\begin{figure}[h!]
+    \centering
+    \begin{tikzpicture}
+        % Definizione delle celle per il primo nastro (Traccia 1)
+        \foreach \i in {0,1,2,3,4,5,6,7,8,9} {
+            \draw (\i,1) rectangle (\i+1,2);
+        }
+        
+        % Definizione delle celle per il secondo nastro (Traccia 2)
+        \foreach \i in {0,1,2,3,4,5,6,7,8,9} {
+            \draw (\i,0) rectangle (\i+1,1);
+        }
+        
+        % Contenuto della Traccia 1 (Input originale)
+        \node at (0.5,1.5) {$a$};
+        \node at (1.5,1.5) {$b$};
+        \node at (2.5,1.5) {$a$};
+        \node at (3.5,1.5) {$\#$};
+        \node at (4.5,1.5) {$a$};
+        \node at (5.5,1.5) {$b$};
+        \node at (6.5,1.5) {$a$};
+        \node at (7.5,1.5) {$\blankS$};
+        \node at (8.5,1.5) {$\blankS$};
+        \node at (9.5,1.5) {$\blankS$};
+        
+        % Contenuto della Traccia 2 (Marcatori)
+        \node at (0.5,0.5) {$*$};
+        \node at (1.5,0.5) {$*$};
+        \node at (2.5,0.5) {$*$};
+        \node at (3.5,0.5) {$\blankS$};
+        \node at (4.5,0.5) {$*$};
+        \node at (5.5,0.5) {$\blankS$};
+        \node at (6.5,0.5) {$\blankS$};
+        \node at (7.5,0.5) {$\blankS$};
+        \node at (8.5,0.5) {$\blankS$};
+        \node at (9.5,0.5) {$\blankS$};
+        
+        % Testina di lettura/scrittura
+        \draw[thick, ->, opacity=0.4] (5.5,2.8) -- (5.5,2.03);
+        \draw[fill=white, opacity=0.4] (4.7,2.8) rectangle (6.3,3.2);
+        \node at (5.5,3.0) {\textbf{Testina}};
+        
+        % Indicazione delle sezioni
+        \draw[dashed, blue] (0,2.2) -- (3,2.2);
+        \node[blue, above] at (1.5,2.2) {\small primo $w$};
+        
+        \draw[dashed, red] (4,2.2) -- (7,2.2);
+        \node[red, above] at (5.5,2.2) {\small secondo $w$};
+        
+        % Freccia per indicare il separatore
+        \draw[green, thick] (3.5,2.7) -- (3.5,2.1);
+        \node[green, above] at (3.5,2.8) {\small $\#$};
+    \end{tikzpicture}
+    \caption{Rappresentazione dei due nastri (tracce) della TM multitraccia per il linguaggio $L = \{w\#w \mid w \in \{a,b\}^+\}$. L'esempio mostra lo stato intermedio durante la verifica della stringa "$aba\#aba$", dove alcuni simboli del primo $w$ sono già stati marcati con asterischi sulla traccia 2.}
+    \label{fig:multitraccia-esempio}
+\end{figure}
+
 \subsubsection{Potere Computazionale delle TM Multitraccia}
 Le TM multitraccia \emph{non} sono più potenti delle TM standard.
 \begin{enumerate}
@@ -318,7 +395,7 @@ Le TM multinastro sono molto convenienti perché permettono un controllo indipen
             $1:2/2, R; 4:\blankS/2, R$
         } (q0);
 
-        \path[->] (q0) edge node[above, align=center, font=\footnotesize] {
+        \path[->] (q0) edge node[below, align=center, font=\footnotesize] {
             $1:\blankS/\blankS, S$\\
             $2:\blankS/\blankS, L$\\
             $3:\blankS/\blankS, L$\\
@@ -331,7 +408,7 @@ Le TM multinastro sono molto convenienti perché permettono un controllo indipen
             $4:2/2, L$
         } (q1);
         
-        \path[->] (q1) edge node[above, align=center, font=\footnotesize] {
+        \path[->] (q1) edge node[below, align=center, font=\footnotesize] {
             $2:\blankS/\blankS, S$\\
             $3:\blankS/\blankS, S$\\
             $4:\blankS/\blankS, S$
