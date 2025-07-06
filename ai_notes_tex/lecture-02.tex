@@ -320,8 +320,8 @@ Consideriamo il comportamento di un lettore CD come un automa per capire il conc
 \end{itemize}
 Questo esempio illustra come un automa modellizzi un sistema: lo stato in cui si trova il sistema influenzerà come reagirà al prossimo input.
 
-\subsection{Automi a Stati Finiti Determinici (DFA)}
-Gli automi vengono usati in informatica teorica per riconoscere linguaggi formali. Un Automaton a Stati Finiti Determinico (DFA) è il modello più semplice.
+\subsection{Automi a Stati Finiti Deterministici (DFA)}
+Gli automi vengono usati in informatica teorica per riconoscere linguaggi formali. Un Automa a Stati Finiti Deterministico (DFA) è il modello più semplice.
 
 \begin{definition}[Automa a Stati Finiti Determinico (DFA)]
 Un DFA $M$ è una quintupla $(Q, \Sigma, \delta, q_0, F)$, dove:
@@ -354,10 +354,10 @@ Costruiamo un DFA per $L_{dispari}$:
     \item $F = \{Q_1\}$ (Se la stringa termina mentre siamo in questo stato, è un numero dispari).
     \item Funzione di transizione $\delta$:
         \begin{itemize}
-            \item $\delta(Q_0, 0) = Q_0$ (Se eravamo in stato 'pari' e leggiamo $0$, rimaniamo 'pari').
-            \item $\delta(Q_0, 1) = Q_1$ (Se eravamo in stato 'pari' e leggiamo $1$, diventiamo 'dispari').
-            \item $\delta(Q_1, 0) = Q_0$ (Se eravamo in stato 'dispari' e leggiamo $0$, diventiamo 'pari').
-            \item $\delta(Q_1, 1) = Q_1$ (Se eravamo in stato 'dispari' e leggiamo $1$, rimaniamo 'dispari').
+            \item $\delta(Q_0, 0) = Q_0$ (Se eravamo in stato $pari$ e leggiamo $0$, rimaniamo $pari$).
+            \item $\delta(Q_0, 1) = Q_1$ (Se eravamo in stato $pari$ e leggiamo $1$, diventiamo $dispari$).
+            \item $\delta(Q_1, 0) = Q_0$ (Se eravamo in stato $dispari$ e leggiamo $0$, diventiamo $pari$).
+            \item $\delta(Q_1, 1) = Q_1$ (Se eravamo in stato $dispari$ e leggiamo $1$, rimaniamo $dispari$).
         \end{itemize}
 \end{itemize}
 
@@ -375,10 +375,10 @@ Costruiamo un DFA per $L_{dispari}$:
         \node[state, accepting, right of=q0] (q1) {$Q_1$};
 
         % Transizioni
-        \path (q0) edge[loop above] node {0} (q0);
-        \path (q0) edge node {1} (q1);
-        \path (q1) edge node {0} (q0);
-        \path (q1) edge[loop above] node {1} (q1);
+        \draw[->] (q0) edge[loop above] node {0} (q0);
+        \draw[->] (q0) edge[bend left] node {1} (q1);
+        \draw[->] (q1) edge[bend left] node {0} (q0);
+        \draw[->] (q1) edge[loop above] node {1} (q1);
     \end{tikzpicture}
     \caption{DFA per il Linguaggio dei Numeri Binari Dispari}
 \end{figure}
