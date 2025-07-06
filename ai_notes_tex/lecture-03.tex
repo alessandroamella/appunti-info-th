@@ -10,8 +10,24 @@
 \usepackage{fancyhdr}
 \usepackage{amsthm}
 \usepackage{tikz}
-\usetikzlibrary{automata,positioning}
-
+\usetikzlibrary{
+    automata,
+    positioning,
+    arrows,
+    arrows.meta,
+    calc,
+    fit,
+    patterns,
+    graphs,
+    graphdrawing,
+    matrix,
+    quotes,
+    shapes.geometric,
+    snakes,
+    shapes,
+    decorations.pathreplacing,
+    calligraphy,
+}
 % Definizione degli ambienti
 \theoremstyle{definition} % Use definition style for normal (non-italic) text
 \newtheorem{theorem}{Teorema}
@@ -19,6 +35,7 @@
 \newtheorem{definition}{Definizione}[section]
 \newtheorem{example}{Esempio}[section]
 \newtheorem{lemma}{Lemma}
+\newtheorem{remark}[theorem]{Osservazione}
 \newtheorem{proposition}{Proposizione}
 \newcommand{\blankS}{\ensuremath{\raisebox{-0.15ex}{\scalebox{1.3}[0.7]{$\sqcup$}}\mkern2mu}}
 
@@ -41,64 +58,8 @@
 \tableofcontents
 \newpage
 
-\section{Introduzione e Recap}
-Questa lezione riprende i concetti introdotti precedentemente, approfondendo la definizione formale di automi a stati finiti (deterministi e non-deterministici) e le loro capacità computazionali.
-
-\subsection{Problemi di Ricerca e Problemi di Decisione}
-In informatica teorica, siamo principalmente interessati ai \emph{problemi di ricerca}, che sono problemi generici in cui la risposta può essere qualsiasi valore valido (es. "Qual è il prodotto di $A \times B$?", "Qual è il percorso minimo tra due punti?").
-Un sottoinsieme importante sono i \emph{problemi di decisione}, in cui la risposta possibile è solo "sì" o "no".
-La relazione tra i due tipi è significativa: spesso, un problema di ricerca può essere trasformato in un problema di decisione correlato. Per l'analisi, ci focalizziamo sui problemi di decisione per la loro maggiore semplicità.
-
-\subsection{Linguaggi e Decidibilità}
-I problemi di decisione sono spesso legati alla \emph{decidibilità dei linguaggi}.
-\begin{definition}[Linguaggio]
-Un \emph{linguaggio} è semplicemente un insieme di stringhe su un dato alfabeto $\Sigma$.
-\end{definition}
-
-\begin{definition}[Decidere un Linguaggio]
-\emph{Decidere un linguaggio $L$} significa, data una stringa $w$, stabilire se $w$ appartiene a $L$ o meno. Le risposte possibili sono "sì" (se $w \in L$) o "no" (se $w \notin L$). Questo è un problema di decisione.
-\end{definition}
-
-\noindent \textbf{Nota Importante}: Quando si decide un linguaggio $L$, l'input al problema è la \textbf{stringa $w$}, non il linguaggio $L$ stesso. Il linguaggio $L$ fa parte della definizione del problema.
-
 \section{Automi a Stati Finiti Deterministici (DFA)}
-Per formalizzare la decisione dei linguaggi, utilizziamo il concetto di \emph{automa}. Gli automi sono modelli di calcolo semplici e formalmente definibili.
-
-\subsection{Intuizione e Funzionamento}
-Un automa a stati finiti può essere immaginato come un computer molto semplice che riceve l'input su un "nastro" (come uno scontrino). La macchina legge un simbolo per volta dal nastro, si sposta in un nuovo stato basandosi sul simbolo letto e sul suo stato corrente, e il simbolo letto viene "consumato" (non può essere riletto). Non si torna mai indietro sul nastro.
-
-\begin{example}[Riconoscimento di Numeri Dispari Binari]
-Consideriamo il linguaggio delle stringhe binarie che codificano numeri dispari. Un automa per questo linguaggio necessita solo di guardare l'ultimo bit. Possiamo usare due stati: $Q_0$ (l'ultimo simbolo visto era 0, o il numero parziale è pari) e $Q_1$ (l'ultimo simbolo visto era 1, o il numero parziale è dispari). Lo stato iniziale è $Q_0$. $Q_1$ sarà lo stato accettante.
-\begin{itemize}
-    \item Se siamo in $Q_0$ e leggiamo $0$, rimaniamo in $Q_0$.
-    \item Se siamo in $Q_0$ e leggiamo $1$, andiamo in $Q_1$.
-    \item Se siamo in $Q_1$ e leggiamo $0$, andiamo in $Q_0$.
-    \item Se siamo in $Q_1$ e leggiamo $1$, rimaniamo in $Q_1$.
-\end{itemize}
-\begin{center}
-\begin{tikzpicture}[shorten >=1pt,node distance=2cm,on grid,auto]
-    \node[state,initial] (q0) {$Q_0$};
-    \node[state,right of=q0] (q1) {$Q_1$};
-    \path[->] (q0) edge [loop above] node {0} (q0)
-              (q0) edge node {1} (q1)
-              (q1) edge node {0} (q0)
-              (q1) edge [loop above] node {1} (q1);
-\end{tikzpicture}
-\end{center}
-\end{example}
-
-\subsection{Definizione Formale di DFA}
-\begin{definition}[Automa a Stati Finiti Deterministico (DFA)]
-Un automa a stati finiti deterministico $D$ è una quintupla $( \Sigma, Q, q_0, F, \delta )$, dove:
-\begin{itemize}
-    \item $\Sigma$ è l'alfabeto di input (un insieme finito non vuoto di simboli).
-    \item $Q$ è un insieme finito di stati.
-    \item $q_0 \in Q$ è lo stato iniziale.
-    \item $F \subseteq Q$ è l'insieme degli stati finali (o accettanti).
-    \item $\delta: Q \times \Sigma \to Q$ è la funzione di transizione. Per ogni coppia (stato corrente, simbolo letto), $\delta$ determina \textbf{un solo} prossimo stato.
-\end{itemize}
-\end{definition}
-Il numero di stati in $Q$ è fisso e non può cambiare durante la computazione.
+Come visto nella lezione precedente, gli automi a stati finiti deterministici (DFA) sono modelli di calcolo che accettano o rifiutano stringhe di input basandosi su un insieme di stati e transizioni definite.
 
 \subsection{Computazione di un DFA}
 Per capire il funzionamento di un automa, modelliamo i suoi passi attraverso il concetto di "configurazione".
@@ -120,6 +81,11 @@ tale che:
     \item $R_0 = q_0$ (la computazione inizia dallo stato iniziale con l'intera stringa in input).
     \item Per ogni $0 \leq i < m$, si ha $R_{i+1} = \delta(R_i, c_{i+1})$.
 \end{itemize}
+
+\begin{remark}
+La mossa $\delta(R_i, c_{i+1})$ determina un \emph{unico} stato successivo.
+\end{remark}
+
 Il simbolo $c_{i+1}$ viene letto e consumato, e l'automa si sposta nello stato $R_{i+1}$.
 \end{definition}
 
@@ -219,7 +185,7 @@ Una \emph{computazione parziale} di un NFA $N$ su una stringa $w = c_1 c_2 \dots
 tale che:
 \begin{itemize}
     \item $R_0 = q_0$ (la computazione inizia dallo stato iniziale con l'intera stringa in input).
-    \item Per ogni $0 \leq i < m$, si ha $R_{i+1} \in \delta(R_i, c_{i+1})$. (Il prossimo stato è uno qualsiasi tra quelli ammessi dalla relazione di transizione).
+    \item Per ogni $0 \leq i < m$, si ha $R_{i+1} \in \delta(R_i, c_{i+1})$. (Il prossimo stato è \textbf{uno qualsiasi} tra quelli ammessi dalla relazione di transizione).
 \end{itemize}
 \end{definition}
 
@@ -256,7 +222,7 @@ Un NFA $N$ \emph{accetta} una stringa $w$ se \textbf{esiste almeno una} computaz
 \begin{theorem}[Equivalenza DFA-NFA]
 Per ogni Automa a Stati Finiti Non-Deterministico (NFA), esiste un Automa a Stati Finiti Deterministico (DFA) equivalente che riconosce lo stesso linguaggio.
 \end{theorem}
-Questo teorema, sebbene non dimostrato qui, è fondamentale: significa che DFAs e NFAs hanno la stessa \emph{potenza espressiva}. Qualsiasi linguaggio riconoscibile da un NFA è riconoscibile anche da un DFA, e viceversa. Questo giustifica l'uso degli NFA per la loro semplicità di programmazione, sapendo che possono essere sempre convertiti in DFAs per l'implementazione pratica.
+Questo teorema, sebbene non dimostrato qui, è fondamentale: significa che DFA e NFA hanno la stessa \emph{potenza espressiva}. Qualsiasi linguaggio riconoscibile da un NFA è riconoscibile anche da un DFA, e viceversa. Questo giustifica l'uso degli NFA per la loro semplicità di programmazione, sapendo che possono essere sempre convertiti in DFA per l'implementazione pratica.
 
 \section{Limitazioni degli Automi a Stati Finiti}
 Nonostante la loro utilità, gli automi a stati finiti (sia deterministici che non-deterministici) non sono modelli di calcolo universali. Hanno delle limitazioni intrinseche.
@@ -268,8 +234,52 @@ Questo linguaggio include stringhe come $\epsilon$ (per $m=0$), $ab$, $aabb$, $a
 Un programma Python o Java saprebbe facilmente verificare se una stringa è di questo tipo, ad esempio contando il numero di $a$ e $b$.
 \end{example}
 
-\subsection{Argomento Intuitivo (Pumping Lemma)}
+\subsection{Pumping Lemma}
 Gli automi a stati finiti non sono in grado di riconoscere il linguaggio $L = \{a^m b^m \mid m \geq 0\}$. L'intuizione dietro questa limitazione è che gli automi a stati finiti \textbf{non sanno contare} in modo arbitrario e \textbf{non hanno memoria esterna} per ricordare conteggi indefiniti.
+
+\begin{example}[DFA che riconosce solo $L_{limitato} = \{a^m b^m \mid 0 \leq m \leq 3\}$]
+Per comprendere meglio la limitazione, consideriamo un DFA che può riconoscere solo una versione \emph{limitata} del linguaggio, ovvero $L_{limitato} = \{\epsilon, ab, aabb, aaabbb\}$:
+
+\begin{center}
+\begin{tikzpicture}[
+    ->,
+    >=stealth,
+    node distance=2cm,
+    semithick,
+    every state/.style={draw,circle,minimum size=20pt}
+]
+    % Stati
+    \node[state,initial,accepting] (q0) {$q_0$};
+    \node[state,right of=q0] (q1) {$q_1$};
+    \node[state,accepting,below of=q1] (q2) {$q_2$};
+    \node[state,right of=q1] (q3) {$q_3$};
+    \node[state,accepting,below of=q3] (q4) {$q_4$};
+    \node[state,right of=q3] (q5) {$q_5$};
+    \node[state,accepting,below of=q5] (q6) {$q_6$};
+    \node[state,below of=q2] (trap) {$\text{trap}$};
+    
+    % Transizioni per le a
+    \path (q0) edge[above] node{$a$} (q1);
+    \path (q1) edge[above] node{$a$} (q3);
+    \path (q3) edge[above] node{$a$} (q5);
+    
+    % Transizioni per le b
+    \path (q1) edge[left] node{$b$} (q2);
+    \path (q3) edge[left] node{$b$} (q4);
+    \path (q5) edge[right] node{$b$} (q6);
+    
+    % Transizioni verso il pozzo
+    \path (q0) edge[bend right=45,below left] node{$b$} (trap);
+    \path (q2) edge[left] node{$a,b$} (trap);
+    \path (q4) edge[bend left=30,above left] node{$a,b$} (trap);
+    \path (q6) edge[bend left=45,below] node{$a,b$} (trap);
+    \path (q5) edge[bend left=30,right] node{$a$} (trap);
+    \path (trap) edge[loop below] node{$a,b$} (trap);
+\end{tikzpicture}
+\end{center}
+
+Questo automa ha 8 stati e può riconoscere solo stringhe con al massimo 3 $a$ seguite da 3 $b$. Per riconoscere il linguaggio completo $L = \{a^m b^m \mid m \geq 0\}$, avremmo bisogno di infiniti stati!
+\end{example}
 
 \begin{itemize}
     \item \textbf{Assunzione per contraddizione}: Supponiamo che esista un DFA $D$ in grado di decidere il linguaggio $L = \{a^m b^m \mid m \geq 0\}$.
@@ -283,6 +293,36 @@ Gli automi a stati finiti non sono in grado di riconoscere il linguaggio $L = \{
             \item $w$ è la parte restante della stringa dopo aver completato il ciclo una volta, che include le $a$ rimanenti (se ci sono) e tutte le $b$.
         \end{itemize}
         Graficamente: $q_0 \xrightarrow{u} q_i \xrightarrow{v} q_i \xrightarrow{w} q_f \in F$.
+
+\begin{example}[Visualizzazione del Ciclo Forzato]
+Supponiamo di avere un DFA con $P = 3$ stati che cerca di decidere $L = \{a^m b^m \mid m \geq 0\}$. Consideriamo la stringa $s = a^3 b^3 = aaabbb$:
+
+\begin{center}
+\begin{tikzpicture}[
+    ->,
+    >=stealth,
+    node distance=2cm,
+    semithick,
+    every state/.style={draw,circle,minimum size=25pt}
+]
+    % Stati del DFA ipotetico
+    \node[state,initial] (q0) {$q_0$};
+    \node[state,right of=q0] (q1) {$q_1$};
+    \node[state,right of=q1] (q2) {$q_2$};
+    
+    % Percorso forzato per aaa
+    \path (q0) edge[above] node{$a$} (q1);
+    \path (q1) edge[above] node{$a$} (q2);
+    \path (q2) edge[below,bend left,red,thick] node{$a$} (q0);
+    
+    % Evidenziamo il ciclo
+    \node[above=0.5cm of q1] {\textcolor{red}{Ciclo forzato!}};
+    \node[below=1cm of q1] {$u = \epsilon$, $v = aaa$, $w = bbb$};
+\end{tikzpicture}
+\end{center}
+
+Leggendo $aaa$, l'automa passa attraverso $q_0 \to q_1 \to q_2 \to q_0$. Il ciclo $v = aaa$ può essere ripetuto, generando stringhe come $a^6 b^3$, $a^9 b^3$, etc., che non appartengono a $L$.
+\end{example}
     \item \textbf{Implicazione del ciclo}: Se il DFA accetta $uvw$, dato che $v$ corrisponde a un ciclo, l'automa accetterà anche $uvvw$, $uvvvw$, e in generale $uv^i w$ per qualsiasi $i \geq 0$. Questo perché percorrere il ciclo ($v$) più volte riporta sempre l'automa nello stesso stato $q_i$, e da lì la computazione prosegue identica.
     \item \textbf{Contraddizione}: Poiché $v$ contiene solo $a$ (essendo parte dei primi $P$ simboli $a$), se consideriamo la stringa $uv^2 w$, essa avrà più $a$ di $uvw$ ma lo stesso numero di $b$. Ad esempio, se $s = a^P b^P$, allora $uv^2 w$ sarà della forma $a^{P+|v|} b^P$, dove $|v| > 0$. Questa nuova stringa \textbf{non appartiene} al linguaggio $L$ perché il numero di $a$ non è uguale al numero di $b$.
     \item Tuttavia, per la proprietà dei cicli, il DFA $D$ dovrebbe accettare $uv^2 w$. Questo è una contraddizione, in quanto $D$ dovrebbe accettare solo stringhe in $L$ e rifiutare quelle non in $L$.
