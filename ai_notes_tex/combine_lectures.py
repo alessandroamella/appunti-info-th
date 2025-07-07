@@ -149,6 +149,34 @@ def create_master_document(
         master_doc.write("\\frontmatter\n")  # for things like title page and ToC
         master_doc.write("\\maketitle\n")
         master_doc.write("\\tableofcontents\n")
+
+        # Add Informazioni sul Documento section
+        master_doc.write("\\chapter*{Informazioni sul Documento}\n")
+        master_doc.write(
+            "\\addcontentsline{toc}{chapter}{Informazioni sul Documento}\n\n"
+        )
+        master_doc.write(
+            "Questo documento è la versione compilata automaticamente di tutti i miei appunti di Informatica Teorica per il corso di Laurea in Informatica all'Università di Bologna.\n\n"
+        )
+        master_doc.write("\\begin{itemize}\n")
+        master_doc.write(
+            "  \\item \\textbf{Fonte}: Tutti gli appunti sono disponibili come file separati nella repository GitHub: \\url{https://github.com/alessandroamella/appunti-info-th}\n"
+        )
+        master_doc.write(
+            "  \\item \\textbf{Generazione}: Questo PDF è stato generato automaticamente utilizzando uno script che unisce tutti i singoli file .tex degli appunti.\n"
+        )
+        master_doc.write(
+            "  \\item \\textbf{Aggiornamenti}: Per la versione più recente degli appunti, visita la pagina delle release: \\url{https://github.com/alessandroamella/appunti-info-th/releases/latest}\n"
+        )
+        master_doc.write(
+            "  \\item \\textbf{Uso di AI}: Ho usato Gemini, Claude e ChatGPT a manetta.\n"
+        )
+        master_doc.write("\\end{itemize}\n\n")
+        master_doc.write("\\doclicenseThis\n\n")
+        master_doc.write(
+            "Sentiti libero di utilizzare, condividere o contribuire a questi appunti attraverso la repository GitHub.\n\n"
+        )
+        master_doc.write("\\clearpage\n\n")
         master_doc.write("\\mainmatter\n")  # for the main content (chapters)
 
         # 3. Loop through each lecture file and append its content
