@@ -14,8 +14,25 @@
 \usepackage{amsthm}
 \usepackage{tikz}
 \newcommand{\blankS}{\ensuremath{\raisebox{-0.15ex}{\scalebox{1.3}[0.7]{$\sqcup$}}\mkern2mu}}
-\usetikzlibrary{automata,positioning, arrows.meta, calc, fit} % Aggiunto arrows.meta per frecce migliori e fit per i box
-
+\usetikzlibrary{
+    automata,
+    positioning,
+    arrows,
+    arrows.meta,
+    calc,
+    fit,
+    patterns,
+    graphs,
+    graphdrawing,
+    matrix,
+    quotes,
+    shapes.geometric,
+    snakes,
+    shapes,
+    decorations.pathreplacing,
+    calligraphy,
+    chains,
+}
 % Definizione degli ambienti
 \theoremstyle{definition} % Use definition style for normal (non-italic) text
 \newtheorem{theorem}{Teorema}
@@ -89,6 +106,33 @@ Si conosceva già un algoritmo funzionante per la K-colorabilità di un grafo.
         \end{itemize}
 \end{itemize}
 
+% Diagramma delle partite e incompatibilità per 4 squadre (J, M, B, R)
+\begin{center}
+\begin{tikzpicture}[every node/.style={circle,draw,minimum size=1.2cm}, node distance=2.5cm]
+    % Nodes for each match (top row: JM, JR, BR; bottom row: JB, MB, MR)
+    \node (JM) at (0,0) {JM};
+    \node (JR) at (2.5,0) {JR};
+    \node (BR) at (5,0) {BR};
+    \node (JB) at (0,-2.5) {JB};
+    \node (MB) at (2.5,-2.5) {MB};
+    \node (MR) at (5,-2.5) {MR};
+
+    % Edges for incompatibilities (shared teams)
+    \draw (JM) -- (JB); % J
+    \draw (JM) -- (JR); % J
+    \draw (JB) -- (JR); % J
+    \draw (MB) -- (MR); % M
+    \draw (MB) -- (BR); % B
+    \draw (MR) -- (BR); % R
+    \draw (JM) -- (MB); % M
+    \draw (JM) -- (MR); % M
+    \draw (JB) -- (MB); % B
+    \draw (JB) -- (BR); % B
+    \draw (JR) -- (MR); % R
+    \draw (JR) -- (BR); % R
+\end{tikzpicture}
+\end{center}
+
 \textbf{Workflow complessivo per risolvere il problema A}:
 \begin{enumerate}
     \item Si riceve un'istanza $x$ (lista di squadre) del problema A.
@@ -127,6 +171,70 @@ Si conosceva già un algoritmo funzionante per la K-colorabilità di un grafo.
     \item Se $A$ si riduce a $B$ ($A \le B$), intuitivamente $A$ non è più difficile di $B$.
 \end{itemize}
 \end{example}
+
+\subsection*{Esempio concreto passo-passo: dalla lista squadre al calendario tramite riduzione}
+Supponiamo di avere le 4 squadre: Juventus (J), Milan (M), Bologna (B), Roma (R).
+
+\begin{enumerate}
+    \item \textbf{Tutte le possibili partite (coppie di squadre):}
+    \begin{itemize}
+        \item JM (Juventus--Milan)
+        \item JB (Juventus--Bologna)
+        \item JR (Juventus--Roma)
+        \item MB (Milan--Bologna)
+        \item MR (Milan--Roma)
+        \item BR (Bologna--Roma)
+    \end{itemize}
+    \item \textbf{Costruzione del grafo:} ogni partita è un nodo. Colleghiamo due partite con un arco se condividono una squadra.
+    \begin{center}
+    \begin{tabular}{|c|c|c|}
+        \hline
+        Nodo 1 & Nodo 2 & Squadra in comune \\
+        \hline
+        JM & JB & J \\
+        JM & JR & J \\
+        JB & JR & J \\
+        MB & MR & M \\
+        MB & BR & B \\
+        MR & BR & R \\
+        JM & MB & M \\
+        JM & MR & M \\
+        JB & MB & B \\
+        JB & BR & B \\
+        JR & MR & R \\
+        JR & BR & R \\
+        \hline
+    \end{tabular}
+    \end{center}
+    \item \textbf{Colorazione del grafo (assegnazione delle giornate):}
+    \begin{itemize}
+        \item Scegliamo $K = 3$ colori (giornate), perché con 4 squadre servono 3 giornate.
+        \item Una possibile colorazione valida è:
+        \begin{center}
+        \begin{tabular}{|c|c|}
+            \hline
+            Partita & Giornata (colore) \\
+            \hline
+            JM & 1 \\
+            BR & 1 \\
+            JB & 2 \\
+            MR & 2 \\
+            JR & 3 \\
+            MB & 3 \\
+            \hline
+        \end{tabular}
+        \end{center}
+    \end{itemize}
+    \item \textbf{Traduzione della colorazione in calendario:}
+    \begin{itemize}
+        \item \textbf{Giornata 1}: JM, BR
+        \item \textbf{Giornata 2}: JB, MR
+        \item \textbf{Giornata 3}: JR, MB
+    \end{itemize}
+    In ogni giornata, nessuna squadra gioca due volte (le partite sono compatibili).
+\end{enumerate}
+
+\textit{Questo esempio mostra come, tramite la riduzione, un'istanza del problema del calendario viene trasformata in un problema di colorazione, risolto, e poi riconvertito in una soluzione per il problema originale.}
 
 \section{Definizione Formale di Riduzione}
 
@@ -169,6 +277,7 @@ Una funzione $f: \Sigma^* \to \Sigma^*$ è \textbf{calcolabile} se esiste un tra
 Le riduzioni sono uno strumento potente per dimostrare l'indecidibilità dei linguaggi, sfruttando la relazione di "non più difficile di".
 
 \begin{theorem}[Proprietà Fondamentali delle Riduzioni]
+\label{thm:proprieta-riduzioni}
 Siano $A$ e $B$ due linguaggi tali che $A \le B$.
 \begin{enumerate}
     \item Se $A \notin R$ (A non è ricorsivo/decidibile), allora $B \notin R$ (B non è ricorsivo/decidibile).
@@ -202,7 +311,6 @@ Consideriamo la seguente costruzione di una Macchina di Turing $M_A$ che decide 
 Questo significa che $M_A$ è un decisore per $A$, quindi $A \in R$.
 Ma ciò contraddice la nostra assunzione iniziale che $A \notin R$.
 Pertanto, l'assunzione è falsa, e la tesi $A \notin R \implies B \notin R$ è vera.
-$\blankS$
 
 \textbf{Dimostrazione 2 (Riconoscibilità):}
 Vogliamo dimostrare: $A \notin RE \implies B \notin RE$.
@@ -226,7 +334,6 @@ Consideriamo la seguente costruzione di una Macchina di Turing $M_A'$ che ricono
 Questo significa che $M_A'$ è un accettore per $A$, quindi $A \in RE$.
 Ma ciò contraddice la nostra assunzione iniziale che $A \notin RE$.
 Pertanto, l'assunzione è falsa, e la tesi $A \notin RE \implies B \notin RE$ è vera.
-$\blankS$
 \end{proof}
 
 \begin{corollary}[Corollario delle Riduzioni]
@@ -242,7 +349,6 @@ Queste affermazioni sono le contronominali del teorema precedente.
     \item Se $A \notin R \implies B \notin R$ (Teorema 1). La sua contronominale è $B \in R \implies A \in R$.
     \item Se $A \notin RE \implies B \notin RE$ (Teorema 2). La sua contronominale è $B \in RE \implies A \in RE$.
 \end{enumerate}
-$\blankS$
 \end{proof}
 
 \textbf{Interpretazione del Corollario:}
@@ -258,6 +364,7 @@ Introduciamo un nuovo linguaggio e ne studiamo la decidibilità tramite riduzion
 \begin{definition}[Linguaggio $L_{NE}$]
 Il linguaggio $L_{NE}$ (Non-Empty) è l'insieme dei codici di Macchine di Turing $M_i$ tali che il linguaggio accettato da $M_i$ non è vuoto:
 $L_{NE} = \{ \langle M_i \rangle \mid L(M_i) \neq \emptyset \}$
+
 Intuitivamente, $L_{NE}$ contiene le Macchine di Turing che accettano almeno una stringa.
 \end{definition}
 
@@ -292,7 +399,6 @@ Per risolvere questo, si può usare una Macchina di Turing non deterministica, o
     \item Se $L(M) = \emptyset$, allora $M$ non accetta alcuna stringa. Indipendentemente da quale $w$ $M_{NE}$ indovina, la simulazione di $M$ su $w$ non porterà mai all'accettazione. Quindi, $M_{NE}$ non accetterà $\langle M \rangle$.
 \end{itemize}
 Poiché le Macchine di Turing non deterministiche sono equivalenti a quelle deterministiche per la classe RE, esiste una Macchina di Turing deterministica che riconosce $L_{NE}$. Quindi, $L_{NE} \in RE$.
-$\blankS$
 \end{proof}
 
 \subsection{$L_{NE}$ non è Ricorsivo ($L_{NE} \notin R$)}
@@ -331,22 +437,30 @@ La funzione $f$ è calcolabile, in quanto è un algoritmo ben definito per costr
 \textbf{Verifica della condizione $w' \in A \iff f(w') \in B$:}
 Sia $w' = \langle M, w \rangle$.
 
-\textbf{Caso 1: $\langle M, w \rangle \in L_U$ (istanza "sì" di $L_U$)}
-Questo significa che $M$ accetta $w$.
-Secondo la costruzione di $M'$, se $M$ accetta $w$, allora $M'$ accetterà \emph{qualsiasi} input $x$ le venga dato.
-Quindi, il linguaggio di $M'$ è $L(M') = \Sigma^*$.
-Poiché $\Sigma^* \neq \emptyset$, ne consegue che $\langle M' \rangle \in L_{NE}$.
-La condizione è soddisfatta: un'istanza "sì" di $L_U$ è mappata a un'istanza "sì" di $L_{NE}$.
+\begin{itemize}
+    \item[\textbf{Caso 1:}] $\langle M, w \rangle \in L_U$ (istanza "sì" di $L_U$)
+    \begin{itemize}
+        \item Questo significa che $M$ accetta $w$ (cioè, $M \Vdash w$).
+        \item Secondo la costruzione di $M'$, se $M$ accetta $w$, allora $M'$ accetterà \emph{qualsiasi} input $x$ le venga dato.
+        \item Quindi, il linguaggio di $M'$ è $L(M') = \Sigma^*$.
+        \item Poiché $\Sigma^* \neq \emptyset$, ne consegue che $\langle M' \rangle \in L_{NE}$.
+    \end{itemize}
+    La condizione è soddisfatta: un'istanza "sì" di $L_U$ è mappata a un'istanza "sì" di $L_{NE}$.
+    \item[\textbf{Caso 2:}] $\langle M, w \rangle \notin L_U$ (istanza "no" di $L_U$)
 
-\textbf{Caso 2: $\langle M, w \rangle \notin L_U$ (istanza "no" di $L_U$)}
-Questo significa che $M$ non accetta $w$ (cioè, $M$ rifiuta $w$ o $M$ va in loop su $w$).
-Secondo la costruzione di $M'$, se $M$ non accetta $w$, allora $M'$ non accetterà \emph{alcun} input $x$ le venga dato (o andrà in loop su qualsiasi $x$).
-Quindi, il linguaggio di $M'$ è $L(M') = \emptyset$.
-Ne consegue che $\langle M' \rangle \notin L_{NE}$.
-La condizione è soddisfatta: un'istanza "no" di $L_U$ è mappata a un'istanza "no" di $L_{NE}$.
+    \begin{itemize}
+        \item Questo significa che $M$ non accetta $w$ (cioè, $M \not\Vdash w$).
+        \item Secondo la costruzione di $M'$, se $M$ non accetta $w$, allora $M'$ non accetterà \emph{alcun} input $x$ le venga dato (o andrà in loop su qualsiasi $x$).
+        \item Quindi, il linguaggio di $M'$ è $L(M') = \emptyset$.
+        \item Ne consegue che $\langle M' \rangle \notin L_{NE}$.
+    \end{itemize}
+    La condizione è soddisfatta: un'istanza "no" di $L_U$ è mappata a un'istanza "no" di $L_{NE}$.
+\end{itemize}
 
-Poiché abbiamo dimostrato che $L_U \le L_{NE}$ e sappiamo che $L_U \notin R$, per il Teorema sulle Proprietà Fondamentali delle Riduzioni (punto 1), possiamo concludere che $L_{NE} \notin R$.
-$\blankS$
+Come visto nel Teorema ~\ref{thm:proprieta-riduzioni} sulle proprietà fondamentali delle riduzioni:
+\[
+L_U \le L_{NE} \land L_U \notin R \implies L_{NE} \notin R
+\]
 \end{proof}
 
 \subsection{Linguaggio Complementare $L_E$}
