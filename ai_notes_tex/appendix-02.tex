@@ -21,7 +21,7 @@
 \newtheorem{definition}{Definizione}
 \newtheorem{example}{Esempio}
 \newtheorem{lemma}{Lemma}
-\newtheorem{problem}{Problema}[section]
+\newtheorem{problem}{Problema}[subsection]
 \newtheorem{proposition}{Proposizione}
 \newcommand{\blankS}{\ensuremath{\raisebox{-0.15ex}{\scalebox{1.3}[0.7]{$\sqcup$}}\mkern2mu}}
 
@@ -53,26 +53,26 @@
 \tableofcontents
 \newpage
 
-\part{Teoria della Calcolabilità}
+\section{Teoria della Calcolabilità}
 
-\section{Introduzione e Modelli Formali}
+\subsection{Introduzione e Modelli Formali}
 Il corso si concentra sulla distinzione tra la complessità degli algoritmi e la complessità intrinseca dei problemi. L'obiettivo è capire quali problemi sono risolvibili da un computer (calcolabili/decidibili) e quali no, e tra quelli risolvibili, quali sono "facili" e quali "difficili".
 
-\subsection{Problemi di Ricerca e di Decisione}
+\subsubsection{Problemi di Ricerca e di Decisione}
 \begin{itemize}
     \item \textbf{Problema di Ricerca}: Un problema la cui soluzione può essere un output complesso (es. calcolare il percorso minimo in un grafo, trovare il prodotto di due matrici). Formalmente, una relazione tra stringhe di input e stringhe di output.
     \item \textbf{Problema di Decisione}: Un problema la cui risposta è solo \textbf{sì} o \textbf{no} (un booleano). È un caso speciale dei problemi di ricerca.
 \end{itemize}
 Ci si concentra sui problemi di decisione perché sono più semplici da analizzare formalmente.
 
-\subsection{Linguaggi Formali}
+\subsubsection{Linguaggi Formali}
 Per semplificare ulteriormente, i problemi di decisione vengono ricondotti al problema di decidere l'appartenenza di una stringa a un linguaggio.
 \begin{definition}[Linguaggio]
 Dato un alfabeto $\Sigma$ (un insieme finito di simboli), un \textbf{linguaggio} $L$ è un qualsiasi sottoinsieme di $\Sigma^*$, dove $\Sigma^*$ è l'insieme di tutte le stringhe di lunghezza finita costruibili con i simboli di $\Sigma$.
 \end{definition}
 Decidere un linguaggio $L$ significa, data una stringa $w$, determinare se $w \in L$.
 
-\subsection{Macchine di Turing (TM)}
+\subsubsection{Macchine di Turing (TM)}
 La Macchina di Turing è il modello formale di calcolo universale. È un automa a stati finiti con capacità aggiuntive.
 \begin{definition}[Macchina di Turing]
 Una TM è una tupla $M = (Q, \Sigma, \Gamma, \delta, q_0, B, F)$ dove:
@@ -93,8 +93,8 @@ Caratteristiche chiave:
 \end{enumerate}
 \textbf{Varianti}: Le TM multi-nastro e le TM non-deterministiche (NDTM) hanno lo stesso potere computazionale di una TM standard, sebbene una NDTM possa essere esponenzialmente più veloce. La simulazione di una NDTM su una DTM richiede tempo esponenziale.
 
-\section{Decidibilità e Indecidibilità}
-\subsection{Classi R e RE}
+\subsection{Decidibilità e Indecidibilità}
+\subsubsection{Classi R e RE}
 \begin{definition}[Linguaggi Ricorsivi / Decidibili - Classe R]
 Un linguaggio $L$ è \textbf{ricorsivo} (o \textbf{decidibile}) se esiste una TM $M$ che lo \emph{decide}. Questo significa che $M$ termina su ogni input $w$:
 \begin{itemize}
@@ -114,7 +114,7 @@ La classe di tutti i linguaggi R.E. è denotata con $\mathbf{RE}$.
 \end{definition}
 È chiaro che $\mathbf{R} \subseteq \mathbf{RE}$.
 
-\subsection{Problemi Indecidibili Famosi}
+\subsubsection{Problemi Indecidibili Famosi}
 \begin{problem}[Linguaggio Universale $L_u$]
 $L_u = \{ \tuple{M, w} \mid M \text{ è una TM e } M \text{ accetta } w \}$.
 \begin{itemize}
@@ -131,7 +131,7 @@ $H_{TM} = \{ \tuple{M, w} \mid M \text{ è una TM e } M \text{ termina su } w \}
 \end{problem}
 \textbf{Co-RE}: Un linguaggio $L$ è in Co-RE se il suo complemento $\bar{L}$ è in RE. Abbiamo dimostrato che $L \in \mathbf{R} \iff L \in \mathbf{RE} \cap \mathbf{Co-RE}$.
 
-\subsection{Teorema di Rice}
+\subsubsection{Teorema di Rice}
 È un teorema potente che generalizza l'indecidibilità a intere classi di problemi.
 \begin{definition}[Proprietà Semantica]
 Una proprietà $P$ dei linguaggi R.E. è una \textbf{proprietà semantica} se per ogni coppia di TM $M_1, M_2$ tali che $\lang{M_1} = \lang{M_2}$, vale che $M_1 \in P \iff M_2 \in P$. La proprietà dipende solo dal linguaggio, non dalla struttura della macchina.
@@ -144,22 +144,22 @@ Una proprietà è "non banale" se non è né vuota (nessun linguaggio la possied
 Il problema "il linguaggio di una TM è vuoto?" ($L_e$) è indecidibile per il Teorema di Rice. È una proprietà semantica (riguarda il linguaggio) e non è banale (ci sono TM con linguaggio vuoto e TM con linguaggio non vuoto).
 \end{example}
 
-\part{Teoria della Complessità}
+\section{Teoria della Complessità}
 
-\section{Classi di Complessità Temporale}
+\subsection{Classi di Complessità Temporale}
 All'interno della classe $\mathbf{R}$, analizziamo i problemi in base alle risorse (tempo, spazio) necessarie per risolverli.
 \begin{definition}[Complessità Temporale]
 Sia $M$ una TM che decide un linguaggio. Il \textbf{running time} di $M$ è una funzione $T(n)$ tale che per ogni input $w$ di lunghezza $n$, il numero di passi di $M$ su $w$ è al massimo $T(n)$.
 \end{definition}
 
-\subsection{La Classe P}
+\subsubsection{La Classe P}
 \begin{definition}[Classe P]
 $\mathbf{P}$ (Polynomial Time) è la classe di tutti i linguaggi $L$ per cui esiste una TM \textbf{deterministica} $M$ che decide $L$ in tempo polinomiale.
 $$ \mathbf{P} = \bigcup_{k \ge 1} \text{DTIME}(\bigO{n^k}) $$
 I problemi in $\mathbf{P}$ sono considerati \textbf{trattabili} o "facili".
 \end{definition}
 
-\subsection{La Classe NP}
+\subsubsection{La Classe NP}
 \begin{definition}[Classe NP - via NDTM]
 $\mathbf{NP}$ (Non-deterministic Polynomial Time) è la classe di tutti i linguaggi $L$ per cui esiste una TM \textbf{non-deterministica} $M$ che decide $L$ in tempo polinomiale.
 $$ \mathbf{NP} = \bigcup_{k \ge 1} \text{NTIME}(\bigO{n^k}) $$
@@ -171,7 +171,7 @@ La stringa $c$ è chiamata \textbf{certificato} o \textbf{testimone}. I problemi
 \end{definition}
 Chiaramente, $\mathbf{P} \subseteq \mathbf{NP}$. La domanda se $\mathbf{P} = \mathbf{NP}$ è il più grande problema aperto dell'informatica.
 
-\section{NP-Completezza}
+\subsection{NP-Completezza}
 Per studiare la relazione P vs NP, si è introdotta la nozione di problemi "più difficili" in NP.
 \begin{definition}[Riduzione Polinomiale]
 Un linguaggio $A$ è riducibile in tempo polinomiale a un linguaggio $B$, denotato $A \reducep B$, se esiste una funzione $f$ calcolabile in tempo polinomiale (da un trasduttore) tale che per ogni stringa $w$:
@@ -185,7 +185,7 @@ $$ w \in A \iff f(w) \in B $$
 \end{definition}
 I problemi NP-completi sono i problemi più difficili in NP. Se anche solo uno di essi fosse risolvibile in tempo polinomiale, allora $\mathbf{P} = \mathbf{NP}$.
 
-\subsection{Principali Problemi NP-Completi}
+\subsubsection{Principali Problemi NP-Completi}
 La base di tutte le dimostrazioni di NP-completezza è il seguente teorema:
 \begin{theorem}[Teorema di Cook-Levin]
 Il problema della soddisfacibilità booleana (\textbf{SAT}) è NP-completo.
@@ -200,14 +200,14 @@ Da qui, si dimostra l'NP-completezza di altri problemi tramite una catena di rid
     \item \textbf{Traveling Salesperson Problem (TSP, decisionale)}: Problema del commesso viaggiatore. Riduzione da Hamiltonian Cycle.
 \end{itemize}
 
-\section{Classi di Complessità Oltre NP}
-\subsection{Co-NP}
+\subsection{Classi di Complessità Oltre NP}
+\subsubsection{Co-NP}
 \begin{definition}[Classe Co-NP]
 Un linguaggio $L$ è in $\mathbf{Co-NP}$ se il suo complemento, $\bar{L}$, è in $\mathbf{NP}$.
 \end{definition}
 I problemi in Co-NP sono quelli per cui esiste un certificato conciso per le istanze \textbf{no}. Un esempio è \textbf{UNSAT} (formule non soddisfacibili). La relazione tra NP e Co-NP è un altro problema aperto.
 
-\subsection{Classi Spaziali e Gerarchia Polinomiale}
+\subsubsection{Classi Spaziali e Gerarchia Polinomiale}
 \begin{itemize}
     \item \textbf{L} e \textbf{NL}: Problemi risolvibili in spazio logaritmico deterministico e non-deterministico.
     \item \textbf{PSPACE}: Problemi risolvibili in spazio polinomiale.
@@ -222,8 +222,8 @@ Questo implica che $\mathbf{PSPACE} = \mathbf{NPSPACE}$.
 \end{theorem}
 La \textbf{Gerarchia Polinomiale (PH)} è una gerarchia di classi ($\Sigma_k^p, \Pi_k^p, \Delta_k^p$) definita tramite macchine a oracolo che si trova tra NP e PSPACE.
 
-\part{Modalità d'Esame}
-\section{Struttura e Valutazione}
+\section{Modalità d'Esame}
+\subsection{Struttura e Valutazione}
 \begin{itemize}
     \item \textbf{Durata}: 3.5 ore.
     \item \textbf{Punteggio Massimo Scritto}: 32 punti. Questo permette un margine di errore.
