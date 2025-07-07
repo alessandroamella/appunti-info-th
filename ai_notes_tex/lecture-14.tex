@@ -9,12 +9,28 @@
 \usepackage[T1]{fontenc}
 \usepackage[a4paper, total={6in, 8in}]{geometry}
 \usepackage{minted}
-\usepackage{mathpazo}
 \usepackage{fancyhdr}
 \usepackage{amsthm}
 \usepackage{tikz}
-\usetikzlibrary{automata,positioning}
-
+\usetikzlibrary{
+    automata,
+    positioning,
+    arrows,
+    arrows.meta,
+    calc,
+    fit,
+    patterns,
+    graphs,
+    graphdrawing,
+    matrix,
+    quotes,
+    shapes.geometric,
+    snakes,
+    shapes,
+    decorations.pathreplacing,
+    calligraphy,
+    chains,
+}
 % Definizione degli ambienti
 \theoremstyle{definition} % Use definition style for normal (non-italic) text
 \newtheorem{theorem}{Teorema}
@@ -46,17 +62,7 @@
 \tableofcontents
 \newpage
 
-\section{Introduzione alle Riduzioni}
-
-Una \emph{riduzione} è uno strumento fondamentale in Teoria della Computazione per dimostrare la difficoltà computazionale di problemi.
-
-\begin{definition}[Riduzione Formale]
-Siano $A$ e $B$ due linguaggi (problemi di decisione). Una funzione $f: \Sigma^* \to \Sigma^*$ è una \textbf{riduzione calcolabile} di $A$ a $B$ (indicata $A \le_m B$) se:
-\begin{enumerate}
-    \item $f$ è calcolabile (esiste una Macchina di Turing che calcola $f$ in tempo finito per ogni input).
-    \item Per ogni stringa $w \in \Sigma^*$, si ha che $w \in A \iff f(w) \in B$.
-\end{enumerate}
-\end{definition}
+\section{Recap sulle Riduzioni}
 
 \begin{example}[Esempio di Riduzione]
 Consideriamo due problemi semplici per illustrare il concetto:
@@ -129,22 +135,107 @@ $$A_{i_1} A_{i_2} \dots A_{i_m} = B_{i_1} B_{i_2} \dots B_{i_m}$$
 La risposta è "sì" se una tale sequenza esiste, "no" altrimenti.
 \end{definition}
 
-\begin{example}
-Consideriamo le liste:
-$A = (A_1 = 1, A_2 = 10111, A_3 = 10)$
-$B = (B_1 = 111, B_2 = 10, B_3 = 0)$
+\vspace{0.5em}
 
-Una possibile sequenza di indici è $I = (2, 1, 1, 3)$:
-$A_2 A_1 A_1 A_3 = (10111)(1)(1)(10) = 101111110$
-$B_2 B_1 B_1 B_3 = (10)(111)(111)(0) = 101111110$
-Poiché le stringhe risultanti sono uguali, questa istanza ha una soluzione ("sì").
+\begin{example}
+
+\begin{align*}
+A &= (A_1 = 1,\; A_2 = 10111,\; A_3 = 10) \\
+B &= (B_1 = 111,\; B_2 = 10,\; B_3 = 0)
+\end{align*}
+
+Possiamo rappresentare un'istanza del PCP utilizzando tessere (domini).
+
+\begin{center}
+% Domino representation (TikZ)
+\begin{tikzpicture}[x=2.5cm, y=1.2cm, font=\sffamily]
+  % Dominoes
+  % Domino 1
+  \draw (0,0) rectangle (1,1);
+  \draw (0,0.5) -- (1,0.5);
+  \node at (0.5,0.75) {$1$};
+  \node at (0.5,0.25) {$111$};
+  \node at (0.5,-0.3) {$A_1 \mid B_1$};
+  % Domino 2
+  \draw (1.2,0) rectangle (2.2,1);
+  \draw (1.2,0.5) -- (2.2,0.5);
+  \node at (1.7,0.75) {$10111$};
+  \node at (1.7,0.25) {$10$};
+  \node at (1.7,-0.3) {$A_2 \mid B_2$};
+  % Domino 3
+  \draw (2.4,0) rectangle (3.4,1);
+  \draw (2.4,0.5) -- (3.4,0.5);
+  \node at (2.9,0.75) {$10$};
+  \node at (2.9,0.25) {$0$};
+  \node at (2.9,-0.3) {$A_3 \mid B_3$};
+\end{tikzpicture}
+\end{center}
+
+Ogni tessera ha una parte superiore ($A_i$) e una inferiore ($B_i$).
+
+\textbf{Domanda:} Esiste una sequenza di indici $I = (i_1, i_2, \dots, i_m)$ tale che, concatenando le parti superiori e inferiori delle tessere scelte, si ottengano due stringhe uguali?
+
+\textbf{Esempio di soluzione:}
+Scegliamo la sequenza di indici $I = (2, 1, 1, 3)$.
+
+\begin{center}
+% Visual domino sequence (TikZ)
+\begin{tikzpicture}[x=1.7cm, y=1.2cm, font=\sffamily]
+  % Sequence: 2, 1, 1, 3
+  % Domino 2
+  \draw[thick] (0,0) rectangle (1,1);
+  \draw (0,0.5) -- (1,0.5);
+  \node at (0.5,0.75) {$10111$};
+  \node at (0.5,0.25) {$10$};
+  \node at (0.5,-0.3) {$A_2 \mid B_2$};
+  % Domino 1
+  \draw[thick] (1.1,0) rectangle (2.1,1);
+  \draw (1.1,0.5) -- (2.1,0.5);
+  \node at (1.6,0.75) {$1$};
+  \node at (1.6,0.25) {$111$};
+  \node at (1.6,-0.3) {$A_1 \mid B_1$};
+  % Domino 1 again
+  \draw[thick] (2.2,0) rectangle (3.2,1);
+  \draw (2.2,0.5) -- (3.2,0.5);
+  \node at (2.7,0.75) {$1$};
+  \node at (2.7,0.25) {$111$};
+  \node at (2.7,-0.3) {$A_1 \mid B_1$};
+  % Domino 3
+  \draw[thick] (3.3,0) rectangle (4.3,1);
+  \draw (3.3,0.5) -- (4.3,0.5);
+  \node at (3.8,0.75) {$10$};
+  \node at (3.8,0.25) {$0$};
+  \node at (3.8,-0.3) {$A_3 \mid B_3$};
+\end{tikzpicture}
+\end{center}
+
+\textbf{Costruzione delle stringhe:}
+
+\begin{align*}
+  \text{Parte superiore (A):}\quad & 10111\ 1\ 1\ 10 = \textbf{101111110} \\
+  \text{Parte inferiore (B):}\quad & 10\ 111\ 111\ 0 = \textbf{101111110}
+\end{align*}
+
+Poiché le due stringhe coincidono, questa sequenza è una soluzione per l'istanza PCP.
+
+\textbf{Nota visiva:} Puoi pensare a ciascuna tessera come a un ``domino'' con la parte superiore e inferiore, e l'obiettivo è allineare le tessere in modo che la concatenazione delle parti superiori e inferiori dia la stessa stringa. 
+\textbf{Le tessere possono essere usate anche più volte, cioè con ripetizione.}
+
 \end{example}
 
 \subsection{Proprietà del PCP}
 \begin{itemize}
-    \item Il PCP è un problema \textbf{ricorsivamente enumerabile} (in R). Possiamo ideare un algoritmo che, data un'istanza, cerca tutte le possibili sequenze di indici di lunghezza crescente. Se trova una soluzione, accetta. Se non trova una soluzione in un tempo finito, potrebbe continuare a cercare indefinitamente.
-    \item Il PCP è \textbf{indecidibile} (non in R). Non esiste un algoritmo che, per ogni istanza del PCP, termina e fornisce la risposta corretta ("sì" o "no"). Dimostreremo questo usando le riduzioni.
+\item Il PCP è un problema \textbf{riconoscibile} (in RE). Possiamo ideare un algoritmo che, data un'istanza, cerca tutte le possibili sequenze di indici di lunghezza crescente. Se trova una soluzione, accetta. Se non trova una soluzione in un tempo finito, potrebbe continuare a cercare indefinitamente.
+\item Il PCP è \textbf{indecidibile} (non in R). Non esiste un algoritmo che, per ogni istanza del PCP, termina e fornisce la risposta corretta ("sì" o "no"). Dimostreremo questo usando le riduzioni.
 \end{itemize}
+
+\textbf{Nota terminologica:}
+\begin{itemize}
+\item \textbf{R} (ricorsivo) = insieme dei linguaggi \textbf{decidibili}
+\item \textbf{RE} (ricorsivamente enumerabile) = insieme dei linguaggi \textbf{riconoscibili} o \textbf{semi-decidibili}
+\end{itemize}
+
+Il PCP appartiene alla classe RE $\setminus$ R, ovvero è riconoscibile ma non decidibile.
 
 \section{Problema di Corrispondenza di Post Modificato (MPCP)}
 
@@ -160,7 +251,9 @@ Il problema chiede se esista una sequenza di indici $I = (i_1, i_2, \dots, i_m)$
 La risposta è "sì" se una tale sequenza esiste, "no" altrimenti.
 \end{definition}
 
+\begin{remark}
 L'unica differenza tra PCP e MPCP è la condizione che la sequenza di indici debba iniziare per $1$.
+\end{remark}
 
 \section{Riduzione 1: $LU \le_m MPCP$}
 
@@ -326,7 +419,7 @@ La computazione termina nello stato accettante $q_3$, quindi $M$ accetta la stri
         \end{itemize}
         A questo punto, la stringa concatenata di A sarà $\#q_1 01\#$, mentre quella di B sarà $\#q_1 01\# \#1q_2 1\#$. B è ancora un passo avanti.
     \item Questo processo continua. Le regole di copia e transizione assicurano che la stringa costruita da $B$ contenga la sequenza di ID, con la stringa costruita da $A$ che la segue con un ID di ritardo.
-    \item Quando la computazione raggiunge uno stato finale (es. $q_3$ nell'esempio, $ID_5 = \#10q_3\#$), le coppie di accettazione (Classe 4) permettono alla stringa di $A$ di "catturare" la stringa di $B$. Ad esempio, per $Xq_f Y \to q_f Y$, $A$ contribuisce con 3 simboli e $B$ con 2, riducendo il gap.
+    \item Quando la computazione raggiunge uno stato finale (es. $q_3$ nell'esempio, $ID_5 = \#10q_3\#$), le coppie di accettazione (Classe 4) permettono alla stringa di $A$ di "catturare" la stringa di $B$. Ad esempio, per $Xq_f Y \to QY$, $A$ contribuisce con 3 simboli e $B$ con 2, riducendo il gap.
     \item Infine, la coppia finale (Classe 5) permette di pareggiare completamente le stringhe. Se $A$ arriva a $\#ID_1\#ID_2\# \dots \#ID_k \#q_f \# \#$ e $B$ arriva a $\#ID_1\#ID_2\# \dots \#ID_k \# \# \#$, allora la coppia finale farà sì che $A$ e $B$ diventino uguali.
 \end{itemize}
 
@@ -358,7 +451,7 @@ Si deve dimostrare che $(M, w)$ è un'istanza "sì" di $LU$ se e solo se l'istan
 \begin{itemize}
     \item \emph{Premessa:} Supponiamo che l'istanza MPCP $(A, B)$ generata dalla riduzione abbia una soluzione.
     
-    \item \emph{Vincolo iniziale:} Per la definizione di MPCP, questa soluzione deve iniziare con la coppia $(A_1, B_1)$, che è $(\#, \#q_0 w\#)$.
+    \item \emph{Vincolo iniziale:} Per la definizione di MPCP, questa soluzione deve iniziare con la coppia di indici $(1, i_2, \dots, i_m)$, dove $i_2, \dots, i_m$ sono indici arbitrari.
     
     \item \emph{Necessità di simulazione corretta:} L'unico modo per le stringhe concatenate di $A$ e $B$ di rimanere allineate e infine eguagliarsi è che le coppie usate simulino correttamente le transizioni di $M$. Qualsiasi sequenza di indici che non rispetti la simulazione delle transizioni non permetterebbe mai alle stringhe di allinearsi correttamente.
     
