@@ -1,0 +1,254 @@
+\documentclass[a4paper]{article}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage[italian]{babel}
+\usepackage[utf8]{inputenc} % Corrected this line
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[scaled]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage[T1]{fontenc}
+\usepackage[a4paper, total={6in, 8in}]{geometry}
+\usepackage{minted}
+\usepackage{mathpazo}
+\usepackage{fancyhdr}
+\usepackage{amsthm}
+\usepackage{tikz}
+\usetikzlibrary{automata,positioning}
+
+% Definizione degli ambienti
+\theoremstyle{definition} % Use definition style for normal (non-italic) text
+\newtheorem{theorem}{Teorema}
+\newtheorem{definition}{Definizione}
+\newtheorem{example}{Esempio}
+\newtheorem{lemma}{Lemma}
+\newtheorem{problem}{Problema}[section]
+\newtheorem{proposition}{Proposizione}
+\newcommand{\blankS}{\ensuremath{\raisebox{-0.15ex}{\scalebox{1.3}[0.7]{$\sqcup$}}\mkern2mu}}
+
+\hypersetup{
+    pdftitle={Lezione di Informatica Teorica - How to Esame},
+    pdfauthor={Appunti da Trascrizione AI}
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textit{How to Esame}}
+\fancyfoot[C]{\thepage}
+
+\title{How to Esame}
+\author{Appunti da Trascrizione Automatica}
+\date{\today}
+
+
+% --- COMANDI PERSONALIZZATI ---
+\newcommand{\lang}[1]{\mathcal{L}(#1)}
+\newcommand{\set}[1]{\{#1\}}
+\newcommand{\tuple}[1]{\langle#1\rangle}
+\newcommand{\bigO}[1]{\mathcal{O}(#1)}
+\newcommand{\reducep}{\le_p}
+\newcommand{\reducelog}{\le_L}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+
+\part{Teoria della Calcolabilità}
+
+\section{Introduzione e Modelli Formali}
+Il corso si concentra sulla distinzione tra la complessità degli algoritmi e la complessità intrinseca dei problemi. L'obiettivo è capire quali problemi sono risolvibili da un computer (calcolabili/decidibili) e quali no, e tra quelli risolvibili, quali sono "facili" e quali "difficili".
+
+\subsection{Problemi di Ricerca e di Decisione}
+\begin{itemize}
+    \item \textbf{Problema di Ricerca}: Un problema la cui soluzione può essere un output complesso (es. calcolare il percorso minimo in un grafo, trovare il prodotto di due matrici). Formalmente, una relazione tra stringhe di input e stringhe di output.
+    \item \textbf{Problema di Decisione}: Un problema la cui risposta è solo \textbf{sì} o \textbf{no} (un booleano). È un caso speciale dei problemi di ricerca.
+\end{itemize}
+Ci si concentra sui problemi di decisione perché sono più semplici da analizzare formalmente.
+
+\subsection{Linguaggi Formali}
+Per semplificare ulteriormente, i problemi di decisione vengono ricondotti al problema di decidere l'appartenenza di una stringa a un linguaggio.
+\begin{definition}[Linguaggio]
+Dato un alfabeto $\Sigma$ (un insieme finito di simboli), un \textbf{linguaggio} $L$ è un qualsiasi sottoinsieme di $\Sigma^*$, dove $\Sigma^*$ è l'insieme di tutte le stringhe di lunghezza finita costruibili con i simboli di $\Sigma$.
+\end{definition}
+Decidere un linguaggio $L$ significa, data una stringa $w$, determinare se $w \in L$.
+
+\subsection{Macchine di Turing (TM)}
+La Macchina di Turing è il modello formale di calcolo universale. È un automa a stati finiti con capacità aggiuntive.
+\begin{definition}[Macchina di Turing]
+Una TM è una tupla $M = (Q, \Sigma, \Gamma, \delta, q_0, B, F)$ dove:
+\begin{itemize}
+    \item $Q$ è un insieme finito di stati.
+    \item $\Sigma$ è l'alfabeto di input.
+    \item $\Gamma$ è l'alfabeto del nastro ($\Sigma \subset \Gamma$).
+    \item $\delta: Q \times \Gamma \to Q \times \Gamma \times \{L, R\}$ è la funzione di transizione.
+    \item $q_0 \in Q$ è lo stato iniziale.
+    \item $B \in \Gamma \setminus \Sigma$ è il simbolo speciale \emph{blank}.
+    \item $F \subseteq Q$ è l'insieme degli stati finali (o di accettazione).
+\end{itemize}
+\end{definition}
+Caratteristiche chiave:
+\begin{enumerate}
+    \item Il nastro è infinito in entrambe le direzioni.
+    \item La testina può leggere, scrivere e muoversi a sinistra (L) o a destra (R).
+\end{enumerate}
+\textbf{Varianti}: Le TM multi-nastro e le TM non-deterministiche (NDTM) hanno lo stesso potere computazionale di una TM standard, sebbene una NDTM possa essere esponenzialmente più veloce. La simulazione di una NDTM su una DTM richiede tempo esponenziale.
+
+\section{Decidibilità e Indecidibilità}
+\subsection{Classi R e RE}
+\begin{definition}[Linguaggi Ricorsivi / Decidibili - Classe R]
+Un linguaggio $L$ è \textbf{ricorsivo} (o \textbf{decidibile}) se esiste una TM $M$ che lo \emph{decide}. Questo significa che $M$ termina su ogni input $w$:
+\begin{itemize}
+    \item Se $w \in L$, $M$ accetta.
+    \item Se $w \notin L$, $M$ rifiuta (terminando in uno stato non finale).
+\end{itemize}
+La classe di tutti i linguaggi ricorsivi è denotata con $\mathbf{R}$.
+\end{definition}
+
+\begin{definition}[Linguaggi Ricorsivamente Enumerabili - Classe RE]
+Un linguaggio $L$ è \textbf{ricorsivamente enumerabile} (o \textbf{riconoscibile}) se esiste una TM $M$ che lo \emph{accetta}.
+\begin{itemize}
+    \item Se $w \in L$, $M$ termina e accetta.
+    \item Se $w \notin L$, $M$ può rifiutare o non terminare mai (loop).
+\end{itemize}
+La classe di tutti i linguaggi R.E. è denotata con $\mathbf{RE}$.
+\end{definition}
+È chiaro che $\mathbf{R} \subseteq \mathbf{RE}$.
+
+\subsection{Problemi Indecidibili Famosi}
+\begin{problem}[Linguaggio Universale $L_u$]
+$L_u = \{ \tuple{M, w} \mid M \text{ è una TM e } M \text{ accetta } w \}$.
+\begin{itemize}
+    \item $L_u \in \mathbf{RE}$: Si può costruire una Macchina di Turing Universale (UTM) che simula $M$ su $w$. Se $M$ accetta, la UTM accetta.
+    \item $L_u \notin \mathbf{R}$: Non è decidibile. La dimostrazione usa la diagonalizzazione.
+\end{itemize}
+\end{problem}
+\begin{problem}[Halting Problem $H_{TM}$]
+$H_{TM} = \{ \tuple{M, w} \mid M \text{ è una TM e } M \text{ termina su } w \}$.
+\begin{itemize}
+    \item $H_{TM} \in \mathbf{RE}$.
+    \item $H_{TM} \notin \mathbf{R}$.
+\end{itemize}
+\end{problem}
+\textbf{Co-RE}: Un linguaggio $L$ è in Co-RE se il suo complemento $\bar{L}$ è in RE. Abbiamo dimostrato che $L \in \mathbf{R} \iff L \in \mathbf{RE} \cap \mathbf{Co-RE}$.
+
+\subsection{Teorema di Rice}
+È un teorema potente che generalizza l'indecidibilità a intere classi di problemi.
+\begin{definition}[Proprietà Semantica]
+Una proprietà $P$ dei linguaggi R.E. è una \textbf{proprietà semantica} se per ogni coppia di TM $M_1, M_2$ tali che $\lang{M_1} = \lang{M_2}$, vale che $M_1 \in P \iff M_2 \in P$. La proprietà dipende solo dal linguaggio, non dalla struttura della macchina.
+\end{definition}
+\begin{theorem}[Teorema di Rice]
+Ogni proprietà non banale dei linguaggi ricorsivamente enumerabili è indecidibile.
+\end{theorem}
+Una proprietà è "non banale" se non è né vuota (nessun linguaggio la possiede) né universale (tutti i linguaggi R.E. la possiedono).
+\begin{example}
+Il problema "il linguaggio di una TM è vuoto?" ($L_e$) è indecidibile per il Teorema di Rice. È una proprietà semantica (riguarda il linguaggio) e non è banale (ci sono TM con linguaggio vuoto e TM con linguaggio non vuoto).
+\end{example}
+
+\part{Teoria della Complessità}
+
+\section{Classi di Complessità Temporale}
+All'interno della classe $\mathbf{R}$, analizziamo i problemi in base alle risorse (tempo, spazio) necessarie per risolverli.
+\begin{definition}[Complessità Temporale]
+Sia $M$ una TM che decide un linguaggio. Il \textbf{running time} di $M$ è una funzione $T(n)$ tale che per ogni input $w$ di lunghezza $n$, il numero di passi di $M$ su $w$ è al massimo $T(n)$.
+\end{definition}
+
+\subsection{La Classe P}
+\begin{definition}[Classe P]
+$\mathbf{P}$ (Polynomial Time) è la classe di tutti i linguaggi $L$ per cui esiste una TM \textbf{deterministica} $M$ che decide $L$ in tempo polinomiale.
+$$ \mathbf{P} = \bigcup_{k \ge 1} \text{DTIME}(\bigO{n^k}) $$
+I problemi in $\mathbf{P}$ sono considerati \textbf{trattabili} o "facili".
+\end{definition}
+
+\subsection{La Classe NP}
+\begin{definition}[Classe NP - via NDTM]
+$\mathbf{NP}$ (Non-deterministic Polynomial Time) è la classe di tutti i linguaggi $L$ per cui esiste una TM \textbf{non-deterministica} $M$ che decide $L$ in tempo polinomiale.
+$$ \mathbf{NP} = \bigcup_{k \ge 1} \text{NTIME}(\bigO{n^k}) $$
+\end{definition}
+\begin{definition}[Classe NP - via Verificatore]
+Un linguaggio $L$ è in $\mathbf{NP}$ se esiste un algoritmo \textbf{verificatore} deterministico $V$, che lavora in tempo polinomiale, e una costante $k$ tali che:
+$$ w \in L \iff \exists c, |c| = \bigO{|w|^k} \text{ tale che } V(w, c) = \text{accetta} $$
+La stringa $c$ è chiamata \textbf{certificato} o \textbf{testimone}. I problemi in $\mathbf{NP}$ sono quelli le cui soluzioni (istanze sì) sono facilmente \emph{verificabili} se ci viene dato un aiuto (il certificato).
+\end{definition}
+Chiaramente, $\mathbf{P} \subseteq \mathbf{NP}$. La domanda se $\mathbf{P} = \mathbf{NP}$ è il più grande problema aperto dell'informatica.
+
+\section{NP-Completezza}
+Per studiare la relazione P vs NP, si è introdotta la nozione di problemi "più difficili" in NP.
+\begin{definition}[Riduzione Polinomiale]
+Un linguaggio $A$ è riducibile in tempo polinomiale a un linguaggio $B$, denotato $A \reducep B$, se esiste una funzione $f$ calcolabile in tempo polinomiale (da un trasduttore) tale che per ogni stringa $w$:
+$$ w \in A \iff f(w) \in B $$
+\end{definition}
+\begin{definition}[NP-Hard e NP-Completo]
+\begin{itemize}
+    \item Un linguaggio $L$ è \textbf{NP-hard} se ogni linguaggio $L' \in \mathbf{NP}$ è riducibile in tempo polinomiale a $L$ ($L' \reducep L$).
+    \item Un linguaggio $L$ è \textbf{NP-completo} se è NP-hard e $L \in \mathbf{NP}$.
+\end{itemize}
+\end{definition}
+I problemi NP-completi sono i problemi più difficili in NP. Se anche solo uno di essi fosse risolvibile in tempo polinomiale, allora $\mathbf{P} = \mathbf{NP}$.
+
+\subsection{Principali Problemi NP-Completi}
+La base di tutte le dimostrazioni di NP-completezza è il seguente teorema:
+\begin{theorem}[Teorema di Cook-Levin]
+Il problema della soddisfacibilità booleana (\textbf{SAT}) è NP-completo.
+\end{theorem}
+Da qui, si dimostra l'NP-completezza di altri problemi tramite una catena di riduzioni:
+\begin{itemize}
+    \item \textbf{3-SAT}: Una variante di SAT dove ogni clausola ha esattamente (o al più) 3 letterali. Si dimostra tramite riduzione da SAT.
+    \item \textbf{Independent Set (IS)}: Dato un grafo $G$ e un intero $k$, esiste un insieme di $k$ vertici a due a due non adiacenti? Riduzione da 3-SAT.
+    \item \textbf{Vertex Cover (VC)}: Dato $G$ e $k$, esiste un insieme di $k$ vertici che "coprono" tutti gli archi? Riduzione da IS.
+    \item \textbf{Clique}: Dato $G$ e $k$, esiste un sottografo completo (cricca) di $k$ vertici? Riduzione da IS (sul grafo complemento).
+    \item \textbf{Napsack (decisionale)}: Problema dello zaino. Riduzione da Exact Cover.
+    \item \textbf{Traveling Salesperson Problem (TSP, decisionale)}: Problema del commesso viaggiatore. Riduzione da Hamiltonian Cycle.
+\end{itemize}
+
+\section{Classi di Complessità Oltre NP}
+\subsection{Co-NP}
+\begin{definition}[Classe Co-NP]
+Un linguaggio $L$ è in $\mathbf{Co-NP}$ se il suo complemento, $\bar{L}$, è in $\mathbf{NP}$.
+\end{definition}
+I problemi in Co-NP sono quelli per cui esiste un certificato conciso per le istanze \textbf{no}. Un esempio è \textbf{UNSAT} (formule non soddisfacibili). La relazione tra NP e Co-NP è un altro problema aperto.
+
+\subsection{Classi Spaziali e Gerarchia Polinomiale}
+\begin{itemize}
+    \item \textbf{L} e \textbf{NL}: Problemi risolvibili in spazio logaritmico deterministico e non-deterministico.
+    \item \textbf{PSPACE}: Problemi risolvibili in spazio polinomiale.
+    \item \textbf{EXPTIME}: Problemi risolvibili in tempo esponenziale.
+\end{itemize}
+Relazioni note:
+$$ \mathbf{L} \subseteq \mathbf{NL} \subseteq \mathbf{P} \subseteq \mathbf{NP} \subseteq \mathbf{PSPACE} \subseteq \mathbf{EXPTIME} $$
+\begin{theorem}[Teorema di Savitch]
+Per ogni funzione $S(n) \ge \log n$:
+$$ \text{NSPACE}(S(n)) \subseteq \text{DSPACE}(S(n)^2) $$
+Questo implica che $\mathbf{PSPACE} = \mathbf{NPSPACE}$.
+\end{theorem}
+La \textbf{Gerarchia Polinomiale (PH)} è una gerarchia di classi ($\Sigma_k^p, \Pi_k^p, \Delta_k^p$) definita tramite macchine a oracolo che si trova tra NP e PSPACE.
+
+\part{Modalità d'Esame}
+\section{Struttura e Valutazione}
+\begin{itemize}
+    \item \textbf{Durata}: 3.5 ore.
+    \item \textbf{Punteggio Massimo Scritto}: 32 punti. Questo permette un margine di errore.
+    \item \textbf{Struttura Prova Scritta}:
+    \begin{enumerate}
+        \item \textbf{Progettazione di una Macchina di Turing} (8 punti): Data la descrizione di un linguaggio, definire una TM (eventualmente non-deterministica e/o multi-nastro) che lo decide. L'enfasi è su problemi che richiedono una gestione non banale della computazione.
+        \item \textbf{Domande di Teoria} (circa 4 domande, 8 punti totali): Definizioni formali e concetti visti a lezione (es. "Cos'è una riduzione?", "Definisci la classe NP", "Che differenza c'è tra P e R?").
+        \item \textbf{Dimostrazioni viste a lezione} (1-2 domande, circa 6-8 punti): Dimostrare un teorema o una proprietà discussa durante il corso (es. transitività delle riduzioni, il teorema di Rice in forma generale, proprietà delle classi R e RE).
+        \item \textbf{Esercizio di (In)decidibilità} (5-6 punti): Dato un nuovo linguaggio (proprietà di TM), discutere la sua decidibilità. Potrebbe richiedere l'applicazione del Teorema di Rice (verificando se la proprietà è semantica e non banale) o una riduzione ad-hoc da un problema noto indecidibile (es. $L_u$, $H_{TM}$).
+        \item \textbf{Esercizio di NP-Completezza} (6-7 punti): Dato un nuovo problema, dimostrare la sua NP-completezza. Questo richiede:
+        \begin{itemize}
+            \item Dimostrare l'appartenenza a NP (guess \& check).
+            \item Dimostrare l'NP-hardness tramite una riduzione da un problema noto NP-completo (il problema sorgente sarà suggerito).
+        \end{itemize}
+    \end{enumerate}
+    \item \textbf{Orale}:
+    \begin{itemize}
+        \item L'orale è \textbf{obbligatorio} solo per chi ottiene un punteggio $\ge 29$ allo scritto e desidera un voto superiore a 28.
+        \item Chi ottiene $\ge 29$ può scegliere di non fare l'orale e registrare il voto di \textbf{28}.
+        \item L'orale può \textbf{aumentare o diminuire} il voto dello scritto.
+        \item La \textbf{lode} si può ottenere solo tramite l'orale.
+        \item Le domande verteranno su collegamenti tra concetti, ragionamenti e dimostrazioni più complesse.
+    \end{itemize}
+    \item \textbf{Registrazione}: Chi ottiene un voto $\ge 18$ e non è soggetto all'orale obbligatorio può registrare direttamente il voto dello scritto. Il silenzio-assenso dopo la pubblicazione dei risultati implica l'accettazione del voto.
+\end{itemize}
+
+
+\end{document}
