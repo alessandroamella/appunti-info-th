@@ -276,6 +276,43 @@ $$ID_1 \# ID_2 \# ID_3 \# \dots \# ID_k$$
 
 dove ogni $ID_i$ rappresenta lo stato della macchina, la posizione della testina e il contenuto del nastro in un determinato momento.
 
+\begin{example}[Esempio di ID]
+Una Macchina di Turing con nastro $011$, testina sul primo $1$ e stato $q_2$ ha ID:
+\[
+0\,q_2\,11
+\]
+\vspace{-1em}
+\begin{center}
+\begin{tikzpicture}[
+    tape/.style={rectangle, draw, minimum width=1cm, minimum height=1.2cm, font=\large},
+    head/.style={draw, thick, fill=yellow!30, minimum width=1cm, minimum height=1.2cm},
+    state/.style={font=\sffamily\bfseries}
+]
+    \node[tape] (cell1) at (0,0) {$0$};
+    \node[head] (cell2) at (1,0) {\shortstack{$\mathbf{q_2}$\\$1$}};
+    \node[tape] (cell3) at (2,0) {$1$};
+    \node[tape] (cell4) at (3,0) {$\blankS$};
+    \draw[thick,->] (1,1) -- (1,0.6);
+    \node[state] at (1,1.3) {Testina};
+    \node at (-1,0) {$\cdots$};
+    \node at (4,0) {$\cdots$};
+\end{tikzpicture}
+\end{center}
+
+Se la computazione produce le seguenti configurazioni:
+\[
+ID_1 = q_0 01,\quad
+ID_2 = 1q_2 1,\quad
+ID_3 = 10q_1,\quad
+ID_4 = 1q_2 1,\quad
+ID_5 = 10q_3
+\]
+allora la sequenza delle ID separate da \# è:
+\[
+q_0 01 \# 1q_2 1 \# 10q_1 \# 1q_2 1 \# 10q_3
+\]
+\end{example}
+
 \paragraph{Meccanismo di Sincronizzazione}
 Vogliamo costruire le liste $A$ e $B$ in modo tale che:
 \begin{enumerate}
@@ -329,7 +366,7 @@ Le liste $A$ e $B$ sono costruite con le seguenti classi di coppie di stringhe $
     \end{itemize}
 
     \item \textbf{Coppie di Accettazione/Recupero:}
-    Queste coppie sono utilizzate solo quando $M$ entra in uno stato accettante $q_f \in F$. Permettono alla stringa concatenata di $A$ di "recuperare" la lunghezza della stringa concatenata di $B$.
+    Queste coppie sono utilizzate solo quando $M$ entra in uno stato accettante $q_f \in F$. Permettono alla stringa concatenata di $A$ di "recuperare" la stringa concatenata di $B$.
     Per ogni $q_f \in F$ e ogni $X, Y \in \Gamma$:
     \begin{itemize}
         \item $A_i = Xq_f Y$
@@ -348,7 +385,7 @@ Le liste $A$ e $B$ sono costruite con le seguenti classi di coppie di stringhe $
         \item $A_i = q_f \# \#$
         \item $B_i = q_f \#$
     \end{itemize}
-    (Il professore ha menzionato $XQY \to QY$ come regola generale per $Q \in F$. Il principio è che la stringa di A diventa più lunga o uguale, permettendo di chiudere la partita.)
+    % (Il professore ha menzionato $XQY \to QY$ come regola generale per $Q \in F$. Il principio è che la stringa di A diventa più lunga o uguale, permettendo di chiudere la partita.)
 
     \item \textbf{Coppia Finale:}
     Permette di completare il match una volta che la TM è in uno stato accettante e la differenza di lunghezza è stata recuperata.
@@ -386,11 +423,10 @@ Consideriamo la Macchina di Turing $M$ definita come segue:
     
     % Transizioni
     \path[->]
-        (q1) edge[bend left] node[above] {$0 \to 1, R$} (q2)
-        (q1) edge[loop above] node[above] {$1 \to 0, L$} (q1)
-        (q2) edge[bend left] node[below] {$1 \to 0, R$} (q1)
-        (q1) edge[bend right=60] node[below] {$\beta \to 1, L$} (q2)
-        (q2) edge node[above] {$\beta \to 0, R$} (q3);
+        (q1) edge[bend left] node[above] {$\begin{array}{c}0 / 1, R \\ \beta / 1, L\end{array}$} (q2)
+        (q1) edge[loop above] node[above] {$1 / 0, L$} (q1)
+        (q2) edge[bend left] node[below] {$1 / 0, R$} (q1)
+        (q2) edge node[above] {$\beta / 0, R$} (q3);
 \end{tikzpicture}
 \caption{Diagramma della Macchina di Turing $M$}
 \end{figure}
@@ -439,8 +475,15 @@ Si deve dimostrare che $(M, w)$ è un'istanza "sì" di $LU$ se e solo se l'istan
         \item Ogni volta che si concatena una coppia di transizione, la stringa di $A$ "completa" la $ID_j$ e la stringa di $B$ "inizia" la $ID_{j+1}$.
     \end{enumerate}
     
-    \item \emph{Risultato:} Questo fa sì che $A_{concat}$ diventi $\#ID_1\#ID_2\# \dots \#ID_{k-1}\#$ e $B_{concat}$ diventi $\#ID_1\#ID_2\# \dots \#ID_k\#$.
-    
+    \item \emph{Risultato:} Questo fa sì che $A_{concat}$ diventi:
+    \[
+        \#ID_1\#ID_2\# \dots \#ID_{k-1}\#
+    \]
+    e $B_{concat}$ diventi:
+    \[
+        \#ID_1\#ID_2\# \dots \#ID_k\#.
+    \]
+
     \item \emph{Fase di recupero:} Poiché $ID_k$ è una configurazione accettante, possiamo usare le coppie di Classe 4 per "rimuovere" i simboli vicino allo stato finale in $A$ e $B$ in modo disuguale, riducendo il divario di lunghezza. Infine, la coppia di Classe 5 permette di far terminare le stringhe con esattamente gli stessi simboli, facendo sì che $A_{concat} = B_{concat}$.
     
     \item \emph{Conclusione:} Esiste una soluzione per l'istanza MPCP.
