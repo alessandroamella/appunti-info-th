@@ -259,6 +259,17 @@ L'unica differenza tra PCP e MPCP è la condizione che la sequenza di indici deb
 
 Dimostriamo che il Linguaggio Universale ($LU$) si riduce al MPCP. Dato che $LU$ è indecidibile, questo implicherà che MPCP è indecidibile.
 
+% --- Recap: Linguaggio Universale (LU) ---
+\noindent\rule{\textwidth}{0.4pt}
+\textbf{Recap: Linguaggio Universale (LU)}
+
+Il linguaggio universale $LU$ è l'insieme delle coppie $\langle M, w \rangle$, dove $M$ è una Macchina di Turing e $w$ è una stringa, tali che $M$ accetta $w$ (cioè si arresta in uno stato accettante su $w$):
+\[
+LU = \{ \langle M, w \rangle \mid M \text{ accetta } w \}
+\]
+$LU$ è \textbf{riconoscibile} ($LU \in RE$), perché esiste una Macchina di Turing Universale che simula $M$ su $w$ e accetta se $M$ accetta $w$. Tuttavia, $LU$ \textbf{non è decidibile} ($LU \notin R$), perché non esiste un algoritmo che, per ogni $\langle M, w \rangle$, stabilisca sempre in tempo finito se $M$ accetta $w$ (problema dell'arresto).
+\noindent\rule{\textwidth}{0.4pt}
+
 \subsection{Idea della Riduzione}
 
 \paragraph{Setup della Riduzione}
