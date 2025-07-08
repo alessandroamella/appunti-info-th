@@ -13,7 +13,25 @@
 \usepackage{fancyhdr} % Per header e footer
 \usepackage{amsthm} % Per ambienti teorema, definizione
 \usepackage{tikz} % Per diagrammi
-\usetikzlibrary{automata,positioning,arrows.meta,shapes.geometric,matrix} % Carico librerie utili per tikz
+\usetikzlibrary{
+    automata,
+    positioning,
+    arrows,
+    arrows.meta,
+    calc,
+    fit,
+    patterns,
+    graphs,
+    graphdrawing,
+    matrix,
+    quotes,
+    shapes.geometric,
+    snakes,
+    shapes,
+    decorations.pathreplacing,
+    calligraphy,
+    chains,
+}
 \usepackage{enumerate} % Per liste enumerate con personalizzazione
 
 % Definizione degli ambienti
@@ -127,27 +145,111 @@ La UTM ($M_U$) è spesso descritta come una TM a più nastri per rendere più ch
 \begin{figure}[h!]
 \centering
 \begin{tikzpicture}[font=\sffamily\small]
-    \node[draw, rectangle, minimum height=3cm, minimum width=6cm] (mu) at (0,0) {$M_U$};
-
-    % Nastro 1
-    \draw (-5,-1.2) -- (mu.west |- 0,-1.2);
-    \node[anchor=east] at (-5.2, -1.2) {Nastro 1 (Programma di M):};
-    \node[anchor=west, font=\ttfamily] at (-4.8, -1.2) {00101...11...};
+    % Macchina UTM centrale
+    \node[draw, rectangle, minimum height=4cm, minimum width=3.5cm, 
+          fill=blue!10, thick] (mu) at (0,0) {
+        \begin{minipage}{3cm}
+        \centering
+        \Large\textbf{UTM}\\
+        \large$M_U$\\[0.3cm]
+        \footnotesize Macchina di Turing\\
+        Universale
+        \end{minipage}
+    };
     
-    % Nastro 2
-    \draw (-5,-0.4) -- (mu.west |- 0,-0.4);
-    \node[anchor=east] at (-5.2, -0.4) {Nastro 2 (Nastro di M):};
-    \node[anchor=west, font=\ttfamily] at (-4.8, -0.4) {... $\blankS$ $\blankS$ $\underline{00}$ 000 $\blankS$ ...};
+    % Nastro 1 - Programma
+    \draw[thick, -latex] (-7,-1.5) -- (-1.75,-1.5);
+    \node[below, font=\footnotesize] at (-7.5, -1.5) {Nastro 1:};
+    \node[below, font=\footnotesize] at (-7.5, -1.8) {Programma $\langle M \rangle$};
     
-    % Nastro 3
-    \draw (-5,0.4) -- (mu.west |- 0,0.4);
-    \node[anchor=east] at (-5.2, 0.4) {Nastro 3 (Stato di M):};
-    \node[anchor=west, font=\ttfamily] at (-4.8, 0.4) {000};
+    % Celle del nastro 1
+    \foreach \i in {0,1,2,3,4,5,6,7,8} {
+        \draw (-6.5+\i*0.3,-1.3) rectangle (-6.2+\i*0.3,-1.7);
+    }
+    \node[font=\tiny] at (-6.35,-1.5) {0};
+    \node[font=\tiny] at (-6.05,-1.5) {0};
+    \node[font=\tiny] at (-5.75,-1.5) {1};
+    \node[font=\tiny] at (-5.45,-1.5) {1};
+    \node[font=\tiny] at (-5.15,-1.5) {1};
+    \node[font=\tiny] at (-4.85,-1.5) {0};
+    \node[font=\tiny] at (-4.55,-1.5) {0};
+    \node[font=\tiny] at (-4.25,-1.5) {1};
+    \node[font=\tiny] at (-3.95,-1.5) {...};
     
-    % Nastro 4
-    \draw (-5,1.2) -- (mu.west |- 0,1.2);
-    \node[anchor=east] at (-5.2, 1.2) {Nastro 4 (Ausiliario):};
-    \node[anchor=west, font=\ttfamily] at (-4.8, 1.2) {(scratchpad)};
+    % Nastro 2 - Nastro di lavoro
+    \draw[thick, -latex] (-7,-0.5) -- (-1.75,-0.5);
+    \node[below, font=\footnotesize] at (-7.5, -0.5) {Nastro 2:};
+    \node[below, font=\footnotesize] at (-7.5, -0.8) {Nastro di $M$ (input $w$)};
+    
+    % Celle del nastro 2
+    \foreach \i in {0,1,2,3,4,5,6,7,8} {
+        \draw (-6.5+\i*0.3,-0.3) rectangle (-6.2+\i*0.3,-0.7);
+    }
+    \node[font=\tiny] at (-6.35,-0.5) {\blankS};
+    \node[font=\tiny] at (-6.05,-0.5) {\blankS};
+    \node[font=\tiny] at (-5.75,-0.5) {1};
+    \node[font=\tiny] at (-5.45,-0.5) {0};
+    \node[font=\tiny] at (-5.15,-0.5) {1};
+    \node[font=\tiny] at (-4.85,-0.5) {1};
+    \node[font=\tiny] at (-4.55,-0.5) {0};
+    \node[font=\tiny] at (-4.25,-0.5) {\blankS};
+    \node[font=\tiny] at (-3.95,-0.5) {...};
+    
+    % Testina del nastro 2
+    \draw[thick, red] (-5.6,-0.3) -- (-5.3,-0.3);
+    \node[above, font=\tiny, red] at (-5.45,-0.3) {testina};
+    
+    % Nastro 3 - Stato
+    \draw[thick, -latex] (-7,0.5) -- (-1.75,0.5);
+    \node[below, font=\footnotesize] at (-7.5, 0.5) {Nastro 3:};
+    \node[below, font=\footnotesize] at (-7.5, 0.2) {Stato corrente di $M$};
+    
+    % Celle del nastro 3
+    \foreach \i in {0,1,2,3} {
+        \draw (-5.5+\i*0.3,0.7) rectangle (-5.2+\i*0.3,0.3);
+    }
+    \node[font=\tiny] at (-5.35,0.5) {0};
+    \node[font=\tiny] at (-5.05,0.5) {0};
+    \node[font=\tiny] at (-4.75,0.5) {1};
+    \node[font=\tiny] at (-4.45,0.5) {\blankS};
+    
+    % Nastro 4 - Ausiliario
+    \draw[thick, -latex] (-7,1.5) -- (-1.75,1.5);
+    \node[below, font=\footnotesize] at (-7.5, 1.5) {Nastro 4:};
+    \node[below, font=\footnotesize] at (-7.5, 1.2) {Ausiliario (scratchpad)};
+    
+    % Celle del nastro 4
+    \foreach \i in {0,1,2,3,4,5} {
+        \draw (-5.5+\i*0.3,1.7) rectangle (-5.2+\i*0.3,1.3);
+    }
+    \node[font=\tiny] at (-5.35,1.5) {\blankS};
+    \node[font=\tiny] at (-5.05,1.5) {\blankS};
+    \node[font=\tiny] at (-4.75,1.5) {\blankS};
+    \node[font=\tiny] at (-4.45,1.5) {\blankS};
+    \node[font=\tiny] at (-4.15,1.5) {\blankS};
+    \node[font=\tiny] at (-3.85,1.5) {...};
+    
+    % Output
+    \draw[thick, -latex] (1.75,0) -- (3.5,0);
+    \node[anchor=west, font=\footnotesize] at (3.7, 0.2) {Output:};
+    \node[anchor=west, font=\footnotesize] at (3.7, -0.2) {Accetta/Rifiuta};
+    
+    % Frecce di input
+    \draw[thick, -latex] (-8.5,-1.5) -- (-7,-1.5);
+    \node[anchor=east, font=\footnotesize] at (-8.7, -1.5) {$\langle M \rangle$};
+    
+    \draw[thick, -latex] (-8.5,-0.5) -- (-7,-0.5);
+    \node[anchor=east, font=\footnotesize] at (-8.7, -0.5) {$w$};
+    
+    % Legenda
+    \node[anchor=north west, font=\footnotesize] at (-8.5,-2.5) {
+        \begin{minipage}{10cm}
+        \textbf{Legenda:}\\
+        \blankS = simbolo blank \quad
+        $\langle M \rangle$ = codifica binaria della TM $M$ \quad
+        $w$ = stringa di input per $M$
+        \end{minipage}
+    };
     
 \end{tikzpicture}
 \caption{Architettura a 4 nastri di una Macchina di Turing Universale.}
