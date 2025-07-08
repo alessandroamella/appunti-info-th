@@ -413,14 +413,14 @@ Consideriamo la Macchina di Turing $M$ definita come segue:
 
 \begin{itemize}
     \item \textbf{Stati:} $Q = \{q_1, q_2, q_3\}$ (dove $q_1$ è lo stato iniziale e $q_3$ è lo stato finale)
-    \item \textbf{Alfabeto del nastro:} $\Gamma = \{0, 1, \beta\}$ (dove $\beta$ è il simbolo blank)
+    \item \textbf{Alfabeto del nastro:} $\Gamma = \{0, 1, \blankS\}$
     \item \textbf{Funzione di transizione:}
     \begin{align}
         \delta(q_1, 0) &= (q_2, 1, R) \\
         \delta(q_1, 1) &= (q_1, 0, L) \\
         \delta(q_2, 1) &= (q_1, 0, R) \\
-        \delta(q_1, \beta) &= (q_2, 1, L) \\
-        \delta(q_2, \beta) &= (q_3, 0, R)
+        \delta(q_1, \blankS) &= (q_2, 1, L) \\
+        \delta(q_2, \blankS) &= (q_3, 0, R)
     \end{align}
 \end{itemize}
 
@@ -434,10 +434,10 @@ Consideriamo la Macchina di Turing $M$ definita come segue:
     
     % Transizioni
     \path[->]
-        (q1) edge[bend left] node[above] {$\begin{array}{c}0 / 1, R \\ \beta / 1, L\end{array}$} (q2)
+        (q1) edge[bend left] node[above] {$\begin{array}{c}0 / 1, R \\ \blankS / 1, L\end{array}$} (q2)
         (q1) edge[loop above] node[above] {$1 / 0, L$} (q1)
         (q2) edge[bend left] node[below] {$1 / 0, R$} (q1)
-        (q2) edge node[above] {$\beta / 0, R$} (q3);
+        (q2) edge node[above] {$\blankS / 0, R$} (q3);
 \end{tikzpicture}
 \caption{Diagramma della Macchina di Turing $M$}
 \end{figure}
@@ -448,8 +448,8 @@ Consideriamo la stringa d'input $w = 01$. La computazione di $M$ su $w$ procede 
     \item $\#q_1 01\#$ \quad (Configurazione iniziale)
     \item $\#1q_2 1\#$ \quad (Da $q_1$ legge $0$, scrive $1$, va in $q_2$, si sposta a destra)
     \item $\#10q_1 \#$ \quad (Da $q_2$ legge $1$, scrive $0$, va in $q_1$, si sposta a destra)
-    \item $\#1q_2 1\#$ \quad (Da $q_1$ legge $\beta$, scrive $1$, va in $q_2$, si sposta a sinistra)
-    \item $\#10q_3 \#$ \quad (Da $q_2$ legge $\beta$, scrive $0$, va in $q_3$, si sposta a destra)
+    \item $\#1q_2 1\#$ \quad (Da $q_1$ legge \blankS, scrive $1$, va in $q_2$, si sposta a sinistra)
+    \item $\#10q_3 \#$ \quad (Da $q_2$ legge \blankS, scrive $0$, va in $q_3$, si sposta a destra)
 \end{enumerate}
 
 La computazione termina nello stato accettante $q_3$, quindi $M$ accetta la stringa $w = 01$.
