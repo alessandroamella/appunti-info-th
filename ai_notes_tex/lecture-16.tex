@@ -17,12 +17,15 @@
 
 % Definizione degli ambienti
 \theoremstyle{definition} % Use definition style for normal (non-italic) text
-\newtheorem{theorem}{Teorema}
-\newtheorem{definition}{Definizione}
-\newtheorem{example}{Esempio}
-\newtheorem{lemma}{Lemma}
-\newtheorem{proposition}{Proposizione}
-\newcommand{\blankS}{\ensuremath{\raisebox{-0.15ex}{\scalebox{1.3}[0.7]{$\sqcup$}}\mkern2mu}}
+\newtheorem{theorem}{Teorema}[section]
+\newtheorem{definition}[theorem]{Definizione}
+\newtheorem{example}[theorem]{Esempio}
+\newtheorem{problem}{Problema}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposizione}
+\newtheorem{corollary}[theorem]{Corollario}
+\newtheorem{remark}[theorem]{Osservazione}
+\newtheorem{proof_sketch}[theorem]{Sketch di Dimostrazione}
 
 \hypersetup{
     pdftitle={Lezione di Informatica Teorica: Teorema di Rice},
@@ -45,7 +48,7 @@
 
 \section{Introduzione al Teorema di Rice}
 
-Abbiamo precedentemente studiato linguaggi come $L_e = \{\langle M \rangle \mid L(M) = \emptyset\}$ (il linguaggio delle macchine di Turing il cui linguaggio è vuoto) e $L_{ne} = \{\langle M \rangle \mid L(M) \neq \emptyset\}$ (il linguaggio delle macchine di Turing il cui linguaggio non è vuoto). Abbiamo dimostrato che questi linguaggi sono indecidibili. Tuttavia, la loro indecidibilità non è un caso isolato, ma rientra in un risultato molto più generale: il Teorema di Rice. Questo teorema si applica a linguaggi che contengono le codifiche di macchine di Turing le cui proprietà soddisfano determinati criteri.
+Abbiamo precedentemente studiato linguaggi come $L_E = \{\langle M \rangle \mid L(M) = \emptyset\}$ (il linguaggio delle macchine di Turing il cui linguaggio è vuoto) e $L_{NE} = \{\langle M \rangle \mid L(M) \neq \emptyset\}$ (il linguaggio delle macchine di Turing il cui linguaggio non è vuoto). Abbiamo dimostrato che questi linguaggi sono indecidibili. Tuttavia, la loro indecidibilità non è un caso isolato, ma rientra in un risultato molto più generale: il Teorema di Rice. Questo teorema si applica a linguaggi che contengono le codifiche di macchine di Turing le cui proprietà soddisfano determinati criteri.
 
 \subsection{Definizione di Proprietà di Macchine di Turing}
 
@@ -89,8 +92,8 @@ $P_2 = \{ \langle M \rangle \mid \forall s \in L(M), |s| \text{ è pari} \}$.
 Questa è una proprietà semantica. Se $L(M_1) = L(M_2)$, allora o tutte le stringhe di $L(M_1)$ (e quindi di $L(M_2)$) hanno lunghezza pari, o nessuna (o alcune) ce l'hanno. L'appartenenza a $P_2$ dipende solo dal linguaggio.
 \end{example}
 
-\begin{example}[Proprietà Semantica: $L_e$]
-Il linguaggio $L_e = \{\langle M \rangle \mid L(M) = \emptyset\}$ è l'insieme delle macchine di Turing il cui linguaggio è vuoto. Questo è un esempio di proprietà semantica, poiché dipende solo dal linguaggio riconosciuto (in questo caso, il linguaggio vuoto).
+\begin{example}[Proprietà Semantica: $L_E$]
+Il linguaggio $L_E = \{\langle M \rangle \mid L(M) = \emptyset\}$ è l'insieme delle macchine di Turing il cui linguaggio è vuoto. Questo è un esempio di proprietà semantica, poiché dipende solo dal linguaggio riconosciuto (in questo caso, il linguaggio vuoto).
 \end{example}
 
 \subsection{Proprietà Banali}
@@ -108,7 +111,7 @@ Le proprietà banali sono sempre \textbf{decidibili}. Se una proprietà è banal
 
 \section{Teorema di Rice}
 
-Il Teorema di Rice è un risultato fondamentale nella teoria della computabilità, che generalizza l'indecidibilità di problemi come $L_e$ e $L_{ne}$.
+Il Teorema di Rice è un risultato fondamentale nella teoria della computabilità, che generalizza l'indecidibilità di problemi come $L_E$ e $L_{NE}$.
 
 \begin{theorem}[Teorema di Rice]
 Ogni proprietà non banale dei linguaggi ricorsivamente enumerabili (RE) è indecidibile.
@@ -116,7 +119,8 @@ In altre parole, se $P$ è una proprietà semantica (proprietà di linguaggi) ta
 \end{theorem}
 
 \subsection{Dimostrazione del Teorema di Rice}
-Sia $P$ una proprietà semantica non banale dei linguaggi RE. Vogliamo dimostrare che $L_P$ è indecidibile. Procediamo con una riduzione dal Problema di Halting Universale, $L_u = \{\langle M,w \rangle \mid M \Vdash w\}$, che sappiamo essere indecidibile.
+\begin{proof}
+Sia $P$ una proprietà semantica non banale dei linguaggi RE. Vogliamo dimostrare che $L_P$ è indecidibile. Procediamo con una riduzione dal Problema di Halting Universale, $L_U = \{\langle M,w \rangle \mid M \Vdash w\}$, che sappiamo essere indecidibile.
 
 La dimostrazione si divide in due casi, a seconda che il linguaggio vuoto $\emptyset$ appartenga o meno alla proprietà $P$.
 
@@ -124,7 +128,7 @@ La dimostrazione si divide in due casi, a seconda che il linguaggio vuoto $\empt
 Poiché $P$ è una proprietà non banale, e $\emptyset \notin P$, deve esistere almeno un linguaggio $L \in P$ tale che $L \neq \emptyset$. (Se tutti i linguaggi in $P$ fossero vuoti, e $\emptyset \notin P$, allora $P$ sarebbe $\emptyset$, contraddicendo l'ipotesi che $P$ sia non banale).
 Dato che $L \in RE$, deve esistere una macchina di Turing $M_L$ tale che $L(M_L) = L$.
 
-Costruiamo una macchina di Turing $N$ a partire da una coppia $\langle M,w \rangle$ (input per $L_u$) e da $M_L$. La macchina $N$ è una nuova macchina (la cui codifica è l'output della nostra riduzione) che prende un input $x$. La sua logica di funzionamento è la seguente:
+Costruiamo una macchina di Turing $N$ a partire da una coppia $\langle M,w \rangle$ (input per $L_U$) e da $M_L$. La macchina $N$ è una nuova macchina (la cui codifica è l'output della nostra riduzione) che prende un input $x$. La sua logica di funzionamento è la seguente:
 
 \textbf{Costruzione della macchina $N_{M,w}$ (che chiamiamo $N$ per semplicità):}
 \begin{enumerate}
@@ -144,17 +148,17 @@ Costruiamo una macchina di Turing $N$ a partire da una coppia $\langle M,w \rang
 
 Ora analizziamo il comportamento di $N$ per dimostrare che la riduzione funziona:
 
-\textbf{i) Se $\langle M,w \rangle \in L_u$ (cioè, $M$ accetta $w$):}
+\textbf{i) Se $\langle M,w \rangle \in L_U$ (cioè, $M$ accetta $w$):}
 In questo caso, la simulazione di $M$ su $w$ al passo 2 della costruzione di $N$ terminerà e accetterà. Di conseguenza, $N$ procederà sempre al passo 3 e simulerà $M_L$ su $x$. Questo significa che $N$ accetta $x$ se e solo se $M_L$ accetta $x$.
 Quindi, $L(N) = L(M_L) = L$.
 Poiché abbiamo stabilito che $L \in P$, ne consegue che $\langle N \rangle \in L_P$.
 
-\textbf{ii) Se $\langle M,w \rangle \notin L_u$ (cioè, $M$ non accetta $w$):}
+\textbf{ii) Se $\langle M,w \rangle \notin L_U$ (cioè, $M$ non accetta $w$):}
 In questo caso, la simulazione di $M$ su $w$ al passo 2 della costruzione di $N$ non terminerà accettando (o rifiuterà, o loopa). Di conseguenza, $N$ non raggiungerà mai il passo 3 e quindi non accetterà mai alcun input $x$.
 Quindi, $L(N) = \emptyset$.
 Poiché abbiamo assunto $\emptyset \notin P$, ne consegue che $\langle N \rangle \notin L_P$.
 
-Questa costruzione definisce una funzione calcolabile $f: \langle M,w \rangle \mapsto \langle N \rangle$ tale che $\langle M,w \rangle \in L_u \iff \langle N \rangle \in L_P$. Poiché $L_u$ è indecidibile e $L_u \le_m L_P$, concludiamo che $L_P$ è indecidibile.
+Questa costruzione definisce una funzione calcolabile $f: \langle M,w \rangle \mapsto \langle N \rangle$ tale che $\langle M,w \rangle \in L_U \iff \langle N \rangle \in L_P$. Poiché $L_U$ è indecidibile e $L_U \le_m L_P$, concludiamo che $L_P$ è indecidibile.
 
 \subsubsection{Caso 2: Il linguaggio vuoto appartiene a $P$ ($\emptyset \in P$)}
 Se $\emptyset \in P$, consideriamo la proprietà $\overline{P}$, definita come il complemento di $P$ rispetto all'insieme di tutti i linguaggi RE: $\overline{P} = RE \setminus P$.
@@ -177,6 +181,7 @@ Questa macchina $D_{\overline{P}}$ deciderebbe $L_{\overline{P}}$. Tuttavia, abb
 Pertanto, la nostra supposizione iniziale che $L_P$ fosse decidibile deve essere falsa. Concludiamo quindi che $L_P$ è indecidibile anche nel Caso 2.
 
 Combinando i due casi, il Teorema di Rice è dimostrato. Ogni proprietà non banale dei linguaggi RE è indecidibile.
+\end{proof}
 
 \section{Applicazioni del Teorema di Rice}
 Il Teorema di Rice fornisce un potente strumento per dimostrare l'indecidibilità di un'ampia classe di problemi. Per applicarlo, è sufficiente verificare che la proprietà in questione sia:
@@ -186,20 +191,20 @@ Il Teorema di Rice fornisce un potente strumento per dimostrare l'indecidibilit�
 \end{enumerate}
 Se entrambe le condizioni sono soddisfatte, allora il problema di decidere se una macchina di Turing possiede tale proprietà è indecidibile.
 
-\begin{example}[Indecidibilità di $L_e$ e $L_{ne}$]
+\begin{example}[Indecidibilità di $L_E$ e $L_{NE}$]
 \begin{enumerate}
-    \item $L_e = \{\langle M \rangle \mid L(M) = \emptyset\}$:
+    \item $L_E = \{\langle M \rangle \mid L(M) = \emptyset\}$:
     \begin{itemize}
         \item \textbf{Proprietà semantica?}: Sì, dipende solo dal linguaggio $L(M)$.
         \item \textbf{Non banale?}: Sì. Contiene il linguaggio vuoto (quindi non è $\emptyset$). Non contiene, ad esempio, $\Sigma^*$ (quindi non è $RE$).
     \end{itemize}
-    Dato che è semantica e non banale, per il Teorema di Rice, $L_e$ è indecidibile.
-    \item $L_{ne} = \{\langle M \rangle \mid L(M) \neq \emptyset\}$:
+    Dato che è semantica e non banale, per il Teorema di Rice, $L_E$ è indecidibile.
+    \item $L_{NE} = \{\langle M \rangle \mid L(M) \neq \emptyset\}$:
     \begin{itemize}
         \item \textbf{Proprietà semantica?}: Sì, dipende solo dal linguaggio $L(M)$.
         \item \textbf{Non banale?}: Sì. Contiene, ad esempio, $\Sigma^*$ (quindi non è $\emptyset$). Non contiene $\emptyset$ (quindi non è $RE$).
     \end{itemize}
-    Dato che è semantica e non banale, per il Teorema di Rice, $L_{ne}$ è indecidibile.
+    Dato che è semantica e non banale, per il Teorema di Rice, $L_{NE}$ è indecidibile.
 \end{enumerate}
 \end{example}
 
