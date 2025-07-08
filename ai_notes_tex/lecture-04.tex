@@ -150,12 +150,12 @@ Una TM è un automa con un numero finito di stati. Ogni passo della computazione
 \subsection{Definizione Formale della Macchina di Turing}
 \begin{definition}[Macchina di Turing]
     Una Macchina di Turing (TM) $M$ è una 7-tupla:
-    $M = \langle \Sigma, \Gamma, B, Q, q_0, F, \delta \rangle$
+    $M = \langle \Sigma, \Gamma, \blankS, Q, q_0, F, \delta \rangle$
     dove:
     \begin{itemize}
         \item $\Sigma$: è l'alfabeto di input (insieme finito di simboli che possono apparire nella stringa di input).
         \item $\Gamma$: è l'alfabeto di nastro (insieme finito di simboli che possono essere scritti sul nastro). Deve essere $\Sigma \subseteq \Gamma$.
-        \item $B \in \Gamma \setminus \Sigma$: è il simbolo di blank, non è parte dell'input e indica una cella vuota.
+        \item $\blankS \in \Gamma \setminus \Sigma$: è il simbolo di blank, non è parte dell'input e indica una cella vuota.
         \item $Q$: è l'insieme finito degli stati interni della macchina.
         \item $q_0 \in Q$: è lo stato iniziale.
         \item $F \subseteq Q$: è l'insieme degli stati accettanti (o finali).
@@ -207,14 +207,14 @@ L'idea è "barrare" una $a$ dal lato sinistro e una $b$ dal lato destro ad ogni 
         \node[state,accepting] (q4) [above of=q0, node distance=2cm] {$q_4$};
 
         \path[->]
-        (q0) edge node {A/B, R} (q1) % First A to blank
-        (q1) edge [loop right] node {\parbox{1.5cm}{\centering A/A, R \\ B/B, R}} (q1) % Skip A's and B's
-        (q1) edge node {B/B, L} (q2) % Found Blank, go left to find last B (Correction based on lecture: should be Blank/Blank, L)
-        (q2) edge [loop right] node {B/B, L} (q2) % Skip B's backwards
-        (q2) edge node {A/B, L} (q3) % Found A, replace with Blank, go left (Correction based on lecture: should be B/Blank, L)
-        (q3) edge [loop left] node {\parbox{1.5cm}{\centering A/A, L \\ B/B, L}} (q3) % Skip A's and B's backwards
-        (q3) edge node {B/B, R} (q0) % Found Blank, go right to q0 (Correction based on lecture: should be Blank/Blank, R)
-        (q0) edge node {B/B, R} (q4); % If all A's and B's are matched, hit blank and accept (Correction based on lecture: should be Blank/Blank, R)
+        (q0) edge node {a/\blankS, R} (q1) % First 'a' to blank
+        (q1) edge [loop right] node {\parbox{1.5cm}{\centering a/a, R \\ b/b, R}} (q1) % Skip 'a's and 'b's
+        (q1) edge node {\blankS/\blankS, L} (q2) % Found Blank, go left to find last 'b'
+        (q2) edge [loop right] node {b/b, L} (q2) % Skip 'b's backwards
+        (q2) edge node {b/\blankS, L} (q3) % Found 'b', replace with Blank, go left
+        (q3) edge [loop left] node {\parbox{1.5cm}{\centering a/a, L \\ b/b, L}} (q3) % Skip 'a's and 'b's backwards
+        (q3) edge node {\blankS/\blankS, R} (q0) % Found Blank, go right to q0
+        (q0) edge node {\blankS/\blankS, R} (q4); % If all 'a's and 'b's are matched, hit blank and accept
     \end{tikzpicture}
     \caption{Diagramma di stati per la Macchina di Turing che riconosce $L = \{a^n b^n \mid n \ge 0\}$.\\ \small{\textbf{Nota}}: Le etichette degli archi sono nel formato: \texttt{SimboloLetto/SimboloScritto, DirezioneMovimento}.}
 \end{figure}
@@ -251,7 +251,7 @@ L'idea è "barrare" una $a$ dal lato sinistro e una $b$ dal lato destro ad ogni 
 \textbf{Gestione di stringhe "strane" (e.g., \texttt{ABaAB})}:
 La macchina come progettata dovrebbe rifiutare stringhe che non seguono il pattern $a^*b^*$.
 \begin{itemize}
-    \item Se $q_0$ legge \blankS all'inizio, si muove a $q_4$, quindi accetterebbe la stringa vuota $\epsilon$. Ma se è $B$ e non $\epsilon$, si muoverebbe a $q_4$ e accetterebbe una stringa di soli $B$s (e.g., $B$). Questo è un dettaglio che richiede un'attenzione specifica sul caso base $\epsilon$ o stringhe di soli $B$s.
+    \item Se $q_0$ legge \blankS all'inizio, si muove a $q_4$, quindi accetterebbe la stringa vuota $\epsilon$. Ma se legge \blankS e non $\epsilon$, si muoverebbe a $q_4$ e accetterebbe una stringa di soli \blankS{}s (e.g., \blankS{}). Questo è un dettaglio che richiede un'attenzione specifica sul caso base $\epsilon$ o stringhe di soli \blankS{}s.
     \item Se in $q_1$ (dopo aver cancellato la prima $a$ e spostato a destra) la macchina incontra un'altra $a$ dopo una $b$, non ci sono transizioni definite per questa sequenza, e la macchina si blocca, rifiutando la stringa.
 \end{itemize}
 
@@ -277,7 +277,7 @@ Per formalizzare il comportamento di una TM, si introduce il concetto di \textbf
 \begin{definition}[Successore Legale di una Configurazione]
     Date due configurazioni $C_1$ e $C_2$ per una TM $M$, diciamo che $C_2$ è un \textbf{successore legale} (o raggiungibile in un passo) di $C_1$ rispetto a $M$, e scriviamo $C_1 \xrightarrow{M} C_2$, se $C_2$ è la configurazione che $M$ raggiunge partendo da $C_1$ ed eseguendo un solo passo secondo la sua funzione di transizione $\delta$.
     \begin{example}
-        Per la TM di $a^n b^n$, se $C_1 = q_0 AABB$, allora $C_2 = B q_1 ABB$ (dopo aver cancellato la prima A e mosso a destra).
+        Per la TM di $a^n b^n$, se $C_1 = q_0 aabb$, allora $C_2 = \blankS q_1 abb$ (dopo aver cancellato la prima a e mosso a destra).
     \end{example}
 \end{definition}
 
