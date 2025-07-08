@@ -21,6 +21,7 @@
 % Definizione degli ambienti
 \theoremstyle{definition} % Use definition style for normal (non-italic) text
 \newtheorem{theorem}{Teorema}
+\newtheorem{remark}[theorem]{Osservazione}
 \newtheorem{definition}{Definizione}
 \newtheorem{example}{Esempio}
 \newtheorem{lemma}{Lemma}
@@ -333,7 +334,9 @@ Definiamo un assegnamento di verità $\sigma$ per le variabili di $\phi$ basando
         \item Se $C(x_i)$ è lo stesso colore di $C(T)$ (cioè "verde"), poniamo $\sigma(x_i) = \text{TRUE}$.
         \item Se $C(x_i)$ è lo stesso colore di $C(F)$ (cioè "rosso"), poniamo $\sigma(x_i) = \text{FALSE}$.
     \end{itemize}
-    (Nota: Per costruzione, $x_i$ e $\neg x_i$ sono collegati a $B$, quindi non possono avere il colore "blu". Essendo collegati tra loro, devono avere colori diversi, quindi se $x_i$ è "verde", $\neg x_i$ deve essere "rosso" e viceversa, garantendo coerenza nell'assegnamento).
+    \begin{remark}
+    Per costruzione, $x_i$ e $\neg x_i$ sono collegati a $B$, quindi non possono avere il colore "blu". Essendo collegati tra loro, devono avere colori diversi, quindi se $x_i$ è "verde", $\neg x_i$ deve essere "rosso" e viceversa, garantendo coerenza nell'assegnamento.
+    \end{remark}
 \end{enumerate}
 Dobbiamo dimostrare che questo assegnamento $\sigma$ soddisfa la formula $\phi$.
 Supponiamo per contraddizione che $\sigma$ non soddisfi $\phi$. Questo significa che esiste almeno una clausola $C_j$ che è falsa sotto $\sigma$.

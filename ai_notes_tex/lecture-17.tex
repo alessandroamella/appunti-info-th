@@ -18,8 +18,8 @@
 % Definizione degli ambienti
 \theoremstyle{definition} % Use definition style for normal (non-italic) text
 \newtheorem{theorem}{Teorema}
-[section]
 \newtheorem{definition}{Definizione}[section]
+\newtheorem{remark}[theorem]{Osservazione}
 \newtheorem{example}{Esempio}[section]
 \newtheorem{lemma}{Lemma}[section]
 \newtheorem{proposition}{Proposizione}[section]
@@ -182,7 +182,10 @@ Basandoci sulla complessità temporale, i problemi possono essere classificati i
     \item \textbf{Problemi Trattabili (o Facili)}: Sono problemi il cui time complexity upper bound è \emph{polinomiale}.
     \item \textbf{Problemi Intratttabili (o Difficili)}: Sono problemi per i quali \emph{non esiste} (o non si è ancora dimostrato che esista) un algoritmo con running time polinomiale. Questi problemi generalmente richiedono tempo esponenziale.
 \end{itemize}
-\textbf{Nota:} Un algoritmo $O(n^{1000})$ è teoricamente polinomiale, ma impraticabile per grandi $n$. Tuttavia, algoritmi esponenziali (es. $O(2^n)$) diventano ingestibili molto più rapidamente con l'aumentare di $n$ rispetto a qualsiasi polinomio.
+
+\begin{remark}
+Un algoritmo $O(n^{1000})$ è teoricamente polinomiale, ma impraticabile per grandi $n$. Tuttavia, algoritmi esponenziali (es. $O(2^n)$) diventano ingestibili molto più rapidamente con l'aumentare di $n$ rispetto a qualsiasi polinomio.
+\end{remark}
 
 \section{Classi di Complessità Temporale}
 
@@ -197,7 +200,10 @@ La 'D' in DTIME sta per "Deterministica".
 La classe \textbf{P} è l'unione di tutte le classi DTIME($n^c$) per ogni costante $c \ge 1$:
 \[ P = \bigcup_{c \ge 1} \text{DTIME}(n^c) \]
 \end{definition}
-\textbf{Nota Importante}: La classe P contiene \emph{esclusivamente problemi di decisione}. Problemi di calcolo (es. sommare due numeri) o di ottimizzazione (es. ordinare un array) non appartengono a P per definizione, sebbene gli algoritmi per risolverli possano avere complessità polinomiale.
+
+\begin{remark}
+La classe P contiene \emph{esclusivamente problemi di decisione}. Problemi di calcolo (es. sommare due numeri) o di ottimizzazione (es. ordinare un array) non appartengono a P per definizione, sebbene gli algoritmi per risolverli possano avere complessità polinomiale.
+\end{remark}
 
 \subsection{Esempi di Problemi in P}
 
@@ -280,8 +286,11 @@ La 'N' in NTIME sta per "Non-Deterministica".
 La classe \textbf{NP} è l'unione di tutte le classi NTIME($n^c$) per ogni costante $c \ge 1$:
 \[ NP = \bigcup_{c \ge 1} \text{NTIME}(n^c) \]
 \end{definition}
-\textbf{Nota Importante}: NP sta per \emph{Nondeterministic Polynomial} e non per "Non Polinomiale". La classe NP contiene tutti i problemi di decisione che possono essere risolti da una macchina di Turing non-deterministica in tempo polinomiale.
+
+\begin{remark}
+NP sta per \emph{Nondeterministic Polynomial} e non per "Non Polinomiale". La classe NP contiene tutti i problemi di decisione che possono essere risolti da una macchina di Turing non-deterministica in tempo polinomiale.
 Esempi di problemi in NP includono SAT, Independent Set, Knapsack, Hamiltonian Cycle, Traveling Salesperson Problem e molti altri problemi che sono centrali nell'informatica teorica e pratica.
+\end{remark}
 
 \begin{center}
 \begin{tabular}{|l|l|l|}
