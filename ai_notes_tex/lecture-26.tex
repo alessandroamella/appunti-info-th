@@ -72,9 +72,11 @@ $Min-Cover = \{ \langle G, k \rangle \mid G \text{ è un grafo e il Vertex Cover
 A differenza di $VC$, $Min-Cover$ richiede che la taglia sia \emph{esattamente} $k$ e che sia la taglia \emph{minima}.
 
 \subsubsection{Complessità di Min-Cover}
-*   \textbf{Sta in NP?} Se abbiamo un certificato $V'$ di taglia $k$, possiamo verificare che sia un Vertex Cover. Ma come verifichiamo che sia \emph{minimo}? Non possiamo, a meno di testare tutte le possibilità più piccole, che porterebbe a un tempo esponenziale. Sembra non essere in NP.
-*   \textbf{Sta in Co-NP?} Per dimostrare che un'istanza $\langle G,k \rangle$ è un "no" (ovvero che la taglia minima non è $k$), dovremmo fornire un certificato conciso. Se la taglia minima fosse $< k$, potremmo fornire un $V'$ di taglia inferiore. Ma se la taglia minima fosse $> k$, non avremmo un modo semplice per certificarlo in Co-NP. Sembra non essere in Co-NP.
-*   \textbf{Sta in PSPACE?} Sì. Possiamo generare tutti i possibili sottoinsiemi di $V$, verificare per ciascuno se è un Vertex Cover e calcolarne la taglia. Teniamo traccia della taglia minima trovata. Poiché i sottoinsiemi possono essere generati e testati uno alla volta riutilizzando lo stesso spazio, questo può essere fatto in spazio polinomiale.
+\begin{itemize}
+    \item \textbf{Sta in NP?} Se abbiamo un certificato $V'$ di taglia $k$, possiamo verificare che sia un Vertex Cover. Ma come verifichiamo che sia \emph{minimo}? Non possiamo, a meno di testare tutte le possibilità più piccole, che porterebbe a un tempo esponenziale. Sembra non essere in NP.
+    \item \textbf{Sta in Co-NP?} Per dimostrare che un'istanza $\langle G,k \rangle$ è un "no" (ovvero che la taglia minima non è $k$), dovremmo fornire un certificato conciso. Se la taglia minima fosse $< k$, potremmo fornire un $V'$ di taglia inferiore. Ma se la taglia minima fosse $> k$, non avremmo un modo semplice per certificarlo in Co-NP. Sembra non essere in Co-NP.
+    \item \textbf{Sta in PSPACE?} Sì. Possiamo generare tutti i possibili sottoinsiemi di $V$, verificare per ciascuno se è un Vertex Cover e calcolarne la taglia. Teniamo traccia della taglia minima trovata. Poiché i sottoinsiemi possono essere generati e testati uno alla volta riutilizzando lo stesso spazio, questo può essere fatto in spazio polinomiale.
+\end{itemize}
 
 \subsubsection{Un Algoritmo per Min-Cover}
 Osserviamo che $Min-Cover$ può essere riformulato in termini di $VC$:
