@@ -13,8 +13,25 @@
 \usepackage{fancyhdr}
 \usepackage{amsthm}
 \usepackage{tikz}
-\usetikzlibrary{automata,positioning,arrows.meta} % Aggiunto arrows.meta per frecce migliori
-
+\usetikzlibrary{
+    automata,
+    positioning,
+    arrows,
+    arrows.meta,
+    calc,
+    fit,
+    patterns,
+    graphs,
+    graphdrawing,
+    matrix,
+    quotes,
+    shapes.geometric,
+    snakes,
+    shapes,
+    decorations.pathreplacing,
+    calligraphy,
+    chains,
+}
 % Definizione degli ambienti
 \theoremstyle{definition} % Use definition style for normal (non-italic) text
 \newtheorem{theorem}{Teorema}
@@ -115,11 +132,75 @@ Consideriamo il seguente grafo orientato:
     \path[->] (1) edge (4);
     \path[->] (4) edge (3);
     \path[->] (3) edge (5);
-    \path[->] (4) edge[bend right=20] (5); % Freccia da 4 a 5
+    \path[->] (4) edge[bend left=20] (5);
 \end{tikzpicture}
 \end{center}
-Vogliamo sapere se esiste un cammino da $S=2$ a $T=5$. Inizialmente chiamiamo \texttt{exists-path}$(G, 2, 5, |V|)$ dove $|V|$ è il numero di vertici (5 in questo caso), per cercare un cammino di lunghezza arbitraria ma al massimo il numero di vertici.
-Il cammino diretto è $2 \to 1 \to 4 \to 3 \to 5$.
+
+Vogliamo verificare se esiste un cammino da $S=2$ a $T=5$ chiamando \texttt{exists-path}$(G, 2, 5, 5)$.
+
+\textbf{Traccia dell'esecuzione:}
+
+\begin{center}
+\begin{tikzpicture}[
+    stack/.style={rectangle, draw, minimum width=2.5cm, minimum height=0.7cm, font=\small},
+    level/.style={font=\small, text=gray},
+    >=Stealth
+]
+    % Livello 0 (chiamata principale)
+    \node[stack, fill=blue!20] (call0) at (0,0) {\texttt{exists-path(G,2,5,5)}};
+    \node[level] at (-2.4,0) {Liv. 0};
+    
+    % Livello 1
+    \node[stack, fill=green!20] (call1a) at (-1.8,-1.5) {\texttt{e-p(G,2,1,3)}};
+    \node[stack, fill=green!20] (call1b) at (1.8,-1.5) {\texttt{e-p(G,1,5,3)}};
+    \node[level] at (-3.9,-1.5) {Liv. 1};
+    
+    % Livello 2
+    \node[stack, fill=yellow!20] (call2a) at (-3,-3) {\texttt{e-p(G,2,1,2)}};
+    \node[stack, fill=yellow!20] (call2b) at (0.3,-3) {\texttt{e-p(G,1,4,2)}};
+    \node[stack, fill=yellow!20] (call2c) at (3.2,-3) {\texttt{e-p(G,4,5,2)}};
+    \node[level] at (-5.2,-3) {Liv. 2};
+    
+    % Livello 3 (casi base)
+    \node[stack, fill=red!20] (call3a) at (-3,-4.5) {\texttt{(G,2,1,1)→T}};
+    \node[stack, fill=red!20] (call3b) at (0.3,-4.5) {\texttt{(G,1,4,1)→T}};
+    \node[stack, fill=red!20] (call3c) at (3.2,-4.5) {\texttt{(G,4,5,1)→T}};
+    \node[level] at (-5.2,-4.5) {Liv. 3};
+    
+    % Frecce
+    \draw[->] (call0) -- (call1a);
+    \draw[->] (call0) -- (call1b);
+    \draw[->] (call1a) -- (call2a);
+    \draw[->] (call1b) -- (call2b);
+    \draw[->] (call1b) -- (call2c);
+    \draw[->] (call2a) -- (call3a);
+    \draw[->] (call2b) -- (call3b);
+    \draw[->] (call2c) -- (call3c);
+    
+    % Risultati
+    \node[font=\small] at (2.8,0) {$U=1$};
+    \node[font=\small] at (4.5,-1.5) {Entrambi TRUE};
+    \node[font=\small] at (6,-3) {Casi base TRUE};
+    \node[font=\small] at (6,-4.5) {Archi esistono};
+\end{tikzpicture}
+\end{center}
+
+\textbf{Dettagli chiave:}
+\begin{itemize}
+\item \textbf{Livello 0}: Chiamata principale con $K=5$
+\item \textbf{Livello 1}: Prova $U=1$ come nodo intermedio. Divide in due sottoproblemi con $K=\lceil 5/2 \rceil = 3$
+\item \textbf{Livello 2}: Ulteriore suddivisione con $K=\lceil 3/2 \rceil = 2$
+\item \textbf{Livello 3}: Casi base con $K=1$: verifica diretta degli archi $(2,1)$, $(1,4)$, $(4,5)$ che esistono tutti
+\end{itemize}
+
+\textbf{Risultato}: TRUE - esiste il cammino $2 \to 1 \to 4 \to 5$ di lunghezza 3.
+
+\textbf{Complessità spaziale}: 
+\begin{itemize}
+\item Profondità stack: $O(\log K) = O(\log n)$
+\item Spazio per livello: $O(\log n)$ (memorizzazione nodi)
+\item \textbf{Totale}: $O(\log^2 n)$
+\end{itemize}
 \end{example}
 
 \subsection{Analisi della Complessità Spaziale di \texttt{exists-path}}
@@ -236,28 +317,35 @@ Le relazioni di inclusione note sono le seguenti:
 \[ \mathbf{L} \subseteq \mathbf{NL} \subseteq \mathbf{P} \subseteq \mathbf{NP} \subseteq \mathbf{PSPACE} = \mathbf{NPSPACE} \subseteq \mathbf{EXP} \subseteq \mathbf{NEXP} \]
 
 \begin{figure}[h!]
-    \centering
-    \begin{tikzpicture}[
-        scale=0.8,
-        level distance=1.5cm,
-        level 1/.style={sibling distance=2.5cm},
-        level 2/.style={sibling distance=2.5cm},
-        level 3/.style={sibling distance=3cm},
-        level 4/.style={sibling distance=3.5cm}
-    ]
-    % Disegna i cerchi concentrici per le classi
-    \draw[thick] (0,0) circle (0.5cm) node[below, yshift=-0.5em] {\textbf{L}};
-    \draw[thick] (0,0) circle (1.0cm) node[below, yshift=-0.5em] {\textbf{NL}};
-    \draw[thick] (0,0) circle (1.5cm) node[below, yshift=-0.5em] {\textbf{P}};
-    \draw[thick] (0,0) circle (2.0cm) node[below, yshift=-0.5em] {\textbf{NP}};
-    % Per co-NP si può posizionare a lato o implicare che PSPACE le contiene entrambe
-    \draw[thick] (0,0) circle (2.5cm) node[below right=0.5cm, xshift=0.5em, yshift=-0.5em] {\textbf{co-NP}};
-    \draw[thick] (0,0) circle (3.0cm) node[below, yshift=-0.5em] {\textbf{PSPACE}=\textbf{NPSPACE}};
-    \draw[thick] (0,0) circle (3.5cm) node[below, yshift=-0.5em] {\textbf{EXP}};
-    \draw[thick] (0,0) circle (4.0cm) node[below, yshift=-0.5em] {\textbf{NEXP}};
-    \end{tikzpicture}
-    \caption{Diagramma di inclusione delle principali classi di complessità.}
-    \label{fig:complexity_classes}
+\centering
+\begin{tikzpicture}[scale=1.5]
+% Draw concentric semi-circles for complexity classes - ALL FROM SAME CENTER (0,0)
+\draw[thick] (0.8,0) arc[start angle=0, end angle=180, radius=0.8cm];
+\draw[thick] (1.4,0) arc[start angle=0, end angle=180, radius=1.4cm];
+% \draw[thick] (2.6,0) arc[start angle=0, end angle=180, radius=2.6cm];
+\draw[thick] (3,0) arc[start angle=0, end angle=180, radius=3cm];
+\draw[thick] (3.6,0) arc[start angle=0, end angle=180, radius=3.6cm];
+\draw[thick] (4.2,0) arc[start angle=0, end angle=180, radius=4.2cm];
+
+% Draw separate semicircles for NP and CO-NP at the same radius
+\draw[thick] (1.4,0) arc[start angle=0, end angle=180, radius=2.0cm] -- (0,0);
+\draw[thick] (2.6,0) arc[start angle=0, end angle=180, radius=2.0cm] -- (0,0);
+
+% Close the outer semi-circles with a base line
+\draw[thick] (-4.4,0) -- (4.4,0);
+
+% Labels positioned clearly in each region
+\node at (0,0.35) {\textbf{L}};
+\node at (0,1.1) {\textbf{NL}};
+\node at (0,1.65) {\textbf{P}};
+\node at (1,1.75) {\textbf{NP}};
+\node at (-1,1.75) {\textbf{CO-NP}};
+\node at (0,2.5) {\textbf{PSPACE}};
+\node at (0,3.3) {\textbf{EXP}};
+\node at (0,3.9) {\textbf{NEXP}};
+\end{tikzpicture}
+\caption{Diagramma di inclusione delle principali classi di complessità.}
+\label{fig:complexity_classes}
 \end{figure}
 
 È noto che tutte le inclusioni sono strette, tranne possibilmente $\mathbf{P} \subseteq \mathbf{NP}$ e $\mathbf{L} \subseteq \mathbf{NL}$.
