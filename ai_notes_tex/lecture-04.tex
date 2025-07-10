@@ -59,7 +59,7 @@ Esistono due tipi principali di problemi:
 
 I problemi di decisione possono riguardare vari contesti (matrici, grafi, immagini, testo, ecc.). Per semplificare l'analisi, si scelgono problemi che possono essere formalizzati in modo uniforme. Abbiamo scelto di studiare i \textbf{problemi di decidere linguaggi}.
 
-\begin{definition}[Decidere un linguaggio]
+\begin{definition}{Decidere un linguaggio}{decidere-un-linguagg}
     Decidere un linguaggio significa verificare se una data stringa appartiene o meno a un determinato linguaggio.
     \begin{itemize}
         \item \textbf{Input}: Una stringa.
@@ -70,7 +70,7 @@ I problemi di decisione possono riguardare vari contesti (matrici, grafi, immagi
 
 \textbf{Codifica dei Problemi in Linguaggi}:
 È possibile ricodificare problemi di decisione arbitrari in problemi di decisione di linguaggi.
-\begin{example}[Problema dei Grafi Totalmente Connessi]
+\begin{example}{Problema dei Grafi Totalmente Connessi}{problema-dei-grafi-t}
     \textbf{Problema}: Dato un grafo, stabilire se è totalmente connesso.
     \begin{itemize}
         \item Questo è un problema di decisione (risposta Sì/No).
@@ -99,7 +99,7 @@ Per determinare se un linguaggio è decidibile (intuitivamente, se esiste un alg
 \textbf{Potere Computazionale degli FA}:
 Gli NFA e i DFA hanno lo stesso potere computazionale. Ogni NFA può essere convertito in un DFA equivalente. Il tempo di esecuzione è lineare rispetto alla lunghezza dell'input.
 
-\begin{example}[Linguaggio $L = \{a^n b^n \mid n \ge 0\}$]
+\begin{example}{Linguaggio $L = \{a^n b^n \mid n \ge 0\}$}{linguaggio}
     Questo linguaggio, che rappresenta stringhe con $n$ $a$ seguite da $n$ $b$ (es. \texttt{aabb}, \texttt{aaabbb}), \textbf{non può essere riconosciuto da un automa a stati finiti}.
     \begin{itemize}
         \item \textbf{Intuito}: Un FA non ha memoria sufficiente per "contare" le $a$ e confrontarle con le $b$. Ha un numero finito di stati, quindi non può memorizzare un numero arbitrario $n$.
@@ -110,7 +110,7 @@ Gli NFA e i DFA hanno lo stesso potere computazionale. Ogni NFA può essere conv
 \subsection{Linguaggi Regolari ed Espressioni Regolari}
 Gli automi a stati finiti (DFA/NFA) sono in grado di riconoscere tutti e soli i \textbf{linguaggi regolari}.
 
-\begin{definition}[Linguaggio Regolare ed Espressioni Regolari]
+\begin{definition}{Linguaggio Regolare ed Espressioni Regolari}{linguaggio-regolare-}
     Sia $\Sigma$ un alfabeto. Un linguaggio regolare su $\Sigma$ è un linguaggio le cui stringhe possono essere descritte da \textbf{espressioni regolari}.
     Le regole per costruire espressioni regolari sono:
     \begin{itemize}
@@ -148,7 +148,7 @@ Una TM è un automa con un numero finito di stati. Ogni passo della computazione
 \end{enumerate}
 
 \subsection{Definizione Formale della Macchina di Turing}
-\begin{definition}[Macchina di Turing]
+\begin{definition}{Macchina di Turing}{macchina-di-turing}
     Una Macchina di Turing (TM) $M$ è una 7-tupla:
     $M = \langle \Sigma, \Gamma, \blankS, Q, q_0, F, \delta \rangle$
     dove:
@@ -258,7 +258,7 @@ La macchina come progettata dovrebbe rifiutare stringhe che non seguono il patte
 \subsection{Computazione di una Macchina di Turing}
 Per formalizzare il comportamento di una TM, si introduce il concetto di \textbf{configurazione}.
 
-\begin{definition}[Configurazione di una TM]
+\begin{definition}{Configurazione di una TM}{configurazione-di-un}
     Una \textbf{configurazione} di una TM $M$ è una fotografia dello stato corrente di esecuzione della macchina. È rappresentata da una stringa che include:
     \begin{itemize}
         \item La parte non-blank del nastro.
@@ -266,42 +266,42 @@ Per formalizzare il comportamento di una TM, si introduce il concetto di \textbf
         \item La posizione della testina sul nastro.
     \end{itemize}
     La notazione comune è $uqv$, dove $u$ è la stringa sul nastro a sinistra della testina, $q$ è lo stato corrente, e $v$ è la stringa sul nastro a destra della testina (incluso il simbolo letto dalla testina, che è il primo simbolo di $v$). Si omettono i blank a meno che non siano rilevanti per la posizione della testina.
-    \begin{example}
-        \begin{itemize}
-            \item $A q_1 BB$: La stringa sul nastro è $\texttt{ABB}$, la TM è nello stato $q_1$, e la testina sta leggendo il primo $\blankS$.
-            \item $ABB q_1 \blankS$: La stringa sul nastro è $\texttt{ABB}$, la TM è nello stato $q_1$, e la testina sta leggendo il primo blank a destra della stringa.
-        \end{itemize}
-    \end{example}
+
+    \textbf{Esempio:}
+    \begin{itemize}
+        \item $A q_1 BB$: La stringa sul nastro è $\texttt{ABB}$, la TM è nello stato $q_1$, e la testina sta leggendo il primo $\blankS$.
+        \item $ABB q_1 \blankS$: La stringa sul nastro è $\texttt{ABB}$, la TM è nello stato $q_1$, e la testina sta leggendo il primo blank a destra della stringa.
+    \end{itemize}
 \end{definition}
 
-\begin{definition}[Successore Legale di una Configurazione]
+\begin{definition}{Successore Legale di una Configurazione}{successore-legale-di}
     Date due configurazioni $C_1$ e $C_2$ per una TM $M$, diciamo che $C_2$ è un \textbf{successore legale} (o raggiungibile in un passo) di $C_1$ rispetto a $M$, e scriviamo $C_1 \xrightarrow{M} C_2$, se $C_2$ è la configurazione che $M$ raggiunge partendo da $C_1$ ed eseguendo un solo passo secondo la sua funzione di transizione $\delta$.
     \begin{example}
         Per la TM di $a^n b^n$, se $C_1 = q_0 aabb$, allora $C_2 = \blankS q_1 abb$ (dopo aver cancellato la prima a e mosso a destra).
     \end{example}
 \end{definition}
 
-\begin{definition}[Configurazione Iniziale]
+\begin{definition}{Configurazione Iniziale}{configurazione-inizi}
     La \textbf{configurazione iniziale} di una TM $M$ su una stringa di input $w = w_1 w_2 \dots w_n$ è $q_0 w_1 w_2 \dots w_n$. Si assume che la testina sia sul primo simbolo di $w$.
 \end{definition}
 
-\begin{definition}[Configurazione Finale]
+\begin{definition}{Configurazione Finale}{configurazione-final}
     Una \textbf{configurazione finale} è una configurazione $C$ per la quale la funzione di transizione $\delta$ non è definita per la combinazione (stato di $C$, simbolo letto in $C$). In altre parole, la macchina si blocca.
 \end{definition}
 
-\begin{definition}[Configurazione Accettante]
+\begin{definition}{Configurazione Accettante}{configurazione-accet}
     Una \textbf{configurazione accettante} è una configurazione finale il cui stato corrente appartiene all'insieme degli stati accettanti $F$.
 \end{definition}
 
-\begin{definition}[Configurazione Rifiutante]
+\begin{definition}{Configurazione Rifiutante}{configurazione-rifiu}
     Una \textbf{configurazione rifiutante} è una configurazione finale il cui stato corrente \textbf{non} appartiene all'insieme degli stati accettanti $F$.
 \end{definition}
 
-\begin{definition}[Computazione Parziale]
+\begin{definition}{Computazione Parziale}{computazione-parzial}
     Una \textbf{computazione parziale} di una TM $M$ è una sequenza di configurazioni $C_1, C_2, \dots, C_k$ tale che $C_i \xrightarrow{M} C_{i+1}$ per ogni $1 \le i < k$.
 \end{definition}
 
-\begin{definition}[Computazione (Completa)]
+\begin{definition}{Computazione (Completa)}{computazione-complet}
     Una \textbf{computazione} di una TM $M$ su una stringa di input $w$ è una computazione parziale $C_1, C_2, \dots, C_k$ tale che:
     \begin{itemize}
         \item $C_1$ è la configurazione iniziale di $M$ su $w$.
@@ -309,11 +309,11 @@ Per formalizzare il comportamento di una TM, si introduce il concetto di \textbf
     \end{itemize}
 \end{definition}
 
-\begin{definition}[Computazione Accettante]
+\begin{definition}{Computazione Accettante}{computazione-accetta}
     Una \textbf{computazione accettante} di una TM $M$ su una stringa $w$ è una computazione $C_1, \dots, C_k$ dove $C_k$ è una configurazione accettante.
 \end{definition}
 
-\begin{definition}[Linguaggio di una Macchina di Turing $L(M)$]
+\begin{definition}{Linguaggio di una Macchina di Turing $L(M)$}{linguaggio-di-una-ma}
     Il \textbf{linguaggio di una Macchina di Turing $M$}, denotato $L(M)$, è l'insieme di tutte le stringhe $w$ tali che la computazione di $M$ su $w$ è accettante.
     Formalmente, si definisce come:
     \[
@@ -327,7 +327,7 @@ Per formalizzare il comportamento di una TM, si introduce il concetto di \textbf
 
 La differenza tra "accettare" e "decidere" un linguaggio da parte di una Macchina di Turing è fondamentale in Teoria della Computabilità.
 
-\begin{definition}[Macchina di Turing che Decide un Linguaggio]
+\begin{definition}{Macchina di Turing che Decide un Linguaggio}{macchina-di-turing-c}
     Una Macchina di Turing $M$ \textbf{decide} un linguaggio $L$ se e solo se per ogni stringa $w \in \Sigma^*$:
     \begin{itemize}
         \item Se $w \in L$, allora $M$ si arresta (termina) e accetta $w$ (ovvero, la computazione termina in una configurazione accettante).
@@ -336,7 +336,7 @@ La differenza tra "accettare" e "decidere" un linguaggio da parte di una Macchin
     In questo caso, si dice che $L$ è un \textbf{linguaggio decidibile}. Una macchina che decide garantisce una risposta (Sì o No) in tempo finito per ogni input.
 \end{definition}
 
-\begin{definition}[Macchina di Turing che Accetta un Linguaggio]
+\begin{definition}{Macchina di Turing che Accetta un Linguaggio}{macchina-di-turing-c}
     Una Macchina di Turing $M$ \textbf{accetta} un linguaggio $L$ se e solo se per ogni stringa $w \in \Sigma^*$:
     \begin{itemize}
         \item Se $w \in L$, allora $M$ si arresta e accetta $w$.

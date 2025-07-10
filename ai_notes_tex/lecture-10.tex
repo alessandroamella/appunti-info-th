@@ -100,11 +100,11 @@ L_1 = \{ X^N \Sh W_1 \Sh W_2 \Sh \dots \Sh W_N \mid N > 0, W_i \in \{a,b,c,d\}^+
 \]
 dove $X^N$ indica \texttt{X} ripetuto $N$ volte.
 
-\begin{remark}
+\begin{remark}{}{{ remark-lecture-10-1 }}
 La definizione di $L_1$ descrive stringhe che iniziano con un numero $N$ di simboli \texttt{X}, seguiti da $N$ blocchi $W_i$ separati da \texttt{\#}. La condizione chiave è che per ogni blocco $W_i$ (con $i$ che va da 1 a $N$), deve esistere una sottostringa $S_i$ di lunghezza \textbf{esattamente $i$} che sia palindroma. Questo significa che il primo blocco $W_1$ deve contenere almeno un carattere palindromo (di lunghezza 1), il secondo blocco $W_2$ deve contenere una sottostringa palindroma di lunghezza 2, e così via. La difficoltà computazionale sta nel fatto che la macchina deve "indovinare" quale sottostringa di $W_i$ rappresenta il palindromo $S_i$ di lunghezza $i$, per poi verificare che sia effettivamente un palindromo e una sottostringa di $W_i$.
 \end{remark}
 
-\begin{example}
+\begin{example}{}{{ example-lecture-10-1 }}
 Ecco alcuni esempi di stringhe che appartengono a $L_1$ per chiarire la definizione.
 \begin{itemize}
     \item Se $N=1$, la stringa \texttt{X\#daca} è valida. Infatti, $W_1 = \texttt{daca}$ e deve contenere una sottostringa palindroma di lunghezza $i=1$. Qualsiasi carattere è un palindromo di lunghezza 1, quindi la condizione è soddisfatta.

@@ -51,10 +51,6 @@ Questa lezione mira a consolidare i concetti di base della Teoria della Computaz
 
 Per noi, un problema è una relazione tra un input e un output. Più precisamente:
 
-\begin{definition}[Problema]
-Un problema è un sottoinsieme di tutte le possibili coppie formate da una stringa di input e una stringa di output.
-Formalmente, un problema è una relazione $R \subseteq \Sigma^* \times \Gamma^*$, dove $\Sigma$ è l'alfabeto degli input e $\Gamma$ è l'alfabeto degli output.
-\end{definition}
 
 Quando si analizza un problema, è fondamentale chiarire tre elementi:
 \begin{enumerate}
@@ -72,7 +68,7 @@ Il Problema dell'Arresto chiede: "Dato un programma e un input per quel programm
 \subsection{Definizione Formale}
 Applichiamo la struttura di analisi del problema:
 
-\begin{definition}[Problema dell'Arresto (HALT)]
+\begin{definition}{Problema dell'Arresto (HALT)}{problema-dellarresto}
 \textbf{Input}: Una coppia $\langle P, I \rangle$, dove:
 \begin{itemize}
     \item $P$ è una stringa che codifica un programma (e.g., codice Python).
@@ -87,7 +83,7 @@ Questo problema ha un'enorme utilità pratica per i programmatori, in quanto un 
 \subsection{Dimostrazione dell'Indecidibilità}
 Dimostreremo che il Problema dell'Arresto è \textbf{indecidibile}, ovvero non esiste un algoritmo universale che possa risolvere correttamente il problema per \emph{ogni} possibile coppia $\langle P, I \rangle$. La dimostrazione è per assurdo.
 
-\begin{theorem}[Indecidibilità del Problema dell'Arresto]
+\begin{theorem}{Indecidibilità del Problema dell'Arresto}{indecidibilita-del-p}
 Non esiste un algoritmo che, per ogni data coppia $\langle P, I \rangle$ (programma $P$ e input $I$), sia in grado di determinare correttamente se $P$ si arresta su $I$.
 \end{theorem}
 
@@ -171,7 +167,7 @@ Pertanto, la procedura \texttt{halt\_checker} \textbf{non può esistere}.
 
 Abbiamo visto che i problemi possono essere di diversa natura. È utile categorizzarli per facilitarne lo studio.
 
-\begin{example}[Problemi di Grafo]
+\begin{example}{Problemi di Grafo}{problemi-di-grafo}
 \begin{enumerate}
     \item \textbf{Problema del Percorso (PATH)}:
     \begin{itemize}
@@ -188,18 +184,18 @@ Abbiamo visto che i problemi possono essere di diversa natura. È utile categori
 
 Notiamo una differenza fondamentale nell'output:
 
-\begin{definition}[Problema di Ricerca]
+\begin{definition}{Problema di Ricerca}{problema-di-ricerca}
 Un problema di ricerca è un problema il cui output può essere una stringa arbitraria, come un percorso, un numero, una derivata, una matrice risultante, ecc. L'obiettivo è trovare o calcolare qualcosa.
 \end{definition}
 
-\begin{definition}[Problema di Decisione]
+\begin{definition}{Problema di Decisione}{problema-di-decision}
 Un problema di decisione è un problema il cui output è sempre una risposta booleana: "sì" o "no". L'obiettivo è decidere se una certa proprietà è vera o falsa per l'input dato.
 \end{definition}
 
 \subsubsection{Relazione tra Problemi di Ricerca e Problemi di Decisione}
 Queste due classi non sono disgiunte. Per ogni problema di ricerca, possiamo definire un problema di decisione correlato.
 
-\begin{example}[PATH come Problema di Decisione]
+\begin{example}{PATH come Problema di Decisione}{path-come-problema-d}
 Consideriamo il problema del percorso come problema di decisione:
 \begin{itemize}
     \item \textbf{Input}: Un grafo $G$, un nodo sorgente $S$, un nodo destinazione $T$.
@@ -215,37 +211,37 @@ Sebbene i problemi di decisione siano più semplici dei problemi di ricerca, pos
 
 \subsection{Definizioni Fondamentali}
 
-\begin{definition}[Alfabeto ($\Sigma$)]
+\begin{definition}{Alfabeto ($\Sigma$)}{alfabeto}
 Un alfabeto $\Sigma$ è un insieme finito e non vuoto di simboli.
 \end{definition}
-\begin{example}
+\begin{example}{}{{ example-lecture-02-1 }}
 $\Sigma = \{a, b, c\}$ \\
 $\Sigma = \{0, 1\}$ \\
 $\Sigma = \{\square, \circ\}$
 \end{example}
 
-\begin{definition}[Parola o Stringa]
+\begin{definition}{Parola o Stringa}{parola-o-stringa}
 Una parola (o stringa) su un alfabeto $\Sigma$ è una sequenza finita di zero o più simboli tratti da $\Sigma$.
 \end{definition}
-\begin{example}
+\begin{example}{}{{ example-lecture-02-2 }}
 Se $\Sigma = \{a, b\}$, allora $ababa$, $a$, $b$, $\epsilon$ (stringa vuota) sono parole su $\Sigma$.
 \end{example}
 
-\begin{definition}[$\Sigma^*$]
+\begin{definition}{$\Sigma^*$}{definition-lecture-02-1}
 $\Sigma^*$ denota l'insieme di tutte le possibili parole (di qualsiasi lunghezza, inclusa la stringa vuota $\epsilon$) che possono essere formate usando i simboli dell'alfabeto $\Sigma$.
 \end{definition}
 
-\begin{definition}[Linguaggio ($L$)]
+\begin{definition}{Linguaggio ($L$)}{linguaggio}
 Un linguaggio $L$ su un alfabeto $\Sigma$ è un qualsiasi sottoinsieme di $\Sigma^*$.
 Formalmente, $L \subseteq \Sigma^*$.
 \end{definition}
-\begin{example}
+\begin{example}{}{{ example-lecture-02-3 }}
 Se $\Sigma = \{0, 1\}$, il linguaggio di tutte le stringhe binarie che iniziano con $0$ potrebbe essere $L = \{0, 00, 01, 000, 001, \ldots\}$.
 \end{example}
 
 \subsection{Decidere un Linguaggio}
 
-\begin{definition}[Problema di Decisione di un Linguaggio]
+\begin{definition}{Problema di Decisione di un Linguaggio}{problema-di-decision}
 Decidere un linguaggio $L$ significa risolvere il seguente problema:
 \textbf{Input}: Una stringa $w \in \Sigma^*$.
 \textbf{Output}: "Sì" o "No".
@@ -256,7 +252,7 @@ Decidere un linguaggio $L$ significa risolvere il seguente problema:
 \subsection{Conversione di Problemi di Decisione in Problemi di Linguaggio}
 Ogni problema di decisione può essere ricondotto (o codificato) come un problema di decisione di un linguaggio. Questo si fa codificando le istanze del problema come stringhe.
 
-\begin{example}[Codifica del Problema PATH come Linguaggio]
+\begin{example}{Codifica del Problema PATH come Linguaggio}{codifica-del-problem}
 Riprendiamo il problema di decisione PATH: "Esiste un percorso da $S$ a $T$ in $G$?".
 Possiamo definire un linguaggio $L_{PATH}$ su un opportuno alfabeto $\Sigma$ (ad esempio, simboli per nodi, archi, parentesi, virgole, ecc.) tale che:
 \[L_{PATH} = \{ \langle G, S, T \rangle \mid G \text{ è un grafo, } S \text{ e } T \text{ sono nodi in } G, \text{ ed esiste un percorso da } S \text{ a } T \text{ in } G \}.\]
@@ -326,7 +322,7 @@ Questo esempio illustra come un automa modellizzi un sistema: lo stato in cui si
 \subsection{Automi a Stati Finiti Deterministici (DFA)}
 Gli automi vengono usati in informatica teorica per riconoscere linguaggi formali. Un Automa a Stati Finiti Deterministico (DFA) è il modello più semplice.
 
-\begin{definition}[Automa a Stati Finiti Determinico (DFA)]
+\begin{definition}{Automa a Stati Finiti Determinico (DFA)}{automa-a-stati-finit}
 Un DFA $M$ è una quintupla $(Q, \Sigma, \delta, q_0, F)$, dove:
 \begin{itemize}
     \item $Q$ è un insieme finito di stati.
@@ -339,7 +335,7 @@ Un DFA $M$ è una quintupla $(Q, \Sigma, \delta, q_0, F)$, dove:
 
 Un DFA \textbf{accetta} una stringa se, partendo dallo stato iniziale e processando la stringa simbolo per simbolo, l'automa termina in uno stato accettante. Altrimenti, la stringa viene \textbf{rifiutata}.
 
-\begin{example}[Linguaggio dei Numeri Binari Dispari]
+\begin{example}{Linguaggio dei Numeri Binari Dispari}{linguaggio-dei-numer}
 Consideriamo il linguaggio $L_{dispari}$ delle stringhe binarie che rappresentano numeri dispari.
 \begin{itemize}
     \item $\Sigma = \{0, 1\}$
@@ -364,9 +360,8 @@ Costruiamo un DFA per $L_{dispari}$:
         \end{itemize}
 \end{itemize}
 
-\begin{figure}[h!]
-    \centering
-    \begin{tikzpicture}[
+\begin{center}
+\begin{tikzpicture}[
         node distance=2.5cm,
         every state/.style={minimum size=1cm},
         initial text={},
@@ -383,8 +378,9 @@ Costruiamo un DFA per $L_{dispari}$:
         \draw[->] (q1) edge[bend left] node {0} (q0);
         \draw[->] (q1) edge[loop above] node {1} (q1);
     \end{tikzpicture}
-    \caption{DFA per il Linguaggio dei Numeri Binari Dispari}
-\end{figure}
+
+\textbf{DFA per il Linguaggio dei Numeri Binari Dispari}
+\end{center}
 
 \subsubsection{Esempio di Tracciamento}
 Stringa di input: \texttt{101}

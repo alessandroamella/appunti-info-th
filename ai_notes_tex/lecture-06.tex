@@ -77,7 +77,7 @@ Le Macchine di Turing (TM) standard, pur essendo fondamentali per la teoria dell
 \section{Macchine di Turing con Memoria nello Stato}
 Riprendiamo l'esempio del linguaggio $WW^R = \{w w^R \mid w \in \{0,1\}^*\}$. Nella TM standard per questo linguaggio, eravamo costretti a creare rami di computazione separati a seconda del primo carattere letto (0 o 1), perché la macchina doveva "ricordarsi" quel carattere. L'idea è: non sarebbe più semplice se la macchina potesse memorizzare direttamente il simbolo letto?
 
-\begin{definition}[Macchina di Turing con Memoria nello Stato]
+\begin{definition}{Macchina di Turing con Memoria nello Stato}{macchina-di-turing-c}
 Una Macchina di Turing con memoria nello stato è una TM che può memorizzare un simbolo dell'alfabeto del nastro all'interno del suo stato finito. Lo stato è quindi una coppia $(q_i, \alpha)$, dove $q_i$ è lo stato del controllo finito e $\alpha$ è il contenuto della "memoria interna".
 \begin{itemize}
     \item La macchina può memorizzare uno o più simboli (un numero fissato al momento della progettazione).
@@ -85,7 +85,7 @@ Una Macchina di Turing con memoria nello stato è una TM che può memorizzare un
 \end{itemize}
 \end{definition}
 
-\begin{example}[Linguaggio $L = \{w \mid w \in \{0,1\}^*, \text{inizia con } \alpha \text{ e prosegue solo con } \bar{\alpha} \}$, cioè $01^* \cup 10^*$]
+\begin{example}{Linguaggio $L = \{w \mid w \in \{0,1\}^*, \text{inizia con } \alpha \text{ e prosegue solo con } \bar{\alpha} \}$, cioè $01^* \cup 10^*$}{linguaggio-cioe}
 Vogliamo riconoscere stringhe binarie che iniziano con un simbolo e tutti gli altri sono diversi (es. $0111$, $1000$).
 \begin{itemize}
     \item \textbf{Stato Iniziale}: $(q_0, \emptyset)$, dove $\emptyset$ indica memoria vuota.
@@ -125,7 +125,7 @@ Le TM con memoria nello stato \emph{non} sono più potenti delle TM standard.
 \section{Macchine di Turing Multitraccia}
 Le macchine multitraccia sono un altro truccetto per semplificare la progettazione delle TM.
 
-\begin{definition}[Macchina di Turing Multitraccia]
+\begin{definition}{Macchina di Turing Multitraccia}{macchina-di-turing-m}
 Una Macchina di Turing multitraccia ha un singolo nastro, ma questo nastro è diviso orizzontalmente in più \textbf{tracce} (es. 2, 3, 7 tracce).
 \begin{itemize}
     \item Ogni cella del nastro può contenere un simbolo per ogni traccia.
@@ -136,7 +136,7 @@ Una Macchina di Turing multitraccia ha un singolo nastro, ma questo nastro è di
 \end{itemize}
 \end{definition}
 
-\begin{example}[Linguaggio $L = \{w\#w \mid w \in \{a,b\}^+\}$]
+\begin{example}{Linguaggio $L = \{w\#w \mid w \in \{a,b\}^+\}$}{linguaggio}
 Simuliamo il riconoscimento di questo linguaggio con una TM multitraccia, usando due tracce: la prima per l'input e la seconda per i marcatori.
 \begin{itemize}
     \item \textbf{Stato Iniziale} $(q_0, \emptyset)$.
@@ -309,7 +309,7 @@ In sintesi, le TM multitraccia, sebbene sembrino più sofisticate, hanno lo stes
 \section{Macchine di Turing Multinastro}
 Introduciamo il modello più conveniente per la programmazione: le Macchine di Turing Multinastro.
 
-\begin{definition}[Macchina di Turing Multinastro]
+\begin{definition}{Macchina di Turing Multinastro}{macchina-di-turing-m}
 Una Macchina di Turing multinastro ha \textbf{più nastri completamente indipendenti} (es. 2, 3, 4 nastri).
 \begin{itemize}
     \item Ogni nastro ha la propria \textbf{testina indipendente}.
@@ -319,7 +319,7 @@ Una Macchina di Turing multinastro ha \textbf{più nastri completamente indipend
 \end{itemize}
 \end{definition}
 
-\begin{example}[Linguaggio $L = \{w \mid w \in \{0,1,2\}^*, \text{count}(0)=\text{count}(1)=\text{count}(2)\}$]
+\begin{example}{Linguaggio $L = \{w \mid w \in \{0,1,2\}^*, \text{count}(0)=\text{count}(1)=\text{count}(2)\}$}{linguaggio}
 Vogliamo decidere se il numero di $0$, $1$ e $2$ in una stringa di input è uguale.
 Approccio con TM multinastro (4 nastri: 1 input, 3 di lavoro):
 \begin{enumerate}
@@ -420,11 +420,11 @@ Le TM multinastro sono molto convenienti perché permettono un controllo indipen
 \section{Equivalenza e Complessità Temporale}
 Come per le varianti precedenti, ci si chiede: le TM multinastro sono più potenti delle TM standard? La risposta è no, ma sono potenzialmente più veloci.
 
-\begin{definition}[Tempo di Esecuzione di una TM]
+\begin{definition}{Tempo di Esecuzione di una TM}{tempo-di-esecuzione-}
 Il tempo di esecuzione di una Macchina di Turing su una certa stringa di input $W$ è definito come il \textbf{numero di passi} (o il numero di configurazioni nella sua computazione) che la macchina compie prima di arrestarsi. Se la macchina non si arresta, il tempo di esecuzione è infinito. Questa definizione è molto precisa e permette un'analisi fine della complessità.
 \end{definition}
 
-\begin{theorem}[Equivalenza TM Multinastro e TM Standard]
+\begin{theorem}{Equivalenza TM Multinastro e TM Standard}{equivalenza-tm-multi}
 Sia $M$ una macchina di Turing multinastro. Allora esiste una macchina $S$ a nastro singolo (e multitraccia) tale che il linguaggio riconosciuto da $M$ è uguale al linguaggio riconosciuto da $S$.
 \end{theorem}
 

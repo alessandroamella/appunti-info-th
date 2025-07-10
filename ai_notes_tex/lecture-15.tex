@@ -150,7 +150,7 @@ Il problema è: dato un sistema di piastrelle (tipi e regole di affiancamento), 
 
 
 \subsection{Definizione Formale del Tiling Problem}
-\begin{definition}[Input del Tiling Problem]
+\begin{definition}{Input del Tiling Problem}{input-del-tiling-pro}
 L'input per il problema del Tiling è un sistema di tiling $T = (D, D_0, H, V)$, dove:
 \begin{itemize}
     \item $D$: un insieme finito di \textbf{tipi} di piastrella.
@@ -160,7 +160,7 @@ L'input per il problema del Tiling è un sistema di tiling $T = (D, D_0, H, V)$,
 \end{itemize}
 \end{definition}
 
-\begin{definition}[Tiling]
+\begin{definition}{Tiling}{tiling}
 Un \emph{tiling} (o tassellamento) per un sistema $T$ è una funzione $f: \mathbb{N} \times \mathbb{N} \to D$ tale che:
 \begin{itemize}
     \item $f(0,0) = D_0$ (la piastrella iniziale è nel punto di origine).
@@ -173,7 +173,7 @@ Il problema del Tiling chiede se per un dato sistema $T$ esista una tale funzion
 \subsection{Indecidibilit\`a del Tiling Problem: Riduzione da \haltcomplement}
 Dimostriamo che il Tiling Problem è indecidibile, riducendo \haltcomplement (il problema di determinare se una Macchina di Turing si \textbf{non} arresta sulla stringa vuota $\epsilon$) al Tiling Problem.
 
-\begin{theorem}
+\begin{theorem}{}{{ theorem-lecture-15-1 }}
 $\haltcomplement \le_m \text{Tiling}$. Poiché \haltcomplement è indecidibile, ne segue che anche $\text{Tiling}$ è indecidibile.
 \end{theorem}
 
@@ -276,21 +276,21 @@ Il problema del Tiling è indecidibile. In particolare, è un linguaggio in $\te
 Finora, i problemi indecidibili che abbiamo incontrato mostrano una certa "asimmetria".
 
 \subsection{Richiamo: R e RE}
-\begin{definition}[Classe R]
+\begin{definition}{Classe R}{classe-r}
 Un linguaggio $L$ appartiene alla classe \textbf{R} (ricorsivo o decidibile) se esiste una Macchina di Turing che si arresta su ogni input e decide se l'input appartiene a $L$. In altre parole, possiamo rispondere "SÌ" in tempo finito se l'input è nel linguaggio, e "NO" in tempo finito se non lo è.
 \end{definition}
 
-\begin{definition}[Classe RE]
+\begin{definition}{Classe RE}{classe-re}
 Un linguaggio $L$ appartiene alla classe \textbf{RE} (ricorsivamente enumerabile) se esiste una Macchina di Turing che accetta tutti gli input in $L$ e può non arrestarsi per gli input non in $L$. In altre parole, possiamo rispondere "SÌ" in tempo finito se l'input è nel linguaggio, ma non abbiamo garanzie di risposta (potremmo loopare) se non lo è.
 \end{definition}
 
 \subsection{Introduzione: coRE}
-\begin{definition}[Classe coRE]
+\begin{definition}{Classe coRE}{classe-core}
 Un linguaggio $L$ appartiene alla classe \textbf{coRE} se il suo complemento $\overline{L}$ appartiene a RE.
 Se $L \in \text{coRE}$, significa che esiste una Macchina di Turing che si arresta e rifiuta tutti gli input in $L$ (ovvero, accetta tutti gli input non in $L$). In altre parole, possiamo rispondere "NO" in tempo finito se l'input non è nel linguaggio, ma non abbiamo garanzie di risposta (potremmo loopare) se lo è.
 \end{definition}
 
-\begin{remark}
+\begin{remark}{}{{ remark-lecture-15-1 }}
 Molti dei problemi indecidibili che abbiamo visto finora (ad esempio, $\overline{L_U}$, $\overline{L_{NE}}$, $\overline{\text{HALT}}$, $\overline{\text{HALT}_\epsilon}$, Tiling) si trovano in coRE ma non in RE.
 \begin{itemize}
     \item $L_U \in \text{RE}$, $\overline{L_U} \in \text{coRE}$.
@@ -304,7 +304,7 @@ Questi linguaggi sono "sbilanciati": hanno un "lato facile" (o il SÌ o il NO pu
 
 \subsection{Relazioni tra le Classi}
 
-\begin{theorem}
+\begin{theorem}{}{{ theorem-lecture-15-2 }}
 $\text{RE} \cap \text{coRE} = \text{R}$.
 \end{theorem}
 \begin{proof}
@@ -329,7 +329,7 @@ Inoltre, se $M$ decide $L$, possiamo costruire una macchina $M'$ che decide $\ov
 Quindi, se $L \in \text{R}$, allora $L \in \text{RE}$ e $L \in \text{coRE}$, da cui $L \in \text{RE} \cap \text{coRE}$.
 \end{proof}
 
-\begin{theorem}
+\begin{theorem}{}{{ theorem-lecture-15-3 }}
 $\text{R} \neq \text{RE}$ e $\text{R} \neq \text{coRE}$.
 \end{theorem}
 \begin{proof}
@@ -337,7 +337,7 @@ Sappiamo che $\text{HALT} \in \text{RE}$ ma $\text{HALT} \notin \text{R}$. Quest
 Inoltre, sappiamo che $\overline{\text{HALT}} \in \text{coRE}$ ma $\overline{\text{HALT}} \notin \text{R}$. Questo dimostra che $\text{coRE} \neq \text{R}$.
 \end{proof}
 
-\begin{theorem}
+\begin{theorem}{}{{ theorem-lecture-15-4 }}
 $\text{RE} \neq \text{coRE}$.
 \end{theorem}
 \begin{proof}
@@ -383,11 +383,11 @@ Dunque, l'assunto $\text{RE} = \text{coRE}$ è falso, e $\text{RE} \neq \text{co
 \section{Problemi Esterni a RE e coRE}
 I problemi indecidibili che abbiamo visto finora appartengono a RE o a coRE (ovvero, hanno un "lato facile" per cui si può dire SÌ o NO in tempo finito). La domanda è: esistono problemi che non appartengono né a RE né a coRE? Ovvero, problemi per i quali non siamo in grado di dare garanzie di risposta (SÌ o NO) in tempo finito?
 
-\begin{definition}[$\text{HALT}_\forall$]
+\begin{definition}{$\text{HALT}_\forall$}{definition-lecture-15-1}
 Sia $\text{HALT}_\forall = \{ \langle M \rangle \mid M \text{ si arresta su ogni input } w \}$.
 \end{definition}
 
-\begin{remark}
+\begin{remark}{}{{ remark-lecture-15-2 }}
 Intuitivamente:
 \begin{itemize}
     \item \textbf{Perché $\text{HALT}_\forall \notin \text{RE}$?} Per determinare se una macchina si arresta su \textbf{ogni} input, dovremmo simulare la macchina su tutti gli input possibili, che sono infiniti. Se la macchina si arresta su tutti, non potremmo mai finire di verificarlo.
@@ -398,7 +398,7 @@ Quindi, $\text{HALT}_\forall$ sembra essere un candidato a non stare né in RE n
 Per dimostrarlo formalmente, useremo il seguente Lemma sulle riduzioni:
 \end{remark}
 
-\begin{lemma}
+\begin{lemma}{}{{ lemma-lecture-15-1 }}
 Siano $A$ e $B$ due linguaggi.
 \begin{itemize}
     \item Se $A \le_m B$ e $B \in \text{R}$, allora $A \in \text{R}$. (Già dimostrato)

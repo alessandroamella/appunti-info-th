@@ -52,7 +52,7 @@ Riprendiamo il concetto di classe \textbf{NP}. Ricordiamo che un problema di dec
 Consideriamo il problema \textbf{UNSAT}:
 Data una formula booleana $f$ in forma normale congiuntiva (CNF), stabilire se $f$ \textit{non è soddisfacibile}.
 
-\begin{definition}[Linguaggio UNSAT]
+\begin{definition}{Linguaggio UNSAT}{linguaggio-unsat}
 Il linguaggio UNSAT è l'insieme delle stringhe che codificano formule booleane in CNF che non sono soddisfacibili.
 \[
 \text{UNSAT} = \{ \langle f \rangle \mid f \text{ è una formula in CNF non soddisfacibile} \}
@@ -69,7 +69,7 @@ Se una macchina non deterministica "indovinasse" un'assegnazione di verità per 
 
 Introduciamo una nuova classe di complessità, \textbf{Co-NP}, che formalizza il tipo di problemi come UNSAT.
 
-\begin{definition}[Classe Co-NP]
+\begin{definition}{Classe Co-NP}{classe-conp}
 La classe Co-NP è l'insieme dei linguaggi $L$ tali che il loro complemento $\overline{L}$ appartiene alla classe NP.
 \[
 \text{Co-NP} = \{ L \mid \overline{L} \in \text{NP} \}
@@ -89,11 +89,11 @@ In modo speculare all'intuizione per NP:
 \end{itemize}
 Per i problemi in Co-NP, siamo in grado di rispondere "no" in modo efficiente, fornendo un "certificato di rifiuto".
 
-\begin{example}[UNSAT - Intuizione Co-NP]
+\begin{example}{UNSAT - Intuizione Co-NP}{unsat-intuizione-con}
 Per decidere UNSAT, se la formula $f$ \textit{non è} non soddisfacibile (cioè è soddisfacibile), possiamo fornire un certificato: un'assegnazione di verità che soddisfa $f$. Questo certificato permette di rispondere "no" in tempo polinomiale.
 \end{example}
 
-\begin{example}[TAUTOLOGY]
+\begin{example}{TAUTOLOGY}{tautology}
 Il problema TAUTOLOGY è decidere se una data formula booleana in CNF è una tautologia (cioè sempre vera per ogni assegnazione di verità).
 TAUTOLOGY appartiene a Co-NP. Per rispondere "no" a una formula che \textit{non è} una tautologia, basta fornire un'assegnazione di verità che la renda falsa. Questa verifica è polinomiale.
 \end{example}
@@ -138,7 +138,7 @@ Mentre per le classi R e Co-R sappiamo che sono distinte e che la loro intersezi
 \caption{Relazioni ipotizzate tra P, NP e Co-NP.}
 \end{figure}
 
-\begin{theorem}[Relazione NP e Co-NP]
+\begin{theorem}{Relazione NP e Co-NP}{relazione-np-e-conp}
 $\text{NP} = \text{Co-NP}$ se e solo se esiste un linguaggio $L$ NP-completo tale che $L \in \text{Co-NP}$.
 \end{theorem}
 
@@ -182,7 +182,7 @@ Dato che $\text{NP} \subseteq \text{Co-NP}$ e $\text{Co-NP} \subseteq \text{NP}$
 
 \subsection{Problemi Co-NP-hard}
 Analogamente a NP-hard, definiamo Co-NP-hard.
-\begin{definition}[Co-NP-hard]
+\begin{definition}{Co-NP-hard}{conphard}
 Un problema $L$ è \textbf{Co-NP-hard} se $\overline{L}$ è NP-hard.
 \end{definition}
 I problemi Co-NP-hard sono almeno difficili quanto tutti i problemi in Co-NP. UNSAT è un esempio di problema Co-NP-completo.
@@ -191,21 +191,21 @@ I problemi Co-NP-hard sono almeno difficili quanto tutti i problemi in Co-NP. UN
 
 Il problema della fattorizzazione di numeri interi è un problema centrale in crittografia. Sebbene il problema di "produrre la fattorizzazione" non sia un problema di decisione, possiamo definirne una versione decisionale.
 
-\begin{definition}[Linguaggio FACTOR]
+\begin{definition}{Linguaggio FACTOR}{linguaggio-factor}
 Il linguaggio FACTOR è l'insieme delle coppie $\langle n, k \rangle$ tali che $n$ è un intero naturale e $n$ ha almeno un fattore primo $p$ tale che $p \le k$.
 \[
 \text{FACTOR} = \{ \langle n, k \rangle \mid n \in \mathbb{N}, \exists p \in \mathbb{P} \text{ t.c. } p \le k \text{ e } p \text{ divide } n \}
 \]
 \end{definition}
 
-\begin{example}
+\begin{example}{}{{ example-lecture-23-1 }}
 \begin{itemize}
     \item $\langle 175, 6 \rangle \in \text{FACTOR}$ perché $175 = 5 \cdot 5 \cdot 7$. Il fattore primo $5 \le 6$, e $5$ divide $175$.
     \item $\langle 175, 4 \rangle \notin \text{FACTOR}$ perché nessuno dei fattori primi di $175$ ($5, 7$) è minore o uguale a $4$.
 \end{itemize}
 \end{example}
 
-\begin{theorem}
+\begin{theorem}{}{{ theorem-lecture-23-1 }}
 $\text{FACTOR} \in \text{NP} \cap \text{Co-NP}$.
 \end{theorem}
 
@@ -226,7 +226,7 @@ Per dimostrare che FACTOR è in NP, dobbiamo mostrare che esiste una NTM che lo 
 \textbf{Parte 2: $\text{FACTOR} \in \text{Co-NP}$}
 Per dimostrare che FACTOR è in Co-NP, dobbiamo mostrare che il suo complemento $\overline{\text{FACTOR}}$ è in NP.
 
-\begin{definition}[Linguaggio $\overline{\text{FACTOR}}$]
+\begin{definition}{Linguaggio $\overline{\text{FACTOR}}$}{linguaggio}
 $\overline{\text{FACTOR}}$ è l'insieme delle coppie $\langle n, k \rangle$ tali che $n$ è un intero naturale e \textit{tutti} i fattori primi $p$ di $n$ sono maggiori di $k$.
 \[
 \overline{\text{FACTOR}} = \{ \langle n, k \rangle \mid n \in \mathbb{N}, \forall p \in \mathbb{P} \text{ t.c. } p \text{ divide } n \implies p > k \}
@@ -264,7 +264,7 @@ Questo colloca FACTOR in una "terra di mezzo": un problema che si presume non si
 Oltre alle classi P, NP, e Co-NP, esistono classi di complessità che considerano tempi di esecuzione maggiori, in particolare esponenziali.
 
 \subsection{Classe EXP (Exponential Time)}
-\begin{definition}[Classe EXP]
+\begin{definition}{Classe EXP}{classe-exp}
 La classe \textbf{EXP} (o \textbf{EXPTIME}) è l'insieme dei linguaggi che possono essere decisi da una Macchina di Turing deterministica in tempo esponenziale, ovvero $O(2^{n^c})$ per qualche costante $c \ge 1$.
 \[
 \text{EXP} = \bigcup_{c \ge 1} \text{DTIME}(2^{n^c})
@@ -281,7 +281,7 @@ La classe \textbf{EXP} (o \textbf{EXPTIME}) è l'insieme dei linguaggi che posso
 \end{itemize}
 
 \subsection{Classe NEXP (Non-deterministic Exponential Time)}
-\begin{definition}[Classe NEXP]
+\begin{definition}{Classe NEXP}{classe-nexp}
 La classe \textbf{NEXP} (o \textbf{NEXPTIME}) è l'insieme dei linguaggi che possono essere decisi da una Macchina di Turing non deterministica in tempo esponenziale, ovvero $O(2^{n^c})$ per qualche costante $c \ge 1$.
 \[
 \text{NEXP} = \bigcup_{c \ge 1} \text{NTIME}(2^{n^c})
@@ -297,7 +297,7 @@ La classe \textbf{NEXP} (o \textbf{NEXPTIME}) è l'insieme dei linguaggi che pos
 
 \subsection{Caratterizzazione di NEXP basata sui Certificati}
 Similmente a NP, NEXP può essere caratterizzata in termini di certificati.
-\begin{definition}[Caratterizzazione Certificata di NEXP]
+\begin{definition}{Caratterizzazione Certificata di NEXP}{caratterizzazione-ce}
 Un linguaggio $L$ appartiene a \textbf{NEXP} se le sue istanze "sì" sono caratterizzate da certificati di \textit{taglia esponenziale} (rispetto alla dimensione dell'input) che possono essere verificati da una Macchina di Turing deterministica in \textit{tempo polinomiale} nella taglia combinata dell'input e del certificato.
 \end{definition}
 Formalmente, per un linguaggio $L$, se $w \in L$, esiste un certificato $C$ tale che:

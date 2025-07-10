@@ -64,7 +64,7 @@
 
 \section{Recap sulle Riduzioni}
 
-\begin{example}[Esempio di Riduzione]
+\begin{example}{Esempio di Riduzione}{esempio-di-riduzione}
 Consideriamo due problemi semplici per illustrare il concetto:
 \begin{itemize}
     \item \textbf{Problema A (EVEN):} Data una stringa binaria $w$, decidere se il numero di simboli $1$ in $w$ è pari.
@@ -88,7 +88,7 @@ cioè $f$ aggiunge un simbolo $1$ alla fine della stringa $w$.
 Quindi $\text{EVEN} \le_m \text{ODD}$. Se sapessimo che EVEN è indecidibile (ipotesi), allora per il teorema che seguirà, anche ODD sarebbe indecidibile.
 \end{example}
 
-\begin{remark}
+\begin{remark}{}{{ remark-lecture-14-1 }}
 Il significato di $w \in A \iff f(w) \in B$ è duplice:
 \begin{itemize}
     \item Se $w \in A$, allora $f(w) \in B$.
@@ -99,7 +99,7 @@ Il significato di $w \in A \iff f(w) \in B$ è duplice:
 \subsection{Scopo delle Riduzioni}
 
 Le riduzioni sono utilizzate per dimostrare l'indecidibilità di problemi.
-\begin{theorem}
+\begin{theorem}{}{{ theorem-lecture-14-1 }}
 Se $A \le_m B$ e $A$ è un problema indecidibile, allora anche $B$ è un problema indecidibile.
 \end{theorem}
 \begin{proof}
@@ -114,7 +114,7 @@ Poiché $f$ è calcolabile, possiamo costruire una Macchina di Turing $M_A$ che 
 Per la definizione di riduzione, $w \in A \iff f(w) \in B$. Quindi $M_A$ decide $A$. Ma questo contraddice l'ipotesi che $A$ sia indecidibile. Dunque, $B$ deve essere indecidibile.
 \end{proof}
 
-\begin{theorem}[Transitività delle Riduzioni]
+\begin{theorem}{Transitività delle Riduzioni}{transitivita-delle-r}
 Se $A \le_m B$ e $B \le_m C$, allora $A \le_m C$.
 \end{theorem}
 \begin{proof}
@@ -128,7 +128,7 @@ Quindi $g \circ f$ è una riduzione calcolabile da $A$ a $C$.
 
 Il Problema di Corrispondenza di Post (PCP) è un problema di decisione sulle stringhe.
 
-\begin{definition}[PCP]
+\begin{definition}{PCP}{pcp}
 Un'istanza del PCP è data da due liste non-vuote di stringhe, $A = (A_1, A_2, \dots, A_k)$ e $B = (B_1, B_2, \dots, B_k)$, definite su un alfabeto $\Sigma$.
 Il problema chiede se esista una sequenza di indici non-vuota $I = (i_1, i_2, \dots, i_m)$ con $m \ge 1$ e $1 \le i_j \le k$ per ogni $j$, tale che:
 $$A_{i_1} A_{i_2} \dots A_{i_m} = B_{i_1} B_{i_2} \dots B_{i_m}$$
@@ -137,8 +137,7 @@ La risposta è "sì" se una tale sequenza esiste, "no" altrimenti.
 
 \vspace{0.5em}
 
-\begin{example}
-
+\begin{example}{}{{ example-lecture-14-1 }}
 \begin{align*}
 A &= (A_1 = 1,\; A_2 = 10111,\; A_3 = 10) \\
 B &= (B_1 = 111,\; B_2 = 10,\; B_3 = 0)
@@ -241,7 +240,7 @@ Il PCP appartiene alla classe RE $\setminus$ R, ovvero è riconoscibile ma non d
 
 Per dimostrare l'indecidibilità del PCP, useremo un problema intermedio, il MPCP.
 
-\begin{definition}[MPCP]
+\begin{definition}{MPCP}{mpcp}
 Un'istanza del MPCP è data da due liste non-vuote di stringhe, $A = (A_1, A_2, \dots, A_k)$ e $B = (B_1, B_2, \dots, B_k)$, definite su un alfabeto $\Sigma$.
 Il problema chiede se esista una sequenza di indici $I = (i_1, i_2, \dots, i_m)$ con $m \ge 1$ e $1 \le i_j \le k$ per ogni $j$, tale che:
 \begin{enumerate}
@@ -251,7 +250,7 @@ Il problema chiede se esista una sequenza di indici $I = (i_1, i_2, \dots, i_m)$
 La risposta è "sì" se una tale sequenza esiste, "no" altrimenti.
 \end{definition}
 
-\begin{remark}
+\begin{remark}{}{{ remark-lecture-14-2 }}
 L'unica differenza tra PCP e MPCP è la condizione che la sequenza di indici debba iniziare per $1$.
 \end{remark}
 
@@ -287,7 +286,7 @@ $$ID_1 \# ID_2 \# ID_3 \# \dots \# ID_k$$
 
 dove ogni $ID_i$ rappresenta lo stato della macchina, la posizione della testina e il contenuto del nastro in un determinato momento.
 
-\begin{example}[Esempio di ID]
+\begin{example}{Esempio di ID}{esempio-di-id}
 Una Macchina di Turing con nastro $011$, testina sul primo $1$ e stato $q_2$ ha ID:
 \[
 0\,q_2\,11
@@ -471,7 +470,7 @@ La computazione termina nello stato accettante $q_3$, quindi $M$ accetta la stri
 \end{itemize}
 
 \subsection{Dimostrazione}
-\begin{proof_sketch}
+\begin{proof_sketch}{}{{ proof_sketch-lecture-14-1 }}
 Si deve dimostrare che $(M, w)$ è un'istanza "sì" di $LU$ se e solo se l'istanza $(A, B)$ generata dalla riduzione è un'istanza "sì" di MPCP.
 
 \paragraph{Parte 1: Se $M$ accetta $w$, allora l'istanza MPCP ha soluzione.}
@@ -590,7 +589,7 @@ Applichiamo la riduzione per ottenere $(C, D)$:
 L'istanza PCP risultante è $C=(C_0, C_1, C_2, C_3, C_4)$ e $D=(D_0, D_1, D_2, D_3, D_4)$.
 
 \subsection{Dimostrazione}
-\begin{proof_sketch}
+\begin{proof_sketch}{}{{ proof_sketch-lecture-14-2 }}
 Si deve dimostrare che l'istanza $(A, B)$ è "sì" per MPCP se e solo se l'istanza $(C, D)$ generata dalla riduzione è "sì" per PCP.
 
 \paragraph{Parte 1: Se $(A, B)$ ha soluzione MPCP, allora $(C, D)$ ha soluzione PCP.}

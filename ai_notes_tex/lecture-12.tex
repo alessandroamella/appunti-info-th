@@ -60,12 +60,12 @@
 \section{Linguaggio Universale (LU)}
 
 Introduciamo il Linguaggio Universale.
-\begin{definition}[Linguaggio Universale (LU)]
+\begin{definition}{Linguaggio Universale (LU)}{linguaggio-universal}
 Il linguaggio universale $LU$ è l'insieme delle coppie $\langle M, w \rangle$, dove $M$ è una Macchina di Turing e $w$ è una stringa, tali che $M$ accetta $w$. Quest'ultimo implica che $M$ si arresti in uno stato accettante su $w$.
 \[ LU = \{ \langle M, w \rangle \mid M \Vdash w \} \]
 \end{definition}
 
-\begin{theorem}
+\begin{theorem}{}{{ theorem-lecture-12-1 }}
 Il linguaggio universale $LU$ è ricorsivamente enumerabile (ovvero, $LU \in RE$).
 \end{theorem}
 \begin{proof}
@@ -82,7 +82,7 @@ Poiché la UTM accetta tutte e sole le istanze di $LU$, il linguaggio $LU$ è ri
 
 Ora, la domanda cruciale: $LU \in R$? Intuitivamente, se $M$ va in loop su $w$, la UTM non si arresterà per dare una risposta "no". Questo suggerisce che $LU$ non sia decidibile.
 
-\begin{theorem}
+\begin{theorem}{}{{ theorem-lecture-12-2 }}
 Il linguaggio universale $LU$ non è ricorsivo (ovvero, $LU \notin R$).
 \end{theorem}
 \begin{proof}
@@ -127,12 +127,12 @@ L'assunzione iniziale ($LU \in R$) deve essere falsa.
 
 \subsection{Il Complemento del Linguaggio di Diagonalizzazione ($\overline{L_D}$)}
 Consideriamo ora il complemento di $L_D$:
-\begin{definition}[Complemento del Linguaggio di Diagonalizzazione ($\overline{L_D}$)]
+\begin{definition}{Complemento del Linguaggio di Diagonalizzazione ($\overline{L_D}$)}{complemento-del-ling}
 Il complemento del linguaggio diagonale $\overline{L_D}$ è l'insieme delle codifiche di Macchine di Turing $M_i$ tali che $M_i$ accetta la propria codifica $\langle M_i \rangle$.
 \[ \overline{L_D} = \{ \langle M_i \rangle \mid M_i \Vdash \langle M_i \rangle \} \]
 \end{definition}
 
-\begin{theorem}
+\begin{theorem}{}{{ theorem-lecture-12-3 }}
 Il complemento del linguaggio diagonale, $\overline{L_D}$, è ricorsivamente enumerabile (ovvero, $\overline{L_D} \in RE$).
 \end{theorem}
 \begin{proof}
@@ -156,7 +156,7 @@ Per dimostrare che $\overline{L_D} \in RE$, dobbiamo costruire una Macchina di T
 Poiché $M_{\overline{L_D}}$ accetta esattamente le stringhe che appartengono a $\overline{L_D}$, si conclude che $\overline{L_D} \in RE$.
 \end{proof}
 
-\begin{proposition}
+\begin{proposition}{}{{ proposition-lecture-12-1 }}
 Il linguaggio $\overline{L_D}$ non è ricorsivo (ovvero, $\overline{L_D} \notin R$).
 \end{proposition}
 \begin{proof}
@@ -165,13 +165,13 @@ Se per assurdo $\overline{L_D}$ fosse in $R$, allora per la proprietà che $R$ �
 
 \section{Problema dell'Arresto (HALT)}
 Introduciamo il famoso Problema dell'Arresto.
-\begin{definition}[Problema dell'Arresto (HALT)]
+\begin{definition}{Problema dell'Arresto (HALT)}{problema-dellarresto}
 Il linguaggio $HALT$ è l'insieme delle coppie $\langle M, w \rangle$, dove $M$ è una Macchina di Turing e $w$ è una stringa, tali che $M$ si arresta su $w$ (indipendentemente dal fatto che accetti o rifiuti).
 \[ HALT = \{ \langle M, w \rangle \mid M \text{ si arresta su } w \} \]
 \end{definition}
 La differenza con $LU$ è sottile ma cruciale: $LU$ richiede l'accettazione, $HALT$ richiede solo l'arresto.
 
-\begin{theorem}
+\begin{theorem}{}{{ theorem-lecture-12-4 }}
 Il linguaggio dell'arresto $HALT$ è ricorsivamente enumerabile (ovvero, $HALT \in RE$).
 \end{theorem}
 \begin{proof}
@@ -194,7 +194,7 @@ Per dimostrare che $HALT \in RE$, dobbiamo costruire una Macchina di Turing $M_{
 Poiché $M_{HALT}$ accetta esattamente le istanze di $HALT$, si conclude che $HALT \in RE$.
 \end{proof}
 
-\begin{theorem}
+\begin{theorem}{}{{ theorem-lecture-12-5 }}
 Il linguaggio dell'arresto $HALT$ non è ricorsivo (ovvero, $HALT \notin R$).
 \end{theorem}
 \begin{proof}
@@ -229,7 +229,7 @@ L'assunzione iniziale ($HALT \in R$) deve essere falsa.
 \textbf{Conclusione:} $HALT \notin R$.
 \end{proof}
 
-\begin{proposition}
+\begin{proposition}{}{{ proposition-lecture-12-2 }}
 Il complemento di $HALT$, $\overline{HALT}$, non appartiene a $RE$.
 \end{proposition}
 \begin{proof}
@@ -238,12 +238,12 @@ Sappiamo che $HALT \in RE$ ma $HALT \notin R$. Se per assurdo il suo complemento
 
 \section{Problema dell'Arresto su Stringa Vuota (HALT$_\epsilon$)}
 Questa è una variante specifica del problema dell'arresto.
-\begin{definition}[Problema dell'Arresto su Stringa Vuota (HALT$_\epsilon$)]
+\begin{definition}{Problema dell'Arresto su Stringa Vuota (HALT$_\epsilon$)}{problema-dellarresto}
 Il linguaggio $HALT_\epsilon$ è l'insieme delle codifiche di Macchine di Turing $M$ tali che $M$ si arresta quando le viene data in input la stringa vuota $\epsilon$.
 \[ HALT_\epsilon = \{ \langle M \rangle \mid M \text{ si arresta su } \epsilon \} \]
 \end{definition}
 
-\begin{theorem}
+\begin{theorem}{}{{ theorem-lecture-12-6 }}
 Il linguaggio dell'arresto su stringa vuota, $HALT_\epsilon$, è ricorsivamente enumerabile (ovvero, $HALT_\epsilon \in RE$).
 \end{theorem}
 \begin{proof}
@@ -259,7 +259,7 @@ Per dimostrare che $HALT_\epsilon \in RE$, dobbiamo costruire una Macchina di Tu
 Poiché $M_{HALT_\epsilon}$ accetta esattamente le istanze di $HALT_\epsilon$, si conclude che $HALT_\epsilon \in RE$.
 \end{proof}
 
-\begin{theorem}
+\begin{theorem}{}{{ theorem-lecture-12-7 }}
 Il linguaggio dell'arresto su stringa vuota, $HALT_\epsilon$, non è ricorsivo (ovvero, $HALT_\epsilon \notin R$).
 \end{theorem}
 \begin{proof}

@@ -65,7 +65,7 @@
 
 \subsection{Definizione Formale}
 
-\begin{definition}[Macchina di Turing Multinastro]
+\begin{definition}{Macchina di Turing Multinastro}{macchina-di-turing-m}
 Una macchina di Turing multinastro è definita come una tupla $(Q, \Sigma, \Gamma, \delta, q_0, q_{acc}, q_{rej})$, dove:
 \begin{itemize}
     \item $Q$ è un insieme finito di stati.
@@ -98,7 +98,7 @@ Illustriamo il funzionamento delle TM multinastro attraverso esempi pratici di r
 
 \subsection{Linguaggio $L_1$}
 Il linguaggio $L_1 = \{A\#B\#AB \mid A,B \in \{0,1\}^+\}$ è l'insieme di tutte le stringhe composte da tre parti $A$, $B$ e $AB$ (concatenazione di $A$ e $B$), separate da simboli \texttt{\#}. Le stringhe $A$ e $B$ sono composte da caratteri $0$ o $1$ e devono avere lunghezza di almeno 1.
-\begin{example}
+\begin{example}{}{{ example-lecture-07-1 }}
 Esempi di stringhe in $L_1$: $0\texttt{\#}1\texttt{\#}01$, $01\texttt{\#}0\texttt{\#}010$.
 Esempi di stringhe non in $L_1$: $0\texttt{\#}1\texttt{\#}10$ (AB sbagliato), $0\texttt{\#}\texttt{\#}0$ (B vuoto), $\texttt{\#}1\texttt{\#}1$ (A vuoto).
 \end{example}
@@ -235,7 +235,7 @@ Utilizziamo 3 nastri.
 
 \subsection{Linguaggio $L_3$}
 Il linguaggio $L_3 = \{W\#W\#W \mid W \in \{0,1\}^*\}$ consiste in stringhe $W\#W\#W$, dove $W$ è una stringa (anche vuota) di $0$ o $1$. Le tre occorrenze di $W$ devono essere identiche.
-\begin{example}
+\begin{example}{}{{ example-lecture-07-2 }}
 Esempi: $01\#01\#01$, $\#\#$ (per $W=\epsilon$).
 \end{example}
 
@@ -283,7 +283,7 @@ Dopo aver copiato la prima $W$, le testine di Nastro 2 e 3 vengono riavvolte. Su
 
 \subsection{Linguaggio $L_4$}
 Il linguaggio $L_4 = \{A\#B \mid A,B \in \{a,b\}^*, A \subseteq B \}$ è l'insieme di stringhe $A\#B$ dove $A$ e $B$ sono stringhe sull'alfabeto $\{a,b\}$, e $A$ è una sottostringa di $B$. La stringa vuota ($\epsilon$) è una sottostringa di ogni stringa.
-\begin{example}
+\begin{example}{}{{ example-lecture-07-3 }}
 Esempi: $a\#bab$, $ab\#ababa$, $\#ab$ (A è vuota).
 Esempi non in $L_4$: $ab\#ba$, $a\#b$.
 \end{example}
@@ -349,7 +349,7 @@ La strategia consiste nel provare a far corrispondere la stringa $A$ (copiata su
 
 \subsection{Linguaggio $L_5$}
 Il linguaggio $L_5 = \{WW \mid W \in \{0,1\}^+\}$ è l'insieme di stringhe che sono la concatenazione di una stringa $W$ con sé stessa, dove $W$ è non vuota e composta da $0$ o $1$.
-\begin{example}
+\begin{example}{}{{ example-lecture-07-4 }}
 Esempi: $00$, $0101$, $1111$.
 Esempi non in $L_5$: $0110$ (non $WW$), $0$ (lunghezza dispari), $\epsilon$ (W non vuota).
 \end{example}

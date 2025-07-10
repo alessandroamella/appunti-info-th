@@ -79,18 +79,18 @@ Un certificato deve possedere due proprietà fondamentali:
 
 Sia $\Sigma^*$ l'insieme di tutte le stringhe sull'alfabeto $\Sigma$. Una \textbf{relazione binaria} $R$ su $\Sigma^*$ è semplicemente un sottoinsieme del prodotto cartesiano $\Sigma^* \times \Sigma^*$. Ovvero, $R$ è un insieme di coppie $(x, y)$ di stringhe.
 
-\begin{definition}[Relazione Polinomialmente Bilanciata]
+\begin{definition}{Relazione Polinomialmente Bilanciata}{relazione-polinomial}
 Una relazione binaria $R \subseteq \Sigma^* \times \Sigma^*$ si dice \textbf{polinomialmente bilanciata} se esiste una costante $c > 0$ tale che per ogni $(x, y) \in R$, la lunghezza di $y$ è limitata da un polinomio della lunghezza di $x$:
 \[ |y| \le |x|^c \]
 Questa proprietà assicura che il "certificato" $y$ (la seconda componente della coppia) non sia eccessivamente lungo rispetto all'istanza $x$ (la prima componente).
 \end{definition}
 
-\begin{definition}[Relazione Polinomialmente Decidibile]
+\begin{definition}{Relazione Polinomialmente Decidibile}{relazione-polinomial}
 Una relazione binaria $R \subseteq \Sigma^* \times \Sigma^*$ si dice \textbf{polinomialmente decidibile} se esiste una Macchina di Turing deterministica che, su input $(x, y)$ (codificato opportunamente come una singola stringa), decide in tempo polinomiale se $(x, y) \in R$ oppure no.
 Questa proprietà assicura che la "verifica" del certificato sia efficiente.
 \end{definition}
 
-\begin{theorem}[Caratterizzazione di NP]
+\begin{theorem}{Caratterizzazione di NP}{caratterizzazione-di}
 Un linguaggio $L$ appartiene alla classe NP se e solo se esiste una relazione binaria $R_L \subseteq \Sigma^* \times \Sigma^*$ che è sia \textbf{polinomialmente bilanciata} che \textbf{polinomialmente decidibile}, tale che:
 \[ L = \{x \in \Sigma^* \mid \exists y \in \Sigma^* \text{ tale che } (x, y) \in R_L \} \]
 In altre parole, un linguaggio $L$ è in NP se le sue istanze "sì" sono esattamente quelle $x$ per cui esiste un "certificato" $y$ (cioè la seconda componente della coppia $(x, y)$ nella relazione $R_L$) che è conciso e verificabile deterministicamente in tempo polinomiale.
@@ -150,11 +150,11 @@ La domanda P vs NP si riduce quindi a chiedersi se ogni problema la cui soluzion
 \section{Problema della Colorabilità dei Grafi}
 Il problema della colorabilità dei grafi è un altro esempio classico di problema NP-completo.
 
-\begin{definition}[Colorazione di un Grafo]
+\begin{definition}{Colorazione di un Grafo}{colorazione-di-un-gr}
 Una \textbf{colorazione} di un grafo $G=(V, E)$ è una funzione $c: V \to \{1, \dots, k\}$ (dove $k$ è il numero di colori) tale che per ogni arco $(u, v) \in E$, si ha $c(u) \ne c(v)$.
 \end{definition}
 
-\begin{definition}[Problema della Colorabilità (GRAPH COLORING)]
+\begin{definition}{Problema della Colorabilità (GRAPH COLORING)}{problema-della-color}
 Il problema della \textbf{Colorabilità dei Grafi} prende come input una coppia $(G, k)$, dove $G$ è un grafo e $k$ è un intero.
 La domanda è: "È possibile colorare i nodi di $G$ con \emph{al più} $k$ colori tale che nessun nodo adiacente abbia lo stesso colore?"
 \end{definition}

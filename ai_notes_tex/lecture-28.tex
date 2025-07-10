@@ -127,7 +127,7 @@ Discutere la decidibilità del seguente linguaggio: $L_{cambio}$ è l'insieme de
     \item \textbf{Passo 1: È una proprietà semantica?}
     Una proprietà è semantica se, date due macchine $M_1$ e $M_2$ che riconoscono lo stesso linguaggio ($L(M_1) = L(M_2)$), l'appartenenza di $M_1$ alla proprietà implica l'appartenenza di $M_2$ alla proprietà.
     Per dimostrare che $L_{cambio}$ \textbf{non} è una proprietà semantica, forniamo un controesempio:
-    \begin{example}[Controesempio per proprietà semantica]
+    \begin{example}{Controesempio per proprietà semantica}{controesempio-proprieta-semantica}
         Siano $M_1$ e $M_2$ due macchine di Turing.
         \begin{itemize}
             \item \textbf{Macchina $M_1$}:
@@ -189,7 +189,7 @@ Discutere la decidibilità del seguente linguaggio: $L_{cambio}$ è l'insieme de
 \subsubsection{Problema: Transazioni}
 In un sistema di basi di dati, si vuole gestire l'esecuzione di transazioni concorrenti. Si vuole accettare l'esecuzione del maggior numero possibile di transazioni, avendo cura di non accettare contemporaneamente due transazioni che chiedono di scrivere sullo stesso dato.
 
-\begin{definition}[Istanza di Transazioni]
+\begin{definition}{Istanza di Transazioni}{istanza-di-transazio}
 Un'istanza $I_{TD}$ è una quadrupla $(T, D, A, K)$, dove:
 \begin{itemize}
     \item $T = \{t_1, \dots, t_m\}$ è l'insieme delle transazioni.
@@ -226,7 +226,7 @@ Per dimostrare che il problema delle Transazioni è in NP, dobbiamo mostrare che
 
 \textbf{Passo 2: NP-Hardness (Riduzione da Independent Set)}
 Dobbiamo mostrare una riduzione polinomiale da Independent Set (IS) al problema delle Transazioni.
-\begin{definition}[Independent Set (IS)]
+\begin{definition}{Independent Set (IS)}{independent-set-is}
 Un'istanza di IS è una coppia $(G, k)$, dove $G=(V, E)$ è un grafo non orientato e $k$ è un intero. L'istanza è \textbf{SÌ} se esiste un sottoinsieme $V' \subseteq V$ di nodi tale che $|V'| \ge k$ e nessun paio di nodi in $V'$ sono collegati da un arco (cioè, $V'$ è un insieme indipendente).
 \end{definition}
 

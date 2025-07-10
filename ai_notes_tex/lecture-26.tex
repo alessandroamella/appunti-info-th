@@ -46,27 +46,27 @@
 \section{Introduzione: Ripasso e Problemi Difficili}
 
 Ricapitoliamo il problema del \textbf{Vertex Cover (VC)}.
-\begin{definition}[Vertex Cover]
+\begin{definition}{Vertex Cover}{vertex-cover}
 Dato un grafo $G=(V,E)$, un Vertex Cover $VC$ è un sottoinsieme di vertici $V' \subseteq V$ tale che per ogni arco $(u,v) \in E$, almeno uno tra $u$ e $v$ appartiene a $V'$.
 \end{definition}
 
 Il problema decisionale associato, che denotiamo $VC$, è:
-\begin{definition}[Problema Decisionale VC]
+\begin{definition}{Problema Decisionale VC}{problema-decisionale}
 $VC = \{ \langle G, k \rangle \mid G \text{ è un grafo e ammette un Vertex Cover di taglia al più } k \}$.
 \end{definition}
 Il problema $VC$ è \textbf{NP-completo}. Questo significa che un'istanza $\langle G,k \rangle$ appartiene a $VC$ se e solo se esiste un certificato conciso (un $V'$ di taglia $\le k$) verificabile in tempo polinomiale.
 
 \subsection{Richiamo sulle Classi NP e Co-NP}
-\begin{definition}[NP]
+\begin{definition}{NP}{np}
 La classe NP (Non-deterministic Polynomial time) contiene i linguaggi per cui le istanze "sì" hanno un certificato conciso e verificabile in tempo polinomiale.
 \end{definition}
-\begin{definition}[Co-NP]
+\begin{definition}{Co-NP}{conp}
 La classe Co-NP contiene i linguaggi $L$ tali che il loro complemento $\overline{L}$ appartiene a NP. Intuitivamente, per i problemi in Co-NP, le istanze "no" hanno un certificato conciso e verificabile in tempo polinomiale.
 \end{definition}
 
 \subsection{Il Problema Min-Cover}
 Introduciamo un problema decisionale leggermente diverso: \textbf{Min-Cover}.
-\begin{definition}[Min-Cover]
+\begin{definition}{Min-Cover}{mincover}
 $Min-Cover = \{ \langle G, k \rangle \mid G \text{ è un grafo e il Vertex Cover di taglia minima ha taglia esattamente } k \}$.
 \end{definition}
 A differenza di $VC$, $Min-Cover$ richiede che la taglia sia \emph{esattamente} $k$ e che sia la taglia \emph{minima}.
@@ -98,7 +98,7 @@ Questo algoritmo deterministico in tempo polinomiale necessita di un "aiuto" est
 \section{Macchine ad Oracolo}
 Per formalizzare il concetto di "aiuto" o "subroutine esterna", introduciamo il modello delle \textbf{macchine ad oracolo}.
 
-\begin{definition}[Macchina ad Oracolo]
+\begin{definition}{Macchina ad Oracolo}{macchina-ad-oracolo}
 Una macchina ad oracolo $M^L$ è una Macchina di Turing deterministica o non deterministica estesa con i seguenti componenti:
 \begin{itemize}
     \item \textbf{Oracle Tape (Nastro dell'Oracolo):} Un nastro di sola scrittura utilizzato per formulare le query all'oracolo.
@@ -111,10 +111,10 @@ La notazione $M^L$ indica che la macchina $M$ ha accesso a un oracolo per il lin
 
 \section{Classi di Complessità con Oracolo}
 Le macchine ad oracolo permettono di definire nuove classi di complessità.
-\begin{definition}[$P^C$]
+\begin{definition}{$P^C$}{definition-lecture-26-1}
 $P^C = \{ L \mid L \text{ può essere deciso in tempo polinomiale da una macchina ad oracolo deterministica } M^{\text{L'}} \text{ dove } L' \in C \}$.
 \end{definition}
-\begin{definition}[$NP^C$]
+\begin{definition}{$NP^C$}{definition-lecture-26-2}
 $NP^C = \{ L \mid L \text{ può essere deciso in tempo polinomiale da una macchina ad oracolo non deterministica } M^{\text{L'}} \text{ dove } L' \in C \}$.
 \end{definition}
 
@@ -124,11 +124,11 @@ Il problema $VC$ è in NP. L'algoritmo \texttt{solve\_MinCover} è deterministic
 Quindi, $Min-Cover \in P^{NP}$.
 
 \subsection{Relazioni tra le Classi con Oracolo}
-\begin{proposition}[$NP \subseteq P^{NP}$]
+\begin{proposition}{$NP \subseteq P^{NP}$}{proposition-lecture-26-1}
 Sia $L \in NP$. Per dimostrare che $L \in P^{NP}$, costruiamo una macchina $M$ che utilizza un oracolo per $L$. $M$ prende l'input $x$, lo scrive sul nastro dell'oracolo, effettua una query. Se l'oracolo risponde "sì", $M$ accetta; altrimenti, $M$ rifiuta. Questa macchina è deterministica e opera in tempo polinomiale (solo 1 query + tempo per copiare input). Quindi, $L \in P^{NP}$.
 \end{proposition}
 
-\begin{proposition}[$CoNP \subseteq P^{NP}$]
+\begin{proposition}{$CoNP \subseteq P^{NP}$}{proposition-lecture-26-2}
 Sia $L \in CoNP$. Ciò implica che $\overline{L} \in NP$. Costruiamo una macchina $M$ che utilizza un oracolo per $\overline{L}$. $M$ prende l'input $x$, lo scrive sul nastro dell'oracolo, effettua una query. Se l'oracolo per $\overline{L}$ risponde "sì" (cioè $x \in \overline{L}$), $M$ rifiuta; altrimenti (cioè $x \notin \overline{L}$, quindi $x \in L$), $M$ accetta. Questa macchina è deterministica e opera in tempo polinomiale. Quindi, $L \in P^{NP}$.
 \end{proposition}
 
@@ -160,7 +160,7 @@ Sia $L \in CoNP$. Ciò implica che $\overline{L} \in NP$. Costruiamo una macchin
 La nozione di classi ad oracolo può essere generalizzata, definendo livelli ricorsivamente. Questo porta alla \textbf{Gerarchia Polinomiale}.
 La gerarchia polinomiale è un insieme di classi di complessità denotate da $\Sigma_i^P$, $\Pi_i^P$, e $\Delta_i^P$ per $i \ge 0$.
 
-\begin{definition}[Gerarchia Polinomiale]
+\begin{definition}{Gerarchia Polinomiale}{gerarchia-polinomial}
 Le classi della Gerarchia Polinomiale sono definite come segue:
 \begin{itemize}
     \item \textbf{Livello 0:}
@@ -185,7 +185,7 @@ Le classi della Gerarchia Polinomiale sono definite come segue:
 \end{itemize}
 
 \subsection{Relazioni di Inclusione nella Gerarchia Polinomiale}
-\begin{proposition}[Inclusioni Fondamentali]
+\begin{proposition}{Inclusioni Fondamentali}{inclusioni-fondament}
 Per ogni $i \ge 0$:
 \begin{enumerate}
     \item $\Sigma_i^P \subseteq \Delta_{i+1}^P$: Ogni linguaggio in $\Sigma_i^P$ può essere deciso da una macchina deterministica in tempo polinomiale che fa una sola query a un oracolo per un linguaggio in $\Sigma_i^P$ (la query è l'input stesso).
@@ -258,7 +258,7 @@ La gerarchia polinomiale contiene infiniti livelli, e la questione se questa ger
 \subsection{Problemi Completi nella Gerarchia Polinomiale}
 Le formule booleane quantificate (QBF) sono problemi naturali che si collocano ai vari livelli della gerarchia.
 
-\begin{definition}[SAT Quantificato]
+\begin{definition}{SAT Quantificato}{sat-quantificato}
 \begin{itemize}
     \item \textbf{Existential SAT ($SAT_{\exists}$):}
     $\{ \langle \Phi \rangle \mid \exists X_1, \dots, X_n \text{ tale che } \Phi(X_1, \dots, X_n) \text{ è vera} \}$
@@ -277,13 +277,13 @@ L'alternanza dei quantificatori ("esiste", "per ogni", "esiste", ...) cattura la
 \section{Problemi Funzionali e Classi Funzionali}
 Finora abbiamo parlato di problemi decisionali (risposta sì/no). Ora introduciamo i problemi funzionali, che richiedono il calcolo di un valore.
 
-\begin{definition}[Functional Min-Cover (FMin-Cover)]
+\begin{definition}{Functional Min-Cover (FMin-Cover)}{functional-mincover-}
 $FMin-Cover(G) = \min \{ |V'| \mid V' \subseteq V \text{ è un Vertex Cover di } G \}$.
 \end{definition}
 Questo problema richiede di calcolare la taglia del Vertex Cover minimo, non solo di decidere se esiste un VC di una certa taglia.
 
 \subsection{La Classe FP}
-\begin{definition}[FP (Functional Polynomial Time)]
+\begin{definition}{FP (Functional Polynomial Time)}{fp-functional-polyno}
 FP è la classe delle funzioni che possono essere calcolate da trasduttori deterministici in tempo polinomiale. Un trasduttore è una Macchina di Turing con un nastro di output aggiuntivo.
 \end{definition}
 Le riduzioni polinomiali che usiamo spesso sono funzioni che appartengono a FP.

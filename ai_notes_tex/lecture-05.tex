@@ -47,7 +47,7 @@
 
 Ripassiamo brevemente i concetti fondamentali delle Macchine di Turing (TM) introdotti nella lezione precedente.
 
-\begin{definition}[Macchina di Turing]
+\begin{definition}{Macchina di Turing}{macchina-di-turing}
 Una Macchina di Turing è un automa a stati finiti con le seguenti peculiarità:
 \begin{itemize}
     \item Possiede un \textbf{nastro di input infinito} che può essere letto e scritto. A differenza degli automi a stati finiti che possono solo leggere l'input, le TM possono modificare il loro nastro.
@@ -61,7 +61,7 @@ Queste caratteristiche rendono le Macchine di Turing un modello di calcolo unive
 
 È fondamentale distinguere due concetti chiave relativi ai linguaggi che una Macchina di Turing può riconoscere.
 
-\begin{definition}[Macchina che Decide un Linguaggio]
+\begin{definition}{Macchina che Decide un Linguaggio}{macchina-che-decide-}
 Una Macchina di Turing \textbf{decide} un linguaggio $L$ se per ogni stringa $w$ in input:
 \begin{itemize}
     \item Se $w \in L$, la macchina si ferma in uno stato accettante.
@@ -70,7 +70,7 @@ Una Macchina di Turing \textbf{decide} un linguaggio $L$ se per ogni stringa $w$
 In sintesi, una macchina che decide un linguaggio è garantita fermarsi su ogni input, fornendo una risposta "sì" (accettazione) o "no" (rifiuto).
 \end{definition}
 
-\begin{definition}[Macchina che Accetta un Linguaggio]
+\begin{definition}{Macchina che Accetta un Linguaggio}{macchina-che-accetta}
 Una Macchina di Turing \textbf{accetta} un linguaggio $L$ se:
 \begin{itemize}
     \item Per ogni stringa $w \in L$, la macchina si ferma in uno stato accettante.
@@ -90,7 +90,7 @@ Un'altra tecnica importante è \textbf{evitare di cancellare i simboli di input}
 \subsection{Esercizio 1: Linguaggio dei Palindromi}
 Il linguaggio $L = \{ww^R \mid w \in \{0,1\}^*\}$ è l'insieme delle stringhe palindromiche composte da due parti $w$ e $w^R$ concatenate. L'alfabeto è $\{0,1\}$. Esempi: $\varepsilon$, $00$, $11$, $0110$, $1001$.
 
-\begin{example}[Strategia]
+\begin{example}{Strategia}{strategia}
 La strategia consiste nel confrontare il primo carattere di $w$ con l'ultimo carattere di $w^R$, il secondo con il penultimo, e così via, fino a quando tutti i caratteri sono stati confrontati.
 \begin{enumerate}
     \item Partire dal primo simbolo non marcato del nastro.
@@ -167,7 +167,7 @@ Questa TM decide il linguaggio, poiché su ogni input valido o meno, si fermerà
 \subsection{Esercizio 2}
 Il linguaggio $L = \{a^n b^m \mid m > n > 0\}$ è l'insieme di stringhe con sequenze di $a$ seguite da sequenze di $b$, dove il numero di $b$ è strettamente maggiore del numero di $a$, ed entrambi sono maggiori di $0$. Esempio: $aab^{3}$, $ab^{2}$.
 
-\begin{example}[Strategia]
+\begin{example}{Strategia}{strategia}
 La strategia prevede di marcare un'$a$ e poi la prima $b$ corrispondente, ripetendo il processo. Alla fine, si verifica che tutte le $a$ siano state marcate e che ci siano $b$ non marcate rimaste.
 \begin{enumerate}
     \item Marcare la prima $a$ non marcata (es. con $X$).
@@ -220,7 +220,7 @@ Questa TM decide il linguaggio, rifiutando stringhe che non soddisfano le condiz
 \subsection{Esercizio 3}
 Il linguaggio $L = \{a^n b^m \mid n > 0, m = 2n\}$ è l'insieme di stringhe con sequenze di $a$ seguite da sequenze di $b$, dove il numero di $b$ è il doppio del numero di $a$, ed $n$ è maggiore di $0$. Esempio: $aab^{4}$, $ab^{2}$.
 
-\begin{example}[Strategia]
+\begin{example}{Strategia}{strategia}
 Molto simile al precedente, ma per ogni $a$ marcata, si devono marcare due $b$.
 \begin{enumerate}
     \item Marcare la prima $a$ non marcata (con $X$).
@@ -270,7 +270,7 @@ Condizioni di rifiuto implicite: se non si trovano due $b$ per ogni $a$, o se l'
 \subsection{Esercizio 4}
 Il linguaggio $L = \{w\#w \mid w \in \{a,b\}^+\}$ è l'insieme di stringhe composte da una sequenza $w$, seguita da un separatore $\#$, e poi dalla stessa sequenza $w$. $w$ deve avere almeno un simbolo. Esempi: $a\#a$, $ab\#ab$, $baba\#baba$.
 
-\begin{example}[Strategia]
+\begin{example}{Strategia}{strategia}
 La strategia si basa sul confronto carattere per carattere delle due metà della stringa, usando il $\#$ come punto di riferimento.
 \begin{enumerate}
     \item Marcare il primo simbolo non marcato della prima $w$ (es. $a$ o $b$ con $X$).
@@ -347,7 +347,7 @@ Questa TM decide il linguaggio, rifiutando stringhe come $a\#b$ o $aa\#a$ o $a\#
 \subsection{Esercizio 5}
 Il linguaggio $L = \{a^n b^n c^n \mid n > 0\}$ è l'insieme di stringhe con un numero uguale di $a$, $b$, e $c$, in sequenza $a^*b^*c^*$. $n$ deve essere maggiore di $0$. Esempio: $abc$, $aabbcc$.
 
-\begin{example}[Strategia]
+\begin{example}{Strategia}{strategia}
 La strategia è marcare un'$a$, poi una $b$, poi una $c$, e ripetere fino a quando tutti i caratteri sono stati marcati.
 \begin{enumerate}
     \item Marcare la prima $a$ non marcata (con $X$).

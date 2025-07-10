@@ -57,7 +57,7 @@ Attualmente, sappiamo simulare una Macchina di Turing non deterministica con una
 
 Il concetto di riduzione che abbiamo già visto viene specificato per il contesto delle classi di complessità.
 
-\begin{definition}[Riduzione Polinomiale]
+\begin{definition}{Riduzione Polinomiale}{riduzione-polinomial}
 Siano $A$ e $B$ due linguaggi. Una \textbf{riduzione polinomiale} da $A$ a $B$ è una funzione $f: \Sigma^* \to \Sigma^*$ tale che:
 \begin{enumerate}
     \item $f$ è calcolabile da una Macchina di Turing deterministica in tempo polinomiale.
@@ -71,12 +71,12 @@ Il vincolo cruciale è che la trasformazione $f$ (implementata da un trasduttore
 
 Questi concetti sono fondamentali per classificare la difficoltà dei problemi all'interno e al di fuori di NP.
 
-\begin{definition}[NP-Hardness]
+\begin{definition}{NP-Hardness}{nphardness}
 Un linguaggio $L$ è \textbf{NP-hard} se per ogni linguaggio $L' \in \mathbf{NP}$, esiste una riduzione polinomiale da $L'$ a $L$ ($L' \le_p L$).
 \end{definition}
 Intuitivamente, un linguaggio NP-hard è \emph{almeno altrettanto difficile} quanto qualsiasi problema in NP.
 
-\begin{definition}[NP-Completezza]
+\begin{definition}{NP-Completezza}{npcompletezza}
 Un linguaggio $L$ è \textbf{NP-complete} se:
 \begin{enumerate}
     \item $L \in \mathbf{NP}$
@@ -94,7 +94,7 @@ La distinzione è cruciale:
 
 \subsection{Teorema: Relazione tra $L \in \text{NP-Complete}$ e P vs NP}
 
-\begin{theorem}
+\begin{theorem}{}{{ theorem-lecture-18-1 }}
 Sia $L$ un linguaggio NP-complete. Allora, $L \in \mathbf{P}$ se e solo se $\mathbf{P} = \mathbf{NP}$.
 \end{theorem}
 
@@ -136,7 +136,7 @@ Questo teorema implica che per risolvere il problema P vs NP, è sufficiente tro
 
 \subsection{Transitivit\`a delle Riduzioni Polinomiali}
 
-\begin{theorem}
+\begin{theorem}{}{{ theorem-lecture-18-2 }}
 Siano $A, B, C$ tre linguaggi. Se $A \le_p B$ e $B \le_p C$, allora $A \le_p C$.
 \end{theorem}
 
@@ -161,7 +161,7 @@ Quindi, $h$ è una riduzione polinomiale da $A$ a $C$, e $A \le_p C$.
 
 \subsection{Utilizzo della Transitivit\`a per Dimostrare NP-Hardness}
 
-\begin{theorem}
+\begin{theorem}{}{{ theorem-lecture-18-3 }}
 Sia $A$ un linguaggio NP-hard. Se $A \le_p B$, allora $B$ è NP-hard.
 \end{theorem}
 
@@ -214,15 +214,15 @@ Il problema \textbf{SAT} (Boolean Satisfiability Problem) è l'insieme delle for
 
 \subsection{Definizione di 3-SAT}
 
-\begin{definition}[Formula 3-CNF]
+\begin{definition}{Formula 3-CNF}{formula-3cnf}
 Una formula booleana è in \textbf{3-CNF} se è in CNF e ogni sua clausola contiene \emph{al più} tre letterali.
 \end{definition}
 
-\begin{definition}[Problema 3-SAT]
+\begin{definition}{Problema 3-SAT}{problema-3sat}
 Il problema \textbf{3-SAT} è l'insieme di tutte le formule booleane in 3-CNF che sono soddisfacibili.
 \end{definition}
 
-\begin{example}
+\begin{example}{}{{ example-lecture-18-1 }}
 Una formula in 3-CNF potrebbe essere:
 $F = (x_1 \lor x_2 \lor \neg x_3) \land (\neg x_2 \lor x_4) \land (x_3 \lor x_5)$
 Ogni clausola ha al più 3 letterali (la seconda ne ha 2, le altre 3).
@@ -326,7 +326,7 @@ Poiché 3-SAT $\in \mathbf{NP}$ e 3-SAT è NP-hard, allora 3-SAT è NP-complete.
 Si può dimostrare che il problema \textbf{2-SAT} (formule in CNF dove ogni clausola ha esattamente due letterali) appartiene alla classe \textbf{P}. Nonostante la somiglianza con 3-SAT, 2-SAT è un problema molto più semplice, risolvibile in tempo polinomiale. Questo sottolinea come anche piccole restrizioni sulla struttura del problema possano avere un impatto enorme sulla sua complessità.
 
 \subsection{Esercizio: EXACT 3-SAT}
-\begin{definition}[Problema EXACT 3-SAT]
+\begin{definition}{Problema EXACT 3-SAT}{problema-exact-3sat}
 Il problema \textbf{EXACT 3-SAT} è l'insieme di tutte le formule booleane in CNF in cui ogni clausola contiene \emph{esattamente} tre letterali, e la formula è soddisfacibile.
 \end{definition}
 

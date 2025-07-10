@@ -97,7 +97,7 @@ function exists-path(G, S, T, K):
     return FALSE
 \end{minted}
 
-\begin{example}
+\begin{example}{}{{ example-lecture-25-1 }}
 Consideriamo il seguente grafo orientato:
 \begin{center}
 \begin{tikzpicture}[
@@ -147,7 +147,7 @@ Poiché in informatica teorica $N$ (numero di nodi) è solitamente uguale o prop
 \section{Il Teorema di Savitch}
 Il Teorema di Savitch è uno dei risultati più importanti nella teoria della complessità spaziale, poiché stabilisce una relazione sorprendente tra le classi di complessità spaziali deterministiche e non deterministiche.
 
-\begin{theorem}[Teorema di Savitch]
+\begin{theorem}{Teorema di Savitch}{teorema-di-savitch}
 Sia $S(n)$ una funzione di spazio, tale che $S(n) \geq \Omega(\log n)$. Allora,
 \[ \mathbf{NSPACE}(S(n)) \subseteq \mathbf{DSPACE}(S(n)^2) \]
 \end{theorem}
@@ -191,12 +191,12 @@ Questo dimostra che qualsiasi linguaggio decidibile in spazio non deterministico
 \section{Classi di Complessità Polinomiale Spaziale}
 Basandosi sul Teorema di Savitch, possiamo definire le classi di complessità polinomiale in spazio.
 
-\begin{definition}[Classe \textbf{PSPACE}]
+\begin{definition}{Classe \textbf{PSPACE}}{classe}
 La classe \textbf{PSPACE} (Polynomial Space) è l'insieme di tutti i linguaggi che possono essere decisi da una macchina di Turing deterministica che utilizza una quantità di spazio polinomiale rispetto alla dimensione dell'input.
 \[ \mathbf{PSPACE} = \bigcup_{c \ge 1} \mathbf{DSPACE}(n^c) \]
 \end{definition}
 
-\begin{definition}[Classe \textbf{NPSPACE}]
+\begin{definition}{Classe \textbf{NPSPACE}}{classe}
 La classe \textbf{NPSPACE} (Non-deterministic Polynomial Space) è l'insieme di tutti i linguaggi che possono essere decisi da una macchina di Turing non deterministica che utilizza una quantità di spazio polinomiale rispetto alla dimensione dell'input.
 \[ \mathbf{NPSPACE} = \bigcup_{c \ge 1} \mathbf{NSPACE}(n^c) \]
 \end{definition}

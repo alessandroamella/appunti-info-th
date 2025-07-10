@@ -49,7 +49,7 @@ Questa lezione conclude l'introduzione esplicita alla classe NP, prima di esplor
 
 \subsection{Definizioni Fondamentali}
 
-\begin{definition}[Problema NP-Completo]
+\begin{definition}{Problema NP-Completo}{problema-npcompleto}
 Un problema di decisione $L$ è NP-completo se:
 \begin{enumerate}
     \item $L \in \text{NP}$ (appartiene alla classe NP).
@@ -57,13 +57,13 @@ Un problema di decisione $L$ è NP-completo se:
 \end{enumerate}
 \end{definition}
 
-\begin{definition}[Problema NP-Hard]
+\begin{definition}{Problema NP-Hard}{problema-nphard}
 Un problema $L$ è NP-hard se ogni problema $L' \in \text{NP}$ è riducibile a $L$ in tempo polinomiale ($L' \le_P L$).
 \end{definition}
 
 È importante sottolineare che le classi P e NP, e i concetti di NP-hard e NP-completo, si applicano esclusivamente ai \textbf{problemi di decisione}.
 
-\begin{example}
+\begin{example}{}{{ example-lecture-21-1 }}
 \textbf{Problema di Somma:}
 \begin{itemize}
     \item \textbf{Problema di calcolo:} "Sommare due numeri". Questo non è un problema di decisione e quindi non rientra nelle classi P o NP.
@@ -75,7 +75,7 @@ Oggi analizzeremo due problemi NP-completi: \emph{Exact Cover} e \emph{Knapsack}
 
 \section{Exact Cover}
 
-\begin{definition}[Exact Cover]
+\begin{definition}{Exact Cover}{exact-cover}
 \textbf{Input:}
 Una coppia $(U, F)$ dove:
 \begin{itemize}
@@ -137,7 +137,7 @@ La famiglia $F_\phi$ contiene diversi tipi di insiemi, progettati per simulare l
     (Questi insiemi sono usati per "raccogliere le briciole", cioè per coprire gli oggetti $l_{j,k}$ che non sono stati coperti dagli insiemi di Tipo 1 o Tipo 2 selezionati per la partizione. Sono usati come elementi di "riserva").
 \end{enumerate}
 
-\begin{example}[Costruzione di $(U_\phi, F_\phi)$]
+\begin{example}{Costruzione di $(U_\phi, F_\phi)$}{costruzione-di}
 Sia $\phi = (x_1 \lor \neg x_2 \lor x_3) \land (\neg x_1 \lor x_2 \lor x_4)$.
 Qui $N=4$ (variabili $x_1, \ldots, x_4$) e $L=2$ (clausole $C_1, C_2$).
 
@@ -180,7 +180,7 @@ Quindi, $U_\phi = \{\text{var}_1, \text{var}_2, \text{var}_3, \text{var}_4, c_1,
 
 \subsubsection{Dimostrazione dell'Equivalenza}
 
-\begin{theorem}
+\begin{theorem}{}{{ theorem-lecture-21-1 }}
 La formula $\phi$ è soddisfacibile se e solo se l'istanza di Exact Cover $(U_\phi, F_\phi)$ ha una partizione.
 \end{theorem}
 \begin{proof}
@@ -241,7 +241,7 @@ Conclusione: Exact Cover è NP-completo.
 
 \subsection{Definizione dell'ottimizzazione e della decisione}
 
-\begin{definition}[Knapsack (Versione Ottimizzazione)]
+\begin{definition}{Knapsack (Versione Ottimizzazione)}{knapsack-versione-ot}
 \textbf{Input:}
 Un insieme di $N$ oggetti, per ognuno dei quali:
 \begin{itemize}
@@ -254,7 +254,7 @@ Una capacità massima $W$ (peso della bisaccia).
 
 La versione di ottimizzazione di Knapsack non è direttamente in NP, poiché NP è una classe di problemi di decisione. Per studiarlo nella teoria della complessità, usiamo la versione di decisione:
 
-\begin{definition}[Knapsack (Versione Decisione)]
+\begin{definition}{Knapsack (Versione Decisione)}{knapsack-versione-de}
 \textbf{Input:}
 Un insieme di $N$ oggetti, per ognuno dei quali:
 \begin{itemize}
@@ -314,7 +314,7 @@ Questa formula interpreta $w_j$ come un numero in base $(M+1)$, dove la $k$-esim
 La capacità della bisaccia $W$ (e la soglia $K$) è definita come il numero la cui rappresentazione in base $(M+1)$ è composta da tutti $1$. Questo significa che ogni elemento dell'universo deve essere coperto esattamente una volta.
 \[ W = K = \sum_{k=1}^N 1 \cdot (M+1)^{N-k} \]
 
-\begin{example}[Knapsack Reduction (Base $M+1$)]
+\begin{example}{Knapsack Reduction (Base $M+1$)}{knapsack-reduction-b}
 Sia $U = \{u_1, u_2, u_3, u_4\}$ ($N=4$) e $F = \{S_1, S_2, S_3\}$ ($M=3$).
 \begin{itemize}
     \item $S_1 = \{u_3, u_4\}$
@@ -337,7 +337,7 @@ In questo esempio, l'istanza di Exact Cover è NO (l'elemento $u_1$ non è coper
 
 \subsubsection{Dimostrazione dell'Equivalenza}
 
-\begin{theorem}
+\begin{theorem}{}{{ theorem-lecture-21-2 }}
 L'istanza di Exact Cover $(U, F)$ ha una partizione se e solo se l'istanza di Knapsack costruita ha una soluzione con peso totale $W$ e valore totale $K$.
 \end{theorem}
 \begin{proof}

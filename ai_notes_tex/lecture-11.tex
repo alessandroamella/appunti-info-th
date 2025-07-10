@@ -82,7 +82,7 @@ Nella lezione precedente abbiamo introdotto le Macchine di Turing Non-Determinis
 
 Le Macchine di Turing (TM) studiate finora sono "specializzate": la loro funzione di transizione è fissata e definisce un unico compito. I computer moderni, al contrario, sono \textbf{programmabili}: possono eseguire programmi diversi. Per colmare questa apparente discrepanza, introduciamo il concetto di \textbf{Macchina di Turing Universale (UTM)}.
 
-\begin{definition}[Macchina di Turing Universale (UTM)]
+\begin{definition}{Macchina di Turing Universale (UTM)}{macchina-di-turing-u}
 Una Macchina di Turing Universale ($M_U$) è una TM speciale il cui programma è fisso, ma è progettata per \textbf{interpretare e simulare il comportamento di qualsiasi altra Macchina di Turing} ($M$) quando le viene fornita una descrizione (codifica) di $M$ e l'input $w$ su cui $M$ dovrebbe operare.
 \end{definition}
 
@@ -119,7 +119,7 @@ La codifica si basa sull'idea di rappresentare ogni indice con un numero corrisp
     \end{itemize}
 \end{enumerate}
 
-\begin{example}[Esempio di codifica]
+\begin{example}{Esempio di codifica}{esempio-di-codifica}
 Codifichiamo la transizione: $\delta(q_3, \blankS) = (q_5, 0, R)$
 \begin{itemize}
     \item $q_3 \rightarrow \textbf{000}$
@@ -134,7 +134,7 @@ La codifica completa di una TM, indicata con $\langle M \rangle$, è la concaten
 \[ \text{Codifica}(\delta_1) \mathbf{11} \text{Codifica}(\delta_2) \mathbf{11} \dots \]
 \end{example}
 
-\begin{remark}
+\begin{remark}{}{{ remark-lecture-11-1 }}
 Non tutte le stringhe binarie corrispondono a una TM valida. Per convenzione, le stringhe mal formate (es. `01110...`) codificano una TM "banale" che rifiuta ogni input (il suo linguaggio è $\emptyset$).
 \end{remark}
 
@@ -340,12 +340,12 @@ Il procedimento è (vedi Figura \ref{fig:diag}):
 \end{enumerate}
 
 Formalmente, la definizione di $L_D$ è:
-\begin{definition}[Linguaggio di Diagonalizzazione $L_D$]
+\begin{definition}{Linguaggio di Diagonalizzazione $L_D$}{linguaggio-di-diagon}
 $L_D = \{ w_i \mid M_i \nVdash w_i \}$.
 In altre parole, $L_D$ contiene le codifiche di macchine ($w_i = \langle M_i \rangle$) che rifiutano (o non terminano su) la propria codifica come input.
 \end{definition}
 
-\begin{example}[Costruzione di $L_D$ con un esempio concreto]
+\begin{example}{Costruzione di $L_D$ con un esempio concreto}{costruzione-di-con-u}
 Per rendere la costruzione più chiara, facciamo un esempio con 4 macchine e 4 stringhe:
 
 \textbf{Stringhe enumerate:}
@@ -390,7 +390,7 @@ Se esistesse una macchina $M_k$ che accetta esattamente $L_D$, dovremmo avere un
 In entrambi i casi, otteniamo una contraddizione!
 \end{example}
 
-\begin{theorem}
+\begin{theorem}{}{{ theorem-lecture-11-1 }}
 Il linguaggio $L_D$ non appartiene alla classe RE (non è ricorsivamente enumerabile).
 \end{theorem}
 
@@ -428,7 +428,7 @@ Ci sono "infinitamente più" linguaggi che algoritmi per riconoscerli. È inevit
 
 Introduciamo due teoremi fondamentali che legano le classi R e RE tramite l'operazione di complemento. Il complemento di un linguaggio $L$, denotato $\overline{L}$, è l'insieme di tutte le stringhe che non sono in $L$ ($\overline{L} = \Sigma^* \setminus L$).
 
-\begin{theorem}[Chiusura di R sotto Complemento]
+\begin{theorem}{Chiusura di R sotto Complemento}{chiusura-di-r-sotto-}
 Se un linguaggio $L$ è in R (è ricorsivo), allora anche il suo complemento $\overline{L}$ è in R.
 \end{theorem}
 \begin{proof}
@@ -443,7 +443,7 @@ $M_{\overline{L}}$ su input $w$:
 Dato che $M_L$ termina sempre, anche $M_{\overline{L}}$ terminerà sempre. Quindi $M_{\overline{L}}$ decide $\overline{L}$, il che significa $\overline{L} \in R$.
 \end{proof}
 
-\begin{theorem}[Condizione per R]
+\begin{theorem}{Condizione per R}{condizione-per-r}
 Un linguaggio $L \in R$ se e solo se sia $L$ che il suo complemento $\overline{L}$ sono in RE.
 \[ L \in R \iff (L \in RE \land \overline{L} \in RE) \]
 \end{theorem}

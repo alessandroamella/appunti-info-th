@@ -61,20 +61,20 @@
 
 Riprendiamo il concetto di macchine oracolo e gerarchia polinomiale, già introdotto per problemi come il Vertex Cover.
 
-\begin{definition}[Funzioni in $\text{FP}^{\text{NP}}$]
+\begin{definition}{Funzioni in $\text{FP}^{\text{NP}}$}{funzioni-in}
 $\text{FP}^{\text{NP}}$ è l'insieme delle funzioni calcolabili da trasduttori deterministici in tempo polinomiale che hanno accesso a un oracolo in $\text{NP}$.
 \end{definition}
 
-\begin{remark}
+\begin{remark}{}{{ remark-lecture-27-1 }}
 Un \textbf{oracolo} è una subroutine che risponde a interrogazioni sull'appartenenza di stringhe a un linguaggio (es. un linguaggio in $\text{NP}$) in un singolo passo di calcolo. Un oracolo può essere molto potente (es. oracolo $\text{NP}$, $\text{NEXP}$).
 \end{remark}
 
 Le macchine oracolo permettono di definire gerarchie di complessità, come la Gerarchia Polinomiale ($\text{PH}$).
-\begin{definition}[$\Sigma_k^P$]
+\begin{definition}{$\Sigma_k^P$}{definition-lecture-27-1}
 $\Sigma_k^P$ è il $k$-esimo livello della Gerarchia Polinomiale. In particolare, $\Sigma_2^P$ è la classe dei linguaggi decidibili da macchine in $\text{NP}$ con accesso a un oracolo in $\text{NP}$.
 \end{definition}
 
-\begin{remark}
+\begin{remark}{}{{ remark-lecture-27-2 }}
 I problemi $\Sigma_k^P$-completi sono intrinsecamente più difficili dei problemi $\text{NP}$-completi. Un problema $\Sigma_2^P$-completo, ad esempio, richiede algoritmi con due livelli di "backtracking" annidati, suggerendo un tempo di esecuzione doppiamente esponenziale su macchine deterministiche (se P $\neq$ NP). Conoscere la classe di complessità di un problema aiuta a progettare algoritmi appropriati e a capire i limiti computazionali.
 \end{remark}
 
@@ -82,20 +82,20 @@ I problemi $\Sigma_k^P$-completi sono intrinsecamente più difficili dei problem
 
 Vediamo il Traveling Salesperson Problem (TSP) sia nella sua versione computazionale (funzionale) che decisionale.
 
-\begin{definition}[Grafo Pesato]
+\begin{definition}{Grafo Pesato}{grafo-pesato}
 Un grafo pesato è una tupla $G = (V, E, \lambda)$, dove $V$ è l'insieme dei vertici, $E$ è l'insieme degli archi (orientati o meno), e $\lambda: E \to \mathbb{N}^+$ è una funzione di pesatura che associa un peso (intero positivo) a ciascun arco.
 \end{definition}
 
-\begin{definition}[Ciclo Hamiltoniano]
+\begin{definition}{Ciclo Hamiltoniano}{ciclo-hamiltoniano}
 Un ciclo Hamiltoniano in un grafo $G=(V, E)$ è un percorso che parte da un vertice, visita tutti gli altri vertici esattamente una volta, e termina nel vertice di partenza. Il peso di un percorso o ciclo è la somma dei pesi degli archi che lo compongono.
 \end{definition}
 
-\begin{definition}[FTSP - Functional Traveling Salesperson Problem]
+\begin{definition}{FTSP - Functional Traveling Salesperson Problem}{ftsp-functional-trav}
 Dato un grafo $G=(V, E, \lambda)$ non orientato e pesato, calcolare il peso del ciclo Hamiltoniano di peso minimo.
 Formalmente, $\text{FTSP}(G) = \min \{ \lambda(\pi) \mid \pi \text{ è un ciclo Hamiltoniano di } G \}$.
 \end{definition}
 
-\begin{definition}[TSP - Decision Traveling Salesperson Problem]
+\begin{definition}{TSP - Decision Traveling Salesperson Problem}{tsp-decision-traveli}
 Dato un grafo $G=(V, E, \lambda)$ non orientato e pesato, e un intero $K$, decidere se esiste un ciclo Hamiltoniano in $G$ di peso al più $K$.
 Le istanze di TSP sono coppie $(G, K)$.
 \end{definition}
@@ -113,7 +113,7 @@ Supponiamo di avere un oracolo per TSP. Vogliamo risolvere FTSP usando chiamate 
     \item Se $G$ non ammette alcun ciclo Hamiltoniano, l'oracolo risponderà sempre "No". Per garantire la terminazione, il valore massimo di $K$ da testare può essere la somma di tutti i pesi degli archi in $G$ (chiamiamo questo valore $S_{total}$). Se l'oracolo risponde "No" anche per $S_{total}$, allora non esiste un ciclo Hamiltoniano.
 \end{enumerate}
 
-\begin{remark}
+\begin{remark}{}{{ remark-lecture-27-3 }}
 Questa procedura non colloca FTSP in $\text{FP}^{\text{NP}}$. Il numero di chiamate all'oracolo è proporzionale a $S_{total}$. Poiché $S_{total}$ può essere esponenziale nella dimensione dell'input (se i pesi sono grandi e rappresentati in binario), il trasduttore impiega un tempo esponenziale per effettuare le chiamate. La complessità è una funzione della taglia dell'input, non del suo valore numerico.
 \end{remark}
 
@@ -137,7 +137,7 @@ Questa procedura è quella corretta per collocare FTSP in $\text{FP}^{\text{NP}}
     \end{itemize}
 \end{enumerate}
 
-\begin{theorem}
+\begin{theorem}{}{{ theorem-lecture-27-1 }}
 $\text{FTSP} \in \text{FP}^{\text{NP}}$.
 \end{theorem}
 \begin{proof}
@@ -152,7 +152,7 @@ Il trasduttore deterministico esegue un numero polinomiale di chiamate all'oraco
 
 Ci chiediamo se $\text{FTSP} \in \text{FP}$, ovvero se può essere risolto da un algoritmo deterministico in tempo polinomiale senza l'ausilio di un oracolo.
 
-\begin{proposition}
+\begin{proposition}{}{{ proposition-lecture-27-1 }}
 Se $\text{FTSP} \in \text{FP}$, allora $\text{TSP} \in \text{P}$.
 \end{proposition}
 \begin{proof}
@@ -176,7 +176,7 @@ Dimostriamo ora che TSP è NP-completo. Per fare ciò, dobbiamo mostrare due cos
 
 \subsection{Membership: TSP $\in$ NP}
 
-\begin{theorem}
+\begin{theorem}{}{{ theorem-lecture-27-2 }}
 $\text{TSP} \in \text{NP}$.
 \end{theorem}
 \begin{proof}
@@ -340,7 +340,7 @@ Il grafo $G_\Phi$ sarà costruito in modo da codificare sia gli assegnamenti di 
 \end{description}
 
 \textbf{Dimostrazione:}
-\begin{theorem}
+\begin{theorem}{}{{ theorem-lecture-27-3 }}
 $\Phi$ è soddisfacibile se e solo se $G_\Phi$ ammette un ciclo Hamiltoniano.
 \end{theorem}
 \begin{proof}
@@ -362,7 +362,7 @@ Questo percorso $\pi$ visita tutti i nodi esattamente una volta (inclusi $S, T$,
 \textbf{($\Leftarrow$) Se $G_\Phi$ ammette un ciclo Hamiltoniano:}
 Sia $\pi$ un ciclo Hamiltoniano in $G_\Phi$. Dobbiamo dimostrare che da $\pi$ si può derivare un assegnamento di verità $\sigma$ che soddisfa $\Phi$.
 
-\begin{lemma}
+\begin{lemma}{}{{ lemma-lecture-27-1 }}
 In un ciclo Hamiltoniano $\pi$ di $G_\Phi$:
 \begin{itemize}
     \item Il percorso attraverso ciascuna sezione di variabile $x_i$ (da $\texttt{start\_xi} a \texttt{end\_xi}$) deve seguire esclusivamente gli archi "verdi" (da $x_{i,j}'$ a $x_{i,j+1}'$) o esclusivamente gli archi "rossi" (da $x_{i,j}''$ a $x_{i,j+1}''$). Non è possibile alternare tra percorsi verdi e rossi all'interno della stessa sezione, altrimenti si lascerebbero nodi non visitati o si violerebbe la proprietà di ciclo.
@@ -455,7 +455,7 @@ Per ogni vertice $v \in V$ in $G$, creiamo tre vertici in $H$: $v_{in}$, $v_{mid
 \end{description}
 
 \textbf{Dimostrazione:}
-\begin{theorem}
+\begin{theorem}{}{{ theorem-lecture-27-4 }}
 $G$ ammette un ciclo Hamiltoniano se e solo se $H$ ammette un ciclo Hamiltoniano.
 \end{theorem}
 \begin{proof}
@@ -492,7 +492,7 @@ Dobbiamo trasformare un grafo non orientato $G=(V, E)$ in un'istanza $(H, K)$ di
 \end{enumerate}
 
 \textbf{Dimostrazione:}
-\begin{theorem}
+\begin{theorem}{}{{ theorem-lecture-27-5 }}
 $G$ ammette un ciclo Hamiltoniano se e solo se $H$ ammette un ciclo Hamiltoniano di peso al più $K$.
 \end{theorem}
 \begin{proof}
@@ -520,7 +520,7 @@ Avendo dimostrato che:
 \end{itemize}
 E sapendo che 3SAT è NP-completo, per la transitività delle riduzioni polinomiali, concludiamo che TSP è NP-completo.
 
-\begin{theorem}
+\begin{theorem}{}{{ theorem-lecture-27-6 }}
 $\text{TSP}$ è $\text{NP}$-completo.
 \end{theorem}
 

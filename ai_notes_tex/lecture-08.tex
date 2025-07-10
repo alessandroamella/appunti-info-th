@@ -49,7 +49,7 @@ Nella lezione precedente abbiamo esplorato le macchine di Turing multinastro, co
 
 Oggi introduciamo un nuovo modello di macchina di Turing: la \textbf{Macchina di Turing Non Deterministica (NDTM)}. Questo modello sarà fondamentale per il resto del corso per la sua praticità.
 
-\begin{example}[Una Macchina di Turing Non Deterministica]
+\begin{example}{Una Macchina di Turing Non Deterministica}{una-macchina-di-turi}
 Consideriamo la seguente macchina di Turing (parzialmente descritta):
 \begin{center}
 \begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=2.8cm,
@@ -97,7 +97,7 @@ Una \textbf{Macchina di Turing Non Deterministica (NDTM)} $N$ è una tupla $N = 
     \[ \delta: Q \times \Gamma \to \mathcal{P}(Q \times \Gamma \times \{L, R\}) \]
     dove $\mathcal{P}(S)$ denota l'insieme delle parti di $S$ (l'insieme di tutti i possibili sottoinsiemi di $S$). Questo significa che per una data coppia $(q, a)$, $\delta(q, a)$ restituisce un insieme di triple $(q', b, D)$, dove $q'$ è il nuovo stato, $b$ il simbolo da scrivere, e $D$ la direzione di movimento della testina. La cardinalità di questo insieme può essere maggiore di uno.
 
-    \begin{example}
+    \begin{example}{}{{ example-lecture-08-1 }}
     Per l'esempio precedente, la transizione non deterministica è formalmente descritta come:
     \[ \delta(q_1, 0) = \{ (q_0, 0, L), (q_1, 0, R) \} \]
     \end{example}
@@ -113,7 +113,7 @@ Una configurazione è finale se non ammette configurazioni successive. Una confi
 
 La principale differenza è che una data configurazione può avere più "successori legali". Questo porta a organizzare la sequenza delle configurazioni non più come una lista, ma come un \textbf{albero di computazione (Computation Tree)}.
 
-\begin{definition}[Computation Tree]
+\begin{definition}{Computation Tree}{computation-tree}
 Il \textbf{computation tree} di una macchina di Turing non deterministica $M$ su una stringa di input $W$ è un albero i cui nodi sono tutte le possibili configurazioni in cui la macchina $M$ può trovarsi processando $W$.
 \begin{itemize}
     \item La radice dell'albero è la configurazione iniziale $q_0W$.
@@ -121,7 +121,7 @@ Il \textbf{computation tree} di una macchina di Turing non deterministica $M$ su
 \end{itemize}
 \end{definition}
 
-\begin{example}[Albero di Computazione di una NDTM]
+\begin{example}{Albero di Computazione di una NDTM}{albero-di-computazio}
 Consideriamo la seguente NDTM:
 
     \begin{tikzpicture}[
@@ -180,13 +180,12 @@ Consideriamo la seguente NDTM:
 \end{tikzpicture}
 \end{example}
 
-\begin{example}[Computazione di $N$ su input $01$]
+\begin{example}{Computazione di $N$ su input $01$}{computazione-di-su-i}
 Usiamo l'esempio di NDTM di cui sopra e la stringa di input $W = 01$.
 La configurazione iniziale è $q_001$.
 
-\begin{figure}[h!]
-    \centering
-    \begin{tikzpicture}[
+\begin{center}
+\begin{tikzpicture}[
         node distance=2.5cm,
         every node/.style={align=center},
         level/.style={sibling distance=60mm/#1},
@@ -216,14 +215,14 @@ La configurazione iniziale è $q_001$.
     \node[below=0.3cm of accept1, font=\small] {Accetta};
     
     \end{tikzpicture}
-    \caption{Albero di Computazione della NDTM su input $01$ - Caso semplice}
-\end{figure}
+
+\textbf{Albero di Computazione della NDTM su input $01$ - Caso semplice}
+\end{center}
 
 Per illustrare meglio il non-determinismo, consideriamo un input che attivi effettivamente la scelta multipla. Supponiamo di avere la configurazione $10q_10$ dove la macchina deve scegliere tra due transizioni per $\delta(q_1, 0)$:
 
-\begin{figure}[h!]
-    \centering
-    \begin{tikzpicture}[
+\begin{center}
+\begin{tikzpicture}[
         node distance=2cm,
         every node/.style={align=center},
         level/.style={sibling distance=50mm/#1},
@@ -258,8 +257,9 @@ Per illustrare meglio il non-determinismo, consideriamo un input che attivi effe
     \node[right=0.5cm of right1, font=\small, text=green!70!black] {Ramo 2: Accetta};
     
     \end{tikzpicture}
-    \caption{Albero di Computazione con Non-determinismo - La macchina accetta perché esiste almeno un ramo accettante}
-\end{figure}
+
+\textbf{Albero di Computazione con Non-determinismo - La macchina accetta perché esiste almeno un ramo accettante}
+\end{center}
 Analizziamo il processo passo-passo:
 \begin{enumerate}
     \item Iniziamo da $q_001$.
@@ -315,7 +315,7 @@ Perché una NDTM \textbf{rifiuti} un input, deve succedere che \emph{tutte} le c
 
 Una domanda fondamentale è: le Macchine di Turing Non Deterministiche sono più potenti delle Macchine di Turing Deterministiche (DTM) in termini di capacità di calcolo? Ovvero, possono calcolare funzioni o accettare linguaggi che le DTM non possono? La risposta è \textbf{No}.
 
-\begin{theorem}
+\begin{theorem}{}{{ theorem-lecture-08-1 }}
 Per ogni linguaggio $L$ accettato da una macchina di Turing non deterministica $N$, esiste una macchina di Turing deterministica $M$ che accetta $L$.
 \end{theorem}
 Questo teorema è cruciale, perché significa che, anche se le NDTM non sono fisicamente realizzabili (non "sanno" quale ramo scegliere o non si "sdoppiano"), possiamo usarle come modello di calcolo astratto perché tutto ciò che possono fare può essere fatto anche da una DTM.
@@ -376,7 +376,7 @@ Abbiamo esaminato vari modelli di calcolo: DTM mononastro, DTM multitraccia, DTM
 
 Negli anni '30, quando Alan Turing e altri svilupparono i loro modelli di calcolo (es. $\lambda$-calcolo di Alonzo Church, sistemi di Post), si scoprì che tutti i modelli conosciuti erano computazionalmente equivalenti alle Macchine di Turing. Questo portò alla formulazione della \textbf{Tesi di Church-Turing}:
 
-\begin{theorem}[Tesi di Church-Turing]
+\begin{theorem}{Tesi di Church-Turing}{tesi-di-churchturing}
 \emph{Tutto ciò che è calcolabile è calcolabile da una macchina di Turing.}
 \end{theorem}
 È chiamata "tesi" e non "teorema" perché non è una dimostrazione formale, ma un'affermazione riguardante la natura della computazione. Non si definisce la calcolabilità a priori e poi si dimostra che la TM la raggiunge, ma si propone che la TM catturi il concetto intuitivo di calcolabilità. Ad oggi, nessun modello di calcolo più potente è stato scoperto o inventato, il che rafforza la fiducia in questa tesi.
@@ -392,7 +392,7 @@ Sulla base della Tesi di Church-Turing, possiamo definire le principali classi d
 % \end{figure}
 
 \subsection{Classe R (Linguaggi Ricorsivi / Problemi Decidibili)}
-\begin{definition}[Classe R]
+\begin{definition}{Classe R}{classe-r}
 La classe $R$ (linguaggi \textbf{ricorsivi}) contiene tutti i linguaggi $L$ per i quali esiste una Macchina di Turing $M$ che \textbf{decide} $L$.
 \end{definition}
 Una Macchina di Turing $M$ \textbf{decide} un linguaggio $L$ se per ogni input $W \in \Sigma^*$:
@@ -403,7 +403,7 @@ Una Macchina di Turing $M$ \textbf{decide} un linguaggio $L$ se per ogni input $
 In altre parole, una macchina che decide un linguaggio \textbf{termina sempre} per ogni input, dando una risposta definitiva (sì o no). I problemi che corrispondono ai linguaggi in $R$ sono chiamati \textbf{problemi decidibili}.
 
 \subsection{Classe RE (Linguaggi Ricorsivamente Enumerabili / Problemi Accettabili)}
-\begin{definition}[Classe RE]
+\begin{definition}{Classe RE}{classe-re}
 La classe $RE$ (linguaggi \textbf{ricorsivamente enumerabili}) contiene tutti i linguaggi $L$ per i quali esiste una Macchina di Turing $M$ che \textbf{accetta} $L$.
 \end{definition}
 Una Macchina di Turing $M$ \textbf{accetta} un linguaggio $L$ se per ogni input $W \in \Sigma^*$:

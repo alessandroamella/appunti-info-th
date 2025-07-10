@@ -66,7 +66,7 @@ I lavori seminali sulla complessità computazionale delle Macchine di Turing fur
 
 Definiamo formalmente il tempo di esecuzione per le Macchine di Turing.
 
-\begin{definition}[Computation Time]
+\begin{definition}{Computation Time}{computation-time}
 Sia $M$ una Macchina di Turing e $w$ una stringa in input per $M$.
 \begin{itemize}
     \item Se $M$ è \textbf{deterministica}: il \textbf{computation time} di $M$ su $w$ è il numero di passi che $M$ esegue prima di arrestarsi su $w$.
@@ -74,7 +74,7 @@ Sia $M$ una Macchina di Turing e $w$ una stringa in input per $M$.
 \end{itemize}
 \end{definition}
 
-\begin{definition}[Time Function]
+\begin{definition}{Time Function}{time-function}
 Una funzione $t: \mathbb{N} \to \mathbb{N}$ è detta \textbf{time function} se è non-decrescente e strettamente positiva.
 \begin{itemize}
     \item \textbf{Non-decrescente}: Se l'input è più grande, il tempo richiesto non diminuisce.
@@ -82,7 +82,7 @@ Una funzione $t: \mathbb{N} \to \mathbb{N}$ è detta \textbf{time function} se �
 \end{itemize}
 \end{definition}
 
-\begin{definition}[Running Time di una Macchina di Turing]
+\begin{definition}{Running Time di una Macchina di Turing}{running-time-di-una-}
 Sia $t(n)$ una time function. Una Macchina di Turing $M$ ha \textbf{running time} $t(n)$ se, per tutte le stringhe $w$ in input (a parte un numero finito di esse), il computation time di $M$ su $w$ non eccede $t(|w|)$ (dove $|w|$ è la lunghezza di $w$).
 \end{definition}
 In altre parole, il running time è una stima funzionale del tempo di esecuzione di una macchina, in funzione della dimensione dell'input. Questo concetto è simile alla complessità degli algoritmi che avete studiato.
@@ -90,7 +90,7 @@ In altre parole, il running time è una stima funzionale del tempo di esecuzione
 \subsection{Notazione Asintotica}
 Per esprimere i running time in modo indipendente dalle costanti e concentrarsi sul tasso di crescita, usiamo la notazione asintotica.
 
-\begin{definition}[Big O ($O$)]
+\begin{definition}{Big O ($O$)}{big-o}
 Date due funzioni $f, g: \mathbb{N} \to \mathbb{N}$, diciamo che $f(n) \in O(g(n))$ (o $f(n)$ è $O(g(n))$) se esistono costanti positive $c$ e $n_0$ tali che per ogni $n \ge n_0$, si ha $f(n) \le c \cdot g(n)$.
 \end{definition}
 \textbf{Intuizione:} $f(n)$ cresce al più velocemente quanto $g(n)$ (cioè $g(n)$ è un \emph{upper bound} asintotico per $f(n)$).
@@ -114,7 +114,7 @@ Date due funzioni $f, g: \mathbb{N} \to \mathbb{N}$, diciamo che $f(n) \in O(g(n
 \end{tikzpicture}
 \end{center}
 
-\begin{definition}[Big Omega ($\Omega$)]
+\begin{definition}{Big Omega ($\Omega$)}{big-omega}
 Date due funzioni $f, g: \mathbb{N} \to \mathbb{N}$, diciamo che $f(n) \in \Omega(g(n))$ (o $f(n)$ è $\Omega(g(n))$) se esistono costanti positive $c$ e $n_0$ tali che per ogni $n \ge n_0$, si ha $f(n) \ge c \cdot g(n)$.
 \end{definition}
 \textbf{Intuizione:} $f(n)$ cresce almeno velocemente quanto $g(n)$ (cioè $g(n)$ è un \emph{lower bound} asintotico per $f(n)$).
@@ -138,12 +138,12 @@ Date due funzioni $f, g: \mathbb{N} \to \mathbb{N}$, diciamo che $f(n) \in \Omeg
 \end{tikzpicture}
 \end{center}
 
-\begin{definition}[Big Theta ($\Theta$)]
+\begin{definition}{Big Theta ($\Theta$)}{big-theta}
 Date due funzioni $f, g: \mathbb{N} \to \mathbb{N}$, diciamo che $f(n) \in \Theta(g(n))$ (o $f(n)$ è $\Theta(g(n))$) se $f(n) \in O(g(n))$ e $f(n) \in \Omega(g(n))$.
 \end{definition}
 \textbf{Intuizione:} $f(n)$ e $g(n)$ hanno lo stesso tasso di crescita asintotico.
 
-\begin{theorem}[Linear Speedup (menzionato)]
+\begin{theorem}{Linear Speedup (menzionato)}{linear-speedup-menzi}
 Per ogni Macchina di Turing $M$ che opera in tempo $t(n)$, e per ogni costante $c > 0$, esiste un'altra Macchina di Turing $M'$ che opera in tempo $t(n)/c$.
 Questo teorema implica che le costanti moltiplicative nel running time non sono significative quando si parla di classi di complessità, poiché si possono sempre "compattare" più simboli sul nastro per accelerare la computazione.
 \end{theorem}
@@ -151,10 +151,10 @@ Questo teorema implica che le costanti moltiplicative nel running time non sono 
 \subsection{Complessità Temporale dei Problemi}
 I concetti di Big O e Big Omega ci permettono di definire la complessità temporale dei problemi stessi, non solo degli algoritmi.
 
-\begin{definition}[Time Complexity Upper Bound di un Problema]
+\begin{definition}{Time Complexity Upper Bound di un Problema}{time-complexity-uppe}
 Il \textbf{time complexity upper bound} di un problema $P$ è $O(f(n))$ se \emph{esiste almeno un algoritmo} che risolve $P$ con un running time $O(f(n))$.
 \end{definition}
-\begin{example}
+\begin{example}{}{{ example-lecture-17-1 }}
 Il problema dell'ordinamento di array:
 \begin{itemize}
     \item È $O(n^2)$? Sì, (es. Bubble Sort).
@@ -164,10 +164,10 @@ Il problema dell'ordinamento di array:
 \end{itemize}
 \end{example}
 
-\begin{definition}[Time Complexity Lower Bound di un Problema]
+\begin{definition}{Time Complexity Lower Bound di un Problema}{time-complexity-lowe}
 Il \textbf{time complexity lower bound} di un problema $P$ è $\Omega(f(n))$ se \emph{tutti gli algoritmi} che risolvono $P$ hanno un running time $\Omega(f(n))$.
 \end{definition}
-\begin{example}
+\begin{example}{}{{ example-lecture-17-2 }}
 Il problema dell'ordinamento di array:
 \begin{itemize}
     \item È $\Omega(n)$? Sì, tutti gli algoritmi devono almeno leggere tutti gli elementi.
@@ -183,7 +183,7 @@ Basandoci sulla complessità temporale, i problemi possono essere classificati i
     \item \textbf{Problemi Intratttabili (o Difficili)}: Sono problemi per i quali \emph{non esiste} (o non si è ancora dimostrato che esista) un algoritmo con running time polinomiale. Questi problemi generalmente richiedono tempo esponenziale.
 \end{itemize}
 
-\begin{remark}
+\begin{remark}{}{{ remark-lecture-17-1 }}
 Un algoritmo $O(n^{1000})$ è teoricamente polinomiale, ma impraticabile per grandi $n$. Tuttavia, algoritmi esponenziali (es. $O(2^n)$) diventano ingestibili molto più rapidamente con l'aumentare di $n$ rispetto a qualsiasi polinomio.
 \end{remark}
 
@@ -191,23 +191,23 @@ Un algoritmo $O(n^{1000})$ è teoricamente polinomiale, ma impraticabile per gra
 
 Il prossimo passo è definire classi formali di problemi basate sulla loro complessità temporale, all'interno di $R$.
 
-\begin{definition}[Classe DTIME($t(n)$)]
+\begin{definition}{Classe DTIME($t(n)$)}{classe-dtime}
 Sia $t(n)$ una time function. La classe di complessità \textbf{DTIME($t(n)$)} è l'insieme di tutti i linguaggi $L$ tali che esiste una Macchina di Turing \emph{deterministica} $M$ che decide $L$ con un running time $O(t(n))$.
 \end{definition}
 La 'D' in DTIME sta per "Deterministica".
 
-\begin{definition}[Classe P (Polynomial Time)]
+\begin{definition}{Classe P (Polynomial Time)}{classe-p-polynomial-}
 La classe \textbf{P} è l'unione di tutte le classi DTIME($n^c$) per ogni costante $c \ge 1$:
 \[ P = \bigcup_{c \ge 1} \text{DTIME}(n^c) \]
 \end{definition}
 
-\begin{remark}
+\begin{remark}{}{{ remark-lecture-17-2 }}
 La classe P contiene \emph{esclusivamente problemi di decisione}. Problemi di calcolo (es. sommare due numeri) o di ottimizzazione (es. ordinare un array) non appartengono a P per definizione, sebbene gli algoritmi per risolverli possano avere complessità polinomiale.
 \end{remark}
 
 \subsection{Esempi di Problemi in P}
 
-\begin{example}[Reachability (Raggiungibilità)]
+\begin{example}{Reachability (Raggiungibilità)}{reachability-raggiun}
 \begin{itemize}
     \item \textbf{Problema di Decisione}: Dato un grafo diretto $G=(V, E)$ e due nodi $s, t \in V$, esiste un percorso da $s$ a $t$ in $G$?
     \item \textbf{Linguaggio}: $L_{\text{Reach}} = \{ (G, s, t) \mid G \text{ è un grafo diretto, } s, t \in V(G), \text{ e esiste un percorso da } s \text{ a } t \text{ in } G \}$.
@@ -220,7 +220,7 @@ La classe P contiene \emph{esclusivamente problemi di decisione}. Problemi di ca
 \end{itemize}
 \end{example}
 
-\begin{example}[PRIMES]
+\begin{example}{PRIMES}{primes}
 \begin{itemize}
     \item \textbf{Problema di Decisione}: Dato un intero $n$ (rappresentato in binario), è $n$ un numero primo?
     \item \textbf{Linguaggio}: $L_{\text{Primes}} = \{ \langle n \rangle \mid n \in \mathbb{N} \text{ e } n \text{ è primo} \}$, dove $\langle n \rangle$ è la rappresentazione binaria di $n$.
@@ -238,7 +238,7 @@ La classe P contiene \emph{esclusivamente problemi di decisione}. Problemi di ca
 \section{Complessità Temporale Non-Deterministica}
 Alcuni problemi, pur sembrando difficili con algoritmi deterministici, beneficiano enormemente del non-determinismo.
 
-\begin{example}[SAT (Boolean Satisfiability)]
+\begin{example}{SAT (Boolean Satisfiability)}{sat-boolean-satisfia}
 \begin{itemize}
     \item \textbf{Formule in Forma Normale Congiuntiva (CNF)}: Una formula CNF è una congiunzione di clausole, dove ogni clausola è una disgiunzione di letterali. Un letterale è una variabile booleana o la sua negazione (es. $(x_1 \lor x_2 \lor \neg x_3) \land (\neg x_2 \lor x_4) \land (\neg x_3 \lor x_5 \lor \neg x_6)$).
     \item \textbf{Problema di Decisione}: Data una formula $\phi$ in CNF, è $\phi$ soddisfacibile (esiste un assegnamento di verità alle variabili che rende $\phi$ vera)?
@@ -249,7 +249,7 @@ Alcuni problemi, pur sembrando difficili con algoritmi deterministici, beneficia
 \end{itemize}
 \end{example}
 
-\begin{example}[Independent Set (Insieme Indipendente)]
+\begin{example}{Independent Set (Insieme Indipendente)}{independent-set-insi}
 \begin{itemize}
     \item \textbf{Definizione}: Dato un grafo non diretto $G=(V, E)$, un \emph{independent set} è un sottoinsieme di vertici $S \subseteq V$ tale che nessun vertice in $S$ è collegato da un arco a un altro vertice in $S$.
     \item \textbf{Problema di Decisione}: Dato un grafo $G$ e un intero $k$, esiste un independent set in $G$ di dimensione almeno $k$?
@@ -277,17 +277,17 @@ Il computation time per questo algoritmo non-deterministico è la somma del temp
 \end{enumerate}
 Anche in questo caso, il computation time è polinomiale.
 
-\begin{definition}[Classe NTIME($t(n)$)]
+\begin{definition}{Classe NTIME($t(n)$)}{classe-ntime}
 Sia $t(n)$ una time function. La classe di complessità \textbf{NTIME($t(n)$)} è l'insieme di tutti i linguaggi $L$ tali che esiste una Macchina di Turing \emph{non-deterministica} $M$ che decide $L$ con un running time $O(t(n))$.
 \end{definition}
 La 'N' in NTIME sta per "Non-Deterministica".
 
-\begin{definition}[Classe NP (Nondeterministic Polynomial Time)]
+\begin{definition}{Classe NP (Nondeterministic Polynomial Time)}{classe-np-nondetermi}
 La classe \textbf{NP} è l'unione di tutte le classi NTIME($n^c$) per ogni costante $c \ge 1$:
 \[ NP = \bigcup_{c \ge 1} \text{NTIME}(n^c) \]
 \end{definition}
 
-\begin{remark}
+\begin{remark}{}{{ remark-lecture-17-3 }}
 NP sta per \emph{Nondeterministic Polynomial} e non per "Non Polinomiale". La classe NP contiene tutti i problemi di decisione che possono essere risolti da una macchina di Turing non-deterministica in tempo polinomiale.
 Esempi di problemi in NP includono SAT, Independent Set, Knapsack, Hamiltonian Cycle, Traveling Salesperson Problem e molti altri problemi che sono centrali nell'informatica teorica e pratica.
 \end{remark}

@@ -69,7 +69,7 @@ Le riduzioni sono un concetto fondamentale in Informatica Teorica, utilizzate pe
 \subsection{Metafora e Intuizione della Riduzione}
 L'idea intuitiva di riduzione è quella di trasformare un problema da risolvere (problema di partenza) in un altro problema (problema di arrivo) per il quale si conosce già una soluzione.
 
-\begin{example}[Gestione Tornei di Calcetto]
+\begin{example}{Gestione Tornei di Calcetto}{gestione-tornei-di-c}
 Si desidera creare un'applicazione web per la gestione di tornei di calcetto, in particolare un algoritmo per la generazione automatica del calendario delle partite (problema di decisione).
 
 \textbf{Problema di Partenza (A): Generazione Calendario}
@@ -240,7 +240,7 @@ Supponiamo di avere le 4 squadre: Juventus (J), Milan (M), Bologna (B), Roma (R)
 
 Per i problemi di decisione (che hanno risposta sì/no), la definizione di riduzione è più semplice, poiché la "ritrasformazione" della soluzione non è necessaria (la risposta è già 0 o 1).
 
-\begin{definition}[Riduzione tra Linguaggi/Problemi di Decisione]
+\begin{definition}{Riduzione tra Linguaggi/Problemi di Decisione}{riduzione-tra-lingua}
 Siano $A$ e $B$ due linguaggi. Una funzione $f$ è una \textbf{riduzione} da $A$ a $B$, denotata $A \le B$, se:
 \begin{enumerate}
     \item $f$ è \textbf{calcolabile}.
@@ -258,7 +258,7 @@ Siano $A$ e $B$ due linguaggi. Una funzione $f$ è una \textbf{riduzione} da $A$
 
 Per definire formalmente cosa significa che una funzione è "calcolabile", introduciamo il concetto di trasduttore.
 
-\begin{definition}[Trasduttore]
+\begin{definition}{Trasduttore}{trasduttore}
 Un \textbf{trasduttore} è una Macchina di Turing caratterizzata da tre nastri:
 \begin{enumerate}
     \item \textbf{Nastro di Input}: Sola lettura. Contiene la stringa di input $w$.
@@ -267,7 +267,7 @@ Un \textbf{trasduttore} è una Macchina di Turing caratterizzata da tre nastri:
 \end{enumerate}
 \end{definition}
 
-\begin{definition}[Funzione Calcolabile]
+\begin{definition}{Funzione Calcolabile}{funzione-calcolabile}
 Una funzione $f: \Sigma^* \to \Sigma^*$ è \textbf{calcolabile} se esiste un trasduttore $M$ tale che per ogni stringa $w \in \Sigma^*$, $M$ esegue su $w$, si arresta (termina) e lascia $f(w)$ sul nastro di output.
 \end{definition}
 \textbf{Nota}: Quando si specifica una riduzione, non è necessario mostrare esplicitamente il trasduttore. È sufficiente una descrizione algoritmica (pseudocodice o linguaggio naturale) sufficientemente precisa da far capire come l'output $f(w)$ viene generato dall'input $w$.
@@ -276,7 +276,7 @@ Una funzione $f: \Sigma^* \to \Sigma^*$ è \textbf{calcolabile} se esiste un tra
 
 Le riduzioni sono uno strumento potente per dimostrare l'indecidibilità dei linguaggi, sfruttando la relazione di "non più difficile di".
 
-\begin{theorem}[Proprietà Fondamentali delle Riduzioni]
+\begin{theorem}{Proprietà Fondamentali delle Riduzioni}{proprieta-fondamenta}
 \label{thm:proprieta-riduzioni}
 Siano $A$ e $B$ due linguaggi tali che $A \le B$.
 \begin{enumerate}
@@ -336,7 +336,7 @@ Ma ciò contraddice la nostra assunzione iniziale che $A \notin RE$.
 Pertanto, l'assunzione è falsa, e la tesi $A \notin RE \implies B \notin RE$ è vera.
 \end{proof}
 
-\begin{corollary}[Corollario delle Riduzioni]
+\begin{corollary}{Corollario delle Riduzioni}{corollario-delle-rid}
 Siano $A$ e $B$ due linguaggi tali che $A \le B$.
 \begin{enumerate}
     \item Se $B \in R$, allora $A \in R$.
@@ -361,7 +361,7 @@ Queste affermazioni sono le contronominali del teorema precedente.
 
 Introduciamo un nuovo linguaggio e ne studiamo la decidibilità tramite riduzione.
 
-\begin{definition}[Linguaggio $L_{NE}$]
+\begin{definition}{Linguaggio $L_{NE}$}{linguaggio}
 Il linguaggio $L_{NE}$ (Non-Empty) è l'insieme dei codici di Macchine di Turing $M_i$ tali che il linguaggio accettato da $M_i$ non è vuoto:
 $L_{NE} = \{ \langle M_i \rangle \mid L(M_i) \neq \emptyset \}$
 
@@ -370,7 +370,7 @@ Intuitivamente, $L_{NE}$ contiene le Macchine di Turing che accettano almeno una
 
 \subsection{$L_{NE}$ è Ricorsivamente Enumerabile ($L_{NE} \in RE$)}
 
-\begin{proposition}
+\begin{proposition}{}{{ proposition-lecture-13-1 }}
 $L_{NE} \in RE$.
 \end{proposition}
 \begin{proof}
@@ -405,7 +405,7 @@ Poiché le Macchine di Turing non deterministiche sono equivalenti a quelle dete
 
 Intuitivamente, è difficile decidere se $L(M) = \emptyset$. Per rispondere "no" (cioè $M \in L_E$, $L(M) = \emptyset$), bisognerebbe essere sicuri che $M$ non accetta \textbf{nessuna} stringa, il che richiederebbe un tempo infinito per provare tutte le possibili stringhe.
 
-\begin{theorem}
+\begin{theorem}{}{{ theorem-lecture-13-1 }}
 $L_{NE} \notin R$.
 \end{theorem}
 \begin{proof}
@@ -466,7 +466,7 @@ L_U \le L_{NE} \land L_U \notin R \implies L_{NE} \notin R
 \subsection{Linguaggio Complementare $L_E$}
 
 Consideriamo il linguaggio $L_E$, che è il complemento di $L_{NE}$.
-\begin{definition}[Linguaggio $L_E$]
+\begin{definition}{Linguaggio $L_E$}{linguaggio}
 Il linguaggio $L_E$ (Empty) è l'insieme dei codici di Macchine di Turing $M_i$ tali che il linguaggio accettato da $M_i$ è vuoto:
 $L_E = \{ \langle M_i \rangle \mid L(M_i) = \emptyset \}$
 \end{definition}

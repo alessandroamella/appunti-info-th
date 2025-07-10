@@ -50,21 +50,21 @@ La lezione odierna chiude la parte dedicata alla classe di complessità \textbf{
 
 \subsection{Richiami sulle Classi di Complessità}
 
-\begin{definition}[Classe NP]
+\begin{definition}{Classe NP}{classe-np}
 La classe \textbf{NP} (Nondeterministic Polynomial time) include tutti i problemi di decisione (linguaggi) che possono essere decisi da una \emph{Macchina di Turing Non Deterministiche (NDTM)} in tempo polinomiale.
 \end{definition}
 
-\begin{definition}[NP-Hard]
+\begin{definition}{NP-Hard}{nphard}
 Un linguaggio $L$ è \textbf{NP-Hard} se per ogni linguaggio $L'$ appartenente a NP, $L'$ si riduce polinomialmente a $L$ ($L' \le_P L$). Intuitivamente, i problemi NP-Hard sono \textit{almeno difficili quanto} tutti i problemi in NP.
 \end{definition}
 
-\begin{definition}[NP-Complete]
+\begin{definition}{NP-Complete}{npcomplete}
 Un linguaggio $L$ è \textbf{NP-Complete} se $L$ è sia in NP che NP-Hard.
 \end{definition}
 
 \subsection{Il Problema della Dimostrazione Iniziale}
 Fino ad ora, per dimostrare che un problema $B$ è NP-Hard, abbiamo usato la \emph{transitività delle riduzioni polinomiali}:
-\begin{theorem}[Proprietà di Transitività]
+\begin{theorem}{Proprietà di Transitività}{proprieta-di-transit}
 Se $A$ è NP-Hard e $A \le_P B$, allora $B$ è NP-Hard.
 \end{theorem}
 Questo metodo ci ha permesso di dimostrare che molti problemi (e.g., Knapsack, Exact Cover, 3-SAT, Vertex Cover, Click) sono NP-Complete o NP-Hard, partendo da un problema già noto come NP-Hard.
@@ -75,7 +75,7 @@ Il problema è che ci sono infiniti linguaggi in NP, quindi non possiamo fornire
 
 \section{Teorema di Cook: SAT è NP-Completo}
 
-\begin{theorem}[Teorema di Cook]
+\begin{theorem}{Teorema di Cook}{teorema-di-cook}
 Il problema SAT (Boolean Satisfiability Problem) è NP-Complete.
 \end{theorem}
 
@@ -152,7 +152,7 @@ Prima di definire le macro-clausole, ripassiamo alcune proprietà utili per conv
     \item \textbf{Implicazione annidata (OR)}: $A \implies (B \lor C)$ è equivalente a $(\neg A \lor B \lor C)$.
 \end{itemize}
 
-\begin{example}[Esempio di Riformulazione]
+\begin{example}{Esempio di Riformulazione}{esempio-di-riformula}
 Consideriamo la formula: $A \land B \implies (C \land D) \lor (E \land F)$
 \begin{enumerate}
     \item Applichiamo la distributività sulla parte destra dell'OR:

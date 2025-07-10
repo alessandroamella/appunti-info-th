@@ -80,7 +80,7 @@ La separazione dei nastri è cruciale per le classi a basso spazio. Se misurassi
 
 \subsection{Definizioni Fondamentali}
 
-\begin{definition}[Computation Space]
+\begin{definition}{Computation Space}{computation-space}
 Il \textbf{Computation Space} di una macchina di Turing $M$ su un input $W$, denotato $Space_M(W)$, è il numero di celle \emph{distinte} visitate (anche solo lette, non necessariamente scritte) da $M$ sul suo \emph{nastro di lavoro} durante il processo di $W$.
 \begin{itemize}
     \item Se $M$ è \textbf{deterministica}, $Space_M(W)$ è semplicemente il numero di celle distinte visitate.
@@ -88,11 +88,11 @@ Il \textbf{Computation Space} di una macchina di Turing $M$ su un input $W$, den
 \end{itemize}
 \end{definition}
 
-\begin{definition}[Space Function]
+\begin{definition}{Space Function}{space-function}
 Una funzione $S: \mathbb{N} \to \mathbb{N}$ è una \textbf{Space Function} se $S(n)$ è strettamente positiva per ogni $n$ ed è non-decreasing.
 \end{definition}
 
-\begin{definition}[Running Space]
+\begin{definition}{Running Space}{running-space}
 Il \textbf{Running Space} di una macchina di Turing $M$ è $S(n)$ se per ogni stringa $W$ (a parte un numero finito di eccezioni), il $Computation Space$ di $M$ su $W$ è bounded da $S(|W|)$, ovvero $Space_M(W) \in O(S(|W|))$.
 \end{definition}
 
@@ -100,17 +100,17 @@ Il \textbf{Running Space} di una macchina di Turing $M$ è $S(n)$ se per ogni st
 
 Similmente alle classi temporali (DTIME, NTIME), definiamo le classi spaziali:
 
-\begin{definition}[DSPACE($S(n)$)]
+\begin{definition}{DSPACE($S(n)$)}{dspace}
 \textbf{DSPACE($S(n)$)} è l'insieme di tutti i linguaggi $L$ tali che esiste una Macchina di Turing deterministica $M$ che decide $L$ e il cui Running Space è in $O(S(n))$.
 \[ \text{DSPACE}(S(n)) = \{ L \mid \exists M \text{ deterministica t.c. } L(M) = L \text{ e } Space_M(n) \in O(S(n)) \} \]
 \end{definition}
 
-\begin{definition}[NSPACE($S(n)$)]
+\begin{definition}{NSPACE($S(n)$)}{nspace}
 \textbf{NSPACE($S(n)$)} è l'insieme di tutti i linguaggi $L$ tali che esiste una Macchina di Turing non deterministica $N$ che decide $L$ e il cui Running Space è in $O(S(n))$.
 \[ \text{NSPACE}(S(n)) = \{ L \mid \exists N \text{ non-deterministica t.c. } L(N) = L \text{ e } Space_N(n) \in O(S(n)) \} \]
 \end{definition}
 
-\begin{definition}[Classi Logaritmiche]
+\begin{definition}{Classi Logaritmiche}{classi-logaritmiche}
 Definiamo due classi di complessità spaziale fondamentali:
 \begin{itemize}
     \item \textbf{L (LogSpace):} La classe di linguaggi decidibili da una TM deterministica in spazio logaritmico.
@@ -120,7 +120,7 @@ Definiamo due classi di complessità spaziale fondamentali:
 \end{itemize}
 \end{definition}
 
-\begin{proposition}
+\begin{proposition}{}{{ proposition-lecture-24-1 }}
 Vale la relazione di contenimento: $\text{L} \subseteq \text{NL}$.
 \end{proposition}
 Analogamente a P vs NP, non sappiamo se $\text{L} = \text{NL}$ o se $\text{L} \subset \text{NL}$.
@@ -132,7 +132,7 @@ Analogamente a P vs NP, non sappiamo se $\text{L} = \text{NL}$ o se $\text{L} \s
 Consideriamo il linguaggio $L_0 = \{0^n1^n \mid n > 0\}$.
 Avevamo visto un algoritmo deterministico per questo linguaggio che marcava o cancellava i simboli sull'input tape, ma questo non è permesso con il nuovo modello di TM. Se copiassimo l'input sul work tape, useremmo spazio lineare, quindi $L_0 \notin \text{L}$ con quell'algoritmo.
 
-\begin{example}[Decisore per $0^n1^n$ in LogSpace]
+\begin{example}{Decisore per $0^n1^n$ in LogSpace}{decisore-per-in-logs}
 Per decidere $L_0$ in spazio logaritmico, la TM deterministica può fare quanto segue:
 \begin{enumerate}
     \item Scorre l'input tape, contando il numero di $0$ e memorizzando il conteggio sul work tape in binario. La rappresentazione binaria di $n$ (numero di $0$) occupa $O(\log n)$ spazio.
@@ -147,12 +147,12 @@ Lo spazio utilizzato sul work tape è limitato alla memorizzazione di pochi nume
 
 Il problema \textbf{REACHABILITY} (o \textbf{ST-Connectivity}) è un problema classico in teoria dei grafi.
 
-\begin{definition}[REACHABILITY]
+\begin{definition}{REACHABILITY}{reachability}
 Sia $G=(V,E)$ un grafo orientato, e siano $s, t \in V$ due vertici. Il problema \textbf{REACHABILITY} consiste nel decidere se esiste un cammino (path) da $s$ a $t$ in $G$.
 \[ \text{REACHABILITY} = \{ (G, s, t) \mid G \text{ è un grafo orientato e esiste un cammino da } s \text{ a } t \text{ in } G \} \]
 \end{definition}
 
-\begin{example}[Rappresentazione di REACHABILITY]
+\begin{example}{Rappresentazione di REACHABILITY}{rappresentazione-di-}
 Consideriamo un grafo semplice $G$ con i vertici $A$, $B$
 % Esempio grafico semplice con TikZ per REACHABILITY
 \begin{center}
@@ -173,7 +173,7 @@ In questo esempio, esiste un cammino da A a C passando per B, quindi REACHABILIT
 
 Algoritmi standard come BFS (Breadth-First Search) o DFS (Depth-First Search) risolvono REACHABILITY in tempo polinomiale, ma tipicamente richiedono spazio $O(|V| + |E|)$ o $O(|V|)$ per memorizzare i nodi visitati o le code/stack. Questo è spazio lineare, non logaritmico.
 
-\begin{example}[Algoritmo non deterministico per REACHABILITY in LogSpace]
+\begin{example}{Algoritmo non deterministico per REACHABILITY in LogSpace}{algoritmo-non-determ}
 Sia $M$ una TM non deterministica. Per decidere se esiste un cammino da $s$ a $t$ in $G=(V,E)$, $M$ esegue il seguente algoritmo:
 
 \begin{minted}[
@@ -245,7 +245,7 @@ Per studiare le relazioni tra le classi di complessità spaziale (in particolare
 
 Per definire le riduzioni LogSpace, introduciamo il concetto di trasduttore.
 
-\begin{definition}[Trasduttore LogSpace]
+\begin{definition}{Trasduttore LogSpace}{trasduttore-logspace}
 Un \textbf{Trasduttore LogSpace} è una Macchina di Turing che calcola una funzione $f: \Sigma^* \to \Gamma^*$ e che soddisfa le seguenti proprietà:
 \begin{itemize}
     \item Ha un nastro di input (sola lettura), un nastro di lavoro (lettura-scrittura) e un nastro di output (sola scrittura, unidirezionale).
@@ -256,7 +256,7 @@ Il nastro di output è di sola scrittura e unidirezionale per assicurarsi che lo
 
 \subsection{Riduzione LogSpace}
 
-\begin{definition}[Riduzione LogSpace ($\le_L$)]
+\begin{definition}{Riduzione LogSpace ($\le_L$)}{riduzione-logspace}
 Siano $A$ e $B$ due linguaggi. Diciamo che $A$ si riduce in LogSpace a $B$, denotato $A \le_L B$, se esiste una funzione $f: \Sigma^* \to \Gamma^*$ calcolabile da un Trasduttore LogSpace, tale che per ogni stringa $w$:
 \[ w \in A \iff f(w) \in B \]
 \end{definition}
@@ -264,7 +264,7 @@ Le riduzioni LogSpace godono di proprietà di transitività, analoghe alle riduz
 
 \subsection{NL-Completezza}
 
-\begin{definition}[NL-Completo]
+\begin{definition}{NL-Completo}{nlcompleto}
 Un linguaggio $L_{NL}$ è \textbf{NL-Completo} se soddisfa due condizioni:
 \begin{enumerate}
     \item \textbf{Appartenenza:} $L_{NL} \in \text{NL}$ (Membership).
@@ -272,13 +272,13 @@ Un linguaggio $L_{NL}$ è \textbf{NL-Completo} se soddisfa due condizioni:
 \end{enumerate}
 \end{definition}
 Analogamente al Teorema di Cook-Levin per NP-completezza, un linguaggio NL-completo è considerato il più difficile nella classe NL. Un risultato importante afferma che:
-\begin{theorem}
+\begin{theorem}{}{{ theorem-lecture-24-1 }}
 Se un linguaggio NL-Completo appartiene a \text{L}, allora $\text{L} = \text{NL}$.
 \end{theorem}
 
 \subsection{REACHABILITY è NL-Completo}
 
-\begin{theorem}[NL-Completezza di REACHABILITY]
+\begin{theorem}{NL-Completezza di REACHABILITY}{nlcompletezza-di-rea}
 Il problema \textbf{REACHABILITY} è NL-Completo.
 \end{theorem}
 \begin{proof}

@@ -67,7 +67,7 @@ Come visto nella lezione precedente, gli automi a stati finiti deterministici (D
 \subsection{Computazione di un DFA}
 Per capire il funzionamento di un automa, modelliamo i suoi passi attraverso il concetto di "configurazione".
 
-\begin{definition}[Configurazione]
+\begin{definition}{Configurazione}{configurazione}
 Una \emph{configurazione} di un DFA è una coppia $(q, w)$, dove:
 \begin{itemize}
     \item $q \in Q$ è lo stato corrente in cui si trova l'automa.
@@ -76,7 +76,7 @@ Una \emph{configurazione} di un DFA è una coppia $(q, w)$, dove:
 Una configurazione rappresenta uno "snapshot" dello stato di avanzamento della computazione.
 \end{definition}
 
-\begin{definition}[Computazione Parziale]
+\begin{definition}{Computazione Parziale}{computazione-parzial}
 Una \emph{computazione parziale} di un DFA $D$ su una stringa $w = c_1 c_2 \dots c_n$ è una sequenza di $m+1$ configurazioni:
 \[ (R_0, c_1 \dots c_n) \xrightarrow{} (R_1, c_2 \dots c_n) \xrightarrow{} \dots \xrightarrow{} (R_m, c_{m+1} \dots c_n) \]
 tale che:
@@ -85,14 +85,14 @@ tale che:
     \item Per ogni $0 \leq i < m$, si ha $R_{i+1} = \delta(R_i, c_{i+1})$.
 \end{itemize}
 
-\begin{remark}
+\begin{remark}{}{{ remark-lecture-03-1 }}
 La mossa $\delta(R_i, c_{i+1})$ determina un \emph{unico} stato successivo.
 \end{remark}
 
 Il simbolo $c_{i+1}$ viene letto e consumato, e l'automa si sposta nello stato $R_{i+1}$.
 \end{definition}
 
-\begin{example}[Traccia di Computazione per $001$]
+\begin{example}{Traccia di Computazione per $001$}{traccia-di-computazi}
 Usiamo il DFA per numeri dispari e la stringa $w = 001$.
 \begin{itemize}
     \item Passo 0: $(Q_0, 001)$ \quad (Configurazione iniziale)
@@ -103,7 +103,7 @@ Usiamo il DFA per numeri dispari e la stringa $w = 001$.
 L'ultima configurazione è $(Q_1, \epsilon)$.
 \end{example}
 
-\begin{definition}[Computazione Completa]
+\begin{definition}{Computazione Completa}{computazione-complet}
 Una \emph{computazione completa} (o semplicemente \emph{computazione}) è una computazione parziale che è massimale, cioè non può essere estesa ulteriormente. Questo si verifica in due casi:
 \begin{itemize}
     \item La stringa di input è stata completamente consumata (la porzione residua è $\epsilon$).
@@ -111,7 +111,7 @@ Una \emph{computazione completa} (o semplicemente \emph{computazione}) è una co
 \end{itemize}
 \end{definition}
 
-\begin{definition}[Accettazione di una Stringa (DFA)]
+\begin{definition}{Accettazione di una Stringa (DFA)}{accettazione-di-una-}
 Un DFA $D$ \emph{accetta} una stringa $w$ se la sua unica computazione completa, che inizia dalla configurazione $(q_0, w)$, termina in una configurazione $(q_f, \epsilon)$ tale che $q_f \in F$.
 In altre parole, due condizioni devono essere soddisfatte:
 \begin{enumerate}
@@ -120,7 +120,7 @@ In altre parole, due condizioni devono essere soddisfatte:
 \end{enumerate}
 \end{definition}
 
-\begin{definition}[Rifiuto di una Stringa (DFA)]
+\begin{definition}{Rifiuto di una Stringa (DFA)}{rifiuto-di-una-strin}
 Un DFA $D$ \emph{rifiuta} una stringa $w$ se la computazione su $w$ non è accettante. Ciò può avvenire se:
 \begin{itemize}
     \item L'automa termina in uno stato $q \notin F$ pur avendo consumato tutto l'input.
@@ -128,7 +128,7 @@ Un DFA $D$ \emph{rifiuta} una stringa $w$ se la computazione su $w$ non è accet
 \end{itemize}
 \end{definition}
 
-\begin{definition}[DFA che Decide un Linguaggio]
+\begin{definition}{DFA che Decide un Linguaggio}{dfa-che-decide-un-li}
 Un DFA $D$ \emph{decide} un linguaggio $L$ se per ogni stringa $w \in L$, $D$ accetta $w$, e per ogni stringa $w \notin L$, $D$ rifiuta $w$.
 \end{definition}
 
@@ -138,7 +138,7 @@ Gli automi non-deterministici introducono il concetto di scelte multiple durante
 \subsection{Introduzione al Non-Determinismo}
 Consideriamo il linguaggio delle stringhe binarie che terminano con $000$, espresso dalla espressione regolare $(0|1)^*000$.
 
-\begin{example}[NFA per $(0|1)^*000$]
+\begin{example}{NFA per $(0|1)^*000$}{nfa-per}
 Un tentativo intuitivo di DFA potrebbe essere:
 \begin{itemize}
     \item $Q_0$: Stato iniziale e per leggere $(0|1)^*$.
@@ -171,7 +171,7 @@ Le transizioni sarebbero:
 Il problema evidenziato dal professore è il \emph{non-determinismo} in $Q_0$ quando legge $0$: può andare in $Q_0$ o $Q_1$.
 \end{example}
 
-\begin{definition}[Automa a Stati Finiti Non-Deterministico (NFA)]
+\begin{definition}{Automa a Stati Finiti Non-Deterministico (NFA)}{automa-a-stati-finit}
 Un automa a stati finiti non-deterministico $N$ è una quintupla $( \Sigma, Q, q_0, F, \delta )$, dove:
 \begin{itemize}
     \item $\Sigma$, $Q$, $q_0$, $F$ sono definiti come per i DFA.
@@ -182,7 +182,7 @@ Un automa a stati finiti non-deterministico $N$ è una quintupla $( \Sigma, Q, q
 \subsection{Computazione di un NFA}
 A causa delle transizioni che possono portare a più stati, per un dato input un NFA può avere \emph{più computazioni differenti}.
 
-\begin{definition}[Computazione Parziale per NFA]
+\begin{definition}{Computazione Parziale per NFA}{computazione-parzial}
 Una \emph{computazione parziale} di un NFA $N$ su una stringa $w = c_1 c_2 \dots c_n$ è una sequenza di $m+1$ configurazioni:
 \[ (R_0, c_1 \dots c_n) \xrightarrow{} (R_1, c_2 \dots c_n) \xrightarrow{} \dots \xrightarrow{} (R_m, c_{m+1} \dots c_n) \]
 tale che:
@@ -192,7 +192,7 @@ tale che:
 \end{itemize}
 \end{definition}
 
-\begin{example}[Traccia di Computazione per $0100$ su NFA $(0|1)^*000$]
+\begin{example}{Traccia di Computazione per $0100$ su NFA $(0|1)^*000$}{traccia-di-computazi}
 Consideriamo l'NFA precedente e la stringa $w = 0100$.
 \begin{itemize}
     \item \textbf{Percorso Accettante (se esistesse Q3 come accettante):}
@@ -214,7 +214,7 @@ Consideriamo l'NFA precedente e la stringa $w = 0100$.
 \end{itemize}
 \end{example}
 
-\begin{definition}[Accettazione di una Stringa (NFA)]
+\begin{definition}{Accettazione di una Stringa (NFA)}{accettazione-di-una-}
 Un NFA $N$ \emph{accetta} una stringa $w$ se \textbf{esiste almeno una} computazione completa per $w$ che sia accettante (ovvero, termina in uno stato finale $q_f \in F$ con input esaurito $\epsilon$).
 \end{definition}
 \noindent \textbf{Nota}: Un NFA rifiuta una stringa $w$ se \emph{tutte} le possibili computazioni per $w$ sono rifiutanti.
@@ -222,7 +222,7 @@ Un NFA $N$ \emph{accetta} una stringa $w$ se \textbf{esiste almeno una} computaz
 \subsubsection{La Natura del Non-Determinismo}
 È cruciale comprendere che gli NFA sono \emph{modelli astratti} di calcolo. Non implicano che una macchina fisica "provi tutte le strade contemporaneamente", "tiri a indovinare" o "faccia backtracking". La loro utilità risiede nella \textbf{semplicità di progettazione} e analisi concettuale.
 
-\begin{theorem}[Equivalenza DFA-NFA]
+\begin{theorem}{Equivalenza DFA-NFA}{equivalenza-dfanfa}
 Per ogni Automa a Stati Finiti Non-Deterministico (NFA), esiste un Automa a Stati Finiti Deterministico (DFA) equivalente che riconosce lo stesso linguaggio.
 \end{theorem}
 Questo teorema, sebbene non dimostrato qui, è fondamentale: significa che DFA e NFA hanno la stessa \emph{potenza espressiva}. Qualsiasi linguaggio riconoscibile da un NFA è riconoscibile anche da un DFA, e viceversa. Questo giustifica l'uso degli NFA per la loro semplicità di programmazione, sapendo che possono essere sempre convertiti in DFA per l'implementazione pratica.
@@ -230,7 +230,7 @@ Questo teorema, sebbene non dimostrato qui, è fondamentale: significa che DFA e
 \section{Limitazioni degli Automi a Stati Finiti}
 Nonostante la loro utilità, gli automi a stati finiti (sia deterministici che non-deterministici) non sono modelli di calcolo universali. Hanno delle limitazioni intrinseche.
 
-\begin{example}[Linguaggio $L = \{a^m b^m \mid m \geq 0\}$]
+\begin{example}{Linguaggio $L = \{a^m b^m \mid m \geq 0\}$}{linguaggio}
 Consideriamo il linguaggio $L$ sull'alfabeto $\Sigma = \{a, b\}$ definito come:
 \[ L = \{a^m b^m \mid m \geq 0\} \]
 Questo linguaggio include stringhe come $\epsilon$ (per $m=0$), $ab$, $aabb$, $aaabbb$, e così via. Ogni stringa in $L$ è composta da un certo numero di $a$ seguito esattamente dallo stesso numero di $b$.
@@ -240,7 +240,7 @@ Un programma Python o Java saprebbe facilmente verificare se una stringa è di q
 \subsection{Pumping Lemma}
 Gli automi a stati finiti non sono in grado di riconoscere il linguaggio $L = \{a^m b^m \mid m \geq 0\}$. L'intuizione dietro questa limitazione è che gli automi a stati finiti \textbf{non sanno contare} in modo arbitrario e \textbf{non hanno memoria esterna} per ricordare conteggi indefiniti.
 
-\begin{example}[DFA che riconosce solo $L_{limitato} = \{a^m b^m \mid 0 \leq m \leq 3\}$]
+\begin{example}{DFA che riconosce solo $L_{limitato} = \{a^m b^m \mid 0 \leq m \leq 3\}$}{dfa-che-riconosce-so}
 Per comprendere meglio la limitazione, consideriamo un DFA che può riconoscere solo una versione \emph{limitata} del linguaggio, ovvero $L_{limitato} = \{\epsilon, ab, aabb, aaabbb\}$:
 
 \begin{center}
@@ -297,7 +297,7 @@ Questo automa ha 8 stati e può riconoscere solo stringhe con al massimo 3 $a$ s
         \end{itemize}
         Graficamente: $q_0 \xrightarrow{u} q_i \xrightarrow{v} q_i \xrightarrow{w} q_f \in F$.
 
-\begin{example}[Visualizzazione del Ciclo Forzato]
+\begin{example}{Visualizzazione del Ciclo Forzato}{visualizzazione-del-}
 Supponiamo di avere un DFA con $P = 3$ stati che cerca di decidere $L = \{a^m b^m \mid m \geq 0\}$. Consideriamo la stringa $s = a^3 b^3 = aaabbb$:
 
 \begin{center}

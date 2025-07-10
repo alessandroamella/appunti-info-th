@@ -65,17 +65,89 @@
     chains,
 }
 
-% --- Theorem-like Environments (numbered within sections for consistency) ---
-\theoremstyle{definition} % Use definition style for normal (non-italic) text
-\newtheorem{theorem}{Teorema}[section]
-\newtheorem{definition}[theorem]{Definizione}
-\newtheorem{example}[theorem]{Esempio}
-\newtheorem{problem}{Problema}[section]
-\newtheorem{lemma}[theorem]{Lemma}
-\newtheorem{proposition}[theorem]{Proposizione}
-\newtheorem{corollary}[theorem]{Corollario}
-\newtheorem{remark}[theorem]{Osservazione}
-\newtheorem{proof_sketch}[theorem]{Sketch di Dimostrazione}
+% Add this to your preamble
+\usepackage{tcolorbox}
+\tcbuselibrary{theorems,breakable,skins}
+\usepackage{tikz} % Make sure TikZ is loaded
+
+% Define colors for different theorem types
+\definecolor{theoremcolor}{RGB}{0,100,150}
+\definecolor{definitioncolor}{RGB}{0,150,100}
+\definecolor{examplecolor}{RGB}{150,100,0}
+\definecolor{problemcolor}{RGB}{150,0,100}
+\definecolor{lemmacolor}{RGB}{100,0,150}
+\definecolor{remarkcolor}{RGB}{100,100,100}
+
+% --- Theorem-like Environments with boxes ---
+\theoremstyle{definition}
+
+% Theorem
+\newtcbtheorem[number within=section]{theorem}{Teorema}%
+{colback=theoremcolor!5,colframe=theoremcolor!35!black,fonttitle=\bfseries,
+ breakable,enhanced}{th}
+
+% Definition
+\newtcbtheorem[use counter from=theorem]{definition}{Definizione}%
+{colback=definitioncolor!5,colframe=definitioncolor!35!black,fonttitle=\bfseries,
+ breakable,enhanced}{def}
+
+% Example
+\newtcbtheorem[use counter from=theorem]{example}{Esempio}%
+{colback=examplecolor!5,colframe=examplecolor!35!black,fonttitle=\bfseries,
+ breakable,enhanced}{ex}
+
+% Problem
+\newtcbtheorem[number within=section]{problem}{Problema}%
+{colback=problemcolor!5,colframe=problemcolor!35!black,fonttitle=\bfseries,
+ breakable,enhanced}{prob}
+
+% Lemma
+\newtcbtheorem[use counter from=theorem]{lemma}{Lemma}%
+{colback=lemmacolor!5,colframe=lemmacolor!35!black,fonttitle=\bfseries,
+ breakable,enhanced}{lem}
+
+% Proposition
+\newtcbtheorem[use counter from=theorem]{proposition}{Proposizione}%
+{colback=theoremcolor!5,colframe=theoremcolor!35!black,fonttitle=\bfseries,
+ breakable,enhanced}{prop}
+
+% Corollary
+\newtcbtheorem[use counter from=theorem]{corollary}{Corollario}%
+{colback=theoremcolor!5,colframe=theoremcolor!35!black,fonttitle=\bfseries,
+ breakable,enhanced}{cor}
+
+% Remark
+\newtcbtheorem[use counter from=theorem]{remark}{Osservazione}%
+{colback=remarkcolor!5,colframe=remarkcolor!35!black,fonttitle=\bfseries,
+ breakable,enhanced}{rem}
+
+% Proof Sketch
+\newtcbtheorem[use counter from=theorem]{proof_sketch}{Sketch di Dimostrazione}%
+{colback=gray!5,colframe=gray!35!black,fonttitle=\bfseries,
+ breakable,enhanced}{psketch}
+
+% Usage examples:
+% \begin{theorem}{Title}{label}
+%   Content of theorem
+% \end{theorem}
+%
+% \begin{definition}{Title}{label}
+%   Content of definition
+% \end{definition}
+%
+% Example with TikZ inside a theorem:
+% \begin{theorem}{Pythagorean Theorem}{pythagoras}
+%   In a right triangle, $a^2 + b^2 = c^2$.
+%   \begin{center}
+%   \begin{tikzpicture}[scale=0.8]
+%     \draw (0,0) -- (3,0) -- (3,4) -- cycle;
+%     \draw (0,0) -- (0.5,0) -- (0.5,0.5) -- (0,0.5) -- cycle;
+%     \node at (1.5,-0.3) {$a$};
+%     \node at (3.3,2) {$b$};
+%     \node at (1.3,2.2) {$c$};
+%   \end{tikzpicture}
+%   \end{center}
+% \end{theorem}
 
 % --- Custom Commands (from various lectures) ---
 % For Turing Machine symbols (from lecture 9/10)
