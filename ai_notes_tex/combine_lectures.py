@@ -156,7 +156,7 @@ def create_master_document(
             "\\addcontentsline{toc}{chapter}{Informazioni sul Documento}\n\n"
         )
         master_doc.write(
-            "Questo documento è la versione compilata automaticamente di tutti i miei appunti di Informatica Teorica per il corso di Laurea in Informatica all'Università di Bologna.\n\n"
+            "Questo documento è la versione compilata automaticamente di tutti i miei appunti di Informatica Teorica per il corso di Laurea in Informatica all'Università di Bologna, tenuto dal Prof. Enrico Malizia.\n\n"
         )
         master_doc.write("\\begin{itemize}\n")
         master_doc.write(
