@@ -43,33 +43,9 @@
 \tableofcontents
 \newpage
 
-\section{Introduzione alle Classi di Complessità}
+\section{Classi di Complessità}
 
-Abbiamo iniziato a definire classi di complessità che sono sottoclassi della classe $\mathbf{R}$ (Problemi Decidibili). Ci chiediamo quali problemi siano facili e quali difficili.
-
-Abbiamo introdotto i concetti di \emph{computation time} e \emph{running time} per Macchine di Turing (TM) e le funzioni di tempo. Da ciò, abbiamo definito le classi:
-\begin{itemize}
-    \item \textbf{Time($f(n)$)}: L'insieme di tutti i linguaggi decidibili da una Macchina di Turing deterministica in tempo $O(f(n))$.
-    \item \textbf{NTime($f(n)$)}: L'insieme di tutti i linguaggi decidibili da una Macchina di Turing non deterministica in tempo $O(f(n))$.
-\end{itemize}
-
-Queste classi ci permettono di definire il concetto di risolvibilità in tempo polinomiale, esponenziale, ecc., sia in modalità deterministica che non deterministica.
-
-\subsection{Classi P e NP}
-
-\begin{definition}[Classe P]
-La classe \textbf{P} è l'insieme di tutti i problemi di decisione decidibili da una Macchina di Turing deterministica in tempo polinomiale.
-Formalmente: $\mathbf{P} = \bigcup_{k \ge 1} \text{Time}(n^k)$.
-\end{definition}
-
-\begin{definition}[Classe NP]
-La classe \textbf{NP} è l'insieme di tutti i problemi di decisione decidibili da una Macchina di Turing non deterministica in tempo polinomiale.
-Formalmente: $\mathbf{NP} = \bigcup_{k \ge 1} \text{NTime}(n^k)$.
-\end{definition}
-
-\textbf{Nota Importante:} NP sta per \emph{Non-deterministic Polynomial}, non per \emph{Non-Polynomial}.
-
-\subsubsection{Relazione tra P e NP: Il Problema P vs NP}
+\subsection{Relazione tra P e NP: Il Problema P vs NP}
 
 È intuitivo che $\mathbf{P} \subseteq \mathbf{NP}$. Tutto ciò che può essere deciso in tempo polinomiale deterministico può anche essere deciso in tempo polinomiale non deterministico (una TM deterministica è un caso particolare di TM non deterministica).
 
@@ -87,7 +63,7 @@ Siano $A$ e $B$ due linguaggi. Una \textbf{riduzione polinomiale} da $A$ a $B$ �
     \item $f$ è calcolabile da una Macchina di Turing deterministica in tempo polinomiale.
     \item Per ogni stringa $w \in \Sigma^*$, $w \in A \iff f(w) \in B$.
 \end{enumerate}
-La riduzione è denotata con $A \le_p B$.
+La riduzione è denotata con $A \le_p B$, e si legge come "$A$ è riducibile a $B$ in tempo polinomiale".
 \end{definition}
 Il vincolo cruciale è che la trasformazione $f$ (implementata da un trasduttore) deve avere un tempo di esecuzione polinomiale rispetto alla taglia dell'input.
 
