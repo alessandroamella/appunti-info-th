@@ -317,28 +317,39 @@ Le relazioni di inclusione note sono le seguenti:
 \[ \mathbf{L} \subseteq \mathbf{NL} \subseteq \mathbf{P} \subseteq \mathbf{NP} \subseteq \mathbf{PSPACE} = \mathbf{NPSPACE} \subseteq \mathbf{EXP} \subseteq \mathbf{NEXP} \]
 
 \begin{figure}[h!]
-    \centering
-    \begin{tikzpicture}[
-        scale=0.8,
-        level distance=1.5cm,
-        level 1/.style={sibling distance=2.5cm},
-        level 2/.style={sibling distance=2.5cm},
-        level 3/.style={sibling distance=3cm},
-        level 4/.style={sibling distance=3.5cm}
-    ]
-    % Disegna i cerchi concentrici per le classi
-    \draw[thick] (0,0) circle (0.5cm) node[below, yshift=-0.5em] {\textbf{L}};
-    \draw[thick] (0,0) circle (1.0cm) node[below, yshift=-0.5em] {\textbf{NL}};
-    \draw[thick] (0,0) circle (1.5cm) node[below, yshift=-0.5em] {\textbf{P}};
-    \draw[thick] (0,0) circle (2.0cm) node[below, yshift=-0.5em] {\textbf{NP}};
-    % Per co-NP si può posizionare a lato o implicare che PSPACE le contiene entrambe
-    \draw[thick] (0,0) circle (2.5cm) node[below right=0.5cm, xshift=0.5em, yshift=-0.5em] {\textbf{co-NP}};
-    \draw[thick] (0,0) circle (3.0cm) node[below, yshift=-0.5em] {\textbf{PSPACE}=\textbf{NPSPACE}};
-    \draw[thick] (0,0) circle (3.5cm) node[below, yshift=-0.5em] {\textbf{EXP}};
-    \draw[thick] (0,0) circle (4.0cm) node[below, yshift=-0.5em] {\textbf{NEXP}};
-    \end{tikzpicture}
-    \caption{Diagramma di inclusione delle principali classi di complessità.}
-    \label{fig:complexity_classes}
+\centering
+\begin{tikzpicture}[scale=1.5]
+% Draw concentric semi-circles for complexity classes - ALL FROM SAME CENTER (0,0)
+\draw[thick] (0.8,0) arc[start angle=0, end angle=180, radius=0.8cm];
+\draw[thick] (1.4,0) arc[start angle=0, end angle=180, radius=1.4cm];
+\draw[thick] (2.0,0) arc[start angle=0, end angle=180, radius=2.0cm];
+\draw[thick] (2.6,0) arc[start angle=0, end angle=180, radius=2.6cm];
+\draw[thick] (3.2,0) arc[start angle=0, end angle=180, radius=3.2cm];
+\draw[thick] (3.8,0) arc[start angle=0, end angle=180, radius=3.8cm];
+\draw[thick] (4.4,0) arc[start angle=0, end angle=180, radius=4.4cm];
+
+% Close the semi-circles with a base line
+\draw[thick] (-4.4,0) -- (4.4,0);
+
+% Labels positioned clearly in each semi-circular region
+\node at (0,0.5) {\textbf{L}};
+\node at (0,1.1) {\textbf{NL}};
+\node at (0,1.75) {\textbf{P}};
+\node at (0,2.4) {\textbf{NP}};
+\node at (0,2.9) {\textbf{co-NP}};
+\node at (0,3.4) {\textbf{PSPACE = NPSPACE}};
+\node at (0,4.0) {\textbf{EXP}};
+\node at (0,4.6) {\textbf{NEXP}};
+
+% Optional: Add some example problems in smaller text
+\node[font=\small, darkgray] at (0,0.2) {regular lang.};
+\node[font=\small, darkgray] at (0,0.9) {context-free lang.};
+\node[font=\small, darkgray] at (0,1.55) {sorting, matching};
+\node[font=\small, darkgray] at (0,2.15) {SAT, TSP};
+
+\end{tikzpicture}
+\caption{Diagramma di inclusione delle principali classi di complessità.}
+\label{fig:complexity_classes}
 \end{figure}
 
 È noto che tutte le inclusioni sono strette, tranne possibilmente $\mathbf{P} \subseteq \mathbf{NP}$ e $\mathbf{L} \subseteq \mathbf{NL}$.
