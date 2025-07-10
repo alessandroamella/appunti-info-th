@@ -117,10 +117,10 @@ Avevamo visto un algoritmo deterministico per questo linguaggio che marcava o ca
 \begin{example}[Decisore per $0^n1^n$ in LogSpace]
 Per decidere $L_0$ in spazio logaritmico, la TM deterministica può fare quanto segue:
 \begin{enumerate}
-    \item Scorre l'input tape, contando il numero di $0$ e memorizzando il conteggio sul work tape in binario. La rappresentazione binaria di $n$ (numero di $0$s) occupa $O(\log n)$ spazio.
-    \item Una volta terminati gli $0$s, riposiziona la testina dell'input tape all'inizio degli $1$s.
-    \item Scorre gli $1$s, contando il loro numero e memorizzando il conteggio sul work tape in binario, sovrascrivendo il conteggio precedente.
-    \item Confronta i due conteggi binari (uno dopo gli $0$s, uno dopo gli $1$s). Se sono uguali e la stringa è della forma corretta ($0...01...1$), la TM accetta; altrimenti, rigetta.
+    \item Scorre l'input tape, contando il numero di $0$ e memorizzando il conteggio sul work tape in binario. La rappresentazione binaria di $n$ (numero di $0$) occupa $O(\log n)$ spazio.
+    \item Una volta terminati gli $0$, riposiziona la testina dell'input tape all'inizio degli $1$.
+    \item Scorre gli $1$, contando il loro numero e memorizzando il conteggio sul work tape in binario, sovrascrivendo il conteggio precedente.
+    \item Confronta i due conteggi binari (uno dopo gli $0$, uno dopo gli $1$). Se sono uguali e la stringa è della forma corretta ($0...01...1$), la TM accetta; altrimenti, rigetta.
 \end{enumerate}
 Lo spazio utilizzato sul work tape è limitato alla memorizzazione di pochi numeri binari (il conteggio, eventuali puntatori, ecc.), ciascuno dei quali occupa $O(\log n)$ spazio. Pertanto, $L_0 \in \text{L}$.
 \end{example}
