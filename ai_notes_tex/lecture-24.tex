@@ -13,7 +13,25 @@
 \usepackage{fancyhdr}
 \usepackage{amsthm}
 \usepackage{tikz}
-\usetikzlibrary{automata,positioning}
+\usetikzlibrary{
+    automata,
+    positioning,
+    arrows,
+    arrows.meta,
+    calc,
+    fit,
+    patterns,
+    graphs,
+    graphdrawing,
+    matrix,
+    quotes,
+    shapes.geometric,
+    snakes,
+    shapes,
+    decorations.pathreplacing,
+    calligraphy,
+    chains,
+}
 
 % Definizione degli ambienti
 \theoremstyle{definition} % Use definition style for normal (non-italic) text
@@ -119,8 +137,8 @@ Per decidere $L_0$ in spazio logaritmico, la TM deterministica può fare quanto 
 \begin{enumerate}
     \item Scorre l'input tape, contando il numero di $0$ e memorizzando il conteggio sul work tape in binario. La rappresentazione binaria di $n$ (numero di $0$) occupa $O(\log n)$ spazio.
     \item Una volta terminati gli $0$, riposiziona la testina dell'input tape all'inizio degli $1$.
-    \item Scorre gli $1$, contando il loro numero e memorizzando il conteggio sul work tape in binario, sovrascrivendo il conteggio precedente.
-    \item Confronta i due conteggi binari (uno dopo gli $0$, uno dopo gli $1$). Se sono uguali e la stringa è della forma corretta ($0...01...1$), la TM accetta; altrimenti, rigetta.
+    \item Scorre gli $1$, decrementando il contatore sul work tape per ogni $1$ letto.
+    \item Alla fine, se il contatore è esattamente zero e la stringa è della forma corretta ($0...01...1$), la TM accetta; altrimenti, rigetta.
 \end{enumerate}
 Lo spazio utilizzato sul work tape è limitato alla memorizzazione di pochi numeri binari (il conteggio, eventuali puntatori, ecc.), ciascuno dei quali occupa $O(\log n)$ spazio. Pertanto, $L_0 \in \text{L}$.
 \end{example}
@@ -133,6 +151,25 @@ Il problema \textbf{REACHABILITY} (o \textbf{ST-Connectivity}) è un problema cl
 Sia $G=(V,E)$ un grafo orientato, e siano $s, t \in V$ due vertici. Il problema \textbf{REACHABILITY} consiste nel decidere se esiste un cammino (path) da $s$ a $t$ in $G$.
 \[ \text{REACHABILITY} = \{ (G, s, t) \mid G \text{ è un grafo orientato e esiste un cammino da } s \text{ a } t \text{ in } G \} \]
 \end{definition}
+
+\begin{example}[Rappresentazione di REACHABILITY]
+Consideriamo un grafo semplice $G$ con i vertici $A$, $B$
+% Esempio grafico semplice con TikZ per REACHABILITY
+\begin{center}
+\begin{tikzpicture}[->, node distance=2cm, thick, scale=1, every node/.style={scale=1}]
+  \node[draw, circle] (A) {A};
+  \node[draw, circle, right of=A] (B) {B};
+  \node[draw, circle, right of=B] (C) {C};
+  \draw (A) -- (B);
+  \draw (B) -- (C);
+  % Optional: arco diretto da A a C
+  %\draw[bend left] (A) to (C);
+\end{tikzpicture}
+\end{center}
+
+\noindent
+In questo esempio, esiste un cammino da A a C passando per B, quindi REACHABILITY$(G, A, C)$ è vero.
+\end{example}
 
 Algoritmi standard come BFS (Breadth-First Search) o DFS (Depth-First Search) risolvono REACHABILITY in tempo polinomiale, ma tipicamente richiedono spazio $O(|V| + |E|)$ o $O(|V|)$ per memorizzare i nodi visitati o le code/stack. Questo è spazio lineare, non logaritmico.
 

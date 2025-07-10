@@ -29,7 +29,6 @@
 
 % Stile per le dimostrazioni (come suggerito dal template)
 \theoremstyle{definition} % Usa lo stile "definition" per le prove se preferisci non un corsivo
-\newtheorem*{proof*}{Dimostrazione}
 
 \hypersetup{
     pdftitle={Lezione di Informatica Teorica - Problemi NP-Completi},
@@ -87,7 +86,7 @@ Il problema di decisione \emph{Independent Set} è definito come l'insieme delle
 Il problema \emph{Independent Set} appartiene alla classe NP.
 \end{proposition}
 
-\begin{proof*}
+\begin{proof}
 Per dimostrare che IS $\in$ NP, dobbiamo mostrare che esiste una Macchina di Turing Non-Deterministica (MTND) che decide un'istanza in tempo polinomiale.
 Una MTND può risolvere IS come segue:
 \begin{enumerate}
@@ -100,7 +99,7 @@ Una MTND può risolvere IS come segue:
     Se entrambe le condizioni sono soddisfatte, la MTND accetta l'istanza. Altrimenti, la rifiuta.
 \end{enumerate}
 Entrambi i passaggi (guess e check) possono essere eseguiti in tempo polinomiale rispetto alla dimensione dell'input (numero di nodi e archi del grafo). Quindi, Independent Set $\in$ NP.
-\end{proof*}
+\end{proof}
 
 \subsection{Dimostrazione NP-Hardness: $3SAT \le_p IS$}
 
@@ -110,7 +109,7 @@ Per dimostrare che Independent Set è NP-Hard, effettuiamo una riduzione polinom
 $3SAT \le_p IS$. Di conseguenza, \emph{Independent Set} è NP-Hard.
 \end{theorem}
 
-\begin{proof*}
+\begin{proof}
 Sia $\phi = C_1 \land C_2 \land \dots \land C_m$ un'istanza di 3-SAT, dove ogni $C_i$ è una clausola con esattamente tre letterali (possiamo usare la variante Exact 3-SAT). Vogliamo costruire una coppia $\langle G, K \rangle$ tale che $\phi$ è soddisfacibile se e solo se $G$ ha un Independent Set di taglia almeno $K$.
 
 \textbf{Costruzione della Trasformazione ($f$):}
@@ -194,7 +193,7 @@ Infine, dobbiamo dimostrare che $\sigma_S$ soddisfa $\phi$.
 Per ogni clausola $C_i$, sappiamo che $S$ contiene esattamente un nodo $v$ proveniente dalla tripletta di nodi di $C_i$. Sia $l$ il letterale corrispondente a $v$. Per costruzione di $\sigma_S$, il valore di verità di $l$ sarà Vero sotto $\sigma_S$. Questo significa che ogni clausola $C_i$ contiene almeno un letterale vero, e quindi $\phi$ è soddisfatta da $\sigma_S$.
 
 Poiché la trasformazione è polinomiale e la dimostrazione di equivalenza è valida in entrambi i versi, abbiamo dimostrato che $3SAT \le_p IS$. Dato che 3-SAT è NP-Hard, anche Independent Set è NP-Hard. Con IS $\in$ NP (dimostrato sopra), concludiamo che \textbf{Independent Set è NP-Completo}.
-\end{proof*}
+\end{proof}
 
 \section{Vertex Cover (VC)}
 
@@ -214,7 +213,7 @@ Il problema di decisione \emph{Vertex Cover} è definito come l'insieme delle co
 Il problema \emph{Vertex Cover} appartiene alla classe NP.
 \end{proposition}
 
-\begin{proof*}
+\begin{proof}
 Simile a Independent Set:
 \begin{enumerate}
     \item \textbf{Guess:} La MTND indovina un sottoinsieme $C'$ di nodi di $V$.
@@ -225,7 +224,7 @@ Simile a Independent Set:
     \end{itemize}
 \end{enumerate}
 Entrambi i passaggi sono polinomiali. Quindi, Vertex Cover $\in$ NP.
-\end{proof*}
+\end{proof}
 
 \subsection{Dimostrazione NP-Hardness: $IS \le_p VC$}
 
@@ -235,7 +234,7 @@ Per dimostrare che Vertex Cover è NP-Hard, effettuiamo una riduzione polinomial
 Sia $G=(V, E)$ un grafo non orientato. Un sottoinsieme $S \subseteq V$ è un Independent Set di $G$ se e solo se il suo complemento $V \setminus S$ è un Vertex Cover di $G$.
 \end{lemma}
 
-\begin{proof*}
+\begin{proof}
 \begin{itemize}
     \item[$\implies$] Supponiamo che $S$ sia un Independent Set di $G$.
     Dobbiamo dimostrare che $C = V \setminus S$ è un Vertex Cover di $G$.
@@ -246,13 +245,13 @@ Sia $G=(V, E)$ un grafo non orientato. Un sottoinsieme $S \subseteq V$ è un Ind
     Assumiamo per contraddizione che $S$ non sia un Independent Set. Questo significa che esiste almeno un arco $(u, v) \in E$ tale che entrambi i suoi endpoints $u, v$ sono in $S$. Ma se $u \in S$ e $v \in S$, allora $u \notin C$ e $v \notin C$. Questo significa che l'arco $(u, v)$ non è coperto da $C$, il che contraddice la nostra ipotesi che $C$ sia un Vertex Cover. Quindi la nostra assunzione è falsa, e $S$ deve essere un Independent Set.
 \end{itemize}
 Il lemma è dimostrato.
-\end{proof*}
+\end{proof}
 
 \begin{theorem}
 $IS \le_p VC$. Di conseguenza, \emph{Vertex Cover} è NP-Hard.
 \end{theorem}
 
-\begin{proof*}
+\begin{proof}
 Sia $\langle G, K \rangle$ un'istanza di Independent Set. Vogliamo costruire una coppia $\langle H, L \rangle$ tale che $G$ ha un Independent Set di taglia almeno $K$ se e solo se $H$ ha un Vertex Cover di taglia al più $L$.
 
 \textbf{Costruzione della Trasformazione ($f$):}
@@ -286,7 +285,7 @@ $|S| \ge |V| - (|V| - K) = |V| - |V| + K = K$.
 Questo significa che $G$ ha un Independent Set $S$ di taglia almeno $K$, quindi $\langle G, K \rangle$ è un'istanza "sì" di Independent Set.
 
 Poiché la trasformazione è polinomiale e la dimostrazione di equivalenza è valida in entrambi i versi, abbiamo dimostrato che $IS \le_p VC$. Dato che Independent Set è NP-Hard, anche Vertex Cover è NP-Hard. Con VC $\in$ NP (dimostrato sopra), concludiamo che \textbf{Vertex Cover è NP-Completo}.
-\end{proof*}
+\end{proof}
 
 \section{Clique}
 
@@ -306,7 +305,7 @@ Il problema di decisione \emph{Clique} è definito come l'insieme delle coppie $
 Il problema \emph{Clique} appartiene alla classe NP.
 \end{proposition}
 
-\begin{proof*}
+\begin{proof}
 \begin{enumerate}
     \item \textbf{Guess:} La MTND indovina un sottoinsieme $Q'$ di nodi di $V$.
     \item \textbf{Check:} La MTND verifica deterministicamente:
@@ -316,7 +315,7 @@ Il problema \emph{Clique} appartiene alla classe NP.
     \end{itemize}
 \end{enumerate}
 Entrambi i passaggi sono polinomiali. Quindi, Clique $\in$ NP.
-\end{proof*}
+\end{proof}
 
 \subsection{Dimostrazione NP-Hardness: $IS \le_p Clique$}
 
@@ -330,7 +329,7 @@ Dato un grafo non orientato $G=(V, E)$, il suo \emph{grafo complemento} $\bar{G}
 Sia $G=(V, E)$ un grafo non orientato. Un sottoinsieme $S \subseteq V$ è un Independent Set di $G$ se e solo se $S$ è una Clique in $\bar{G}$.
 \end{lemma}
 
-\begin{proof*}
+\begin{proof}
 \begin{itemize}
     \item[$\implies$] Supponiamo che $S$ sia un Independent Set di $G$.
     Dobbiamo dimostrare che $S$ è una Clique in $\bar{G}$.
@@ -345,13 +344,13 @@ Sia $G=(V, E)$ un grafo non orientato. Un sottoinsieme $S \subseteq V$ è un Ind
     Quindi, per ogni coppia di nodi distinti $u, v \in S$, non esiste un arco $(u, v)$ in $E$. Questo significa che $S$ è un Independent Set in $G$.
 \end{itemize}
 Il lemma è dimostrato.
-\end{proof*}
+\end{proof}
 
 \begin{theorem}
 $IS \le_p Clique$. Di conseguenza, \emph{Clique} è NP-Hard.
 \end{theorem}
 
-\begin{proof*}
+\begin{proof}
 Sia $\langle G, K \rangle$ un'istanza di Independent Set. Vogliamo costruire una coppia $\langle H, L \rangle$ tale che $G$ ha un Independent Set di taglia almeno $K$ se e solo se $H$ ha una Clique di taglia almeno $L$.
 
 \textbf{Costruzione della Trasformazione ($f$):}
@@ -379,7 +378,7 @@ La taglia di $S$ è $|S| \ge L$. Per costruzione, $L=K$.
 Quindi, $G$ ha un Independent Set $S$ di taglia almeno $K$, il che significa che $\langle G, K \rangle$ è un'istanza "sì" di Independent Set.
 
 Poiché la trasformazione è polinomiale e la dimostrazione di equivalenza è valida in entrambi i versi, abbiamo dimostrato che $IS \le_p Clique$. Dato che Independent Set è NP-Hard, anche Clique è NP-Hard. Con Clique $\in$ NP (dimostrato sopra), concludiamo che \textbf{Clique è NP-Completo}.
-\end{proof*}
+\end{proof}
 
 \section{Dominating Set (DS)}
 
@@ -429,7 +428,7 @@ Il problema di decisione \emph{Dominating Set} è definito come l'insieme delle 
 Il problema \emph{Dominating Set} appartiene alla classe NP.
 \end{proposition}
 
-\begin{proof*}
+\begin{proof}
 \begin{enumerate}
     \item \textbf{Guess:} La MTND indovina un sottoinsieme $D'$ di nodi di $V$.
     \item \textbf{Check:} La MTND verifica deterministicamente:
@@ -439,7 +438,7 @@ Il problema \emph{Dominating Set} appartiene alla classe NP.
     \end{itemize}
 \end{enumerate}
 Entrambi i passaggi sono polinomiali. Quindi, Dominating Set $\in$ NP.
-\end{proof*}
+\end{proof}
 
 \subsection{Dimostrazione NP-Hardness: $VC \le_p DS$}
 
@@ -449,7 +448,7 @@ Per dimostrare che Dominating Set è NP-Hard, effettuiamo una riduzione polinomi
 $VC \le_p DS$. Di conseguenza, \emph{Dominating Set} è NP-Hard.
 \end{theorem}
 
-\begin{proof*}
+\begin{proof}
 Sia $\langle G=(V,E), K \rangle$ un'istanza di Vertex Cover. Vogliamo costruire una coppia $\langle H=(V_H, E_H), L \rangle$ tale che $G$ ha un Vertex Cover di taglia al più $K$ se e solo se $H$ ha un Dominating Set di taglia al più $L$.
 
 \textbf{Costruzione della Trasformazione ($f$):}
@@ -529,7 +528,7 @@ Entrambi i casi portano a una contraddizione. Pertanto, l'assunzione che $C'$ no
 Quindi, $C'$ è un Vertex Cover di $G$ di taglia al più $K$. Ciò significa che $\langle G, K \rangle$ è un'istanza "sì" di Vertex Cover.
 
 Poiché la trasformazione è polinomiale e la dimostrazione di equivalenza è valida in entrambi i versi, abbiamo dimostrato che $VC \le_p DS$. Dato che Vertex Cover è NP-Hard, anche Dominating Set è NP-Hard. Con DS $\in$ NP (dimostrato sopra), concludiamo che \textbf{Dominating Set è NP-Completo}.
-\end{proof*}
+\end{proof}
 
 \section{Conclusioni}
 Oggi abbiamo esaminato diversi problemi NP-Completi sui grafi, dimostrando la loro NP-Completezza tramite riduzioni polinomiali. Abbiamo visto come i problemi NP-Completi siano tutti interconnessi attraverso queste riduzioni, formando una "catena" di complessità. È fondamentale comprendere il metodo delle riduzioni, la costruzione di un'istanza e la dimostrazione della sua correttezza in entrambi i versi. Per padroneggiare questi concetti, è altamente consigliabile rivedere le dimostrazioni e provare a ricrearle autonomamente.
