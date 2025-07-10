@@ -80,7 +80,9 @@ A differenza di $VC$, $Min-Cover$ richiede che la taglia sia \emph{esattamente} 
 
 \subsubsection{Un Algoritmo per Min-Cover}
 Osserviamo che $Min-Cover$ può essere riformulato in termini di $VC$:
-$\langle G, k \rangle \in Min-Cover \iff \langle G, k \rangle \in VC \text{ AND } \langle G, k-1 \rangle \notin VC$.
+\begin{equation}
+    \langle G, k \rangle \in Min\text{-}Cover \iff \langle G, k \rangle \in VC \text{ AND } \langle G, k-1 \rangle \notin VC
+\end{equation}
 
 Questo significa che per decidere $Min-Cover$, possiamo fare due domande a un decisore per $VC$.
 Consideriamo il seguente pseudocodice:
@@ -101,7 +103,7 @@ Questo algoritmo deterministico in tempo polinomiale necessita di un "aiuto" est
 Per formalizzare il concetto di "aiuto" o "subroutine esterna", introduciamo il modello delle \textbf{macchine ad oracolo}.
 
 \begin{definition}{Macchina ad Oracolo}{macchina-ad-oracolo}
-Una macchina ad oracolo $M^L$ è una Macchina di Turing deterministica o non deterministica estesa con i seguenti componenti:
+Una macchina ad oracolo $M^?$ è una Macchina di Turing deterministica o non deterministica estesa con i seguenti componenti:
 \begin{itemize}
     \item \textbf{Oracle Tape (Nastro dell'Oracolo):} Un nastro di sola scrittura utilizzato per formulare le query all'oracolo.
     \item \textbf{Query State ($q_?$):} Uno stato speciale in cui la macchina può entrare dopo aver scritto una query sull'Oracle Tape.
@@ -113,11 +115,13 @@ La notazione $M^L$ indica che la macchina $M$ ha accesso a un oracolo per il lin
 
 \section{Classi di Complessità con Oracolo}
 Le macchine ad oracolo permettono di definire nuove classi di complessità.
+
 \begin{definition}{$P^C$}{definition-lecture-26-1}
-$P^C = \{ L \mid L \text{ può essere deciso in tempo polinomiale da una macchina ad oracolo deterministica } M^{\text{L'}} \text{ dove } L' \in C \}$.
+$P^C = \{ L \mid L$ può essere deciso in tempo polinomiale da una macchina ad oracolo deterministica $M^{L'}$ dove $L' \in C \}$.
 \end{definition}
+
 \begin{definition}{$NP^C$}{definition-lecture-26-2}
-$NP^C = \{ L \mid L \text{ può essere deciso in tempo polinomiale da una macchina ad oracolo non deterministica } M^{\text{L'}} \text{ dove } L' \in C \}$.
+$NP^C = \{ L \mid L$ può essere deciso in tempo polinomiale da una macchina ad oracolo non deterministica $M^{L'}$ dove $L' \in C \}$.
 \end{definition}
 
 \subsection{Min-Cover in $P^{NP}$}
@@ -134,28 +138,28 @@ Sia $L \in NP$. Per dimostrare che $L \in P^{NP}$, costruiamo una macchina $M$ c
 Sia $L \in CoNP$. Ciò implica che $\overline{L} \in NP$. Costruiamo una macchina $M$ che utilizza un oracolo per $\overline{L}$. $M$ prende l'input $x$, lo scrive sul nastro dell'oracolo, effettua una query. Se l'oracolo per $\overline{L}$ risponde "sì" (cioè $x \in \overline{L}$), $M$ rifiuta; altrimenti (cioè $x \notin \overline{L}$, quindi $x \in L$), $M$ accetta. Questa macchina è deterministica e opera in tempo polinomiale. Quindi, $L \in P^{NP}$.
 \end{proposition}
 
-\begin{figure}[h]
-    \centering
-    \begin{tikzpicture}[node distance=1.5cm, auto, thick, scale=0.8,
-        set/.style = {ellipse, draw, minimum width=2.5cm, minimum height=1.5cm}]
+\begin{figure}[h!]
+\centering
+\begin{tikzpicture}[scale=1.5]
+% Draw concentric semi-circles for complexity classes - ALL FROM SAME CENTER (0,0)
+% \draw[thick] (1.4,0) arc[start angle=0, end angle=180, radius=1.4cm];
+\draw[thick] (2.6,0) arc[start angle=0, end angle=180, radius=2.6cm];
 
-        % P
-        \node (P) [set, label=below:$P$] at (0,0) {};
-        
-        % NP and CoNP
-        \node (NP) [set, above right=0.8cm and 0.8cm of P, label=below:$NP$] {};
-        \node (CoNP) [set, above left=0.8cm and 0.8cm of P, label=below:$CoNP$] {};
-        
-        % PNP
-        \node (PNP) [set, minimum width=5cm, minimum height=3.5cm, draw, fit=(NP) (CoNP), label=above:$P^{NP}$] at (0,1.5) {};
+% Draw separate semicircles for NP and CO-NP at the same radius
+\draw[thick] (1.4,0) arc[start angle=0, end angle=180, radius=2.0cm] -- (0,0);
+\draw[thick] (2.6,0) arc[start angle=0, end angle=180, radius=2.0cm] -- (0,0);
 
-        % Inclusions
-        \draw[->] (P) -- (NP);
-        \draw[->] (P) -- (CoNP);
-        \draw[->] (NP) -- (PNP);
-        \draw[->] (CoNP) -- (PNP);
-    \end{tikzpicture}
-    \caption{Relazioni iniziali tra $P$, $NP$, $CoNP$ e $P^{NP}$}
+% Close the outer semi-circles with a base line
+\draw[thick] (-2.6,0) -- (2.6,0);
+
+% Labels positioned clearly in each region
+\node at (0,1.1) {\textbf{P}};
+\node at (1,1.75) {\textbf{NP}};
+\node at (-1,1.75) {\textbf{CO-NP}};
+\node at (0,2.3) {\textbf{P$^{NP}$}};
+\end{tikzpicture}
+\caption{Relazioni tra $P$, $NP$, $CoNP$ e $P^{NP}$}
+\label{fig:complexity_classes}
 \end{figure}
 
 \section{Gerarchia Polinomiale}
@@ -171,7 +175,7 @@ Le classi della Gerarchia Polinomiale sono definite come segue:
     $\Delta_0^P = P$
     \item \textbf{Livello $i+1$ (per $i \ge 0$):}
     $\Sigma_{i+1}^P = NP^{\Sigma_i^P}$
-    $\Pi_{i+1}^P = co\Sigma_{i+1}^P$
+    $\Pi_{i+1}^P = Co\Sigma_{i+1}^P$
     $\Delta_{i+1}^P = P^{\Sigma_i^P}$
 \end{itemize}
 \end{definition}
@@ -179,11 +183,11 @@ Le classi della Gerarchia Polinomiale sono definite come segue:
 \subsubsection{Esempi dei Primi Livelli:}
 \begin{itemize}
     \item $\Sigma_1^P = NP^{\Sigma_0^P} = NP^P = NP$ (poiché un oracolo in P non aggiunge potere computazionale a una macchina NP, che già può simulare P).
-    \item $\Pi_1^P = co\Sigma_1^P = coNP$.
+    \item $\Pi_1^P = Co\Sigma_1^P = CoNP$.
     \item $\Delta_1^P = P^{\Sigma_0^P} = P^P = P$.
     \item $\Delta_2^P = P^{\Sigma_1^P} = P^{NP}$. (Il problema $Min-Cover$ visto prima si colloca precisamente in $\Delta_2^P$).
     \item $\Sigma_2^P = NP^{\Sigma_1^P} = NP^{NP}$.
-    \item $\Pi_2^P = co\Sigma_2^P = coNP^{NP}$.
+    \item $\Pi_2^P = Co\Sigma_2^P = CoNP^{NP}$.
 \end{itemize}
 
 \subsection{Relazioni di Inclusione nella Gerarchia Polinomiale}
@@ -256,6 +260,46 @@ Per ogni $i \ge 0$:
 \end{figure}
 
 La gerarchia polinomiale contiene infiniti livelli, e la questione se questa gerarchia collassi (cioè se ci sia un livello $k$ tale che $\Sigma_k^P = PSPACE$) o se sia infinita è un problema aperto. Si ritiene che sia infinita. L'intera gerarchia polinomiale è contenuta in $PSPACE$. Al di sopra di $PSPACE$ troviamo $EXPTIME$, $NEXPTIME$, e infine la classe $R$ (Ricorsivamente enumerabile o Decidibile).
+
+\begin{figure}[h!]
+\centering
+\begin{tikzpicture}[scale=1.5]
+% Draw concentric semi-circles for complexity classes - ALL FROM SAME CENTER (0,0)
+\draw[thick] (0.8,0) arc[start angle=0, end angle=180, radius=0.8cm];
+\draw[thick] (1.4,0) arc[start angle=0, end angle=180, radius=1.4cm];
+\draw[thick] (2.6,0) arc[start angle=0, end angle=180, radius=2.6cm];
+\draw[thick] (3.2,0) arc[start angle=0, end angle=180, radius=3.2cm];
+\draw[thick] (3.8,0) arc[start angle=0, end angle=180, radius=3.8cm];
+\draw[thick] (4.4,0) arc[start angle=0, end angle=180, radius=4.4cm];
+
+% Draw separate semicircles for NP and CO-NP at the same radius
+\draw[thick] (1.4,0) arc[start angle=0, end angle=180, radius=2.0cm] -- (0,0);
+\draw[thick] (2.6,0) arc[start angle=0, end angle=180, radius=2.0cm] -- (0,0);
+
+% Draw separate semicircles for the next level
+\draw[thick] (2.6,0) arc[start angle=0, end angle=180, radius=2.9cm] -- (0,0);
+\draw[thick] (3.2,0) arc[start angle=0, end angle=180, radius=2.9cm] -- (0,0);
+
+% Close the outer semi-circles with a base line
+\draw[thick] (-4.4,0) -- (4.4,0);
+
+% Labels positioned clearly in each region
+\node at (0,0.35) {\textbf{L}};
+\node at (0,1.1) {\textbf{NL}};
+\node at (0,1.6) {\textbf{P = $\Delta_1^P$}};
+\node[rotate=-25] at (1.3,1.5) {\textbf{NP = $\Sigma_1^P$}};
+\node[rotate=25] at (-1.3,1.5) {\textbf{CO-NP = $\Pi_1^P$}};
+\node at (1.2,2.7) {\textbf{$\Sigma_2^P$}};
+\node at (-1.2,2.7) {\textbf{$\Pi_2^P$}};
+\node at (0,2.3) {\textbf{$\Delta_2^P$}};
+\node at (0,3.0) {\textbf{...}};
+\node at (0,3.5) {\textbf{PSPACE}};
+\node at (0,4.1) {\textbf{EXP}};
+\node at (0,4.6) {\textbf{NEXP}};
+\end{tikzpicture}
+\caption{Diagramma di inclusione delle principali classi di complessità con gerarchia polinomiale.}
+\label{fig:complexity_classes}
+\end{figure}
 
 \subsection{Problemi Completi nella Gerarchia Polinomiale}
 Le formule booleane quantificate (QBF) sono problemi naturali che si collocano ai vari livelli della gerarchia.
