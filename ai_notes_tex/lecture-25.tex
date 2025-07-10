@@ -254,7 +254,9 @@ L'idea della dimostrazione si basa su due concetti che abbiamo già introdotto:
         \item La posizione della testina sul nastro di lavoro: $O(\log S(n))$ bit (poiché il nastro di lavoro ha lunghezza $O(S(n))$).
         \item Lo stato corrente della macchina: una costante $c$ di stati ($O(1)$ bit).
     \end{itemize}
-    Il numero totale di possibili configurazioni $N_{conf}$ è il prodotto delle possibilità per ciascun componente. Poiché $S(n) \ge \Omega(\log n)$, il termine dominante è il contenuto del nastro di lavoro. Dunque, il numero totale di configurazioni (nodi del computation graph) $N_{conf}$ è $O(|\Gamma|^{S(n)} \cdot n \cdot S(n) \cdot c) = O(|\Gamma|^{S(n)} \cdot n \cdot S(n))$. Se consideriamo solo il termine dominante, $N_{conf} = O(|\Gamma|^{S(n)})$.
+    Il numero totale di possibili configurazioni $N_{conf}$ è il prodotto delle possibilità per ciascun componente. Poiché $S(n) \ge \Omega(\log n)$, il termine dominante è il contenuto del nastro di lavoro. Dunque, il numero totale di configurazioni (nodi del computation graph) è: \[
+    N_{conf} = O(|\Gamma|^{S(n)} \cdot n \cdot S(n) \cdot c) = O(|\Gamma|^{S(n)} \cdot n \cdot S(n))\]
+    Se consideriamo solo il termine dominante, $N_{conf} = O(|\Gamma|^{S(n)})$.
 
     \item \textbf{Applicazione di \texttt{exists-path}:} Per decidere se l'input $x$ è in $L$, dobbiamo determinare se esiste un cammino nel computation graph dalla configurazione iniziale $C_{start}$ (con input $x$) a una delle configurazioni accettanti $C_{accept}$ (possiamo far confluire tutte le configurazioni accettanti in un unico stato finale virtuale). Questo è esattamente il problema \textbf{REACHABILITY}.
 
